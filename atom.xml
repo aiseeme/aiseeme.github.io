@@ -252,67 +252,11 @@
       <category term="Android" scheme="http://ipcreator.me/categories/Android/"/>
     
     
-      <category term="Application" scheme="http://ipcreator.me/tags/Application/"/>
-    
       <category term="Open Source" scheme="http://ipcreator.me/tags/Open-Source/"/>
     
+      <category term="Application" scheme="http://ipcreator.me/tags/Application/"/>
+    
       <category term="Big Bang" scheme="http://ipcreator.me/tags/Big-Bang/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Bitmap</title>
-    <link href="http://ipcreator.me/2017/04/12/Program/Tools/Computer/bitmap/"/>
-    <id>http://ipcreator.me/2017/04/12/Program/Tools/Computer/bitmap/</id>
-    <published>2017-04-12T12:53:06.000Z</published>
-    <updated>2017-04-17T15:04:01.005Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/bitmap.jpg" alt=""></p>
-<blockquote>
-<p>只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Bitmap-位图-全解析"><a href="#Bitmap-位图-全解析" class="headerlink" title="Bitmap(位图)全解析"></a>Bitmap(位图)全解析</h2><p>Drawable：通用的图形对象，用于装载常用格式的图像，既可以是PNG，JPG这样的图像， 也是前面学的那13种Drawable类型的可视化对象！我们可以理解成一个用来放画的——画框！</p>
-<p>Bitmap(位图)：我们可以把他看作一个画架，我们先把画放到上面，然后我们可以 进行一些处理，比如获取图像文件信息，做旋转切割，放大缩小等操作！</p>
-<p>Canvas(画布)：如其名，画布，我们可以在上面作画(绘制)，你既可以用Paint(画笔)， 来画各种形状或者写字，又可以用Path(路径)来绘制多个点，然后连接成各种图形！</p>
-<p>Matrix(矩阵)：用于图形特效处理的，颜色矩阵(ColorMatrix)，还有使用Matrix进行图像的 平移，缩放，旋转，倾斜等！</p>
-<h2 id="说明位图-矢量图-像素-分辨率，PPI-DPI？"><a href="#说明位图-矢量图-像素-分辨率，PPI-DPI？" class="headerlink" title="说明位图,矢量图,像素,分辨率，PPI,DPI？"></a>说明位图,矢量图,像素,分辨率，PPI,DPI？</h2><h3 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h3><p>位图图像（bitmap）, 亦称为点阵图像或绘制图像，是由称作像素（图片元素）的单个点组成的。这些点可以进行不同的排列和染色以构成图样。当放大位图时，可以看见赖以构成整个图像的无数单个方块。只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象，逼真地表现自然界的景象。缩放和旋转容易失真，同时文件容量较大。bmp，jpg，gif，png。便携式网络图形（Portable Network Graphics，PNG）是一种无损压缩的位图图形格式，截图首选png格式。</p>
-<p><img src="https://pic2.zhimg.com/dd1d5448347bd9ae91bed2ed1f42b72d_b.png" alt=""></p>
-<blockquote>
-<p>位图实质为使用像素阵列来表示的图像（注意“表示”两个字），用于展现在显示器或者用于打印，位图并未真实存在的文件，但它可以生成真实性的文件如png、bmp、jpg、gif、psd、tif等。通过位图我们可以直接操作图像像素，例如有像素决定的颜色、灰度值、背景。</p>
-</blockquote>
-<h3 id="矢量图像"><a href="#矢量图像" class="headerlink" title="矢量图像"></a>矢量图像</h3><p>由数学向量组成，文件容量较小，在进行放大、缩小或旋转等操作时图象不会失真，缺点是不易制作色彩变化太多的图象。</p>
-<h3 id="像素"><a href="#像素" class="headerlink" title="像素"></a>像素</h3><p>像素，又称画素，为图像显示的基本单位，译自英文“pixel”，pix是英语单词picture的常用简写，加上英语单词“元素”element，就得到pixel，故“像素”表示“图像元素”之意。像素表示图形尺寸的大小。不同设备显示效果相同。这里的“相同”是指像素数不会变，比如指定UI长度是100px，那不管分辨率是多少UI长度都是100px。也正是因为如此才造成了UI在小分辨率设备上被放大而失真，在大分辨率上被缩小。</p>
-<h3 id="分辨率"><a href="#分辨率" class="headerlink" title="分辨率"></a>分辨率</h3><p>Image resolution，中国大陆译为“分辨率”，香港、台湾分别译为“解像度”和“解析度”，又称“解像力”，泛指量测或显示系统对细节的分辨能力。分辨率越高代表视频质量越好，越能表现出更多的细节；但相对的，因为纪录的信息越多，文件也就会越大。图像处理或信号处理中的空间或时间分辨率：能够分辨图像中两个点或线的能力。描述分辨率的单位有：dpi（点每英寸）、lpi（线每英寸）和ppi（每英寸像素）。从技术角度说，“像素”只存在于电脑显示领域，而“点”只出现于打印或印刷领域。对电脑显示屏等，分辨率是用像素数目衡量；对数字文件印刷，分辨率是通常用每英寸所含点或像素〔dpi〕来衡量。像素数目大的数码相机，较能够输出高分辨率的图像。因此，相机制造商在广告上多使用像素数目代表分辨率。不过，相机是测量仪器而不是显示设备。镜头对视频质量极为重要，光以用像素数目代表分辨率是非常误导的。美国、日本和国际标准都建议不应使用此一定义。</p>
-<p>提起分辨率，我们需要了解两个概念，图像分辨率和输出分辨率，图像分辨率是每英寸的像素数，以ppi为单位，图像分辨率又常常被表示成每一个方向上的总像素数量，比如640×480像素、1280×960像素等。而决定图像输出质量的是图像的输出分辨率，描述的是设备输出图像时每英寸可产生的点数（dpi），以dpi为单位，两者有联系但并不总是相等的。</p>
-<p>以21.5寸的显示器为例，设置屏幕分辨率为1920<em>1080（推荐设置，还可以设置成最小800</em>600），下载一张1920<em>1080的图片，当显示为实际大小时，图片正好可以覆盖整个屏幕，再将屏幕分辨率设置为1360</em>768，这时当查看图片的实际大小时，发现屏幕不能承下整个图片。也就是说，21.5寸的显示器设置1920<em>1080，是将屏幕分为1920</em>1080个小块（也就是像素），当显示1920<em>1080的图片时，屏幕上的所有块（像素）正好都被占用，当显示器分辨率为1360</em>768时，将21.5寸的屏幕分成1360<em>768个小块，再次显示1920</em>1080大小的图片时，发现屏幕上的所有块不能承下图片，需要左右移动才能查看完整的图片。这也解释了，为什么将屏幕分辩率调小之后，会发现照片和文字变大的问题。</p>
-<blockquote>
-<p>例如分辨率为1280*720表达的就是：屏幕长上有1280个像素，屏幕宽上有720个像素。每一个像素点都是单独染色，像素点的颜色由RGB三原色与灰度值决定。</p>
-</blockquote>
-<h3 id="PPI"><a href="#PPI" class="headerlink" title="PPI"></a>PPI</h3><p>每英寸像素（英语：Pixels Per Inch），又被称为像素密度，是一个表示打印图像或显示器单位面积上像素数量的指数。一般用来计量电脑显示器，电视机和手持电子设备屏幕的精细程度。通常情况下，每英寸像素值越高，屏幕能显示的图像也越精细。是将屏幕尺寸与分辨率整合到一起的一个属性。以屏幕尺寸为4吋的iPhone 5为例，分辨率为1136x640，像素密度为326PPI。而分辨率为1920x1080的家用21.5寸显示器，像素密度为103PPI。Retina显示屏（英文：Retina Display）是一种由苹果公司设计和委托制造的显示屏，具备足够高像素密度而使得人体肉眼无法分辨其中单独像素点的液晶屏，最初采用该种屏幕的产品iPhone 4由执行长史蒂夫·乔布斯于WWDC2010发布，其屏幕分辨率为960×640（每英寸像素数326ppi）。这种分辨率在正常观看距离下足以使人肉眼无法分辨其中的单独像素。</p>
-<p><img src="https://pic4.zhimg.com/f44740f69919814b034042ccf178d3d7_b.png" alt=""></p>
-<h3 id="DPI打印输出分辨率（英语：Dots-Per-Inch，每英寸点数）"><a href="#DPI打印输出分辨率（英语：Dots-Per-Inch，每英寸点数）" class="headerlink" title="DPI打印输出分辨率（英语：Dots Per Inch，每英寸点数）"></a>DPI打印输出分辨率（英语：Dots Per Inch，每英寸点数）</h3><p>是一个量度单位，用于点阵数位影像，意思是指每一英寸长度中，取样或可显示或输出点的数目。打印机所设定之分辨率的DPI值越高，印出的图像会越精细。打印机通常可以调校分辨率。例如撞针打印机，分辨率通常是60至90 DPI。喷墨打印机则可达1200 DPI，甚至9600 DPI。激光打印机则有600至1200 DPI。一般显示器为96 DPI。</p>
-<p><img src="http://images.cnitblog.com/blog/602138/201404/151457586822202.png" alt=""></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="https://www.zhihu.com/question/36918058" target="_blank" rel="external">说明位图,矢量图,像素,分辨率，PPI,DPI？</a><br>[2]<a href="http://www.cnblogs.com/android001/p/3666265.html" target="_blank" rel="external">[图形图像]—位图Bitmap、分辨率Resolution、像素Pixel(px)、距离密度dpi，基本概念与相互之间的联系</a><br>[3]<a href="http://www.runoob.com/w3cnote/android-tutorial-bitmap1.html" target="_blank" rel="external"> Bitmap(位图)全解析 Part 1</a><br>[4]<a href="http://www.jianshu.com/p/98c88f9ceafa" target="_blank" rel="external">Android 之 Bitmap</a><br>[5]<a href="http://www.cnblogs.com/over140/archive/2011/11/21/2256727.html" target="_blank" rel="external">Android中文API（136） —— Bitmap</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/bitmap.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Program" scheme="http://ipcreator.me/categories/Program/"/>
-    
-    
-      <category term="Basic Concept" scheme="http://ipcreator.me/tags/Basic-Concept/"/>
-    
-      <category term="Android" scheme="http://ipcreator.me/tags/Android/"/>
-    
-      <category term="Bitmap" scheme="http://ipcreator.me/tags/Bitmap/"/>
     
   </entry>
   
@@ -381,6 +325,62 @@
     
     
       <category term="Share" scheme="http://ipcreator.me/tags/Share/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bitmap</title>
+    <link href="http://ipcreator.me/2017/04/12/Program/Tools/Computer/bitmap/"/>
+    <id>http://ipcreator.me/2017/04/12/Program/Tools/Computer/bitmap/</id>
+    <published>2017-04-12T12:53:06.000Z</published>
+    <updated>2017-04-17T15:04:01.005Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/bitmap.jpg" alt=""></p>
+<blockquote>
+<p>只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Bitmap-位图-全解析"><a href="#Bitmap-位图-全解析" class="headerlink" title="Bitmap(位图)全解析"></a>Bitmap(位图)全解析</h2><p>Drawable：通用的图形对象，用于装载常用格式的图像，既可以是PNG，JPG这样的图像， 也是前面学的那13种Drawable类型的可视化对象！我们可以理解成一个用来放画的——画框！</p>
+<p>Bitmap(位图)：我们可以把他看作一个画架，我们先把画放到上面，然后我们可以 进行一些处理，比如获取图像文件信息，做旋转切割，放大缩小等操作！</p>
+<p>Canvas(画布)：如其名，画布，我们可以在上面作画(绘制)，你既可以用Paint(画笔)， 来画各种形状或者写字，又可以用Path(路径)来绘制多个点，然后连接成各种图形！</p>
+<p>Matrix(矩阵)：用于图形特效处理的，颜色矩阵(ColorMatrix)，还有使用Matrix进行图像的 平移，缩放，旋转，倾斜等！</p>
+<h2 id="说明位图-矢量图-像素-分辨率，PPI-DPI？"><a href="#说明位图-矢量图-像素-分辨率，PPI-DPI？" class="headerlink" title="说明位图,矢量图,像素,分辨率，PPI,DPI？"></a>说明位图,矢量图,像素,分辨率，PPI,DPI？</h2><h3 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h3><p>位图图像（bitmap）, 亦称为点阵图像或绘制图像，是由称作像素（图片元素）的单个点组成的。这些点可以进行不同的排列和染色以构成图样。当放大位图时，可以看见赖以构成整个图像的无数单个方块。只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象，逼真地表现自然界的景象。缩放和旋转容易失真，同时文件容量较大。bmp，jpg，gif，png。便携式网络图形（Portable Network Graphics，PNG）是一种无损压缩的位图图形格式，截图首选png格式。</p>
+<p><img src="https://pic2.zhimg.com/dd1d5448347bd9ae91bed2ed1f42b72d_b.png" alt=""></p>
+<blockquote>
+<p>位图实质为使用像素阵列来表示的图像（注意“表示”两个字），用于展现在显示器或者用于打印，位图并未真实存在的文件，但它可以生成真实性的文件如png、bmp、jpg、gif、psd、tif等。通过位图我们可以直接操作图像像素，例如有像素决定的颜色、灰度值、背景。</p>
+</blockquote>
+<h3 id="矢量图像"><a href="#矢量图像" class="headerlink" title="矢量图像"></a>矢量图像</h3><p>由数学向量组成，文件容量较小，在进行放大、缩小或旋转等操作时图象不会失真，缺点是不易制作色彩变化太多的图象。</p>
+<h3 id="像素"><a href="#像素" class="headerlink" title="像素"></a>像素</h3><p>像素，又称画素，为图像显示的基本单位，译自英文“pixel”，pix是英语单词picture的常用简写，加上英语单词“元素”element，就得到pixel，故“像素”表示“图像元素”之意。像素表示图形尺寸的大小。不同设备显示效果相同。这里的“相同”是指像素数不会变，比如指定UI长度是100px，那不管分辨率是多少UI长度都是100px。也正是因为如此才造成了UI在小分辨率设备上被放大而失真，在大分辨率上被缩小。</p>
+<h3 id="分辨率"><a href="#分辨率" class="headerlink" title="分辨率"></a>分辨率</h3><p>Image resolution，中国大陆译为“分辨率”，香港、台湾分别译为“解像度”和“解析度”，又称“解像力”，泛指量测或显示系统对细节的分辨能力。分辨率越高代表视频质量越好，越能表现出更多的细节；但相对的，因为纪录的信息越多，文件也就会越大。图像处理或信号处理中的空间或时间分辨率：能够分辨图像中两个点或线的能力。描述分辨率的单位有：dpi（点每英寸）、lpi（线每英寸）和ppi（每英寸像素）。从技术角度说，“像素”只存在于电脑显示领域，而“点”只出现于打印或印刷领域。对电脑显示屏等，分辨率是用像素数目衡量；对数字文件印刷，分辨率是通常用每英寸所含点或像素〔dpi〕来衡量。像素数目大的数码相机，较能够输出高分辨率的图像。因此，相机制造商在广告上多使用像素数目代表分辨率。不过，相机是测量仪器而不是显示设备。镜头对视频质量极为重要，光以用像素数目代表分辨率是非常误导的。美国、日本和国际标准都建议不应使用此一定义。</p>
+<p>提起分辨率，我们需要了解两个概念，图像分辨率和输出分辨率，图像分辨率是每英寸的像素数，以ppi为单位，图像分辨率又常常被表示成每一个方向上的总像素数量，比如640×480像素、1280×960像素等。而决定图像输出质量的是图像的输出分辨率，描述的是设备输出图像时每英寸可产生的点数（dpi），以dpi为单位，两者有联系但并不总是相等的。</p>
+<p>以21.5寸的显示器为例，设置屏幕分辨率为1920<em>1080（推荐设置，还可以设置成最小800</em>600），下载一张1920<em>1080的图片，当显示为实际大小时，图片正好可以覆盖整个屏幕，再将屏幕分辨率设置为1360</em>768，这时当查看图片的实际大小时，发现屏幕不能承下整个图片。也就是说，21.5寸的显示器设置1920<em>1080，是将屏幕分为1920</em>1080个小块（也就是像素），当显示1920<em>1080的图片时，屏幕上的所有块（像素）正好都被占用，当显示器分辨率为1360</em>768时，将21.5寸的屏幕分成1360<em>768个小块，再次显示1920</em>1080大小的图片时，发现屏幕上的所有块不能承下图片，需要左右移动才能查看完整的图片。这也解释了，为什么将屏幕分辩率调小之后，会发现照片和文字变大的问题。</p>
+<blockquote>
+<p>例如分辨率为1280*720表达的就是：屏幕长上有1280个像素，屏幕宽上有720个像素。每一个像素点都是单独染色，像素点的颜色由RGB三原色与灰度值决定。</p>
+</blockquote>
+<h3 id="PPI"><a href="#PPI" class="headerlink" title="PPI"></a>PPI</h3><p>每英寸像素（英语：Pixels Per Inch），又被称为像素密度，是一个表示打印图像或显示器单位面积上像素数量的指数。一般用来计量电脑显示器，电视机和手持电子设备屏幕的精细程度。通常情况下，每英寸像素值越高，屏幕能显示的图像也越精细。是将屏幕尺寸与分辨率整合到一起的一个属性。以屏幕尺寸为4吋的iPhone 5为例，分辨率为1136x640，像素密度为326PPI。而分辨率为1920x1080的家用21.5寸显示器，像素密度为103PPI。Retina显示屏（英文：Retina Display）是一种由苹果公司设计和委托制造的显示屏，具备足够高像素密度而使得人体肉眼无法分辨其中单独像素点的液晶屏，最初采用该种屏幕的产品iPhone 4由执行长史蒂夫·乔布斯于WWDC2010发布，其屏幕分辨率为960×640（每英寸像素数326ppi）。这种分辨率在正常观看距离下足以使人肉眼无法分辨其中的单独像素。</p>
+<p><img src="https://pic4.zhimg.com/f44740f69919814b034042ccf178d3d7_b.png" alt=""></p>
+<h3 id="DPI打印输出分辨率（英语：Dots-Per-Inch，每英寸点数）"><a href="#DPI打印输出分辨率（英语：Dots-Per-Inch，每英寸点数）" class="headerlink" title="DPI打印输出分辨率（英语：Dots Per Inch，每英寸点数）"></a>DPI打印输出分辨率（英语：Dots Per Inch，每英寸点数）</h3><p>是一个量度单位，用于点阵数位影像，意思是指每一英寸长度中，取样或可显示或输出点的数目。打印机所设定之分辨率的DPI值越高，印出的图像会越精细。打印机通常可以调校分辨率。例如撞针打印机，分辨率通常是60至90 DPI。喷墨打印机则可达1200 DPI，甚至9600 DPI。激光打印机则有600至1200 DPI。一般显示器为96 DPI。</p>
+<p><img src="http://images.cnitblog.com/blog/602138/201404/151457586822202.png" alt=""></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="https://www.zhihu.com/question/36918058" target="_blank" rel="external">说明位图,矢量图,像素,分辨率，PPI,DPI？</a><br>[2]<a href="http://www.cnblogs.com/android001/p/3666265.html" target="_blank" rel="external">[图形图像]—位图Bitmap、分辨率Resolution、像素Pixel(px)、距离密度dpi，基本概念与相互之间的联系</a><br>[3]<a href="http://www.runoob.com/w3cnote/android-tutorial-bitmap1.html" target="_blank" rel="external"> Bitmap(位图)全解析 Part 1</a><br>[4]<a href="http://www.jianshu.com/p/98c88f9ceafa" target="_blank" rel="external">Android 之 Bitmap</a><br>[5]<a href="http://www.cnblogs.com/over140/archive/2011/11/21/2256727.html" target="_blank" rel="external">Android中文API（136） —— Bitmap</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/bitmap.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Program" scheme="http://ipcreator.me/categories/Program/"/>
+    
+    
+      <category term="Basic Concept" scheme="http://ipcreator.me/tags/Basic-Concept/"/>
+    
+      <category term="Android" scheme="http://ipcreator.me/tags/Android/"/>
+    
+      <category term="Bitmap" scheme="http://ipcreator.me/tags/Bitmap/"/>
     
   </entry>
   
@@ -1955,6 +1955,38 @@
   </entry>
   
   <entry>
+    <title>Basic Concept of English——Vocabulary</title>
+    <link href="http://ipcreator.me/2017/04/06/English/basic-concept-of-vocabulary/"/>
+    <id>http://ipcreator.me/2017/04/06/English/basic-concept-of-vocabulary/</id>
+    <published>2017-04-05T23:46:06.000Z</published>
+    <updated>2017-04-05T23:51:53.541Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/vocabulary.png" alt=""></p>
+<blockquote>
+<p>Vocabulary is the basis of English pyramid.</p>
+</blockquote>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/vocabulary.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vocabulary is the basis of English pyramid.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="English" scheme="http://ipcreator.me/categories/English/"/>
+    
+    
+      <category term="Basic Concept" scheme="http://ipcreator.me/tags/Basic-Concept/"/>
+    
+      <category term="Vocabulary" scheme="http://ipcreator.me/tags/Vocabulary/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Basic Concept of Java——Charset</title>
     <link href="http://ipcreator.me/2017/04/06/Program/Tools/Computer/char-decode/"/>
     <id>http://ipcreator.me/2017/04/06/Program/Tools/Computer/char-decode/</id>
@@ -2069,38 +2101,6 @@
   </entry>
   
   <entry>
-    <title>Basic Concept of English——Vocabulary</title>
-    <link href="http://ipcreator.me/2017/04/06/English/basic-concept-of-vocabulary/"/>
-    <id>http://ipcreator.me/2017/04/06/English/basic-concept-of-vocabulary/</id>
-    <published>2017-04-05T23:46:06.000Z</published>
-    <updated>2017-04-05T23:51:53.541Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/vocabulary.png" alt=""></p>
-<blockquote>
-<p>Vocabulary is the basis of English pyramid.</p>
-</blockquote>
-<a id="more"></a>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/vocabulary.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Vocabulary is the basis of English pyramid.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="English" scheme="http://ipcreator.me/categories/English/"/>
-    
-    
-      <category term="Basic Concept" scheme="http://ipcreator.me/tags/Basic-Concept/"/>
-    
-      <category term="Vocabulary" scheme="http://ipcreator.me/tags/Vocabulary/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Principles of IPCreator&#39;s Blog</title>
     <link href="http://ipcreator.me/2017/04/06/readme/"/>
     <id>http://ipcreator.me/2017/04/06/readme/</id>
@@ -2197,9 +2197,9 @@
     
       <category term="Meta Skill" scheme="http://ipcreator.me/tags/Meta-Skill/"/>
     
-      <category term="Google" scheme="http://ipcreator.me/tags/Google/"/>
-    
       <category term="English" scheme="http://ipcreator.me/tags/English/"/>
+    
+      <category term="Google" scheme="http://ipcreator.me/tags/Google/"/>
     
   </entry>
   
@@ -3100,6 +3100,80 @@
   </entry>
   
   <entry>
+    <title>Compile Process of Android Application</title>
+    <link href="http://ipcreator.me/2017/04/03/Program/Android/Design/compile-process-of-apk/"/>
+    <id>http://ipcreator.me/2017/04/03/Program/Android/Design/compile-process-of-apk/</id>
+    <published>2017-04-03T03:44:06.000Z</published>
+    <updated>2017-04-03T04:52:52.001Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/android_build_detail.png" alt=""></p>
+<blockquote>
+<p>编译–&gt;DEX–&gt;打包–&gt;签名和对齐</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Package-Process"><a href="#Package-Process" class="headerlink" title="Package Process"></a>Package Process</h2><p><img src="http://upload-images.jianshu.io/upload_images/2839011-28f3fb0ca3af7d9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上面这张图对上面的步骤以及每步用到的工具进行了细分，概括如下：</p>
+<p>Java编译器对工程本身的java代码进行编译，这些java代码有三个来源：app的源代码，由资源文件生成的R文件(aapt工具)，以及有aidl文件生成的java接口文件(aidl工具)。产出为.class文件。</p>
+<p>.class文件和依赖的三方库文件通过dex工具生成Delvik虚拟机可执行的.dex文件，可能有一个或多个，包含了所有的class信息，包括项目自身的class和依赖的class。产出为.dex文件。</p>
+<p>apkbuilder工具将.dex文件和编译后的资源文件生成未经签名对齐的apk文件。这里编译后的资源文件包括两部分，一是由aapt编译产生的编译后的资源文件，二是依赖的三方库里的资源文件。产出为未经签名的.apk文件。</p>
+<p>分别由Jarsigner和zipalign对apk文件进行签名和对齐，生成最终的apk文件。</p>
+<p>可以将整个打包过程概括为以下几步：</p>
+<ol>
+<li>通过aapt打包res资源文件，生成R.java、resources.arsc和res文件（二进制 &amp; 非二进制如res/raw和pic保持原样）</li>
+<li>处理.aidl文件，生成对应的Java接口文件</li>
+<li>通过Java Compiler编译R.java、Java接口文件、Java源文件，生成.class文件</li>
+<li>通过dex命令，将.class文件和第三方库中的.class文件处理生成classes.dex</li>
+<li>通过apkbuilder工具，将aapt生成的resources.arsc和res文件、assets文件和classes.dex一起打包生成apk</li>
+<li>通过Jarsigner工具，对上面的apk进行debug或release签名<br>通过zipalign工具，将签名后的apk进行对齐处理。</li>
+</ol>
+<p>关于zipalign工具，根据名字就知道是个zip文件对齐的工具。使得apk中的资源文件偏离文件起始位置4个字节，从而可以通过mmap()直接访问，从而减少RAM占用。</p>
+<p>下图是谷歌官网给出的一个典型的apk构建的过程，比较概括。主要包括两个过程，首先是编译过程，编译的内容包括本工程的文件以及依赖的各种库文件，编译的输出包括dex文件和编译后的资源文件。然后是打包过程。配合Keystore对第一步的输出进行签名对齐，生成最终的apk文件。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2839011-58310b412bae9a01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="APK-Content"><a href="#APK-Content" class="headerlink" title="APK Content"></a>APK Content</h2><p>apk包内容包括：</p>
+<ol>
+<li>classes.dex…</li>
+<li>resources.arsc</li>
+<li>assets</li>
+<li>res</li>
+<li>AndroidManifest.xml</li>
+<li>META-INF<br>7.<br>其中：<br>res中图片和raw文件下内容保持原样，res中其他xml文件内容均转化为二进制形式；assets文件内容保持原样<br>res中的文件会被映射到R.java文件中，访问的时候直接使用资源ID即R.id.filename；assets文件夹下的文件不会被映射到R.java中，访问的时候需要<strong>AssetManager</strong>类</li>
+</ol>
+<h2 id="Gradle-Process"><a href="#Gradle-Process" class="headerlink" title="Gradle Process"></a>Gradle Process</h2><p>Android工程通过gradle文件管理各项配置，gradle文件利用DSL（Domain Specific Language）语言描述配置，并使用Groovy语言处理编译逻辑。一个典型的Android工程结构如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2839011-0ba953a3e93d0d19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://img.blog.csdn.net/20151027092414376" alt=""></p>
+<p>在这里gradle文件分布在几个不同的层级，Project层级以及Module层级。</p>
+<ol>
+<li>Project层级的settings.gradle描述的是该Project包含哪些Module<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">include &apos;:presentation&apos;, &apos;:qamodel&apos;, &apos;:chatcommonmodule&apos;, &apos;:qa&apos;, &apos;:unlimit&apos;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Project层级的build.gradle描述的是作用于所有Module的配置，包括gradle版本等。</p>
+<ol>
+<li>Module层级的build.gradle。每个Module下都有一个作用于该Module的build.gradle文件，描述了该Module相关的配置。这些配置主要包括：BuildTypes，ProductFlavors，Dependency，SigningSettings等。</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><img src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/0bd162d9f2d3572c49ef6f258313632762d0c33e.jpg" alt=""><br>[1]<a href="http://blog.csdn.net/yanbober/article/details/49408489" target="_blank" rel="external">Android应用开发编译框架流程与IDE及Gradle概要</a><br>[2]<a href="https://yuedu.baidu.com/ebook/14a722970740be1e640e9a3e?pn=1&amp;isFromWenku=1" target="_blank" rel="external">Android Gradle权威指南</a><br>[3]<a href="http://www.jianshu.com/p/9df3c3b6067a" target="_blank" rel="external">Gradle 完整指南（Android）</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/android_build_detail.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;编译–&amp;gt;DEX–&amp;gt;打包–&amp;gt;签名和对齐&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://ipcreator.me/categories/Android/"/>
+    
+    
+      <category term="Basic Concept" scheme="http://ipcreator.me/tags/Basic-Concept/"/>
+    
+      <category term="Compile" scheme="http://ipcreator.me/tags/Compile/"/>
+    
+      <category term="Gradle" scheme="http://ipcreator.me/tags/Gradle/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Improve Code Inspection with Annotations</title>
     <link href="http://ipcreator.me/2017/04/03/Program/Java/improve-code-inspection-with-annotations/"/>
     <id>http://ipcreator.me/2017/04/03/Program/Java/improve-code-inspection-with-annotations/</id>
@@ -3181,80 +3255,6 @@
       <category term="Java" scheme="http://ipcreator.me/tags/Java/"/>
     
       <category term="Annotation" scheme="http://ipcreator.me/tags/Annotation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Compile Process of Android Application</title>
-    <link href="http://ipcreator.me/2017/04/03/Program/Android/Design/compile-process-of-apk/"/>
-    <id>http://ipcreator.me/2017/04/03/Program/Android/Design/compile-process-of-apk/</id>
-    <published>2017-04-03T03:44:06.000Z</published>
-    <updated>2017-04-03T04:52:52.001Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/android_build_detail.png" alt=""></p>
-<blockquote>
-<p>编译–&gt;DEX–&gt;打包–&gt;签名和对齐</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Package-Process"><a href="#Package-Process" class="headerlink" title="Package Process"></a>Package Process</h2><p><img src="http://upload-images.jianshu.io/upload_images/2839011-28f3fb0ca3af7d9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>上面这张图对上面的步骤以及每步用到的工具进行了细分，概括如下：</p>
-<p>Java编译器对工程本身的java代码进行编译，这些java代码有三个来源：app的源代码，由资源文件生成的R文件(aapt工具)，以及有aidl文件生成的java接口文件(aidl工具)。产出为.class文件。</p>
-<p>.class文件和依赖的三方库文件通过dex工具生成Delvik虚拟机可执行的.dex文件，可能有一个或多个，包含了所有的class信息，包括项目自身的class和依赖的class。产出为.dex文件。</p>
-<p>apkbuilder工具将.dex文件和编译后的资源文件生成未经签名对齐的apk文件。这里编译后的资源文件包括两部分，一是由aapt编译产生的编译后的资源文件，二是依赖的三方库里的资源文件。产出为未经签名的.apk文件。</p>
-<p>分别由Jarsigner和zipalign对apk文件进行签名和对齐，生成最终的apk文件。</p>
-<p>可以将整个打包过程概括为以下几步：</p>
-<ol>
-<li>通过aapt打包res资源文件，生成R.java、resources.arsc和res文件（二进制 &amp; 非二进制如res/raw和pic保持原样）</li>
-<li>处理.aidl文件，生成对应的Java接口文件</li>
-<li>通过Java Compiler编译R.java、Java接口文件、Java源文件，生成.class文件</li>
-<li>通过dex命令，将.class文件和第三方库中的.class文件处理生成classes.dex</li>
-<li>通过apkbuilder工具，将aapt生成的resources.arsc和res文件、assets文件和classes.dex一起打包生成apk</li>
-<li>通过Jarsigner工具，对上面的apk进行debug或release签名<br>通过zipalign工具，将签名后的apk进行对齐处理。</li>
-</ol>
-<p>关于zipalign工具，根据名字就知道是个zip文件对齐的工具。使得apk中的资源文件偏离文件起始位置4个字节，从而可以通过mmap()直接访问，从而减少RAM占用。</p>
-<p>下图是谷歌官网给出的一个典型的apk构建的过程，比较概括。主要包括两个过程，首先是编译过程，编译的内容包括本工程的文件以及依赖的各种库文件，编译的输出包括dex文件和编译后的资源文件。然后是打包过程。配合Keystore对第一步的输出进行签名对齐，生成最终的apk文件。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2839011-58310b412bae9a01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="APK-Content"><a href="#APK-Content" class="headerlink" title="APK Content"></a>APK Content</h2><p>apk包内容包括：</p>
-<ol>
-<li>classes.dex…</li>
-<li>resources.arsc</li>
-<li>assets</li>
-<li>res</li>
-<li>AndroidManifest.xml</li>
-<li>META-INF<br>7.<br>其中：<br>res中图片和raw文件下内容保持原样，res中其他xml文件内容均转化为二进制形式；assets文件内容保持原样<br>res中的文件会被映射到R.java文件中，访问的时候直接使用资源ID即R.id.filename；assets文件夹下的文件不会被映射到R.java中，访问的时候需要<strong>AssetManager</strong>类</li>
-</ol>
-<h2 id="Gradle-Process"><a href="#Gradle-Process" class="headerlink" title="Gradle Process"></a>Gradle Process</h2><p>Android工程通过gradle文件管理各项配置，gradle文件利用DSL（Domain Specific Language）语言描述配置，并使用Groovy语言处理编译逻辑。一个典型的Android工程结构如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2839011-0ba953a3e93d0d19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://img.blog.csdn.net/20151027092414376" alt=""></p>
-<p>在这里gradle文件分布在几个不同的层级，Project层级以及Module层级。</p>
-<ol>
-<li>Project层级的settings.gradle描述的是该Project包含哪些Module<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">include &apos;:presentation&apos;, &apos;:qamodel&apos;, &apos;:chatcommonmodule&apos;, &apos;:qa&apos;, &apos;:unlimit&apos;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>Project层级的build.gradle描述的是作用于所有Module的配置，包括gradle版本等。</p>
-<ol>
-<li>Module层级的build.gradle。每个Module下都有一个作用于该Module的build.gradle文件，描述了该Module相关的配置。这些配置主要包括：BuildTypes，ProductFlavors，Dependency，SigningSettings等。</li>
-</ol>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><img src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/0bd162d9f2d3572c49ef6f258313632762d0c33e.jpg" alt=""><br>[1]<a href="http://blog.csdn.net/yanbober/article/details/49408489" target="_blank" rel="external">Android应用开发编译框架流程与IDE及Gradle概要</a><br>[2]<a href="https://yuedu.baidu.com/ebook/14a722970740be1e640e9a3e?pn=1&amp;isFromWenku=1" target="_blank" rel="external">Android Gradle权威指南</a><br>[3]<a href="http://www.jianshu.com/p/9df3c3b6067a" target="_blank" rel="external">Gradle 完整指南（Android）</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/android_build_detail.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;编译–&amp;gt;DEX–&amp;gt;打包–&amp;gt;签名和对齐&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://ipcreator.me/categories/Android/"/>
-    
-    
-      <category term="Basic Concept" scheme="http://ipcreator.me/tags/Basic-Concept/"/>
-    
-      <category term="Gradle" scheme="http://ipcreator.me/tags/Gradle/"/>
-    
-      <category term="Compile" scheme="http://ipcreator.me/tags/Compile/"/>
     
   </entry>
   
@@ -3974,8 +3974,6 @@
     
       <category term="Basic Concept" scheme="http://ipcreator.me/tags/Basic-Concept/"/>
     
-      <category term="IO" scheme="http://ipcreator.me/tags/IO/"/>
-    
       <category term="Byte Code" scheme="http://ipcreator.me/tags/Byte-Code/"/>
     
       <category term="Class Loader" scheme="http://ipcreator.me/tags/Class-Loader/"/>
@@ -3989,6 +3987,8 @@
       <category term="Annotation" scheme="http://ipcreator.me/tags/Annotation/"/>
     
       <category term="Reflection" scheme="http://ipcreator.me/tags/Reflection/"/>
+    
+      <category term="IO" scheme="http://ipcreator.me/tags/IO/"/>
     
       <category term="Security" scheme="http://ipcreator.me/tags/Security/"/>
     
@@ -4133,41 +4133,6 @@
   </entry>
   
   <entry>
-    <title>App Architecture of Best Practice</title>
-    <link href="http://ipcreator.me/2017/03/31/Program/Android/Design/ui-app/"/>
-    <id>http://ipcreator.me/2017/03/31/Program/Android/Design/ui-app/</id>
-    <published>2017-03-30T23:35:06.000Z</published>
-    <updated>2017-04-03T16:52:48.870Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/androidstudio.jpg" alt=""><br>More Little, More Fast,<br>More Safe, More Flexible<br>More Smart, More Power,</p>
-<a id="more"></a>
-<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><h2 id="Third-Library"><a href="#Third-Library" class="headerlink" title="Third Library"></a>Third Library</h2><h2 id="Static-Code-Inspect-Tool"><a href="#Static-Code-Inspect-Tool" class="headerlink" title="Static Code Inspect Tool"></a>Static Code Inspect Tool</h2><p>###</p>
-<p>###</p>
-<p>###</p>
-<h2 id="Dynamic-Running-Checker"><a href="#Dynamic-Running-Checker" class="headerlink" title="Dynamic Running Checker"></a>Dynamic Running Checker</h2><p>###</p>
-<p>###</p>
-<p>###</p>
-<h2 id="Confige-Tool"><a href="#Confige-Tool" class="headerlink" title="Confige Tool"></a>Confige Tool</h2><h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><h3 id="QiNiu"><a href="#QiNiu" class="headerlink" title="QiNiu"></a>QiNiu</h3><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://blog.csdn.net/sbsujjbcy/article/details/50707696" target="_blank" rel="external">MVP模式在Android开发中的最佳实践</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/androidstudio.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;More Little, More Fast,&lt;br&gt;More Safe, More Flexible&lt;br&gt;More Smart, More Power,&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://ipcreator.me/categories/Android/"/>
-    
-    
-      <category term="Best Practice" scheme="http://ipcreator.me/tags/Best-Practice/"/>
-    
-      <category term="UI" scheme="http://ipcreator.me/tags/UI/"/>
-    
-      <category term="Architecture" scheme="http://ipcreator.me/tags/Architecture/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Concept of Reflection in Java</title>
     <link href="http://ipcreator.me/2017/03/31/Program/Java/what-is-reflection-in-java/"/>
     <id>http://ipcreator.me/2017/03/31/Program/Java/what-is-reflection-in-java/</id>
@@ -4258,6 +4223,41 @@
       <category term="Basic Concept" scheme="http://ipcreator.me/tags/Basic-Concept/"/>
     
       <category term="Reflection" scheme="http://ipcreator.me/tags/Reflection/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>App Architecture of Best Practice</title>
+    <link href="http://ipcreator.me/2017/03/31/Program/Android/Design/ui-app/"/>
+    <id>http://ipcreator.me/2017/03/31/Program/Android/Design/ui-app/</id>
+    <published>2017-03-30T23:35:06.000Z</published>
+    <updated>2017-04-03T16:52:48.870Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/androidstudio.jpg" alt=""><br>More Little, More Fast,<br>More Safe, More Flexible<br>More Smart, More Power,</p>
+<a id="more"></a>
+<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><h2 id="Third-Library"><a href="#Third-Library" class="headerlink" title="Third Library"></a>Third Library</h2><h2 id="Static-Code-Inspect-Tool"><a href="#Static-Code-Inspect-Tool" class="headerlink" title="Static Code Inspect Tool"></a>Static Code Inspect Tool</h2><p>###</p>
+<p>###</p>
+<p>###</p>
+<h2 id="Dynamic-Running-Checker"><a href="#Dynamic-Running-Checker" class="headerlink" title="Dynamic Running Checker"></a>Dynamic Running Checker</h2><p>###</p>
+<p>###</p>
+<p>###</p>
+<h2 id="Confige-Tool"><a href="#Confige-Tool" class="headerlink" title="Confige Tool"></a>Confige Tool</h2><h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><h3 id="QiNiu"><a href="#QiNiu" class="headerlink" title="QiNiu"></a>QiNiu</h3><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://blog.csdn.net/sbsujjbcy/article/details/50707696" target="_blank" rel="external">MVP模式在Android开发中的最佳实践</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/androidstudio.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;More Little, More Fast,&lt;br&gt;More Safe, More Flexible&lt;br&gt;More Smart, More Power,&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://ipcreator.me/categories/Android/"/>
+    
+    
+      <category term="Best Practice" scheme="http://ipcreator.me/tags/Best-Practice/"/>
+    
+      <category term="UI" scheme="http://ipcreator.me/tags/UI/"/>
+    
+      <category term="Architecture" scheme="http://ipcreator.me/tags/Architecture/"/>
     
   </entry>
   
@@ -9617,9 +9617,9 @@
       <category term="Android" scheme="http://ipcreator.me/categories/Android/"/>
     
     
-      <category term="GitHub" scheme="http://ipcreator.me/tags/GitHub/"/>
-    
       <category term="Third Library" scheme="http://ipcreator.me/tags/Third-Library/"/>
+    
+      <category term="GitHub" scheme="http://ipcreator.me/tags/GitHub/"/>
     
   </entry>
   
@@ -13469,6 +13469,61 @@ Console.WriteLine(d.ToString(&quot;0.0000000000000&quot;));
   </entry>
   
   <entry>
+    <title>Stetho——A Debug Bridge for Android Applications</title>
+    <link href="http://ipcreator.me/2017/03/25/Program/Android/stetho-chrome/"/>
+    <id>http://ipcreator.me/2017/03/25/Program/Android/stetho-chrome/</id>
+    <published>2017-03-25T13:29:06.000Z</published>
+    <updated>2017-03-27T10:04:47.015Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://facebook.github.io/stetho/static/logo.png" alt=""><br><a href="https://github.com/facebook/stetho" target="_blank" rel="external">Stetho</a></p>
+<p>Stetho is a sophisticated debug bridge for Android applications. When enabled, developers have access to the Chrome Developer Tools feature natively part of the Chrome desktop browser. Developers can also choose to enable the optional dumpapp tool which offers a powerful command-line interface to application internals.</p>
+<a id="more"></a>
+<h1 id="Stetho"><a href="#Stetho" class="headerlink" title="Stetho "></a>Stetho <a href="https://travis-ci.org/facebook/stetho" target="_blank" rel="external"><img src="https://travis-ci.org/facebook/stetho.svg?branch=master" alt="Build Status"></a></h1><h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><h3 id="Chrome-DevTools"><a href="#Chrome-DevTools" class="headerlink" title="Chrome DevTools"></a>Chrome DevTools</h3><p><img src="http://facebook.github.io/stetho/static/images/inspector-discovery.png" alt=""><br>The integration with the Chrome DevTools frontend is implemented using a client/server protocol which the Stetho software provides for your application. Once your application is integrated, simply navigate to chrome://inspect and click “Inspect” to get started!</p>
+<h3 id="Database-Inspection"><a href="#Database-Inspection" class="headerlink" title="Database Inspection"></a>Database Inspection</h3><p><img src="http://facebook.github.io/stetho/static/images/inspector-sqlite.png" alt=""><br>SQLite databases can be visualized and interactively explored with full read/write capabilities.</p>
+<h3 id="View-Hierarchy"><a href="#View-Hierarchy" class="headerlink" title="View Hierarchy"></a>View Hierarchy</h3><p><img src="http://facebook.github.io/stetho/static/images/inspector-elements.png" alt=""><br>View hierarchy support for ICS (API 15) and up! Lots of goodies such as instances virtually placed in the hierarchy, view highlighting, and the ability to tap on a view to jump to its position in the hierarchy.</p>
+<p><a href="https://facebook.github.io/stetho" target="_blank" rel="external">Stetho</a> is a sophisticated debug bridge for Android applications. When enabled,<br>developers have access to the Chrome Developer Tools feature natively part of<br>the Chrome desktop browser. Developers can also choose to enable the optional<br><code>dumpapp</code> tool which offers a powerful command-line interface to application<br>internals.</p>
+<p>Once you complete the set-up instructions below, just start your app and point<br>your laptop browser to <code>chrome://inspect</code>.  Click the “Inspect” button to<br>begin.</p>
+<h2 id="Set-up"><a href="#Set-up" class="headerlink" title="Set-up"></a>Set-up</h2><h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><p>Download <a href="https://github.com/facebook/stetho/releases/latest" target="_blank" rel="external">the latest JARs</a> or grab via Gradle:<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.facebook.stetho:stetho:1.4.2'</span></div></pre></td></tr></table></figure></p>
+<p>or Maven:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.facebook.stetho<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>stetho<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Only the main <code>stetho</code> dependency is strictly required; however, you may also wish to use one of the network helpers:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.facebook.stetho:stetho-okhttp3:1.4.2'</span></div></pre></td></tr></table></figure>
+<p>or:<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.facebook.stetho:stetho-urlconnection:1.4.2'</span></div></pre></td></tr></table></figure></p>
+<p>You can also enable a JavaScript console with:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.facebook.stetho:stetho-js-rhino:1.4.2'</span></div></pre></td></tr></table></figure>
+<p>For more details on how to customize the JavaScript runtime see <a href="stetho-js-rhino/">stetho-js-rhino</a>.</p>
+<h3 id="Putting-it-together"><a href="#Putting-it-together" class="headerlink" title="Putting it together"></a>Putting it together</h3><p>Integrating with Stetho is intended to be seamless and straightforward for<br>most existing Android applications.  There is a simple initialization step<br>which occurs in your <code>Application</code> class:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate();</div><div class="line">    Stetho.initializeWithDefaults(<span class="keyword">this</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>This brings up most of the default configuration but does not enable some<br>additional hooks (most notably, network inspection).  See below for specific<br>details on individual subsystems.</p>
+<h3 id="Enable-network-inspection"><a href="#Enable-network-inspection" class="headerlink" title="Enable network inspection"></a>Enable network inspection</h3><p>If you are using the popular <a href="https://github.com/square/okhttp" target="_blank" rel="external">OkHttp</a><br>library at the 3.x release, you can use the<br><a href="https://github.com/square/okhttp/wiki/Interceptors" target="_blank" rel="external">Interceptors</a> system to<br>automatically hook into your existing stack.  This is currently the simplest<br>and most straightforward way to enable network inspection:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> OkHttpClient.Builder()</div><div class="line">    .addNetworkInterceptor(<span class="keyword">new</span> StethoInterceptor())</div><div class="line">    .build()</div></pre></td></tr></table></figure>
+<p>Note that okhttp 2.x will work as well, but with slightly different syntax and you must use the <code>stetho-okhttp</code> artifact (not <code>stetho-okhttp3</code>).</p>
+<p>As interceptors can modify the request and response, add the Stetho interceptor after all others to get an accurate view of the network traffic.</p>
+<p>If you are using <code>HttpURLConnection</code>, you can use <code>StethoURLConnectionManager</code><br>to assist with integration though you should be aware that there are some<br>caveats with this approach.  In particular, you must explicitly add<br><code>Accept-Encoding: gzip</code> to the request headers and manually handle compressed<br>responses in order for Stetho to report compressed payload sizes.</p>
+<p>See the <a href="stetho-sample"><code>stetho-sample</code> project</a> for more details.</p>
+<h2 id="Going-further"><a href="#Going-further" class="headerlink" title="Going further"></a>Going further</h2><h3 id="Custom-dumpapp-plugins"><a href="#Custom-dumpapp-plugins" class="headerlink" title="Custom dumpapp plugins"></a>Custom dumpapp plugins</h3><p>Custom plugins are the preferred means of extending the <code>dumpapp</code> system and<br>can be added easily during configuration.  Simply replace your configuration<br>step as such:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Stetho.initialize(Stetho.newInitializerBuilder(context)</div><div class="line">    .enableDumpapp(<span class="keyword">new</span> DumperPluginsProvider() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> Iterable&lt;DumperPlugin&gt; <span class="title">get</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Stetho.DefaultDumperPluginsBuilder(context)</div><div class="line">            .provide(<span class="keyword">new</span> MyDumperPlugin())</div><div class="line">            .finish();</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">    .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(context))</div><div class="line">    .build())</div></pre></td></tr></table></figure>
+<p>See the <a href="stetho-sample"><code>stetho-sample</code> project</a> for more details.</p>
+<h2 id="Improve-Stetho"><a href="#Improve-Stetho" class="headerlink" title="Improve Stetho!"></a>Improve Stetho!</h2><p>See the <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> file for how to help out.</p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Stetho is BSD-licensed. We also provide an additional patent grant.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://facebook.github.io/stetho/static/logo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/facebook/stetho&quot;&gt;Stetho&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Stetho is a sophisticated debug bridge for Android applications. When enabled, developers have access to the Chrome Developer Tools feature natively part of the Chrome desktop browser. Developers can also choose to enable the optional dumpapp tool which offers a powerful command-line interface to application internals.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://ipcreator.me/categories/Android/"/>
+    
+    
+      <category term="Debug" scheme="http://ipcreator.me/tags/Debug/"/>
+    
+      <category term="Stetho" scheme="http://ipcreator.me/tags/Stetho/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Fast Android Networking</title>
     <link href="http://ipcreator.me/2017/03/25/Program/Android/fast-android-networking/"/>
     <id>http://ipcreator.me/2017/03/25/Program/Android/fast-android-networking/</id>
@@ -13639,61 +13694,6 @@ Console.WriteLine(d.ToString(&quot;0.0000000000000&quot;));
       <category term="OkHttp" scheme="http://ipcreator.me/tags/OkHttp/"/>
     
       <category term="Okio" scheme="http://ipcreator.me/tags/Okio/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Stetho——A Debug Bridge for Android Applications</title>
-    <link href="http://ipcreator.me/2017/03/25/Program/Android/stetho-chrome/"/>
-    <id>http://ipcreator.me/2017/03/25/Program/Android/stetho-chrome/</id>
-    <published>2017-03-25T13:29:06.000Z</published>
-    <updated>2017-03-27T10:04:47.015Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://facebook.github.io/stetho/static/logo.png" alt=""><br><a href="https://github.com/facebook/stetho" target="_blank" rel="external">Stetho</a></p>
-<p>Stetho is a sophisticated debug bridge for Android applications. When enabled, developers have access to the Chrome Developer Tools feature natively part of the Chrome desktop browser. Developers can also choose to enable the optional dumpapp tool which offers a powerful command-line interface to application internals.</p>
-<a id="more"></a>
-<h1 id="Stetho"><a href="#Stetho" class="headerlink" title="Stetho "></a>Stetho <a href="https://travis-ci.org/facebook/stetho" target="_blank" rel="external"><img src="https://travis-ci.org/facebook/stetho.svg?branch=master" alt="Build Status"></a></h1><h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><h3 id="Chrome-DevTools"><a href="#Chrome-DevTools" class="headerlink" title="Chrome DevTools"></a>Chrome DevTools</h3><p><img src="http://facebook.github.io/stetho/static/images/inspector-discovery.png" alt=""><br>The integration with the Chrome DevTools frontend is implemented using a client/server protocol which the Stetho software provides for your application. Once your application is integrated, simply navigate to chrome://inspect and click “Inspect” to get started!</p>
-<h3 id="Database-Inspection"><a href="#Database-Inspection" class="headerlink" title="Database Inspection"></a>Database Inspection</h3><p><img src="http://facebook.github.io/stetho/static/images/inspector-sqlite.png" alt=""><br>SQLite databases can be visualized and interactively explored with full read/write capabilities.</p>
-<h3 id="View-Hierarchy"><a href="#View-Hierarchy" class="headerlink" title="View Hierarchy"></a>View Hierarchy</h3><p><img src="http://facebook.github.io/stetho/static/images/inspector-elements.png" alt=""><br>View hierarchy support for ICS (API 15) and up! Lots of goodies such as instances virtually placed in the hierarchy, view highlighting, and the ability to tap on a view to jump to its position in the hierarchy.</p>
-<p><a href="https://facebook.github.io/stetho" target="_blank" rel="external">Stetho</a> is a sophisticated debug bridge for Android applications. When enabled,<br>developers have access to the Chrome Developer Tools feature natively part of<br>the Chrome desktop browser. Developers can also choose to enable the optional<br><code>dumpapp</code> tool which offers a powerful command-line interface to application<br>internals.</p>
-<p>Once you complete the set-up instructions below, just start your app and point<br>your laptop browser to <code>chrome://inspect</code>.  Click the “Inspect” button to<br>begin.</p>
-<h2 id="Set-up"><a href="#Set-up" class="headerlink" title="Set-up"></a>Set-up</h2><h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><p>Download <a href="https://github.com/facebook/stetho/releases/latest" target="_blank" rel="external">the latest JARs</a> or grab via Gradle:<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.facebook.stetho:stetho:1.4.2'</span></div></pre></td></tr></table></figure></p>
-<p>or Maven:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.facebook.stetho<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>stetho<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>Only the main <code>stetho</code> dependency is strictly required; however, you may also wish to use one of the network helpers:</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.facebook.stetho:stetho-okhttp3:1.4.2'</span></div></pre></td></tr></table></figure>
-<p>or:<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.facebook.stetho:stetho-urlconnection:1.4.2'</span></div></pre></td></tr></table></figure></p>
-<p>You can also enable a JavaScript console with:</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile <span class="string">'com.facebook.stetho:stetho-js-rhino:1.4.2'</span></div></pre></td></tr></table></figure>
-<p>For more details on how to customize the JavaScript runtime see <a href="stetho-js-rhino/">stetho-js-rhino</a>.</p>
-<h3 id="Putting-it-together"><a href="#Putting-it-together" class="headerlink" title="Putting it together"></a>Putting it together</h3><p>Integrating with Stetho is intended to be seamless and straightforward for<br>most existing Android applications.  There is a simple initialization step<br>which occurs in your <code>Application</code> class:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate();</div><div class="line">    Stetho.initializeWithDefaults(<span class="keyword">this</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>This brings up most of the default configuration but does not enable some<br>additional hooks (most notably, network inspection).  See below for specific<br>details on individual subsystems.</p>
-<h3 id="Enable-network-inspection"><a href="#Enable-network-inspection" class="headerlink" title="Enable network inspection"></a>Enable network inspection</h3><p>If you are using the popular <a href="https://github.com/square/okhttp" target="_blank" rel="external">OkHttp</a><br>library at the 3.x release, you can use the<br><a href="https://github.com/square/okhttp/wiki/Interceptors" target="_blank" rel="external">Interceptors</a> system to<br>automatically hook into your existing stack.  This is currently the simplest<br>and most straightforward way to enable network inspection:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> OkHttpClient.Builder()</div><div class="line">    .addNetworkInterceptor(<span class="keyword">new</span> StethoInterceptor())</div><div class="line">    .build()</div></pre></td></tr></table></figure>
-<p>Note that okhttp 2.x will work as well, but with slightly different syntax and you must use the <code>stetho-okhttp</code> artifact (not <code>stetho-okhttp3</code>).</p>
-<p>As interceptors can modify the request and response, add the Stetho interceptor after all others to get an accurate view of the network traffic.</p>
-<p>If you are using <code>HttpURLConnection</code>, you can use <code>StethoURLConnectionManager</code><br>to assist with integration though you should be aware that there are some<br>caveats with this approach.  In particular, you must explicitly add<br><code>Accept-Encoding: gzip</code> to the request headers and manually handle compressed<br>responses in order for Stetho to report compressed payload sizes.</p>
-<p>See the <a href="stetho-sample"><code>stetho-sample</code> project</a> for more details.</p>
-<h2 id="Going-further"><a href="#Going-further" class="headerlink" title="Going further"></a>Going further</h2><h3 id="Custom-dumpapp-plugins"><a href="#Custom-dumpapp-plugins" class="headerlink" title="Custom dumpapp plugins"></a>Custom dumpapp plugins</h3><p>Custom plugins are the preferred means of extending the <code>dumpapp</code> system and<br>can be added easily during configuration.  Simply replace your configuration<br>step as such:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Stetho.initialize(Stetho.newInitializerBuilder(context)</div><div class="line">    .enableDumpapp(<span class="keyword">new</span> DumperPluginsProvider() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> Iterable&lt;DumperPlugin&gt; <span class="title">get</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Stetho.DefaultDumperPluginsBuilder(context)</div><div class="line">            .provide(<span class="keyword">new</span> MyDumperPlugin())</div><div class="line">            .finish();</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">    .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(context))</div><div class="line">    .build())</div></pre></td></tr></table></figure>
-<p>See the <a href="stetho-sample"><code>stetho-sample</code> project</a> for more details.</p>
-<h2 id="Improve-Stetho"><a href="#Improve-Stetho" class="headerlink" title="Improve Stetho!"></a>Improve Stetho!</h2><p>See the <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> file for how to help out.</p>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Stetho is BSD-licensed. We also provide an additional patent grant.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://facebook.github.io/stetho/static/logo.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/facebook/stetho&quot;&gt;Stetho&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Stetho is a sophisticated debug bridge for Android applications. When enabled, developers have access to the Chrome Developer Tools feature natively part of the Chrome desktop browser. Developers can also choose to enable the optional dumpapp tool which offers a powerful command-line interface to application internals.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://ipcreator.me/categories/Android/"/>
-    
-    
-      <category term="Debug" scheme="http://ipcreator.me/tags/Debug/"/>
-    
-      <category term="Stetho" scheme="http://ipcreator.me/tags/Stetho/"/>
     
   </entry>
   

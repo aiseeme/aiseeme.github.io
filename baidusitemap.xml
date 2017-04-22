@@ -249,9 +249,9 @@
         <title>Big Bang</title>
         <pubTime>2017-04-12T13:18:06.000Z</pubTime>
         
-        <tag>Application</tag>
-         
         <tag>Open Source</tag>
+         
+        <tag>Application</tag>
          
         <tag>Big Bang</tag>
          
@@ -417,9 +417,9 @@
         
         <tag>Meta Skill</tag>
          
-        <tag>Google</tag>
-         
         <tag>English</tag>
+         
+        <tag>Google</tag>
          
          
            
@@ -1527,9 +1527,9 @@
         
         <tag>Basic Concept</tag>
          
-        <tag>Gradle</tag>
-         
         <tag>Compile</tag>
+         
+        <tag>Gradle</tag>
          
          
            
@@ -1720,15 +1720,15 @@
         <title>Big Trends</title>
         <pubTime>2017-03-22T00:18:06.000Z</pubTime>
         
-        <tag>Investment</tag>
-         
-        <tag>Education</tag>
-         
         <tag>AI</tag>
          
         <tag>5G</tag>
          
         <tag>IPR</tag>
+         
+        <tag>Education</tag>
+         
+        <tag>Investment</tag>
          
          
            
@@ -1750,8 +1750,6 @@
         
         <tag>Basic Concept</tag>
          
-        <tag>IO</tag>
-         
         <tag>Byte Code</tag>
          
         <tag>Class Loader</tag>
@@ -1765,6 +1763,8 @@
         <tag>Annotation</tag>
          
         <tag>Reflection</tag>
+         
+        <tag>IO</tag>
          
         <tag>Security</tag>
          
@@ -1946,9 +1946,9 @@
         <title>GitHub Android Libraries Top 100</title>
         <pubTime>2017-03-30T14:24:06.000Z</pubTime>
         
-        <tag>GitHub</tag>
-         
         <tag>Third Library</tag>
+         
+        <tag>GitHub</tag>
          
          
            
@@ -2566,9 +2566,9 @@
         <title>Ton 10 Algorithms Used by Data Scientists</title>
         <pubTime>2017-02-13T00:58:06.000Z</pubTime>
         
-        <tag>Algorithm</tag>
-         
         <tag>Machine Learning</tag>
+         
+        <tag>Algorithm</tag>
          
         <tag>Regression</tag>
          
@@ -2648,11 +2648,11 @@
         <title>Generate Lyric from Lyrics of Jay</title>
         <pubTime>2017-02-13T06:30:00.000Z</pubTime>
         
+        <tag>Tensorflow</tag>
+         
         <tag>Application</tag>
          
         <tag>Lyric</tag>
-         
-        <tag>Tensorflow</tag>
          
          
            
@@ -2738,9 +2738,9 @@
         <title>Data Novo</title>
         <pubTime>2017-03-21T07:07:18.000Z</pubTime>
         
-        <tag>Data Novo</tag>
-         
         <tag>Patent</tag>
+         
+        <tag>Data Novo</tag>
          
          
            
@@ -3024,9 +3024,9 @@
         <title>History and Development of Open Source in China</title>
         <pubTime>2017-03-02T01:33:06.000Z</pubTime>
         
-        <tag>History</tag>
-         
         <tag>Open Source</tag>
+         
+        <tag>History</tag>
          
         <tag>China</tag>
          
@@ -3194,9 +3194,9 @@
         <title>NIPS 2016：PPT of Andrew Ng</title>
         <pubTime>2017-02-14T06:39:06.000Z</pubTime>
         
-        <tag>Deep Learning</tag>
-         
         <tag>Andrew Ng</tag>
+         
+        <tag>Deep Learning</tag>
          
          
            
@@ -3858,11 +3858,11 @@
         <title>Supercharging Android Apps with TensorFlow</title>
         <pubTime>2017-02-17T02:26:06.000Z</pubTime>
         
-        <tag>Application</tag>
-         
         <tag>Android</tag>
          
         <tag>Tensorflow</tag>
+         
+        <tag>Application</tag>
          
          
            
@@ -4440,9 +4440,9 @@
         <title>AI on Earphone</title>
         <pubTime>2017-02-13T06:21:06.000Z</pubTime>
         
-        <tag>Application</tag>
-         
         <tag>Earphone</tag>
+         
+        <tag>Application</tag>
          
          
            
@@ -4508,9 +4508,9 @@
         <title>Clean Data and Remark Features in Meituan</title>
         <pubTime>2017-02-26T14:24:06.000Z</pubTime>
         
-        <tag>Meituan</tag>
-         
         <tag>Application</tag>
+         
+        <tag>Meituan</tag>
          
         <tag>Deep Learning</tag>
          
@@ -4532,9 +4532,9 @@
         <title>Deep Learning in Meituan</title>
         <pubTime>2017-02-26T13:56:06.000Z</pubTime>
         
-        <tag>Meituan</tag>
-         
         <tag>Application</tag>
+         
+        <tag>Meituan</tag>
          
         <tag>Deep Learning</tag>
          
@@ -4556,9 +4556,9 @@
         <title>Examples of Machine Learning in Meituan</title>
         <pubTime>2017-02-26T14:34:06.000Z</pubTime>
         
-        <tag>Meituan</tag>
-         
         <tag>Application</tag>
+         
+        <tag>Meituan</tag>
          
         <tag>Deep Learning</tag>
          
@@ -4580,15 +4580,15 @@
         <title>Online Learning Algorithm Theory and Practice</title>
         <pubTime>2017-02-26T14:13:06.000Z</pubTime>
         
-        <tag>Meituan</tag>
+        <tag>Algorithm</tag>
          
         <tag>Application</tag>
+         
+        <tag>Meituan</tag>
          
         <tag>Deep Learning</tag>
          
         <tag>Online</tag>
-         
-        <tag>Algorithm</tag>
          
          
            
@@ -4608,9 +4608,9 @@
         <title>Framework of Getting Features in Meituan</title>
         <pubTime>2017-02-26T14:04:06.000Z</pubTime>
         
-        <tag>Meituan</tag>
-         
         <tag>Application</tag>
+         
+        <tag>Meituan</tag>
          
         <tag>Deep Learning</tag>
          
@@ -4636,9 +4636,9 @@
         <title>Deep FFM Theory and Practice in Meituan</title>
         <pubTime>2017-02-26T14:20:06.000Z</pubTime>
         
-        <tag>Meituan</tag>
-         
         <tag>Application</tag>
+         
+        <tag>Meituan</tag>
          
         <tag>Deep Learning</tag>
          
@@ -4881,30 +4881,6 @@
 
     
   <url>
-    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>Base of Multimedia——Color</title>
-        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Multimedia</tag>
-         
-        <tag>Color</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://ipcreator.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://ipcreator.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -4963,6 +4939,30 @@
         <tag>Linux</tag>
          
         <tag>File System</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://ipcreator.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>Base of Multimedia——Color</title>
+        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Multimedia</tag>
+         
+        <tag>Color</tag>
          
          
            
@@ -5528,11 +5528,11 @@
         <title>Super Intelligence</title>
         <pubTime>2017-02-17T23:53:06.000Z</pubTime>
         
-        <tag>Algorithm</tag>
-         
         <tag>Machine Learning</tag>
          
         <tag>Open Source</tag>
+         
+        <tag>Algorithm</tag>
          
          
            
