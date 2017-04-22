@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://ipcreator.me/2017/04/22/Program/Tools/Python/using-python-and-k-means-to-find-the-dominant-colors-in-images/</loc>
+    <lastmod>2017-04-22T12:34:20.772Z</lastmod>
+    <data>
+        <display>
+        <title>Using Python and K-means to Find the Dominant Colors in Images</title>
+        <pubTime>2017-04-22T12:29:06.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>K-means</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://ipcreator.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ipcreator.me/2017/04/22/Program/Android/MyApp/aisee/</loc>
     <lastmod>2017-04-22T12:23:10.326Z</lastmod>
     <data>
@@ -4859,28 +4881,6 @@
 
     
   <url>
-    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
-    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
-    <data>
-        <display>
-        <title>Anatomy of GPU</title>
-        <pubTime>2017-02-27T00:58:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>GPU</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://ipcreator.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
     <lastmod>2017-03-27T08:55:53.034Z</lastmod>
     <data>
@@ -4905,21 +4905,21 @@
 
     
   <url>
-    <loc>http://ipcreator.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
+    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
     <data>
         <display>
-        <title>AI vs Machine Learning</title>
-        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
+        <title>Anatomy of GPU</title>
+        <pubTime>2017-02-27T00:58:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Machine Learning</tag>
+        <tag>GPU</tag>
          
          
            
              
-              <breadCrumb title="AI" url="http://ipcreator.me/categories/AI/"/>
+              <breadCrumb title="Program" url="http://ipcreator.me/categories/Program/"/>
           
         </display>
     </data>
@@ -4939,6 +4939,30 @@
         <tag>Multimedia</tag>
          
         <tag>Color</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://ipcreator.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>Base of Multimedia——Video</title>
+        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Multimedia</tag>
+         
+        <tag>Video</tag>
          
          
            
@@ -4975,23 +4999,21 @@
 
     
   <url>
-    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <loc>http://ipcreator.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Base of Multimedia——Video</title>
-        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
+        <title>AI vs Machine Learning</title>
+        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Multimedia</tag>
-         
-        <tag>Video</tag>
+        <tag>Machine Learning</tag>
          
          
            
              
-              <breadCrumb title="Program" url="http://ipcreator.me/categories/Program/"/>
+              <breadCrumb title="AI" url="http://ipcreator.me/categories/AI/"/>
           
         </display>
     </data>

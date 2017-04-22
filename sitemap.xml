@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ipcreator.me/2017/04/22/Program/Tools/Python/using-python-and-k-means-to-find-the-dominant-colors-in-images/</loc>
+    
+    <lastmod>2017-04-22T12:34:20.772Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://ipcreator.me/2017/04/22/Program/Android/MyApp/aisee/</loc>
     
     <lastmod>2017-04-22T12:23:10.326Z</lastmod>
@@ -1542,13 +1549,6 @@
   </url>
   
   <url>
-    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
-    
-    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
     
     <lastmod>2017-03-27T08:55:53.034Z</lastmod>
@@ -1556,14 +1556,21 @@
   </url>
   
   <url>
-    <loc>http://ipcreator.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
+    
+    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
@@ -1577,7 +1584,7 @@
   </url>
   
   <url>
-    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <loc>http://ipcreator.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
