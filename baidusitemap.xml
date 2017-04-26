@@ -4,6 +4,52 @@
 
     
   <url>
+    <loc>http://ipcreator.me/2017/04/26/Program/Android/MyApp/semantic-similarity/</loc>
+    <lastmod>2017-04-26T10:47:51.991Z</lastmod>
+    <data>
+        <display>
+        <title>SEMILAR —— A Semantic Similarity Toolkit</title>
+        <pubTime>2017-04-26T02:28:06.000Z</pubTime>
+        
+        <tag>SEMILAR</tag>
+         
+        <tag>Semantic Similarity</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://ipcreator.me/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ipcreator.me/2017/04/26/Program/Android/MyApp/wiki-brain/</loc>
+    <lastmod>2017-04-26T02:53:01.095Z</lastmod>
+    <data>
+        <display>
+        <title>WikiBrain</title>
+        <pubTime>2017-04-26T02:18:06.000Z</pubTime>
+        
+        <tag>Application</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>WikiBrain</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://ipcreator.me/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ipcreator.me/2017/04/25/Program/Android/MyApp/countly/</loc>
     <lastmod>2017-04-24T23:54:23.093Z</lastmod>
     <data>
@@ -4997,21 +5043,23 @@
 
     
   <url>
-    <loc>http://ipcreator.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>AI vs Machine Learning</title>
-        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
+        <title>Base of Multimedia——Video</title>
+        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Machine Learning</tag>
+        <tag>Multimedia</tag>
+         
+        <tag>Video</tag>
          
          
            
              
-              <breadCrumb title="AI" url="http://ipcreator.me/categories/AI/"/>
+              <breadCrumb title="Program" url="http://ipcreator.me/categories/Program/"/>
           
         </display>
     </data>
@@ -5067,23 +5115,21 @@
 
     
   <url>
-    <loc>http://ipcreator.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <loc>http://ipcreator.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Base of Multimedia——Video</title>
-        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
+        <title>AI vs Machine Learning</title>
+        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Multimedia</tag>
-         
-        <tag>Video</tag>
+        <tag>Machine Learning</tag>
          
          
            
              
-              <breadCrumb title="Program" url="http://ipcreator.me/categories/Program/"/>
+              <breadCrumb title="AI" url="http://ipcreator.me/categories/AI/"/>
           
         </display>
     </data>
