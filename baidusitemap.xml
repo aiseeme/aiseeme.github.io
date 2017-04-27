@@ -4,6 +4,70 @@
 
     
   <url>
+    <loc>http://aisee.me/2017/04/24/Program/Java/rxjava/</loc>
+    <lastmod>2017-04-27T13:16:07.616Z</lastmod>
+    <data>
+        <display>
+        <title>The Basic Concepts of RxJava</title>
+        <pubTime>2017-04-24T03:10:06.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>RxJava</tag>
+         
+        <tag>RxAndroid</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://aisee.me/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/04/27/Program/Android/android-tips/</loc>
+    <lastmod>2017-04-27T12:45:46.087Z</lastmod>
+    <data>
+        <display>
+        <title>Awesome Android  Tips</title>
+        <pubTime>2017-04-27T12:42:06.000Z</pubTime>
+        
+        <tag>Tip</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://aisee.me/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/04/27/MyView/Original/some-thoughts-of-life/</loc>
+    <lastmod>2017-04-27T11:36:21.826Z</lastmod>
+    <data>
+        <display>
+        <title>Some Thoughts of Life</title>
+        <pubTime>2017-04-27T10:13:18.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://aisee.me/2017/04/26/Program/Android/MyApp/semantic-similarity/</loc>
     <lastmod>2017-04-26T10:47:51.991Z</lastmod>
     <data>
@@ -113,30 +177,6 @@
            
              
               <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/04/24/Program/Java/rajava/</loc>
-    <lastmod>2017-04-24T06:31:44.294Z</lastmod>
-    <data>
-        <display>
-        <title>The Basic Concepts of RxJava</title>
-        <pubTime>2017-04-24T03:10:06.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>RxJava</tag>
-         
-        <tag>RxAndroid</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://aisee.me/categories/Java/"/>
           
         </display>
     </data>
@@ -5043,30 +5083,6 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>File System of Linux</title>
-        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Linux</tag>
-         
-        <tag>File System</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -5079,6 +5095,30 @@
         <tag>Multimedia</tag>
          
         <tag>Video</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>File System of Linux</title>
+        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Linux</tag>
+         
+        <tag>File System</tag>
          
          
            
