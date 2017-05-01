@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://aisee.me/2017/05/01/MyView/Movie/the-name-of-people/</loc>
+    
+    <lastmod>2017-05-01T11:11:45.526Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://aisee.me/2017/04/30/Program/Android/a-complete-guide-to-learn-rxJava/</loc>
     
     <lastmod>2017-04-30T14:25:31.947Z</lastmod>
@@ -1640,20 +1647,6 @@
   </url>
   
   <url>
-    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
-    
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
-    
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
@@ -1662,6 +1655,20 @@
   
   <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     

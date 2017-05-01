@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://aisee.me/2017/05/01/MyView/Movie/the-name-of-people/</loc>
+    <lastmod>2017-05-01T11:11:45.526Z</lastmod>
+    <data>
+        <display>
+        <title>In the Name of People</title>
+        <pubTime>2017-05-01T10:57:18.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://aisee.me/2017/04/30/Program/Android/a-complete-guide-to-learn-rxJava/</loc>
     <lastmod>2017-04-30T14:25:31.947Z</lastmod>
     <data>
@@ -5165,52 +5185,6 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>AI vs Machine Learning</title>
-        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Machine Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="AI" url="http://aisee.me/categories/AI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>File System of Linux</title>
-        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Linux</tag>
-         
-        <tag>File System</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -5247,6 +5221,52 @@
         <tag>Multimedia</tag>
          
         <tag>Video</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>AI vs Machine Learning</title>
+        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="AI" url="http://aisee.me/categories/AI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>File System of Linux</title>
+        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Linux</tag>
+         
+        <tag>File System</tag>
          
          
            
