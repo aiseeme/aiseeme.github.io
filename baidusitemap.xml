@@ -4,6 +4,68 @@
 
     
   <url>
+    <loc>http://aisee.me/2017/05/02/Meta%20Skill/meta-skill-core/</loc>
+    <lastmod>2017-05-02T14:47:42.017Z</lastmod>
+    <data>
+        <display>
+        <title>Meta Skill——Core</title>
+        <pubTime>2017-05-02T14:47:06.000Z</pubTime>
+        
+        <tag>Meta Skill</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/04/11/Meta%20Skill/meta-skill-deliberately-practice/</loc>
+    <lastmod>2017-05-02T14:32:10.973Z</lastmod>
+    <data>
+        <display>
+        <title>Meta Skill——Deliberate Practice</title>
+        <pubTime>2017-04-11T00:29:06.000Z</pubTime>
+        
+        <tag>Meta Skill</tag>
+         
+        <tag>Deliberate Practice</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-english/</loc>
+    <lastmod>2017-05-02T14:31:41.039Z</lastmod>
+    <data>
+        <display>
+        <title>Meta Skill——English</title>
+        <pubTime>2017-04-05T12:55:06.000Z</pubTime>
+        
+        <tag>Meta Skill</tag>
+         
+         
+           
+             
+              <breadCrumb title="English" url="http://aisee.me/categories/English/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://aisee.me/2017/05/02/MyView/Original/future/level-up-again-and-again/</loc>
     <lastmod>2017-05-02T14:14:23.293Z</lastmod>
     <data>
@@ -517,28 +579,6 @@
            
              
               <breadCrumb title="English" url="http://aisee.me/categories/English/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/04/11/Meta%20Skill/meta-skill-deliberately-practice/</loc>
-    <lastmod>2017-04-12T14:54:16.604Z</lastmod>
-    <data>
-        <display>
-        <title>Meta Skill——Deliberate Practice</title>
-        <pubTime>2017-04-11T00:29:06.000Z</pubTime>
-        
-        <tag>Meta Skill</tag>
-         
-        <tag>Deliberate Practice</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
           
         </display>
     </data>
@@ -1433,26 +1473,6 @@
            
              
               <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-english/</loc>
-    <lastmod>2017-04-05T13:46:42.567Z</lastmod>
-    <data>
-        <display>
-        <title>Meta Skill——English</title>
-        <pubTime>2017-04-05T12:55:06.000Z</pubTime>
-        
-        <tag>Meta Skill</tag>
-         
-         
-           
-             
-              <breadCrumb title="English" url="http://aisee.me/categories/English/"/>
           
         </display>
     </data>
@@ -5159,6 +5179,28 @@
 
     
   <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
+    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
+    <data>
+        <display>
+        <title>Anatomy of GPU</title>
+        <pubTime>2017-02-27T00:58:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>GPU</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
     <lastmod>2017-03-27T08:55:53.034Z</lastmod>
     <data>
@@ -5183,16 +5225,18 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
-    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Anatomy of GPU</title>
-        <pubTime>2017-02-27T00:58:06.000Z</pubTime>
+        <title>Base of Multimedia——Color</title>
+        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>GPU</tag>
+        <tag>Multimedia</tag>
+         
+        <tag>Color</tag>
          
          
            
@@ -5229,30 +5273,6 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>File System of Linux</title>
-        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Linux</tag>
-         
-        <tag>File System</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -5275,18 +5295,18 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Base of Multimedia——Color</title>
-        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
+        <title>File System of Linux</title>
+        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Multimedia</tag>
+        <tag>Linux</tag>
          
-        <tag>Color</tag>
+        <tag>File System</tag>
          
          
            
