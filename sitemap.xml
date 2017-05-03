@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://aisee.me/2017/05/03/MyView/Share/cognitive-trilogy-by-fusheng/</loc>
+    
+    <lastmod>2017-05-03T04:39:03.191Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://aisee.me/2017/05/02/Meta%20Skill/meta-skill-core/</loc>
     
     <lastmod>2017-05-02T14:47:42.017Z</lastmod>
@@ -1661,13 +1668,6 @@
   </url>
   
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
-    
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
@@ -1675,14 +1675,21 @@
   </url>
   
   <url>
-    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
