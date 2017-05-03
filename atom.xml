@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://aisee.me/"/>
-  <updated>2017-05-03T04:39:03.191Z</updated>
+  <updated>2017-05-03T06:23:04.981Z</updated>
   <id>http://aisee.me/</id>
   
   <author>
@@ -14,6 +14,155 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>怎么快速学习一门新技术</title>
+    <link href="http://aisee.me/2017/05/03/Program/Tools/Reactive/reactive-native-learning/"/>
+    <id>http://aisee.me/2017/05/03/Program/Tools/Reactive/reactive-native-learning/</id>
+    <published>2017-05-03T06:14:06.000Z</published>
+    <updated>2017-05-03T06:23:04.981Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/react-native.png" alt=""><br><a href="http://blog.csdn.net/jspandasp/article/details/71024299" target="_blank" rel="external">包建强</a></p>
+<p>本文表面上讲React Native（以下简称RN），实际上对于学习任何语言和系统都适用。</p>
+<p>对于新技术的学习，分为两种，一种是语言，类似Swift、Objective-C、Java、ES6，另一种是系统，比如Android、iOS、前端。</p>
+<a id="more"></a>
+<h2 id="1-语言层面"><a href="#1-语言层面" class="headerlink" title="1. 语言层面"></a>1. 语言层面</h2><p>如果你精通某一门语言，那么是可以很快切换到另一门语言的。这就是语言的相通性。翻开市面上那些21天精通某某语言之类的书籍，你会发现，它们具有很多共通的地方：</p>
+<ul>
+<li>变量</li>
+<li>类型</li>
+<li>运算符</li>
+<li>流程控制语句（if、for、while、swicth）</li>
+<li>字符串操作</li>
+<li>集合（数组、字典等）</li>
+<li>函数（参数、返回值等等）</li>
+<li>面向对象编程（类、接口、抽象类、属性、继承、多态、、重载、重写等等）</li>
+<li>反射</li>
+<li>结构体、枚举</li>
+<li>异常捕获</li>
+<li>多线程编程</li>
+<li>函数式编程</li>
+</ul>
+<p>无论是Java、Objective-C，还是Swift和ES6，基本都被上面这些点覆盖，所以经常有老司机说说自己是Android领域做了很多年，然后一两个月就进入到iOS领域，但这仅仅是语言层面的。</p>
+<p>对于从一门语言切换到另一门语言，我这些年来的经验是，把23个设计模式用这门新语言全都实现一遍，基本你就掌握了这门语言的大部分特性了。</p>
+<p>我是9年经验的C#技术出身，我起初对Java的Interface回调方法也很不理解，是通过亲手写了一个策略模式，牢记于心。我对Objective-C中的delegate语法也曾经一度感到很别扭，也是通过编写适配器模式后，才想明白的。</p>
+<h2 id="2-系统层面"><a href="#2-系统层面" class="headerlink" title="2. 系统层面"></a>2. 系统层面</h2><p>这个部分就没那么简单了。你可以花一个月学会一门语言，但是想把Android或iOS搞明白就需要几年时间的积累了，每个领域都有自己独特的文化：</p>
+<p>比如<strong>iOS的Runtime技术</strong>，iOS所有的技术体系都围绕着Runtime而展开。<br>比如Android的四大组件，以及背后的AMS、PMS，进而延伸到AIDL和Binder机制。<br>比如前端的几十种框架，从JS打包、CSS打包，到SPA、Hybrid等若干思想的演进历史。</p>
+<p>所以每个领域都是需要沉淀几年，没发过几次版，或者熬到半夜修改其中的bug，是难以理解这个领域中的酸甜苦辣到。</p>
+<p>但是，当你在Android、iOS、前端这几个领域都做过一遍之后，你会发现，它们也是有相同的东西的，我们一个个分析。</p>
+<p>首先是一些基本的点：</p>
+<ul>
+<li>基本控件、事件绑定</li>
+<li>列表</li>
+<li>网络请求封装</li>
+<li>页面跳转</li>
+<li>本地存储（数据库、文件）</li>
+<li>页面的生命周期</li>
+<li>自定义组件</li>
+</ul>
+<p>其实做App，只要会做两种页面就够了，列表页和详情页，你会发现，任何App，都是这两种页面的循环往复，首页、产品列表页、产品详情页、订单填写页、支付页、订单列表页、订单详情页。这是一条主线。</p>
+<p>这其中，在列表页，需要知道怎么把数据绑定到ListView上，怎么上拉分页。在详情页，需要知道几个基本的控件，Button、Label、输入框、单选框，基本就够了。然后你还要知道怎么点击控件触发一个方法，怎么发起一个网络请求并处理返回的数据。掌握了这些，一个页面内的事情就都搞定了。</p>
+<p>只有一个页面不够啊，所以要学会页面跳转，从A页面跳转到B页面，至此，App就“活”了。</p>
+<h2 id="模块化拆分"><a href="#模块化拆分" class="headerlink" title="模块化拆分"></a>模块化拆分</h2><p>功能开发多了，比如网络请求，你会封装出几个类，专门处理网络请求，与业务逻辑无关，这时候就需要把这几个类放到一个单独的项目中，Android称之为Library，iOS称之为静态库，你的App保持对这个Library的引用。</p>
+<p>再接着，业务多了，比如吃喝玩乐四大模块，为了能让项目编译更快，为了团队之间相互不干扰，就需要把这些模块都拆分成Library，各自模块在日常开发过程中，既能作为独立的App调试，又能在发版本时融合在一起。Android用到了Maven，iOS用到了CocoaPods来解决这类问题，我们称之为模块化拆分，也称为组件化拆分。</p>
+<p>以上种种，在前端根本不是什么难事，各个模块的脚本可以各自打包下载分发。</p>
+<h2 id="插件化和热修复"><a href="#插件化和热修复" class="headerlink" title="插件化和热修复"></a>插件化和热修复</h2><p>都是为了解决线上bug的修复，或者快速发版而不通过市场的审核。</p>
+<h2 id="MVP和MVVM"><a href="#MVP和MVVM" class="headerlink" title="MVP和MVVM"></a>MVP和MVVM</h2><p>起初Android和iOS都是基于MVC的，随着App越做越复杂，发现MVC不好用了。我是13年的时候在做电影院选座逻辑的时候就发现MVC搞不定这事了，因为我要写四五十种单元测试case，来保障每次修改繁杂的选座逻辑，不会影响之前运行良好的功能，但是MVC的Controller层把UI逻辑和数据逻辑混在一起，而导致我没办法写单元测试。因为当时我刚从微软的WPF/Silverlight技术转到App技术，所以自然就把WPF的MVVM思想引入了App中。时至今日，五年时间，MVP和MVVM思想已经深入人心，无论是Android还是iOS，抑或是前端的Angular、Vue和React，都是如此。</p>
+<h2 id="推送、埋点、性能监控、崩溃统计"><a href="#推送、埋点、性能监控、崩溃统计" class="headerlink" title="推送、埋点、性能监控、崩溃统计"></a>推送、埋点、性能监控、崩溃统计</h2><p>这些技术点，都是企业App开发所不可或缺的技术，顾名思义，这里不多介绍。</p>
+<p>看到这里，你也许会问，怎么还没讲React Native啊？如果我说这篇文章已经接近尾声了。你会不会打我？</p>
+<p>关于如何学习React Native，都在上面的内容中。为了不让广大的读者说我故弄玄虚，我还是结合前面列举的清单，梳理一下React Native的学习方法。</p>
+<p>1.语言层面，需要把ES6看一遍。但也没必要全看，很多高级语法短期你是用不到的。掌握我上面列举的语言类清单的内容就够了。</p>
+<p>所以当你为…或bind(this)这样到语法搞得三尸神暴躁的时候，那是你缘木求鱼了。就比如说bind(this)这样的语法，也许看RN中按钮的绑定方法，会理解的更透彻一些。</p>
+<p>此外，网上讲解ES5的文章很多，会和ES6混在一起，对于初学者是个很大的障碍，我就曾经花了很多冤枉时间在上面。</p>
+<p>2.系统层面</p>
+<p>这里主要是对React的快速学习，可以参照我上面列举的那几个关键点，再发一遍：</p>
+<p>基本控件、事件绑定<br>这里比较有趣的就是按钮，它在React中其实并不存在。<br>列表<br>网络请求封装<br>有必要像封装Android和iOS网络框架那样，封装出一个React的网络框架来给开发人员使用。<br>页面跳转<br>React提供的页面跳转机制太复杂，有必要把它进行封装。<br>本地存储（数据库、文件）<br>访问SQLite和Realm<br>页面的生命周期<br>Component的生命周期，尤其是props和state这两个值的读写<br>自定义组件<br>主要是父子组件之间怎么进行通信。</p>
+<p>至此，你就可以开发出一个简单的RN应用了。但是还没完，想做一个完整的RN应用，还需要下面的技术：</p>
+<ol>
+<li><p>打包<br>把RN的js脚本打出bundle包，手动放入App中，然后线上实现增量更新。</p>
+</li>
+<li><p>集成到App<br>使用RN的很多场景，是在原有的Android或iOS应用中的某个模块，使用RN来编写。这时，如何在现有项目中集成RN，是我们所需要解决的。<br>集成进来后，App和RN中间的相互跳转页面、相互调用方法，是我们需要解决的。</p>
+</li>
+<li><p>Redux<br>对于复杂的ReactNative应用，需要使用Redux进行解耦。</p>
+</li>
+</ol>
+<p>写到这里，ReactNative的全貌就都展现着读者面前了。有人会觉得React Native太庞大太复杂，但如果按照我的这个学习方法论，把上面这些点都扫一遍，一个月时间左右，基本就能搞定一款App了。</p>
+<p>接下来我会有一系列文章和例子来介绍React Native，这是我这一年来做线下培训的教案。我面对的都是些什么学员呢？有没接触过React Native的前端人员，有转型为React Native的Android和iOS开发人员，所以我比较清楚怎么把我文章中的这些知识点，灌输给他们。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/react-native.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/jspandasp/article/details/71024299&quot;&gt;包建强&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本文表面上讲React Native（以下简称RN），实际上对于学习任何语言和系统都适用。&lt;/p&gt;
+&lt;p&gt;对于新技术的学习，分为两种，一种是语言，类似Swift、Objective-C、Java、ES6，另一种是系统，比如Android、iOS、前端。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Program" scheme="http://aisee.me/categories/Program/"/>
+    
+    
+      <category term="Reactive" scheme="http://aisee.me/tags/Reactive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《程序员》5月精彩内容：人工智能 为我所用</title>
+    <link href="http://aisee.me/2017/05/03/AI/Business/use-ai/"/>
+    <id>http://aisee.me/2017/05/03/AI/Business/use-ai/</id>
+    <published>2017-05-03T06:07:06.000Z</published>
+    <updated>2017-05-03T06:11:11.996Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img.blog.csdn.net/20170430205125120" alt=""></p>
+<p>当心！假如你未还考虑在公司业务中应用人工智能技术，就有被对手超越的风险。人工智能已不单单是发表学术论文、刷新正确率的竞赛，抑或全民参与的新闻事件，它早在为各行各业的先行者们创造着实实在在的利润和商业价值。而且，随着算法改进、硬件升级、架构优化，应用人工智能技术带来的收益还会越来越高。</p>
+<p>这些先行者们正在关注哪些关键技术？如何从理论上跨越到企业创新实践？如何实现企业级云深度学习平台？在电商领域如何实现人机交互？除了深度学习之外还有哪些值得我们关注的技术？如何保持足够清醒的头脑并把握创业机遇？</p>
+<p>本封面报道汇聚来自百度、阿里、小米、美丽联合、58同城等公司的技术专家，分享实践过程中的开发经验、行业的发展与前沿技术方向，展示这项技术如何才能“为我所用”。</p>
+<a id="more"></a>
+<ul>
+<li>深度学习在推荐领域的应用（吴岸城，菱歌科技首席算法科学家）</li>
+<li>打造企业级云深度学习平台——小米云深度学习平台的架构设计与实现（陈迪豪，小米深度学习工程师）</li>
+<li>美丽联合业务升级下的机器学习应用（吴海波，美丽联合架构师）</li>
+<li>自然语言处理技术在推荐系统中的应用（张相於，58集团算法架构师）</li>
+<li>智能人机交互在电商领域的技术实践——阿里小蜜（周伟、陈海青，阿里智能创新中心）</li>
+<li>浅析强化学习及使用Policy Network实现自动化控制（黄文坚，PPmoney大数据算法总监）</li>
+<li>人工智能创业的“风口”和“泡沫”（李开复，王咏刚）</li>
+<li>基于容器的AI系统开发（王鹤麟，于洋，王益，百度PaddlePaddle团队）</li>
+<li>表示学习在信息推荐系统中的应用（高升，北京邮电大学副教授；邱琳，北京邮电大学模式识别实验室博士生）</li>
+</ul>
+<h2 id="资讯"><a href="#资讯" class="headerlink" title="资讯"></a>资讯</h2><p>CSDN要闻<br>微秒击杀<br>以内容为中心网络<br>追查俄罗斯最臭名昭著的黑客</p>
+<h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><p>稳定性与内存优化——小型团队的Android应用质量保障之道（何红辉，《Android源码设计模式解析与实战》图书作者）</p>
+<p>对于小型创业公司来说，没有BAT等大厂里的测试平台、方案研究员，QA资源相对有限，如果将一切发现问题的重担都交给测试部门，不但耗费的测试周期长，而且有一些问题将难以发现。本文作者基于此分享了他们是如何保证应用的稳定性、避免内存泄漏的，希望能够帮助大家在开发过程中少走弯路。<br>58同城iOS客户端IM系统演变历程（蒋演，58同城iOS高级研发工程师）</p>
+<p>58同城App自1.0版本开始，便一直致力于自研IM系统。在这过程中，发现如何降低IM系统层次和页面间的耦合，减少IM系统的复杂性，是降低技术成本提高研发效率的关键。对此，本文作者对iOS客户端IM系统架构演变的过程以及经验进行了总结，希望能够给设计或改造优化IM模块的开发者提供一些参考。<br>携程无线离线包增量更新方案实践（赵辛贵，携程无线基础工程团队高级技术经理）</p>
+<p>为了提高页面加载速度和成功率，携程团队在开发Hybrid技术之初就采用了离线包的方式，并经过持续的迭代优化，已经形成一套稳定、高效的无线离线包更新方案，本文作者即分享了其团队在增量更新方面的实践。<br>安居客Android模块化探索与实践（张磊，Anjuke资深软件开发工程师）</p>
+<p>万维网发明人Tim Berners-Lee谈到设计原理时说过：“简单性和模块化是软件工程的基石；分布式和容错性是互联网的生命。”由此可见模块化之于软件工程领域的重要性。本文以安居客为例，分享笔者在模块化探索实践方面的一些经验。</p>
+<h2 id="物联网"><a href="#物联网" class="headerlink" title="物联网"></a>物联网</h2><p>如何基于Android Things构建一个智能家居系统？（王玉成，供职于清华大学移动计算研究中心）</p>
+<p>Android Things是Google在2016年底推出的基于物联网的操作系统，广泛运用于物联网设备。本文作者从其技术原理开始，详解了Android Things本身及与之相关的技术之后，总结了如何搭建一个物联网系统的技术路线。<br>MVP到商用产品——从物车位检测器谈物联网应用开发中的痛点与解决方案（韩骏，微软中国云计算与企业事业部研发工程师）</p>
+<p>本文以一个车位检测的物联网MVP（最简可行产品）项目为例，由浅入深地向读者解读物联网开发中遇到的痛点和问题，以及相应的解决方案。此外，本文还介绍了MVP与实际商用项目存在的差距，即从原型开发到真实的使用环境，如何改进可提升MVP更接近实际生产环境的要求。<br>浅析物联网应用层协议CoAP（徐凯，嵌入式软件工程师，物联网应用层协议CoAP方面专家）</p>
+<p>CoAP协议专为物联网中资源受限型设备设计，与HTTP协议在设计原理、工作模式方面有诸多相似，却又不尽相同。本文针对CoAP协议的工作模式、消息结构、软件实现框架等进行了详细的讲解，并列举了具体实例来展示CoAP协议的使用。</p>
+<h2 id="大数据"><a href="#大数据" class="headerlink" title="大数据"></a>大数据</h2><p>PostgreSQL并行查询介绍（赵志强，南京SkyData（天数科技）数据库团队的负责人）</p>
+<p>2016年4月，PostgreSQL社区发布了PostgreSQL 9.6 Beta 1，迎来了并行查询（Parallel Query）这个新特性。在追求高性能计算和查询的大数据时代，能提升性能的特性都会成为一个新的热门话题。作为关注PostgreSQL发展的数据库开发者，本方作者将分享对于一些PostgreSQL并行查询特性相关话题的认识。<br>平安云运维解密（周锋、丘子隽，平安云平台事业部云网络服务组技术专家）</p>
+<p>本文将介绍平安云的日常运维管理，工具研发与最佳实践，希望对从事云计算服务的读者有借鉴意义。<br>CoreOS vs. Docker容器大战引擎（雷伟，有容云产品总监）</p>
+<p>选择哪个技术流派从某种意义上，也决定了选择哪种生态，这也是当前使用容器的公司面临的一大难题。本文将从容器引擎为切入点，说明这两大流派的历史、初衷和技术对比。<br>Hurricane实时处理系统架构剖析（卢誉声，Autodesk软件研发工程师）</p>
+<p>本文介绍分布式存储系统以及分布式计算系统，进而引出分布式实时处理系统的基础知识及其在机器学习和深度学习领域的应用。之后介绍了Hurricane实时处理系统的整体结构和设计，并在此基础上，探讨结合深度学习的框架设计方案和实际解决方案。</p>
+<h2 id="百味"><a href="#百味" class="headerlink" title="百味"></a>百味</h2><p>西乔漫画：《神秘的程序员》之程序员们的“潜台词”<br>订阅程序员（含iOS、Android及印刷版）请访问 <a href="http://dingyue.programmer.com.cn" target="_blank" rel="external">http://dingyue.programmer.com.cn</a></p>
+<p><img src="http://img.blog.csdn.net/20160612144648416" alt=""></p>
+<p>订阅咨询：</p>
+<p>在线咨询（QQ）：2251809102<br>电话咨询：010-64351436<br>更多消息，欢迎关注“程序员编辑部”</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20170430205125120&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;当心！假如你未还考虑在公司业务中应用人工智能技术，就有被对手超越的风险。人工智能已不单单是发表学术论文、刷新正确率的竞赛，抑或全民参与的新闻事件，它早在为各行各业的先行者们创造着实实在在的利润和商业价值。而且，随着算法改进、硬件升级、架构优化，应用人工智能技术带来的收益还会越来越高。&lt;/p&gt;
+&lt;p&gt;这些先行者们正在关注哪些关键技术？如何从理论上跨越到企业创新实践？如何实现企业级云深度学习平台？在电商领域如何实现人机交互？除了深度学习之外还有哪些值得我们关注的技术？如何保持足够清醒的头脑并把握创业机遇？&lt;/p&gt;
+&lt;p&gt;本封面报道汇聚来自百度、阿里、小米、美丽联合、58同城等公司的技术专家，分享实践过程中的开发经验、行业的发展与前沿技术方向，展示这项技术如何才能“为我所用”。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="http://aisee.me/categories/AI/"/>
+    
+    
+      <category term="Application" scheme="http://aisee.me/tags/Application/"/>
+    
+  </entry>
   
   <entry>
     <title>Cognitive Trilogy By FuSheng</title>
@@ -272,7 +421,7 @@
     <link href="http://aisee.me/2017/05/02/Meta%20Skill/meta-skill-core/"/>
     <id>http://aisee.me/2017/05/02/Meta Skill/meta-skill-core/</id>
     <published>2017-05-02T14:47:06.000Z</published>
-    <updated>2017-05-02T14:47:42.017Z</updated>
+    <updated>2017-05-03T05:54:23.364Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/4d0243b_corelogo_hires_1.png" alt=""></p>
 <blockquote>
@@ -294,6 +443,66 @@
 <li>Life</li>
 <li>…</li>
 </ul>
+<h2 id="Basic-Concepts-Top10"><a href="#Basic-Concepts-Top10" class="headerlink" title="Basic Concepts Top10"></a>Basic Concepts Top10</h2><p>一个人是否聪明，可以从两个层面入手：</p>
+<ol>
+<li>看他脑子里有多少清晰、准确、必要的概念</li>
+<li>看他脑子里那些清晰、准确、必要的概念之间，有多少清晰、准确、必要的关联…</li>
+</ol>
+<h3 id="1-财富自由"><a href="#1-财富自由" class="headerlink" title="1. 财富自由"></a>1. 财富自由</h3><p>我们要的是自由，最根本不是财富，财富只是工具，我们要的自由，本质是时间的自主权。</p>
+<blockquote>
+<p>所谓的财富自由，指的是某个人再也不用为了满足生活必需而出售自己的时间了。</p>
+</blockquote>
+<p>不管你获得了怎样的成功，你依然需要成长，财富自由不是终点，那只是通往终点过程中的一个里程碑而已。</p>
+<h3 id="2-注意力"><a href="#2-注意力" class="headerlink" title="2. 注意力"></a>2. 注意力</h3><p>三个大坑：</p>
+<ul>
+<li>莫名其妙地凑热闹</li>
+<li>心急火燎地随大流</li>
+<li>操碎了别人的心肝</li>
+</ul>
+<p>注意力是每个人都拥有的、最重要的、却被人忽视了的宝贵财富。<br>钱不是最重要的，因为它可以再生；时间也不是最重要的，因为它本质上不属于你，你只能试着与它做朋友，让它为你所用。</p>
+<p>所以你必须把最宝贵的注意力全部放在你自己身上。</p>
+<h3 id="3-元认知"><a href="#3-元认知" class="headerlink" title="3. 元认知"></a>3. 元认知</h3><p>元认知能力是对自己的思考过程的认知与理解。<br>元认知能力的强弱，决定一个人每个方面的强弱，甚至可以一点都不夸张地讲：一个人的财富创造能力最终也只与元认知能力有关——其他的都是附属因素。<br>从最底层的来看，元认知能力起作用的方式事实上极其简单：</p>
+<blockquote>
+<p>哦，我原来（正在）是这么想的……<br>嗯？我这么想难道是不对的吗？<br>啊！我应该这么想才对……</p>
+</blockquote>
+<p>看起来太简单了吧？——早晚你会明白的，看起来这么简单的思考，竟然是绝大多数人穷尽一生都没学会的技能，甚至居然都没有想过应该习得、锻炼这种技能。</p>
+<h3 id="4-资本"><a href="#4-资本" class="headerlink" title="4. 资本"></a>4. 资本</h3><p>资本确实主要由钱构成，但，仅仅一堆钱放在哪里肯定算不上是资本。<br>钱本身顶多可以算作资金，而它想要成为有效的资本，还有需要至少另外三个要素：</p>
+<ul>
+<li>资金的金额大小</li>
+<li>资金的使用时限</li>
+<li>资金背后的智慧</li>
+</ul>
+<p>习得的资本背后的运作方法要从各个维度（金额、时限、智慧）逐步循坏突破：</p>
+<ul>
+<li>盈亏比例（相对值），而不是本金大小，盈亏金额（绝对值）。其实，投资的重点并不在于盈亏绝对值大小，而是在于盈亏比例大小。</li>
+<li>能不能给自己的投资款“判上个无期徒刑”……不能够心平气和地判上个无期徒刑的资金，就别假装资本混迹江湖了……</li>
+</ul>
+<h3 id="5-坚持"><a href="#5-坚持" class="headerlink" title="5. 坚持"></a>5. 坚持</h3><p>若是某件事儿你觉得需要努力、需要坚持才行，那这事儿基本上从一开始就注定做不成了……<br>需要努力、需要坚持，说明你骨子里不愿意做啊！</p>
+<p>无论做什么事情，在开始之前，都要想尽一切办法为这个事情赋予重大的意义，甚至多重重大的意义。</p>
+<p>一旦决定做什么事情，是用不着坚持的，用不着努力的，一念一世界，这不是那种苦哈哈的坚持，臭哄哄的努力，这是干脆停不下来啊！<br>多有意思的事儿啊？谁敢拦着我我就跟谁急！</p>
+<h3 id="6-万能钥匙"><a href="#6-万能钥匙" class="headerlink" title="6. 万能钥匙"></a>6. 万能钥匙</h3><p>当你遇到一扇被锁着的门，你应该去哪里找钥匙？显然不应该是只盯着锁头看。<br>若是锁孔里插着一把钥匙，那锁头等于是开着的，不是吗？之所以打不开那扇门，就是因为它是被锁上的，而开那个锁所需要的钥匙，一定在别的什么地方啊！<br>当我们遇到任何问题的时候，也是一样的道理，既然那是个需要被解决的问题，它就好像是个被锁上的锁头，而解决方案就像是钥匙一样，一定不在锁孔里插着，一定是在别的什么地方呢！</p>
+<p>所以，当我们尝试解决任何问题的时候，只盯着问题看，盯着问题想，盯着问题找解决方案，通常只能是以无奈告终的啊！</p>
+<h3 id="7-长期"><a href="#7-长期" class="headerlink" title="7. 长期"></a>7. 长期</h3><p>长期很可能对不同的人来说长度是很不一样的，你越弱，你的长期越长…换句话说，你可以通过提高能力缩短长期的长度！<br>对越有能力的人来说，长期的时限越短，于是，他们在长期过去之后，相对于别人有着更长的自由时限…何止长寿啊！这分明是：<br>学习使人拥有更高质量的长寿…</p>
+<p>你越年轻，就越觉得长期越长…</p>
+<p>年轻的时候有太多（事后可能会觉得不必要的）花钱的欲望和需求，这使得那长期感觉上更为难熬——可问题在于，那只是感觉，而不是事实，除非你自己选择把那感觉活成事实。</p>
+<h3 id="8-安全感"><a href="#8-安全感" class="headerlink" title="8. 安全感"></a>8. 安全感</h3><p>你会发现绝大多数人是追求百分之百的安全感的，他们时时刻刻被身边所发生的一切吸引（或者，其实应该称作“分神”），他们不可能在任何事情上深入长期观察、深入长期思考，这样肯定会把自己困在永恒的当下。</p>
+<p>我们必须放弃一部分安全感，才能深入长期地观察、思考。</p>
+<p>又从另外一个层面上来看，那些放弃了部分安全感的人，有更多的深入长期的思考，他们怎么可能没办法补全主动放弃的那一小部分安全感呢？他们当然有办法，他们不孤立的行动，他们选择与他人合作——或者称之为有效社交。</p>
+<h3 id="9-刚需"><a href="#9-刚需" class="headerlink" title="9. 刚需"></a>9. 刚需</h3><p>成功只不过是某一时刻的状态；成长才更重要，成长才是真正的刚需。</p>
+<p>刚需可以主动选择的，而不一定是天然的，一成不变的；更进一步，刚需这东西常常就不应该被动接受。</p>
+<p>我们甚至可以不扩张地讲，一切的进步与成长，都是重新选择刚需的过程。</p>
+<p>你从来都知道自己最终还是有选择的自由；<br>你知道要靠耐心活在未来；<br>你知道现状是积累，你知道对现状不满是无意义的，所有的解脱，最终都只能靠积累。<br>…</p>
+<h3 id="10-多维竞争力"><a href="#10-多维竞争力" class="headerlink" title="10. 多维竞争力"></a>10. 多维竞争力</h3><p>所谓的成长，从另外一个角度来看，就是不断把别人比下去的过程。</p>
+<p>在某个技能上（或者说某个维度上）死磕，确实是一个策略，也不一定是不好的策略。但，为什么不想想也许有什么别的策略呢？</p>
+<p>借用几何术语的话，其实很容易理解：</p>
+<ul>
+<li>单个维度上，大家比的是长度；</li>
+<li>两个维度上，大家比的是面积；</li>
+<li>三个维度上，大家比的是体积…</li>
+</ul>
+<p>而实际上生活有很多个维度，每个人都是立体的，不是平面的，更不是一根线。</p>
+<p>每次跨界，都是给自己拓展一个新的维度。有跨界的机会绝对要一把抓住。</p>
+<p>处处平庸肯定是不行的，不求处处突出，但起码要在一个甚至多个维度上处于 一个相当优异的位置，这样的时候，<br>多维度的意义就开始几何级数增长。</p>
 ]]></content>
     
     <summary type="html">
@@ -317,7 +526,7 @@
     <link href="http://aisee.me/2017/05/02/MyView/Original/future/level-up-again-and-again/"/>
     <id>http://aisee.me/2017/05/02/MyView/Original/future/level-up-again-and-again/</id>
     <published>2017-05-02T13:29:06.000Z</published>
-    <updated>2017-05-02T14:14:23.293Z</updated>
+    <updated>2017-05-03T05:20:52.066Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/quote-forget-yourself-by-becoming-interested-in-others-every-day-do-a-good-deed-that-will-dale-carnegie-55-57-04.jpg" alt=""></p>
 <blockquote>
@@ -325,13 +534,19 @@
 <p>Failure is the mother of success, and success is the father of success.</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="Forget-Yourself"><a href="#Forget-Yourself" class="headerlink" title="Forget Yourself"></a>Forget Yourself</h2><ul>
+<h2 id="Forget-Yourself"><a href="#Forget-Yourself" class="headerlink" title="Forget Yourself"></a>Forget Yourself</h2><blockquote>
+<p>speak little ,listen more.</p>
+</blockquote>
+<ul>
 <li>Idea,</li>
 <li>Program,</li>
 <li>Career</li>
 <li>…</li>
 </ul>
-<h2 id="Elegant"><a href="#Elegant" class="headerlink" title="Elegant"></a>Elegant</h2><ul>
+<h2 id="Elegant"><a href="#Elegant" class="headerlink" title="Elegant"></a>Elegant</h2><blockquote>
+<p>Simple and Real</p>
+</blockquote>
+<ul>
 <li>Code,</li>
 <li>Blog,</li>
 <li>Skill,</li>
@@ -349,9 +564,17 @@
 <h2 id="Forgiveness"><a href="#Forgiveness" class="headerlink" title="Forgiveness"></a>Forgiveness</h2><ul>
 <li>To err is human</li>
 <li>People can not escape from doing wrong</li>
-<li>A fault confessed is half redressed<br>…</li>
+<li>A fault confessed is half redressed<br>…<br><img src="http://cdn.iciba.com/news/word/big_20170501b.jpg" alt=""><br>People who agonize don’t act. People who act don’t agonize.– Pierre Sauvage</li>
 </ul>
-<h2 id="Insist"><a href="#Insist" class="headerlink" title="Insist"></a>Insist</h2><ul>
+<blockquote>
+<p>不要在一件别扭的事上纠缠太久。纠缠久了，你会烦，会痛，会厌，会累，会神伤，会心碎。实际上，到最后，你不是跟事过不去，而是跟自己过不去。无论多别扭，你都要学会抽身而退。——几米</p>
+</blockquote>
+<h2 id="Insist"><a href="#Insist" class="headerlink" title="Insist"></a>Insist</h2><blockquote>
+<p>Patient</p>
+</blockquote>
+<p><img src="http://cdn.iciba.com/news/word/big_20170503b.jpg" alt=""></p>
+<p>Don’t worry too much about the ambiguous future; just make the effort for the explicit present.</p>
+<ul>
 <li>Accumulation is powerful.</li>
 <li>Perseverance prevails.</li>
 <li>…</li>
@@ -3797,46 +4020,6 @@ limitations under the License.
   </entry>
   
   <entry>
-    <title>Meta Skill——Innovation</title>
-    <link href="http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-innovation/"/>
-    <id>http://aisee.me/2017/04/05/Meta Skill/meta-skill-innovation/</id>
-    <published>2017-04-05T12:55:06.000Z</published>
-    <updated>2017-04-10T22:16:13.956Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/innovation%20%281%29.jpg" alt=""></p>
-<blockquote>
-<p>Innovation brings unexpected pleasant surprise frequently.<br>A teacher should be good at drawing inferences about other cases from one instance.</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Three-Steps"><a href="#Three-Steps" class="headerlink" title="Three Steps"></a>Three Steps</h2><h3 id="Set-Goal"><a href="#Set-Goal" class="headerlink" title="Set Goal"></a>Set Goal</h3><h3 id="Find-Ways-by-Innovative-Thinking"><a href="#Find-Ways-by-Innovative-Thinking" class="headerlink" title="Find Ways by Innovative Thinking"></a>Find Ways by Innovative Thinking</h3><p>Sharpen your brain  and open your mind</p>
-<h3 id="Try-and-Correct"><a href="#Try-and-Correct" class="headerlink" title="Try and Correct"></a>Try and Correct</h3><p>Practice is the only truth.</p>
-<h2 id="Six-Common-Innovative-Thinking"><a href="#Six-Common-Innovative-Thinking" class="headerlink" title="Six Common Innovative Thinking"></a>Six Common Innovative Thinking</h2><h3 id="Reversed-Thinking"><a href="#Reversed-Thinking" class="headerlink" title="Reversed Thinking"></a>Reversed Thinking</h3><p><strong>A–&gt;B</strong>  ==&gt; <strong>B–&gt;A</strong></p>
-<h3 id="Exaggerated-Thinking"><a href="#Exaggerated-Thinking" class="headerlink" title="Exaggerated Thinking"></a>Exaggerated Thinking</h3><p><strong>A–&gt;B</strong>  ==&gt; <strong>10<em>A–&gt;20</em>B</strong></p>
-<h3 id="Composit-Thinking"><a href="#Composit-Thinking" class="headerlink" title="Composit Thinking"></a>Composit Thinking</h3><p>put two together and get three.<br><strong>A–&gt;B</strong>  ==&gt; <strong>AC–&gt;BD</strong></p>
-<h3 id="Lessened-Thinking"><a href="#Lessened-Thinking" class="headerlink" title="Lessened Thinking"></a>Lessened Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>A–&gt;C</strong></p>
-<h3 id="Changing-Order-Thinking"><a href="#Changing-Order-Thinking" class="headerlink" title="Changing Order Thinking"></a>Changing Order Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>A–&gt;C–&gt;B</strong></p>
-<h3 id="Revolution-Thinking"><a href="#Revolution-Thinking" class="headerlink" title="Revolution Thinking"></a>Revolution Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>D–&gt;E–&gt;C</strong></p>
-<h2 id="Best-Practice"><a href="#Best-Practice" class="headerlink" title="Best Practice"></a>Best Practice</h2><h3 id="Patent-Portfolio"><a href="#Patent-Portfolio" class="headerlink" title="Patent Portfolio"></a>Patent Portfolio</h3><h3 id="Program-Trouble-Resolver"><a href="#Program-Trouble-Resolver" class="headerlink" title="Program Trouble Resolver"></a>Program Trouble Resolver</h3><h3 id="Google-Search"><a href="#Google-Search" class="headerlink" title="Google Search"></a>Google Search</h3><h3 id="English-Learning"><a href="#English-Learning" class="headerlink" title="English Learning"></a>English Learning</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/innovation%20%281%29.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Innovation brings unexpected pleasant surprise frequently.&lt;br&gt;A teacher should be good at drawing inferences about other cases from one instance.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
-    
-    
-      <category term="Meta Skill" scheme="http://aisee.me/tags/Meta-Skill/"/>
-    
-      <category term="Innovation" scheme="http://aisee.me/tags/Innovation/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Meta Skill——Retrieve</title>
     <link href="http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-retrieve/"/>
     <id>http://aisee.me/2017/04/05/Meta Skill/meta-skill-retrieve/</id>
@@ -3888,6 +4071,46 @@ limitations under the License.
       <category term="Google" scheme="http://aisee.me/tags/Google/"/>
     
       <category term="English" scheme="http://aisee.me/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Meta Skill——Innovation</title>
+    <link href="http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-innovation/"/>
+    <id>http://aisee.me/2017/04/05/Meta Skill/meta-skill-innovation/</id>
+    <published>2017-04-05T12:55:06.000Z</published>
+    <updated>2017-04-10T22:16:13.956Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/innovation%20%281%29.jpg" alt=""></p>
+<blockquote>
+<p>Innovation brings unexpected pleasant surprise frequently.<br>A teacher should be good at drawing inferences about other cases from one instance.</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Three-Steps"><a href="#Three-Steps" class="headerlink" title="Three Steps"></a>Three Steps</h2><h3 id="Set-Goal"><a href="#Set-Goal" class="headerlink" title="Set Goal"></a>Set Goal</h3><h3 id="Find-Ways-by-Innovative-Thinking"><a href="#Find-Ways-by-Innovative-Thinking" class="headerlink" title="Find Ways by Innovative Thinking"></a>Find Ways by Innovative Thinking</h3><p>Sharpen your brain  and open your mind</p>
+<h3 id="Try-and-Correct"><a href="#Try-and-Correct" class="headerlink" title="Try and Correct"></a>Try and Correct</h3><p>Practice is the only truth.</p>
+<h2 id="Six-Common-Innovative-Thinking"><a href="#Six-Common-Innovative-Thinking" class="headerlink" title="Six Common Innovative Thinking"></a>Six Common Innovative Thinking</h2><h3 id="Reversed-Thinking"><a href="#Reversed-Thinking" class="headerlink" title="Reversed Thinking"></a>Reversed Thinking</h3><p><strong>A–&gt;B</strong>  ==&gt; <strong>B–&gt;A</strong></p>
+<h3 id="Exaggerated-Thinking"><a href="#Exaggerated-Thinking" class="headerlink" title="Exaggerated Thinking"></a>Exaggerated Thinking</h3><p><strong>A–&gt;B</strong>  ==&gt; <strong>10<em>A–&gt;20</em>B</strong></p>
+<h3 id="Composit-Thinking"><a href="#Composit-Thinking" class="headerlink" title="Composit Thinking"></a>Composit Thinking</h3><p>put two together and get three.<br><strong>A–&gt;B</strong>  ==&gt; <strong>AC–&gt;BD</strong></p>
+<h3 id="Lessened-Thinking"><a href="#Lessened-Thinking" class="headerlink" title="Lessened Thinking"></a>Lessened Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>A–&gt;C</strong></p>
+<h3 id="Changing-Order-Thinking"><a href="#Changing-Order-Thinking" class="headerlink" title="Changing Order Thinking"></a>Changing Order Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>A–&gt;C–&gt;B</strong></p>
+<h3 id="Revolution-Thinking"><a href="#Revolution-Thinking" class="headerlink" title="Revolution Thinking"></a>Revolution Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>D–&gt;E–&gt;C</strong></p>
+<h2 id="Best-Practice"><a href="#Best-Practice" class="headerlink" title="Best Practice"></a>Best Practice</h2><h3 id="Patent-Portfolio"><a href="#Patent-Portfolio" class="headerlink" title="Patent Portfolio"></a>Patent Portfolio</h3><h3 id="Program-Trouble-Resolver"><a href="#Program-Trouble-Resolver" class="headerlink" title="Program Trouble Resolver"></a>Program Trouble Resolver</h3><h3 id="Google-Search"><a href="#Google-Search" class="headerlink" title="Google Search"></a>Google Search</h3><h3 id="English-Learning"><a href="#English-Learning" class="headerlink" title="English Learning"></a>English Learning</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/innovation%20%281%29.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Innovation brings unexpected pleasant surprise frequently.&lt;br&gt;A teacher should be good at drawing inferences about other cases from one instance.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
+    
+    
+      <category term="Meta Skill" scheme="http://aisee.me/tags/Meta-Skill/"/>
+    
+      <category term="Innovation" scheme="http://aisee.me/tags/Innovation/"/>
     
   </entry>
   
@@ -12692,73 +12915,6 @@ limitations under the License.
   </entry>
   
   <entry>
-    <title>The Legend of 1900</title>
-    <link href="http://aisee.me/2017/03/28/MyView/Movie/the-legend-of-1900/"/>
-    <id>http://aisee.me/2017/03/28/MyView/Movie/the-legend-of-1900/</id>
-    <published>2017-03-28T11:38:18.000Z</published>
-    <updated>2017-03-29T04:18:01.307Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>Make you cry，laugh  touching and thinking</strong><br>Crying for  his loneliness and ending of  the story.<br>Touching by the wonderful melody.<br>Laughing for those humor lines.<br>Deep thinking: In the big city, What’s your piano ? Where is your Virginia ?</p>
-</blockquote>
-<p><img src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p511146957.webp" alt=""></p>
-<a id="more"></a>
-<p>导演: 朱塞佩·托纳多雷<br>编剧: 亚利桑德罗·巴里克 / 朱塞佩·托纳多雷<br>主演: 蒂姆·罗斯 / 普路特·泰勒·文斯 / 比尔·努恩 / 梅兰尼·蒂埃里 / 阿尔贝托·巴斯克斯<br>类型: 剧情 / 音乐<br>制片国家/地区: 意大利<br>语言: 英语 / 法语<br>上映日期: 1998-10-28(意大利)<br>片长: 165分钟 / 120分钟(法国版) / 169分钟(加长版)<br>又名: 声光伴我飞(港) / 一九零零的传奇 / 1900海上钢琴师 / 传奇1900 / The Legend of 1900<br>IMDb链接: <a href="http://www.imdb.com/title/tt0120731" target="_blank" rel="external">tt0120731</a></p>
-<p>本片讲述了一个钢琴天才传奇的一生。</p>
-<p>　　1900年，Virginian号豪华邮轮上，一个孤儿被遗弃在头等舱，由船上的水手抚养长大，取名1900（蒂姆•罗斯 饰）。1900慢慢长大，显示出了无师自通的非凡钢琴天赋，在船上的乐队表演钢琴，每个听过他演奏的人，都被深深打动。爵士 乐鼻祖杰尼听说了1900的高超技艺，专门上船和他比赛，最后自叹弗如，黯然离去。<br>　　可惜，这一切的事情都发生在海上，1900从来不愿踏上陆地，直到有一天，他爱上了一个女孩，情愫在琴键上流淌。他会不会为了爱情，踏上陆地开始新的生活，用他的琴声惊艳世界？他将怎样谱写自己非凡的人生。 ©豆瓣</p>
-<h2 id="大人者，不失其赤子之心者也"><a href="#大人者，不失其赤子之心者也" class="headerlink" title="大人者，不失其赤子之心者也"></a><a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">大人者，不失其赤子之心者也</a></h2><p>市侩们总是抱着捧杀的态度来看待天才的，这也无足多怪。重要的是，天才如何看待自己的选择。</p>
-<p>许多人把实现自我价值同“功成名就”和“飞黄腾达”联系在一起，其中不乏某些天才。他们为此奋斗一生，也许终能得偿所愿。然而，功成名就之后呢？罗马帝国的战胜者凯旋时，一个奴隶会在他耳边轻轻私语：“一切荣华富贵，都是过眼烟云！”这道出了所有成功者风光无限的背后那不为人知的空虚——曾经追求的，固然已经得到，现在拥有的，也将归于破灭。其中的幸运者，还能像张翰那样“人生贵得适意尔，何能羁宦数千里以要名爵!”全身而退；不幸者，恐怕只能哀叹“吾欲与若复牵黄犬俱出上蔡东门逐狡兔，岂可得乎！”人生的荣辱，不过是一个围城。城里的人想冲出去，城外的人想冲进来。待到一切荣光都已失去，他们还会为当初的选择而感到骄傲，抑或后悔吗？</p>
-<blockquote>
-<p>“你知道琴上88个键一个不多一个也不少，琴键是有限的，但你是无限的，在这些键上所能创造出来的音乐，那才是无限的，这个我喜欢，也是我愿意做的，但是在舷梯上，摆在我面前的琴键有成千上万，永远也数不完的琴键”，“而在这个无限大的键盘上，你根本就无法去演奏”，“天呐，你没有看见那些街道吗？有上千条！你怎么去选择那一个？”。窝囊废似的一番话，彻底关死了1900通往成功与显赫的道路。似乎很难想象这样一个才华横溢的人会选择一条破船作为归宿，甚至宁愿最终被几吨炸药所终结。其实，1900是幸运的，他不入围城，自觉放弃未来的诱惑与烦嚣，换来对已经拥有的执着与坚守。也就无怨无悔，虽死何憾？老子云：知其雄 ，守其雌 ，为天下溪。为天下溪 常德不离 复归於婴儿。想必直到生命终结的那一刻，1900依然可以骄傲地宣称：“大人者，不失其赤子之心者也。”</p>
-</blockquote>
-<h2 id="俗人理解不了的幸福"><a href="#俗人理解不了的幸福" class="headerlink" title="俗人理解不了的幸福"></a><a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">俗人理解不了的幸福</a></h2><p>大概只有小号手是愿意聆听1900的内心而非琴声的人，他不理解他，但是他尊重他。他用尊重成全了1900完整的独立。我看到有人说如果他是那胖子他就会把1900敲昏然后拖下船。我想这样的想法也就注定他成不了那个胖子，成不了1900唯一的真正的朋友。</p>
-<p>如果我们较真一点，假设小号手真的把1900弄下船了，故事将怎样延伸？我们都知道，落魄的小号手没有能力去为朋友找一艘新的船，找88个琴键和尽头。1900将无可避免被磨去棱角和平庸，落入红尘变成一个凡人。</p>
-<p>活着，还是活得安心。这也是个问题。凡人的选择是无论如何先活下去再说，”活着”这件事情本身比什么都重要。而天才则把心灵的舒适看得更重，生死则次之。所以凡人可以忍辱，天才却情愿玉碎。每一种人都获得了他最看重的东西，说起来谁也不比谁亏。</p>
-<p>差异导致孤独。葆存了差异性的ET在承受异样目光的同时也承受着巨大的孤独，远超出凡人的孤独。凡人们如我们虽然也还都残留一些差异，但大致面貌八九不离十。我们失恋了后觉得痛苦比谁的都大，我们拥抱心爱的人自认比谁都幸福。但一个残酷的事实是：每个人的痛苦和幸福都没什么区别。我们在不断重复，千篇一律。</p>
-<p>我们丢了个性却换来了共鸣。我们借助艺术寻找通感，在人性中相交叉的部分，抹着眼泪互相慰藉，或者说，互相平衡（原来有人比我还惨啊，这下心里舒坦多了）。而被称为天才的人站在人群之外，忧郁地注视这群有些像他又不是他的物种。用他们ET的本能将那些交叉部分，提炼、放大、直抵内心。那些永远无法交叉的部分，则作为孤独的源头，令他们永远无法融入人群。他们只有躲在自己的轮船里，躲在自己的内心世界里，孤独地活着，然后死去。</p>
-<h2 id="我们无处安放的孤独"><a href="#我们无处安放的孤独" class="headerlink" title="我们无处安放的孤独"></a><a href="https://movie.douban.com/review/1316127/" target="_blank" rel="external">我们无处安放的孤独</a></h2><p>我一直觉得1900的一生是存在主义思想的体现，他藐视规则，藐视这个社会认可的规则，他害怕上岸其实是拒绝上岸，藐视上岸。他重自身的存在大于外界对自身的认可，他可以轻易打败爵士乐的开山祖师并对他表示鄙夷，他可以靠他的才华赚取无数的名利但是他拒绝音乐与自身的分离，他可以用音乐去探究所有人的心灵，可以在音乐里去旅行，可以寻觅到自己的爱情，但是他没有常人那样去要去追，他轻轻地将这些丢进了大海，他将迈向陆地的脚收回。</p>
-<p>在存在主义者看来，人生活在一个与自己对立的、失望的世界之中，人在世界上的地位是不确定的。绝对自由的人也是烦恼和无所依靠的孤独者。人虽然有选择的自由，但他面对的未来的生活却是混沌而没有目标的。他只是盲目地走向未来，他只知道人生的真实的终结就是死亡。死亡作为人生的最后归宿，对于个人的存在具有非常重要的意义。 所以存在主义者都是悲观者，在他们眼里，人生是一场悲剧。</p>
-<blockquote>
-<p>“城市那么大，看不到尽头，我停下来不是因为所见是因为所不见，是因为看不见的东西。连绵不绝的城市什么都有，就是没有尽头，我需要看见世界的尽头。上了岸，何去何从？爱一个女人，住一间屋，买一块地，望一个景，走一条死路，太多的选择我无所适从。漫漫无尽，思前想后你不怕精神崩溃？那样的日子怎样过？我无法遗弃这艘船，宁可遗弃自己的生命。”</p>
-</blockquote>
-<p>后来我才知道生活的大多数时候其实是孤独的，是我们心里无处安放的孤独，不被这个世界所认可的孤独。1900是孤独的，所以他选择一辈子不上岸，和那座海上浮城共生共死，而我们呢？我们没有一座属于自己的城，让我们来安放我们的孤独，让我们来逃避自己不喜欢的一切，所以我们比1900更孤独更可怜。</p>
-<h2 id="微尘世界，我们都已是最好的钢琴手。"><a href="#微尘世界，我们都已是最好的钢琴手。" class="headerlink" title="微尘世界，我们都已是最好的钢琴手。"></a><a href="https://movie.douban.com/review/1971957/" target="_blank" rel="external">微尘世界，我们都已是最好的钢琴手。</a></h2><p>1900代表着一种理想，代表着这个尘世中的多数人，注定不会付诸行动，却会始终心怀向往的理想。矗立在那里，自由，决绝，而悲伤。</p>
-<p>我们是生活在“外面的世界”里的人。这个世界的意义在于“传承”。就像一个游戏，每个人都是其中的玩家，然而获得的任务，却是如何使这个游戏永远存在。赡养父母，繁衍后代，诸多必须背负的责任令前行显得缓慢而艰难。然而我们的人生对于整个游戏而言，存在的时间或许只有一秒，或者更短。也唯有越短暂，这个游戏的运行时间才会越长，才有可能，“永不结束”。<br>这样一想会不会又心有不甘呢？辛苦奋斗的一生，其实不过一粒微尘，轻得仿佛随时都会消失。<br>然而在闭上眼的那一瞬还会不会含笑着想起，自己的孩子在不久前，正带领他们的孩子在绿草地上放起风筝；会不会含笑着想起，自己曾拥有良人在侧，从此不再无枝可依；会不会含笑着想起更久远的从前，父母曾令你无忧无虑，而那些萌生的小情绪，或许唯有感慨地大笑出声，无奈地摇摇头，道一句，那时真小。<br>会不会想起那些温暖的片段，想起自己曾经的付出与所得，带着回望的沧桑，感怀，和崭新的希望。<br>　　　　<br>我们为什么不会像1900一样，选择在漫天火光中永沉海底。这样壮烈，却获得永生的自由？</p>
-<blockquote>
-<p>因为，因为我们一直生活在这个“外面的世界”，清楚地看见它的混乱，却因为某一瞬间体验到的那些温情，那些无以伦比的美好，而心甘情愿地忍受着它所给予的伤害，努力弹奏出最华美的人生乐章。</p>
-</blockquote>
-<p>我们或许从来都不是天才，但是我们至少能做到勤恳、踏实。我们从坚硬和纯白开始，学会圆滑，学会世故，但内心深处，终究会一直记得，这一生所做的种种妥协，不过是为了在这个微尘世界，在这架上帝给予的钢琴上，创作出独属于自己的旋律与琴音。</p>
-<h2 id="我们都是宅男"><a href="#我们都是宅男" class="headerlink" title="我们都是宅男"></a><a href="https://movie.douban.com/review/1238757/" target="_blank" rel="external">我们都是宅男</a></h2><p>我们或许没有《海上钢琴师》中的1900看的更加清楚，他一生生活在邮轮上，他不愿离开一个让他感到安定自由、无忧无虑的空间，他永远没有踏上陆地，开启他的“远大前程”，在我们看来，他是自闭的，但是，他也是最清醒的，在最后无比绚烂的死亡中，他走的孤独而坦然。</p>
-<p>和1900对无限的恐惧相反，现代人正是在追逐着无限，我们贪大，贪全，贪广，房子要住大的，哪怕被每月的房贷压的生活质量下降；交际圈要交广些，哪怕每天疲于奔命于并不让自己愉快的应酬；旅游要走遍世界，哪怕其实只是疲惫的赶着在一个又一个景点的人群中拍照；炒股也有“不涨到翻倍不痛快”，哪怕每天被指数折磨的大喜大悲。还是看看这个“宅男”1900，反观自己，其实我们都是宅男，我们都是在自己营造的世界里生活，我们总有个无形或有形的圈子，但是似乎“开疆扩土”是人的本能，我们总是希望这个世界更大些，更广些。其实，并不是因为你走遍了这个城市的大街小巷，你的世界便扩展到了整个城市，哪怕真的这样，你也只是有了个城市这样一个更大的宅子。所以，1900不贪求太多，他一生都在一艘船上生活，这是有限的；但是他一生都有音乐相伴快乐的生活，这是无限的，快乐而自在的生活才是无限的。正如我们拼命拓展的交际网永远是有限的，但是和其中几个真正的知己在一起的快乐才是无限的。</p>
-<p>1900在邮轮上有自己的快乐，也伴随着一些悲伤，但是，快乐从来不是仅仅以空间的广度来评判的，就如你有一笔钱，可以买大房子简装修，也可以买小房子按照自己的意愿精装修（当然，精装修的意义不是买一堆豪华家俱的堆砌）。1900选择在一个相对狭小的世界里精心构筑他的世界，安逸而愉快。而在我们看来，这样的小小的快乐永远是“有病”的，就如我们如果看到一个人沉溺于数学而废寝忘食，会认为他是一个科学怪人，为他随时可能的英年早逝而悲哀；如果看到一个人长期执着的在农村搞什么社会试验而履受挫折，会认为他是一个理想主义者，为他干些“不实际”的事情而悲哀。诸如此类的事情还有很多，我们总是很自恋，常常看到他人沉浸于一些比较“独特”的事物而不问世事而感到“悲哀”，而对他们表示不解和“同情”，特别当这些人甚至为之折寿或是如1900那样“找死”后，更是如此。其实，生活方式本来没有定义，其实想想，1900在一艘船上就活的那么滋润，一些人一天到晚在屋子里闷头看武侠小说、漫画书就那么快活，我们这些号称精神健康，性格乐观的人却常常无名的不停唠叨“真郁闷”，这时的我们是不是会突然感到一丝沮丧，而对宅男们有些羡慕，同时意识到，其实我们都不过是在自己的世界里有喜有乐的宅男。</p>
-<h2 id="漂流在大海上的音乐浮城"><a href="#漂流在大海上的音乐浮城" class="headerlink" title="漂流在大海上的音乐浮城"></a><a href="https://movie.douban.com/review/1000830/" target="_blank" rel="external">漂流在大海上的音乐浮城</a></h2><p>对于1900而言，音乐，是用来娱乐自己的——他永远为了自己而弹奏着，永远不让自己的音乐和自己分离。</p>
-<p>1900的存在很特别么？未必，他的生命因为没有踏足过真实世界而显得尤为纯净和清澈，甚至纯净和清澈得不能够生活在这个真实的现实世界里。最适宜他生活的地方，是Virginian，一个漂浮在海上的乌托邦，一个能够让1900这样纯粹且单纯的音乐圣徒栖息的地方。他不能，也不应该走进我们的世界，我们的世界对于1900而言，太肮脏，太复杂了。</p>
-<p>究竟是1900把自己禁锢在狭小的空间里了，还是我们让陆地桎梏了我们自身？城市里有着成千的街道，我们迷失于其中，看不到天的尽头，而大海以其广博的胸襟，容忍并珍藏了1900这个特异的存在，也甚至是因为大海的广博，1900看到了世界的尽头。</p>
-<blockquote>
-<p>当影片行进到最后，Max问及1900为何不愿意离开Virginian的那一瞬间，我们就不难理解1900的答案了——琴键太大，音乐无从而生；城市太大，我们无从而生……</p>
-</blockquote>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]<a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">海上钢琴师 La leggenda del pianista sull’oceano (1998)</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Make you cry，laugh  touching and thinking&lt;/strong&gt;&lt;br&gt;Crying for  his loneliness and ending of  the story.&lt;br&gt;Touching by the wonderful melody.&lt;br&gt;Laughing for those humor lines.&lt;br&gt;Deep thinking: In the big city, What’s your piano ? Where is your Virginia ?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p511146957.webp&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
-    
-    
-      <category term="English" scheme="http://aisee.me/tags/English/"/>
-    
-      <category term="Movie" scheme="http://aisee.me/tags/Movie/"/>
-    
-  </entry>
-  
-  <entry>
     <title>The Beauty of Life</title>
     <link href="http://aisee.me/2017/03/28/MyView/Original/beauty-of-life/"/>
     <id>http://aisee.me/2017/03/28/MyView/Original/beauty-of-life/</id>
@@ -12899,6 +13055,73 @@ limitations under the License.
     
     
       <category term="Share" scheme="http://aisee.me/tags/Share/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The Legend of 1900</title>
+    <link href="http://aisee.me/2017/03/28/MyView/Movie/the-legend-of-1900/"/>
+    <id>http://aisee.me/2017/03/28/MyView/Movie/the-legend-of-1900/</id>
+    <published>2017-03-28T11:38:18.000Z</published>
+    <updated>2017-03-29T04:18:01.307Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><strong>Make you cry，laugh  touching and thinking</strong><br>Crying for  his loneliness and ending of  the story.<br>Touching by the wonderful melody.<br>Laughing for those humor lines.<br>Deep thinking: In the big city, What’s your piano ? Where is your Virginia ?</p>
+</blockquote>
+<p><img src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p511146957.webp" alt=""></p>
+<a id="more"></a>
+<p>导演: 朱塞佩·托纳多雷<br>编剧: 亚利桑德罗·巴里克 / 朱塞佩·托纳多雷<br>主演: 蒂姆·罗斯 / 普路特·泰勒·文斯 / 比尔·努恩 / 梅兰尼·蒂埃里 / 阿尔贝托·巴斯克斯<br>类型: 剧情 / 音乐<br>制片国家/地区: 意大利<br>语言: 英语 / 法语<br>上映日期: 1998-10-28(意大利)<br>片长: 165分钟 / 120分钟(法国版) / 169分钟(加长版)<br>又名: 声光伴我飞(港) / 一九零零的传奇 / 1900海上钢琴师 / 传奇1900 / The Legend of 1900<br>IMDb链接: <a href="http://www.imdb.com/title/tt0120731" target="_blank" rel="external">tt0120731</a></p>
+<p>本片讲述了一个钢琴天才传奇的一生。</p>
+<p>　　1900年，Virginian号豪华邮轮上，一个孤儿被遗弃在头等舱，由船上的水手抚养长大，取名1900（蒂姆•罗斯 饰）。1900慢慢长大，显示出了无师自通的非凡钢琴天赋，在船上的乐队表演钢琴，每个听过他演奏的人，都被深深打动。爵士 乐鼻祖杰尼听说了1900的高超技艺，专门上船和他比赛，最后自叹弗如，黯然离去。<br>　　可惜，这一切的事情都发生在海上，1900从来不愿踏上陆地，直到有一天，他爱上了一个女孩，情愫在琴键上流淌。他会不会为了爱情，踏上陆地开始新的生活，用他的琴声惊艳世界？他将怎样谱写自己非凡的人生。 ©豆瓣</p>
+<h2 id="大人者，不失其赤子之心者也"><a href="#大人者，不失其赤子之心者也" class="headerlink" title="大人者，不失其赤子之心者也"></a><a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">大人者，不失其赤子之心者也</a></h2><p>市侩们总是抱着捧杀的态度来看待天才的，这也无足多怪。重要的是，天才如何看待自己的选择。</p>
+<p>许多人把实现自我价值同“功成名就”和“飞黄腾达”联系在一起，其中不乏某些天才。他们为此奋斗一生，也许终能得偿所愿。然而，功成名就之后呢？罗马帝国的战胜者凯旋时，一个奴隶会在他耳边轻轻私语：“一切荣华富贵，都是过眼烟云！”这道出了所有成功者风光无限的背后那不为人知的空虚——曾经追求的，固然已经得到，现在拥有的，也将归于破灭。其中的幸运者，还能像张翰那样“人生贵得适意尔，何能羁宦数千里以要名爵!”全身而退；不幸者，恐怕只能哀叹“吾欲与若复牵黄犬俱出上蔡东门逐狡兔，岂可得乎！”人生的荣辱，不过是一个围城。城里的人想冲出去，城外的人想冲进来。待到一切荣光都已失去，他们还会为当初的选择而感到骄傲，抑或后悔吗？</p>
+<blockquote>
+<p>“你知道琴上88个键一个不多一个也不少，琴键是有限的，但你是无限的，在这些键上所能创造出来的音乐，那才是无限的，这个我喜欢，也是我愿意做的，但是在舷梯上，摆在我面前的琴键有成千上万，永远也数不完的琴键”，“而在这个无限大的键盘上，你根本就无法去演奏”，“天呐，你没有看见那些街道吗？有上千条！你怎么去选择那一个？”。窝囊废似的一番话，彻底关死了1900通往成功与显赫的道路。似乎很难想象这样一个才华横溢的人会选择一条破船作为归宿，甚至宁愿最终被几吨炸药所终结。其实，1900是幸运的，他不入围城，自觉放弃未来的诱惑与烦嚣，换来对已经拥有的执着与坚守。也就无怨无悔，虽死何憾？老子云：知其雄 ，守其雌 ，为天下溪。为天下溪 常德不离 复归於婴儿。想必直到生命终结的那一刻，1900依然可以骄傲地宣称：“大人者，不失其赤子之心者也。”</p>
+</blockquote>
+<h2 id="俗人理解不了的幸福"><a href="#俗人理解不了的幸福" class="headerlink" title="俗人理解不了的幸福"></a><a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">俗人理解不了的幸福</a></h2><p>大概只有小号手是愿意聆听1900的内心而非琴声的人，他不理解他，但是他尊重他。他用尊重成全了1900完整的独立。我看到有人说如果他是那胖子他就会把1900敲昏然后拖下船。我想这样的想法也就注定他成不了那个胖子，成不了1900唯一的真正的朋友。</p>
+<p>如果我们较真一点，假设小号手真的把1900弄下船了，故事将怎样延伸？我们都知道，落魄的小号手没有能力去为朋友找一艘新的船，找88个琴键和尽头。1900将无可避免被磨去棱角和平庸，落入红尘变成一个凡人。</p>
+<p>活着，还是活得安心。这也是个问题。凡人的选择是无论如何先活下去再说，”活着”这件事情本身比什么都重要。而天才则把心灵的舒适看得更重，生死则次之。所以凡人可以忍辱，天才却情愿玉碎。每一种人都获得了他最看重的东西，说起来谁也不比谁亏。</p>
+<p>差异导致孤独。葆存了差异性的ET在承受异样目光的同时也承受着巨大的孤独，远超出凡人的孤独。凡人们如我们虽然也还都残留一些差异，但大致面貌八九不离十。我们失恋了后觉得痛苦比谁的都大，我们拥抱心爱的人自认比谁都幸福。但一个残酷的事实是：每个人的痛苦和幸福都没什么区别。我们在不断重复，千篇一律。</p>
+<p>我们丢了个性却换来了共鸣。我们借助艺术寻找通感，在人性中相交叉的部分，抹着眼泪互相慰藉，或者说，互相平衡（原来有人比我还惨啊，这下心里舒坦多了）。而被称为天才的人站在人群之外，忧郁地注视这群有些像他又不是他的物种。用他们ET的本能将那些交叉部分，提炼、放大、直抵内心。那些永远无法交叉的部分，则作为孤独的源头，令他们永远无法融入人群。他们只有躲在自己的轮船里，躲在自己的内心世界里，孤独地活着，然后死去。</p>
+<h2 id="我们无处安放的孤独"><a href="#我们无处安放的孤独" class="headerlink" title="我们无处安放的孤独"></a><a href="https://movie.douban.com/review/1316127/" target="_blank" rel="external">我们无处安放的孤独</a></h2><p>我一直觉得1900的一生是存在主义思想的体现，他藐视规则，藐视这个社会认可的规则，他害怕上岸其实是拒绝上岸，藐视上岸。他重自身的存在大于外界对自身的认可，他可以轻易打败爵士乐的开山祖师并对他表示鄙夷，他可以靠他的才华赚取无数的名利但是他拒绝音乐与自身的分离，他可以用音乐去探究所有人的心灵，可以在音乐里去旅行，可以寻觅到自己的爱情，但是他没有常人那样去要去追，他轻轻地将这些丢进了大海，他将迈向陆地的脚收回。</p>
+<p>在存在主义者看来，人生活在一个与自己对立的、失望的世界之中，人在世界上的地位是不确定的。绝对自由的人也是烦恼和无所依靠的孤独者。人虽然有选择的自由，但他面对的未来的生活却是混沌而没有目标的。他只是盲目地走向未来，他只知道人生的真实的终结就是死亡。死亡作为人生的最后归宿，对于个人的存在具有非常重要的意义。 所以存在主义者都是悲观者，在他们眼里，人生是一场悲剧。</p>
+<blockquote>
+<p>“城市那么大，看不到尽头，我停下来不是因为所见是因为所不见，是因为看不见的东西。连绵不绝的城市什么都有，就是没有尽头，我需要看见世界的尽头。上了岸，何去何从？爱一个女人，住一间屋，买一块地，望一个景，走一条死路，太多的选择我无所适从。漫漫无尽，思前想后你不怕精神崩溃？那样的日子怎样过？我无法遗弃这艘船，宁可遗弃自己的生命。”</p>
+</blockquote>
+<p>后来我才知道生活的大多数时候其实是孤独的，是我们心里无处安放的孤独，不被这个世界所认可的孤独。1900是孤独的，所以他选择一辈子不上岸，和那座海上浮城共生共死，而我们呢？我们没有一座属于自己的城，让我们来安放我们的孤独，让我们来逃避自己不喜欢的一切，所以我们比1900更孤独更可怜。</p>
+<h2 id="微尘世界，我们都已是最好的钢琴手。"><a href="#微尘世界，我们都已是最好的钢琴手。" class="headerlink" title="微尘世界，我们都已是最好的钢琴手。"></a><a href="https://movie.douban.com/review/1971957/" target="_blank" rel="external">微尘世界，我们都已是最好的钢琴手。</a></h2><p>1900代表着一种理想，代表着这个尘世中的多数人，注定不会付诸行动，却会始终心怀向往的理想。矗立在那里，自由，决绝，而悲伤。</p>
+<p>我们是生活在“外面的世界”里的人。这个世界的意义在于“传承”。就像一个游戏，每个人都是其中的玩家，然而获得的任务，却是如何使这个游戏永远存在。赡养父母，繁衍后代，诸多必须背负的责任令前行显得缓慢而艰难。然而我们的人生对于整个游戏而言，存在的时间或许只有一秒，或者更短。也唯有越短暂，这个游戏的运行时间才会越长，才有可能，“永不结束”。<br>这样一想会不会又心有不甘呢？辛苦奋斗的一生，其实不过一粒微尘，轻得仿佛随时都会消失。<br>然而在闭上眼的那一瞬还会不会含笑着想起，自己的孩子在不久前，正带领他们的孩子在绿草地上放起风筝；会不会含笑着想起，自己曾拥有良人在侧，从此不再无枝可依；会不会含笑着想起更久远的从前，父母曾令你无忧无虑，而那些萌生的小情绪，或许唯有感慨地大笑出声，无奈地摇摇头，道一句，那时真小。<br>会不会想起那些温暖的片段，想起自己曾经的付出与所得，带着回望的沧桑，感怀，和崭新的希望。<br>　　　　<br>我们为什么不会像1900一样，选择在漫天火光中永沉海底。这样壮烈，却获得永生的自由？</p>
+<blockquote>
+<p>因为，因为我们一直生活在这个“外面的世界”，清楚地看见它的混乱，却因为某一瞬间体验到的那些温情，那些无以伦比的美好，而心甘情愿地忍受着它所给予的伤害，努力弹奏出最华美的人生乐章。</p>
+</blockquote>
+<p>我们或许从来都不是天才，但是我们至少能做到勤恳、踏实。我们从坚硬和纯白开始，学会圆滑，学会世故，但内心深处，终究会一直记得，这一生所做的种种妥协，不过是为了在这个微尘世界，在这架上帝给予的钢琴上，创作出独属于自己的旋律与琴音。</p>
+<h2 id="我们都是宅男"><a href="#我们都是宅男" class="headerlink" title="我们都是宅男"></a><a href="https://movie.douban.com/review/1238757/" target="_blank" rel="external">我们都是宅男</a></h2><p>我们或许没有《海上钢琴师》中的1900看的更加清楚，他一生生活在邮轮上，他不愿离开一个让他感到安定自由、无忧无虑的空间，他永远没有踏上陆地，开启他的“远大前程”，在我们看来，他是自闭的，但是，他也是最清醒的，在最后无比绚烂的死亡中，他走的孤独而坦然。</p>
+<p>和1900对无限的恐惧相反，现代人正是在追逐着无限，我们贪大，贪全，贪广，房子要住大的，哪怕被每月的房贷压的生活质量下降；交际圈要交广些，哪怕每天疲于奔命于并不让自己愉快的应酬；旅游要走遍世界，哪怕其实只是疲惫的赶着在一个又一个景点的人群中拍照；炒股也有“不涨到翻倍不痛快”，哪怕每天被指数折磨的大喜大悲。还是看看这个“宅男”1900，反观自己，其实我们都是宅男，我们都是在自己营造的世界里生活，我们总有个无形或有形的圈子，但是似乎“开疆扩土”是人的本能，我们总是希望这个世界更大些，更广些。其实，并不是因为你走遍了这个城市的大街小巷，你的世界便扩展到了整个城市，哪怕真的这样，你也只是有了个城市这样一个更大的宅子。所以，1900不贪求太多，他一生都在一艘船上生活，这是有限的；但是他一生都有音乐相伴快乐的生活，这是无限的，快乐而自在的生活才是无限的。正如我们拼命拓展的交际网永远是有限的，但是和其中几个真正的知己在一起的快乐才是无限的。</p>
+<p>1900在邮轮上有自己的快乐，也伴随着一些悲伤，但是，快乐从来不是仅仅以空间的广度来评判的，就如你有一笔钱，可以买大房子简装修，也可以买小房子按照自己的意愿精装修（当然，精装修的意义不是买一堆豪华家俱的堆砌）。1900选择在一个相对狭小的世界里精心构筑他的世界，安逸而愉快。而在我们看来，这样的小小的快乐永远是“有病”的，就如我们如果看到一个人沉溺于数学而废寝忘食，会认为他是一个科学怪人，为他随时可能的英年早逝而悲哀；如果看到一个人长期执着的在农村搞什么社会试验而履受挫折，会认为他是一个理想主义者，为他干些“不实际”的事情而悲哀。诸如此类的事情还有很多，我们总是很自恋，常常看到他人沉浸于一些比较“独特”的事物而不问世事而感到“悲哀”，而对他们表示不解和“同情”，特别当这些人甚至为之折寿或是如1900那样“找死”后，更是如此。其实，生活方式本来没有定义，其实想想，1900在一艘船上就活的那么滋润，一些人一天到晚在屋子里闷头看武侠小说、漫画书就那么快活，我们这些号称精神健康，性格乐观的人却常常无名的不停唠叨“真郁闷”，这时的我们是不是会突然感到一丝沮丧，而对宅男们有些羡慕，同时意识到，其实我们都不过是在自己的世界里有喜有乐的宅男。</p>
+<h2 id="漂流在大海上的音乐浮城"><a href="#漂流在大海上的音乐浮城" class="headerlink" title="漂流在大海上的音乐浮城"></a><a href="https://movie.douban.com/review/1000830/" target="_blank" rel="external">漂流在大海上的音乐浮城</a></h2><p>对于1900而言，音乐，是用来娱乐自己的——他永远为了自己而弹奏着，永远不让自己的音乐和自己分离。</p>
+<p>1900的存在很特别么？未必，他的生命因为没有踏足过真实世界而显得尤为纯净和清澈，甚至纯净和清澈得不能够生活在这个真实的现实世界里。最适宜他生活的地方，是Virginian，一个漂浮在海上的乌托邦，一个能够让1900这样纯粹且单纯的音乐圣徒栖息的地方。他不能，也不应该走进我们的世界，我们的世界对于1900而言，太肮脏，太复杂了。</p>
+<p>究竟是1900把自己禁锢在狭小的空间里了，还是我们让陆地桎梏了我们自身？城市里有着成千的街道，我们迷失于其中，看不到天的尽头，而大海以其广博的胸襟，容忍并珍藏了1900这个特异的存在，也甚至是因为大海的广博，1900看到了世界的尽头。</p>
+<blockquote>
+<p>当影片行进到最后，Max问及1900为何不愿意离开Virginian的那一瞬间，我们就不难理解1900的答案了——琴键太大，音乐无从而生；城市太大，我们无从而生……</p>
+</blockquote>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]<a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">海上钢琴师 La leggenda del pianista sull’oceano (1998)</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Make you cry，laugh  touching and thinking&lt;/strong&gt;&lt;br&gt;Crying for  his loneliness and ending of  the story.&lt;br&gt;Touching by the wonderful melody.&lt;br&gt;Laughing for those humor lines.&lt;br&gt;Deep thinking: In the big city, What’s your piano ? Where is your Virginia ?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p511146957.webp&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
+    
+    
+      <category term="English" scheme="http://aisee.me/tags/English/"/>
+    
+      <category term="Movie" scheme="http://aisee.me/tags/Movie/"/>
     
   </entry>
   
@@ -13366,6 +13589,56 @@ limitations under the License.
   </entry>
   
   <entry>
+    <title>Machine Learning</title>
+    <link href="http://aisee.me/2017/03/27/AI/Business/concept-of-machine-learning/"/>
+    <id>http://aisee.me/2017/03/27/AI/Business/concept-of-machine-learning/</id>
+    <published>2017-03-27T01:58:06.000Z</published>
+    <updated>2017-03-27T09:06:23.123Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/330px-Hopfield-net.png" alt=""></p>
+<p>机器学习是人工智能的一个分支。人工智能的研究是从以“推理”为重点到以“知识”为重点，再到以“学习”为重点，一条自然、清晰的脉络。</p>
+<p>机器学习是实现人工智能的一个途径，即以机器学习为手段解决人工智能中的问题。机器学习在近30多年已发展为一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、计算复杂性理论等多门学科。</p>
+<p>机器学习理论主要是设计和分析一些让计算机可以自动“学习”的算法。机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。因为学习算法中涉及了大量的统计学理论，机器学习与推断统计学联系尤为密切，也被称为统计学习理论。</p>
+<a id="more"></a>
+<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p>机器学习是人工智能的一个分支。人工智能的研究是从以“推理”为重点到以“知识”为重点，再到以“学习”为重点，一条自然、清晰的脉络。显然，机器学习是实现人工智能的一个途径，即以机器学习为手段解决人工智能中的问题。机器学习在近30多年已发展为一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、计算复杂性理论等多门学科。机器学习理论主要是设计和分析一些让计算机可以自动“学习”的算法。机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。因为学习算法中涉及了大量的统计学理论，机器学习与推断统计学联系尤为密切，也被称为统计学习理论。算法设计方面，机器学习理论关注可以实现的，行之有效的学习算法。很多推论问题属于无程序可循难度，所以部分的机器学习研究是开发容易处理的近似算法。</p>
+<p>机器学习已广泛应用于数据挖掘、计算机视觉、自然语言处理、生物特征识别、搜索引擎、医学诊断、检测信用卡欺诈、证券市场分析、DNA序列测序、语音和手写识别、战略游戏和机器人等领域。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>机器学习有下面几种定义：<br>机器学习是一门人工智能的科学，该领域的主要研究对象是人工智能，特别是如何在经验学习中改善具体算法的性能。<br>机器学习是对能通过经验自动改进的计算机算法的研究。<br>机器学习是用数据或以往的经验，以此优化计算机程序的性能标准。<br>一种经常引用的英文定义是：</p>
+<blockquote>
+<p>A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.</p>
+</blockquote>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>机器学习可以分成下面几种类别：</p>
+<h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>从给定的训练数据集中学习出一个函数，当新的数据到来时，可以根据这个函数预测结果。监督学习的训练集要求是包括输入和输出，也可以说是特征和目标。训练集中的目标是由人标注的。常见的监督学习算法包括回归分析和统计分类。</p>
+<h3 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h3><p>与监督学习相比，训练集没有人为标注的结果。常见的无监督学习算法有聚类。</p>
+<h3 id="半监督学习"><a href="#半监督学习" class="headerlink" title="半监督学习"></a>半监督学习</h3><p>介于监督学习与无监督学习之间。</p>
+<h3 id="增强学习"><a href="#增强学习" class="headerlink" title="增强学习"></a>增强学习</h3><p>通过观察来学习做成如何的动作。每个动作都会对环境有所影响，学习对象根据观察到的周围环境的反馈来做出判断。</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>具体的机器学习算法有：</p>
+<h3 id="构造间隔理论分布：聚类分析和模式识别"><a href="#构造间隔理论分布：聚类分析和模式识别" class="headerlink" title="构造间隔理论分布：聚类分析和模式识别"></a>构造间隔理论分布：聚类分析和模式识别</h3><p>人工神经网络<br>决策树<br>感知器<br>支持向量机<br>集成学习AdaBoost<br>降维与度量学习<br>聚类<br>贝叶斯分类器</p>
+<h3 id="构造条件概率：回归分析和统计分类"><a href="#构造条件概率：回归分析和统计分类" class="headerlink" title="构造条件概率：回归分析和统计分类"></a>构造条件概率：回归分析和统计分类</h3><p>高斯过程回归<br>线性判别分析<br>最近邻居法<br>径向基函数核</p>
+<h3 id="通过再生模型构造概率密度函数"><a href="#通过再生模型构造概率密度函数" class="headerlink" title="通过再生模型构造概率密度函数"></a>通过再生模型构造概率密度函数</h3><p>最大期望算法<br>概率图模型：包括贝叶斯网和Markov随机场<br>Generative Topographic Mapping</p>
+<h3 id="近似推断技术"><a href="#近似推断技术" class="headerlink" title="近似推断技术"></a>近似推断技术</h3><p>马尔可夫链<br>蒙特卡罗方法<br>变分法</p>
+<h3 id="最优化"><a href="#最优化" class="headerlink" title="最优化"></a>最优化</h3><p>大多数以上方法，直接或者间接使用最优化算法。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://zh.wikipedia.org/wiki/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0" target="_blank" rel="external">机器学习</a><br>Bishop, C. M. (1995). 《模式识别神经网络》，牛津大学出版社。ISBN 0-19-853864-2<br>Bishop, C. M. (2006). 《模式识别与机器学习》，Springer。ISBN 978-0-387-31073-2<br>Richard O. Duda, Peter E. Hart, David G. Stork (2001) 《模式分类》（第2版）, Wiley, New York, ISBN 0-471-05669-3.<br>MacKay, D. J. C. (2003). 《信息理论、推理和学习算法》，剑桥大学出版社。ISBN 0-521-64298-1<br>Mitchell, T. (1997). 《机器学习》, McGraw Hill. ISBN 0-07-042807-7<br>Sholom Weiss, Casimir Kulikowski (1991). Computer Systems That Learn, Morgan Kaufmann. ISBN 1-55860-065-5</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/330px-Hopfield-net.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;机器学习是人工智能的一个分支。人工智能的研究是从以“推理”为重点到以“知识”为重点，再到以“学习”为重点，一条自然、清晰的脉络。&lt;/p&gt;
+&lt;p&gt;机器学习是实现人工智能的一个途径，即以机器学习为手段解决人工智能中的问题。机器学习在近30多年已发展为一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、计算复杂性理论等多门学科。&lt;/p&gt;
+&lt;p&gt;机器学习理论主要是设计和分析一些让计算机可以自动“学习”的算法。机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。因为学习算法中涉及了大量的统计学理论，机器学习与推断统计学联系尤为密切，也被称为统计学习理论。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="http://aisee.me/categories/AI/"/>
+    
+    
+      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
+    
+      <category term="Machine Learning" scheme="http://aisee.me/tags/Machine-Learning/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Floating Point</title>
     <link href="http://aisee.me/2017/03/27/Program/Tools/Computer/float/"/>
     <id>http://aisee.me/2017/03/27/Program/Tools/Computer/float/</id>
@@ -13456,195 +13729,6 @@ Console.WriteLine(d.ToString(&quot;0.0000000000000&quot;));
       <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
     
       <category term="Floating point" scheme="http://aisee.me/tags/Floating-point/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Machine Learning</title>
-    <link href="http://aisee.me/2017/03/27/AI/Business/concept-of-machine-learning/"/>
-    <id>http://aisee.me/2017/03/27/AI/Business/concept-of-machine-learning/</id>
-    <published>2017-03-27T01:58:06.000Z</published>
-    <updated>2017-03-27T09:06:23.123Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/330px-Hopfield-net.png" alt=""></p>
-<p>机器学习是人工智能的一个分支。人工智能的研究是从以“推理”为重点到以“知识”为重点，再到以“学习”为重点，一条自然、清晰的脉络。</p>
-<p>机器学习是实现人工智能的一个途径，即以机器学习为手段解决人工智能中的问题。机器学习在近30多年已发展为一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、计算复杂性理论等多门学科。</p>
-<p>机器学习理论主要是设计和分析一些让计算机可以自动“学习”的算法。机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。因为学习算法中涉及了大量的统计学理论，机器学习与推断统计学联系尤为密切，也被称为统计学习理论。</p>
-<a id="more"></a>
-<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p>机器学习是人工智能的一个分支。人工智能的研究是从以“推理”为重点到以“知识”为重点，再到以“学习”为重点，一条自然、清晰的脉络。显然，机器学习是实现人工智能的一个途径，即以机器学习为手段解决人工智能中的问题。机器学习在近30多年已发展为一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、计算复杂性理论等多门学科。机器学习理论主要是设计和分析一些让计算机可以自动“学习”的算法。机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。因为学习算法中涉及了大量的统计学理论，机器学习与推断统计学联系尤为密切，也被称为统计学习理论。算法设计方面，机器学习理论关注可以实现的，行之有效的学习算法。很多推论问题属于无程序可循难度，所以部分的机器学习研究是开发容易处理的近似算法。</p>
-<p>机器学习已广泛应用于数据挖掘、计算机视觉、自然语言处理、生物特征识别、搜索引擎、医学诊断、检测信用卡欺诈、证券市场分析、DNA序列测序、语音和手写识别、战略游戏和机器人等领域。</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>机器学习有下面几种定义：<br>机器学习是一门人工智能的科学，该领域的主要研究对象是人工智能，特别是如何在经验学习中改善具体算法的性能。<br>机器学习是对能通过经验自动改进的计算机算法的研究。<br>机器学习是用数据或以往的经验，以此优化计算机程序的性能标准。<br>一种经常引用的英文定义是：</p>
-<blockquote>
-<p>A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.</p>
-</blockquote>
-<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>机器学习可以分成下面几种类别：</p>
-<h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>从给定的训练数据集中学习出一个函数，当新的数据到来时，可以根据这个函数预测结果。监督学习的训练集要求是包括输入和输出，也可以说是特征和目标。训练集中的目标是由人标注的。常见的监督学习算法包括回归分析和统计分类。</p>
-<h3 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h3><p>与监督学习相比，训练集没有人为标注的结果。常见的无监督学习算法有聚类。</p>
-<h3 id="半监督学习"><a href="#半监督学习" class="headerlink" title="半监督学习"></a>半监督学习</h3><p>介于监督学习与无监督学习之间。</p>
-<h3 id="增强学习"><a href="#增强学习" class="headerlink" title="增强学习"></a>增强学习</h3><p>通过观察来学习做成如何的动作。每个动作都会对环境有所影响，学习对象根据观察到的周围环境的反馈来做出判断。</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>具体的机器学习算法有：</p>
-<h3 id="构造间隔理论分布：聚类分析和模式识别"><a href="#构造间隔理论分布：聚类分析和模式识别" class="headerlink" title="构造间隔理论分布：聚类分析和模式识别"></a>构造间隔理论分布：聚类分析和模式识别</h3><p>人工神经网络<br>决策树<br>感知器<br>支持向量机<br>集成学习AdaBoost<br>降维与度量学习<br>聚类<br>贝叶斯分类器</p>
-<h3 id="构造条件概率：回归分析和统计分类"><a href="#构造条件概率：回归分析和统计分类" class="headerlink" title="构造条件概率：回归分析和统计分类"></a>构造条件概率：回归分析和统计分类</h3><p>高斯过程回归<br>线性判别分析<br>最近邻居法<br>径向基函数核</p>
-<h3 id="通过再生模型构造概率密度函数"><a href="#通过再生模型构造概率密度函数" class="headerlink" title="通过再生模型构造概率密度函数"></a>通过再生模型构造概率密度函数</h3><p>最大期望算法<br>概率图模型：包括贝叶斯网和Markov随机场<br>Generative Topographic Mapping</p>
-<h3 id="近似推断技术"><a href="#近似推断技术" class="headerlink" title="近似推断技术"></a>近似推断技术</h3><p>马尔可夫链<br>蒙特卡罗方法<br>变分法</p>
-<h3 id="最优化"><a href="#最优化" class="headerlink" title="最优化"></a>最优化</h3><p>大多数以上方法，直接或者间接使用最优化算法。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://zh.wikipedia.org/wiki/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0" target="_blank" rel="external">机器学习</a><br>Bishop, C. M. (1995). 《模式识别神经网络》，牛津大学出版社。ISBN 0-19-853864-2<br>Bishop, C. M. (2006). 《模式识别与机器学习》，Springer。ISBN 978-0-387-31073-2<br>Richard O. Duda, Peter E. Hart, David G. Stork (2001) 《模式分类》（第2版）, Wiley, New York, ISBN 0-471-05669-3.<br>MacKay, D. J. C. (2003). 《信息理论、推理和学习算法》，剑桥大学出版社。ISBN 0-521-64298-1<br>Mitchell, T. (1997). 《机器学习》, McGraw Hill. ISBN 0-07-042807-7<br>Sholom Weiss, Casimir Kulikowski (1991). Computer Systems That Learn, Morgan Kaufmann. ISBN 1-55860-065-5</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/330px-Hopfield-net.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;机器学习是人工智能的一个分支。人工智能的研究是从以“推理”为重点到以“知识”为重点，再到以“学习”为重点，一条自然、清晰的脉络。&lt;/p&gt;
-&lt;p&gt;机器学习是实现人工智能的一个途径，即以机器学习为手段解决人工智能中的问题。机器学习在近30多年已发展为一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、计算复杂性理论等多门学科。&lt;/p&gt;
-&lt;p&gt;机器学习理论主要是设计和分析一些让计算机可以自动“学习”的算法。机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。因为学习算法中涉及了大量的统计学理论，机器学习与推断统计学联系尤为密切，也被称为统计学习理论。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="AI" scheme="http://aisee.me/categories/AI/"/>
-    
-    
-      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
-    
-      <category term="Machine Learning" scheme="http://aisee.me/tags/Machine-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Concept of AI</title>
-    <link href="http://aisee.me/2017/03/27/AI/Business/concept-of-ai/"/>
-    <id>http://aisee.me/2017/03/27/AI/Business/concept-of-ai/</id>
-    <published>2017-03-27T01:33:06.000Z</published>
-    <updated>2017-03-27T09:36:48.456Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="人工智能"><a href="#人工智能" class="headerlink" title="人工智能"></a>人工智能</h2><p><img src="http://ong8f1obl.bkt.clouddn.com/ArtificialFictionBrain.png" alt=""></p>
-<p>AI的核心问题包括推理、知识、规划、学习、交流、感知、移动和操作物体的能力等。强人工智能目前仍然是该领域的长远目标。目前比较流行的方法包括统计方法，计算智能和传统意义的AI。目前有大量的工具应用了人工智能，其中包括搜索和数学优化、逻辑推演。而基于仿生学、认知心理学，以及基于概率论和经济学的算法等等也在逐步探索当中。</p>
-<a id="more"></a>
-<h1 id="人工智能-1"><a href="#人工智能-1" class="headerlink" title="人工智能"></a>人工智能</h1><p>人工智能（英语：Artificial Intelligence, AI）亦称机器智能，是指由人工制造出来的系统所表现出来的智能。通常人工智能是指通过普通电脑实现的智能。该词同时也指研究这样的智能系统是否能够实现，以及如何实现的科学领域。</p>
-<p>一般教材中的定义领域是“智能主体（intelligent agent）的研究与设计”[1]，智能主体是指一个可以观察周遭环境并作出行动以达致目标的系统。[2]约翰·麦卡锡于1955年的定义是[3]“制造智能机器的科学与工程。”[4]</p>
-<p>人工智能的研究是高度技术性和专业的，各分支领域都是深入且各不相通的，因而涉及范围极广。[5]</p>
-<p>人工智能的研究可以分为几个技术问题。其分支领域主要集中在解决具体问题，其中之一是，如何使用各种不同的工具完成特定的应用程序。AI的核心问题包括推理、知识、规划、学习、交流、感知、移动和操作物体的能力等。[6]强人工智能目前仍然是该领域的长远目标。[7]目前比较流行的方法包括统计方法，计算智能和传统意义的AI。目前有大量的工具应用了人工智能，其中包括搜索和数学优化、逻辑推演。而基于仿生学、认知心理学，以及基于概率论和经济学的算法等等也在逐步探索当中。</p>
-<h2 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h2><p>人工智能的定义可以分为两部分，即“人工”和“智能”。“人工”比较好理解，争议性也不大。有时我们会要考虑什么是人力所能及制造的，或者人自身的智能程度有没有高到可以创造人工智能的地步，等等。但总的来说，“人工系统”就是通常意义下的人工系统。<br>关于什么是“智能”，就问题多多了。这涉及到其它诸如意识（consciousness）、自我（self）、心灵（mind），包括无意识的精神（unconscious mind）等等问题。人唯一了解的智能是人本身的智能，这是普遍认同的观点。但是我们对我们自身智能的理解都非常有限，对构成人的智能的必要元素也了解有限，所以就很难定义什么是“人工”制造的“智能”了。因此人工智能的研究往往涉及对人的智能本身的研究。其它关于动物或其它人造系统的智能也普遍被认为是人工智能相关的研究课题。<br>人工智能目前在计算机领域内，得到了愈加广泛的发挥。并在机器人、经济政治决策、控制系统、仿真系统中得到应用。</p>
-<h2 id="发展史"><a href="#发展史" class="headerlink" title="发展史"></a>发展史</h2><p><div class="rellink noprint relarticle mainarticle">主条目：<a href="/wiki/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E5%8E%86%E5%8F%B2" class="mw-redirect" title="人工智能的历史">人工智能的历史</a></div></p>
-<table class="wikitable"><br><tr><br><th>年代</th><br><th>20世纪40年代</th><br><th>20世纪50年代</th><br><th>20世纪60年代</th><br><th>20世纪70年代</th><br><th>20世纪80年代</th><br><th>20世纪90年代</th><br></tr><br><tr><br><th>计算机</th><br><td>1945 <a href="/wiki/%E8%A8%88%E7%AE%97%E6%A9%9F" class="mw-redirect" title="计算机">计算机</a>（<a href="/wiki/ENIAC" class="mw-redirect" title="ENIAC">ENIAC</a>）</td><br><td>1957 <a href="/wiki/FORTRAN%E8%AF%AD%E8%A8%80" class="mw-redirect" title="FORTRAN语言">FORTRAN语言</a></td><br><td></td><br><td></td><br><td></td><br><td></td><br></tr><br><tr><br><th>人工智能研究</th><br><td></td><br><td>1953 <a href="/wiki/%E5%8D%9A%E5%BC%88%E8%AB%96" class="mw-redirect" title="博弈论">博弈论</a><br><br>1956 <a href="/wiki/%E8%BE%BE%E7%89%B9%E7%9F%9B%E6%96%AF%E4%BC%9A%E8%AE%AE" title="达特矛斯会议">达特矛斯会议</a></td><br><td></td><br><td>1977 <span class="ilh-all" data-orig-title="知識工程" data-lang-code="en" data-lang-name="英语" data-foreign-title="Knowledge engineering"><span class="ilh-page"><a href="/w/index.php?title=%E7%9F%A5%E8%AD%98%E5%B7%A5%E7%A8%8B&amp;action=edit&amp;redlink=1" class="new" title="知识工程（页面不存在）">知识工程</a></span><span class="noprint ilh-comment">（<span class="ilh-lang">英语</span><span class="ilh-colon">：</span><span class="ilh-link"><a href="https://en.wikipedia.org/wiki/Knowledge_engineering" class="extiw" title="en:Knowledge engineering" target="_blank" rel="external"><span lang="en" dir="auto" xml:lang="en">Knowledge engineering</span></a></span>）</span></span>宣言</td><br><td>1982 <a href="/wiki/%E7%AC%AC%E4%BA%94%E4%BB%A3%E9%9B%BB%E8%85%A6" title="第五代电脑">第五代电脑</a>计划开始</td><br><td>1991 <a href="/wiki/%E4%BA%BA%E5%B7%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C" title="人工神经网络">人工神经网络</a></td><br></tr><br><tr><br><th>人工智能语言</th><br><td></td><br><td></td><br><td>1960 <a href="/wiki/LISP%E8%AF%AD%E8%A8%80" class="mw-redirect" title="LISP语言">LISP语言</a></td><br><td>1973 <a href="/wiki/PROLOG%E8%AF%AD%E8%A8%80" class="mw-redirect" title="PROLOG语言">PROLOG语言</a></td><br><td></td><br><td></td><br></tr><br><tr><br><th><a href="/wiki/%E7%9F%A5%E8%AF%86%E8%A1%A8%E8%BE%BE" class="mw-redirect" title="知识表达">知识表达</a></th><br><td></td><br><td></td><br><td></td><br><td>1973 <a href="/wiki/%E7%94%9F%E7%94%A2%E7%B3%BB%E7%B5%B1" title="生产系统">生产系统</a><br><br>1976 <a href="/wiki/%E6%A1%86%E6%9E%B6%E7%90%86%E8%AB%96" title="框架理论">框架理论</a></td><br><td></td><br><td></td><br></tr><br><tr><br><th><a href="/wiki/%E5%B0%88%E5%AE%B6%E7%B3%BB%E7%B5%B1" class="mw-redirect" title="专家系统">专家系统</a></th><br><td></td><br><td></td><br><td>1965 <span class="ilh-all" data-orig-title="DENDRAL" data-lang-code="en" data-lang-name="英语" data-foreign-title="Dendral"><span class="ilh-page"><a href="/w/index.php?title=DENDRAL&amp;action=edit&amp;redlink=1" class="new" title="DENDRAL（页面不存在）">DENDRAL</a></span><span class="noprint ilh-comment">（<span class="ilh-lang">英语</span><span class="ilh-colon">：</span><span class="ilh-link"><a href="https://en.wikipedia.org/wiki/Dendral" class="extiw" title="en:Dendral" target="_blank" rel="external"><span lang="en" dir="auto" xml:lang="en">Dendral</span></a></span>）</span></span></td><br><td>1975 <span class="ilh-all" data-orig-title="MYCIN" data-lang-code="en" data-lang-name="英语" data-foreign-title="Mycin"><span class="ilh-page"><a href="/w/index.php?title=MYCIN&amp;action=edit&amp;redlink=1" class="new" title="MYCIN（页面不存在）">MYCIN</a></span><span class="noprint ilh-comment">（<span class="ilh-lang">英语</span><span class="ilh-colon">：</span><span class="ilh-link"><a href="https://en.wikipedia.org/wiki/Mycin" class="extiw" title="en:Mycin" target="_blank" rel="external"><span lang="en" dir="auto" xml:lang="en">Mycin</span></a></span>）</span></span></td><br><td>1980 <a href="/wiki/Xcon" title="Xcon">Xcon</a></td><br><td></td><br></tr><br></table>
-
-<h2 id="研究课题"><a href="#研究课题" class="headerlink" title="研究课题"></a>研究课题</h2><p>目前人工智能的研究方向已经被分成几个子领域，研究人员希望一个人工智能系统应该具有某些特定能力，以下将这些能力列出并说明。[6]</p>
-<h3 id="演绎、推理和解决问题"><a href="#演绎、推理和解决问题" class="headerlink" title="演绎、推理和解决问题"></a>演绎、推理和解决问题</h3><p>早期的人工智能研究人员直接模仿人类进行逐步的推理，就像是玩棋盘游戏或进行逻辑推理时人类的思考模式。[8]到了1980和1990年代，利用概率和经济学上的概念，人工智能研究还发展了非常成功的方法处理不确定或不完整的资讯。[9]<br>对于困难的问题，有可能需要大量的运算资源，也就是发生了“可能组合爆增”：当问题超过一定的规模时，电脑会需要天文数量级的存储器或是运算时间。寻找更有效的算法是优先的人工智能研究项目。[10]<br>人类解决问题的模式通常是用最快捷、直观的判断，而不是有意识的、一步一步的推导，早期人工智能研究通常使用逐步推导的方式。[11]人工智能研究已经于这种“次表征性的”解决问题方法获取进展：实体化Agent研究强调感知运动的重要性。神经网络研究试图以模拟人类和动物的大脑结构重现这种技能。</p>
-<h3 id="知识表示法"><a href="#知识表示法" class="headerlink" title="知识表示法"></a>知识表示法</h3><p>主条目：知识表示和常识知识库</p>
-<h3 id="规划"><a href="#规划" class="headerlink" title="规划"></a>规划</h3><p>智能Agent必须能够制定目标和实现这些目标。[12]他们需要一种方法来创建一个可预测的世界模型（将整个世界状态用数学模型表现出来，并能预测它们的行为将如何改变这个世界），这样就可以选择功效最大的行为。[13] 在传统的规划问题中，智能Agent被假定它是世界中唯一具有影响力的，所以它要做出什么行为是已经确定的。[14]但是，如果事实并非如此，它必须定期检查世界模型的状态是否和自己的预测相匹配。如果不匹配，它必须改变它的计划。因此智能代理必须具有在不确定结果的状态下推理的能力。[15] 在多Agent中，多个Agent规划以合作和竞争的方式去完成一定的目标，使用演化算法和群体智能可以达成一个整体的突现行为目标。[16]</p>
-<h3 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h3><p>主条目：机器学习<br>机器学习的主要目的是为了从用户和输入数据等处获得知识，从而可以帮助解决更多问题、减少错误，提高解决问题的效率。对于人工智能来说，机器学习从一开始就很重要。1956年，在最初的达特茅斯夏季会议上，雷蒙德索洛莫诺夫[来源请求]写了一篇关于不监视的概率性机器学习：一个归纳推理的机器。</p>
-<h3 id="自然语言处理"><a href="#自然语言处理" class="headerlink" title="自然语言处理"></a>自然语言处理</h3><p>主条目：自然语言处理</p>
-<h3 id="运动和控制"><a href="#运动和控制" class="headerlink" title="运动和控制"></a>运动和控制</h3><p>主条目：机器人学</p>
-<h3 id="知觉"><a href="#知觉" class="headerlink" title="知觉"></a>知觉</h3><p>主条目：机器感知，计算机视觉和语音识别<br>机器感知[17]是指能够使用感测器所输入的数据（如照相机、麦克风、声纳以及其他的特殊感测器）然后推断世界的状态。计算机视觉[18]能够分析视频输入。另外还有语音识别[19]、人脸辨识和物体辨识。[20]</p>
-<h3 id="社交"><a href="#社交" class="headerlink" title="社交"></a>社交</h3><p>主条目：情感计算<br>情感和社交技能对于一个智能agent是很重要的。首先，通过了解他们的动机和情感状态，代理人能够预测别人的行动（这涉及要素 博弈论、决策理论以及能够塑造人的情感和情绪感知能力检测）。此外，为了良好的人机交互，智能代理人也需要表现出情绪来。至少它必须出现礼貌地和人类打交道。至少，它本身应该有正常的情绪。</p>
-<h3 id="创造力"><a href="#创造力" class="headerlink" title="创造力"></a>创造力</h3><p>主条目：计算机创造力<br>一个人工智能的子领域，代表了理论（从哲学和心理学的角度）和实际（通过特定的实现产生的系统的输出是可以考虑的创意，或系统识别和评估创造力）所定义的创造力。相关领域研究的包括了人工直觉和人工想像。</p>
-<h3 id="多元智能"><a href="#多元智能" class="headerlink" title="多元智能"></a>多元智能</h3><p>大多数研究人员希望他们的研究最终将被纳入一个具有多元智能（称为强人工智能），结合以上所有的技能并且超越大部分人类的能力。[7]有些人认为要达成以上目标，可能需要拟人化的特性，如人工意识或人工大脑。[22][23] 上述许多问题被认为是人工智能完整性：为了解决其中一个问题，你必须解决全部的问题。即使一个简单和特定的任务，如机器翻译，要求机器按照作者的论点（推理），知道什么是被人谈论（知识），忠实地再现作者的意图（情感计算）。因此，机器翻译被认为是具有人工智能完整性：它可能需要强人工智能，就像是人类一样。[24]</p>
-<h3 id="伦理管理"><a href="#伦理管理" class="headerlink" title="伦理管理"></a>伦理管理</h3><p>史蒂芬·霍金、比尔盖茨、 Elon Musk 、 Jaan Tallinn 以及 Nick Bostrom 等人都对于人工智能技术的未来公开表示忧心[25]，人工智能若在许多方面超越人类智能水平的智能、不断更新、自我提升，进而获取控制管理权，人类是否有足够的能力及时停止人工智能领域的“军备竞赛”，能否保有最高掌控权，现有事实是：机器常失控导致人员伤亡，这样的情况是否会更加扩大规模出现，历史显然无法给出可靠的乐观答案。特斯拉电动车马斯克（Elon Musk）在麻省理工学院（MIT）航空航天部门百年纪念研讨会上称人工智能是“召唤恶魔”行为，英国发明家Clive Sinclair认为一旦开始制造抵抗人类和超越人类的智能机器，人类可能很难生存，盖茨同意马斯克和其它人所言，且不知道为何有些人不担忧这个问题。[26]<br>DeepMind的人工智能（AI）系统在2016年“AlphaGo”对战韩国棋王李世乭获胜，开发商表示在内部设立伦理委员会，针对人工智能的应用制定政策，防范人工智能沦为犯罪开发者。[27]<br>科技进步，人工智能科技产生“自主武器”军备竞赛已悄悄展开，英国、以色列与挪威，都已部署自主导弹与无人操控的无人机，具“射后不理”（fire-and-forget）能力的导弹，多枚导弹还可互相沟通，分享找到攻击目标。 霍金等人在英国独立报发表文章警告未来人工智能可能会比人类金融市场、科学家、人类领袖更能操纵人心、甚至研发出人们无法理解的武器。专家恐发展到无法控制的局面，援引联合国禁止研发某些特定武器的“特定常规武器公约”加以限制。[28]新南威尔士大学（New South Wales）人工智能的沃尔什（Toby Walsh）教授认为这是一种欺骗，因为机器无区别战敌和平民的技术。[29]</p>
-<h3 id="经济冲击"><a href="#经济冲击" class="headerlink" title="经济冲击"></a>经济冲击</h3><p>据CNN财经网数字媒体未来学家兼Webbmedia集团创始人艾米·韦伯（Amy Webb）；美国在线[30]…等纷纷预测一些即将被机器人替换的职业，日本野村总合研究所也与英国牛津大学的研究学者共同调查指出，10至20年后，日本有49%的职业(235种职业)可能会被机械和人工智能替换而消失，直接影响约达2500万人，[31]例如：超市店员、一般事务员、计程车司机、收费站运营商和收银员、市场营销人员、客服人员、制造业工人、金融中间人和分析师、新闻记者、电话公司职员、麻醉师、士兵和保安、律师、医生、软件开发者和操盘手、股票交易员等等高薪酬的脑力职业将最先受到冲击[32]。</p>
-<h2 id="强人工智能和弱人工智能"><a href="#强人工智能和弱人工智能" class="headerlink" title="强人工智能和弱人工智能"></a>强人工智能和弱人工智能</h2><p>人工智能的一个比较流行的定义，也是该领域较早的定义，是由当时麻省理工学院的约翰·麦卡锡在1956年的 达特矛斯会议上提出的：人工智能就是要让机器的行为看起来就像是人所表现出的智能行为一样。但是这个定义似乎忽略了强人工智能的可能性（见下）。另一个定义指人工智能是人造机器所表现出来的智能。总体来讲，目前对人工智能的定义大多可划分为四类，即机器“像人一样思考”、“像人一样行动”、“理性地思考”和“理性地行动”。这里“行动”应广义地理解为采取行动，或制定行动的决策，而不是肢体动作。</p>
-<h3 id="强人工智能"><a href="#强人工智能" class="headerlink" title="强人工智能"></a>强人工智能</h3><p>主条目：强人工智能<br>强人工智能观点认为有可能制造出真正能推理（Reasoning）和解决问题（解决问题）的智能机器，并且，这样的机器能将被认为是有知觉的，有自我意识的。强人工智能可以有两类：<br>类人的人工智能，即机器的思考和推理就像人的思维一样。<br>非类人的人工智能，即机器产生了和人完全不一样的知觉和意识，使用和人完全不一样的推理方式。</p>
-<h3 id="弱人工智能"><a href="#弱人工智能" class="headerlink" title="弱人工智能"></a>弱人工智能</h3><p>弱人工智能观点认为不可能制造出能真正地推理和解决问题的智能机器，这些机器只不过看起来像是智能的，但是并不真正拥有智能，也不会有自主意识。<br>强人工智能的研究目前处于停滞不前的状态下。人工智能研究者不一定同意弱人工智能，也不一定在乎或者了解强人工智能和弱人工智能的内容与差别。就现下的人工智能研究领域来看，研究者已大量造出看起来像是智能的机器，获取相当丰硕的理论上和实质上的成果，如2009年康乃尔大学教授Hod Lipson 和其博士研究生Michael Schmidt 研发出的 Eureqa计算机程序，只要给予一些数据，这计算机程序自己只用几十个小时计算就推论出牛顿花费多年研究才发现的牛顿力学公式，等于只用几十个小时就自己重新发现牛顿力学公式，这计算机程序也能用来研究很多其他领域的科学问题上。</p>
-<h3 id="对强人工智能的哲学争论"><a href="#对强人工智能的哲学争论" class="headerlink" title="对强人工智能的哲学争论"></a>对强人工智能的哲学争论</h3><p>“强人工智能”一词最初是约翰·罗杰斯·希尔勒针对计算机和其它信息处理机器创造的，其定义为：<br>“强人工智能观点认为计算机不仅是用来研究人的思维的一种工具；相反，只要运行适当的程序，计算机本身就是有思维的。”（J Searle in Minds Brains and Programs. The Behavioral and Brain Sciences, vol. 3, 1980）<br>关于强人工智能的争论，不同于更广义的一元论和二元论的争论。其争论要点是：如果一台机器的唯一工作原理就是转换编码数据，那么这台机器是不是有思维的？希尔勒认为这是不可能的。他举了个中文房间的例子来说明，如果机器仅仅是转换数据，而数据本身是对某些事情的一种编码表现，那么在不理解这一编码和这实际事情之间的对应关系的前提下，机器不可能对其处理的数据有任何理解。基于这一论点，希尔勒认为即使有机器通过了图灵测试，也不一定说明机器就真的像人一样有思维和意识。<br>也有哲学家持不同的观点。丹尼尔·丹尼特在其著作《意识的解释》（Consciousness Explained）里认为，人也不过是一台有灵魂的机器而已，为什么我们认为：“人可以有智能，而普通机器就不能”呢？他认为像上述的数据转换机器是有可能有思维和意识的。<br>有的哲学家认为如果弱人工智能是可实现的，那么强人工智能也是可实现的。比如西蒙·布莱克本（Simon Blackburn）在其哲学入门教材Think里说道，一个人的看起来是“智能”的行动并不能真正说明这个人就真的是智能的。我永远不可能知道另一个人是否真的像我一样是智能的，还是说她／他仅仅是看起来是智能的。基于这个论点，既然弱人工智能认为可以令机器看起来像是智能的，那就不能完全否定这机器是真的有智能的。布莱克本认为这是一个主观认定的问题。<br>需要指出的是，弱人工智能并非和强人工智能完全对立，也就是说，即使强人工智能是可能的，弱人工智能仍然是有意义的。至少，今日的计算机能做的事，像算术运算等，在一百多年前是被认为很需要智能的。并且，即使强人工智能被证明为可能的，也不代表强人工智能必定能被研制出来。</p>
-<h2 id="研究方法"><a href="#研究方法" class="headerlink" title="研究方法"></a>研究方法</h2><p>目前没有统一的原理或范式指导人工智能研究。许多问题上研究者都存在争论。[33]<br>其中几个长久以来仍没有结论的问题是：是否应从心理或神经方面模拟人工智能?或者像鸟类生物学对于航空工程一样，人类生物学对于人工智能研究是没有关系的？[34]智能行为能否用简单的原则（如逻辑或优化）来描述？还是必须解决大量完全无关的问题？[35]<br>智能是否可以使用高级符号表达，如词和想法？还是需要“子符号”的处理？[36] 约翰·豪格兰德（John Haugeland）提出了GOFAI（出色的老式人工智能）的概念，也提议人工智能应归类为synthetic intelligence，[37]这个概念后来被某些非GOFAI研究者采纳。[38][39]</p>
-<h3 id="控制论与大脑模拟"><a href="#控制论与大脑模拟" class="headerlink" title="控制论与大脑模拟"></a>控制论与大脑模拟</h3><p>主条目：控制论和计算神经科学<br>20世纪40年代到50年代，许多研究者探索神经学、信息理论及控制论之间的联系。其中还造出一些使用电子网络构造的初步智能，如格雷·华特（W. Grey Walter）的乌龟（turtle）和约翰霍普金斯野兽（Johns Hopkins Beast）。<br>这些研究者还经常在普林斯顿大学和英国的Ratio Club举行技术协会会议。[40]直到1960，大部分人已经放弃这个方法，尽管在80年代再次提出这些原理。</p>
-<h3 id="符号处理"><a href="#符号处理" class="headerlink" title="符号处理"></a>符号处理</h3><p>主条目：GOFAI<br>当20世纪50年代，数字计算机研制成功，研究者开始探索人类智能是否能简化成符号处理。研究主要集中在卡内基梅隆大学，斯坦福大学和麻省理工学院，而各自有独立的研究风格。约翰·豪格兰德（John Haugeland）称这些方法为GOFAI（出色的老式人工智能）[41]。60年代，符号方法在小型证明程序上模拟高级思考有很大的成就。基于控制论或神经网络的方法则置于次要[42]。60－70年代的研究者确信符号方法最终可以成功创造强人工智能的机器，同时这也是他们的目标。</p>
-<h4 id="认知模拟"><a href="#认知模拟" class="headerlink" title="认知模拟"></a>认知模拟</h4><p>经济学家赫伯特·西蒙和艾伦·纽厄尔研究人类问题解决能力和尝试将其形式化，同时他们为人工智能的基本原理打下基础，如认知科学、运筹学和经营科学。他们的研究团队使用心理学实验的结果开发模拟人类解决问题方法的程序。这方法一直在卡内基梅隆大学沿袭下来，并在80年代于Soar发展到高峰[43][44]。</p>
-<h4 id="基于逻辑"><a href="#基于逻辑" class="headerlink" title="基于逻辑"></a>基于逻辑</h4><p>不像艾伦·纽厄尔和赫伯特·西蒙，约翰·麦卡锡认为机器不需要模拟人类的思想，而应尝试找到抽象推理和解决问题的本质，不管人们是否使用同样的算法[34]。他在斯坦福大学的实验室致力于使用形式化逻辑解决多种问题，包括知识表示，智能规划和机器学习[45]。致力于逻辑方法的还有爱丁堡大学，而促成欧洲的其他地方开发编程语言Prolog和逻辑编程科学[46]。</p>
-<p>####“反逻辑”<br>斯坦福大学的研究者 （如马文·闵斯基和西摩尔·派普特）[47]发现要解决计算机视觉和自然语言处理的困难问题，需要专门的方案：他们主张不存在简单和通用原理（如逻辑）能够达到所有的智能行为。罗杰·单克（Roger Schank）描述他们的“反逻辑”方法为“scruffy”[35]。常识知识库（如道格拉斯·莱纳特的Cyc）就是“scruffy”AI的例子，因为他们必须人工一次编写一个复杂的概念[48]。</p>
-<h4 id="基于知识"><a href="#基于知识" class="headerlink" title="基于知识"></a>基于知识</h4><p>大约在1970年出现大容量内存计算机，研究者分别以三个方法开始把知识构造成应用软件[49]。这场“知识革命”促成专家系统的开发与计划，这是第一个成功的人工智能软件形式[50]。“知识革命”同时让人们意识到许多简单的人工智能软件可能需要大量的知识。</p>
-<h3 id="子符号方法"><a href="#子符号方法" class="headerlink" title="子符号方法"></a>子符号方法</h3><p>1980年代符号人工智能停滞不前，很多人认为符号系统永远不可能模仿人类所有的认知过程，特别是感知、机器人、机器学习和模式识别。很多研究者开始关注子符号方法解决特定的人工智能问题[36]。</p>
-<h4 id="自下而上、接口agent、嵌入环境（机器人）、行为主义、新式AI"><a href="#自下而上、接口agent、嵌入环境（机器人）、行为主义、新式AI" class="headerlink" title="自下而上、接口agent、嵌入环境（机器人）、行为主义、新式AI"></a>自下而上、接口agent、嵌入环境（机器人）、行为主义、新式AI</h4><p>机器人领域相关的研究者，如罗德尼·布鲁克斯（Rodney Brooks），否定符号人工智能而专注于机器人移动和求生等基本的工程问题。[51]他们的工作再次关注早期控制论研究者的观点，同时提出了在人工智能中使用控制理论。这与认知科学领域中的表征感知论点是一致的:更高的智能需要个体的表征（如移动，感知和形象）。</p>
-<h4 id="计算智能"><a href="#计算智能" class="headerlink" title="计算智能"></a>计算智能</h4><p>1980年代中大卫·鲁姆哈特（David E. Rumelhart）等再次提出神经网络和联结主义[52]。这和其他的子符号方法，如模糊控制和进化计算，都属于计算智能学科研究范畴[53]。</p>
-<h3 id="统计学方法"><a href="#统计学方法" class="headerlink" title="统计学方法"></a>统计学方法</h3><p>1990年代，人工智能研究发展出复杂的数学工具来解决特定的分支问题。这些工具是真正的科学方法，即这些方法的结果是可测量的和可验证的，同时也是近期人工智能成功的原因。共用的数学语言也允许已有学科的合作（如数学，经济或运筹学）。Stuart J. Russell和Peter Norvig指出这些进步不亚于“革命”和“neats的成功”[54]。有人批评这些技术太专注于特定的问题，而没有考虑长远的强人工智能目标[55]。</p>
-<h3 id="集成方法"><a href="#集成方法" class="headerlink" title="集成方法"></a>集成方法</h3><h4 id="智能agent范式"><a href="#智能agent范式" class="headerlink" title="智能agent范式"></a>智能agent范式</h4><p>智能agent是一个会感知环境并作出行动以达致目标的系统。最简单的智能agent是那些可以解决特定问题的程序。更复杂的agent包括人类和人类组织（如公司）。这些范式可以让研究者研究单独的问题和找出有用且可验证的方案，而不需考虑单一的方法。一个解决特定问题的agent可以使用任何可行的方法-一些agent用符号方法和逻辑方法，一些则是子符号神经网络或其他新的方法。范式同时也给研究者提供一个与其他领域沟通的共同语言–如决策论和经济学（也使用abstract agents的概念）。1990年代智能agent范式被广泛接受。[2]</p>
-<h4 id="agent体系结构和认知体系结构"><a href="#agent体系结构和认知体系结构" class="headerlink" title="agent体系结构和认知体系结构"></a>agent体系结构和认知体系结构</h4><p>研究者设计出一些系统来处理多agent系统中智能agent之间的相互作用。[56]一个系统中包含符号和子符号部分的系统称为混合智能系统，而对这种系统的研究则是人工智能系统集成。分级控制系统则给反应级别的子符号AI和最高级别的传统符号AI提供桥梁，同时放宽了规划和世界建模的时间。</p>
-<h2 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h2><p>机器视觉、指纹识别、人脸识别、视网膜识别、虹膜识别、掌纹识别、专家系统、自动规划等。</p>
-<h2 id="学科范畴"><a href="#学科范畴" class="headerlink" title="学科范畴"></a>学科范畴</h2><p>人工智能是一门边缘学科，属于自然科学和社会科学的交叉。</p>
-<h3 id="涉及学科"><a href="#涉及学科" class="headerlink" title="涉及学科"></a>涉及学科</h3><p>物理学<br>哲学和认知科学<br>逻辑学<br>数学<br>心理学<br>计算机科学<br>控制论<br>决定论<br>不确定性原理<br>社会学<br>犯罪学<br>智能犯罪</p>
-<h3 id="研究范畴"><a href="#研究范畴" class="headerlink" title="研究范畴"></a>研究范畴</h3><p>自然语言处理（NLP; Natural Language Processing）<br>知识表现（Knowledge Representation）<br>智能搜索（Intelligent Search）<br>推理<br>规划（Planning）<br>机器学习（Machine Learning）<br>增强式学习（Reinforcement Learning）<br>知识获取<br>感知问题<br>模式识别<br>逻辑程序设计<br>软计算（Soft Computing）<br>不精确和不确定的管理<br>人工生命（Artificial Life）<br>人工神经网络（Artificial Neural Network）<br>复杂系统<br>遗传算法<br>数据挖掘（Data Mining）<br>模糊控制</p>
-<h2 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h2><p>智能控制<br>机器人学<br>自动化技术<br>语言和图像理解<br>遗传编程<br>法学信息系统</p>
-<h2 id="参见"><a href="#参见" class="headerlink" title="参见"></a>参见</h2><p>人工生命<br>认知神经科学<br>电脑围棋<br>伪春菜<br>艾伦·图灵<br>恐怖谷理论<br>电子世界争霸战<br>计算机科学<br>计算机科学课程列表<br>认知科学<br>意识<br>希尔勒的中文房间<br>语义学<br>技术奇异点<br>集体智能<br>控制论<br>心理学<br>国际人工智能联合会议<br>OWL<br>游戏树<br>量子计算机<br>生物化学计算机-例：人脑</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD" target="_blank" rel="external">人工智能</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;人工智能&quot;&gt;&lt;a href=&quot;#人工智能&quot; class=&quot;headerlink&quot; title=&quot;人工智能&quot;&gt;&lt;/a&gt;人工智能&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/ArtificialFictionBrain.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;AI的核心问题包括推理、知识、规划、学习、交流、感知、移动和操作物体的能力等。强人工智能目前仍然是该领域的长远目标。目前比较流行的方法包括统计方法，计算智能和传统意义的AI。目前有大量的工具应用了人工智能，其中包括搜索和数学优化、逻辑推演。而基于仿生学、认知心理学，以及基于概率论和经济学的算法等等也在逐步探索当中。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="AI" scheme="http://aisee.me/categories/AI/"/>
-    
-    
-      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>History of AI</title>
-    <link href="http://aisee.me/2017/03/27/AI/Basic%20Concept/history-of-ai/"/>
-    <id>http://aisee.me/2017/03/27/AI/Basic Concept/history-of-ai/</id>
-    <published>2017-03-27T01:13:06.000Z</published>
-    <updated>2017-03-27T08:12:35.726Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/225px-Gottfried_Wilhelm_von_Leibniz.jpg" alt=""></p>
-<a id="more"></a>
-<h1 id="人工智能史"><a href="#人工智能史" class="headerlink" title="人工智能史"></a>人工智能史</h1><p>人工智能的历史源远流长。在古代的神话传说中，技艺高超的工匠可以制作人造人，并为其赋予智能或意识。[1]现代意义上的AI始于古典哲学家用机械符号处理的观点解释人类思考过程的尝试。20世纪40年代基于抽象数学推理的可编程数字计算机的发明使一批科学家开始严肃地探讨构造一个电子大脑的可能性。</p>
-<p>1956年，在达特茅斯学院举行的一次会议上正式确立了人工智能的研究领域。会议的参加者在接下来的数十年间是AI研究的领军人物。他们中有许多人预言，经过一代人的努力，与人类具有同等智能水平的机器将会出现。同时，上千万美元被投入到AI研究中，以期实现这一目标。</p>
-<p>研究人员发现自己大大低估了这一工程的难度，人工智能史上共出现过好几次低潮。由于James Lighthill爵士的批评和国会方面的压力，美国和英国政府于1973年停止向没有明确目标的人工智能研究项目拨款。七年之后受到日本政府研究规划的刺激，美国政府和企业再次在AI领域投入数十亿研究经费，但这些投资者在80年代末重新撤回了投资。AI研究领域诸如此类的高潮和低谷不断交替出现；至今仍有人对AI的前景作出异常乐观的预测。[2]</p>
-<p>尽管在政府官僚和风投资本家那里经历了大起大落，AI领域仍在取得进展。某些在20世纪70年代被认为不可能解决的问题今天已经获得了圆满解决并已成功应用在商业产品上。与第一代AI研究人员的乐观估计不同，具有与人类同等智能水平的机器至今仍未出现。图灵在1950年发表的一篇催生现代智能机器研究的著名论文中称，“我们只能看到眼前的一小段距离……但是，我们可以看到仍有许多工作要做”。[3]</p>
-<h2 id="先驱"><a href="#先驱" class="headerlink" title="先驱"></a>先驱</h2><p>McCorduck写道[1]：“某种形式上的人工智能是一个遍布于西方知识分子历史的观点，是一个急需被实现的梦想，”先民对人工智能的追求表现在诸多神话，传说，故事，预言以及制作机器人偶（automaton）的实践之中。[4]</p>
-<h3 id="神话，幻想和预言中的AI"><a href="#神话，幻想和预言中的AI" class="headerlink" title="神话，幻想和预言中的AI"></a>神话，幻想和预言中的AI</h3><p>希腊神话中已经出现了机械人和人造人,如赫淮斯托斯的黄金机器人和皮格马利翁的伽拉忒亚。[5]中世纪出现了使用巫术或炼金术将意识赋予无生命物质的传说,如贾比尔的Takwin,帕拉塞尔苏斯的何蒙库鲁兹和Judah Loew的魔像。[6]19世纪的幻想小说中出现了人造人和会思考的机器之类题材，例如玛丽·雪莱的《弗兰肯斯坦》和卡雷尔·恰佩克的《罗素姆的万能机器人》。[7]Samuel Butler的《机器中的达尔文（Darwin among the Machines）》一文（1863）探讨了机器通过自然选择进化出智能的可能性。[8]至今人工智能仍然是科幻小说的重要元素。</p>
-<h3 id="自动人偶"><a href="#自动人偶" class="headerlink" title="自动人偶"></a>自动人偶</h3><p>许多文明中都有创造自动人偶的杰出工匠，例如偃师（中国西周）[9]，希罗（希腊）[10]，加扎利[11]和Wolfgang von Kempelen[12] 等等。已知最古老的“机器人”是古埃及和古希腊的圣像，忠实的信徒认为工匠为这些神像赋予了思想，使它们具有智慧和激情。赫耳墨斯·特里斯墨吉斯忒斯（Hermes Trismegistus）写道“当发现神的本性时，人就能够重现他”[13][14]</p>
-<h3 id="形式推理"><a href="#形式推理" class="headerlink" title="形式推理"></a>形式推理</h3><p>人工智能的基本假设是人类的思考过程可以机械化。对于机械化推理（即所谓“形式推理（formal reasoning）”）的研究已有很长历史。中国，印度和希腊哲学家均已在公元前的第一个千年里提出了形式推理的结构化方法。他们的想法为后世的哲学家所继承和发展，其中著名的有亚里士多德（对三段论逻辑进行了形式分析），欧几里得（其著作《几何原本》是形式推理的典范），花剌子密（代数学的先驱，“algorithm”一词由他的名字演变而来）以及一些欧洲经院哲学家，如奥卡姆的威廉和邓斯·司各脱。[15]<br>马略卡哲学家拉蒙·柳利（1232-1315）开发了一些“逻辑机”，试图通过逻辑方法获取知识。[16] 柳利的机器能够将基本的，无可否认的真理通过机械手段用简单的逻辑操作进行组合，以求生成所有可能的知识。[17]Llull的工作对莱布尼兹产生了很大影响，后者进一步发展了他的思想。[18]<br>在17世纪中，莱布尼兹，托马斯·霍布斯和笛卡儿尝试将理性的思考系统化为代数学或几何学那样的体系。[19]霍布斯在其著作《利维坦》中有一句名言：“推理就是计算（reason is nothing but reckoning）。” [20]莱布尼兹设想了一种用于推理的普适语言（他的通用表意文字），能将推理规约为计算，从而使“哲学家之间，就像会计师之间一样，不再需要争辩。他们只需拿出铅笔放在石板上，然后向对方说（如果想要的话，可以请一位朋友作为证人）：‘我们开始算吧。’”[21] 这些哲学家已经开始明确提出形式符号系统的假设，而这一假设将成为AI研究的指导思想。<br>在20世纪，数理逻辑研究上的突破使得人工智能好像呼之欲出。这方面的基础著作包括布尔的《思维的定律》与弗雷格的《概念文字》。基于弗雷格的系统，罗素和怀特海在他们于1913年出版的巨著《数学原理》中对数学的基础给出了形式化描述。这一成就激励了希尔伯特，后者向20世纪20年代和30年代的数学家提出了一个基础性的难题：“能否将所有的数学推理形式化?” [15]这个问题的最终回答由哥德尔不完备定理，图灵机和Alonzo Church的λ演算给出。[15][22]他们的答案令人震惊：首先，他们证明了数理逻辑的局限性；其次（这一点对AI更重要），他们的工作隐含了任何形式的数学推理都能在这些限制之下机械化的可能性。<br>邱奇-图灵论题暗示，一台仅能处理0和1这样简单二元符号的机械设备能够模拟任意数学推理过程。这里最关键的灵感是图灵机：这一看似简单的理论构造抓住了抽象符号处理的本质。这一创造激发科学家们探讨让机器思考的可能。[15][23]</p>
-<h3 id="计算机科学"><a href="#计算机科学" class="headerlink" title="计算机科学"></a>计算机科学</h3><p>主条目：计算机硬件历史<br>用于计算的机器古已有之；历史上许多数学家对其作出了改进。19世纪初，查尔斯·巴贝奇设计了一台可编程计算机（“分析机”），但未能建造出来。爱达·勒芙蕾丝预言，这台机器“将创作出无限复杂，无限宽广的精妙的科学乐章”。[24]（她常被认为是第一个程序员，因为她留下的一些笔记完整地描述了使用这一机器计算伯努利数的方法。）<br>第一批现代计算机是二战期间建造的大型译码机（包括Z3，ENIAC和Colossus等）。[25]后两个机器的理论基础是图灵和约翰·冯·诺伊曼提出和发展的学说。[26]</p>
-<h2 id="人工智能的诞生：1943-1956"><a href="#人工智能的诞生：1943-1956" class="headerlink" title="人工智能的诞生：1943 - 1956"></a>人工智能的诞生：1943 - 1956</h2><p>[27]在20世纪40年代和50年代，来自不同领域（数学，心理学，工程学，经济学和政治学）的一批科学家开始探讨制造人工大脑的可能性。1956年，人工智能被确立为一门学科。</p>
-<h3 id="控制论与早期神经网络"><a href="#控制论与早期神经网络" class="headerlink" title="控制论与早期神经网络"></a>控制论与早期神经网络</h3><p>最初的人工智能研究是30年代末到50年代初的一系列科学进展交汇的产物。神经学研究发现大脑是由神经元组成的电子网络，其激励电平只存在“有”和“无”两种状态，不存在中间状态。维纳的控制论描述了电子网络的控制和稳定性。克劳德·香农提出的信息论则描述了数字信号（即高低电平代表的二进制信号）。图灵的计算理论证明数字信号足以描述任何形式的计算。这些密切相关的想法暗示了构建电子大脑的可能性。[28]<br>这一阶段的工作包括一些机器人的研发，例如W。Grey Walter的“乌龟（turtles）”，还有“约翰霍普金斯兽”（Johns Hopkins Beast）。这些机器并未使用计算机，数字电路和符号推理；控制它们的是纯粹的模拟电路。[29]<br>Walter Pitts和Warren McCulloch分析了理想化的人工神经元网络，并且指出了它们进行简单逻辑运算的机制。他们是最早描述所谓“神经网络”的学者。[30]马文·闵斯基是他们的学生，当时是一名24岁的研究生。1951年他与Dean Edmonds一道建造了第一台神经网络机，称为SNARC。在接下来的五十年中，闵斯基是AI领域最重要的领导者和创新者之一。</p>
-<h3 id="游戏AI"><a href="#游戏AI" class="headerlink" title="游戏AI"></a>游戏AI</h3><p>1951年，Christopher Strachey使用曼彻斯特大学的Ferranti Mark 1机器写出了一个西洋跳棋（checkers）程序；Dietrich Prinz则写出了一个国际象棋程序。[31]Arthur Samuel在五十年代中期和六十年代初开发的国际象棋程序的棋力已经可以挑战具有相当水平的业余爱好者。[32]游戏AI一直被认为是评价AI进展的一种标准。</p>
-<h3 id="图灵测试"><a href="#图灵测试" class="headerlink" title="图灵测试"></a>图灵测试</h3><p>1950年，图灵发表了一篇划时代的论文，文中预言了创造出具有真正智能的机器的可能性。[33]由于注意到“智能”这一概念难以确切定义，他提出了著名的图灵测试：如果一台机器能够与人类展开对话（通过电传设备）而不能被辨别出其机器身份，那么称这台机器具有智能。这一简化使得图灵能够令人信服地说明“思考的机器”是可能的。论文中还回答了对这一假说的各种常见质疑。[34]图灵测试是人工智能哲学方面第一个严肃的提案。</p>
-<h3 id="符号推理与“逻辑理论家”程序"><a href="#符号推理与“逻辑理论家”程序" class="headerlink" title="符号推理与“逻辑理论家”程序"></a>符号推理与“逻辑理论家”程序</h3><p>50年代中期，随着数字计算机的兴起，一些科学家直觉地感到可以进行数字操作的机器也应当可以进行符号操作，而符号操作可能是人类思维的本质。这是创造智能机器的一条新路。[35]<br>1955年，Newell和（后来荣获诺贝尔奖的）Simon在J. C. Shaw的协助下开发了“逻辑理论家（Logic Theorist）”。这个程序能够证明《数学原理》中前52个定理中的38个，其中某些证明比原著更加新颖和精巧。[36]Simon认为他们已经“解决了神秘的心/身问题，解释了物质构成的系统如何获得心灵的性质。”[37] （这一断言的哲学立场后来被John Searle称为“强人工智能”，即机器可以像人一样具有思想。）[38]</p>
-<h3 id="1956年达特茅斯会议：AI的诞生"><a href="#1956年达特茅斯会议：AI的诞生" class="headerlink" title="1956年达特茅斯会议：AI的诞生"></a>1956年达特茅斯会议：AI的诞生</h3><p>主条目：达特矛斯会议<br>1956年达特矛斯会议[39]的组织者是马文·闵斯基，约翰·麦卡锡和另两位资深科学家Claude Shannon以及Nathan Rochester，后者来自IBM。会议提出的断言之一是“学习或者智能的任何其他特性的每一个方面都应能被精确地加以描述，使得机器可以对其进行模拟。” [40]与会者包括Ray Solomonoff，Oliver Selfridge，Trenchard More，Arthur Samuel，Newell和Simon，他们中的每一位都将在AI研究的第一个十年中作出重要贡献。[41]会上纽厄尔和西蒙讨论了“逻辑理论家”，而麦卡锡则说服与会者接受“人工智能”一词作为本领域的名称。[42]1956年达特矛斯会议上AI的名称和任务得以确定，同时出现了最初的成就和最早的一批研究者，因此这一事件被广泛承认为AI诞生的标志。[43]</p>
-<h2 id="黄金年代：1956-1974"><a href="#黄金年代：1956-1974" class="headerlink" title="黄金年代：1956 - 1974"></a>黄金年代：1956 - 1974</h2><p>达特茅斯会议之后的数年是大发现的时代。对许多人而言，这一阶段开发出的程序堪称神奇：[44]计算机可以解决代数应用题，证明几何定理，学习和使用英语。当时大多数人几乎无法相信机器能够如此“智能”。[45] 研究者们在私下的交流和公开发表的论文中表达出相当乐观的情绪，认为具有完全智能的机器将在二十年内出现。[46] ARPA（国防高等研究计划署）等政府机构向这一新兴领域投入了大笔资金。[47]</p>
-<h3 id="研究工作"><a href="#研究工作" class="headerlink" title="研究工作"></a>研究工作</h3><p>从50年代后期到60年代涌现了大批成功的AI程序和新的研究方向。下面列举其中最具影响的几个。</p>
-<h4 id="搜索式推理"><a href="#搜索式推理" class="headerlink" title="搜索式推理"></a>搜索式推理</h4><p>许多AI程序使用相同的基本算法。为实现一个目标（例如赢得游戏或证明定理），它们一步步地前进，就像在迷宫中寻找出路一般；如果遇到了死胡同则进行回溯。这就是“搜索式推理”。[48]<br>这一思想遇到的主要困难是，在很多问题中，“迷宫”里可能的线路总数是一个天文数字（所谓“指数爆炸”）。研究者使用启发式算法去掉那些不太可能导出正确答案的支路，从而缩小搜索范围。[49]<br>Newell和Simon试图通过其“通用解题器（General Problem Solver）”程序，将这一算法推广到一般情形。[50]另一些基于搜索算法证明几何与代数问题的程序也给人们留下了深刻印象，例如Herbert Gelernter的几何定理证明机（1958）和Minsky的学生James Slagle开发的SAINT（1961）。[51]还有一些程序通过搜索目标和子目标作出决策，如斯坦福大学为控制机器人Shakey而开发的STRIPS系统。[52]</p>
-<h4 id="自然语言"><a href="#自然语言" class="headerlink" title="自然语言"></a>自然语言</h4><p>AI研究的一个重要目标是使计算机能够通过自然语言（例如英语）进行交流。早期的一个成功范例是Daniel Bobrow的程序STUDENT，它能够解决高中程度的代数应用题。[53]<br>如果用节点表示语义概念（例如“房子”，“门”），用节点间的连线表示语义关系（例如“有 – 一个”），就可以构造出“语义网（semantic net）”。第一个使用语义网的AI程序由Ross Quillian开发；[54] 而最为成功（也是最有争议）的一个则是Roger Schank的“概念关联（Conceptual Dependency）”。[55]<br>Joseph Weizenbaum的ELIZA是第一个聊天机器人，可能也是最有趣的会说英语的程序。与ELIZA“聊天”的用户有时会误以为自己是在和人类，而不是和一个程序，交谈。但是实际上ELIZA根本不知道自己在说什么。它只是按固定套路作答，或者用符合语法的方式将问题复述一遍。[56]</p>
-<h4 id="微世界"><a href="#微世界" class="headerlink" title="微世界"></a>微世界</h4><p>60年代后期，麻省理工大学AI实验室的马文·闵斯基和Seymour Papert建议AI研究者们专注于被称为“微世界”的简单场景。他们指出在成熟的学科中往往使用简化模型帮助基本原则的理解，例如物理学中的光滑平面和完美刚体。许多这类研究的场景是“积木世界”，其中包括一个平面，上面摆放着一些不同形状，尺寸和颜色的积木。[57]<br>在这一指导思想下，Gerald Sussman（研究组长），Adolfo Guzman，David Waltz（“约束传播（constraint propagation）”的提出者），特别是Patrick Winston等人在机器视觉领域作出了创造性贡献。同时，Minsky和Papert制作了一个会搭积木的机器臂，从而将“积木世界”变为现实。微世界程序的最高成就是Terry Winograd的SHRDLU，它能用普通的英语句子与人交流，还能作出决策并执行操作。[58]</p>
-<h3 id="乐观思潮"><a href="#乐观思潮" class="headerlink" title="乐观思潮"></a>乐观思潮</h3><p>第一代AI研究者们曾作出了如下预言:<br>1958年，H. A. Simon，Allen Newell：“十年之内，数字计算机将成为国际象棋世界冠军。” “十年之内，数字计算机将发现并证明一个重要的数学定理。”[59]<br>1965年，H. A. Simon：“二十年内，机器将能完成人能做到的一切工作。”[60]<br>1967年，Marvin Minsky：“一代之内……创造‘人工智能’的问题将获得实质上的解决。”[61]<br>1970年，Marvin Minsky：“在三到八年的时间里我们将得到一台具有人类平均智能的机器。”[62]</p>
-<h3 id="经费"><a href="#经费" class="headerlink" title="经费"></a>经费</h3><p>1963年6月，MIT从新建立的ARPA（即后来的DARPA，国防高等研究计划局）获得了二百二十万美元经费，用于资助MAC工程，其中包括Minsky和McCarthy五年前建立的AI研究组。此后ARPA每年提供三百万美元，直到七十年代为止。[63]ARPA还对Newell和Simon在卡内基梅隆大学的工作组以及斯坦福大学AI项目（由John McCarthy于1963年创建）进行类似的资助。[64]另一个重要的AI实验室于1965年由Donald Michie在爱丁堡大学建立。[65]在接下来的许多年间，这四个研究机构一直是AI学术界的研究（和经费）中心。[66]<br>经费几乎是无条件地提供的：时任ARPA主任的J. C. R. Licklider相信他的组织应该“资助人，而不是项目”，并且允许研究者去做任何感兴趣的方向。[67]这导致了MIT无约无束的研究氛围及其hacker文化的形成，[68]但是好景不长。</p>
-<h2 id="第一次AI低谷：1974-1980"><a href="#第一次AI低谷：1974-1980" class="headerlink" title="第一次AI低谷：1974 - 1980"></a>第一次AI低谷：1974 - 1980</h2><p>到了70年代，AI开始遭遇批评，随之而来的还有资金上的困难。AI研究者们对其课题的难度未能作出正确判断：此前的过于乐观使人们期望过高，当承诺无法兑现时，对AI的资助就缩减或取消了。[69]同时，由于马文·闵斯基对感知器的激烈批评，联结主义（即神经网络）销声匿迹了十年。[70]70年代后期，尽管遭遇了公众的误解，AI在逻辑编程，常识推理等一些领域还是有所进展。[71]</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>70年代初，AI遭遇了瓶颈。即使是最杰出的AI程序也只能解决它们尝试解决的问题中最简单的一部分，也就是说所有的AI程序都只是“玩具”。[72]AI研究者们遭遇了无法克服的基础性障碍。尽管某些局限后来被成功突破，但许多至今仍无法满意地解决。[73]<br>计算机的运算能力。当时的计算机有限的内存和处理速度不足以解决任何实际的AI问题。例如，Ross Quillian在自然语言方面的研究结果只能用一个含二十个单词的词汇表进行演示，因为内存只能容纳这么多。[74]1976年Hans Moravec指出，计算机离智能的要求还差上百万倍。他做了个类比：人工智能需要强大的计算能力，就像飞机需要大功率动力一样，低于一个门限时是无法实现的；但是随着能力的提升，问题逐渐会变得简单。[75]<br>计算复杂性和指数爆炸。1972年Richard Karp根据Stephen Cook于1971年提出的Cook-Levin理论证明，许多问题只可能在指数时间内获解（即，计算时间与输入规模的幂成正比）。除了那些最简单的情况，这些问题的解决需要近乎无限长的时间。这就意味着AI中的许多玩具程序恐怕永远也不会发展为实用的系统。[76]<br>常识与推理。许多重要的AI应用，例如机器视觉和自然语言，都需要大量对世界的认识信息。程序应该知道它在看什么，或者在说些什么。这要求程序对这个世界具有儿童水平的认识。研究者们很快发现这个要求太高了：1970年没人能够做出如此巨大的数据库，也没人知道一个程序怎样才能学到如此丰富的信息。[77]<br>莫拉维克悖论。证明定理和解决几何问题对计算机而言相对容易，而一些看似简单的任务，如人脸识别或穿过屋子，实现起来却极端困难。这也是70年代中期机器视觉和机器人方面进展缓慢的原因。[78]<br>框架和资格问题。采取逻辑观点的AI研究者们（例如John McCarthy）发现，如果不对逻辑的结构进行调整，他们就无法对常见的涉及自动规划（planning or default reasoning）的推理进行表达。为解决这一问题，他们发展了新逻辑学（如非单调逻辑（non-monotonic logics）和模态逻辑（modal logics））。[79]</p>
-<h3 id="停止拨款"><a href="#停止拨款" class="headerlink" title="停止拨款"></a>停止拨款</h3><p>由于缺乏进展，对AI提供资助的机构（如英国政府，DARPA和NRC）对无方向的AI研究逐渐停止了资助。早在1966年ALPAC（Automatic Language Processing Advisory Committee，自动语言处理顾问委员会）的报告中就有批评机器翻译进展的意味，预示了这一局面的来临。NRC（National Research Council，美国国家科学委员会）在拨款二千万美元后停止资助。[80]1973年Lighthill针对英国AI研究状况的报告批评了AI在实现其“宏伟目标”上的完全失败，并导致了英国AI研究的低潮[81]（该报告特别提到了指数爆炸问题，以此作为AI失败的一个原因）。[82]DARPA则对CMU的语音理解研究项目深感失望，从而取消了每年三百万美元的资助。[83]到了1974年已经很难再找到对AI项目的资助。<br>Hans Moravec将批评归咎于他的同行们不切实际的预言：“许多研究者落进了一张日益浮夸的网中”。[84]还有一点，自从1969年Mansfield修正案通过后，DARPA被迫只资助“具有明确任务方向的研究，而不是无方向的基础研究”。60年代那种对自由探索的资助一去不复返；此后资金只提供给目标明确的特定项目，比如自动坦克，或者战役管理系统。[85]</p>
-<h3 id="来自大学的批评"><a href="#来自大学的批评" class="headerlink" title="来自大学的批评"></a>来自大学的批评</h3><p>一些哲学家强烈反对AI研究者的主张。其中最早的一个是John Lucas，他认为哥德尔不完备定理已经证明形式系统（例如计算机程序）不可能判断某些陈述的真理性，但是人类可以。[86]Hubert Dreyfus讽刺六十年代AI界那些未实现的预言，并且批评AI的基础假设，认为人类推理实际上仅涉及少量“符号处理”，而大多是具体的，直觉的，下意识的“窍门（know how）”。[87][88] John Searle于1980年提出“中文房间”实验，试图证明程序并不“理解”它所使用的符号，即所谓的“意向性（intentionality）”问题。Searle认为，如果符号对于机器而言没有意义，那么就不能认为机器是在“思考”。[89]<br>AI研究者们并不太把这些批评当回事，因为它们似乎有些离题，而计算复杂性和“让程序具有常识”等问题则显得更加紧迫和严重。对于实际的计算机程序而言，“常识”和“意向性”的区别并不明显。Minsky提到Dreyfus和Searle时说，“他们误解了，所以应该忽略”。[90]在MIT任教的Dreyfus遭到了AI阵营的冷遇：他后来说，AI研究者们“生怕被人看到在和我一起吃中饭”。[91] ELIZA程序的作者Joseph Weizenbaum感到他的同事们对待Dreyfus的态度不太专业，而且有些孩子气。虽然他直言不讳地反对Dreyfus的论点，但他“清楚地表明了他们待人的方式不对”。[92]<br>Weizenbaum后来开始思考AI相关的伦理问题，起因是Kenneth Colby开发了一个模仿医师的聊天机器人DOCTOR，并用它当作真正的医疗工具。二人发生争执；虽然Colby认为Weizenbaum对他的程序没有贡献，但这于事无补。1976年Weizenbaum出版著作《计算机的力量与人类的推理》，书中表示人工智能的滥用可能损害人类生命的价值。[93]</p>
-<h3 id="感知器与联结主义遭到冷落"><a href="#感知器与联结主义遭到冷落" class="headerlink" title="感知器与联结主义遭到冷落"></a>感知器与联结主义遭到冷落</h3><p>感知器是神经网络的一种形式，由Frank Rosenblatt于1958年提出。与多数AI研究者一样，他对这一发明的潜力非常乐观，预言说“感知器最终将能够学习，作出决策和翻译语言”。整个六十年代里这一方向的研究工作都很活跃。<br>1969年Minsky和Papert出版了著作《感知器》，书中暗示感知器具有严重局限，而Frank Rosenblatt的预言过于夸张。这本书的影响是破坏性的：联结主义的研究因此停滞了十年。后来新一代研究者使这一领域获得重生，并使其成为人工智能中的重要部分；遗憾的是Rosenblatt没能看到这些，他在《感知器》问世后不久即因游船事故去世。[70]</p>
-<h3 id="“简约派（the-neats）”：逻辑，Prolog语言和专家系统"><a href="#“简约派（the-neats）”：逻辑，Prolog语言和专家系统" class="headerlink" title="“简约派（the neats）”：逻辑，Prolog语言和专家系统"></a>“简约派（the neats）”：逻辑，Prolog语言和专家系统</h3><p>早在1958年，John McCarthy就提出了名为“纳谏者（Advice Taker）”的一个程序构想，将逻辑学引入了AI研究界。[94]1963年，J. Alan Robinson发现了在计算机上实现推理的简单方法：归结（resolution）与合一（unification）算法。然而，根据60年代末McCarthy和他的学生们的工作，对这一想法的直接实现具有极高的计算复杂度：即使是证明很简单的定理也需要天文数字的步骤。[95]70年代Robert Kowalsky在Edinburgh大学的工作则更具成效：法国学者Alain Colmerauer和Phillipe Roussel在他的合作下开发出成功的逻辑编程语言Prolog。[96]<br>Dreyfus等人针对逻辑方法的批评观点认为，人类在解决问题时并没有使用逻辑运算。心理学家Peter Wason，Eleanor Rosch，阿摩司·特沃斯基，Daniel Kahneman等人的实验证明了这一点。[97]McCarthy则回应说，人类怎么思考是无关紧要的：真正想要的是解题机器，而不是模仿人类进行思考的机器。[98]</p>
-<h3 id="“芜杂派（the-scruffies）”：框架和脚本"><a href="#“芜杂派（the-scruffies）”：框架和脚本" class="headerlink" title="“芜杂派（the scruffies）”：框架和脚本"></a>“芜杂派（the scruffies）”：框架和脚本</h3><p>对McCarthy的做法持批评意见的还有他在MIT的同行们。马文·闵斯基，Seymour Papert和Roger Schank等试图让机器像人一样思考，使之能够解决“理解故事”和“目标识别”一类问题。为了使用“椅子”，“饭店”之类最基本的概念，他们需要让机器像人一样作出一些非逻辑的假设。不幸的是，这些不精确的概念难以用逻辑进行表达。Gerald Sussman注意到，“使用精确的语言描述本质上不精确的概念，并不能使它们变得精确起来”。[99]Schank用“芜杂（scruffy）”一词描述他们这一“反逻辑”的方法，与McCarthy，Kowalski，Feigenbaum，Newell和Simon等人的“简约（neat）”方案相对。[100]<br>在1975年的一篇开创性论文中，Minsky注意到与他共事的“芜杂派”研究者在使用同一类型的工具，即用一个框架囊括所有相关的常识性假设。例如，当我们使用“鸟”这一概念时，脑中会立即浮现出一系列相关事实，如会飞，吃虫子，等等。我们知道这些假设并不一定正确，使用这些事实的推理也未必符合逻辑，但是这一系列假设组成的结构正是我们所想和所说的一部分。他把这个结构称为“框架（frames）”。Schank使用了“框架”的一个变种，他称之为“脚本（scripts）”，基于这一想法他使程序能够回答关于一篇英语短文的提问。[101] 多年之后的面向对象编程采纳了AI“框架”研究中的“继承（inheritance）”概念。</p>
-<h2 id="繁荣：1980-1987"><a href="#繁荣：1980-1987" class="headerlink" title="繁荣：1980 - 1987"></a>繁荣：1980 - 1987</h2><p>在80年代，一类名为“专家系统”的AI程序开始为全世界的公司所采纳，而“知识处理”成为了主流AI研究的焦点。日本政府在同一年代积极投资AI以促进其第五代计算机工程。80年代早期另一个令人振奋的事件是John Hopfield和David Rumelhart使联结主义重获新生。AI再一次获得了成功。</p>
-<h3 id="专家系统获得赏识"><a href="#专家系统获得赏识" class="headerlink" title="专家系统获得赏识"></a>专家系统获得赏识</h3><p>专家系统是一种程序，能够依据一组从专门知识中推演出的逻辑规则在某一特定领域回答或解决问题。最早的示例由Edward Feigenbaum和他的学生们开发。1965年起设计的Dendral能够根据分光计读数分辨混合物。1972年设计的MYCIN能够诊断血液传染病。它们展示了这一方法的威力。[102]<br>专家系统仅限于一个很小的知识领域，从而避免了常识问题；其简单的设计又使它能够较为容易地编程实现或修改。总之，实践证明了这类程序的实用性。直到现在AI才开始变得实用起来。[103]<br>1980年CMU为DEC（Digital Equipment Corporation，数字设备公司）设计了一个名为XCON的专家系统，这是一个巨大的成功。在1986年之前，它每年为公司省下四千万美元。[104]全世界的公司都开始研发和应用专家系统，到1985年它们已在AI上投入十亿美元以上，大部分用于公司内设的AI部门。为之提供支持的产业应运而生，其中包括Symbolics，Lisp Machines等硬件公司和IntelliCorp，Aion等软件公司。[105]</p>
-<h3 id="知识革命"><a href="#知识革命" class="headerlink" title="知识革命"></a>知识革命</h3><p>专家系统的能力来自于它们存储的专业知识。这是70年代以来AI研究的一个新方向。 [106] Pamela McCorduck在书中写道，“不情愿的AI研究者们开始怀疑，因为它违背了科学研究中对最简化的追求。智能可能需要建立在对分门别类的大量知识的多种处理方法之上。” “70年代的教训是智能行为与知识处理关系非常密切。有时还需要在特定任务领域非常细致的知识。” [107]知识库系统和知识工程成为了80年代AI研究的主要方向。[108]<br>第一个试图解决常识问题的程序Cyc也在80年代出现，其方法是建立一个容纳一个普通人知道的所有常识的巨型数据库。发起和领导这一项目的Douglas Lenat认为别无捷径，让机器理解人类概念的唯一方法是一个一个地教会它们。这一工程几十年也没有完成。[109]</p>
-<h3 id="重获拨款：第五代工程"><a href="#重获拨款：第五代工程" class="headerlink" title="重获拨款：第五代工程"></a>重获拨款：第五代工程</h3><p>1981年，日本经济产业省拨款八亿五千万美元支持第五代计算机项目。其目标是造出能够与人对话，翻译语言，解释图像，并且像人一样推理的机器。[110]令“芜杂派”不满的是，他们选用Prolog作为该项目的主要编程语言。[111]<br>其他国家纷纷作出响应。英国开始了耗资三亿五千万英镑的Alvey工程。美国一个企业协会组织了MCC（Microelectronics and Computer Technology Corporation，微电子与计算机技术集团），向AI和信息技术的大规模项目提供资助。[112][113] DARPA也行动起来，组织了战略计算促进会（Strategic Computing Initiative），其1988年向AI的投资是1984年的三倍。[114]</p>
-<h3 id="联结主义的重生"><a href="#联结主义的重生" class="headerlink" title="联结主义的重生"></a>联结主义的重生</h3><p>982年，物理学家John Hopfield证明一种新型的神经网络（现被称为“Hopfield网络”）能够用一种全新的方式学习和处理信息。大约在同时（早于Paul Werbos），David Rumelhart推广了反向传播算法，一种神经网络训练方法。这些发现使1970年以来一直遭人遗弃的联结主义重获新生。[113][115]<br>1986年由Rumelhart和心理学家James McClelland主编的两卷本论文集“分布式并行处理”问世，这一新领域从此得到了统一和促进。90年代神经网络获得了商业上的成功，它们被应用于光字符识别和语音识别软件。[113][116]</p>
-<h2 id="第二次AI低谷：1987-1993"><a href="#第二次AI低谷：1987-1993" class="headerlink" title="第二次AI低谷：1987 - 1993"></a>第二次AI低谷：1987 - 1993</h2><p>80年代中商业机构对AI的追捧与冷落符合经济泡沫的经典模式，泡沫的破裂也在政府机构和投资者对AI的观察之中。尽管遇到各种批评，这一领域仍在不断前进。来自机器人学这一相关研究领域的Rodney Brooks和Hans Moravec提出了一种全新的人工智能方案。</p>
-<h3 id="人工智能的低谷"><a href="#人工智能的低谷" class="headerlink" title="人工智能的低谷"></a>人工智能的低谷</h3><p>“AI之冬”一词由经历过1974年经费削减的研究者们创造出来。他们注意到了对专家系统的狂热追捧，预计不久后人们将转向失望。[117]事实被他们不幸言中：从80年代末到90年代初，AI遭遇了一系列财政问题。<br>变天的最早征兆是1987年AI硬件市场需求的突然下跌。Apple和IBM生产的台式机性能不断提升，到1987年时其性能已经超过了Symbolics和其他厂家生产的昂贵的Lisp机。老产品失去了存在的理由：一夜之间这个价值五亿美元的产业土崩瓦解。[118]<br>XCON等最初大获成功的专家系统维护费用居高不下。它们难以升级，难以使用，脆弱（当输入异常时会出现莫名其妙的错误），成了以前已经暴露的各种各样的问题（例如资格问题（en:qualification problem））的牺牲品。专家系统的实用性仅仅局限于某些特定情景。[119]<br>到了80年代晚期，战略计算促进会大幅削减对AI的资助。DARPA的新任领导认为AI并非“下一个浪潮”，拨款将倾向于那些看起来更容易出成果的项目。[120]<br>1991年人们发现十年前日本人宏伟的“第五代工程”并没有实现。事实上其中一些目标，比如“与人展开交谈”，直到2010年也没有实现。[121] 与其他AI项目一样，期望比真正可能实现的要高得多。[121]</p>
-<h3 id="躯体的重要性：Nouvelle-AI与嵌入式推理"><a href="#躯体的重要性：Nouvelle-AI与嵌入式推理" class="headerlink" title="躯体的重要性：Nouvelle AI与嵌入式推理"></a>躯体的重要性：Nouvelle AI与嵌入式推理</h3><p>80年代后期，一些研究者根据机器人学的成就提出了一种全新的人工智能方案。[122] 他们相信，为了获得真正的智能，机器必须具有躯体 - 它需要感知，移动，生存，与这个世界交互。他们认为这些感知运动技能对于常识推理等高层次技能是至关重要的，而抽象推理不过是人类最不重要，也最无趣的技能（参见Moravec悖论）。[123]他们号召“自底向上”地创造智能，这一主张复兴了从60年代就沉寂下来的控制论。<br>另一位先驱是在理论神经科学上造诣深厚的David Marr，他于70年代来到MIT指导视觉研究组的工作。他排斥所有符号化方法（不论是McCarthy的逻辑学还是Minsky的框架），认为实现AI需要自底向上地理解视觉的物理机制，而符号处理应在此之后进行。[124]<br>在发表于1990年的论文“大象不玩象棋（Elephants Don’t Play Chess）”中，机器人研究者Rodney Brooks提出了“物理符号系统假设”，认为符号是可有可无的，因为“这个世界就是描述它自己最好的模型。它总是最新的。它总是包括了需要研究的所有细节。诀窍在于正确地，足够频繁地感知它。” [125]在80年代和90年代也有许多认知科学家反对基于符号处理的智能模型，认为身体是推理的必要条件，这一理论被称为“具身的心灵/理性/ 认知（embodied mind/reason/cognition）”论题。[126]</p>
-<h2 id="AI：1993-现在"><a href="#AI：1993-现在" class="headerlink" title="AI：1993 - 现在"></a>AI：1993 - 现在</h2><p>现已年过半百的AI终于实现了它最初的一些目标。它已被成功地用在技术产业中，不过有时是在幕后。这些成就有的归功于计算机性能的提升，有的则是在高尚的科学责任感驱使下对特定的课题不断追求而获得的。不过，至少在商业领域里AI的声誉已经不如往昔了。“实现人类水平的智能”这一最初的梦想曾在60年代令全世界的想象力为之着迷，其失败的原因至今仍众说纷纭。各种因素的合力将AI拆分为各自为战的几个子领域，有时候它们甚至会用新名词来掩饰“人工智能”这块被玷污的金字招牌。[127]AI比以往的任何时候都更加谨慎，却也更加成功。</p>
-<h3 id="里程碑和摩尔定律"><a href="#里程碑和摩尔定律" class="headerlink" title="里程碑和摩尔定律"></a>里程碑和摩尔定律</h3><p>1997年5月11日，深蓝成为战胜国际象棋世界冠军卡斯帕罗夫的第一个计算机系统。[128]2005年，Stanford开发的一台机器人在一条沙漠小径上成功地自动行驶了131英里，赢得了DARPA挑战大赛头奖。[129]2009年，蓝脑计划声称已经成功地模拟了部分鼠脑。2011年，IBM 沃森参加《危险边缘》节目，在最后一集打败了人类选手。2016年3月，AlphaGo击败李世乭，成为第一个不让子而击败职业围棋棋士的电脑围棋程式。<br>这些成就的取得并不是因为范式上的革命。它们仍然是工程技术的复杂应用，但是计算机性能已经今非昔比了。[130]事实上，深蓝计算机比Christopher Strachey在1951年用来下棋的Ferranti Mark 1快一千万倍。[131]这种剧烈增长可以用摩尔定律描述：计算速度和内存容量每两年翻一番。计算性能上的基础性障碍已被逐渐克服。</p>
-<h3 id="智能代理"><a href="#智能代理" class="headerlink" title="智能代理"></a>智能代理</h3><p>90年代，被称为“智能代理”的新范式被广泛接受。[132]尽管早期研究者提出了模块化的分治策略，[133] 但是直到Judea Pearl，Alan Newell等人将一些概念从决策理论和经济学中引入AI之后现代智能代理范式才逐渐形成。[134]当经济学中的“理性代理（rational agent）”与计算机科学中的“对象”或“模块”相结合，“智能代理”范式就完善了。<br>智能代理是一个系统，它感知周围环境，然后采取措施使成功的几率最大化。最简单的智能代理是解决特定问题的程序。已知的最复杂的智能代理是理性的，会思考的人类。智能代理范式将AI研究定义为“对智能代理的学习”。这是对早期一些定义的推广：它超越了研究人类智能的范畴，涵盖了对所有种类的智能的研究。[135]<br>这一范式让研究者们通过学习孤立的问题找到可证的并且有用的解答。它为AI各领域乃至经济学，控制论等使用抽象代理概念的领域提供了描述问题和共享解答的一种通用语言。人们希望能找到一种完整的代理架构（像Newell的en:SOAR那样），允许研究者们应用交互的智能代理建立起通用的智能系统。[134][136]</p>
-<h3 id="“简约派”的胜利"><a href="#“简约派”的胜利" class="headerlink" title="“简约派”的胜利"></a>“简约派”的胜利</h3><p>越来越多的AI研究者们开始开发和使用复杂的数学工具。[137]人们广泛地认识到，许多AI需要解决的问题已经成为数学，经济学和运筹学领域的研究课题。数学语言的共享不仅使AI可以与其他学科展开更高层次的合作，而且使研究结果更易于评估和证明。AI已成为一门更严格的科学分支。[138] Russell和Norvig（2003）将这些变化视为一场“革命”和“简约派的胜利”。[139][140]<br>Judea Pearl发表于1988年的名著[141]将概率论和决策理论引入AI。现已投入应用的新工具包括贝叶斯网络，隐马尔可夫模型，信息论，随机模型和经典优化理论。针对神经网络和进化算法等“计算智能”范式的精确数学描述也被发展出来。[139]</p>
-<h3 id="幕后的AI"><a href="#幕后的AI" class="headerlink" title="幕后的AI"></a>幕后的AI</h3><p>AI研究者们开发的算法开始变为较大的系统的一部分。AI曾经解决了大量的难题，[142]这些解决方案在产业界起到了重要作用。[143]应用了AI技术的有数据挖掘，工业机器人，物流[144]，语音识别[145]，银行业软件[146]，医疗诊断[146]和Google搜索引擎等。[147]<br>AI领域并未从这些成就之中获得多少益处。AI的许多伟大创新仅被看作计算机科学工具箱中的一件工具。[148]Nick Bostrom解释说，“很多AI的前沿成就已被应用在一般的程序中，不过通常没有被称为AI。这是因为，一旦变得足够有用和普遍，它就不再被称为AI了。”[149]<br>90年代的许多AI研究者故意用其他一些名字称呼他们的工作，例如信息学，知识系统，认知系统或计算智能。部分原因是他们认为他们的领域与AI存在根本的不同，不过新名字也有利于获取经费。至少在商业领域，导致AI之冬的那些未能兑现的承诺仍然困扰着AI研究，正如New York Times在2005年的一篇报道所说：“计算机科学家和软件工程师们避免使用人工智能一词，因为怕被认为是在说梦话。”[150][151][152]</p>
-<h3 id="HAL-9000在哪里"><a href="#HAL-9000在哪里" class="headerlink" title="HAL 9000在哪里?"></a>HAL 9000在哪里?</h3><p>1968年亚瑟·克拉克和史丹利·库柏力克创作的《“2001太空漫游”》中设想2001年将会出现达到或超过人类智能的机器。他们创造的这一名为HAL-9000的角色是以科学事实为依据的：当时许多顶极AI研究者相信到2001年这样的机器会出现。[153]<br>“那么问题是，为什么在2001年我们并未拥有HAL呢?” 马文·闵斯基问道。[154] Minsky认为，问题的答案是绝大多数研究者醉心于钻研神经网络和遗传算法之类商业应用，而忽略了常识推理等核心问题。另一方面，John McCarthy则归咎于资格问题（en:qualification problem）。[155]Ray Kurzweil相信问题在于计算机性能，根据摩尔定律，他预测具有人类智能水平的机器将在2029年出现。[156]Jeff Hawkins认为神经网络研究忽略了人类大脑皮质的关键特性，而简单的模型只能用于解决简单的问题。[157]还有许多别的解释，每一个都对应着一个正在进行的研究计划。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://zh.wikipedia.org/wiki/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%B2" target="_blank" rel="external">人工智能史</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/225px-Gottfried_Wilhelm_von_Leibniz.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="AI" scheme="http://aisee.me/categories/AI/"/>
-    
-    
-      <category term="History" scheme="http://aisee.me/tags/History/"/>
     
   </entry>
   

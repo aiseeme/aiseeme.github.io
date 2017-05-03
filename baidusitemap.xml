@@ -4,14 +4,54 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/05/03/MyView/Share/cognitive-trilogy-by-fusheng/</loc>
-    <lastmod>2017-05-03T04:39:03.191Z</lastmod>
+    <loc>http://aisee.me/2017/05/03/Program/Tools/Reactive/reactive-native-learning/</loc>
+    <lastmod>2017-05-03T06:23:04.981Z</lastmod>
     <data>
         <display>
-        <title>Cognitive Trilogy By FuSheng</title>
-        <pubTime>2017-05-03T04:03:06.000Z</pubTime>
+        <title>怎么快速学习一门新技术</title>
+        <pubTime>2017-05-03T06:14:06.000Z</pubTime>
         
-        <tag>Fu Sheng</tag>
+        <tag>Reactive</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/05/03/AI/Business/use-ai/</loc>
+    <lastmod>2017-05-03T06:11:11.996Z</lastmod>
+    <data>
+        <display>
+        <title>《程序员》5月精彩内容：人工智能 为我所用</title>
+        <pubTime>2017-05-03T06:07:06.000Z</pubTime>
+        
+        <tag>Application</tag>
+         
+         
+           
+             
+              <breadCrumb title="AI" url="http://aisee.me/categories/AI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/05/02/Meta%20Skill/meta-skill-core/</loc>
+    <lastmod>2017-05-03T05:54:23.364Z</lastmod>
+    <data>
+        <display>
+        <title>Meta Skill——Core</title>
+        <pubTime>2017-05-02T14:47:06.000Z</pubTime>
+        
+        <tag>Meta Skill</tag>
          
          
            
@@ -24,14 +64,76 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/05/02/Meta%20Skill/meta-skill-core/</loc>
-    <lastmod>2017-05-02T14:47:42.017Z</lastmod>
+    <loc>http://aisee.me/2017/05/02/MyView/Original/future/level-up-again-and-again/</loc>
+    <lastmod>2017-05-03T05:20:52.066Z</lastmod>
     <data>
         <display>
-        <title>Meta Skill——Core</title>
-        <pubTime>2017-05-02T14:47:06.000Z</pubTime>
+        <title>Some Deep Minds</title>
+        <pubTime>2017-05-02T13:29:06.000Z</pubTime>
         
-        <tag>Meta Skill</tag>
+        <tag>Growing Up</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/03/19/MyView/books-impacting-me/</loc>
+    <lastmod>2017-05-03T05:13:22.153Z</lastmod>
+    <data>
+        <display>
+        <title>OMG，Poor and Cheap Attention</title>
+        <pubTime>2017-03-19T14:09:18.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/03/26/MyView/deep-thinking-change-my-life/</loc>
+    <lastmod>2017-05-03T05:13:22.147Z</lastmod>
+    <data>
+        <display>
+        <title>Best Practice of Deep Thinking</title>
+        <pubTime>2017-03-26T00:29:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+        <tag>Health</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/05/03/MyView/Share/cognitive-trilogy-by-fusheng/</loc>
+    <lastmod>2017-05-03T04:39:03.191Z</lastmod>
+    <data>
+        <display>
+        <title>Cognitive Trilogy By FuSheng</title>
+        <pubTime>2017-05-03T04:03:06.000Z</pubTime>
+        
+        <tag>Fu Sheng</tag>
          
          
            
@@ -79,26 +181,6 @@
            
              
               <breadCrumb title="English" url="http://aisee.me/categories/English/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/05/02/MyView/Original/future/level-up-again-and-again/</loc>
-    <lastmod>2017-05-02T14:14:23.293Z</lastmod>
-    <data>
-        <display>
-        <title>Some Deep Minds</title>
-        <pubTime>2017-05-02T13:29:06.000Z</pubTime>
-        
-        <tag>Growing Up</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
           
         </display>
     </data>
@@ -954,28 +1036,6 @@
         <pubTime>2017-01-01T12:28:06.000Z</pubTime>
         
         <tag>Share</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/03/26/MyView/deep-thinking-change-my-life/</loc>
-    <lastmod>2017-04-09T11:18:04.603Z</lastmod>
-    <data>
-        <display>
-        <title>Best Practice of Deep Thinking</title>
-        <pubTime>2017-03-26T00:29:06.000Z</pubTime>
-        
-        <tag>Share</tag>
-         
-        <tag>Health</tag>
          
          
            
@@ -5245,30 +5305,6 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>Base of Multimedia——Video</title>
-        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Multimedia</tag>
-         
-        <tag>Video</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -5305,6 +5341,30 @@
         <tag>Multimedia</tag>
          
         <tag>Color</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>Base of Multimedia——Video</title>
+        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Multimedia</tag>
+         
+        <tag>Video</tag>
          
          
            
@@ -5433,26 +5493,6 @@
         <pubTime>2017-01-03T11:37:06.000Z</pubTime>
         
         <tag>Resume</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/03/19/MyView/books-impacting-me/</loc>
-    <lastmod>2017-03-27T08:20:40.435Z</lastmod>
-    <data>
-        <display>
-        <title>OMG，Poor and Cheap Attention</title>
-        <pubTime>2017-03-19T14:09:18.000Z</pubTime>
-        
-        <tag>Share</tag>
          
          
            
