@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://aisee.me/"/>
-  <updated>2017-05-03T06:23:04.981Z</updated>
+  <updated>2017-05-03T13:20:18.748Z</updated>
   <id>http://aisee.me/</id>
   
   <author>
@@ -14,6 +14,308 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TensorFlow, Next Android?</title>
+    <link href="http://aisee.me/2017/05/03/AI/TensorFlow/tensorflow-android/"/>
+    <id>http://aisee.me/2017/05/03/AI/TensorFlow/tensorflow-android/</id>
+    <published>2017-05-03T11:46:06.000Z</published>
+    <updated>2017-05-03T13:20:18.748Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://7mnpep.com2.z0.glb.qiniucdn.com/uploads/image/file/25/0e/250e707a638b56899b3d42faad02181f.png?imageView2/2/w/930/interlace/1/q/88/ignore-error/1/" alt=""></p>
+<p><a href="http://www.geekpark.net/topics/213892" target="_blank" rel="external">Source</a></p>
+<p>就像上图所描述的那样，机器学习实际上只包括了三个主要构成部分：</p>
+<ol>
+<li><p>首先，你需要通过建模来确定一个公式，这个公式就是「机器」。</p>
+</li>
+<li><p>其次，确定「w」和「b」这两个变量「参数」。</p>
+</li>
+<li><p>通过系统或软件的设定不断重复测试并调整「参数」直到达到一个稳定的值。</p>
+</li>
+</ol>
+<p>在公式的确定中，整个学习的过程是渐进的，一旦这种重复的运算达到了一个稳定的取值，机器学习的错误概率就会大大减少。</p>
+<p>简单来说，就是用一个公式来描述输入、输出和参数，从而提高机器对特定事物的认知。</p>
+   <a id="more"></a>
+<h2 id="Google开源TensorFlow背后：会成为人工智能领域的Android-吗？"><a href="#Google开源TensorFlow背后：会成为人工智能领域的Android-吗？" class="headerlink" title="Google开源TensorFlow背后：会成为人工智能领域的Android 吗？"></a><a href="http://www.geekpark.net/topics/213892" target="_blank" rel="external">Google开源TensorFlow背后：会成为人工智能领域的Android 吗？</a></h2><p> <img src="http://7mnpep.com2.z0.glb.qiniucdn.com/uploads/image/file/ec/90/ec90c0f8957b86bda5d8ef9528804fdf.png?imageView2/2/w/930/interlace/1/q/88/ignore-error/1/" alt=""></p>
+<p> 在具体的实践中，Gmail 已经能够辨别 99.9% 的垃圾邮件，并能将语音识别为文字；Google Photo 的图片识别错误率也从 23% 降到了 13%，用户不需要再照片上标注「大海」的名字即可自动归类；而在 Google 的现金流业务广告系统中，机器学习的应用也将大大提高广告投放的投资回报率。</p>
+<p>这一切看似复杂的过程都源自于一个简单公式的重复测试，正如 Greg Corrado 所言，「我们不会给机器一个规则，而是让它不断地去自己去学习和纠正。」</p>
+<p>人类通过几个简单的例子就能进行学习，但机器却需要大量的测试。即便依靠一个简单的公式就能实现准确的预测，但整个参数和过程的确立却要经历无数的重复试验。</p>
+<blockquote>
+<p>「机器学习并不是魔术，它只是个工具而已。」</p>
+</blockquote>
+<p>未来，机器学习还面临着在移动设备上实现的瓶颈。由于大量的计算需要在云端完成，因此所有的结果的实现需要一个庞大网络的支撑，而目前的移动设备和网络还不足以达到这一要求。</p>
+<p>「你的手机现在只是接受了数千台计算机为你计算处理的数据，未来我们会把网络做小，让机器学习的结果更具适用性。」Schimidt 毫不回避这一困境所在。</p>
+<p>因此，TensorFlow 的开源变得理所当然，能否超越 Android 称为又一个全新的生态也变得没那么重要。比起建立一套固定的规则，「机器学习」和「人工智能」更需要的是一套技术标准。</p>
+<h2 id="利用-TensorFlow-Serving-系统在生产环境中运行模型"><a href="#利用-TensorFlow-Serving-系统在生产环境中运行模型" class="headerlink" title="利用 TensorFlow Serving 系统在生产环境中运行模型"></a><a href="http://wiki.jikexueyuan.com/project/geekdigest/TensorFlow-Serving.html" target="_blank" rel="external">利用 TensorFlow Serving 系统在生产环境中运行模型</a></h2><p>机器学习技术支撑着许多 Google 产品的功能，比如：Google 应用中的语音识别，收件箱的智能回复，以及 Google 照片搜索，等等。尽管软件行业几十年中积累起的无数经验促成了很多用于构建并支持产品的最佳实践，但基于机器学习的服务却还是带来了一些新颖而有趣的挑战。如今，专为解决这些挑战的系统终于出现了，这就是 TensorFlow Serving。TensorFlow Serving 是一种用于机器学习模型的高性能开源服务系统，专为生产环境而设计，并针对 TensorFlow 进行了优化处理。</p>
+<p>TensorFlow Serving 系统非常适用于大规模运行能够基于真实情况的数据并会发生动态改变的多重模型。它能够实现：</p>
+<p>模型生命周期管理。<br>使用多重算法进行试验。<br>GPU 资源的有效使用。<br>TensorFlow Serving 能够简化并加速从模型到生产的过程。它能实现在服务器架构和 API 保持不变的情况下，安全地部署新模型并运行试验。除了原生集成 TensorFlow，还可以扩展服务其他类型的模型。下图显示了简化的监督学习过程，向 learner 输入训练数据，然后输出模型：</p>
+<p><img src="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram1_TrainingPipeline_FINAL.png" alt=""></p>
+<p>一旦经过验证后，新模型版本定型，就可以部署到服务系统，如下图所示：</p>
+<p><img src="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram1_Serving_FINAL.png" alt=""></p>
+<p>TensorFlow Serving 使用（之前训练的）模型来实施推理——基于客户端呈现数据的预测。因为客户端通常会使用远程过程调用（RPC）接口来与服务系统通信，TensorFlow Serving 提供了一种基于 gRPC 的参考型前端实现，这是一种 Google 开发的高性能开源 RPC 架构。当新数据可用或改进模型时，加载并迭代模型是很常见的。事实上，在谷歌，许多管线经常运行，一旦当新数据可用时，就会产生新版本的模型。</p>
+<p><img src="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram2_Final.png" alt=""></p>
+<p><img src="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram2_Final.png" alt=""></p>
+<p>TensorFlow Serving 由 C++ 编写而成，支持 Linux。TensorFlow Serving 引入的开销是非常小的。我们在一个有着 16个 vCPU 的英特尔至强 E5 2.6 GHz 的机器上进行了测试，执行每核每秒约 100,000 次查询，不包括 gRPC 和 TensorFlow 推理处理时间。我们非常激动地向大家分享这个遵守 Apache 2.0 开源协议的 TensorFlow 重要组件。非常希望大家能在 Stack Overflow 和 GitHub 上提问或请求开发一些功能。上手很简单，只需复制 github.com/tensorflow/serving 中的代码，然后签出教程即可。随着我们对 TensorFlow 的继续开发，你一定会了解到更多有关内容，因为这大概是世界上最好用的机器学习工具包了。如果希望及时了解最新进展，请关注 @googleresearch 或 +ResearchatGoogle，以及 2016 年 3 月，Jeff Dean 将在 GCP Next 2016 上的主题演讲。</p>
+<h2 id="人工智能：TensorFlow-带你进入深度学习的世界"><a href="#人工智能：TensorFlow-带你进入深度学习的世界" class="headerlink" title="人工智能：TensorFlow 带你进入深度学习的世界"></a><a href="http://www.weiot.net/plugin.php?id=wq_wechatcollecting&amp;mod=view&amp;articleid=68655" target="_blank" rel="external">人工智能：TensorFlow 带你进入深度学习的世界</a></h2><p>自 TensorFlow 于 2015 年底正式开源，距今已有一年多，不久前，TensorFlow 正式版也发布了。这期间 TensorFlow 不断给人以惊喜，推出了分布式版本，服务框架 TensorFlow Serving，可视化工具 TensorFlow，上层封装 TF.Learn，其他语言（Go、Java、Rust、Haskell）的绑定、Windows 的支持、JIT 编译器 XLA、动态计算图框架 Fold，以及数不胜数的经典模型在 TensorFlow 上的实现（Inception Net、SyntaxNet 等）。在这一年多时间，TensorFlow 已从初入深度学习框架大战的新星，成为了几近垄断的行业事实标准。</p>
+<p>目前看来，对于人工智能这个领域依然有不少怀疑的声音，但不可否认的是，人工智能仍然是未来的发展趋势。因此，在高手问答第 142 期里，我们策划了 “TensorFlow 实战” 的主题，并邀请了 @黄文坚 @唐源Terry 作为高手嘉宾。</p>
+<p>本文整理了本期高手问答中一些与 TensorFlow 相关的精彩问答。</p>
+<h3 id="一、TensorFlow-之入门篇"><a href="#一、TensorFlow-之入门篇" class="headerlink" title="一、TensorFlow 之入门篇"></a>一、TensorFlow 之入门篇</h3><p>1.没接触过，刚了解了一下，这个东西就是把某种东西用数据描述出来，然后用一些样本告诉机器它是什么，或者要对他进行什么操作，训练后，机器就能告诉我们输入的数据是什么，或者自动的进行操作吗？比如输入一堆图片告诉他哪个是猫，以后它就能自动识别猫了；给汽车装上各种传感器采集数据，人开着车操作，一段时间后，它就知道什么情况要怎么操作了，就会自动驾驶了？不知理解得对不对，希望指正。</p>
+<p>对的，你说的是其中一类运用，属于机器学习的概念，但可以做到的还远远不止这些，可以多多关注这个领域。深度学习是机器学习的一个分支。TensorFlow 是主要用来进行深度学习应用的框架。</p>
+<ol>
+<li>我是 TensorFlow 爱好者，现在正在学习， 国内的这方面的资料不多， 感谢你们提供的资料。我想问一下，学习 TensorFlow 有什么学习曲线，有没有什么实战的案例？另外在集群模式支持的是不是友好，和 Spark 集成是不是友好？或者有没有这方面的规划。</li>
+</ol>
+<p>书中有特别多的实战例子，欢迎购买！至于对 Spark 集群的友好，你可以了解一下雅虎最近新开源的 TensorFlowOnSpark。</p>
+<ol>
+<li>看了这个题目的一些提问，发现这个 TensorFlow 技术，学习曲线还是很陡峭，研究的人还是少数，有什么方法可以把学习曲线降低，更容易入门吗？还有学习这个技术，有什么必要的学科基础要求吗？</li>
+</ol>
+<p>可以先通过 keras 上手，这是一个支持 TensorFlow 的上层封装。在学习 TensorFlow 之前，需要有基础的 Python 编程能力，以及对深度学习有一定了解。不过我现在在和 RStudio 合作把这个也能放在 R 里面跑，可以关注一下我的 GitHub：<a href="https://github.com/terrytangyuan。" target="_blank" rel="external">https://github.com/terrytangyuan。</a></p>
+<ol>
+<li>好期待 TensorFlow 这本书，对于新手看着书入门会有难度吗？要先掌握什么基础知识呢？</li>
+</ol>
+<p>可以先看看 TensorFlow 中文官方站点的文档。本书对新手难度不高。需要一些基础的 Python 运用能力，还有一些机器学习基础。书中对深度学习有较多的讲解，所以对深度学习的知识要求不高。</p>
+<ol>
+<li>作为一名成长在 Spring 技术栈下的码农，转投 TensorFlow 的话，这本书适合我们入门么？也想请您在机器学习方向上提供一些指导意见，谢谢。</li>
+</ol>
+<p>完全可以的，可以学习一下基础的 Python 语法，学习机器学习，深度学习，尝试做一做相关的小应用，也可以看看雅虎最近出的 TensorFlowOnSpark，或从 sklearn+numpy+pandas 开始。</p>
+<ol>
+<li>请问如果要学习 TensorFlow，数学应该掌握到什么程度，高数，线代，积分都学过还需要再学哪些内容？</li>
+</ol>
+<p>如果只是要掌握这门工具，不需要学习太多理论的东西，比如说你如果想利用这门工具来做一些机器学习的运用，我现在做的 tf.contrib.learn 模块，类似 scikit-learn，降低了很多学习的门槛，希望能够帮助到大家。如果想深入做研究的话，你说的这些都是必须要掌握的基础，可以在这基础上多关注一下相关的研究，建立好自己的感兴趣方向。</p>
+<ol>
+<li>学习 TensorFlow 需要哪些技术栈，了解 TensorFlow 需要阅读源码吗？</li>
+</ol>
+<p>如果只是想调用高阶的一些模块做一些应用，基本的 Python 就够了，如果想在某一块做提升的话，能自己学习读代码是再好不过的了，我一开始参与开源软件的时候也是只懂一些基础，可以积极参与开发和讨论，从这个过程中可以学到很多。如果想掌握底层的一些细节，就需要学好 C 语言之类的了。</p>
+<p>最底层还有 cuda 的代码。这个要看自己的需求，是想了解到什么程度，如果只是用来做应用，想要很快出结果，直接看 api 就好。如果想对性能进行优化，可能需要阅读源码。</p>
+<ol>
+<li>与 TensorFlow 类似的项目有哪些？TensorFlow 的优点和缺点是？</li>
+</ol>
+<p>还有 Caffe、CNTK、MXNet 等，在《TensorFlow实战》书中第二章详尽地讲解了 TensorFlow 与其他学习框架的对比。</p>
+<ol>
+<li>TensorFlow 只能部署在 Linux 机器上？</li>
+</ol>
+<p>Mac, Windows, Mobile, Rasberry Pi 都是可以的</p>
+<h3 id="二、TensorFlow-之性能篇"><a href="#二、TensorFlow-之性能篇" class="headerlink" title="二、TensorFlow 之性能篇"></a>二、TensorFlow 之性能篇</h3><p>1.TensoFlow 的优点我知道，架构好、跨平台、接口丰富、易部署，而且是大公司的产品。问题就是 TensoFlow 的性能到底如何，我看过网上几个评测，是不是像以前别人测试中的那样慢的离谱，不管 CPU 还是 GPU 跟 Torch 比都慢不少，评比原文，更有测试评论说 TensoFlow 比 convnetjs 慢 100 倍，原文地址。</p>
+<p>我简单了解深度学习的算法有很多，效率也不同，我希望知道的是，在同算法的情况下，TensoFlow 到底比其它框架慢多少？毕竟性能也是一个很关键的因素。</p>
+<p>这些评测是很旧的了，新版的 TensorFlow 没有这个问题。TensorFlow 目前可能在全连接的 MLP 上稍微慢一点，但是后续 XLA 会解决这个问题。但是其他比如 CNN、RNN 等，因为大家主要都使用 cuDNN，差异不大，性能基本上非常接近的。性能你可以放心，Google 内部全部使用这个框架，如果真有性能慢的话，这么多人使用着早就解决了。</p>
+<ol>
+<li>机器学习中一般分有监督学习和无监督学习，无监督学习下，用 TensorFlow 来对某个数据集进行学习，那么它识别出来的特征是什么？还有 TensorFlow1.0 中加入了 XLA，我理解为能把代码翻译成特定的 GPU 或 x86-64 的运行代码，是不是只有在做代数运算时才会用上 XLA？TensorFlow 不是已经在底层用cuda 的 cuDNN 库加速了吗，为什么还要用 XLA？</li>
+</ol>
+<p>关于无监督学习，书中有讲解。无监督学习在深度学习中一般是自编码器等，提取到的是抽象的高阶特征，去除了噪声。XLA 会对几个层叠的操作进行 JIT 编译。cuda 是一门语言，cuDNN 是深度学习的库，使用 cuda 加速也要看是怎么使用它加速，是一层计算执行一次，还是把几层的计算合并在一起执行，XLA 做的就是这个，将一些简单的操作编译合并成一个操作。此前 TensorFlow 训 练 MLP 等网络较慢，使用 XLA 后有。</p>
+<ol>
+<li>请问使用 TensorFlowOnSpark 之后，除了免去数据在 HDFS 和 TensorFlow 移动之外，是否能对性能有较好的提升呢？如果不用 TensorFlowOnSpark，TensorFlow 目前自己的分布式性能是否已经成熟了呢？</li>
+</ol>
+<p>目前 TensorFlow 的分布式算是比较成熟的，但可能还不是最快的。TensorFlowonSpark 应该不能提升分布式的性能，毕竟还经过了一层 Spark 的通信机制处理。</p>
+<ol>
+<li>应该选择 TensorFlow 还是 Theano？有使用两个库的用户比较一下这两者。比如从编译速度，运行速度，易用性等角度进行比较。</li>
+</ol>
+<h3 id="三、TensorFlow-之适用场景"><a href="#三、TensorFlow-之适用场景" class="headerlink" title="三、TensorFlow 之适用场景"></a>三、TensorFlow 之适用场景</h3><ol>
+<li>请问 TensorFlow 在自然语言处理上有没有优势？</li>
+</ol>
+<p>自然语言主要使用 RNN、LSTM、GRU 等，目前新推出的 TensorFLow Fold 支持 Dynamics Batching，计算效率大幅度提升，非常适合做自然语言处理。</p>
+<ol>
+<li>TensorFlow 在实际生产环境中，有什么特别适合的场景呢？</li>
+</ol>
+<p>TensorFlow 部署非常方便，可用在 Android、iOS 等客户端，进行图像识别、人脸识别等任务。常见的 CTR 预估，推荐等任务，也可以轻松地部署到服务器 CPU 上。</p>
+<ol>
+<li>TensorFlow 有在生产企业中应用的案例吗？</li>
+</ol>
+<p>在 Google 用的特别多，所有会用到深度学习的场景，都可以使用 TensorFlow，比如搜索、邮件、语音助手、机器翻译、图片标注等等。</p>
+<ol>
+<li>TensorFlow 在大数据行业的应用和运用怎么样？TensorFlow 的源码使用了哪些设计模式？</li>
+</ol>
+<p>应用非常广的，谷歌已经在很多项目上用了 TensorFlow，比如说 Youtube watch next，还有很多研究型的项目，谷歌 DeepMind 以后所有的研究都会使用这个框架。如果对某段代码好奇，可以去参考参考源代码学习学习，很多的设计都是经过内部各种项目和用户的千锤百炼。</p>
+<p>Google 内部非常多 team 在使用 TensorFlow，比如搜索、邮件、语音、机器翻译等等。数据越大，深度学习效果越好，而支持分布式的 TensorFlow 就能发挥越大的作用。</p>
+<ol>
+<li>最近在学习 TensorFlow，发现其分布式有 in-graph 和 between-gragh 两种架构模式，请问这两种架构的区别是什么？或者是不是应用场景不同？</li>
+</ol>
+<p>其实一个 in-graph 就是模型并行，将模型中不同节点分布式地运行；between-graph 就是数据并行，同时训练多个 batch 的数据。要针对神经网络结构来设计，模型并行实现难度较大，而且需要网络中天然存在很多可以并行的节点。因此一般用数据并行的比较多。</p>
+<ol>
+<li>TensorFlow实现估值网络 ，作用和意义在哪里？ 有没有其他的方法实现估值网络？</li>
+</ol>
+<p>估值网络是深度强化学习中的一个模型，可以用来解决常见的强化学习问题，比如下棋，自动玩游戏，机器控制等等。</p>
+<ol>
+<li>想请问下 TF 有类似 Spark Streaming 的模块吗？TF 在后端存储上和 cassandra 或者 hdfs 的集成上有没有啥需要注意的地方？Spark 在集群上依赖 Master，然后分发到 Worker 上，这样的架构感觉不太稳定，不知道 TF 在分布式是什么架构有没有什么特点？</li>
+</ol>
+<p>目前没有类似 Streaming 的东西，Spark 主要用来做数据处理。TensorFlow 则更多是对处理后的数据进行训练和学习。</p>
+<ol>
+<li>TensorFlow 对初学者是否太难了？TensorFlow 貌似都是研发要用的，对服务器运维会有哪些改变？</li>
+</ol>
+<p>TensorFlow 针对实际生产也是非常好的。应该是所有框架中最适合实际生产环境的，因为有 Google 强大的工程团队的支持，所以 TensorFlow 拥有产品级的代码，稳健的质量，还有适合部署的 TensorFlow Serving。</p>
+<ol>
+<li>TensorFlow 从个体学习研究到实际生产环境应用，有哪些注意事项？</li>
+</ol>
+<p>个人研究的时候没有太多限制，实际上线生成可以使用 TensorFlow Serving，部署效率比较高。</p>
+<ol>
+<li>TF 的耗能是否可以使其独立工作在离线环境的嵌入式小板上，真正达到可独立的智能机器人。</li>
+</ol>
+<p>可以的，使用 TensorFlow 的嵌入式设备很多。但做机器人涉及到很多步骤，核心部分都设计了机器学习，图像处理之类的，TensorFlow 可以用来搭建那些。</p>
+<ol>
+<li>互联网应用如何结合 TensorFlow，能简单介绍一下吗？</li>
+</ol>
+<p>互联网应用很多都是推荐系统，比如说 Youtube watch next 的推荐系统就是用到了 TensorFlow，现在在 tf.contrib.learn 里面有专门的 Estimator 来做 Wide and Deep Learning（可以查看官网上的例子，我们的书中也有更深一些的讲解），大家也都可以用的。</p>
+<ol>
+<li>不知道有没有针对传统零售行业的实际案例，比如销售预测的案例。</li>
+</ol>
+<p>用深度学习可以做销售预测模型，只要它可以转为一个分类预测的问题。</p>
+<ol>
+<li>使用 TensorFlow 的产品有哪些？有比较有代表性的吗？</li>
+</ol>
+<p>可以看看我之前的评论，Youtube watch next 就是其中一个例子，还有很火的 AlphaGo。</p>
+<h3 id="四、TensorFlow-之实战篇"><a href="#四、TensorFlow-之实战篇" class="headerlink" title="四、TensorFlow 之实战篇"></a>四、TensorFlow 之实战篇</h3><p>1.现在在用 TensorFlow 实现图像分类的例子，参考的是 CIFAR-10，输入图片会被随机裁剪为 24x24 的大小，而且训练效率较慢（用了近 20 小时，已使用了 GPU），是否有其他方法来提高效率？TensorFlow 有分布式的处理方法吗，若采用分布式，是否要手动将每一台机器上的训练结果进行合并？若提高裁剪的大小，是否能提高准确率？另外，网上有评论说 TensorFlow 的 C/C++ 接口没有 Caffe 友好，这个您怎么看？</p>
+<p>提高裁剪的大小，会降低样本量，准确率不一定提高。训练 20 多小时是用了多少 epoch？可以通过 tensorboard 观看准确率变化，不一定要训练特别多 epoch。TensorFlow 有分布式的训练，不需要手动，有比较好用的接口，在《TensorFlow实战》中有详细的例子如何使用分布式版本。TF 的 C/C++ 接口很完善，有没有 caffe 友好这个见仁见智。</p>
+<ol>
+<li>想问一下 TensorFlow 和 Spark 结合的框架，例如 TensorFlow on Spark，目前是否已经成熟可用？另外，TensorFlow 新版本增加了对 Java API 的支持，如果不使用 Python 语言，所有功能都直接使用 Java 语言进行相关开发是否已经可行？</li>
+</ol>
+<p>Java API 目前还不太成熟，很多还有待实现，TensorFlowOnSpark 也挺有意思的，可以在现有的 Spark/Hadoop 分布式集群的基础上部署 TensorFlow 的程序，这样可以避免数据在已有 Spark/Hadoop 集群和深度学习集群间移动，HDFS 里面的数据能够更好的输入进 TensorFlow 的程序当中。至于成熟不成熟我就不清楚了，毕竟自己还没有试过，不过稍微看了看雅虎自己有使用。</p>
+<ol>
+<li>对其他的一些机器学习的库接触过一些，要出一个好的效果，对算法选取和参数设置及调节这些方面，希望能给些建议。算法比较多，该如何从分析维度去选取合适的算法？</li>
+</ol>
+<p>我觉得最好的方法就是参加数据科学竞赛，比如说 Kaggle，通过融入在大家的讨论当中，实际操作和锻炼，你可以很快的理解各种参数的意义和一些比较好的参数范围。</p>
+<p>对于一般的数值、种类等特征的数据集，XGboost 和 Lightgbm 都有很好的效果。如果你的数据量很大，或者是图片、视频、语音、语言、时间序列，那么使用深度学习将能获得很好的效果。</p>
+<ol>
+<li>打算做个文章分析类的东东，比如，分析一篇新闻的要素(时间、地点、人物)，用 TensorFlow 应该怎么着手？</li>
+</ol>
+<p>这个问题应该先看看 NLP（自然语言处理）相关的内容，TensorFlow 是实现你算法的工具。但是前提是你得知道应该使用什么算法。</p>
+<ol>
+<li><p>TensorFlow 对于分布式 GPU 支持吗？如何选择 TensorFlow 和 XGboost？<br>TensorFlow 支持分布式 GPU，用于深度学习。XGBoost 主要是做 gradient boosting 这一块，最近也有人贡献了代码使它能够的 GPU 上跑，可以做一做实验比较一下。毕竟 XGboost 是经过 kaggle 用户的千锤百炼，很多都已经能够满足他们的需求了。</p>
+</li>
+<li><p>现在学习 TensorFlow 有没有合适的数据可以使用的？</p>
+</li>
+</ol>
+<p>TensorFlow 中自带了 MNIST 和 CIFAR 数据的下载程序，其他常用的，比如 ImageNet, Gigaword 等数据集需要自己下载。</p>
+<ol>
+<li>BNN分类器训练出的曲线是高次多项式吗？</li>
+</ol>
+<p>你说的 BNN 是指？如果神经网络中没有激活函数，那输出的结果只是输入的线性变换。但是加入了激活函数后，就不是高次多项式了。</p>
+<h3 id="五、其他相关的问题"><a href="#五、其他相关的问题" class="headerlink" title="五、其他相关的问题"></a>五、其他相关的问题</h3><p>1.TensorFlow 的发展趋势是怎么样的？</p>
+<p>会集成越来越多的 contrib 模块，添加很多方便的上层接口，支持更多的语言绑定。同时新推出的 XLA（JIT编译器），Fold（Dynamics Batching）都是未来的大方向。</p>
+<ol>
+<li>个人开发者做 TensorFlow 应用和开发有前途吗？还是说数据和资料都在大公司，没有合适的、相当数量的数据喂养是无法训练好模型的？</li>
+</ol>
+<p>不仅仅限制在深度学习领域，现在 TensorFlow 也提供很多机器学习的 Estimators，我贡献的大部分都在这一块，可以了解一下 tf.contrib.learn 这个模块，书中有很多机器学习的例子。</p>
+<p>另外就是具体要看你做什么任务，当然数据是需要的，但是 <strong>现在也有很多公开的数据。大公司的数据虽多，但是质量也并不是非常高。</strong></p>
+<p>有关 TensorFlow 的相关问答内容至此结束。欢迎大家在开源中国的技术问答区上面踊跃提问和回答。</p>
+<p>最后，安利一下两位老师的著作 €€€€ 《TensorFlow实战》。 本书结合了大量代码实例，深入浅出地介绍了如何使用 TensorFlow、深度剖析如何用 TensorFlow 实现主流神经网络、详述 TensorBoard、多 GPU 并行、分布式并行等组件的使用方法。</p>
+<h2 id="谷歌人工智能背后的大脑"><a href="#谷歌人工智能背后的大脑" class="headerlink" title="谷歌人工智能背后的大脑"></a><a href="http://blog.jobbole.com/110925/" target="_blank" rel="external">谷歌人工智能背后的大脑</a></h2><p>【伯乐在线导读】：1996 年 Jeff Dean 在华盛顿大学获得计算机科学博士学位，三年后便加入了谷歌。谷歌在 1998 年成立，他是公司早期员工之一。Jeff Dean 在谷歌公司的成长过程中扮演了重要角色，设计并实现了支撑谷歌大部分产品的分布式计算基础架构。2016 年 8 月 Forbes 的 Peter High 对 Jeff Dean 做了一次采访，伯乐在线编译如下。</p>
+<p>谷歌 CEO Sundar Pichai 曾说谷歌将主要成为一家人工智能公司，作为系统和基础架构小组的资深前辈，Dean 和他的团队对于实现这个计划来说至关重要。这次的采访所涵盖的内容比较广泛，Dean 描述了他在谷歌扮演的多样角色，公司的 AI 愿景以及他对于谷歌即使已成为科技巨头但仍保持着创业精神的看法，同时还包括其他各种各样的话题。</p>
+<p><img src="http://wx2.sinaimg.cn/mw690/63918611gy1feqvu2gi3dj21jk111top.jpg" alt=""></p>
+<p>Peter High：你好，Jeff Dean，你参与了谷歌大部分的历史，在 1999 年就加入了公司。请简单描述下这十几年来你在公司的角色是如何演变的。</p>
+<p>Jeff Dean：我刚加入时公司真的很小，我们一起挤在帕罗奥图市大学路的一间小办公室里。我做的第一件最主要的事情就是创建我们第一个广告系统。之后，我花费了4到5年的时间在用于每一次查询的抓取、索引和搜索系统。之后，我主要与同事 Sanjay Ghemawat 等人创建用于存储和处理大规模数据设置的软件基础架构，还做一些像搜索指数或者处理卫星图像这样的事情。最近，我致力于机器学习系统。</p>
+<p>High：你在公司的权限有多大，你要做的工作范围有多广？我猜想你没有“普通的一天”。你如何与公司内部或者外部的人员互动？在当前的工作上，你如何把时间分配在这些不同的事情呢？</p>
+<p>Dean： 真不是典型的工作日 。在最初的 14 到15 年，我没有接受任何管理性的职位，这给了我更多自由时间去集中精力写代码。在最近几年，我接受了一些机器学习方面的管理职位，这对我来说很有趣，也是新的学习经历。因为在公司历史上我从事过多种工作，我会保持跟进这些不同的项目，我收到很多邮件。我花费相当一部分时间去处理邮件，通过浏览邮件来跟进项目的最新进展。在任何特定的时间，我手上都有几个技术性项目，我努力分配出时间在这些项目上面，同时还穿插着各种会议和设计审查各种事情。</p>
+<p>High：尽管谷歌已经取得了巨大的发展，它仍然是保持创新的典范。它保持着壮志雄心和开拓创新，仿佛它只是一个很小的组织一般。但是它已有了资源——不管是人才上还是资金上——俨然已是科技界的庞然大物。这个组织是如何对抗停滞和官僚主义，从而保持不拘于自身规模的更强的灵活性呢？</p>
+<p>Dean： 自从我加入公司以来，我们基本就经历了公司的不断成长。在早期，我们新招聘的员工每年都会增长一倍。按新员工占总员工的百分比算，我们后来降低了这个比例，但是在绝对数量上，我们基本仍保持一个大的增长，现在大约每年招聘 10% 到 20% 的新员工。公司规模每扩大一倍，我们就被迫使去重新思考公司已经完成的这些事情。哪些过去适用于 X 倍规模，但却不再适用于 2X 倍规模，我们必须去努力使我们的模式、工程、组织结构、团队动力等适应新的规模。</p>
+<p>我认为有助于我们成长的一个举动是，把与谷歌其他业务在一定程度相分离的部分独立出来，成立不同的部门。创建为偏远地区覆盖网络的高海拔气球，与服务搜索查询有相对适度的互动。大体上把各种不同的活跃的项目独立开来，我们能获取更好的规模和效率，这些项目是我们的核心业务，但是彼此不需要太多的沟通交流。</p>
+<p>High：我理解 Google/Alphabet 各部门的分离，是出于想要维持一定的灵活性，和划分开不同的活动的逻辑。这个评价是否公允？</p>
+<p>Dean： 是的。我认为这使得 Alphabet 下面一些其他实体可以更独立地操作。关于规模的成倍增长，有一个有趣的转变是：以前我们每个人都是在同一个大楼，现在每个人都不在同一个大楼。</p>
+<p>另一个转变，以前员工只在山景城，后来在瑞士苏黎世、纽约、日本东京和西雅图都设有办事处。我们一度有 5 个办事处，都相当大而完善。然后在短短几年内，我们的办事处从 5 个扩张到 35 个，因为我们觉得在世界各地设有许多办事处很好，在哪里可以找到有才华的人才，就在他们身边设立一个办事处。这促使我们不得不重新思考，如何去组织我们工程师的诸多成果。如果你有一个小的办公室，他们可能不应该做一百件事；他们应该做少数几件事，并专心把他们做好。一些小办公室采取的模式是看山景城的人在做什么，他们看到他们在做一百件事，所以他们认为他们也应该做一百件事。我们慢慢摸索到有一种更好的方式来充分发挥这些散布在各地的工程办事处的人的能力。</p>
+<p>High：谷歌 CEO Sundar Pichai 曾说，从长远来看，设备装置将会消失，计算将从移动设备优先向人工智能优先进化。你如何看待谷歌对于人工智能优先的愿景？</p>
+<p>Dean：我认为我们已经从桌面计算进入到了移动计算，这时候每个人都有一个计算设备随身随时携带。随着设备不断地缩小，语音识别和其他可用的 UI 变得实际可用，这将改变我们与计算设备交流的方式。他们将会退居到幕后或者只是周边，允许我们与他们对话就像我们与其他可信赖的伙伴对话一样。他们将会帮助我们获取我们需要的信息和完成各种任务。我认为这是推动机器学习的一个主要目标：在提供咨询方面让计算机提供其他人类伙伴能够提供的智慧，期待必要的时候有更多的信息和更多这类的事情。我认为在下个 5 到 10 年，将会是一个激动人心的时期。</p>
+<p>High：随着各种进步和各种关于 AI 的目标的实现，看起来很多人不再谈论那些已经实现的真正的 AI。那就是，AI 在被谈论时似乎总是带有未来色彩。你怎么定义 AI 的边界？</p>
+<p>Dean：我认为真正的通用人工智能将是一个系统，能够执行人类水平的推理，理解和完成复杂的任务。我们显然还没有达到这个水平，但你说得很对，确实有了很多进展。5 年前，给计算机一张图片，它还不能生成一个人类水平的句子来描述这个图片。现在，计算机生成的句子会说，“这张图片描述的是一个男人拿着网球拍在网球场上。”同时，一个人可能会说，“这是一张网球运动员发球的图片。”人的描述更为微妙，但事实上，现在计算机能够生成看起来几乎是人类写的标题，这是一个相当大的进步。这只是过去的 5~6 年间已实现的众多更具智慧的机器学习模型中的其中一个成就。随着他们应用更大的数据和计算，结果会更好。</p>
+<p>High：你认为我们距离通用人工智能还有多远？</p>
+<p>Dean：不同的问法有不同的回答，这个问题有点广泛。我只敢给出一个宽泛的猜测。大约就是 15 到 50 年，也有可能比 15 年更早。</p>
+<p>High：正如你所提到的，语言是关键，许多谷歌的人工智能都围绕着语言、阅读和理解网页上的一切或从事智能对话和理解背景。你能谈谈能使得机器更好的解释事物的路径吗？你预见的事情，以及你从事的事情正朝什么方向进展，如果还没完全达到全面的通用人工智能的话？</p>
+<p>Dean：我认为有趣的事之一是信息检索领域，这基本上就是谷歌早期做的工作。传统上，它并不试图真正理解用户在查询时需要什么。它更多的是关于查找包含或者接近这个单词的文档。有趣的是，在过去的四五年，我们已经开始发展出这样一种技术，可以更好地理解“car”这个单词的本质。知道 “car” 和 “cars”、 “automobile”、“passenger car”、“pickup truck” 在某种意义上都是相关联的，能够以更顺畅的方式匹配出文章，在许多语言理解任务上可以得出更好的结果。</p>
+<p>我们能理解的不仅仅是单词，我们的理解还能达到这个水平，即理解在阐释上不同但意思相同的两个句子。这开始促使我们的语言理解达到这样一个层次：以更机器学习的方式理解更长得多的序列文本。</p>
+<p>接下来几年我们有个目标，希望能够采集数以百计数以千计的文件，然后对这些文件内容展开一个对话。也许系统会自动总结这些文件，提问或者回答关于文件内容的问题。我认为这种水平的理解，是我们将真正去实现的高水平的语言理解。</p>
+<p>High：似乎你和你们团队的成果已经开始应用在谷歌的各种产品当中：谷歌助手，谷歌新的对话虚拟助手；与 Amazon Echo 相竞争的 Google Home；以及为谷歌服务提供对话界面的信息 APP——Allo。你怎么看待谷歌最近的产品和服务？</p>
+<p>Dean： 我目前领导的研究小组被称为谷歌大脑（Google Brain）。我们专注于建立大规模计算系统来实现机器学习，和做前沿的机器学习研究。只有机器学习技能或只有大规模计算技能的人才，往往不能完全发挥他们的才能，而同时拥有这两种不同技能的人才在一起工作，合作解决问题，通常会产生出意义重大的进步。我想这就是我们团队在这两个领域，在关于我们在这些难题上投入达到世界先进水平的计算力，以及我们怎样训练大有力的模型在我们关心的问题上都取得很大成功的原因之一。</p>
+<p>通过理解我们的一些研究成果什么时候可以用于提升谷歌现有产品上，我们以往在长期研究上是相当机会主义的。我们与产品团队一起合作说，“嘿，我们认为这个机器学习研究将会非常有用。”有时这是需要放手去做的事情。其他时候我们小组和产品团队深度合作，让研究结果变成真实产品。</p>
+<p>我们小组的研究人员曾发明了一种叫“从序列到序列学习（sequence-to-sequence learning）”的模型。这其中的理念是，你使用一个输入序列来预测某些输出结果序列。听起来有点抽象，但可以映射到许多你想要解决的真正问题。他们发表的研究论文最初是在语言翻译的背景下。输入序列可以是一个句子中的英文单词，一次一个。该模型被训练去输出对应的法国单词来创建一个法语句子，意思与输入的英语句子相同。这不同于其他机器翻译系统，别的机器翻译系统往往是问题的代码和子件——也许使用了机器学习或统计模型，然后将它拼接在一起。相比与那个方法，这个系统是一个完全的机器学习，端到端系统，在这个系统中你用语言不同但表达的意思相同的成对的句子作为数据来训练，然后系统就能学会将一种语言翻译另一种语言。</p>
+<p>在其他语境中，这种通用模型非常有用。Gmail 团队采用了它，把它作为我们称之为“智能回复”特征的基础，其中输入序列是一封刚收到的邮件，而通过序列是根据刚收到邮件的语境而做出的对回复内容的预测。例如，你也许会收到一封这样的邮件，“嘿，我们想邀请你参加感恩节晚宴。如果能来请回复。”回复通常来说可能是这样。“是的，我们很想去。我们要带些什么？”或者“不好意思，我们去不了，”或者与此语境下相关的类似的回复。它是同一个基本模型，只是用了不同的数据集来训练。</p>
+<p>High：潜在的研究应用以及 Google Brain 做出的突破，如何部署在谷歌传统的产品服务中？</p>
+<p>Dean： 我们已经开始将这个流程变得规范一点。五年前，当我们最初创建机器学习研究团队去研究海量计算和深度神经网络如何解决问题时，公司里还没有太多人使用这些方法。我们找到了一些感觉领域，在这些领域我们感觉他们是有效地，包括语音识别系统，所以我们与语音识别团队密切协作，将深度神经网络配置为语音识别系统的一部分，并且在识别准确率上取得了实质性进展。然后我们和各种计算机视觉相关团队合作，比如图片搜索和街景服务团队，从而训练模型在给定的各种图片的原始像素下做有趣的事情，比如从图片中提取文本或者理解图片内容是什么（美洲豹、垃圾车等等）。</p>
+<p>有趣的是，随着时间的推移，更多的团队开始采用这些方法，因为他们总会听说另一个团队正在尝试新的东西并取得了好成果。我们会帮助这样这些团队建立联系，或者提供一些关于在特定问题情境中如何使用这些方法的基本建议。我们后来把这个流程做得更规范了一些，所以现在我们有一个专门的团队做外展服务。这是为正在产品中尝试使用这些机器学习模型的团队建立联系的第一点。他们会描述他们的问题，然后外展服务团队会告诉他们：噢，听起来很像另外 XX 团队的问题，这个解决方案很有效果，试试并记得给我们反馈。使用这些方法的团队在数量上有非常大的增长，在 2011 年、2012 年只有几个团队，现在已经发展到 200 多个，并且可能已有几千人在使用我们团队创建的软件训练这种模型。</p>
+<p>High：你同时也是 Google 开源机器学习库 TensorFlow 的主要创始人。 和其他几个大公司一样，谷歌专注于开发开源 AI 技术。您对使用开源人工智能技术的理论基础及优势有什么看法？</p>
+<p>Dean： 现在有许多表达不同机器学习算法的不同框架，并且都还是开源项目 。有更多选择，我认为挺好的，但如果我们可以开发出能获得机器学习社区支持，大家一起来改进的东西，这样也很好。这些框架都在尝试着相似的工作，所以如果我们能将它们放在一起形成一个库供大家采用和使用，这样是很好的。这样做，可以更为简单地表达机器学习想法。传统方式是把探索出来的想法写成论文，做一些实验，而且他们通常不会公开代码，不允许其他人再做这些实验。作为一个研究者，你正在看某人的论文，并尝试将你自己的技术与其对比。通常，因为论文中没有代码，你只能猜测那些代码会是什么。作者并不是有意省去了大量细节。论文作者也许会使用「我们使用了低的学习率」一样的描述，然而你关心的是他们使用了 .0001 的学习率，在一万步后降低到 .0005。建立一个人们可以用代码表达机器学习理念，并把这些研究模型和想法以可执行的方式发布出来的软件架构，使得机器学习理念可以在社区中快速传播。</p>
+<p>对于我们自己而言，它也方便了我们与谷歌外部人员的合作。通常我们暑期会招聘实习生，过去他们大部分已经完成了实习期的项目，但是他们仍在写这方面的论文。然后他们离开了谷歌，再也接触不到谷歌的电脑，所以他们很难继续完成论文最后的工作，运行更多的实验。现在他们使用开源或者 TensorFlow 就可以很快做到，甚至可以找到平台上的人来帮忙。我们正在教谷歌的工程师学习通用机器学习，并把 TensorFlow 作为基本的教学工具。</p>
+<p>High：谷歌的优势之一是它拥有大量 AI 和机器学习领域的人才。谷歌研究主管Peter Norvig 估测，全球超过 5% 的机器学习顶尖专家都在谷歌工作。谷歌如何做到对这些天才有这么大的吸引力？鉴于这涉及到多个不同的学科的交叉——计算机科学、工程、神经科学、生物学、数学，你怎么把这些人才安排到最适合他们的位置？</p>
+<p>Dean： 因为我们涉足的领域很多，所以我们需要拥有多种专业知识的人。我发现，当你把具有不同专业知识的人聚在一起去解决问题时，你会发现最终得到结果比那些只具备一种专业知识的一大群人一起做出来的要好。总的来说，你最终做的事情，没有人可以单独做出来。我们的机器学习团队是一个很好的例子。我们有像我一样在建设大规模计算系统方面有很多经验的人，然后我们也有世界级的机器学习研究人员。把这些类型的人结合起来是一个非常强大的团队。机器学习正在接触很多不同的领域。我们正在做的工作涉及医疗、机器人和计算机科学里的一大堆领域，这非常的好。我们团队有数位神经科学专家。</p>
+<p>很快我们将开始一个有趣的实验，它被称为“谷歌大脑培训项目”。这些人在我们的团队工作一年基本上是学习怎么去做机器学习研究。我们有大量的申请者，但是最后这个项目只会留下 28 个人。他们来自不同的背景，处于职业生涯的不同阶段。有的刚刚完成本科学业，有些已经读完博士，有的刚读完博士后，有些已经在不同的领域有过工作经历。他们有不同的学科背景，包括计算机科学、统计学、数学、生物学、物理学，从解决问题的角度来说，我认为这是一个极好的结合。</p>
+<p>High：我很好奇，有很多不以技术为中心的传统公司也会使用人工智能和机器学习，你会在多大程度这些传统公司交流与合作？你如何看待采用创新曲线（市场采用新型或创新产品的速度）？显然这涉及了不同公司甚至是不同行业，但也有一些领先的传统行业开始利用人工智能，包括医疗、金融服务公司、有大量非结构化数据需要处理的公司。你是否曾经有机会与传统行业的公司互动或者谈论他们在更加传统的环境中走向人工智能的过程？</p>
+<p>Dean：其他行业的大部分公司在把机器学习应用到业务方面，可能不如谷歌或者其他高科技公司那样深远。我认为随着时间推移，最终大部分公司都会越来越多地应用机器学习，因为机器学习会给他们的业务带来很大的能量和转型。在与一些大的医疗组织建立合作关系上，我们有过多次讨论，看看机器学习可以为这个领域解决什么样的问题。我们最近开发了一个机器学习云产品，可以让人们在谷歌云基础设施上运行机器学习算法。有很多公司对于他们怎么在起业务背景下使用这个产品感兴趣。</p>
+<p>我认为要实现这个转变的途径之一，要经历几个层次。在这些层次中你能使用 AI 技术和机器学习方法来解决问题。在一些领域，了解图像中有什么东西，对很多行业来说是普遍有用的。谷歌和其他公司正在提供使用简便的接口，你不需要知道什么机器学习的知识就可以使用这个接口。你可以只给出一个图像，然后说“跟我说说这个图像”，软件工程即使没有机器学习方面的技能就可以使用，他们得到的信息会像是“照片上是一个体育场，人们在那里打棒球，而且图像中还有一堆文字，文字内容是……”即使没有应用机器学习，这也是非常有用的。</p>
+<p>然后将已开发好的模型用公司的数据再次训练得到一个定制的方案，而不需要做核心机器学习研究去开发一个全新模型。有一个好例子，我们已经应用序列到序列的成果，解决了谷歌六七个不同的难题。另一个好例子，有一个模型可以采集图像然后找出图像中有趣的部分。这个通用模型的一个使用案例是，检测街景图片中的文本信息。你想要能去读取所有的文本，但是首先，你必须能够在店面、路标等上面找到它。这个通用模型同样适用于在医疗设置中，当你诊断糖尿病患者视网膜病变时，你给出一张视网膜的扫描图片，你想要找到这个图片中的病变的指标。这是相同的模型结构，只是换了不同的数据。在这里不是找出街景图片的文本，而是指出视网膜扫描图像中的病变部位。我相信这个通用方法可以很好地解决各类型的难题。</p>
+<p>High：2016 年 3 月，你在韩国现场目睹了 AlphaGo 的首场胜利。亲眼见证这个成果的感受如何？鉴于人工智能已经更广泛地影响到了我们的日常生活，你如何看待这种世界博览会般的展示，以及人工智能对激发人类想象力和好奇心的广泛影响?</p>
+<p>Dean：我在现场观看了首场比赛，赛程的一半时间我都留在韩国。那种激动的心情真的难以言说。有 3 亿中国人现场观看了首场比赛直播，他们用了 8 个电视频道，每场都有不同的评论员报道这个比赛。韩国也处于同样的兴奋状态。真是很精彩。</p>
+<p>我认为这种高调的事件，展示了与人工智能相关的各种难题取得了重大意义的进步。我需要指出的是，AlphaGo的大部分工作都是我们伦敦的 DeepMind 团队完成。在项目开始的阶段我们与他们有过一些合作，他们还使用了我们的机器学习软件来训练一些 AlphaGo 模型。他们还使用了张量处理单元（Tensor Processing Unit）——这是一种谷歌设计的定制机器学习硬件芯片，在某种意义上来说这是 AlphaGo 的比赛中的额外的“秘密武器”。人们注意到计算机现在拥有了四五前不曾有的能力，这使我们感到兴奋。在全球范围内，计算机科学系机器学习课程的招生量已经猛增。我认为这个意义重大。受益的不仅仅是计算机科学，还包括公司和业界。有越多聪明的人思考这类问题，我们的社会就会更进步。</p>
+<p>High：许多科技界的知名人士比如埃隆·马斯克、比尔·盖茨 和 斯蒂芬·霍金都对人工智能的安全问题发出过警告。你怎么看到这方面的风险？当你对人工智能的思考不断进步成熟时，你如何把这方面的风险也考虑进去？</p>
+<p>Dean：我觉得我并不太赞同你提到的那些人所担忧的末日场景。我觉得那不够贴近现实。我确实认为 AI 会带来社会变革，首先最大的问题就是自动化比较难进行，我们有大量的劳动力会参与到其中。有些事情会被自动化代替，尽管不是完全代替。电脑会以多种方式给予我们帮助，比如阅读医学图像数据，这是一个狭窄但是高技能的领域。我认为电脑不久之后就会相当擅长这方面的工作，更别提自动驾驶了。我不确定政府都在认真思考这些技术的一些影响，以及这对社会总的来说意味着什么。我认为这才是急切需要担忧的。确保决策者仔细考虑这些类型的问题，将是一个非常重要的一步。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://gmlove.github.io/2017/03/01/recognize-house-number/" target="_blank" rel="external">识别门牌号的移动应用</a><br><a href="http://gmlove.github.io/2017/01/16/dl-workshop-massive-network-tips/" target="_blank" rel="external">大规模Tensorflow网络的一些技巧</a><br><a href="http://blog.csdn.net/dongchangzhang/article/details/53524985" target="_blank" rel="external"> 在Android上使用Tensorflow</a><br><a href="http://blog.csdn.net/dongchangzhang/article/details/60886015" target="_blank" rel="external"> 在移动平台上使用tensorflow图片分类 （android and ios）</a><br><a href="http://blog.csdn.net/dongchangzhang/article/details/53524985" target="_blank" rel="external">在Android上使用Tensorflow</a><br><a href="http://hp.stuhome.net/index.php/2017/02/17/tensorflow-on-android/" target="_blank" rel="external">在Android端使用TensorFlow</a><br><a href="http://hp.stuhome.net/" target="_blank" rel="external">新手向的TensorFlow学习之路2（Learning paths 2）</a><br><a href="http://hp.stuhome.net/index.php/2017/02/16/retrain-google-inception-model/" target="_blank" rel="external">利用TF重训练Google Inception模型</a><br><a href="http://tflearn.org/" target="_blank" rel="external">TFLearn: Deep learning library featuring a higher-level API for TensorFlow.</a><br><a href="http://colah.github.io/" target="_blank" rel="external">Neural Networks (General)</a><br><a href="https://deeplearning4j.org/" target="_blank" rel="external">Deep Learning for Java</a><br><a href="http://lib.csdn.net/article/aiframework/60538?knId=1756" target="_blank" rel="external">将 TensorFlow 移植到 Android手机，实现物体识别、行人检测和图像风格迁移详细教程</a><br><a href="http://lib.csdn.net/article/aiframework/61087" target="_blank" rel="external">02：一文全解：利用谷歌深度学习框架Tensorflow识别手写数字图片（初学者篇）</a><br><a href="http://blog.jobbole.com/105602/" target="_blank" rel="external">TensorFlow深度学习，一篇文章就够了</a><br><a href="http://blog.jobbole.com/110558/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="external">TensorFlow 资源大全中文版</a><br><a href="http://blog.jobbole.com/108469/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="external">GitHub 上 57 款最流行的开源深度学习项目</a><br><a href="http://blog.jobbole.com/110557/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="external">人人都可以做深度学习应用：入门篇</a><br><a href="http://blog.jobbole.com/110144/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="external">9 个超酷的深度学习案例</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7mnpep.com2.z0.glb.qiniucdn.com/uploads/image/file/25/0e/250e707a638b56899b3d42faad02181f.png?imageView2/2/w/930/interlace/1/q/88/ignore-error/1/&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.geekpark.net/topics/213892&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;就像上图所描述的那样，机器学习实际上只包括了三个主要构成部分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;首先，你需要通过建模来确定一个公式，这个公式就是「机器」。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;其次，确定「w」和「b」这两个变量「参数」。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;通过系统或软件的设定不断重复测试并调整「参数」直到达到一个稳定的值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在公式的确定中，整个学习的过程是渐进的，一旦这种重复的运算达到了一个稳定的取值，机器学习的错误概率就会大大减少。&lt;/p&gt;
+&lt;p&gt;简单来说，就是用一个公式来描述输入、输出和参数，从而提高机器对特定事物的认知。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="http://aisee.me/categories/AI/"/>
+    
+    
+      <category term="Machine Learning" scheme="http://aisee.me/tags/Machine-Learning/"/>
+    
+      <category term="Android" scheme="http://aisee.me/tags/Android/"/>
+    
+      <category term="TensorFlow" scheme="http://aisee.me/tags/TensorFlow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人工智能如何变革法律？</title>
+    <link href="http://aisee.me/2017/05/03/AI/Business/ai-on-law/"/>
+    <id>http://aisee.me/2017/05/03/AI/Business/ai-on-law/</id>
+    <published>2017-05-03T06:40:06.000Z</published>
+    <updated>2017-05-03T06:44:16.606Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>与之前讨论颇多的人工智能面临的法律挑战有所不同，本文试图描述法律可能面临的人工智能挑战。</p>
+</blockquote>
+  <a id="more"></a>
+<p>  【编者按】人工智能（AI）的发展影响着每个人的日常生活，经历了过去一年中对AI的忧虑和伦理讨论之后，新的一年大家越来越关注AI领域的创业机会，人工智能随之成为今年创投圈的新风口。那么，国外的机器人产业的发展对中国有什么样的启示？以及中国人工智能创业中需要注意什么问题等，FT中文网近期组织人工智能专题，编辑事宜，请联系闫曼 man.yan@ftchinese.com。</p>
+<p>自AlphaGo大杀国手、无人驾驶夺人性命以来，人对人工智能（AI）的情感就开始变得爱恨交织。倘若不把人工智能单纯想象为具有自我意识的机器人，而是以大数据、神经网络、机器学习、超级计算为依凭的智能系统，那么我们就可以暂时抛开电影《黑客帝国》中Matrix引发的战栗，以及《她》中OS1带来的绮梦，回到理性平和的人工智能本身。不过，与之前讨论颇多的人工智能面临的法律挑战有所不同，本文试图描述法律可能面临的人工智能挑战。</p>
+<h2 id="人工智能会改变法律的产生方式吗？"><a href="#人工智能会改变法律的产生方式吗？" class="headerlink" title="人工智能会改变法律的产生方式吗？"></a>人工智能会改变法律的产生方式吗？</h2><p>自1804年的《法国民法典》以来，在包括中国在内的所有成文法国家中，立法机关都是最重要的法律供给者。正因如此，它们念兹在兹的，就是如何通过体系完备、逻辑严密的法律规则，将纷繁芜杂的世间万物囊括其中，所谓天网恢恢，疏而不漏。然而，这毕竟只是人类的妄想。天才的数学家哥德尔业已经证明：一个复杂到一定程度的系统，其无矛盾性与完备性不可兼得。因此，任何既定的法律体系如果是完备的，就一定有矛盾；反之，如果它是无矛盾的，则必然不完备。为了化解这种悖论，立法机关不得不在明确的法律规则之外，引入抽象的法律原则与不确定的法律概念。以刚刚通过的《中华人民共和国民法总则》为例，其既有公平诚信、公序良俗等价值理念，又有“重大”、“合理”等模糊术语。正由于成文法的这一特色，司法机关才接过立法机关的接力棒，通过司法解释和个案判决，参与到法律的创造之中。但是，这种妥协在某种程度上为司法者打开了主观擅断的阀门，动摇了以立法为中心的法律产生模式。</p>
+<p>上述看似无解的困局如今却有望缓解。人工智能的到来，使收集、存储、处理和分析信息的成本大幅降低，基于深度学习的预测又远胜于目前的回归分析，这些令立法机关可以更好地预测人类行为及其后果，并能在算法的协助下，根据特定情形、特定地域和特定对象，自动化地制定细致、精准的规则，甚至能够一事一议。传统上以典型类型、普遍状态和静态经验为基础的立法，以及由此导致的不确定性和滞后性将不复重在，司法机关的事后介入和司法解释也将不再重要。在极端的情况下，鉴于法律已将几乎所有争议的处理结果予以事前规定，事后提交法院的诉讼必将大幅减少。</p>
+<p>人工智能对于法律产生的影响不限于此。在信息成本高昂的年代，法典是立法机关的优先选择，因为它所具有的体系功能，有助于最大程度地拓展调整范围，降低法律适用者搜寻成本，并防范恣意裁判。但在人工智能面前，不管数量多么庞大的法条，均瞬间可达、触手可及，法律规则的定制化更在法典之外滋生种种特别法。这么看来，法典的优势所剩无几，在未来很可能沦为中看不中用的古董旧物。倘若如此，当前如火如荼的中国民法典编撰，究竟意义何在、命运如何？开放式和松散化的法律体系是否可行？恐怕还要费一番思量。</p>
+<h2 id="人工智能会改变人们对法律的认知吗？"><a href="#人工智能会改变人们对法律的认知吗？" class="headerlink" title="人工智能会改变人们对法律的认知吗？"></a>人工智能会改变人们对法律的认知吗？</h2><p>让民众知法守法是所有国家的愿望，中国从1985年开始的30年普法活动就是其最好注脚。然而，法律是由宪法、法律、法规、规章、规范性文件、司法解释、指导性案例、公报案例形成的复杂化合物，学习它并不容易。1788年，主要起草人Carl Gottlieb Svarez在题为《法律能简短吗？》的演讲中说，最好的状况是同时制定两部法律，一部简短的，告诉人民如何行为，另一部则巨细靡遗，让法官受到完全的节制。而就像我们看到的，人工智能已经解决了后一部法律的问题，那它可以解决前一个吗？</p>
+<p>回答是肯定的。我们可以想一下驾驶汽车的演进。20年前，当你准备从家去300公里开外的景区度假，你必须是一个老司机。你要研究地图，规划路线，并且有能力应对路上各种交通指示和发生的不测。今天的出行已大不相同。通过车载GPS导航系统，你不但可以找到最近的路线，而且可以根据路况实时优化。同时，凭借车道偏移抑制、自动刹车、巡航定速、事故避让、自动泊车等技术，新手也可以轻松抵达目的地。而在自动驾驶普及的未来，你将完全听从算法的安排，你不会违反任何交通法规，也无需知晓它们。</p>
+<p>同样的变化可以发生在任何法律部门。以商业合规领域为例，监管机构的指令将被内化到企业的工作流程之中，并通过人工智能在具体场景下形成微指令（micro-directive）。服从这些指令不再是额外负担，而是自动自发的结果。假设公司拟进行一项或许违反董事忠实义务的交易，现在的做法是从外部律师或内部法务那里获取专业意见，综合考量后决策。而在未来，法律评估将嵌入到决策层面，人工智能将首先筛选并禁止违规活动的开展。总之，未来的人们在作出法律决定时，他们既不需要检索法律，也无须理解法律，更无须权衡行为的合法性，他们所遵循的不过是经由人工智能优化了的微指令而已。</p>
+<h2 id="人工智能会改变法律服务职业吗"><a href="#人工智能会改变法律服务职业吗" class="headerlink" title="人工智能会改变法律服务职业吗"></a>人工智能会改变法律服务职业吗</h2><p>在2013年广为关注的一篇研究中，Carl Benedikt Frey 和 Michael Osborne 核查了702种职业的计算能力，并发现美国47%的雇员都面临着工作自动化的风险。在人工智能的浪潮中，法律职业当然无法置身事外。伦敦法律顾问公司在《文明2030：律师事务所的近景》报告（Civilisation 2030: The Near Future for Law Firms）中提出，在15年内，人工智能将会主导法律实践，或许会给律所带来“结构性坍塌”（structural collapse）。IBM首个人工智能律师 ROSS、英国的机器人律师DoNotPay以及中国的“小梨”、“法狗狗”计算机系统的问世，大大强化了这种担忧。</p>
+<p>但是，这一对律师职业的悲观态度并不正确，因为它只看到问题的一面。实际上，人工智能同时改变了法律服务的供应与需求。通过降低法律检索、尽职调查、文件审阅、合同起草的劳动成本，律师事务所提高了工作效率，在按时收费制下，这意味着律师费用的降低。由于法律成本是内生性的，这反过来增加了客户对法律服务的需求。并且，在人工智能冲击下，大型律师事务所的规模优势不再像以前那么明显。传统上依赖大量律师助理，因而不得不在大型律所开展的项目，有可能被转移到小型律所。这或许算作人工智能把大量程式化服务从小型律所夺走后给予的补偿。更重要的是，这种市场民主化的趋势，给年轻律师提供了更多的机会，使他们不再汲汲于大型律所，而可能凭借创新服务，发现法律服务的利基市场。如此，人工智能不仅增强了法律服务职业的灵活性，而且能吸引更多的法律人投身其中。</p>
+<p>正如人工智能本身的发展一样，它对法律的变革还有很长的路要走，但变革已经开始。想一想电梯的历史吧。尽管1900年就出现了自动电梯，但在发达国家，直到上世界50年代，它才成为标准配置，中国甚至到现在，还有很多电梯由专人值守。人们是如何信任一台自动化的金属盒子将我们提升到上百米高空的？答案是——时间。长远来看，人们终将克服对人工智能的怀疑和恐惧，但在此之前，我们必须做好变革的准备。</p>
+<p>（作者系中国人民大学金融科技与互联网安全研究中心副主任，法学博士，责任编辑邮箱：man.yan@ftchinese.com)</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>  <a href="https://36kr.com/p/5062356.html" target="_blank" rel="external">为法律行业提供AI工具，法狗狗从案情智能预测入手</a><br>  <a href="https://36kr.com/p/5071024.html?from=related" target="_blank" rel="external">人工智能在法律界如何落地 ？标准化机器人产品之外，法狗狗还要涉足定制服务</a><br>  <a href="https://36kr.com/p/5061703.html?from=related" target="_blank" rel="external">中国司考通过率仅为10%， “法里”想用AI提升法律服务效率</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;与之前讨论颇多的人工智能面临的法律挑战有所不同，本文试图描述法律可能面临的人工智能挑战。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="http://aisee.me/categories/AI/"/>
+    
+    
+      <category term="Application" scheme="http://aisee.me/tags/Application/"/>
+    
+      <category term="Law" scheme="http://aisee.me/tags/Law/"/>
+    
+  </entry>
   
   <entry>
     <title>怎么快速学习一门新技术</title>
@@ -730,7 +1032,7 @@
     <link href="http://aisee.me/2017/04/30/AI/TensorFlow/android-tensorFlow-machine-learning-example/"/>
     <id>http://aisee.me/2017/04/30/AI/TensorFlow/android-tensorFlow-machine-learning-example/</id>
     <published>2017-04-30T13:36:06.000Z</published>
-    <updated>2017-04-30T13:41:44.360Z</updated>
+    <updated>2017-05-03T08:25:51.135Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://blog.mindorks.com/android-tensorflow-machine-learning-example-ff0e9b2654cc" target="_blank" rel="external">Article Source</a></p>
 <blockquote>
@@ -776,6 +1078,49 @@ path = &quot;/Users/amitshekhar/Library/Android/sdk/&quot;,
 <p>blog.mindorks.com<br>Happy Coding :)</p>
 <p>Thanks for reading this article. Be sure to click ❤ below to recommend this article if you found it helpful. It means a lot to me.</p>
 <p>For more about programming, follow me and Mindorks , so you’ll get notified when we write new posts.<br>Check out all the Mindorks best articles here.<br>Also, Let’s become friends on Twitter, Linkedin, Github and Facebook.</p>
+<h2 id="机器学习：如何在安卓上集成-TensorFlow"><a href="#机器学习：如何在安卓上集成-TensorFlow" class="headerlink" title="机器学习：如何在安卓上集成 TensorFlow"></a><a href="https://www.myzaker.com/article/590188631bc8e0426e00001a/" target="_blank" rel="external">机器学习：如何在安卓上集成 TensorFlow</a></h2><p><img src="http://zkres1.myzaker.com/201704/590188621bc8e0426e000011_640.jpg" alt=""><br>授权转自 THU 数据派<br>作者：Amit Shekhar</p>
+<p>翻译：梁傅淇    王军福</p>
+<p>校对：李君</p>
+<p>原文链接：<a href="https://blog.mindorks.com/android-tensorflow-machine-learning-example-ff0e9b2654cc#.aoq0izsg6" target="_blank" rel="external">https://blog.mindorks.com/android-tensorflow-machine-learning-example-ff0e9b2654cc#.aoq0izsg6</a></p>
+<p>我们都知道，谷歌有一个开源库叫做 TensorFlow，可被用在安卓系统中实现机器学习。换言之，TensorFlow 是谷歌为机器智能提供的一个开源软件库。</p>
+<p>我在网络上搜寻了很久，都没有找到在安卓上搭建 TensorFlow 的简单的方法或实例。仔细查阅许多资料以后，我终于可以搭建它了。于是，我决定把我搭建的过程写出来，这样其他人就不必再浪费时间了。</p>
+<p>这篇文章是写给那些熟悉机器学习并且知道怎样为机器学习搭建模型的人的（在这个示例中我会使用一个预训练模型）。近期，我会写一系列关于机器学习的文章，这样每个人都能够学到如何为机器学习搭建模型。</p>
+<p>从搭建安卓上的机器学习模型过程讲起</p>
+<p>我们需要知道的几个要点：</p>
+<p>TensorFlow 的核心是用 C++ 编写的；</p>
+<p>为了在安卓上搭建 TensorFlow，我们需要用 JNI（Java 本地接口）来调用 C++ 函数，比如说 loadModel，getPredictions，等等；</p>
+<p>我们会用到 .so（shared object，即共享对象）文件，它是 C++ 编译文件；还会用到 jar 文件，它由能够调用本地 C++ 的 Java   API 组成。之后，我们就可以调用 Java   API 轻松地把事情做好；</p>
+<p>所以我们需要 jar（Java   API）和一个 .so（C++ 编译）文件；</p>
+<p>我们必须要有一个预训练模型文件和一个用于分类的标签文件。</p>
+<p>我们会做以下的目标检测：</p>
+<p>编译 jar 和 .so 文件<br>注意：–recurse-submodules 对于提取子模块（pull submodules）很重要。</p>
+<p>在这里（<a href="https://developer.android.com/ndk/downloads/older_releases.html#ndk-12b-downloads）下载" target="_blank" rel="external">https://developer.android.com/ndk/downloads/older_releases.html#ndk-12b-downloads）下载</a> NDK。</p>
+<p>下载安卓 SDK，或者，我们也可以从 Android Studio   SDK 提供路径。</p>
+<p>安装 Bazel（<a href="https://bazel.build/versions/master/docs/install.html）。Bazel" target="_blank" rel="external">https://bazel.build/versions/master/docs/install.html）。Bazel</a> 是 TensorFlow 的主要编译系统。</p>
+<p>现在，编辑工作空间（WORKSPACE），我们可以在早先克隆的 TesnsorFlow 根路径中找到工作空间（WORKSPACE）文件。</p>
+<p>我们的 SDK 和 NDK 路径就跟下面一样：</p>
+<p>然后编译生成 .so 文件：<br>将 armeabi-v7a 换成我们所需要的目标架构。</p>
+<p>库会被放置在：</p>
+<p>编译 Java 副本：<br>我们可以在这里找到 JAR 文件：</p>
+<p>现在我们有了 jar 和 .so 文件。你也可以从下面的工程中直接提取使用我已经建立好的 .so 文件和 jar。</p>
+<p>我已经在这里（<a href="https://github.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample）创建了一个完整可运行的示例应用。" target="_blank" rel="external">https://github.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample）创建了一个完整可运行的示例应用。</a></p>
+<p>但是，我们需要预训练模型和标签文件。</p>
+<p>在这个例子中，我们会使用 Google 预训练模型，它实现了在一张给定的照片上做目标检测。</p>
+<p>解压缩 zip 文件，我们就会得到 imagenet_comp_graph_label.strings.txt（目标标签）以及 tensorflow_inception_graph.pb（预训练模型）。</p>
+<p>现在，在 Android Studio 上创建安卓示例工程吧。</p>
+<p>将 imagenet_comp_graph_label.strings.txt（目标标签）以及 tensorflow_inception_graph.pb 放进 assets 文件夹。</p>
+<p>将 libandroid_tensorflow_inference_java.jar 放进 lib 文件夹，单击右键，添加库。</p>
+<p>在主目录新建一个 jniLibs 文件夹并且将 libtensorflow_inference.so 放到 jniLibs/armeabi-v7a 文件夹中。<br>现在，我们就可以调用 TensorFlow Java API 了。</p>
+<p>TensorFlow Java API 通过 TensorFlowInferenceInterface 类开放了所有需要的方法。</p>
+<p>现在，我们可以用模型路径调用 TensorFlow Java API 并且加载它了。</p>
+<p>然后，我们可以输入一张图片来获取预测结果。</p>
+<p>如果想要体会完整的流程，克隆这个项目（<a href="https://github.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample），搭建并运行它吧。" target="_blank" rel="external">https://github.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample），搭建并运行它吧。</a></p>
+<p>如果你在搭建这个项目的过程中有任何问题的话，联系我，我会非常乐意帮助你。</p>
+<p>Happy Coding: )</p>
+<h3 id="读者问答"><a href="#读者问答" class="headerlink" title="读者问答"></a>读者问答</h3><p>Q：我很疑惑要怎么连接到‘ so ’库？也没有任何一行像’ System.loadLibray ’的代码？</p>
+<p>A：<strong>System.loadLibrary 已经写在 TensorFlow jar 中了。</strong></p>
+<p>Q：所以这是一个 C++ 应用还是 Java 应用啊？你用的是什么语言？</p>
+<p>A：这是一个用 Java 语言编写的安卓应用，它通过 Java 本地接口（JNI: Java Native Interface）调用 C++ 做预测（机器学习）。</p>
 ]]></content>
     
     <summary type="html">
@@ -2039,62 +2384,6 @@ limitations under the License.
   </entry>
   
   <entry>
-    <title>Bitmap</title>
-    <link href="http://aisee.me/2017/04/12/Program/Tools/Computer/bitmap/"/>
-    <id>http://aisee.me/2017/04/12/Program/Tools/Computer/bitmap/</id>
-    <published>2017-04-12T12:53:06.000Z</published>
-    <updated>2017-04-24T07:34:28.698Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/bitmap.jpg" alt=""></p>
-<blockquote>
-<p>只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Bitmap-位图-全解析"><a href="#Bitmap-位图-全解析" class="headerlink" title="Bitmap(位图)全解析"></a>Bitmap(位图)全解析</h2><p>Drawable：通用的图形对象，用于装载常用格式的图像，既可以是PNG，JPG这样的图像， 也是前面学的那13种Drawable类型的可视化对象！我们可以理解成一个用来放画的——画框！</p>
-<p>Bitmap(位图)：我们可以把他看作一个画架，我们先把画放到上面，然后我们可以 进行一些处理，比如获取图像文件信息，做旋转切割，放大缩小等操作！</p>
-<p>Canvas(画布)：如其名，画布，我们可以在上面作画(绘制)，你既可以用Paint(画笔)， 来画各种形状或者写字，又可以用Path(路径)来绘制多个点，然后连接成各种图形！</p>
-<p>Matrix(矩阵)：用于图形特效处理的，颜色矩阵(ColorMatrix)，还有使用Matrix进行图像的 平移，缩放，旋转，倾斜等！</p>
-<h2 id="说明位图-矢量图-像素-分辨率，PPI-DPI？"><a href="#说明位图-矢量图-像素-分辨率，PPI-DPI？" class="headerlink" title="说明位图,矢量图,像素,分辨率，PPI,DPI？"></a>说明位图,矢量图,像素,分辨率，PPI,DPI？</h2><h3 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h3><p>位图图像（bitmap）, 亦称为点阵图像或绘制图像，是由称作像素（图片元素）的单个点组成的。这些点可以进行不同的排列和染色以构成图样。当放大位图时，可以看见赖以构成整个图像的无数单个方块。只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象，逼真地表现自然界的景象。缩放和旋转容易失真，同时文件容量较大。bmp，jpg，gif，png。便携式网络图形（Portable Network Graphics，PNG）是一种无损压缩的位图图形格式，截图首选png格式。</p>
-<p><img src="https://pic2.zhimg.com/dd1d5448347bd9ae91bed2ed1f42b72d_b.png" alt=""></p>
-<blockquote>
-<p>位图实质为使用像素阵列来表示的图像（注意“表示”两个字），用于展现在显示器或者用于打印，位图并未真实存在的文件，但它可以生成真实性的文件如png、bmp、jpg、gif、psd、tif等。通过位图我们可以直接操作图像像素，例如有像素决定的颜色、灰度值、背景。</p>
-</blockquote>
-<h3 id="矢量图像"><a href="#矢量图像" class="headerlink" title="矢量图像"></a>矢量图像</h3><p>由数学向量组成，文件容量较小，在进行放大、缩小或旋转等操作时图象不会失真，缺点是不易制作色彩变化太多的图象。</p>
-<h3 id="像素"><a href="#像素" class="headerlink" title="像素"></a>像素</h3><p>像素，又称画素，为图像显示的基本单位，译自英文“pixel”，pix是英语单词picture的常用简写，加上英语单词“元素”element，就得到pixel，故“像素”表示“图像元素”之意。像素表示图形尺寸的大小。不同设备显示效果相同。这里的“相同”是指像素数不会变，比如指定UI长度是100px，那不管分辨率是多少UI长度都是100px。也正是因为如此才造成了UI在小分辨率设备上被放大而失真，在大分辨率上被缩小。</p>
-<h3 id="分辨率"><a href="#分辨率" class="headerlink" title="分辨率"></a>分辨率</h3><p>Image resolution，中国大陆译为“分辨率”，香港、台湾分别译为“解像度”和“解析度”，又称“解像力”，泛指量测或显示系统对细节的分辨能力。分辨率越高代表视频质量越好，越能表现出更多的细节；但相对的，因为纪录的信息越多，文件也就会越大。图像处理或信号处理中的空间或时间分辨率：能够分辨图像中两个点或线的能力。描述分辨率的单位有：dpi（点每英寸）、lpi（线每英寸）和ppi（每英寸像素）。从技术角度说，“像素”只存在于电脑显示领域，而“点”只出现于打印或印刷领域。对电脑显示屏等，分辨率是用像素数目衡量；对数字文件印刷，分辨率是通常用每英寸所含点或像素〔dpi〕来衡量。像素数目大的数码相机，较能够输出高分辨率的图像。因此，相机制造商在广告上多使用像素数目代表分辨率。不过，相机是测量仪器而不是显示设备。镜头对视频质量极为重要，光以用像素数目代表分辨率是非常误导的。美国、日本和国际标准都建议不应使用此一定义。</p>
-<p>提起分辨率，我们需要了解两个概念，图像分辨率和输出分辨率，图像分辨率是每英寸的像素数，以ppi为单位，图像分辨率又常常被表示成每一个方向上的总像素数量，比如640×480像素、1280×960像素等。而决定图像输出质量的是图像的输出分辨率，描述的是设备输出图像时每英寸可产生的点数（dpi），以dpi为单位，两者有联系但并不总是相等的。</p>
-<p>以21.5寸的显示器为例，设置屏幕分辨率为1920<em>1080（推荐设置，还可以设置成最小800</em>600），下载一张1920<em>1080的图片，当显示为实际大小时，图片正好可以覆盖整个屏幕，再将屏幕分辨率设置为1360</em>768，这时当查看图片的实际大小时，发现屏幕不能承下整个图片。也就是说，21.5寸的显示器设置1920<em>1080，是将屏幕分为1920</em>1080个小块（也就是像素），当显示1920<em>1080的图片时，屏幕上的所有块（像素）正好都被占用，当显示器分辨率为1360</em>768时，将21.5寸的屏幕分成1360<em>768个小块，再次显示1920</em>1080大小的图片时，发现屏幕上的所有块不能承下图片，需要左右移动才能查看完整的图片。这也解释了，为什么将屏幕分辩率调小之后，会发现照片和文字变大的问题。</p>
-<blockquote>
-<p>例如分辨率为1280*720表达的就是：屏幕长上有1280个像素，屏幕宽上有720个像素。每一个像素点都是单独染色，像素点的颜色由RGB三原色与灰度值决定。</p>
-</blockquote>
-<h3 id="PPI"><a href="#PPI" class="headerlink" title="PPI"></a>PPI</h3><p>每英寸像素（英语：Pixels Per Inch），又被称为像素密度，是一个表示打印图像或显示器单位面积上像素数量的指数。一般用来计量电脑显示器，电视机和手持电子设备屏幕的精细程度。通常情况下，每英寸像素值越高，屏幕能显示的图像也越精细。是将屏幕尺寸与分辨率整合到一起的一个属性。以屏幕尺寸为4吋的iPhone 5为例，分辨率为1136x640，像素密度为326PPI。而分辨率为1920x1080的家用21.5寸显示器，像素密度为103PPI。Retina显示屏（英文：Retina Display）是一种由苹果公司设计和委托制造的显示屏，具备足够高像素密度而使得人体肉眼无法分辨其中单独像素点的液晶屏，最初采用该种屏幕的产品iPhone 4由执行长史蒂夫·乔布斯于WWDC2010发布，其屏幕分辨率为960×640（每英寸像素数326ppi）。这种分辨率在正常观看距离下足以使人肉眼无法分辨其中的单独像素。</p>
-<p><img src="https://pic4.zhimg.com/f44740f69919814b034042ccf178d3d7_b.png" alt=""></p>
-<h3 id="DPI打印输出分辨率（英语：Dots-Per-Inch，每英寸点数）"><a href="#DPI打印输出分辨率（英语：Dots-Per-Inch，每英寸点数）" class="headerlink" title="DPI打印输出分辨率（英语：Dots Per Inch，每英寸点数）"></a>DPI打印输出分辨率（英语：Dots Per Inch，每英寸点数）</h3><p>是一个量度单位，用于点阵数位影像，意思是指每一英寸长度中，取样或可显示或输出点的数目。打印机所设定之分辨率的DPI值越高，印出的图像会越精细。打印机通常可以调校分辨率。例如撞针打印机，分辨率通常是60至90 DPI。喷墨打印机则可达1200 DPI，甚至9600 DPI。激光打印机则有600至1200 DPI。一般显示器为96 DPI。</p>
-<p><img src="http://images.cnitblog.com/blog/602138/201404/151457586822202.png" alt=""></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="https://www.zhihu.com/question/36918058" target="_blank" rel="external">说明位图,矢量图,像素,分辨率，PPI,DPI？</a><br>[2]<a href="http://www.cnblogs.com/android001/p/3666265.html" target="_blank" rel="external">[图形图像]—位图Bitmap、分辨率Resolution、像素Pixel(px)、距离密度dpi，基本概念与相互之间的联系</a><br>[3]<a href="http://www.runoob.com/w3cnote/android-tutorial-bitmap1.html" target="_blank" rel="external"> Bitmap(位图)全解析 Part 1</a><br>[4]<a href="http://www.jianshu.com/p/98c88f9ceafa" target="_blank" rel="external">Android 之 Bitmap</a><br>[5]<a href="http://www.cnblogs.com/over140/archive/2011/11/21/2256727.html" target="_blank" rel="external">Android中文API（136） —— Bitmap</a><br>[6]<a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2013/0204/838.html" target="_blank" rel="external">Android资源文件res的使用详解（strings,layout,drawable,arrays等）</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/bitmap.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Program" scheme="http://aisee.me/categories/Program/"/>
-    
-    
-      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
-    
-      <category term="Android" scheme="http://aisee.me/tags/Android/"/>
-    
-      <category term="Bitmap" scheme="http://aisee.me/tags/Bitmap/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Foo &amp; Bar</title>
     <link href="http://aisee.me/2017/04/12/Program/Tools/Computer/foobar/"/>
     <id>http://aisee.me/2017/04/12/Program/Tools/Computer/foobar/</id>
@@ -2159,6 +2448,62 @@ limitations under the License.
     
     
       <category term="Share" scheme="http://aisee.me/tags/Share/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bitmap</title>
+    <link href="http://aisee.me/2017/04/12/Program/Tools/Computer/bitmap/"/>
+    <id>http://aisee.me/2017/04/12/Program/Tools/Computer/bitmap/</id>
+    <published>2017-04-12T12:53:06.000Z</published>
+    <updated>2017-04-24T07:34:28.698Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/bitmap.jpg" alt=""></p>
+<blockquote>
+<p>只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Bitmap-位图-全解析"><a href="#Bitmap-位图-全解析" class="headerlink" title="Bitmap(位图)全解析"></a>Bitmap(位图)全解析</h2><p>Drawable：通用的图形对象，用于装载常用格式的图像，既可以是PNG，JPG这样的图像， 也是前面学的那13种Drawable类型的可视化对象！我们可以理解成一个用来放画的——画框！</p>
+<p>Bitmap(位图)：我们可以把他看作一个画架，我们先把画放到上面，然后我们可以 进行一些处理，比如获取图像文件信息，做旋转切割，放大缩小等操作！</p>
+<p>Canvas(画布)：如其名，画布，我们可以在上面作画(绘制)，你既可以用Paint(画笔)， 来画各种形状或者写字，又可以用Path(路径)来绘制多个点，然后连接成各种图形！</p>
+<p>Matrix(矩阵)：用于图形特效处理的，颜色矩阵(ColorMatrix)，还有使用Matrix进行图像的 平移，缩放，旋转，倾斜等！</p>
+<h2 id="说明位图-矢量图-像素-分辨率，PPI-DPI？"><a href="#说明位图-矢量图-像素-分辨率，PPI-DPI？" class="headerlink" title="说明位图,矢量图,像素,分辨率，PPI,DPI？"></a>说明位图,矢量图,像素,分辨率，PPI,DPI？</h2><h3 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h3><p>位图图像（bitmap）, 亦称为点阵图像或绘制图像，是由称作像素（图片元素）的单个点组成的。这些点可以进行不同的排列和染色以构成图样。当放大位图时，可以看见赖以构成整个图像的无数单个方块。只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象，逼真地表现自然界的景象。缩放和旋转容易失真，同时文件容量较大。bmp，jpg，gif，png。便携式网络图形（Portable Network Graphics，PNG）是一种无损压缩的位图图形格式，截图首选png格式。</p>
+<p><img src="https://pic2.zhimg.com/dd1d5448347bd9ae91bed2ed1f42b72d_b.png" alt=""></p>
+<blockquote>
+<p>位图实质为使用像素阵列来表示的图像（注意“表示”两个字），用于展现在显示器或者用于打印，位图并未真实存在的文件，但它可以生成真实性的文件如png、bmp、jpg、gif、psd、tif等。通过位图我们可以直接操作图像像素，例如有像素决定的颜色、灰度值、背景。</p>
+</blockquote>
+<h3 id="矢量图像"><a href="#矢量图像" class="headerlink" title="矢量图像"></a>矢量图像</h3><p>由数学向量组成，文件容量较小，在进行放大、缩小或旋转等操作时图象不会失真，缺点是不易制作色彩变化太多的图象。</p>
+<h3 id="像素"><a href="#像素" class="headerlink" title="像素"></a>像素</h3><p>像素，又称画素，为图像显示的基本单位，译自英文“pixel”，pix是英语单词picture的常用简写，加上英语单词“元素”element，就得到pixel，故“像素”表示“图像元素”之意。像素表示图形尺寸的大小。不同设备显示效果相同。这里的“相同”是指像素数不会变，比如指定UI长度是100px，那不管分辨率是多少UI长度都是100px。也正是因为如此才造成了UI在小分辨率设备上被放大而失真，在大分辨率上被缩小。</p>
+<h3 id="分辨率"><a href="#分辨率" class="headerlink" title="分辨率"></a>分辨率</h3><p>Image resolution，中国大陆译为“分辨率”，香港、台湾分别译为“解像度”和“解析度”，又称“解像力”，泛指量测或显示系统对细节的分辨能力。分辨率越高代表视频质量越好，越能表现出更多的细节；但相对的，因为纪录的信息越多，文件也就会越大。图像处理或信号处理中的空间或时间分辨率：能够分辨图像中两个点或线的能力。描述分辨率的单位有：dpi（点每英寸）、lpi（线每英寸）和ppi（每英寸像素）。从技术角度说，“像素”只存在于电脑显示领域，而“点”只出现于打印或印刷领域。对电脑显示屏等，分辨率是用像素数目衡量；对数字文件印刷，分辨率是通常用每英寸所含点或像素〔dpi〕来衡量。像素数目大的数码相机，较能够输出高分辨率的图像。因此，相机制造商在广告上多使用像素数目代表分辨率。不过，相机是测量仪器而不是显示设备。镜头对视频质量极为重要，光以用像素数目代表分辨率是非常误导的。美国、日本和国际标准都建议不应使用此一定义。</p>
+<p>提起分辨率，我们需要了解两个概念，图像分辨率和输出分辨率，图像分辨率是每英寸的像素数，以ppi为单位，图像分辨率又常常被表示成每一个方向上的总像素数量，比如640×480像素、1280×960像素等。而决定图像输出质量的是图像的输出分辨率，描述的是设备输出图像时每英寸可产生的点数（dpi），以dpi为单位，两者有联系但并不总是相等的。</p>
+<p>以21.5寸的显示器为例，设置屏幕分辨率为1920<em>1080（推荐设置，还可以设置成最小800</em>600），下载一张1920<em>1080的图片，当显示为实际大小时，图片正好可以覆盖整个屏幕，再将屏幕分辨率设置为1360</em>768，这时当查看图片的实际大小时，发现屏幕不能承下整个图片。也就是说，21.5寸的显示器设置1920<em>1080，是将屏幕分为1920</em>1080个小块（也就是像素），当显示1920<em>1080的图片时，屏幕上的所有块（像素）正好都被占用，当显示器分辨率为1360</em>768时，将21.5寸的屏幕分成1360<em>768个小块，再次显示1920</em>1080大小的图片时，发现屏幕上的所有块不能承下图片，需要左右移动才能查看完整的图片。这也解释了，为什么将屏幕分辩率调小之后，会发现照片和文字变大的问题。</p>
+<blockquote>
+<p>例如分辨率为1280*720表达的就是：屏幕长上有1280个像素，屏幕宽上有720个像素。每一个像素点都是单独染色，像素点的颜色由RGB三原色与灰度值决定。</p>
+</blockquote>
+<h3 id="PPI"><a href="#PPI" class="headerlink" title="PPI"></a>PPI</h3><p>每英寸像素（英语：Pixels Per Inch），又被称为像素密度，是一个表示打印图像或显示器单位面积上像素数量的指数。一般用来计量电脑显示器，电视机和手持电子设备屏幕的精细程度。通常情况下，每英寸像素值越高，屏幕能显示的图像也越精细。是将屏幕尺寸与分辨率整合到一起的一个属性。以屏幕尺寸为4吋的iPhone 5为例，分辨率为1136x640，像素密度为326PPI。而分辨率为1920x1080的家用21.5寸显示器，像素密度为103PPI。Retina显示屏（英文：Retina Display）是一种由苹果公司设计和委托制造的显示屏，具备足够高像素密度而使得人体肉眼无法分辨其中单独像素点的液晶屏，最初采用该种屏幕的产品iPhone 4由执行长史蒂夫·乔布斯于WWDC2010发布，其屏幕分辨率为960×640（每英寸像素数326ppi）。这种分辨率在正常观看距离下足以使人肉眼无法分辨其中的单独像素。</p>
+<p><img src="https://pic4.zhimg.com/f44740f69919814b034042ccf178d3d7_b.png" alt=""></p>
+<h3 id="DPI打印输出分辨率（英语：Dots-Per-Inch，每英寸点数）"><a href="#DPI打印输出分辨率（英语：Dots-Per-Inch，每英寸点数）" class="headerlink" title="DPI打印输出分辨率（英语：Dots Per Inch，每英寸点数）"></a>DPI打印输出分辨率（英语：Dots Per Inch，每英寸点数）</h3><p>是一个量度单位，用于点阵数位影像，意思是指每一英寸长度中，取样或可显示或输出点的数目。打印机所设定之分辨率的DPI值越高，印出的图像会越精细。打印机通常可以调校分辨率。例如撞针打印机，分辨率通常是60至90 DPI。喷墨打印机则可达1200 DPI，甚至9600 DPI。激光打印机则有600至1200 DPI。一般显示器为96 DPI。</p>
+<p><img src="http://images.cnitblog.com/blog/602138/201404/151457586822202.png" alt=""></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="https://www.zhihu.com/question/36918058" target="_blank" rel="external">说明位图,矢量图,像素,分辨率，PPI,DPI？</a><br>[2]<a href="http://www.cnblogs.com/android001/p/3666265.html" target="_blank" rel="external">[图形图像]—位图Bitmap、分辨率Resolution、像素Pixel(px)、距离密度dpi，基本概念与相互之间的联系</a><br>[3]<a href="http://www.runoob.com/w3cnote/android-tutorial-bitmap1.html" target="_blank" rel="external"> Bitmap(位图)全解析 Part 1</a><br>[4]<a href="http://www.jianshu.com/p/98c88f9ceafa" target="_blank" rel="external">Android 之 Bitmap</a><br>[5]<a href="http://www.cnblogs.com/over140/archive/2011/11/21/2256727.html" target="_blank" rel="external">Android中文API（136） —— Bitmap</a><br>[6]<a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2013/0204/838.html" target="_blank" rel="external">Android资源文件res的使用详解（strings,layout,drawable,arrays等）</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/bitmap.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;只要有足够多的不同色彩的像素，就可以制作出色彩丰富的图象&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Program" scheme="http://aisee.me/categories/Program/"/>
+    
+    
+      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
+    
+      <category term="Android" scheme="http://aisee.me/tags/Android/"/>
+    
+      <category term="Bitmap" scheme="http://aisee.me/tags/Bitmap/"/>
     
   </entry>
   
@@ -2797,36 +3142,6 @@ limitations under the License.
   </entry>
   
   <entry>
-    <title>The Basic Concepts of Linux</title>
-    <link href="http://aisee.me/2017/04/09/Program/Tools/Linux/the-basic-concepts-of-linux/"/>
-    <id>http://aisee.me/2017/04/09/Program/Tools/Linux/the-basic-concepts-of-linux/</id>
-    <published>2017-04-08T22:43:06.000Z</published>
-    <updated>2017-04-08T23:06:41.252Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/linux-1-638.jpg" alt=""></p>
-<p>见过最多的，也最可悲的是—— 永远不相信自己所有的问题就出在自己从来都不肯耐心把最基础的东西弄清楚弄明白。<sup>[1]<sup></sup></sup></p>
-<a id="more"></a>
-<h1 id="鸟哥的-Linux-私房菜-–-基础学习篇"><a href="#鸟哥的-Linux-私房菜-–-基础学习篇" class="headerlink" title="鸟哥的 Linux 私房菜 – 基础学习篇"></a><a href="http://cn.linux.vbird.org/" target="_blank" rel="external">鸟哥的 Linux 私房菜 – 基础学习篇</a></h1><p><a href="http://cn.linux.vbird.org/image/title/title_03.png" target="_blank" rel="external">http://cn.linux.vbird.org/image/title/title_03.png</a></p>
-<h2 id="第一部份：Linux的规划与安装"><a href="#第一部份：Linux的规划与安装" class="headerlink" title="第一部份：Linux的规划与安装"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part1" target="_blank" rel="external">第一部份：Linux的规划与安装</a></h2><h2 id="第二部份：Linux文件、目录与磁盘格式"><a href="#第二部份：Linux文件、目录与磁盘格式" class="headerlink" title="第二部份：Linux文件、目录与磁盘格式"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part2" target="_blank" rel="external">第二部份：Linux文件、目录与磁盘格式</a></h2><h2 id="第三部份：学习Shell与Shell-Scripts"><a href="#第三部份：学习Shell与Shell-Scripts" class="headerlink" title="第三部份：学习Shell与Shell Scripts"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part3" target="_blank" rel="external">第三部份：学习Shell与Shell Scripts</a></h2><h2 id="第四部份：Linux使用者管理"><a href="#第四部份：Linux使用者管理" class="headerlink" title="第四部份：Linux使用者管理"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part4" target="_blank" rel="external">第四部份：Linux使用者管理</a></h2><h2 id="第五部份：Linux系统管理员"><a href="#第五部份：Linux系统管理员" class="headerlink" title="第五部份：Linux系统管理员"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part5" target="_blank" rel="external">第五部份：Linux系统管理员</a></h2><h2 id="第六部份：其他备份文章"><a href="#第六部份：其他备份文章" class="headerlink" title="第六部份：其他备份文章"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part6" target="_blank" rel="external">第六部份：其他备份文章</a></h2><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="http://zhibimo.com/read/xiaolai/everyone-can-use-english/chapter6.html" target="_blank" rel="external">everyone-can-use-english</a><br>[2]<a href="http://cn.linux.vbird.org/" target="_blank" rel="external">鸟哥的Linux私房菜</a><br>[3]<a href="https://wizardforcel.gitbooks.io/vbird-linux-basic-4e/content/index.html" target="_blank" rel="external">鸟哥的Linux私房菜：基础学习篇 第四版</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/linux-1-638.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;见过最多的，也最可悲的是—— 永远不相信自己所有的问题就出在自己从来都不肯耐心把最基础的东西弄清楚弄明白。&lt;sup&gt;[1]&lt;sup&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Tools" scheme="http://aisee.me/categories/Tools/"/>
-    
-    
-      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
-    
-      <category term="Linux" scheme="http://aisee.me/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>The Basic Concepts of Linux Server</title>
     <link href="http://aisee.me/2017/04/09/Program/Tools/Linux/the-basic-concepts-of-linux-server/"/>
     <id>http://aisee.me/2017/04/09/Program/Tools/Linux/the-basic-concepts-of-linux-server/</id>
@@ -2856,6 +3171,36 @@ limitations under the License.
       <category term="Linux" scheme="http://aisee.me/tags/Linux/"/>
     
       <category term="Server" scheme="http://aisee.me/tags/Server/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The Basic Concepts of Linux</title>
+    <link href="http://aisee.me/2017/04/09/Program/Tools/Linux/the-basic-concepts-of-linux/"/>
+    <id>http://aisee.me/2017/04/09/Program/Tools/Linux/the-basic-concepts-of-linux/</id>
+    <published>2017-04-08T22:43:06.000Z</published>
+    <updated>2017-04-08T23:06:41.252Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/linux-1-638.jpg" alt=""></p>
+<p>见过最多的，也最可悲的是—— 永远不相信自己所有的问题就出在自己从来都不肯耐心把最基础的东西弄清楚弄明白。<sup>[1]<sup></sup></sup></p>
+<a id="more"></a>
+<h1 id="鸟哥的-Linux-私房菜-–-基础学习篇"><a href="#鸟哥的-Linux-私房菜-–-基础学习篇" class="headerlink" title="鸟哥的 Linux 私房菜 – 基础学习篇"></a><a href="http://cn.linux.vbird.org/" target="_blank" rel="external">鸟哥的 Linux 私房菜 – 基础学习篇</a></h1><p><a href="http://cn.linux.vbird.org/image/title/title_03.png" target="_blank" rel="external">http://cn.linux.vbird.org/image/title/title_03.png</a></p>
+<h2 id="第一部份：Linux的规划与安装"><a href="#第一部份：Linux的规划与安装" class="headerlink" title="第一部份：Linux的规划与安装"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part1" target="_blank" rel="external">第一部份：Linux的规划与安装</a></h2><h2 id="第二部份：Linux文件、目录与磁盘格式"><a href="#第二部份：Linux文件、目录与磁盘格式" class="headerlink" title="第二部份：Linux文件、目录与磁盘格式"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part2" target="_blank" rel="external">第二部份：Linux文件、目录与磁盘格式</a></h2><h2 id="第三部份：学习Shell与Shell-Scripts"><a href="#第三部份：学习Shell与Shell-Scripts" class="headerlink" title="第三部份：学习Shell与Shell Scripts"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part3" target="_blank" rel="external">第三部份：学习Shell与Shell Scripts</a></h2><h2 id="第四部份：Linux使用者管理"><a href="#第四部份：Linux使用者管理" class="headerlink" title="第四部份：Linux使用者管理"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part4" target="_blank" rel="external">第四部份：Linux使用者管理</a></h2><h2 id="第五部份：Linux系统管理员"><a href="#第五部份：Linux系统管理员" class="headerlink" title="第五部份：Linux系统管理员"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part5" target="_blank" rel="external">第五部份：Linux系统管理员</a></h2><h2 id="第六部份：其他备份文章"><a href="#第六部份：其他备份文章" class="headerlink" title="第六部份：其他备份文章"></a><a href="http://cn.linux.vbird.org/linux_basic/linux_basic.php#part6" target="_blank" rel="external">第六部份：其他备份文章</a></h2><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="http://zhibimo.com/read/xiaolai/everyone-can-use-english/chapter6.html" target="_blank" rel="external">everyone-can-use-english</a><br>[2]<a href="http://cn.linux.vbird.org/" target="_blank" rel="external">鸟哥的Linux私房菜</a><br>[3]<a href="https://wizardforcel.gitbooks.io/vbird-linux-basic-4e/content/index.html" target="_blank" rel="external">鸟哥的Linux私房菜：基础学习篇 第四版</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/linux-1-638.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;见过最多的，也最可悲的是—— 永远不相信自己所有的问题就出在自己从来都不肯耐心把最基础的东西弄清楚弄明白。&lt;sup&gt;[1]&lt;sup&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Tools" scheme="http://aisee.me/categories/Tools/"/>
+    
+    
+      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
+    
+      <category term="Linux" scheme="http://aisee.me/tags/Linux/"/>
     
   </entry>
   
@@ -3749,38 +4094,6 @@ limitations under the License.
   </entry>
   
   <entry>
-    <title>Basic Concept of English——Vocabulary</title>
-    <link href="http://aisee.me/2017/04/06/English/basic-concept-of-vocabulary/"/>
-    <id>http://aisee.me/2017/04/06/English/basic-concept-of-vocabulary/</id>
-    <published>2017-04-05T23:46:06.000Z</published>
-    <updated>2017-04-05T23:51:53.541Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/vocabulary.png" alt=""></p>
-<blockquote>
-<p>Vocabulary is the basis of English pyramid.</p>
-</blockquote>
-<a id="more"></a>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/vocabulary.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Vocabulary is the basis of English pyramid.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="English" scheme="http://aisee.me/categories/English/"/>
-    
-    
-      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
-    
-      <category term="Vocabulary" scheme="http://aisee.me/tags/Vocabulary/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Basic Concept of Java——Charset</title>
     <link href="http://aisee.me/2017/04/06/Program/Tools/Computer/char-decode/"/>
     <id>http://aisee.me/2017/04/06/Program/Tools/Computer/char-decode/</id>
@@ -3895,6 +4208,38 @@ limitations under the License.
   </entry>
   
   <entry>
+    <title>Basic Concept of English——Vocabulary</title>
+    <link href="http://aisee.me/2017/04/06/English/basic-concept-of-vocabulary/"/>
+    <id>http://aisee.me/2017/04/06/English/basic-concept-of-vocabulary/</id>
+    <published>2017-04-05T23:46:06.000Z</published>
+    <updated>2017-04-05T23:51:53.541Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/vocabulary.png" alt=""></p>
+<blockquote>
+<p>Vocabulary is the basis of English pyramid.</p>
+</blockquote>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/vocabulary.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vocabulary is the basis of English pyramid.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="English" scheme="http://aisee.me/categories/English/"/>
+    
+    
+      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
+    
+      <category term="Vocabulary" scheme="http://aisee.me/tags/Vocabulary/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Principles of IPCreator&#39;s Blog</title>
     <link href="http://aisee.me/2017/04/06/readme/"/>
     <id>http://aisee.me/2017/04/06/readme/</id>
@@ -3939,6 +4284,101 @@ limitations under the License.
       <category term="Pitfall" scheme="http://aisee.me/tags/Pitfall/"/>
     
       <category term="Best Practice" scheme="http://aisee.me/tags/Best-Practice/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Meta Skill——Innovation</title>
+    <link href="http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-innovation/"/>
+    <id>http://aisee.me/2017/04/05/Meta Skill/meta-skill-innovation/</id>
+    <published>2017-04-05T12:55:06.000Z</published>
+    <updated>2017-04-10T22:16:13.956Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/innovation%20%281%29.jpg" alt=""></p>
+<blockquote>
+<p>Innovation brings unexpected pleasant surprise frequently.<br>A teacher should be good at drawing inferences about other cases from one instance.</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Three-Steps"><a href="#Three-Steps" class="headerlink" title="Three Steps"></a>Three Steps</h2><h3 id="Set-Goal"><a href="#Set-Goal" class="headerlink" title="Set Goal"></a>Set Goal</h3><h3 id="Find-Ways-by-Innovative-Thinking"><a href="#Find-Ways-by-Innovative-Thinking" class="headerlink" title="Find Ways by Innovative Thinking"></a>Find Ways by Innovative Thinking</h3><p>Sharpen your brain  and open your mind</p>
+<h3 id="Try-and-Correct"><a href="#Try-and-Correct" class="headerlink" title="Try and Correct"></a>Try and Correct</h3><p>Practice is the only truth.</p>
+<h2 id="Six-Common-Innovative-Thinking"><a href="#Six-Common-Innovative-Thinking" class="headerlink" title="Six Common Innovative Thinking"></a>Six Common Innovative Thinking</h2><h3 id="Reversed-Thinking"><a href="#Reversed-Thinking" class="headerlink" title="Reversed Thinking"></a>Reversed Thinking</h3><p><strong>A–&gt;B</strong>  ==&gt; <strong>B–&gt;A</strong></p>
+<h3 id="Exaggerated-Thinking"><a href="#Exaggerated-Thinking" class="headerlink" title="Exaggerated Thinking"></a>Exaggerated Thinking</h3><p><strong>A–&gt;B</strong>  ==&gt; <strong>10<em>A–&gt;20</em>B</strong></p>
+<h3 id="Composit-Thinking"><a href="#Composit-Thinking" class="headerlink" title="Composit Thinking"></a>Composit Thinking</h3><p>put two together and get three.<br><strong>A–&gt;B</strong>  ==&gt; <strong>AC–&gt;BD</strong></p>
+<h3 id="Lessened-Thinking"><a href="#Lessened-Thinking" class="headerlink" title="Lessened Thinking"></a>Lessened Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>A–&gt;C</strong></p>
+<h3 id="Changing-Order-Thinking"><a href="#Changing-Order-Thinking" class="headerlink" title="Changing Order Thinking"></a>Changing Order Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>A–&gt;C–&gt;B</strong></p>
+<h3 id="Revolution-Thinking"><a href="#Revolution-Thinking" class="headerlink" title="Revolution Thinking"></a>Revolution Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>D–&gt;E–&gt;C</strong></p>
+<h2 id="Best-Practice"><a href="#Best-Practice" class="headerlink" title="Best Practice"></a>Best Practice</h2><h3 id="Patent-Portfolio"><a href="#Patent-Portfolio" class="headerlink" title="Patent Portfolio"></a>Patent Portfolio</h3><h3 id="Program-Trouble-Resolver"><a href="#Program-Trouble-Resolver" class="headerlink" title="Program Trouble Resolver"></a>Program Trouble Resolver</h3><h3 id="Google-Search"><a href="#Google-Search" class="headerlink" title="Google Search"></a>Google Search</h3><h3 id="English-Learning"><a href="#English-Learning" class="headerlink" title="English Learning"></a>English Learning</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/innovation%20%281%29.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Innovation brings unexpected pleasant surprise frequently.&lt;br&gt;A teacher should be good at drawing inferences about other cases from one instance.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
+    
+    
+      <category term="Meta Skill" scheme="http://aisee.me/tags/Meta-Skill/"/>
+    
+      <category term="Innovation" scheme="http://aisee.me/tags/Innovation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Meta Skill——Retrieve</title>
+    <link href="http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-retrieve/"/>
+    <id>http://aisee.me/2017/04/05/Meta Skill/meta-skill-retrieve/</id>
+    <published>2017-04-05T12:55:06.000Z</published>
+    <updated>2017-04-10T22:18:13.246Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/1474698247-3b87ad3b8d5bcf7a2e3d4d1f299d62d9.jpg" alt=""></p>
+<blockquote>
+<p>Google makes you wiser</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Basic-Concept"><a href="#Basic-Concept" class="headerlink" title="Basic Concept"></a>Basic Concept</h2><ol>
+<li>Wikipedia</li>
+</ol>
+<h2 id="Program"><a href="#Program" class="headerlink" title="Program"></a>Program</h2><ol>
+<li>Stack Overflow</li>
+<li>Official Web Site(such as Google…)</li>
+<li>Open Source Resources(Github…)</li>
+<li>Find Resolving Ways of Trouble</li>
+<li>Other Resources(Books…)</li>
+</ol>
+<h2 id="English"><a href="#English" class="headerlink" title="English"></a>English</h2><ol>
+<li>Important Use Scene</li>
+</ol>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ol>
+<li>Chrome</li>
+<li>TianXingVPN</li>
+<li>CSDN</li>
+<li>SouBaiduPan</li>
+<li>P2PSearcher</li>
+<li>XunLei</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/1474698247-3b87ad3b8d5bcf7a2e3d4d1f299d62d9.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Google makes you wiser&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
+    
+    
+      <category term="Meta Skill" scheme="http://aisee.me/tags/Meta-Skill/"/>
+    
+      <category term="Google" scheme="http://aisee.me/tags/Google/"/>
+    
+      <category term="English" scheme="http://aisee.me/tags/English/"/>
     
   </entry>
   
@@ -4016,101 +4456,6 @@ limitations under the License.
     
     
       <category term="Meta Skill" scheme="http://aisee.me/tags/Meta-Skill/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Meta Skill——Retrieve</title>
-    <link href="http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-retrieve/"/>
-    <id>http://aisee.me/2017/04/05/Meta Skill/meta-skill-retrieve/</id>
-    <published>2017-04-05T12:55:06.000Z</published>
-    <updated>2017-04-10T22:18:13.246Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/1474698247-3b87ad3b8d5bcf7a2e3d4d1f299d62d9.jpg" alt=""></p>
-<blockquote>
-<p>Google makes you wiser</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Basic-Concept"><a href="#Basic-Concept" class="headerlink" title="Basic Concept"></a>Basic Concept</h2><ol>
-<li>Wikipedia</li>
-</ol>
-<h2 id="Program"><a href="#Program" class="headerlink" title="Program"></a>Program</h2><ol>
-<li>Stack Overflow</li>
-<li>Official Web Site(such as Google…)</li>
-<li>Open Source Resources(Github…)</li>
-<li>Find Resolving Ways of Trouble</li>
-<li>Other Resources(Books…)</li>
-</ol>
-<h2 id="English"><a href="#English" class="headerlink" title="English"></a>English</h2><ol>
-<li>Important Use Scene</li>
-</ol>
-<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><ol>
-<li>Chrome</li>
-<li>TianXingVPN</li>
-<li>CSDN</li>
-<li>SouBaiduPan</li>
-<li>P2PSearcher</li>
-<li>XunLei</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/1474698247-3b87ad3b8d5bcf7a2e3d4d1f299d62d9.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Google makes you wiser&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
-    
-    
-      <category term="Meta Skill" scheme="http://aisee.me/tags/Meta-Skill/"/>
-    
-      <category term="Google" scheme="http://aisee.me/tags/Google/"/>
-    
-      <category term="English" scheme="http://aisee.me/tags/English/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Meta Skill——Innovation</title>
-    <link href="http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-innovation/"/>
-    <id>http://aisee.me/2017/04/05/Meta Skill/meta-skill-innovation/</id>
-    <published>2017-04-05T12:55:06.000Z</published>
-    <updated>2017-04-10T22:16:13.956Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/innovation%20%281%29.jpg" alt=""></p>
-<blockquote>
-<p>Innovation brings unexpected pleasant surprise frequently.<br>A teacher should be good at drawing inferences about other cases from one instance.</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Three-Steps"><a href="#Three-Steps" class="headerlink" title="Three Steps"></a>Three Steps</h2><h3 id="Set-Goal"><a href="#Set-Goal" class="headerlink" title="Set Goal"></a>Set Goal</h3><h3 id="Find-Ways-by-Innovative-Thinking"><a href="#Find-Ways-by-Innovative-Thinking" class="headerlink" title="Find Ways by Innovative Thinking"></a>Find Ways by Innovative Thinking</h3><p>Sharpen your brain  and open your mind</p>
-<h3 id="Try-and-Correct"><a href="#Try-and-Correct" class="headerlink" title="Try and Correct"></a>Try and Correct</h3><p>Practice is the only truth.</p>
-<h2 id="Six-Common-Innovative-Thinking"><a href="#Six-Common-Innovative-Thinking" class="headerlink" title="Six Common Innovative Thinking"></a>Six Common Innovative Thinking</h2><h3 id="Reversed-Thinking"><a href="#Reversed-Thinking" class="headerlink" title="Reversed Thinking"></a>Reversed Thinking</h3><p><strong>A–&gt;B</strong>  ==&gt; <strong>B–&gt;A</strong></p>
-<h3 id="Exaggerated-Thinking"><a href="#Exaggerated-Thinking" class="headerlink" title="Exaggerated Thinking"></a>Exaggerated Thinking</h3><p><strong>A–&gt;B</strong>  ==&gt; <strong>10<em>A–&gt;20</em>B</strong></p>
-<h3 id="Composit-Thinking"><a href="#Composit-Thinking" class="headerlink" title="Composit Thinking"></a>Composit Thinking</h3><p>put two together and get three.<br><strong>A–&gt;B</strong>  ==&gt; <strong>AC–&gt;BD</strong></p>
-<h3 id="Lessened-Thinking"><a href="#Lessened-Thinking" class="headerlink" title="Lessened Thinking"></a>Lessened Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>A–&gt;C</strong></p>
-<h3 id="Changing-Order-Thinking"><a href="#Changing-Order-Thinking" class="headerlink" title="Changing Order Thinking"></a>Changing Order Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>A–&gt;C–&gt;B</strong></p>
-<h3 id="Revolution-Thinking"><a href="#Revolution-Thinking" class="headerlink" title="Revolution Thinking"></a>Revolution Thinking</h3><p><strong>A–&gt;B–&gt;C</strong>  ==&gt; <strong>D–&gt;E–&gt;C</strong></p>
-<h2 id="Best-Practice"><a href="#Best-Practice" class="headerlink" title="Best Practice"></a>Best Practice</h2><h3 id="Patent-Portfolio"><a href="#Patent-Portfolio" class="headerlink" title="Patent Portfolio"></a>Patent Portfolio</h3><h3 id="Program-Trouble-Resolver"><a href="#Program-Trouble-Resolver" class="headerlink" title="Program Trouble Resolver"></a>Program Trouble Resolver</h3><h3 id="Google-Search"><a href="#Google-Search" class="headerlink" title="Google Search"></a>Google Search</h3><h3 id="English-Learning"><a href="#English-Learning" class="headerlink" title="English Learning"></a>English Learning</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/innovation%20%281%29.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Innovation brings unexpected pleasant surprise frequently.&lt;br&gt;A teacher should be good at drawing inferences about other cases from one instance.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
-    
-    
-      <category term="Meta Skill" scheme="http://aisee.me/tags/Meta-Skill/"/>
-    
-      <category term="Innovation" scheme="http://aisee.me/tags/Innovation/"/>
     
   </entry>
   
@@ -12598,53 +12943,6 @@ limitations under the License.
   </entry>
   
   <entry>
-    <title>Why I Insist on Using English</title>
-    <link href="http://aisee.me/2017/03/29/English/why-i-insist-on-using-english/"/>
-    <id>http://aisee.me/2017/03/29/English/why-i-insist-on-using-english/</id>
-    <published>2017-03-29T01:19:06.000Z</published>
-    <updated>2017-04-03T15:34:12.945Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://okkntqe2h.bkt.clouddn.com/Learn-English.jpg" alt=""></p>
-<blockquote>
-<p>Using  is the only and the best way of learning English.<br>Program skills depend  on English.<br>You can appreciate and taste more precious beauty things , such as great mind, good books, fabulous music, touching movies…</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Sentence-5"><a href="#Sentence-5" class="headerlink" title="Sentence[5]"></a>Sentence<sup>[5]<sup></sup></sup></h2><p>He who knows others is learned, and he who knows himself is wise.</p>
-<p>To conquer yourself is more powerful than to defeat other people.</p>
-<p>Study serve the practical purpose.</p>
-<p>Knowledge is action, action is knowledge.</p>
-<p>Don’t forget why start off, otherwise it is difficult to achieve the ultimate goal.</p>
-<p>Many people start a career with a dream, then get busy forgetting it.</p>
-<p>Without purpose, the days would have ended, as such days always end, in disintegration.</p>
-<p>If you set your goals ridiculously high and it’s a failure, you will fail above everyone else’s success.</p>
-<p><strong>Our plans miscarry because they have no aim. If one does not know to which port one is sailing, no wind is favorable.</strong></p>
-<h2 id="Article-4"><a href="#Article-4" class="headerlink" title="Article[4]"></a>Article<sup>[4]<sup></sup></sup></h2><h3 id="Youth"><a href="#Youth" class="headerlink" title="Youth"></a>Youth</h3><p>Youth is not a time of life; it is a state of mind; it is not a matter of rosy cheeks, red lips and supple knees; it is a matter of the will, a quality of the imagination, a vigor of the emotions; it is the freshness of the deep springs of life.</p>
-<p>Youth means a temperamental predominance of courage over timidity, of the appetite for adventure over the love of ease. This often exists in a man of 60 more than a boy of 20. Nobody grows old merely by a number of years. We grow old by deserting our ideals.</p>
-<p><strong>Years may wrinkle the skin, but to give up enthusiasm wrinkles the soul. Worry, fear, self-distrust bows the heart and turns the spirit back to dust.</strong></p>
-<p>Whether 60 or 16, there is in every human being’s heart the lure of wonders, the unfailing child appetite for what’s next and the joy of the game of living. In the center of your heart and my heart, there is a wireless station; so long as it receives messages of beauty, hope, cheer, courage and power from man and from the infinite, so long as you are young.</p>
-<p>When your aerials are down, and your spirit is covered with snows of cynicism and the ice of pessimism, then you’ve grown old, even at 20; but as long as your aerials are up, to catch waves of optimism, there’s hope you may die young at 80.</p>
-<h2 id="Music-8"><a href="#Music-8" class="headerlink" title="Music[8]"></a>Music<sup>[8]<sup></sup></sup></h2><p>Santana——Smooth</p>
-<h2 id="Movie-9"><a href="#Movie-9" class="headerlink" title="Movie[9]"></a>Movie<sup>[9]<sup></sup></sup></h2><p>Billy Lynn’s Long Halftime Walk</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="/2017/01/20/MyView/English/how-to-use-english/">How to Use English</a><br>[2]<a href="/2017/01/13/MyView/English/english-is-a-friend-for-everybody/">English is a Friend for Everyone</a><br>[3]<a href="/2017/02/22/MyView/English/my-translations/">Quotes by Famous People</a><br>[4]<a href="/2017/02/21/MyView/English/beautiful-article-of-english/">Beautiful Articles of English</a><br>[5]<a href="/2016/12/31/MyView/English/view-of-english/">Beauty of English</a><br>[6]<a href="/2017/03/26/MyView/English/computer-english-words/">Professional Words of Computer</a><br>[7]<a href="/2017/02/22/MyView/English/love-words/">Love English Words</a><br>[8]<a href="/2017/03/27/MyView/Music/santana-smooth/">Santana——Smooth</a><br>[9]<a href="/2017/03/08/MyView/Movie/billy-lynn&#39;s-long-halftime-walk/">Billy Lynn’s Long Halftime Walk</a><br>[10]<a href="https://movie.douban.com/top250" target="_blank" rel="external">Douban Movie Top250</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://okkntqe2h.bkt.clouddn.com/Learn-English.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Using  is the only and the best way of learning English.&lt;br&gt;Program skills depend  on English.&lt;br&gt;You can appreciate and taste more precious beauty things , such as great mind, good books, fabulous music, touching movies…&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="English" scheme="http://aisee.me/categories/English/"/>
-    
-    
-      <category term="Share" scheme="http://aisee.me/tags/Share/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Why I Insist on Writing Blog</title>
     <link href="http://aisee.me/2017/03/29/MyView/Original/Why/why-i-write-blog/"/>
     <id>http://aisee.me/2017/03/29/MyView/Original/Why/why-i-write-blog/</id>
@@ -12774,6 +13072,53 @@ limitations under the License.
     </summary>
     
       <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
+    
+    
+      <category term="Share" scheme="http://aisee.me/tags/Share/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Why I Insist on Using English</title>
+    <link href="http://aisee.me/2017/03/29/English/why-i-insist-on-using-english/"/>
+    <id>http://aisee.me/2017/03/29/English/why-i-insist-on-using-english/</id>
+    <published>2017-03-29T01:19:06.000Z</published>
+    <updated>2017-04-03T15:34:12.945Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://okkntqe2h.bkt.clouddn.com/Learn-English.jpg" alt=""></p>
+<blockquote>
+<p>Using  is the only and the best way of learning English.<br>Program skills depend  on English.<br>You can appreciate and taste more precious beauty things , such as great mind, good books, fabulous music, touching movies…</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Sentence-5"><a href="#Sentence-5" class="headerlink" title="Sentence[5]"></a>Sentence<sup>[5]<sup></sup></sup></h2><p>He who knows others is learned, and he who knows himself is wise.</p>
+<p>To conquer yourself is more powerful than to defeat other people.</p>
+<p>Study serve the practical purpose.</p>
+<p>Knowledge is action, action is knowledge.</p>
+<p>Don’t forget why start off, otherwise it is difficult to achieve the ultimate goal.</p>
+<p>Many people start a career with a dream, then get busy forgetting it.</p>
+<p>Without purpose, the days would have ended, as such days always end, in disintegration.</p>
+<p>If you set your goals ridiculously high and it’s a failure, you will fail above everyone else’s success.</p>
+<p><strong>Our plans miscarry because they have no aim. If one does not know to which port one is sailing, no wind is favorable.</strong></p>
+<h2 id="Article-4"><a href="#Article-4" class="headerlink" title="Article[4]"></a>Article<sup>[4]<sup></sup></sup></h2><h3 id="Youth"><a href="#Youth" class="headerlink" title="Youth"></a>Youth</h3><p>Youth is not a time of life; it is a state of mind; it is not a matter of rosy cheeks, red lips and supple knees; it is a matter of the will, a quality of the imagination, a vigor of the emotions; it is the freshness of the deep springs of life.</p>
+<p>Youth means a temperamental predominance of courage over timidity, of the appetite for adventure over the love of ease. This often exists in a man of 60 more than a boy of 20. Nobody grows old merely by a number of years. We grow old by deserting our ideals.</p>
+<p><strong>Years may wrinkle the skin, but to give up enthusiasm wrinkles the soul. Worry, fear, self-distrust bows the heart and turns the spirit back to dust.</strong></p>
+<p>Whether 60 or 16, there is in every human being’s heart the lure of wonders, the unfailing child appetite for what’s next and the joy of the game of living. In the center of your heart and my heart, there is a wireless station; so long as it receives messages of beauty, hope, cheer, courage and power from man and from the infinite, so long as you are young.</p>
+<p>When your aerials are down, and your spirit is covered with snows of cynicism and the ice of pessimism, then you’ve grown old, even at 20; but as long as your aerials are up, to catch waves of optimism, there’s hope you may die young at 80.</p>
+<h2 id="Music-8"><a href="#Music-8" class="headerlink" title="Music[8]"></a>Music<sup>[8]<sup></sup></sup></h2><p>Santana——Smooth</p>
+<h2 id="Movie-9"><a href="#Movie-9" class="headerlink" title="Movie[9]"></a>Movie<sup>[9]<sup></sup></sup></h2><p>Billy Lynn’s Long Halftime Walk</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="/2017/01/20/MyView/English/how-to-use-english/">How to Use English</a><br>[2]<a href="/2017/01/13/MyView/English/english-is-a-friend-for-everybody/">English is a Friend for Everyone</a><br>[3]<a href="/2017/02/22/MyView/English/my-translations/">Quotes by Famous People</a><br>[4]<a href="/2017/02/21/MyView/English/beautiful-article-of-english/">Beautiful Articles of English</a><br>[5]<a href="/2016/12/31/MyView/English/view-of-english/">Beauty of English</a><br>[6]<a href="/2017/03/26/MyView/English/computer-english-words/">Professional Words of Computer</a><br>[7]<a href="/2017/02/22/MyView/English/love-words/">Love English Words</a><br>[8]<a href="/2017/03/27/MyView/Music/santana-smooth/">Santana——Smooth</a><br>[9]<a href="/2017/03/08/MyView/Movie/billy-lynn&#39;s-long-halftime-walk/">Billy Lynn’s Long Halftime Walk</a><br>[10]<a href="https://movie.douban.com/top250" target="_blank" rel="external">Douban Movie Top250</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://okkntqe2h.bkt.clouddn.com/Learn-English.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Using  is the only and the best way of learning English.&lt;br&gt;Program skills depend  on English.&lt;br&gt;You can appreciate and taste more precious beauty things , such as great mind, good books, fabulous music, touching movies…&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="English" scheme="http://aisee.me/categories/English/"/>
     
     
       <category term="Share" scheme="http://aisee.me/tags/Share/"/>
@@ -12911,6 +13256,73 @@ limitations under the License.
       <category term="Yann LeCun" scheme="http://aisee.me/tags/Yann-LeCun/"/>
     
       <category term="Prediction Learning" scheme="http://aisee.me/tags/Prediction-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The Legend of 1900</title>
+    <link href="http://aisee.me/2017/03/28/MyView/Movie/the-legend-of-1900/"/>
+    <id>http://aisee.me/2017/03/28/MyView/Movie/the-legend-of-1900/</id>
+    <published>2017-03-28T11:38:18.000Z</published>
+    <updated>2017-03-29T04:18:01.307Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p><strong>Make you cry，laugh  touching and thinking</strong><br>Crying for  his loneliness and ending of  the story.<br>Touching by the wonderful melody.<br>Laughing for those humor lines.<br>Deep thinking: In the big city, What’s your piano ? Where is your Virginia ?</p>
+</blockquote>
+<p><img src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p511146957.webp" alt=""></p>
+<a id="more"></a>
+<p>导演: 朱塞佩·托纳多雷<br>编剧: 亚利桑德罗·巴里克 / 朱塞佩·托纳多雷<br>主演: 蒂姆·罗斯 / 普路特·泰勒·文斯 / 比尔·努恩 / 梅兰尼·蒂埃里 / 阿尔贝托·巴斯克斯<br>类型: 剧情 / 音乐<br>制片国家/地区: 意大利<br>语言: 英语 / 法语<br>上映日期: 1998-10-28(意大利)<br>片长: 165分钟 / 120分钟(法国版) / 169分钟(加长版)<br>又名: 声光伴我飞(港) / 一九零零的传奇 / 1900海上钢琴师 / 传奇1900 / The Legend of 1900<br>IMDb链接: <a href="http://www.imdb.com/title/tt0120731" target="_blank" rel="external">tt0120731</a></p>
+<p>本片讲述了一个钢琴天才传奇的一生。</p>
+<p>　　1900年，Virginian号豪华邮轮上，一个孤儿被遗弃在头等舱，由船上的水手抚养长大，取名1900（蒂姆•罗斯 饰）。1900慢慢长大，显示出了无师自通的非凡钢琴天赋，在船上的乐队表演钢琴，每个听过他演奏的人，都被深深打动。爵士 乐鼻祖杰尼听说了1900的高超技艺，专门上船和他比赛，最后自叹弗如，黯然离去。<br>　　可惜，这一切的事情都发生在海上，1900从来不愿踏上陆地，直到有一天，他爱上了一个女孩，情愫在琴键上流淌。他会不会为了爱情，踏上陆地开始新的生活，用他的琴声惊艳世界？他将怎样谱写自己非凡的人生。 ©豆瓣</p>
+<h2 id="大人者，不失其赤子之心者也"><a href="#大人者，不失其赤子之心者也" class="headerlink" title="大人者，不失其赤子之心者也"></a><a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">大人者，不失其赤子之心者也</a></h2><p>市侩们总是抱着捧杀的态度来看待天才的，这也无足多怪。重要的是，天才如何看待自己的选择。</p>
+<p>许多人把实现自我价值同“功成名就”和“飞黄腾达”联系在一起，其中不乏某些天才。他们为此奋斗一生，也许终能得偿所愿。然而，功成名就之后呢？罗马帝国的战胜者凯旋时，一个奴隶会在他耳边轻轻私语：“一切荣华富贵，都是过眼烟云！”这道出了所有成功者风光无限的背后那不为人知的空虚——曾经追求的，固然已经得到，现在拥有的，也将归于破灭。其中的幸运者，还能像张翰那样“人生贵得适意尔，何能羁宦数千里以要名爵!”全身而退；不幸者，恐怕只能哀叹“吾欲与若复牵黄犬俱出上蔡东门逐狡兔，岂可得乎！”人生的荣辱，不过是一个围城。城里的人想冲出去，城外的人想冲进来。待到一切荣光都已失去，他们还会为当初的选择而感到骄傲，抑或后悔吗？</p>
+<blockquote>
+<p>“你知道琴上88个键一个不多一个也不少，琴键是有限的，但你是无限的，在这些键上所能创造出来的音乐，那才是无限的，这个我喜欢，也是我愿意做的，但是在舷梯上，摆在我面前的琴键有成千上万，永远也数不完的琴键”，“而在这个无限大的键盘上，你根本就无法去演奏”，“天呐，你没有看见那些街道吗？有上千条！你怎么去选择那一个？”。窝囊废似的一番话，彻底关死了1900通往成功与显赫的道路。似乎很难想象这样一个才华横溢的人会选择一条破船作为归宿，甚至宁愿最终被几吨炸药所终结。其实，1900是幸运的，他不入围城，自觉放弃未来的诱惑与烦嚣，换来对已经拥有的执着与坚守。也就无怨无悔，虽死何憾？老子云：知其雄 ，守其雌 ，为天下溪。为天下溪 常德不离 复归於婴儿。想必直到生命终结的那一刻，1900依然可以骄傲地宣称：“大人者，不失其赤子之心者也。”</p>
+</blockquote>
+<h2 id="俗人理解不了的幸福"><a href="#俗人理解不了的幸福" class="headerlink" title="俗人理解不了的幸福"></a><a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">俗人理解不了的幸福</a></h2><p>大概只有小号手是愿意聆听1900的内心而非琴声的人，他不理解他，但是他尊重他。他用尊重成全了1900完整的独立。我看到有人说如果他是那胖子他就会把1900敲昏然后拖下船。我想这样的想法也就注定他成不了那个胖子，成不了1900唯一的真正的朋友。</p>
+<p>如果我们较真一点，假设小号手真的把1900弄下船了，故事将怎样延伸？我们都知道，落魄的小号手没有能力去为朋友找一艘新的船，找88个琴键和尽头。1900将无可避免被磨去棱角和平庸，落入红尘变成一个凡人。</p>
+<p>活着，还是活得安心。这也是个问题。凡人的选择是无论如何先活下去再说，”活着”这件事情本身比什么都重要。而天才则把心灵的舒适看得更重，生死则次之。所以凡人可以忍辱，天才却情愿玉碎。每一种人都获得了他最看重的东西，说起来谁也不比谁亏。</p>
+<p>差异导致孤独。葆存了差异性的ET在承受异样目光的同时也承受着巨大的孤独，远超出凡人的孤独。凡人们如我们虽然也还都残留一些差异，但大致面貌八九不离十。我们失恋了后觉得痛苦比谁的都大，我们拥抱心爱的人自认比谁都幸福。但一个残酷的事实是：每个人的痛苦和幸福都没什么区别。我们在不断重复，千篇一律。</p>
+<p>我们丢了个性却换来了共鸣。我们借助艺术寻找通感，在人性中相交叉的部分，抹着眼泪互相慰藉，或者说，互相平衡（原来有人比我还惨啊，这下心里舒坦多了）。而被称为天才的人站在人群之外，忧郁地注视这群有些像他又不是他的物种。用他们ET的本能将那些交叉部分，提炼、放大、直抵内心。那些永远无法交叉的部分，则作为孤独的源头，令他们永远无法融入人群。他们只有躲在自己的轮船里，躲在自己的内心世界里，孤独地活着，然后死去。</p>
+<h2 id="我们无处安放的孤独"><a href="#我们无处安放的孤独" class="headerlink" title="我们无处安放的孤独"></a><a href="https://movie.douban.com/review/1316127/" target="_blank" rel="external">我们无处安放的孤独</a></h2><p>我一直觉得1900的一生是存在主义思想的体现，他藐视规则，藐视这个社会认可的规则，他害怕上岸其实是拒绝上岸，藐视上岸。他重自身的存在大于外界对自身的认可，他可以轻易打败爵士乐的开山祖师并对他表示鄙夷，他可以靠他的才华赚取无数的名利但是他拒绝音乐与自身的分离，他可以用音乐去探究所有人的心灵，可以在音乐里去旅行，可以寻觅到自己的爱情，但是他没有常人那样去要去追，他轻轻地将这些丢进了大海，他将迈向陆地的脚收回。</p>
+<p>在存在主义者看来，人生活在一个与自己对立的、失望的世界之中，人在世界上的地位是不确定的。绝对自由的人也是烦恼和无所依靠的孤独者。人虽然有选择的自由，但他面对的未来的生活却是混沌而没有目标的。他只是盲目地走向未来，他只知道人生的真实的终结就是死亡。死亡作为人生的最后归宿，对于个人的存在具有非常重要的意义。 所以存在主义者都是悲观者，在他们眼里，人生是一场悲剧。</p>
+<blockquote>
+<p>“城市那么大，看不到尽头，我停下来不是因为所见是因为所不见，是因为看不见的东西。连绵不绝的城市什么都有，就是没有尽头，我需要看见世界的尽头。上了岸，何去何从？爱一个女人，住一间屋，买一块地，望一个景，走一条死路，太多的选择我无所适从。漫漫无尽，思前想后你不怕精神崩溃？那样的日子怎样过？我无法遗弃这艘船，宁可遗弃自己的生命。”</p>
+</blockquote>
+<p>后来我才知道生活的大多数时候其实是孤独的，是我们心里无处安放的孤独，不被这个世界所认可的孤独。1900是孤独的，所以他选择一辈子不上岸，和那座海上浮城共生共死，而我们呢？我们没有一座属于自己的城，让我们来安放我们的孤独，让我们来逃避自己不喜欢的一切，所以我们比1900更孤独更可怜。</p>
+<h2 id="微尘世界，我们都已是最好的钢琴手。"><a href="#微尘世界，我们都已是最好的钢琴手。" class="headerlink" title="微尘世界，我们都已是最好的钢琴手。"></a><a href="https://movie.douban.com/review/1971957/" target="_blank" rel="external">微尘世界，我们都已是最好的钢琴手。</a></h2><p>1900代表着一种理想，代表着这个尘世中的多数人，注定不会付诸行动，却会始终心怀向往的理想。矗立在那里，自由，决绝，而悲伤。</p>
+<p>我们是生活在“外面的世界”里的人。这个世界的意义在于“传承”。就像一个游戏，每个人都是其中的玩家，然而获得的任务，却是如何使这个游戏永远存在。赡养父母，繁衍后代，诸多必须背负的责任令前行显得缓慢而艰难。然而我们的人生对于整个游戏而言，存在的时间或许只有一秒，或者更短。也唯有越短暂，这个游戏的运行时间才会越长，才有可能，“永不结束”。<br>这样一想会不会又心有不甘呢？辛苦奋斗的一生，其实不过一粒微尘，轻得仿佛随时都会消失。<br>然而在闭上眼的那一瞬还会不会含笑着想起，自己的孩子在不久前，正带领他们的孩子在绿草地上放起风筝；会不会含笑着想起，自己曾拥有良人在侧，从此不再无枝可依；会不会含笑着想起更久远的从前，父母曾令你无忧无虑，而那些萌生的小情绪，或许唯有感慨地大笑出声，无奈地摇摇头，道一句，那时真小。<br>会不会想起那些温暖的片段，想起自己曾经的付出与所得，带着回望的沧桑，感怀，和崭新的希望。<br>　　　　<br>我们为什么不会像1900一样，选择在漫天火光中永沉海底。这样壮烈，却获得永生的自由？</p>
+<blockquote>
+<p>因为，因为我们一直生活在这个“外面的世界”，清楚地看见它的混乱，却因为某一瞬间体验到的那些温情，那些无以伦比的美好，而心甘情愿地忍受着它所给予的伤害，努力弹奏出最华美的人生乐章。</p>
+</blockquote>
+<p>我们或许从来都不是天才，但是我们至少能做到勤恳、踏实。我们从坚硬和纯白开始，学会圆滑，学会世故，但内心深处，终究会一直记得，这一生所做的种种妥协，不过是为了在这个微尘世界，在这架上帝给予的钢琴上，创作出独属于自己的旋律与琴音。</p>
+<h2 id="我们都是宅男"><a href="#我们都是宅男" class="headerlink" title="我们都是宅男"></a><a href="https://movie.douban.com/review/1238757/" target="_blank" rel="external">我们都是宅男</a></h2><p>我们或许没有《海上钢琴师》中的1900看的更加清楚，他一生生活在邮轮上，他不愿离开一个让他感到安定自由、无忧无虑的空间，他永远没有踏上陆地，开启他的“远大前程”，在我们看来，他是自闭的，但是，他也是最清醒的，在最后无比绚烂的死亡中，他走的孤独而坦然。</p>
+<p>和1900对无限的恐惧相反，现代人正是在追逐着无限，我们贪大，贪全，贪广，房子要住大的，哪怕被每月的房贷压的生活质量下降；交际圈要交广些，哪怕每天疲于奔命于并不让自己愉快的应酬；旅游要走遍世界，哪怕其实只是疲惫的赶着在一个又一个景点的人群中拍照；炒股也有“不涨到翻倍不痛快”，哪怕每天被指数折磨的大喜大悲。还是看看这个“宅男”1900，反观自己，其实我们都是宅男，我们都是在自己营造的世界里生活，我们总有个无形或有形的圈子，但是似乎“开疆扩土”是人的本能，我们总是希望这个世界更大些，更广些。其实，并不是因为你走遍了这个城市的大街小巷，你的世界便扩展到了整个城市，哪怕真的这样，你也只是有了个城市这样一个更大的宅子。所以，1900不贪求太多，他一生都在一艘船上生活，这是有限的；但是他一生都有音乐相伴快乐的生活，这是无限的，快乐而自在的生活才是无限的。正如我们拼命拓展的交际网永远是有限的，但是和其中几个真正的知己在一起的快乐才是无限的。</p>
+<p>1900在邮轮上有自己的快乐，也伴随着一些悲伤，但是，快乐从来不是仅仅以空间的广度来评判的，就如你有一笔钱，可以买大房子简装修，也可以买小房子按照自己的意愿精装修（当然，精装修的意义不是买一堆豪华家俱的堆砌）。1900选择在一个相对狭小的世界里精心构筑他的世界，安逸而愉快。而在我们看来，这样的小小的快乐永远是“有病”的，就如我们如果看到一个人沉溺于数学而废寝忘食，会认为他是一个科学怪人，为他随时可能的英年早逝而悲哀；如果看到一个人长期执着的在农村搞什么社会试验而履受挫折，会认为他是一个理想主义者，为他干些“不实际”的事情而悲哀。诸如此类的事情还有很多，我们总是很自恋，常常看到他人沉浸于一些比较“独特”的事物而不问世事而感到“悲哀”，而对他们表示不解和“同情”，特别当这些人甚至为之折寿或是如1900那样“找死”后，更是如此。其实，生活方式本来没有定义，其实想想，1900在一艘船上就活的那么滋润，一些人一天到晚在屋子里闷头看武侠小说、漫画书就那么快活，我们这些号称精神健康，性格乐观的人却常常无名的不停唠叨“真郁闷”，这时的我们是不是会突然感到一丝沮丧，而对宅男们有些羡慕，同时意识到，其实我们都不过是在自己的世界里有喜有乐的宅男。</p>
+<h2 id="漂流在大海上的音乐浮城"><a href="#漂流在大海上的音乐浮城" class="headerlink" title="漂流在大海上的音乐浮城"></a><a href="https://movie.douban.com/review/1000830/" target="_blank" rel="external">漂流在大海上的音乐浮城</a></h2><p>对于1900而言，音乐，是用来娱乐自己的——他永远为了自己而弹奏着，永远不让自己的音乐和自己分离。</p>
+<p>1900的存在很特别么？未必，他的生命因为没有踏足过真实世界而显得尤为纯净和清澈，甚至纯净和清澈得不能够生活在这个真实的现实世界里。最适宜他生活的地方，是Virginian，一个漂浮在海上的乌托邦，一个能够让1900这样纯粹且单纯的音乐圣徒栖息的地方。他不能，也不应该走进我们的世界，我们的世界对于1900而言，太肮脏，太复杂了。</p>
+<p>究竟是1900把自己禁锢在狭小的空间里了，还是我们让陆地桎梏了我们自身？城市里有着成千的街道，我们迷失于其中，看不到天的尽头，而大海以其广博的胸襟，容忍并珍藏了1900这个特异的存在，也甚至是因为大海的广博，1900看到了世界的尽头。</p>
+<blockquote>
+<p>当影片行进到最后，Max问及1900为何不愿意离开Virginian的那一瞬间，我们就不难理解1900的答案了——琴键太大，音乐无从而生；城市太大，我们无从而生……</p>
+</blockquote>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]<a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">海上钢琴师 La leggenda del pianista sull’oceano (1998)</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Make you cry，laugh  touching and thinking&lt;/strong&gt;&lt;br&gt;Crying for  his loneliness and ending of  the story.&lt;br&gt;Touching by the wonderful melody.&lt;br&gt;Laughing for those humor lines.&lt;br&gt;Deep thinking: In the big city, What’s your piano ? Where is your Virginia ?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p511146957.webp&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
+    
+    
+      <category term="English" scheme="http://aisee.me/tags/English/"/>
+    
+      <category term="Movie" scheme="http://aisee.me/tags/Movie/"/>
     
   </entry>
   
@@ -13055,73 +13467,6 @@ limitations under the License.
     
     
       <category term="Share" scheme="http://aisee.me/tags/Share/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The Legend of 1900</title>
-    <link href="http://aisee.me/2017/03/28/MyView/Movie/the-legend-of-1900/"/>
-    <id>http://aisee.me/2017/03/28/MyView/Movie/the-legend-of-1900/</id>
-    <published>2017-03-28T11:38:18.000Z</published>
-    <updated>2017-03-29T04:18:01.307Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>Make you cry，laugh  touching and thinking</strong><br>Crying for  his loneliness and ending of  the story.<br>Touching by the wonderful melody.<br>Laughing for those humor lines.<br>Deep thinking: In the big city, What’s your piano ? Where is your Virginia ?</p>
-</blockquote>
-<p><img src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p511146957.webp" alt=""></p>
-<a id="more"></a>
-<p>导演: 朱塞佩·托纳多雷<br>编剧: 亚利桑德罗·巴里克 / 朱塞佩·托纳多雷<br>主演: 蒂姆·罗斯 / 普路特·泰勒·文斯 / 比尔·努恩 / 梅兰尼·蒂埃里 / 阿尔贝托·巴斯克斯<br>类型: 剧情 / 音乐<br>制片国家/地区: 意大利<br>语言: 英语 / 法语<br>上映日期: 1998-10-28(意大利)<br>片长: 165分钟 / 120分钟(法国版) / 169分钟(加长版)<br>又名: 声光伴我飞(港) / 一九零零的传奇 / 1900海上钢琴师 / 传奇1900 / The Legend of 1900<br>IMDb链接: <a href="http://www.imdb.com/title/tt0120731" target="_blank" rel="external">tt0120731</a></p>
-<p>本片讲述了一个钢琴天才传奇的一生。</p>
-<p>　　1900年，Virginian号豪华邮轮上，一个孤儿被遗弃在头等舱，由船上的水手抚养长大，取名1900（蒂姆•罗斯 饰）。1900慢慢长大，显示出了无师自通的非凡钢琴天赋，在船上的乐队表演钢琴，每个听过他演奏的人，都被深深打动。爵士 乐鼻祖杰尼听说了1900的高超技艺，专门上船和他比赛，最后自叹弗如，黯然离去。<br>　　可惜，这一切的事情都发生在海上，1900从来不愿踏上陆地，直到有一天，他爱上了一个女孩，情愫在琴键上流淌。他会不会为了爱情，踏上陆地开始新的生活，用他的琴声惊艳世界？他将怎样谱写自己非凡的人生。 ©豆瓣</p>
-<h2 id="大人者，不失其赤子之心者也"><a href="#大人者，不失其赤子之心者也" class="headerlink" title="大人者，不失其赤子之心者也"></a><a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">大人者，不失其赤子之心者也</a></h2><p>市侩们总是抱着捧杀的态度来看待天才的，这也无足多怪。重要的是，天才如何看待自己的选择。</p>
-<p>许多人把实现自我价值同“功成名就”和“飞黄腾达”联系在一起，其中不乏某些天才。他们为此奋斗一生，也许终能得偿所愿。然而，功成名就之后呢？罗马帝国的战胜者凯旋时，一个奴隶会在他耳边轻轻私语：“一切荣华富贵，都是过眼烟云！”这道出了所有成功者风光无限的背后那不为人知的空虚——曾经追求的，固然已经得到，现在拥有的，也将归于破灭。其中的幸运者，还能像张翰那样“人生贵得适意尔，何能羁宦数千里以要名爵!”全身而退；不幸者，恐怕只能哀叹“吾欲与若复牵黄犬俱出上蔡东门逐狡兔，岂可得乎！”人生的荣辱，不过是一个围城。城里的人想冲出去，城外的人想冲进来。待到一切荣光都已失去，他们还会为当初的选择而感到骄傲，抑或后悔吗？</p>
-<blockquote>
-<p>“你知道琴上88个键一个不多一个也不少，琴键是有限的，但你是无限的，在这些键上所能创造出来的音乐，那才是无限的，这个我喜欢，也是我愿意做的，但是在舷梯上，摆在我面前的琴键有成千上万，永远也数不完的琴键”，“而在这个无限大的键盘上，你根本就无法去演奏”，“天呐，你没有看见那些街道吗？有上千条！你怎么去选择那一个？”。窝囊废似的一番话，彻底关死了1900通往成功与显赫的道路。似乎很难想象这样一个才华横溢的人会选择一条破船作为归宿，甚至宁愿最终被几吨炸药所终结。其实，1900是幸运的，他不入围城，自觉放弃未来的诱惑与烦嚣，换来对已经拥有的执着与坚守。也就无怨无悔，虽死何憾？老子云：知其雄 ，守其雌 ，为天下溪。为天下溪 常德不离 复归於婴儿。想必直到生命终结的那一刻，1900依然可以骄傲地宣称：“大人者，不失其赤子之心者也。”</p>
-</blockquote>
-<h2 id="俗人理解不了的幸福"><a href="#俗人理解不了的幸福" class="headerlink" title="俗人理解不了的幸福"></a><a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">俗人理解不了的幸福</a></h2><p>大概只有小号手是愿意聆听1900的内心而非琴声的人，他不理解他，但是他尊重他。他用尊重成全了1900完整的独立。我看到有人说如果他是那胖子他就会把1900敲昏然后拖下船。我想这样的想法也就注定他成不了那个胖子，成不了1900唯一的真正的朋友。</p>
-<p>如果我们较真一点，假设小号手真的把1900弄下船了，故事将怎样延伸？我们都知道，落魄的小号手没有能力去为朋友找一艘新的船，找88个琴键和尽头。1900将无可避免被磨去棱角和平庸，落入红尘变成一个凡人。</p>
-<p>活着，还是活得安心。这也是个问题。凡人的选择是无论如何先活下去再说，”活着”这件事情本身比什么都重要。而天才则把心灵的舒适看得更重，生死则次之。所以凡人可以忍辱，天才却情愿玉碎。每一种人都获得了他最看重的东西，说起来谁也不比谁亏。</p>
-<p>差异导致孤独。葆存了差异性的ET在承受异样目光的同时也承受着巨大的孤独，远超出凡人的孤独。凡人们如我们虽然也还都残留一些差异，但大致面貌八九不离十。我们失恋了后觉得痛苦比谁的都大，我们拥抱心爱的人自认比谁都幸福。但一个残酷的事实是：每个人的痛苦和幸福都没什么区别。我们在不断重复，千篇一律。</p>
-<p>我们丢了个性却换来了共鸣。我们借助艺术寻找通感，在人性中相交叉的部分，抹着眼泪互相慰藉，或者说，互相平衡（原来有人比我还惨啊，这下心里舒坦多了）。而被称为天才的人站在人群之外，忧郁地注视这群有些像他又不是他的物种。用他们ET的本能将那些交叉部分，提炼、放大、直抵内心。那些永远无法交叉的部分，则作为孤独的源头，令他们永远无法融入人群。他们只有躲在自己的轮船里，躲在自己的内心世界里，孤独地活着，然后死去。</p>
-<h2 id="我们无处安放的孤独"><a href="#我们无处安放的孤独" class="headerlink" title="我们无处安放的孤独"></a><a href="https://movie.douban.com/review/1316127/" target="_blank" rel="external">我们无处安放的孤独</a></h2><p>我一直觉得1900的一生是存在主义思想的体现，他藐视规则，藐视这个社会认可的规则，他害怕上岸其实是拒绝上岸，藐视上岸。他重自身的存在大于外界对自身的认可，他可以轻易打败爵士乐的开山祖师并对他表示鄙夷，他可以靠他的才华赚取无数的名利但是他拒绝音乐与自身的分离，他可以用音乐去探究所有人的心灵，可以在音乐里去旅行，可以寻觅到自己的爱情，但是他没有常人那样去要去追，他轻轻地将这些丢进了大海，他将迈向陆地的脚收回。</p>
-<p>在存在主义者看来，人生活在一个与自己对立的、失望的世界之中，人在世界上的地位是不确定的。绝对自由的人也是烦恼和无所依靠的孤独者。人虽然有选择的自由，但他面对的未来的生活却是混沌而没有目标的。他只是盲目地走向未来，他只知道人生的真实的终结就是死亡。死亡作为人生的最后归宿，对于个人的存在具有非常重要的意义。 所以存在主义者都是悲观者，在他们眼里，人生是一场悲剧。</p>
-<blockquote>
-<p>“城市那么大，看不到尽头，我停下来不是因为所见是因为所不见，是因为看不见的东西。连绵不绝的城市什么都有，就是没有尽头，我需要看见世界的尽头。上了岸，何去何从？爱一个女人，住一间屋，买一块地，望一个景，走一条死路，太多的选择我无所适从。漫漫无尽，思前想后你不怕精神崩溃？那样的日子怎样过？我无法遗弃这艘船，宁可遗弃自己的生命。”</p>
-</blockquote>
-<p>后来我才知道生活的大多数时候其实是孤独的，是我们心里无处安放的孤独，不被这个世界所认可的孤独。1900是孤独的，所以他选择一辈子不上岸，和那座海上浮城共生共死，而我们呢？我们没有一座属于自己的城，让我们来安放我们的孤独，让我们来逃避自己不喜欢的一切，所以我们比1900更孤独更可怜。</p>
-<h2 id="微尘世界，我们都已是最好的钢琴手。"><a href="#微尘世界，我们都已是最好的钢琴手。" class="headerlink" title="微尘世界，我们都已是最好的钢琴手。"></a><a href="https://movie.douban.com/review/1971957/" target="_blank" rel="external">微尘世界，我们都已是最好的钢琴手。</a></h2><p>1900代表着一种理想，代表着这个尘世中的多数人，注定不会付诸行动，却会始终心怀向往的理想。矗立在那里，自由，决绝，而悲伤。</p>
-<p>我们是生活在“外面的世界”里的人。这个世界的意义在于“传承”。就像一个游戏，每个人都是其中的玩家，然而获得的任务，却是如何使这个游戏永远存在。赡养父母，繁衍后代，诸多必须背负的责任令前行显得缓慢而艰难。然而我们的人生对于整个游戏而言，存在的时间或许只有一秒，或者更短。也唯有越短暂，这个游戏的运行时间才会越长，才有可能，“永不结束”。<br>这样一想会不会又心有不甘呢？辛苦奋斗的一生，其实不过一粒微尘，轻得仿佛随时都会消失。<br>然而在闭上眼的那一瞬还会不会含笑着想起，自己的孩子在不久前，正带领他们的孩子在绿草地上放起风筝；会不会含笑着想起，自己曾拥有良人在侧，从此不再无枝可依；会不会含笑着想起更久远的从前，父母曾令你无忧无虑，而那些萌生的小情绪，或许唯有感慨地大笑出声，无奈地摇摇头，道一句，那时真小。<br>会不会想起那些温暖的片段，想起自己曾经的付出与所得，带着回望的沧桑，感怀，和崭新的希望。<br>　　　　<br>我们为什么不会像1900一样，选择在漫天火光中永沉海底。这样壮烈，却获得永生的自由？</p>
-<blockquote>
-<p>因为，因为我们一直生活在这个“外面的世界”，清楚地看见它的混乱，却因为某一瞬间体验到的那些温情，那些无以伦比的美好，而心甘情愿地忍受着它所给予的伤害，努力弹奏出最华美的人生乐章。</p>
-</blockquote>
-<p>我们或许从来都不是天才，但是我们至少能做到勤恳、踏实。我们从坚硬和纯白开始，学会圆滑，学会世故，但内心深处，终究会一直记得，这一生所做的种种妥协，不过是为了在这个微尘世界，在这架上帝给予的钢琴上，创作出独属于自己的旋律与琴音。</p>
-<h2 id="我们都是宅男"><a href="#我们都是宅男" class="headerlink" title="我们都是宅男"></a><a href="https://movie.douban.com/review/1238757/" target="_blank" rel="external">我们都是宅男</a></h2><p>我们或许没有《海上钢琴师》中的1900看的更加清楚，他一生生活在邮轮上，他不愿离开一个让他感到安定自由、无忧无虑的空间，他永远没有踏上陆地，开启他的“远大前程”，在我们看来，他是自闭的，但是，他也是最清醒的，在最后无比绚烂的死亡中，他走的孤独而坦然。</p>
-<p>和1900对无限的恐惧相反，现代人正是在追逐着无限，我们贪大，贪全，贪广，房子要住大的，哪怕被每月的房贷压的生活质量下降；交际圈要交广些，哪怕每天疲于奔命于并不让自己愉快的应酬；旅游要走遍世界，哪怕其实只是疲惫的赶着在一个又一个景点的人群中拍照；炒股也有“不涨到翻倍不痛快”，哪怕每天被指数折磨的大喜大悲。还是看看这个“宅男”1900，反观自己，其实我们都是宅男，我们都是在自己营造的世界里生活，我们总有个无形或有形的圈子，但是似乎“开疆扩土”是人的本能，我们总是希望这个世界更大些，更广些。其实，并不是因为你走遍了这个城市的大街小巷，你的世界便扩展到了整个城市，哪怕真的这样，你也只是有了个城市这样一个更大的宅子。所以，1900不贪求太多，他一生都在一艘船上生活，这是有限的；但是他一生都有音乐相伴快乐的生活，这是无限的，快乐而自在的生活才是无限的。正如我们拼命拓展的交际网永远是有限的，但是和其中几个真正的知己在一起的快乐才是无限的。</p>
-<p>1900在邮轮上有自己的快乐，也伴随着一些悲伤，但是，快乐从来不是仅仅以空间的广度来评判的，就如你有一笔钱，可以买大房子简装修，也可以买小房子按照自己的意愿精装修（当然，精装修的意义不是买一堆豪华家俱的堆砌）。1900选择在一个相对狭小的世界里精心构筑他的世界，安逸而愉快。而在我们看来，这样的小小的快乐永远是“有病”的，就如我们如果看到一个人沉溺于数学而废寝忘食，会认为他是一个科学怪人，为他随时可能的英年早逝而悲哀；如果看到一个人长期执着的在农村搞什么社会试验而履受挫折，会认为他是一个理想主义者，为他干些“不实际”的事情而悲哀。诸如此类的事情还有很多，我们总是很自恋，常常看到他人沉浸于一些比较“独特”的事物而不问世事而感到“悲哀”，而对他们表示不解和“同情”，特别当这些人甚至为之折寿或是如1900那样“找死”后，更是如此。其实，生活方式本来没有定义，其实想想，1900在一艘船上就活的那么滋润，一些人一天到晚在屋子里闷头看武侠小说、漫画书就那么快活，我们这些号称精神健康，性格乐观的人却常常无名的不停唠叨“真郁闷”，这时的我们是不是会突然感到一丝沮丧，而对宅男们有些羡慕，同时意识到，其实我们都不过是在自己的世界里有喜有乐的宅男。</p>
-<h2 id="漂流在大海上的音乐浮城"><a href="#漂流在大海上的音乐浮城" class="headerlink" title="漂流在大海上的音乐浮城"></a><a href="https://movie.douban.com/review/1000830/" target="_blank" rel="external">漂流在大海上的音乐浮城</a></h2><p>对于1900而言，音乐，是用来娱乐自己的——他永远为了自己而弹奏着，永远不让自己的音乐和自己分离。</p>
-<p>1900的存在很特别么？未必，他的生命因为没有踏足过真实世界而显得尤为纯净和清澈，甚至纯净和清澈得不能够生活在这个真实的现实世界里。最适宜他生活的地方，是Virginian，一个漂浮在海上的乌托邦，一个能够让1900这样纯粹且单纯的音乐圣徒栖息的地方。他不能，也不应该走进我们的世界，我们的世界对于1900而言，太肮脏，太复杂了。</p>
-<p>究竟是1900把自己禁锢在狭小的空间里了，还是我们让陆地桎梏了我们自身？城市里有着成千的街道，我们迷失于其中，看不到天的尽头，而大海以其广博的胸襟，容忍并珍藏了1900这个特异的存在，也甚至是因为大海的广博，1900看到了世界的尽头。</p>
-<blockquote>
-<p>当影片行进到最后，Max问及1900为何不愿意离开Virginian的那一瞬间，我们就不难理解1900的答案了——琴键太大，音乐无从而生；城市太大，我们无从而生……</p>
-</blockquote>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]<a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">海上钢琴师 La leggenda del pianista sull’oceano (1998)</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Make you cry，laugh  touching and thinking&lt;/strong&gt;&lt;br&gt;Crying for  his loneliness and ending of  the story.&lt;br&gt;Touching by the wonderful melody.&lt;br&gt;Laughing for those humor lines.&lt;br&gt;Deep thinking: In the big city, What’s your piano ? Where is your Virginia ?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p511146957.webp&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
-    
-    
-      <category term="English" scheme="http://aisee.me/tags/English/"/>
-    
-      <category term="Movie" scheme="http://aisee.me/tags/Movie/"/>
     
   </entry>
   
@@ -13585,150 +13930,6 @@ limitations under the License.
       <category term="History" scheme="http://aisee.me/tags/History/"/>
     
       <category term="China" scheme="http://aisee.me/tags/China/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Machine Learning</title>
-    <link href="http://aisee.me/2017/03/27/AI/Business/concept-of-machine-learning/"/>
-    <id>http://aisee.me/2017/03/27/AI/Business/concept-of-machine-learning/</id>
-    <published>2017-03-27T01:58:06.000Z</published>
-    <updated>2017-03-27T09:06:23.123Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/330px-Hopfield-net.png" alt=""></p>
-<p>机器学习是人工智能的一个分支。人工智能的研究是从以“推理”为重点到以“知识”为重点，再到以“学习”为重点，一条自然、清晰的脉络。</p>
-<p>机器学习是实现人工智能的一个途径，即以机器学习为手段解决人工智能中的问题。机器学习在近30多年已发展为一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、计算复杂性理论等多门学科。</p>
-<p>机器学习理论主要是设计和分析一些让计算机可以自动“学习”的算法。机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。因为学习算法中涉及了大量的统计学理论，机器学习与推断统计学联系尤为密切，也被称为统计学习理论。</p>
-<a id="more"></a>
-<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p>机器学习是人工智能的一个分支。人工智能的研究是从以“推理”为重点到以“知识”为重点，再到以“学习”为重点，一条自然、清晰的脉络。显然，机器学习是实现人工智能的一个途径，即以机器学习为手段解决人工智能中的问题。机器学习在近30多年已发展为一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、计算复杂性理论等多门学科。机器学习理论主要是设计和分析一些让计算机可以自动“学习”的算法。机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。因为学习算法中涉及了大量的统计学理论，机器学习与推断统计学联系尤为密切，也被称为统计学习理论。算法设计方面，机器学习理论关注可以实现的，行之有效的学习算法。很多推论问题属于无程序可循难度，所以部分的机器学习研究是开发容易处理的近似算法。</p>
-<p>机器学习已广泛应用于数据挖掘、计算机视觉、自然语言处理、生物特征识别、搜索引擎、医学诊断、检测信用卡欺诈、证券市场分析、DNA序列测序、语音和手写识别、战略游戏和机器人等领域。</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>机器学习有下面几种定义：<br>机器学习是一门人工智能的科学，该领域的主要研究对象是人工智能，特别是如何在经验学习中改善具体算法的性能。<br>机器学习是对能通过经验自动改进的计算机算法的研究。<br>机器学习是用数据或以往的经验，以此优化计算机程序的性能标准。<br>一种经常引用的英文定义是：</p>
-<blockquote>
-<p>A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.</p>
-</blockquote>
-<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>机器学习可以分成下面几种类别：</p>
-<h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>从给定的训练数据集中学习出一个函数，当新的数据到来时，可以根据这个函数预测结果。监督学习的训练集要求是包括输入和输出，也可以说是特征和目标。训练集中的目标是由人标注的。常见的监督学习算法包括回归分析和统计分类。</p>
-<h3 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h3><p>与监督学习相比，训练集没有人为标注的结果。常见的无监督学习算法有聚类。</p>
-<h3 id="半监督学习"><a href="#半监督学习" class="headerlink" title="半监督学习"></a>半监督学习</h3><p>介于监督学习与无监督学习之间。</p>
-<h3 id="增强学习"><a href="#增强学习" class="headerlink" title="增强学习"></a>增强学习</h3><p>通过观察来学习做成如何的动作。每个动作都会对环境有所影响，学习对象根据观察到的周围环境的反馈来做出判断。</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>具体的机器学习算法有：</p>
-<h3 id="构造间隔理论分布：聚类分析和模式识别"><a href="#构造间隔理论分布：聚类分析和模式识别" class="headerlink" title="构造间隔理论分布：聚类分析和模式识别"></a>构造间隔理论分布：聚类分析和模式识别</h3><p>人工神经网络<br>决策树<br>感知器<br>支持向量机<br>集成学习AdaBoost<br>降维与度量学习<br>聚类<br>贝叶斯分类器</p>
-<h3 id="构造条件概率：回归分析和统计分类"><a href="#构造条件概率：回归分析和统计分类" class="headerlink" title="构造条件概率：回归分析和统计分类"></a>构造条件概率：回归分析和统计分类</h3><p>高斯过程回归<br>线性判别分析<br>最近邻居法<br>径向基函数核</p>
-<h3 id="通过再生模型构造概率密度函数"><a href="#通过再生模型构造概率密度函数" class="headerlink" title="通过再生模型构造概率密度函数"></a>通过再生模型构造概率密度函数</h3><p>最大期望算法<br>概率图模型：包括贝叶斯网和Markov随机场<br>Generative Topographic Mapping</p>
-<h3 id="近似推断技术"><a href="#近似推断技术" class="headerlink" title="近似推断技术"></a>近似推断技术</h3><p>马尔可夫链<br>蒙特卡罗方法<br>变分法</p>
-<h3 id="最优化"><a href="#最优化" class="headerlink" title="最优化"></a>最优化</h3><p>大多数以上方法，直接或者间接使用最优化算法。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://zh.wikipedia.org/wiki/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0" target="_blank" rel="external">机器学习</a><br>Bishop, C. M. (1995). 《模式识别神经网络》，牛津大学出版社。ISBN 0-19-853864-2<br>Bishop, C. M. (2006). 《模式识别与机器学习》，Springer。ISBN 978-0-387-31073-2<br>Richard O. Duda, Peter E. Hart, David G. Stork (2001) 《模式分类》（第2版）, Wiley, New York, ISBN 0-471-05669-3.<br>MacKay, D. J. C. (2003). 《信息理论、推理和学习算法》，剑桥大学出版社。ISBN 0-521-64298-1<br>Mitchell, T. (1997). 《机器学习》, McGraw Hill. ISBN 0-07-042807-7<br>Sholom Weiss, Casimir Kulikowski (1991). Computer Systems That Learn, Morgan Kaufmann. ISBN 1-55860-065-5</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/330px-Hopfield-net.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;机器学习是人工智能的一个分支。人工智能的研究是从以“推理”为重点到以“知识”为重点，再到以“学习”为重点，一条自然、清晰的脉络。&lt;/p&gt;
-&lt;p&gt;机器学习是实现人工智能的一个途径，即以机器学习为手段解决人工智能中的问题。机器学习在近30多年已发展为一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、计算复杂性理论等多门学科。&lt;/p&gt;
-&lt;p&gt;机器学习理论主要是设计和分析一些让计算机可以自动“学习”的算法。机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。因为学习算法中涉及了大量的统计学理论，机器学习与推断统计学联系尤为密切，也被称为统计学习理论。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="AI" scheme="http://aisee.me/categories/AI/"/>
-    
-    
-      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
-    
-      <category term="Machine Learning" scheme="http://aisee.me/tags/Machine-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Floating Point</title>
-    <link href="http://aisee.me/2017/03/27/Program/Tools/Computer/float/"/>
-    <id>http://aisee.me/2017/03/27/Program/Tools/Computer/float/</id>
-    <published>2017-03-27T01:58:06.000Z</published>
-    <updated>2017-04-09T01:24:38.552Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/Float_mantissa_exponent.png" alt=""></p>
-<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>在计算机科学中，浮点（英语：floating point，缩写为FP）是一种对于实数的近似值数值表现法，由一个有效数字（即尾数）加上幂数来表示，通常是乘以某个基数的整数次指数得到。以这种表示法表示的数值，称为浮点数（floating-point number）。利用浮点进行运算，称为浮点计算，这种运算通常伴随着因为无法精确表示而进行的近似或舍入。</p>
-<a id="more"></a>
-<p>这种表示方法类似于基数为10的科学记数法，在计算机上，通常使用2为基数的幂数来表示。一个浮点数a由两个数m和e来表示：a = m × b^e。在任意一个这样的系统中，我们选择一个基数b（记数系统的基）和精度p（即使用多少位来存储）。m（即尾数）是形如±d.ddd…ddd的p位数（每一位是一个介于0到b-1之间的整数，包括0和b-1）。如果m的第一位是非0整数，m称作正规化的。有一些描述使用一个单独的符号位（s 代表+或者-）来表示正负，这样m必须是正的。e是指数。</p>
-<p>这种表示法的设计，来自于对于值的表现范围，与精密度之间的取舍：可以在某个固定长度的存储空间内表示出某个实数的近似值。例如，一个指数范围为±4的4位十进制浮点数可以用来表示43210，4.321或0.0004321，但是没有足够的精度来表示432.123和43212.3（必须近似为432.1和43210）。当然，实际使用的位数通常远大于4。<br>此外，浮点数表示法通常还包括一些特别的数值：+∞和−∞（正负无穷大）以及NaN（’Not a Number’）。无穷大用于数太大而无法表示的时候，NaN则指示非法操作或者无法定义的结果。<br>其中，无穷大，可表示为inf，在内存中的值是阶码为全1，尾数全0。而NaN在内存中的值则是阶码全1，尾数不全0。</p>
-<h3 id="计算机的浮点数"><a href="#计算机的浮点数" class="headerlink" title="计算机的浮点数"></a>计算机的浮点数</h3><p>浮点指的是带有小数的数值，浮点运算即是小数的四则运算，常用来测量电脑运算速度。大部分计算机采用二进制（b=2）的表示方法。位（bit）是衡量浮点数所需存储空间的单位，通常为32位或64位，分别被叫作单精度和双精度。有一些计算机提供更大的浮点数，例如英特尔公司的浮点运算单元Intel8087协处理器（以及其被集成进x86处理器中的后代产品）提供80位长的浮点数，用于存储浮点运算的中间结果。还有一些系统提供128位的浮点数（通常用软件实现）。</p>
-<h3 id="浮点数的标准"><a href="#浮点数的标准" class="headerlink" title="浮点数的标准"></a>浮点数的标准</h3><p>在电脑使用的浮点数被电气电子工程师协会（IEEE）规范化为IEEE 754。</p>
-<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>π的值可以表示为π = 3.1415926…10（十进制）。当在一个支持17位尾数的计算机中表示时，它会变为0.11001001000011111 × 2^2。</p>
-<h3 id="准确性"><a href="#准确性" class="headerlink" title="准确性"></a>准确性</h3><p>由于浮点数不能表达所有实数，浮点运算与相应的数学运算有所差异，有时此差异极为显著。<br>比如，二进制浮点数不能表达0.1和0.01，0.1的平方既不是准确的0.01，也不是最接近0.01的可表达的数。单精度（24比特）浮点数表示0.1的结果为<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3cc0c417147d35e6a577cbf56c88600d17b5b9d1" alt=""><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/801cf7477f2d78a751e2f9469059824a28cc9265" alt=""><br>即<br>0.100000001490116119384765625<br>此数的平方是<br>0.010000000298023226097399174250313080847263336181640625<br>但最接近0.01的可表达的数是<br>0.009999999776482582092285156250<br>浮点数也不能表达圆周率<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9be4ba0bb8df3af72e90a0535fabcc17431e540a" alt="">，所以<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/34d582abaef83367f85ead3cba0d03900851c5fb" alt="">不等于正无穷，也不会溢出。下面的C语言代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">double pi = 3.1415926535897932384626433832795;</div><div class="line">double z = tan(pi/2.0);</div></pre></td></tr></table></figure></p>
-<p>的计算结果为16331239353195370.0，如果用单精度浮点数，则结果为−22877332.0。同样的，<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c01b1f6c3bf7f8586a1bf6103afea822725d53cf" alt=""><br>由于浮点数计算过程中丢失了精度，浮点运算的性质与数学运算有所不同。浮点加法和乘法不匹配结合律和分配律。</p>
-<h2 id="单精度浮点数"><a href="#单精度浮点数" class="headerlink" title="单精度浮点数"></a>单精度浮点数</h2><p>单精度浮点数格式是一种计算机数据格式，在计算机存储器中占用4个字节（32 bits），利用“浮点”（浮动小数点）的方法，可以表示一个范围很大的数值。<br>在IEEE 754-2008的定义中，32-bit base 2格式被正式称为binary32格式。这种格式在IEEE 754-1985被定义为single，即单精度。需要注意的是，在更早的一些计算机系统中，也存在着其他4字节的浮点数格式。</p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>第1位表示正负，中间8位表示指数，后23位储存有效数位（有效数位是24位）。<br>正负号0代表正，1代表负。<br>指数可以是二补码；或0到255，前半代表负，127代表零，后半代表正。<br>有效数位最左手边的1并不会储存，因为它一定存在（二进制的第一个有效数字必定是1）。换言之，有效数位是24位，实际储存23位。<br><img src="http://ong8f1obl.bkt.clouddn.com/single%20float%20point.jpg" alt=""></p>
-<h2 id="双精度浮点数"><a href="#双精度浮点数" class="headerlink" title="双精度浮点数"></a>双精度浮点数</h2><p>双精度浮点数（double）是计算机使用的一种数据类型。比起单精度浮点数，双精度浮点数(double)使用 64 位（8字节） 来存储一个浮点数。 它可以表示十进制的15或16位有效数字，其可以表示的数字的绝对值范围大约是<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9c07267b5bfa31654492905ea02d28eae470f716" alt=""></p>
-<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><p>sign bit(符号): 用来表示正负号<br>exponent(指数): 用来表示次方数<br>mantissa(尾数): 用来表示精确度<br><img src="http://ong8f1obl.bkt.clouddn.com/General_double_precision_float.png" alt=""></p>
-<h3 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h3><p>0代表数值为正，1代表数值为负。</p>
-<h3 id="指数"><a href="#指数" class="headerlink" title="指数"></a>指数</h3><p>类比整型使用所有位为 0 的数字表示数值“0”，双精度浮点数表示 0 时指数部分也为 0。若如此，便可能产生冲突：比如全 0 的数字可能表示“0”，也可能表示<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/23dd92324d8b592a21be50a44cf2c48dba20e3f2" alt="">（参考下文“尾数”的解释）。于是此处规定：<br><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/22cb404192ab64c4954a3263c51ec5202928e520" alt="">用来代表带符号的 0（尾数为 0）或下溢数（尾数不为 0）。<br><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f24e15fbd966772fe4a91b3da51a54562f7a6647" alt="">用来代表无穷大（尾数为 0）或NaN（尾数不为 0）。<br>其他：代表 2 的（exponent-0x3ff）次方。</p>
-<h3 id="尾数"><a href="#尾数" class="headerlink" title="尾数"></a>尾数</h3><p>在二进制的“科学记号”，数字被表示为：<br><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/40d1a2e7879ca1fe008f5d9b7796ea520c0227ee" alt=""><br>为了最大限度提高精确度，可以要求尾数规格化，把尾数处理到大于等于1而小于2的区间内，便可省去前导的“1”。例如：</p>
-<p><img src="http://ong8f1obl.bkt.clouddn.com/double%20float.jpg" alt=""></p>
-<p>于是，可得以下形式：<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/45b5245fa64a99f69255fb29eee882430b6b30f7" alt=""></p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>根据以上的叙述，一个双精度浮点数所代表的数值为：<br><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7983ffbff10fe08e4741b16cb180f8bde8ef31b7" alt=""></p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">3ff0 0000 0000 0000   = 1</div><div class="line"> c000 0000 0000 0000   = -2</div><div class="line"> 7fef ffff ffff ffff   ~ 1.7976931348623157 x 10308 (Max Double)</div><div class="line"> 3fd5 5555 5555 5555   ~ 1/3</div><div class="line"> 0000 0000 0000 0000   = 0</div><div class="line"> 8000 0000 0000 0000   = -0</div><div class="line"> 7ff0 0000 0000 0000   = 無限大</div><div class="line"> fff0 0000 0000 0000   = 負無限大</div></pre></td></tr></table></figure>
-<h2 id="计算机基础——信息的表示与存储"><a href="#计算机基础——信息的表示与存储" class="headerlink" title="计算机基础——信息的表示与存储"></a><a href="http://math.ecnu.edu.cn/~jypan/Teaching/Cpp/ch01_Intro.pdf" target="_blank" rel="external">计算机基础——信息的表示与存储</a></h2><p><img src="http://ong8f1obl.bkt.clouddn.com/convert.jpg" alt=""><br><img src="http://ong8f1obl.bkt.clouddn.com/convert1.jpg" alt=""><br><img src="http://ong8f1obl.bkt.clouddn.com/original.jpg" alt=""><br><img src="http://ong8f1obl.bkt.clouddn.com/opposite.jpg" alt=""><br><img src="http://ong8f1obl.bkt.clouddn.com/complementary.jpg" alt=""></p>
-<h2 id="浮点数在计算机中存储方式"><a href="#浮点数在计算机中存储方式" class="headerlink" title="浮点数在计算机中存储方式"></a><a href="http://www.cnblogs.com/jillzhang/archive/2007/06/24/793901.html" target="_blank" rel="external">浮点数在计算机中存储方式</a></h2><p>不论是float还是double在存储方式上都是遵从IEEE的规范的，float遵从的是IEEE R32.24 ,而double 遵从的是R64.53。</p>
-<ol>
-<li>符号位(Sign) : 0代表正，1代表为负</li>
-<li>指数位（Exponent）:用于存储科学计数法中的指数数据，并且采用移位存储</li>
-<li><p>尾数部分（Mantissa）：尾数部分</p>
-<p>其中float的存储方式如下图所示：<br><img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image001%5B3%5D_2.gif" alt=""></p>
-<p>而双精度的存储方式为:<br><img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image001%5B6%5D_2.gif" alt=""></p>
-<p>R32.24和R64.53的存储方式都是用科学计数法来存储数据的，比如8.25用十进制的科学计数法表示就为:8.25<em><img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image0021_thumb.gif" alt="">,而120.5可以表示为:1.205</em><img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image0022_thumb.gif" alt="">,这些小学的知识就不用多说了吧。而我们傻蛋计算机根本不认识十进制的数据，他只认识0，1，</p>
-<p>所以在计算机存储中，首先要将上面的数更改为二进制的科学计数法表示，8.25用二进制表示可表示为1000.01,我靠，不会连这都不会转换吧?那我估计要没辙了。120.5用二进制表示为：1110110.1用二进制的科学计数法表示1000.01可以表示为1.0001<em><img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image002%5B2%5D_thumb_1.gif" alt="">,1110110.1可以表示为1.1101101</em><img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image002%5B3%5D_thumb_1.gif" alt="">,任何一个数都的科学计数法表示都为1.xxx*<img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image002%5B1%5D_thumb_1.gif" alt="">,尾数部分就可以表示为xxxx,第一位都是1嘛，干嘛还要表示呀？可以将小数点前面的1省略，所以23bit的尾数部分，可以表示的精度却变成了24bit，道理就是在这里，那24bit能精确到小数点后几位呢，我们知道9的二进制表示为1001，所以4bit能精确十进制中的1位小数点，24bit就能使float能精确到小数点后6位，而对于指数部分，因为指数可正可负，8位的指数位能表示的指数范围就应该为:-127-128了，所以指数部分的存储采用移位存储，存储的数据为元数据+127，下面就看看8.25和120.5在内存中真正的存储方式。</p>
-<p>首先看下8.25，用二进制的科学计数法表示为:1.0001*<img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image002%5B2%5D_thumb_1.gif" alt=""></p>
-</li>
-</ol>
-<p>按照上面的存储方式，符号位为:0，表示为正，指数位为:3+127=130 ,位数部分为,故8.25的存储方式如下图所示:<br><img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image002%5B5%5D.gif" alt=""></p>
-<p>而单精度浮点数120.5的存储方式如下图所示:<br>1.1101101*<img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image002%5B3%5D_thumb_1.gif" alt=""></p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image002_12.gif" alt=""></p>
-<p>那么如果给出内存中一段数据，并且告诉你是单精度存储的话，你如何知道该数据的十进制数值呢？其实就是对上面的反推过程，比如给出如下内存数据：0100001011101101000000000000，首先我们现将该数据分段，0 10000 0101 110 1101 0000 0000 0000 0000，在内存中的存储就为下图所示：</p>
-<p><a href="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image001_1.gif" target="_blank" rel="external">http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image001_1.gif</a></p>
-<p>根据我们的计算方式，可以计算出，这样一组数据表示为:1.1101101*<img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image002%5B3%5D_thumb_1.gif" alt="">=120.5</p>
-<p>而双精度浮点数的存储和单精度的存储大同小异，不同的是指数部分和尾数部分的位数。所以这里不再详细的介绍双精度的存储方式了，只将120.5的最后存储方式图给出，大家可以仔细想想为何是这样子的<br><img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image001_2.gif" alt=""></p>
-<p>下面我就这个基础知识点来解决一个我们的一个疑惑，请看下面一段程序，注意观察输出结果</p>
-<pre><code>float f = 2.2f;
-double d = (double)f;
-Console.WriteLine(d.ToString(&quot;0.0000000000000&quot;));
-f = 2.25f;
-d = (double)f;
-Console.WriteLine(d.ToString(&quot;0.0000000000000&quot;));
-</code></pre><p>可能输出的结果让大家疑惑不解，单精度的2.2转换为双精度后，精确到小数点后13位后变为了2.2000000476837，而单精度的2.25转换为双精度后，变为了2.2500000000000，为何2.2在转换后的数值更改了而2.25却没有更改呢？很奇怪吧？其实通过上面关于两种存储结果的介绍，我们已经大概能找到答案。首先我们看看2.25的单精度存储方式，很简单 0 1000 0001 001 0000 0000 0000 0000 0000,而2.25的双精度表示为:0 100 0000 0001 0010 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000,这样2.25在进行强制转换的时候，数值是不会变的，而我们再看看2.2呢，2.2用科学计数法表示应该为：将十进制的小数转换为二进制的小数的方法为将小数<em>2，取整数部分，所以0.282=0.4，所以二进制小数第一位为0.4的整数部分0，0.4×2=0.8，第二位为0,0.8</em>2=1.6,第三位为1，0.6×2 = 1.2，第四位为1，0.2*2=0.4，第五位为0，这样永远也不可能乘到=1.0，得到的二进制是一个无限循环的排列 00110011001100110011… ,对于单精度数据来说，尾数只能表示24bit的精度，所以2.2的float存储为:</p>
-<p><img src="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image001_7.gif" alt=""></p>
-<p>但是这样存储方式，换算成十进制的值，却不会是2.2的，应为十进制在转换为二进制的时候可能会不准确，如2.2，而double类型的数据也存在同样的问题，所以在浮点数表示中会产生些许的误差，在单精度转换为双精度的时候，也会存在误差的问题，对于能够用二进制表示的十进制数据，如2.25，这个误差就会不存在，所以会出现上面比较奇怪的输出结果。</p>
-<p>本文属作者原创，只发布在博客园，希望大家在转载的时候，注明出处和作者，谢谢。</p>
-<p>注：本文在写作过程中，参照了如下资料：</p>
-<p><a href="http://www.msdn.net/library/chs/default.asp?url=/library/CHS/vccore/html/_core_why_floating_point_numbers_may_lose_precision.asp" target="_blank" rel="external">http://www.msdn.net/library/chs/default.asp?url=/library/CHS/vccore/html/_core_why_floating_point_numbers_may_lose_precision.asp</a></p>
-<p><a href="http://blog.csdn.net/ganxingming/archive/2006/12/19/1449526.aspx" target="_blank" rel="external">http://blog.csdn.net/ganxingming/archive/2006/12/19/1449526.aspx</a></p>
-<h2 id="C语言中float-double类型-在内存中的结构-存储方式"><a href="#C语言中float-double类型-在内存中的结构-存储方式" class="headerlink" title="C语言中float,double类型,在内存中的结构(存储方式)"></a><a href="http://www.linuxidc.com/Linux/2012-07/65987.htm" target="_blank" rel="external">C语言中float,double类型,在内存中的结构(存储方式)</a></h2><p>C语言中float,double类型,在内存中的结构(存储方式)<br>从存储结构和算法上来讲，double和float是一样的，不一样的地方仅仅是float是32位的，double是64位的，所以double能存储更高的精度。</p>
-<p>任何数据在内存中都是以二进制（0或1）顺序存储的，每一个1或0被称为1位，而在x86CPU上一个字节是8位。比如一个16位（2 字节）的short int型变量的值是1000，那么它的二进制表达就是：00000011 11101000。由于Intel CPU的架构原因，它是按字节倒 序存储的，那么就因该是这样：11101000 00000011，这就是定点数1000在内存中的结构。</p>
-<p>目前C/C++编译器标准都遵照IEEE制定的浮点数表示法来进行float,double运算。</p>
-<p>这种结构是一种科学计数法，用符号、指数和 尾数来表示，底数定为2——即把一个浮点数表示为尾数乘以2的指数次方再添上符号。</p>
-<p>下面是具体的规格：</p>
-<p>类型      符号位 阶码  尾数  长度<br>float       1      8     23    32<br>double    1     11    52    64<br>临时数     1     15    64    80</p>
-<p>由于通常C编译器默认浮点数是double型的，下面以double为例： 共计64位，折合8字节。</p>
-<p>由最高到最低位分别是第63、62、61、……、0位： 最高位63位是符号位，1表示该数为负，0正； 62-52位，一共11位是指数位； 51-0位，一共52位是尾数位。</p>
-<p>按照IEEE浮点数表示法，下面将把double型浮点数38414.4转换为十六进制代码。</p>
-<p>把整数部和小数部分开处理:整数部直接化十六进制：960E。小数的处理: 0.4=0.5<em>0+0.25</em>1+0.125<em>1+0.0625</em>0+…… 实际上这永远算不完！这就是著名的浮点数精度问题。所以直到加上前面的整数部分算够53位就行了（隐藏位技术：最高位的1 不写入内存）。</p>
-<p>如果你够耐心，手工算到53位那么因该是：38414.4(10)=1001011000001110.0110101010101010101010101010101010101(2)</p>
-<p>科学记数法为：1.001……乘以2的15次方。指数为15！ 于是来看阶码，一共11位，可以表示范围是-1024 ~ 1023。因为指数可以为负，为了便于计算，规定都先加上1023，在这里， 15+1023=1038。</p>
-<p>二进制表示为：100 00001110 符号位：正—— 0 ！ 合在一起（尾数二进制最高位的1不要）： 01000000 11100010 11000001 11001101 01010101 01010101 01010101 01010101 按字节倒序存储的十六进制数就是： 55 55 55 55 CD C1 E2 40。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://zh.wikipedia.org/wiki/%E6%B5%AE%E7%82%B9%E6%95%B0" target="_blank" rel="external">浮点数</a><br><a href="https://zh.wikipedia.org/wiki/%E5%96%AE%E7%B2%BE%E5%BA%A6%E6%B5%AE%E9%BB%9E%E6%95%B8" target="_blank" rel="external">单精度浮点数</a><br><a href="https://zh.wikipedia.org/wiki/%E9%9B%99%E7%B2%BE%E5%BA%A6%E6%B5%AE%E9%BB%9E%E6%95%B8" target="_blank" rel="external">双精度浮点数</a><br><a href="http://math.ecnu.edu.cn/~jypan/Teaching/Cpp/ch01_Intro.pdf" target="_blank" rel="external">计算机基础——信息的表示与存储</a><br><a href="http://www.cnblogs.com/jillzhang/archive/2007/06/24/793901.html" target="_blank" rel="external">浮点数在计算机中存储方式</a><br><a href="http://www.linuxidc.com/Linux/2012-07/65987.htm" target="_blank" rel="external">C语言中float,double类型,在内存中的结构(存储方式)</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/Float_mantissa_exponent.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;浮点数&quot;&gt;&lt;a href=&quot;#浮点数&quot; class=&quot;headerlink&quot; title=&quot;浮点数&quot;&gt;&lt;/a&gt;浮点数&lt;/h2&gt;&lt;p&gt;在计算机科学中，浮点（英语：floating point，缩写为FP）是一种对于实数的近似值数值表现法，由一个有效数字（即尾数）加上幂数来表示，通常是乘以某个基数的整数次指数得到。以这种表示法表示的数值，称为浮点数（floating-point number）。利用浮点进行运算，称为浮点计算，这种运算通常伴随着因为无法精确表示而进行的近似或舍入。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Program" scheme="http://aisee.me/categories/Program/"/>
-    
-    
-      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
-    
-      <category term="Floating point" scheme="http://aisee.me/tags/Floating-point/"/>
     
   </entry>
   

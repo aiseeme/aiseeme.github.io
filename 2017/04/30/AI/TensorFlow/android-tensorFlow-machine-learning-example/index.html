@@ -101,7 +101,8 @@ Machine Learning: Integrating Tensorflow in Android">
 Machine Learning: Integrating Tensorflow in Android">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*NeIBdXoA5gQRDoCAo3CfNQ.png">
 <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*FGXmgMprzz6cRo6-MK9mQw.png">
-<meta property="og:updated_time" content="2017-04-30T13:41:44.360Z">
+<meta property="og:image" content="http://zkres1.myzaker.com/201704/590188621bc8e0426e000011_640.jpg">
+<meta property="og:updated_time" content="2017-05-03T08:25:51.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android TensorFlow Machine Learning Example">
 <meta name="twitter:description" content="Article Source
@@ -483,6 +484,49 @@ path = &quot;/Users/amitshekhar/Library/Android/sdk/&quot;,
 <p>blog.mindorks.com<br>Happy Coding :)</p>
 <p>Thanks for reading this article. Be sure to click ❤ below to recommend this article if you found it helpful. It means a lot to me.</p>
 <p>For more about programming, follow me and Mindorks , so you’ll get notified when we write new posts.<br>Check out all the Mindorks best articles here.<br>Also, Let’s become friends on Twitter, Linkedin, Github and Facebook.</p>
+<h2 id="机器学习：如何在安卓上集成-TensorFlow"><a href="#机器学习：如何在安卓上集成-TensorFlow" class="headerlink" title="机器学习：如何在安卓上集成 TensorFlow"></a><a href="https://www.myzaker.com/article/590188631bc8e0426e00001a/" target="_blank" rel="external">机器学习：如何在安卓上集成 TensorFlow</a></h2><p><img src="http://zkres1.myzaker.com/201704/590188621bc8e0426e000011_640.jpg" alt=""><br>授权转自 THU 数据派<br>作者：Amit Shekhar</p>
+<p>翻译：梁傅淇    王军福</p>
+<p>校对：李君</p>
+<p>原文链接：<a href="https://blog.mindorks.com/android-tensorflow-machine-learning-example-ff0e9b2654cc#.aoq0izsg6" target="_blank" rel="external">https://blog.mindorks.com/android-tensorflow-machine-learning-example-ff0e9b2654cc#.aoq0izsg6</a></p>
+<p>我们都知道，谷歌有一个开源库叫做 TensorFlow，可被用在安卓系统中实现机器学习。换言之，TensorFlow 是谷歌为机器智能提供的一个开源软件库。</p>
+<p>我在网络上搜寻了很久，都没有找到在安卓上搭建 TensorFlow 的简单的方法或实例。仔细查阅许多资料以后，我终于可以搭建它了。于是，我决定把我搭建的过程写出来，这样其他人就不必再浪费时间了。</p>
+<p>这篇文章是写给那些熟悉机器学习并且知道怎样为机器学习搭建模型的人的（在这个示例中我会使用一个预训练模型）。近期，我会写一系列关于机器学习的文章，这样每个人都能够学到如何为机器学习搭建模型。</p>
+<p>从搭建安卓上的机器学习模型过程讲起</p>
+<p>我们需要知道的几个要点：</p>
+<p>TensorFlow 的核心是用 C++ 编写的；</p>
+<p>为了在安卓上搭建 TensorFlow，我们需要用 JNI（Java 本地接口）来调用 C++ 函数，比如说 loadModel，getPredictions，等等；</p>
+<p>我们会用到 .so（shared object，即共享对象）文件，它是 C++ 编译文件；还会用到 jar 文件，它由能够调用本地 C++ 的 Java   API 组成。之后，我们就可以调用 Java   API 轻松地把事情做好；</p>
+<p>所以我们需要 jar（Java   API）和一个 .so（C++ 编译）文件；</p>
+<p>我们必须要有一个预训练模型文件和一个用于分类的标签文件。</p>
+<p>我们会做以下的目标检测：</p>
+<p>编译 jar 和 .so 文件<br>注意：–recurse-submodules 对于提取子模块（pull submodules）很重要。</p>
+<p>在这里（<a href="https://developer.android.com/ndk/downloads/older_releases.html#ndk-12b-downloads）下载" target="_blank" rel="external">https://developer.android.com/ndk/downloads/older_releases.html#ndk-12b-downloads）下载</a> NDK。</p>
+<p>下载安卓 SDK，或者，我们也可以从 Android Studio   SDK 提供路径。</p>
+<p>安装 Bazel（<a href="https://bazel.build/versions/master/docs/install.html）。Bazel" target="_blank" rel="external">https://bazel.build/versions/master/docs/install.html）。Bazel</a> 是 TensorFlow 的主要编译系统。</p>
+<p>现在，编辑工作空间（WORKSPACE），我们可以在早先克隆的 TesnsorFlow 根路径中找到工作空间（WORKSPACE）文件。</p>
+<p>我们的 SDK 和 NDK 路径就跟下面一样：</p>
+<p>然后编译生成 .so 文件：<br>将 armeabi-v7a 换成我们所需要的目标架构。</p>
+<p>库会被放置在：</p>
+<p>编译 Java 副本：<br>我们可以在这里找到 JAR 文件：</p>
+<p>现在我们有了 jar 和 .so 文件。你也可以从下面的工程中直接提取使用我已经建立好的 .so 文件和 jar。</p>
+<p>我已经在这里（<a href="https://github.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample）创建了一个完整可运行的示例应用。" target="_blank" rel="external">https://github.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample）创建了一个完整可运行的示例应用。</a></p>
+<p>但是，我们需要预训练模型和标签文件。</p>
+<p>在这个例子中，我们会使用 Google 预训练模型，它实现了在一张给定的照片上做目标检测。</p>
+<p>解压缩 zip 文件，我们就会得到 imagenet_comp_graph_label.strings.txt（目标标签）以及 tensorflow_inception_graph.pb（预训练模型）。</p>
+<p>现在，在 Android Studio 上创建安卓示例工程吧。</p>
+<p>将 imagenet_comp_graph_label.strings.txt（目标标签）以及 tensorflow_inception_graph.pb 放进 assets 文件夹。</p>
+<p>将 libandroid_tensorflow_inference_java.jar 放进 lib 文件夹，单击右键，添加库。</p>
+<p>在主目录新建一个 jniLibs 文件夹并且将 libtensorflow_inference.so 放到 jniLibs/armeabi-v7a 文件夹中。<br>现在，我们就可以调用 TensorFlow Java API 了。</p>
+<p>TensorFlow Java API 通过 TensorFlowInferenceInterface 类开放了所有需要的方法。</p>
+<p>现在，我们可以用模型路径调用 TensorFlow Java API 并且加载它了。</p>
+<p>然后，我们可以输入一张图片来获取预测结果。</p>
+<p>如果想要体会完整的流程，克隆这个项目（<a href="https://github.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample），搭建并运行它吧。" target="_blank" rel="external">https://github.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample），搭建并运行它吧。</a></p>
+<p>如果你在搭建这个项目的过程中有任何问题的话，联系我，我会非常乐意帮助你。</p>
+<p>Happy Coding: )</p>
+<h3 id="读者问答"><a href="#读者问答" class="headerlink" title="读者问答"></a>读者问答</h3><p>Q：我很疑惑要怎么连接到‘ so ’库？也没有任何一行像’ System.loadLibray ’的代码？</p>
+<p>A：<strong>System.loadLibrary 已经写在 TensorFlow jar 中了。</strong></p>
+<p>Q：所以这是一个 C++ 应用还是 Java 应用啊？你用的是什么语言？</p>
+<p>A：这是一个用 Java 语言编写的安卓应用，它通过 Java 本地接口（JNI: Java Native Interface）调用 C++ 做预测（机器学习）。</p>
 
       
     </div>
@@ -651,7 +695,7 @@ path = &quot;/Users/amitshekhar/Library/Android/sdk/&quot;,
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">296</span>
+                <span class="site-state-item-count">298</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -673,7 +717,7 @@ path = &quot;/Users/amitshekhar/Library/Android/sdk/&quot;,
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">278</span>
+                <span class="site-state-item-count">279</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -792,7 +836,7 @@ path = &quot;/Users/amitshekhar/Library/Android/sdk/&quot;,
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Uncomment-and-update-the-paths-in-these-entries-to-build-the-Android-demo"><span class="nav-number">1.</span> <span class="nav-text">Uncomment and update the paths in these entries to build the Android demo.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#name-“androidsdk”"><span class="nav-number">2.</span> <span class="nav-text">name = “androidsdk”,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#api-level-23"><span class="nav-number">3.</span> <span class="nav-text">api_level = 23,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#build-tools-version-“25-0-1”"><span class="nav-number">4.</span> <span class="nav-text">build_tools_version = “25.0.1”,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Replace-with-path-to-Android-SDK-on-your-system"><span class="nav-number">5.</span> <span class="nav-text"># Replace with path to Android SDK on your system</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#path-““"><span class="nav-number">6.</span> <span class="nav-text">path = ““,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#name-”androidndk”"><span class="nav-number">7.</span> <span class="nav-text">name=”androidndk”,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#path-”“"><span class="nav-number">8.</span> <span class="nav-text">path=”“,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#api-level-14"><span class="nav-number">9.</span> <span class="nav-text">api_level=14)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Uncomment-and-update-the-paths-in-these-entries-to-build-the-Android-demo"><span class="nav-number">1.</span> <span class="nav-text">Uncomment and update the paths in these entries to build the Android demo.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#name-“androidsdk”"><span class="nav-number">2.</span> <span class="nav-text">name = “androidsdk”,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#api-level-23"><span class="nav-number">3.</span> <span class="nav-text">api_level = 23,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#build-tools-version-“25-0-1”"><span class="nav-number">4.</span> <span class="nav-text">build_tools_version = “25.0.1”,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Replace-with-path-to-Android-SDK-on-your-system"><span class="nav-number">5.</span> <span class="nav-text"># Replace with path to Android SDK on your system</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#path-““"><span class="nav-number">6.</span> <span class="nav-text">path = ““,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#name-”androidndk”"><span class="nav-number">7.</span> <span class="nav-text">name=”androidndk”,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#path-”“"><span class="nav-number">8.</span> <span class="nav-text">path=”“,</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#api-level-14"><span class="nav-number">9.</span> <span class="nav-text">api_level=14)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习：如何在安卓上集成-TensorFlow"><span class="nav-number">9.1.</span> <span class="nav-text">机器学习：如何在安卓上集成 TensorFlow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#读者问答"><span class="nav-number">9.1.1.</span> <span class="nav-text">读者问答</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
