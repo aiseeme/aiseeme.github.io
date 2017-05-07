@@ -1,0 +1,1245 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="OS,IoT," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="For life" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/img/icon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="（移动互联网架构和下一代网络生态圈，资料来源《弘则研究：人工智能下的物联网生态圈 从移动互联网到物联网》）
+Source
+摘要： 在这个环境下，需要有一个平台或者说是一个系统能够把软件、硬件以及服务串联在一起，这个平台或者说是系统很可能就是IoT操作系统。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What's the Next Generation of OS">
+<meta property="og:url" content="http://aisee.me/2017/05/07/Program/Tools/Computer/next-generation-of-os/index.html">
+<meta property="og:site_name" content="For life">
+<meta property="og:description" content="（移动互联网架构和下一代网络生态圈，资料来源《弘则研究：人工智能下的物联网生态圈 从移动互联网到物联网》）
+Source
+摘要： 在这个环境下，需要有一个平台或者说是一个系统能够把软件、硬件以及服务串联在一起，这个平台或者说是系统很可能就是IoT操作系统。">
+<meta property="og:image" content="http://img.blog.csdn.net/20170504112514961">
+<meta property="og:image" content="http://img.blog.csdn.net/20170504112655524">
+<meta property="og:image" content="http://img.blog.csdn.net/20170504112626933">
+<meta property="og:image" content="http://img.blog.csdn.net/20170504112607836">
+<meta property="og:updated_time" content="2017-05-07T12:19:55.176Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What's the Next Generation of OS">
+<meta name="twitter:description" content="（移动互联网架构和下一代网络生态圈，资料来源《弘则研究：人工智能下的物联网生态圈 从移动互联网到物联网》）
+Source
+摘要： 在这个环境下，需要有一个平台或者说是一个系统能够把软件、硬件以及服务串联在一起，这个平台或者说是系统很可能就是IoT操作系统。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170504112514961">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://aisee.me/2017/05/07/Program/Tools/Computer/next-generation-of-os/"/>
+
+
+
+
+
+  <title> What's the Next Generation of OS | For life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5aaaaf5c9bcea80a5c7d7a057b2d36b3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">For life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Growing up is the only password.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://aisee.me/2017/05/07/Program/Tools/Computer/next-generation-of-os/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AiSee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="For life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                What's the Next Generation of OS
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-07T20:12:06+08:00">
+                2017-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Program/" itemprop="url" rel="index">
+                    <span itemprop="name">Program</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/07/Program/Tools/Computer/next-generation-of-os/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/07/Program/Tools/Computer/next-generation-of-os/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/05/07/Program/Tools/Computer/next-generation-of-os/" class="leancloud_visitors" data-flag-title="What's the Next Generation of OS">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://img.blog.csdn.net/20170504112514961" alt=""><br>（移动互联网架构和下一代网络生态圈，资料来源《弘则研究：人工智能下的物联网生态圈 从移动互联网到物联网》）</p>
+<p><a href="http://geek.csdn.net/news/detail/195814" target="_blank" rel="external">Source</a></p>
+<p>摘要： 在这个环境下，需要有一个平台或者说是一个系统能够把软件、硬件以及服务串联在一起，这个平台或者说是系统很可能就是IoT操作系统。</p>
+<a id="more"></a>
+<p>每一代信息产业都会诞生新一代的操作系统。因为每一代信息产业都会诞生不同的平台，每一代平台都由新一代的操作系统所驱动。PC时代有Windows，移动时代有Android和iOS。</p>
+<p>PC已成昨日黄花，而移动互联网已然停滞不前，对于大多数互联网企业以而言都在展望下一个爆发点——下一个平台究竟是何种模样？下一个流量富矿究竟在何方？按照“每一代平台都由新一代的操作系统所驱动”这个角度来看，下一代操作系统可能也会因此诞生。</p>
+<p>纵观如今的产业发展来看，下一代操作系统很可能就是IoT操作系统。</p>
+<h2 id="手机为基础的IoT布局已经失效"><a href="#手机为基础的IoT布局已经失效" class="headerlink" title="手机为基础的IoT布局已经失效"></a>手机为基础的IoT布局已经失效</h2><p>oT不是趋势，而是现实。移动互联网发展至今气数已尽，很难再有太多商业形态的创新，也很难再创造出太多新的平台。</p>
+<p>在移动互联网发展初期，我们看到很多企业曾经试图以自家基于安卓定制的Rom为基础，进行智能家居、智能互联网的布局。几乎所有互联网手机厂商的思路都是如此。</p>
+<p>曾经这些手机厂商的设想非常美好——以智能手机为中心，控制家庭中的其他智能设备，以此推动IoT的前进。但事实上我们发展，智能手机为中心的战略没有起到太多作用。几乎所有手机厂商都只能控制自家的硬件，没办法带来太多的想象空间。手机很大程度上只起到了遥控器的作用。</p>
+<p>之所以出现这样的局面是有原因的。国内智能手机基本都是以安卓定制Rom为核心，能够连接的设备本身非常有限。加上安卓碎片化严重，国内几乎每个厂商都有一套自己的Rom，Rom只会连接自家的服务和设备，最后导致的结果就是诸侯割据，很难有太多的想象空间。</p>
+<p>所以2015年的悉尼思想领袖峰会（The Reimagination Thought Leaders Summit）上，IoT之父凯文·艾希顿就曾谈到：不是我说，那些智能酒瓶、智能比基尼、智能水杯什么的，都是渣渣！</p>
+<p>在这位1999年就提出“全球物品信息实时共享的实物互联网”的老教授眼中，IoT的真正奥义在于高效化的大数据，而不是这些过家家的玩意儿。</p>
+<p>我们可以这样理解这个问题。人们常说移动互联网之后是人工智能的阶段。但人工智能这个阶段并非孤立存在的，因为我们常说的人工智能往往是和大数据、云计算是孪生的。而且这个环境中，几乎所有硬件、软件、服务都跑在云端，构建起一套万物互联的系统。</p>
+<p>在这个环境下，需要有一个平台或者说是一个系统能够把软件、硬件以及服务串联在一起，这个平台或者说是系统很可能就是IoT操作系统。</p>
+<p>马云之前在马来西亚演讲时曾经很隐晦地谈到过IoT操作系统——当你在一部电话装一个操作系统，打电话只占了 20%的使用。今天，80%的时间，手机并不是用来打电话的。想像一下，如果我们在汽车上装一个操作系统，或者我们一个操作系统内置于一盏灯，一个电冰箱或洗衣机，世界就发生改变了。</p>
+<p>我们深入思考便会发现，给一盏灯，一个电冰箱或洗衣机准备的操作系统恰恰是正是IoT操作系统。</p>
+<h2 id="IoT操作系统不是趋势而是现实"><a href="#IoT操作系统不是趋势而是现实" class="headerlink" title="IoT操作系统不是趋势而是现实"></a>IoT操作系统不是趋势而是现实</h2><p>IoT操作系统不是趋势，而是现实。据Gartner预测，到2020年IoT带来的经济附加值将达到1.9万亿美元。因此，各国目前都针对IoT制定了不同的发展战略，如“中国制造2025”、德国的“工业4.0”、和美国的“工业互联网”等。</p>
+<p>因为IoT不是一个简单的手机Rom和硬件、服务连接，而是需要能够系统化、结构化地收集数据，提供服务。所以IoT的需要的不仅仅是个Rom，而是个OS。</p>
+<p><img src="http://img.blog.csdn.net/20170504112655524" alt=""><br>（物联网也被称作是互联网3.0；资料来源：《阿里研究院：互联网3.0，未来15年会发生的事情》）</p>
+<p>我们从OS的解释就能看出这个问题来——OS的英文全称是Operation System，也就是常说的操作系统，用来管理全部硬件和软件资源，比如控制程序运行、改善人机界面等。</p>
+<p>对于IoT系统来说，要集中收集、管理、处理数据后向合作伙伴、行业开放，基于该平台行业伙伴可以开发应用。此外IoT系统非常重要的一点还需要网络接入，网络接入包括有线接入和无线接入。</p>
+<p>网络接入表面上看貌似现有的网络也能满足，实际上IoT的发展也受限于现有网络。如果按华为预计，到2020年，IoT设备数量连接将会接近1000亿（现阶段仅为70亿），新部署的传感器速度将达到每小时200万，到了那个时候，目前的网络不仅难以承担负载，就连现有的网络速率和延时情况，也远不能够确保远程精确控制类工业级产品的安全和可靠——这就需要专门接入5G网络的芯片、系统以及终端。</p>
+<p><img src="http://img.blog.csdn.net/20170504112626933" alt=""><br>（华为所设想的物联网架构体系；资料来源《华为：共建可信可管的物联网世界》）</p>
+<p>综合以上诸多因素来看，其任务之重，非简简单单的一个Rom可以完成。非要OS才能完成其中繁重的任务。所以你会发现，三星在今天会逐渐把三星的安卓定制系统放在一边，而是主攻自家的Tizen和SmartThings。</p>
+<p>而且阿里今天在IoT层面的布局包括阿里云、阿里智能、YunOS等事业群组，这一个个板块共同打造IoT时代的服务平台，能够为企业和创业者赋能。</p>
+<p>可以说，现在几乎所有的互联网巨头、科技巨头都在都在试图开发自家的IoT操作系统。</p>
+<p>像华为这种通信巨头就有自己的IoT系统Liteos。Liteos的系统体积只有10KB，是目前世界上最轻量级的IoT操作系统，同时它是开源的，华为希望能够有更多的第三方伙伴采用该系统，在华为的数据基础上开发行业应用。</p>
+<p>今年4月还有外媒报道称，谷歌正在开发一个代号为“Brillo”的AndroidIoT系统。昨日，在美国旧金山Monscane中心举行的谷歌I/O开发者大会上，谷歌正式推出了这个以Android为核心的Brillo系统。</p>
+<p>Brillo是出自Android，所以在设备配对和设置上将非常方便，任何Android设备都可以轻松与Brillo智能设备对接，并实现控制。除了Brillo，谷歌还发布了Weave跨平台协议。这款协议可以连接云端、手机和Brillo支持的设备，比如Nest旗下产品。</p>
+<p>“我们希望打造一种自然无缝的方式让智能家居互联互通。”谷歌Sundar Pichai透露，NEST团队将传统设备进行了更新，并与安卓团队合作，提供端到端解决方案。</p>
+<p>不仅如此，其实微软也在为未来的IoT操作系统做准备。俄罗斯的WZor近日在推特上表示，微软正在研发Windows Cloud操作系统，这款操作系统预计将会在2020年登场，这款操作系统的特别之处在于必须连接到互联网才可以使用完整功能，离线模式仅仅提供了非常基础的功能。微软还在微软与GE、西门子等制造业巨头达成云端合作，更好地服务IoT用户。</p>
+<p>其实不仅仅是这几家公司，我们可以从这份表格中看出到底有多少科技巨头涉足IoT系统：</p>
+<blockquote>
+<p>2013年Intel 创立IoT事业部，次年即投放产品Intel IoT Platform。该平台旨在帮助企业用户更便捷地测试、投放和保护设备。<br>2015年亚马逊云计算服务IoT平台让连接设备轻松安全地与云端应用进行交互。<br>2015年微软IoT套件发布，结合了云计算、存储领域多年技术积累，帮助企业收集、整理、处理信息。<br>2016年思科斥资14亿美元收购联网通讯平台Jasper全部股权，扩充和完整已有的物理联网生态系统。<br>2014年， 腾讯推出QQ物联，以硬件产品为主，面向传统硬件、智能家居、可穿戴设备、车载、健康设备等多个领域开放。<br>2015年IBM推出Bluemix IoT 服务，提供了简单且强大的功能将全球不同种类的设备和应用程序互联起来。<br>2015年，百度发表百度IoT，将与ARM、MTK、科通芯城、TI、博通等产业领军战略合作伙伴一起，共同推动中国IoT产业的发展。</p>
+</blockquote>
+<h2 id="下代操作系统将是人工智能与IoT应用的统一"><a href="#下代操作系统将是人工智能与IoT应用的统一" class="headerlink" title="下代操作系统将是人工智能与IoT应用的统一"></a>下代操作系统将是人工智能与IoT应用的统一</h2><p>综上来看，人工智能和IoT的应用在云平台上实现统一是下一代网络生态圈的雏形。</p>
+<p><img src="http://img.blog.csdn.net/20170504112607836" alt=""><br>（物联网产业的应用产业结构图；资料来源《弘则研究：人工智能下的物联网生态圈 从移动互联网到物联网》）</p>
+<p>2016年2月29日，阿里巴巴推出IoT战略时，阿里巴巴CEO张勇就曾表示，阿里会坚持用大生态的思路推动IoT生态的繁荣，阿里不会做智能硬件，而是利用电商，云计算和操作系统等强项，提供基础服务赋能商家，阿里会把工业制造和产品设计的创新机遇留给合作伙伴。</p>
+<p>其实从“不会做智能硬件”这一点就可以看出巨头IoT真正该有的思路——在万物互联思维框架下，人工智能与IoT统一的系统深度挖掘庞大数据背后的价值，灵活应对随时可变的应用场景，确保传感器、监控、现场设备之间开放、安全的通信，并可实现云端远程管理与服务。</p>
+<p>IoTPaaS平台Xively分析曾预估，截至2020年，全球将有400-800亿设备接入IoT，其中政府设备至少占77亿，总金额约21亿美元，预计投资回报为47亿美元，人均拥有的IoT设备将有10台。Gartner的市场调研报告认为，全球每秒接入IoT的设备将达63台，也就是每天550万台，预计2015-2020年间IoT市场规模将达千亿量级。</p>
+<p>IoT产业目前处在发展初期，碎片化特点必将导致IoT时代对软件的多样性需求。一种操作系统和开发工具很难支持IoT系统中的所有设备，短时间内，IoT操作系统很难形成像智能手机中Android和iOS两家独占市场的局面。以安全性和集成化为代表的IoT新需要给传统嵌入式软件带来挑战，也给以互联网企业为代表的产业新人带来机遇。</p>
+<p>本文作者：吴俊宇，已获授权，版权归原作者所有，未经作者同意，请勿转载。<br>责编：屠敏，关注物联网、移动开发领域，寻求报道或投稿请发邮件tumin@csdn.net，或微信tm_forever_miss。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>Post author:</strong>
+      AiSee
+    </li>
+    <li class="post-copyright-link">
+      <strong>Post link:</strong>
+      <a href="http://aisee.me/2017/05/07/Program/Tools/Computer/next-generation-of-os/" title="What's the Next Generation of OS">http://aisee.me/2017/05/07/Program/Tools/Computer/next-generation-of-os/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright Notice: </strong>
+      All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OS/" rel="tag"># OS</a>
+          
+            <a href="/tags/IoT/" rel="tag"># IoT</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/03/AI/TensorFlow/tensorflow-android/" rel="next" title="TensorFlow, Next Android?">
+                <i class="fa fa-chevron-left"></i> TensorFlow, Next Android?
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/05/07/Program/Tools/Computer/next-generation-of-os/"
+           data-title="What's the Next Generation of OS" data-url="http://aisee.me/2017/05/07/Program/Tools/Computer/next-generation-of-os/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/img/icon.png"
+               alt="AiSee" />
+          <p class="site-author-name" itemprop="name">AiSee</p>
+           
+              <p class="site-description motion-element" itemprop="description">For life, growing up is the only password.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">299</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">281</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/aiseeme" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zhuxuanlvzxl/home?wvr=5&lf=reg" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://blog.163.com/zhuxuanlv@126/" target="_blank" title="blog">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  blog
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://book.douban.com/subject/25870384/" title="probabilities of life" target="_blank">probabilities of life</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.sina.com.cn/s/blog_4b09eac00102wnke.html" title="super individual" target="_blank">super individual</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://gelonghui.com/p/101767.html" title="golden era of AI" target="_blank">golden era of AI</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://h5.sao.cn/product/detail?alias=onhnfsdtybxb" title="leading to freedom of wealth" target="_blank">leading to freedom of wealth</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhibimo.com/read/xiaolai/ba-shi-jian-dang-zuo-peng-you/index.html" title="take time as a friend" target="_blank">take time as a friend</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhibimo.com/read/xiaolai/reborn-every-7-years/" title="reborn every 7 years" target="_blank">reborn every 7 years</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://lixiaolai.com/2016/06/12/makecs-preface/" title="everyone can be engineer" target="_blank">everyone can be engineer</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhibimo.com/read/xiaolai/everyone-can-use-english/" title="everyone can use english" target="_blank">everyone can use english</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#手机为基础的IoT布局已经失效"><span class="nav-number">1.</span> <span class="nav-text">手机为基础的IoT布局已经失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IoT操作系统不是趋势而是现实"><span class="nav-number">2.</span> <span class="nav-text">IoT操作系统不是趋势而是现实</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下代操作系统将是人工智能与IoT应用的统一"><span class="nav-number">3.</span> <span class="nav-text">下代操作系统将是人工智能与IoT应用的统一</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AiSee</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"ipcreator"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("TfzAWJSzk2L4jpj4gHaNsMbp-gzGzoHsz", "PXNkGhS05PxL7rV3N8gDlAQe");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+</body>
+</html>
