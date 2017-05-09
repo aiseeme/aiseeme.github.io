@@ -4,6 +4,68 @@
 
     
   <url>
+    <loc>http://aisee.me/2017/05/09/MyView/Movie/the-truman-show/</loc>
+    <lastmod>2017-05-09T14:33:57.949Z</lastmod>
+    <data>
+        <display>
+        <title>The Truman Show</title>
+        <pubTime>2017-05-09T12:32:18.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/05/09/MyView/Movie/v-for-vendetta/</loc>
+    <lastmod>2017-05-09T14:33:00.390Z</lastmod>
+    <data>
+        <display>
+        <title>V for Vendetta</title>
+        <pubTime>2017-05-09T12:41:18.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/05/09/Program/Tools/Computer/basic-serials-of-computer/</loc>
+    <lastmod>2017-05-09T14:28:13.663Z</lastmod>
+    <data>
+        <display>
+        <title>Classic Books of Computer's Basic Concept</title>
+        <pubTime>2017-05-09T14:20:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Computer</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://aisee.me/2017/05/07/Program/Tools/Computer/next-generation-of-os/</loc>
     <lastmod>2017-05-07T12:19:55.176Z</lastmod>
     <data>
@@ -5373,28 +5435,6 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>AI vs Machine Learning</title>
-        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Machine Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="AI" url="http://aisee.me/categories/AI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -5436,6 +5476,28 @@
            
              
               <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>AI vs Machine Learning</title>
+        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="AI" url="http://aisee.me/categories/AI/"/>
           
         </display>
     </data>
