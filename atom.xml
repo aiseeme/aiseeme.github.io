@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://aisee.me/"/>
-  <updated>2017-05-09T14:28:13.663Z</updated>
+  <updated>2017-05-11T00:09:07.710Z</updated>
   <id>http://aisee.me/</id>
   
   <author>
@@ -14,6 +14,237 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java Virtual Machine</title>
+    <link href="http://aisee.me/2017/05/11/Program/Java/java-jvm/"/>
+    <id>http://aisee.me/2017/05/11/Program/Java/java-jvm/</id>
+    <published>2017-05-10T23:20:06.000Z</published>
+    <updated>2017-05-11T00:09:07.710Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/1986868-af3f10e6c1b0027a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><a href="http://www.jianshu.com/p/24c074138efa" target="_blank" rel="external">Source</a></p>
+<p>我们都知道，不管是Java还是Android都绕不开JVM(Java虚拟机)。虽然Android有dalvik和art，但是Android的编程语言还是Java，了解JVM机对于我们掌握Java知识有莫大的帮助。下面我将从以下部分来聊聊JVM:<br>1) JVM运行时数据区域<br>2) HotSpot 虚拟机对象的创建，内存布局以及访问定位<br>3) 垃圾收集算法<br>4) 垃圾收集器</p>
+ <a id="more"></a>
+<h1 id="你不得不了解的JVM（一）"><a href="#你不得不了解的JVM（一）" class="headerlink" title="你不得不了解的JVM（一）"></a>你不得不了解的JVM（一）</h1><p>我们都知道，不管是Java还是Android都绕不开JVM(Java虚拟机)。虽然Android有dalvik和art，但是Android的编程语言还是Java，了解JVM机对于我们掌握Java知识有莫大的帮助。下面我将从以下部分来聊聊JVM:<br>1) JVM运行时数据区域<br>2) HotSpot 虚拟机对象的创建，内存布局以及访问定位<br>3) 垃圾收集算法<br>4) 垃圾收集器<br>本文涉及内容比较多，所以本内容采用2篇文章来讲述，这篇文章主要讲讲1)和2)，3)和4)在（二）中再具体讲讲。那么接下来我们以问题为驱动来聊聊上面的每一个问题吧。<br>1)关于JVM运行时数据区域，我们会想到什么呢？JVM在执行Java程序代码的过程中会将它所管理的内存划分为若干不同的数据区，而这些区域各自的作用是什么呢？。<br>2)HotSpot虚拟机是什么？先不管他是什么，至少来讲他是虚拟机，虚拟机是用来执行程序代码的。我们知道Java是面向对象的程序语言之一，那么虚拟机在执行程序的过程中肯定会遇到对象的创建和销毁，所以我们就需要了解虚拟机对对象的创建，内存分配以及内存访问定位。<br>3)JVM是如何对垃圾进行收集的？具体的算法是什么？ 我们知道，Java有内存动态分配和垃圾收集技术，我们程序员并不需要管理内存。由于垃圾收集技术算法实现涉及了大量的代码细节（主要是本人技术水平有限，哈哈），而且各种虚拟机操纵内存方式各不相同，所以在这节并不会详细讲虚拟机实现垃圾收集算法的具体实现，而是让大家了解一些垃圾收集算法。<br>4)在我们了解了基本的垃圾收集算法的之后，我们就需要结合具体的虚拟机来了解一下。<br>上面讲了我们需要了解的相关内容，接下来就是具体讲讲每一点的具体知识吧。大家坐稳了…….</p>
+<p>1)JVM运行时数据区域,讲这块内容之前，我们先来看一张关于JVM内存区的图<br><img src="http://upload-images.jianshu.io/upload_images/1986868-af3f10e6c1b0027a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>这张图中，我们清楚的知道：被编译过的.class文件通过类加载器加载到内存中，我们的重点是在内存划分的区域。从图中，我们看到了5大区域：线程共享的方法区和堆，线程私有的java虚拟机栈，本地方法栈以及程序计数器。我们具体来了解一下这5个内存划分：</p>
+<p>程序计数器：（Program Counter Register）这个区域是唯一一个不会抛出OutOfMemoryError异常的区域。它是一块比较小的内存，是当前线程所执行的字节码的行号指示器。</p>
+<p>java虚拟机栈：它描述的是java方法执行的内存模型，每个方法在执行的时候会创建一个栈帧用来存储局部变量，操作数，动态链接等。</p>
+<p>本地方法栈：和java虚拟机栈功能类似，只不过java虚拟机栈执行的是java字节码而本地方法栈执行的是Native方法。</p>
+<p>java堆：几乎所有的对象实例都在这里分配内存。java堆可以细分出新生代和老年代，再细致一点可以分为：Eden，From Survivor，To Survivor等空间。</p>
+<p>方法区：该区域用来存储已经被虚拟机加载过来的类信息，常量，静态变量等。</p>
+<p>以上讲完了JVM运行时内存区域的5大块，同时需要补充的一点是还有一个运行时常量池，它也是方法区的一部分。Class文件中除了有类的版本，字段，接口，方法等描述信息外，还有一项信息就是常量池，用来存放编译时期生成的各种字面量和符号引用。但是需要注意的是：Java语言并不要求常量一定是在编译期间产生，也就是并非与装入class文件中的常量池的内容才能进入到方法区运行时常量池，运行期间也可能将新的常量放入常量池中，如String.intern()方法。</p>
+<p>现在相信大家对于JVM运行时内存区域有了相应的了解（如有不了解的地方请留言），接下来我们了解一下第二个问题。</p>
+<p>2) HotSpot 虚拟机对象的创建，内存布局以及访问定位：在讲这个问题之前我们需要讲讲HotSpot虚拟机。HotSpot的正式发布名称为”Java HotSpot Performance Engine”，是Java虚拟机的一个实现，包含了服务器版和桌面应用程序版，现时由Oracle维护并发布。它利用JIT及自适应优化技术（自动查找性能热点并进行动态优化，这也是HotSpot名字的由来）来提高性能。从上面的介绍中我们知道HotSpot虚拟机是Oracle公司发布的一个java虚拟机的实现。既然是java虚拟机的实现，那么也是绕不开JVM的。那么接下来就讲讲HotSpot虚拟机对于对象的创建，内存分配以及定位等相关知识吧。</p>
+<p>2.1）对象的创建<br>既然是讲对象的创建，那就是要从Object obj = new Object()开始讲起：<br>a：虚拟机在遇到new指令时，首先会去检查这个指令的参数是否能在常量池中定位到一个类的符号引用并且检查该符号引用代表的类是否已经被加载，解析和初始化过。如果没有，那就必须先执行相应的类加载。<br>b：在类经过加载检查后，虚拟机就需要为新生对象分配内存了。对象所需要的内存大小在类加载完成之后就可以确定。<br>c：在分配完内存之后，虚拟机需要将分配到的内存空间初始化为零值。<br>d：接下来，虚拟机会对对象进行必要的设置，如对象的hash码，对象的GC分代信息等。<br>e：最后执行对象的init方法对对象进行初始化。<br>到此，对象的创建过程已经完毕。其中，在b中我们可以继续了解对象内存分配的相关知识，虚拟机是通过何种方式为对象分配内存的呢？对象创建在虚拟机中是很频繁的，那么如何保证分配内存的时候线程安全呢？这些问题都是值得我们去思考的。讲完了对象的创建，我们继续讲讲对象的内存布局吧。</p>
+<p>2.2)对象的内存布局<br>在HotSpot虚拟机中，对象在内存中存储的布局分为对象头，实例数据和对齐填充3个部分。<br>对象头（Header）：主要存储了2部分信息，第1部分是对象自身运行的数据，如hashcode，GC分代等信息；<br>第2部分是类型指针，就是对象对它的类元数据指针，其实就是一个引用。虚拟机通过这个指针（引用）来确定对象是哪个类的实例。<br>实例数据（Instance Data）：对象真正存储的有效信息，也就是程序代码中所写的各种类型的字段内容。<br>对齐填充（Padding）：这个不是必然存在的。</p>
+<p>2.3)对象的访问定位<br>我们知道了对象的创建，内存布局等相关内容之后，需要知道存储的对象如何找到呢？这就涉及到对象的定位问题了。我们java程序需要通过栈上的引用数据来操作具体的对象。对对象的访问方式取决于虚拟机的实现，目前比较主流的有句柄和直接指针两种方式。下面让我们看看这两种方式吧，直接上图：<br><img src="http://upload-images.jianshu.io/upload_images/1986868-840a71b05e711834.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-ccfe76d2f2bf3d16.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>见图知意了吧。第1张图是通过句柄的方式对对象进行访问，在java堆中划分出来一块内存作为句柄池，而reference中存储的是对象的句柄地址，句柄中存储了对象实例等信息。第2张图是通过直接指针的方式，reference中存储的是实例对象的地址。</p>
+<p>这两种对象引用的方式各有千秋，通过句柄的好处是reference中存储的是稳定的句柄地址，在对象被移动的时候只会改变句柄的实例指针而reference本身不需要修改；使用直接指针的好处是速度开，不需要在java堆中在划分出一块内存区域同时节省了指针定位的开销。但是就HotSpot而言，采用的是直接指针方式。</p>
+<p>写到这里，我们应该对JVM的运行时的内存区域和对象创建过程有了一个初步的认识，在下一篇文章中，我会讲讲垃圾收集算法和垃圾搜集器，期待更新吧~~~</p>
+<h1 id="你不得不了解的JVM（二）"><a href="#你不得不了解的JVM（二）" class="headerlink" title="你不得不了解的JVM（二）"></a>你不得不了解的JVM（二）</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在上一篇文章 你不得不了解的JVM(一)中，我们了解了<br>1) JVM运行时数据区域；<br>2) HotSpot 虚拟机对象的创建，内存布局以及访问定位；<br>那么这篇文章我们就需要了解一下<br>3) 垃圾收集算法<br>4) 垃圾收集器。</p>
+<p>首先我们了解一下垃圾收集算法这块内容。因为垃圾算法的实现设计大量程序细节，各个平台的虚拟机操作内存的方法各不相同，因此在本节中我们主要讲讲垃圾收集算法，并不涉及具体实现。 下面让我们来一一了解一下各种收集算法吧。</p>
+<h2 id="3-垃圾收集算法"><a href="#3-垃圾收集算法" class="headerlink" title="3) 垃圾收集算法"></a>3) 垃圾收集算法</h2><h3 id="1）标记-清除算法"><a href="#1）标记-清除算法" class="headerlink" title="1）标记-清除算法"></a>1）标记-清除算法</h3><p><img src="http://upload-images.jianshu.io/upload_images/1986868-99a7bc27d8b467aa.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上图为标记-清除算法的示意图。首先需要标记可回收的内存，然后再对可回收的内存进行回收。这样做是不是很简单粗暴呢？当然，这样做的2个不足分别是：1）标记-清除效率不高；2）标记-清除之后产生大量不连续的空间碎片。基于这样的不足，有了标记-整理算法。</p>
+<h3 id="2）标记-整理算法"><a href="#2）标记-整理算法" class="headerlink" title="2）标记-整理算法"></a>2）标记-整理算法</h3><p><img src="http://upload-images.jianshu.io/upload_images/1986868-a28cb01e4ea5dd76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如图是标记-整理算法示意图。相比标记-清除算法，不同的是整理过程。将存活对象移到一端，然后清除可回收对象。这样做的明显好处就是产生了连续的空间。</p>
+<h3 id="3）复制算法"><a href="#3）复制算法" class="headerlink" title="3）复制算法"></a>3）复制算法</h3><p><img src="http://upload-images.jianshu.io/upload_images/1986868-f78dbc61d3555a6b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上图是复制算法实现图。它将内存分为大小相等的2块，每次只是使用其中一块。当一块内存用完之后，就将存活的对象复制到另外一块内存区域并将本块内存清理。这样做的大大降低了内存空间使用率。我们的HotSpot的年轻代就是使用复制算法，只不过它的比例不是1：1，而是8：1。这个稍后我们会讲到。</p>
+<h3 id="4）分代收集算法"><a href="#4）分代收集算法" class="headerlink" title="4）分代收集算法"></a>4）分代收集算法</h3><p><img src="http://upload-images.jianshu.io/upload_images/1986868-1f0f33041789993f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>基于上面的几种收集算法，当前商业虚拟机基本采用的都是分代收集。结合了复制和标记-整理的优势。一般做法是将Java堆分为新生代和老年代。由于新生代会不断产生新生对象，因此采用了复制算法；而年老代的对象存活率较高，因此采用了标记-整理算法。<br>在新生代中，我们可以看到新生代=Eden+S0+S1；他们设计的默认比例是8：1：1；这个参数是可以通过虚拟机参数进行调整的。</p>
+<p>以上，我们了解了基本的垃圾收集算法，只是了解哦！</p>
+<h2 id="4-垃圾收集器。"><a href="#4-垃圾收集器。" class="headerlink" title="4) 垃圾收集器。"></a>4) 垃圾收集器。</h2><p>如果说垃圾收集算法是内存回收的方法论，那么垃圾收集器就是内存回收的具体实现。上面说过，各个平台虚拟机对内存的操作各不相同，因此本章所讲的收集器是基于JDK1.7Update14之后的HotSpot虚拟机。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-551b2e2baa930ae4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上图是基于java虚拟机的HotSpot虚拟机垃圾收集器。一共是7种收集器，接下来让我们一一做个了解吧。</p>
+<p>1）Serial/Serial Old<br>Serial最基本，发展历史最悠久的收集器。具体原理让我们看一张图最明了</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-4350ced80de5614c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上图是Serial和Serial Old 两种垃圾收集器的运行示意图。其中Serial 和Serial Old的区别就是一个是运行在年轻代一个是运行在年老代。从图中我们可以看到，他是一个单线程模式的垃圾收集器。这里不仅仅是说该收集器是使用单线程或者一个CPU去完成垃圾收集，更重要的是它在进行垃圾收集的时候必须暂停用户线程，直到收集完成，也就是Stop the World。</p>
+<p>2）ParNew<br>ParNew收集器其实是Serial收集器的多线程版本。它也是运行在年轻代中，如图：<br><img src="http://upload-images.jianshu.io/upload_images/1986868-04697f66eb1264fb.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如图，在新生代中采用的是多线程模式进行垃圾收集同时也需要暂停用户线程直到垃圾收集完毕。这种模式和Serial相比，CPU数量越多的情况下优势更加明显。如果CPU数量很少，比如2个，那么这种收集效率可能比Serial更低，因为它存在线程交互的开销。</p>
+<p>3)Parallel Scavenge/Parallel Old</p>
+<p>Parallel Scavenge也是一个新生代，多线程收集器。那么这种收集器和之前的ParNew有什么区别呢？区别还是有的，不然怎么会出来这种收集器呢？其实Parallel Scavenge收集器的特点是它关注一个可控的吞吐量。那么什么是吞吐量，我这边也不做任何讲述，直接上一个公式大家就知道了。<br>吞吐量=运行用户代码时间/（运行用户代码时间+垃圾收集时间）；<br>是不是很明白？垃圾收集时间越短，吞吐量就是越大。这里就有一个问题：垃圾收集时间越短，一般来讲收集的垃圾量就是越少，也就是回收的内存量越小，那么总内存一定的情况下，我们在一定时间内回收的次数就是越多。这就需要我们控制好回收时间来制约回收次数了。<br>同时，这里也有一个Parallel Old收集器，顾名思义是Parallel Scavenge收集器的年老代版本。<br>如下图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-3defdc5f710a677b.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>4）CMS<br>CMS(Concurrent Mark Sweep),从名字我们知道这是一款基于并发使用标记清除算法的垃圾收集器。他是一款以获得最短回收停顿时间为目标的收集器。让我们赶紧来看看他的实现吧。上图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-13ab01c567c8fe82.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如上图，它分为以下步骤：<br>1 初始标记：仅仅标记GC Roots能直接关联到的对象，时间很短，阻塞用户线程<br>2 并发标记：标记可回收对象，和用户线程并行。<br>3 重新标记：标记在并发阶段因用户线程继续运行产生的可回收对象，修正并发标记，此时是阻塞用户线程。<br>4 并发清理：使用标记-清除算法将垃圾进行清理。</p>
+<p>这种收集算法存在3个缺点：<br>1 对CPU资源敏感。一般并发执行的程序对CPU数量都是比较敏感的<br>2 无法处理浮动垃圾。在并发清理阶段用户线程还在执行，这时产生的垃圾无法清理。<br>3 由于标记-清除算法产生大量的空间碎片。</p>
+<p>下面，我们讲讲最后一个垃圾手机器G1</p>
+<p>5）G1<br>G1，Garbage-First是当今收集器技术发展的最前沿成果之一，它是一款面向服务端的垃圾收集器。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-aceb6cae17227ff8.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>实现思路：将整个java堆划分为多个大小相等的独立区域(Region),G1跟踪各个Region里面的垃圾堆积和价值大小，在后台维护一个优先列表，每次进行优先回收。那么Region不是孤立的。那么如何避免全堆扫描呢？<br>G1使用Remembered Set。每一个Region对应一个Remembered Set，在虚拟机对Reference类型的数据进行写操作的时候，会检查Reference引用的对象是否处于不同的Region中，如是则记录到Remembered Set中。</p>
+<p>初始标记：标记GC Roots能直接关联到的对象，耗时短<br>并发标记：找出存活的对象，耗时长<br>最终标记：修正并发标记<br>筛选回收：根据用户所期望的GC停顿时间来制定回收计划<br>可以发现它和CMS的前半部分步骤是一样的。当然，其实G1收集器的实现是非常复杂的，这里只是蜻蜓点水般的讲到一点，如果有兴趣可以继续深入学习。欢迎多多进行技术交流……</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1986868-af3f10e6c1b0027a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a href=&quot;http://www.jianshu.com/p/24c074138efa&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;我们都知道，不管是Java还是Android都绕不开JVM(Java虚拟机)。虽然Android有dalvik和art，但是Android的编程语言还是Java，了解JVM机对于我们掌握Java知识有莫大的帮助。下面我将从以下部分来聊聊JVM:&lt;br&gt;1) JVM运行时数据区域&lt;br&gt;2) HotSpot 虚拟机对象的创建，内存布局以及访问定位&lt;br&gt;3) 垃圾收集算法&lt;br&gt;4) 垃圾收集器&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://aisee.me/categories/Java/"/>
+    
+    
+      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
+    
+      <category term="Java Virtual Machine" scheme="http://aisee.me/tags/Java-Virtual-Machine/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java Class Loader</title>
+    <link href="http://aisee.me/2017/05/11/Program/Java/java-class-loader/"/>
+    <id>http://aisee.me/2017/05/11/Program/Java/java-class-loader/</id>
+    <published>2017-05-10T23:13:06.000Z</published>
+    <updated>2017-05-11T00:01:45.389Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/1986868-7ed5dc72e8f95e41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><a href="http://www.jianshu.com/p/b6547abd0706" target="_blank" rel="external">Source</a></p>
+<p>Java的核心是什么？当然是JVM了，所以说了解并熟悉JVM对于我们理解Java语言非常重要，不管你是做Java还是Android，熟悉JVM是我们每个Java、Android开发者必不可少的技能。如果你现在觉得Android的开发到了天花板的地步，那不妨往下走走，一起探索JAVA层面的内容。如果我们不了解自己写的代码是如何被执行的，那么我们只是一个会写代码的程序员，我们知其然不知其所以然。看到很多人说现在工作难找，真是这样吗？如果我们足够优秀，工作还难找吗？如果我们底子足够深，需要找工作吗？找不到工作多想想自己的原因，总是抱怨环境是没有用的，因为你没办法去改变坏境。如果我们一直停留在框架层面，停留在新的功能层面，那么我们的优势在哪里呢？所以说，我们不仅要学会写代码，还要知道为什么这样写代码，这才是我们的核心竞争力之一。这样我们的差异化才能够体现出来，不信？我们走着瞧……我们第一个差异化就是对JVM的掌握，而今天的内容类加载机制是JVM比较核心的部分，如果你想和别人不一样，那就一起仔细研究研究这次的内容吧。</p>
+ <a id="more"></a>
+<h1 id="深入理解Java类加载机制（一）"><a href="#深入理解Java类加载机制（一）" class="headerlink" title="深入理解Java类加载机制（一）"></a>深入理解Java类加载机制（一）</h1><h2 id="1-前言："><a href="#1-前言：" class="headerlink" title="1 前言："></a>1 前言：</h2><p> 在上一篇文章一文让你明白Java字节码中,<br> 我们了解了java字节码的解析过程，那么在接下来的内容中，我们来了解一下类的加载机制。</p>
+<h2 id="2-题外话"><a href="#2-题外话" class="headerlink" title="2 题外话"></a>2 题外话</h2><p>Java的核心是什么？当然是JVM了，所以说了解并熟悉JVM对于我们理解Java语言非常重要，不管你是做Java还是Android，熟悉JVM是我们每个Java、Android开发者必不可少的技能。如果你现在觉得Android的开发到了天花板的地步，那不妨往下走走，一起探索JAVA层面的内容。如果我们不了解自己写的代码是如何被执行的，那么我们只是一个会写代码的程序员，我们知其然不知其所以然。看到很多人说现在工作难找，真是这样吗？如果我们足够优秀，工作还难找吗？如果我们底子足够深，需要找工作吗？找不到工作多想想自己的原因，总是抱怨环境是没有用的，因为你没办法去改变坏境。如果我们一直停留在框架层面，停留在新的功能层面，那么我们的优势在哪里呢？所以说，我们不仅要学会写代码，还要知道为什么这样写代码，这才是我们的核心竞争力之一。这样我们的差异化才能够体现出来，不信？我们走着瞧……我们第一个差异化就是对JVM的掌握，而今天的内容类加载机制是JVM比较核心的部分，如果你想和别人不一样，那就一起仔细研究研究这次的内容吧。</p>
+<h2 id="3-引子"><a href="#3-引子" class="headerlink" title="3 引子"></a>3 引子</h2><p> 为了看看自己是否掌握了类加载机制，我们看看一道题：<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> Singleton singleton = <span class="keyword">new</span> Singleton();</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> counter1;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> counter2 = <span class="number">0</span>;</div><div class="line">  <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;</div><div class="line">      counter1++;</div><div class="line">      counter2++;</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getSingleton</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">return</span> singleton;</div><div class="line">  &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p> 上面是一个Singleton类，有3个静态变量，下面是一个测试类，打印出静态属性的值，就是这么简单。<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestSingleton</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line">      Singleton singleton = Singleton.getSingleton();</div><div class="line">      System.out.println(<span class="string">"counter1="</span>+singleton.counter1);</div><div class="line">      System.out.println(<span class="string">"counter2="</span>+singleton.counter2);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p> 在往下看之前，大家先看看这道题的输出是啥？如果你清楚知道为什么，那么说明你掌握了类的加载机制，往下看或许有不一样的收获；如果你不懂，那就更要往下看了。我们先不讲这道题，待我们了解了类的加载机制之后，回过头看看这道题，或许有恍然大悟的感觉，或许讲完之后你会怀疑自己是否真正了解Java，或许你写了这么多年的Java都不了解它的执行机制，是不是很丢人呢？不过没关系，马上你就不丢人了。</p>
+<h2 id="4-正题"><a href="#4-正题" class="headerlink" title="4 正题"></a>4 正题</h2><p> 下面我们具体了解类的加载机制。<br> 1)加载<br> 2)连接（验证-准备-解析）<br> 3)初始化<br> JVM就是按照上面的顺序一步一步的将字节码文件加载到内存中并生成相应的对象的。首先将字节码加载到内存中，然后对字节码进行连接，连接阶段包括了验证准备解析这3个步骤，连接完毕之后再进行初始化工作。下面我们一一了解：</p>
+<h2 id="5-首先我们了解一下加载"><a href="#5-首先我们了解一下加载" class="headerlink" title="5 首先我们了解一下加载"></a>5 首先我们了解一下加载</h2><h3 id="5-1-什么是类的加载？"><a href="#5-1-什么是类的加载？" class="headerlink" title="5.1 什么是类的加载？"></a>5.1 什么是类的加载？</h3><p> 类的加载指的是将类的.class文件中的二进制数据读入内存中,将其放在运行时数据区域的方法去内,然后在堆中创建java.lang.Class对象,用来封装类在方法区的数据结构.只有java虚拟机才会创建class对象,并且是一一对应关系.这样才能通过反射找到相应的类信息.</p>
+<p> 我们上面提到过Class这个类，这个类我们并没有new过，这个类是由java虚拟机创建的。通过它可以找到类的信息，我们来看下源码:<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">  /*</div><div class="line">      * Constructor. Only the Java Virtual Machine creates Class</div><div class="line">      * objects.</div><div class="line">      */</div><div class="line">  private Class() &#123;&#125;</div><div class="line">```      </div><div class="line"> 从上面贴出的Class类的构造方法源码中，我们知道这个构造器是私有的，并且只有虚拟机才能创建这个类的对象。</div><div class="line"></div><div class="line">### 5.2 什么时候对类进行加载呢？</div><div class="line"></div><div class="line"> Java虚拟机有预加载功能。类加载器并不需要等到某个类被"首次主动使用"时再加载它,JVM规范规定JVM可以预测加载某一个类，如果这个类出错，但是应用程序没有调用这个类， JVM也不会报错；如果调用这个类的话，JVM才会报错，（LinkAgeError错误)。其实就是一句话，Java虚拟机有预加载功能。</div><div class="line"></div><div class="line">## 6 类加载器</div><div class="line"></div><div class="line"> 讲到类加载，我们不得不了解类加载器.</div><div class="line"></div><div class="line">### 6.1 什么是类加载器？</div><div class="line"></div><div class="line"> 类加载器负责对类的加载。</div><div class="line"></div><div class="line">### 6.2 Java自带有3种类加载器</div><div class="line">![](http://upload-images.jianshu.io/upload_images/1986868-7ed5dc72e8f95e41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line">     1)根类加载器,使用c++编写(BootStrap),负责加载rt.jar</div><div class="line">     2)扩展类加载器,java实现(ExtClassLoader)</div><div class="line">     3)应用加载器,java实现(AppClassLoader) classpath</div><div class="line"> 根类加载器，是用c++实现的，我们没有办法在java层面看到；我们接下来看看ExtClassLoader的代码,它是在Launcher类中，</div><div class="line"></div><div class="line"> static class ExtClassLoader extends URLClassLoader</div><div class="line"> 同时我们看看AppClassLoader，它也是在Launcher中，</div><div class="line"></div><div class="line"> static class AppClassLoader extends URLClassLoader</div><div class="line"> 他们同时继承一个类URLClassLoader。</div><div class="line"> 关于这种层次关系，看起来像继承，其实不是的。我们看到上面的代码就知道ExtClassLoader和AppClassLoader同时继承同一个类。同时我们来看下ClassLoader的loadClass方法也可以知道，下面贴出源代码：</div></pre></td></tr></table></figure></p>
+<p>  private final ClassLoader parent;<br>  protected Class&lt;?&gt; loadClass(String name, boolean resolve)<br>                                            throws ClassNotFoundException<br>    {<br>       synchronized (getClassLoadingLock(name)) {<br>           // First, check if the class has already been loaded<br>              Class c = findLoadedClass(name);<br>               if (c == null) {<br>                  long t0 = System.nanoTime();<br>                     try {<br>                          if (parent != null) {<br>                              c = parent.loadClass(name, false);<br>                           } else {<br>                              c = findBootstrapClassOrNull(name);<br>                                }<br>                            } catch (ClassNotFoundException e) {<br>                                 // ClassNotFoundException thrown if class not found<br>                                 // from the non-null parent class loader<br>                             }<br>                 return c;<br>                    }<br>               }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"> 源码没有全部贴出，只是贴出关键代码。从上面代码我们知道首先会检查class是否已经加载了，如果已经加载那就直接拿出，否则再进行加载。其中有一个parent属性，就是表示父加载器。这点正好说明了加载器之间的关系并不是继承关系。</div><div class="line"></div><div class="line"> ### 6.3 双亲委派机制</div><div class="line"></div><div class="line"> 关于类加载器，我们不得不说一下双亲委派机制。听着很高大上，其实很简单。比如A类的加载器是AppClassLoader(其实我们自己写的类的加载器都是AppClassLoader)，AppClassLoader不会自己去加载类，而会委ExtClassLoader进行加载，那么到了ExtClassLoader类加载器的时候，它也不会自己去加载，而是委托BootStrap类加载器进行加载，就这样一层一层往上委托，如果Bootstrap类加载器无法进行加载的话，再一层层往下走。</div><div class="line"> 上面的源码也说明了这点。</div><div class="line"> ```java</div><div class="line">   if (parent != null) &#123;</div><div class="line">            c = parent.loadClass(name, false);</div><div class="line">     &#125; else &#123;</div><div class="line">            c = findBootstrapClassOrNull(name);</div><div class="line">                 &#125;</div><div class="line">```                 </div><div class="line">### 6.4 为何要双亲委派机制</div><div class="line"></div><div class="line"> 对于我们技术来讲，我们不但要知其然，还要知其所以然。为何要采用双亲委派机制呢？了解为何之前，我们先来说明一个知识点：</div><div class="line"> 判断两个类相同的前提是这两个类都是同一个加载器进行加载的，如果使用不同的类加载器进行加载同一个类，也会有不同的结果。我们看一个例子：</div><div class="line"> ```java</div><div class="line"> public class MyClassLoader &#123;</div><div class="line">     public static void main(String args[]) throws ClassNotFoundException,         IllegalAccessException, InstantiationException &#123;</div><div class="line">     ClassLoader loader = new ClassLoader() &#123;</div><div class="line">         @Override</div><div class="line">         public Class&lt;?&gt; loadClass(String name) throws ClassNotFoundException &#123;</div><div class="line"></div><div class="line">             String fileName = name.substring(name.lastIndexOf(&quot;.&quot;)+1)+&quot;.class&quot;;</div><div class="line">             InputStream inputStream = getClass().getResourceAsStream(fileName);</div><div class="line">             if (inputStream==null)</div><div class="line">                 return super.loadClass(name);</div><div class="line">             try &#123;</div><div class="line">                 byte[] bytes = new byte[inputStream.available()];</div><div class="line">                 inputStream.read(bytes);</div><div class="line">                 return defineClass(name,bytes,0,bytes.length);</div><div class="line"></div><div class="line">             &#125; catch (IOException e) &#123;</div><div class="line">                 e.printStackTrace();</div><div class="line">                 throw new ClassNotFoundException(name);</div><div class="line">             &#125;</div><div class="line">         &#125;</div><div class="line"></div><div class="line">     &#125;;</div><div class="line">     Object object = loader.loadClass(&quot;jvm.classloader.MyClassLoader&quot;).newInstance();</div><div class="line">     System.out.println(object instanceof jvm.classloader.MyClassLoader);</div><div class="line"></div><div class="line">   &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p> 大家可以看看输出的是什么？我们自己定义了一个类加载器，让它去加载我们自己写的一个类，然后判断由我们写的类加载器加载的类是否是MyClassLoader的一个实例。<br> 答案是否定的。为什么？因为jvm.classloader.MyClassLoader是在classpath下面，是由AppClassLoader加载器加载的，而我们却指定了自己的加载器，当然加载出来的类就不相同了。不信，我们将他的父类加载器都打印出来。在上面代码中加入下面代码：<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> ClassLoader classLoader = object.getClass().getClassLoader();</div><div class="line">     <span class="keyword">while</span> (classLoader!=<span class="keyword">null</span>)&#123;</div><div class="line">         System.out.println(classLoader);</div><div class="line">         classLoader = classLoader.getParent();</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">if</span> (classLoader==<span class="keyword">null</span>)&#123;</div><div class="line">         System.out.println(<span class="string">"classLoader == null"</span>);</div><div class="line">     &#125;</div><div class="line">```     </div><div class="line"> 输出内容 ：</div><div class="line"> jvm.classloader.MyClassLoader$<span class="number">1</span>@<span class="number">60172</span>ec6</div><div class="line"> sun.misc.Launcher$AppClassLoader@<span class="number">338</span>bd37a</div><div class="line"> sun.misc.Launcher$ExtClassLoader@<span class="number">20e90906</span></div><div class="line"> classLoader == <span class="keyword">null</span></div><div class="line"> 对比一下下面的代码：</div></pre></td></tr></table></figure></p>
+<p>   Object object2 = new MyClassLoader();<br>    ClassLoader classLoader2 = object2.getClass().getClassLoader();</p>
+<pre><code>while (classLoader2!=null){
+    System.out.println(classLoader2);
+    classLoader2 = classLoader2.getParent();
+}
+if (classLoader2==null){
+    System.out.println(&quot;classLoader2 == null&quot;);
+}
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">输出内容：</div><div class="line">sun.misc.Launcher$AppClassLoader@20e90906</div><div class="line">sun.misc.Launcher$ExtClassLoader@234f79cb</div><div class="line">classLoader == null</div><div class="line">第一个是我们自己加载器加载的类，第二个是直接new的一个对象，是由App类加载器进行加载的，我们把它们的父类加载器打印出来了，可以看出他们的加载器是不一样的。很奇怪为何会执行classloader==null这句话。其实classloader==null表示的就是根类加载器。我们看看Class.getClassLoader()方法源码：</div><div class="line">```java</div><div class="line">/**</div><div class="line"> * Returns the class loader for the class.  Some implementations may use</div><div class="line"> * null to represent the bootstrap class loader. This method will return</div><div class="line"> * null in such implementations if this class was loaded by the bootstrap</div><div class="line"> * class loader.</div><div class="line">**/</div><div class="line">   @CallerSensitive</div><div class="line">public ClassLoader getClassLoader() &#123;</div><div class="line">    ClassLoader cl = getClassLoader0();</div><div class="line">    if (cl == null)</div><div class="line">        return null;</div><div class="line">    SecurityManager sm = System.getSecurityManager();</div><div class="line">    if (sm != null) &#123;</div><div class="line">        ClassLoader.checkClassLoaderPermission(cl, Reflection.getCallerClass());</div><div class="line">    &#125;</div><div class="line">    return cl;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> 从注释中我们知道了，如果返回了null，表示的是bootstrap类加载器。</p>
+<h2 id="7-类的连接"><a href="#7-类的连接" class="headerlink" title="7 类的连接"></a>7 类的连接</h2><p> 讲完了类的加载之后，我们需要了解一下类的连接。类的连接有三步，分别是验证，准备，解析。下面让我们一一了解</p>
+<h3 id="7-1-首先我们看看验证阶段。"><a href="#7-1-首先我们看看验证阶段。" class="headerlink" title="7.1 首先我们看看验证阶段。"></a>7.1 首先我们看看验证阶段。</h3><p> 验证阶段主要做了以下工作<br> -将已经读入到内存类的二进制数据合并到虚拟机运行时环境中去。<br> -类文件结构检查:格式符合jvm规范-语义检查:符合java语言规范,final类没有子类,final类型方法没有被覆盖<br> -字节码验证:确保字节码可以安全的被java虚拟机执行.<br> 二进制兼容性检查:确保互相引用的类的一致性.如A类的a方法会调用B类的b方法.那么java虚拟机在验证A类的时候会检查B类的b方法是否存在并检查版本兼容性.因为有可能A类是由jdk1.7编译的，而B类是由1.8编译的。那根据向下兼容的性质，A类引用B类可能会出错，注意是可能。</p>
+<h3 id="7-2-准备阶段"><a href="#7-2-准备阶段" class="headerlink" title="7.2 准备阶段"></a>7.2 准备阶段</h3><p> java虚拟机为类的静态变量分配内存并赋予默认的初始值.如int分配4个字节并赋值为0,long分配8字节并赋值为0;</p>
+<h3 id="7-3-解析阶段"><a href="#7-3-解析阶段" class="headerlink" title="7.3 解析阶段"></a>7.3 解析阶段</h3><p> 解析阶段主要是将符号引用转化为直接引用的过程。比如 A类中的a方法引用了B类中的b方法，那么它会找到B类的b方法的内存地址，将符号引用替换为直接引用(内存地址)。</p>
+<p> 到这里为止，我们知道了类的加载，类加载器，双亲委派机制，类的连接等等操作。那么接下来需要讲的是类的初始化，初始化内容较多，另开一篇文章深入理解Java类加载机制（二）讲，这样大家就不会疲劳和畏惧了。</p>
+<h1 id="深入理解Java类加载机制（二）"><a href="#深入理解Java类加载机制（二）" class="headerlink" title="深入理解Java类加载机制（二）"></a>深入理解Java类加载机制（二）</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1 前言"></a>1 前言</h2><p>在深入理解Java类加载机制(一)一文中，我们了解了类的加载和连接过程，这篇文章重点讲述类的初始化过程，这样，我们就将类的加载机制弄明白了。</p>
+<h2 id="2-初始化时机"><a href="#2-初始化时机" class="headerlink" title="2 初始化时机"></a>2 初始化时机</h2><p>在上一篇 类的加载时机5.2中我们提到了“首次主动使用”这个词语，那什么是“主动使用”呢？<br>主动初始化的6种方式<br>(1)创建对象的实例：我们new对象的时候，会引发类的初始化，前提是这个类没有被初始化。<br>(2)调用类的静态属性或者为静态属性赋值<br>(3)调用类的静态方法<br>(4)通过class文件反射创建对象<br>(5)初始化一个类的子类：使用子类的时候先初始化父类<br>(6)java虚拟机启动时被标记为启动类的类：就是我们的main方法所在的类<br>只有上面6种情况才是主动使用，也只有上面六种情况的发生才会引发类的初始化。</p>
+<p>同时我们需要注意下面几个Tips:<br>1)在同一个类加载器下面只能初始化类一次,如果已经初始化了就不必要初始化了.<br>这里多说一点，为什么只初始化一次呢？因为我们上面讲到过类加载的最终结果就是在堆中存有唯一一个Class对象，我们通过Class对象找到<br>类的相关信息。唯一一个Class对象说明了类只需要初始化一次即可，如果再次初始化就会出现多个Class对象，这样和唯一相违背了。<br>2)在编译的时候能确定下来的静态变量(编译常量),不会对类进行初始化;<br>3)在编译时无法确定下来的静态变量(运行时常量),会对类进行初始化;<br>4)如果这个类没有被加载和连接的话,那就需要进行加载和连接<br>5)如果这个类有父类并且这个父类没有被初始化,则先初始化父类.<br>6)如果类中存在初始化语句,依次执行初始化语句.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test1</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line">    System.out.println(FinalTest.x);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FinalTest</span></span>&#123;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> x =<span class="number">6</span>/<span class="number">3</span>;</div><div class="line">  <span class="keyword">static</span> &#123;</div><div class="line">      System.out.println(<span class="string">"FinalTest static block"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面和下面的例子大家对比下，然后自己看看输出的是什么？<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test2</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line">        System.out.println(FinalTest2.x);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FinalTest2</span></span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> x =<span class="keyword">new</span> Random().nextInt(<span class="number">100</span>);</div><div class="line"><span class="keyword">static</span> &#123;</div><div class="line">    System.out.println(<span class="string">"FinalTest2 static block"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>第一个输出的是<br>2<br>第二个输出的是<br>FinalTest2 static block<br>61（随机数）<br>为何会出现这样的结果呢？<br>参考上面的Tips2和Tips3，第一个能够在编译时期确定的，叫做编译常量；第二个是运行时才能确定下来的，叫做运行时常量。编译常量不会引起类的初始化，而运行常量就会。</p>
+<p>那么将第一个例子的final去掉之后呢？输出又是什么呢？<br>这就是对类的首次主动使用，引用类的静态变量，输出的当然是：<br>FinalTest static block<br>2<br>那么在第一个例子的输出语句下面添加<br>FinalTest.x =3；<br>又会输出什么呢？<br>大家不妨试试！提示（Tips1）</p>
+<h2 id="3-类的初始化步骤"><a href="#3-类的初始化步骤" class="headerlink" title="3 类的初始化步骤"></a>3 类的初始化步骤</h2><p>讲到这里我们应该对类的加载-连接-初始化有一个全局概念了，那么接下来我们看看类具体初始化执行步骤。我们分两种情况讨论，一种是类有父类，一种是类没有父类。（当然所有类的顶级父类都是Object）</p>
+<p>没有父类的情况：</p>
+<blockquote>
+<p>1)类的静态属性<br>2)类的静态代码块<br>3)类的非静态属性<br>4)类的非静态代码块<br>5)构造方法</p>
+</blockquote>
+<p>有父类的情况:</p>
+<blockquote>
+<p>1)父类的静态属性<br>2)父类的静态代码块<br>3)子类的静态属性<br>4)子类的静态代码块<br>5)父类的非静态属性<br>6)父类的非静态代码块<br>7)父类构造方法<br>8)子类非静态属性<br>9)子类非静态代码块<br>10)子类构造方法</p>
+</blockquote>
+<p>在这要说明下，静态代码块和静态属性是等价的，他们是按照代码顺序执行的。<br>类的初始化内容这样看起来还是挺多的，包括“主动使用”大家可以自己去写一些demo去验证一下。</p>
+<h2 id="4-结束JVM进程的几种方式"><a href="#4-结束JVM进程的几种方式" class="headerlink" title="4 结束JVM进程的几种方式"></a>4 结束JVM进程的几种方式</h2><p>了解完类加载机制之后，接下来我们了解一下结束JVM进程的几种方式吧。</p>
+<p>(1) 执行System.exit()<br>(2) 程序正常结束<br>(3) 程序抛出异常,一直向上抛出没处理<br>(4) 操作系统异常,导致JVM退出</p>
+<p>JVM有上面4种结束的方式，我们一一了解下：</p>
+<p>(1)我们先来看看第一种方式，找到源代码我们发现：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">     * Terminates the currently running Java Virtual Machine. The</div><div class="line">     * argument serves as a status code; by convention, a nonzero status</div><div class="line">     * code indicates abnormal termination.</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exit</span><span class="params">(<span class="keyword">int</span> status)</span> </span>&#123;</div><div class="line">        Runtime.getRuntime().exit(status);</div><div class="line">    &#125;</div><div class="line">```    </div><div class="line">上面的代码解释了System.exit()方法的作用就是：是中断当前运行的java虚拟机。这是自杀方式。</div><div class="line"></div><div class="line">(<span class="number">2</span>)第二种程序正常结束的方式，我们在运行main方法的时候，运行状态按钮由绿色变红色再变绿色的过程就是程序启动-运行-结束的过程。 那么，我们来看看Android的程序，同样，安卓也有自己的启动方式，也是一个main方法。那么我们的android程序能够一直运行的前提就是我们的main方法一直被执行着，一旦main方法执行完毕，程序就是kill。我们找找源代码才能有更好的说服力；我们找到ActivityThread的main方法</div><div class="line">```<span class="function">java</span></div><div class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> &#123;</div><div class="line">    SamplingProfilerIntegration.start();</div><div class="line"></div><div class="line">    <span class="comment">// CloseGuard defaults to true and can be quite spammy.  We</span></div><div class="line">    <span class="comment">// disable it here, but selectively enable it later (via</span></div><div class="line">    <span class="comment">// StrictMode) on debug builds, but using DropBox, not logs.</span></div><div class="line">    CloseGuard.setEnabled(<span class="keyword">false</span>);</div><div class="line"></div><div class="line">    Environment.initForCurrentUser();</div><div class="line"></div><div class="line">    <span class="comment">// Set the reporter for event logging in libcore</span></div><div class="line">    EventLogger.setReporter(<span class="keyword">new</span> EventLoggingReporter());</div><div class="line"></div><div class="line">    Security.addProvider(<span class="keyword">new</span> AndroidKeyStoreProvider());</div><div class="line"></div><div class="line">    Process.setArgV0(<span class="string">"&lt;pre-initialized&gt;"</span>);</div><div class="line"></div><div class="line">    Looper.prepareMainLooper();</div><div class="line"></div><div class="line">    ActivityThread thread = <span class="keyword">new</span> ActivityThread();</div><div class="line">    thread.attach(<span class="keyword">false</span>);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (sMainThreadHandler == <span class="keyword">null</span>) &#123;</div><div class="line">        sMainThreadHandler = thread.getHandler();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    AsyncTask.init();</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (<span class="keyword">false</span>) &#123;</div><div class="line">        Looper.myLooper().setMessageLogging(<span class="keyword">new</span></div><div class="line">                LogPrinter(Log.DEBUG, <span class="string">"ActivityThread"</span>));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    Looper.loop();</div><div class="line"></div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Main thread loop unexpectedly exited"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的代码都不用看，直接看最后两行代码。执行完Looper.loop()之后，直接抛出了异常。但是我们并没有见到这个异常，说明我们的Looper一直在执行这样保证我们的app不被kill掉。Android就是用这种方式来保证我们的app一直运行下去的。</p>
+<p>(3)第三种方式不用过多解释，一直没有处理被抛出的异常，这样导致了程序崩溃。<br>(4)第四种方式是系统异常导致了jvm退出。其实jvm就是一个软件，如果我们的操作系统都出现了错误，那么运行在他上面的软件（jvm）必然会被kill。</p>
+<h2 id="5-结束并回顾"><a href="#5-结束并回顾" class="headerlink" title="5 结束并回顾"></a>5 结束并回顾</h2><p>到这里，我们基本都清楚了类的加载机制。那么我们在第一篇文章中开头提到一个例子，我们这里来讲讲输出的是什么，并且为何如此输出，大家坐稳。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> Singleton singleton = <span class="keyword">new</span> Singleton();</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> counter1;</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> counter2 = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;</div><div class="line">    counter1++;</div><div class="line">    counter2++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getSingleton</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> singleton;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>下面是我们的测试类TestSingleton<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestSingleton</span> </span>&#123;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line">    Singleton singleton = Singleton.getSingleton();</div><div class="line">    System.out.println(<span class="string">"counter1="</span>+singleton.counter1);</div><div class="line">    System.out.println(<span class="string">"counter2="</span>+singleton.counter2);</div><div class="line"></div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>输出是：<br>counter1=1<br>counter2=0<br>why？我们一步一步分析：</p>
+<p>1 执行TestSingleton第一句的时候，因为我们没有对Singleton类进行加载和连接，所以我们首先需要对它进行加载和连接操作。在连接阶-准备阶段，我们要讲给静态变量赋予默认初始值。<br>singleton =null<br>counter1 =0<br>counter2 =0<br>2 加载和连接完毕之后，我们再进行初始化工作。初始化工作是从上往下依次执行的，注意这个时候还没有调用Singleton.getSingleton();<br>首先 singleton = new Singleton();这样会执行构造方法内部逻辑，进行++；此时counter1=1，counter2 =1 ；<br>接下来再看第二个静态属性，我们并没有对它进行初始化，所以它就没办法进行初始化工作了；<br>第三个属性counter2我们初始化为0，因此此时的counter2 =1 ；</p>
+<p>3 初始化完毕之后我们就要调用静态方法Singleton.getSingleton(); 我们知道返回的singleton已经初始化了。<br>那么输出的内容也就理所当然的是1和0了。这样一步一步去理解程序执行过程是不是让你清晰的认识了java虚拟机执行程序的逻辑呢。</p>
+<p>那么我们接下来改变一下代码顺序，将<br> public static int counter1;<br> public static int counter2 = 0;<br> private static Singleton singleton = new Singleton();<br> 又会输出什么呢？为什么这样输出呢？<br> 这个问题留给大家去思考，主要还是理解为什么这样输出才是最重要的。<br>结合第一篇文章深入理解Java类加载机制（一），我们讲完了类的加载机制。大家是否对java又有了不一样的认识了呢？如果这2篇文章对你有帮助，请动动你的小指头点个赞吧。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1986868-7ed5dc72e8f95e41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a href=&quot;http://www.jianshu.com/p/b6547abd0706&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Java的核心是什么？当然是JVM了，所以说了解并熟悉JVM对于我们理解Java语言非常重要，不管你是做Java还是Android，熟悉JVM是我们每个Java、Android开发者必不可少的技能。如果你现在觉得Android的开发到了天花板的地步，那不妨往下走走，一起探索JAVA层面的内容。如果我们不了解自己写的代码是如何被执行的，那么我们只是一个会写代码的程序员，我们知其然不知其所以然。看到很多人说现在工作难找，真是这样吗？如果我们足够优秀，工作还难找吗？如果我们底子足够深，需要找工作吗？找不到工作多想想自己的原因，总是抱怨环境是没有用的，因为你没办法去改变坏境。如果我们一直停留在框架层面，停留在新的功能层面，那么我们的优势在哪里呢？所以说，我们不仅要学会写代码，还要知道为什么这样写代码，这才是我们的核心竞争力之一。这样我们的差异化才能够体现出来，不信？我们走着瞧……我们第一个差异化就是对JVM的掌握，而今天的内容类加载机制是JVM比较核心的部分，如果你想和别人不一样，那就一起仔细研究研究这次的内容吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://aisee.me/categories/Java/"/>
+    
+    
+      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
+    
+      <category term="Class Loader" scheme="http://aisee.me/tags/Class-Loader/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java Byte Code</title>
+    <link href="http://aisee.me/2017/05/11/Program/Java/java-byte-code/"/>
+    <id>http://aisee.me/2017/05/11/Program/Java/java-byte-code/</id>
+    <published>2017-05-10T23:01:06.000Z</published>
+    <updated>2017-05-10T23:52:19.616Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://upload-images.jianshu.io/upload_images/1986868-5b44e95ff7e30847.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><a href="http://www.jianshu.com/p/252f381a6bc4" target="_blank" rel="external">Source</a></p>
+<p>Java号称是一门“一次编译到处运行”的语言，但是我们对这句话的理解深度又有多少呢？从我们写的java文件到通过编译器编译成java字节码文件（也就是.class文件），这个过程是java编译过程；而我们的java虚拟机执行的就是字节码文件。不论该字节码文件来自何方，由哪种编译器编译，甚至是手写字节码文件，只要符合java虚拟机的规范，那么它就能够执行该字节码文件。那么本文主要讲讲java字节码文件相关知识。</p>
+ <a id="more"></a>
+<h2 id="1-首先我们来写一个java源文件"><a href="#1-首先我们来写一个java源文件" class="headerlink" title="1 首先我们来写一个java源文件"></a>1 首先我们来写一个java源文件</h2><p> <img src="http://upload-images.jianshu.io/upload_images/1986868-ce97d3e55fe919a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>上面是我们写的一个java程序，很简单，只有一个成员变量a以及一个方法testMethod() 。</p>
+<h2 id="接下来我们用javac命令或者ide工具将该java源文件编译成java字节码文件。"><a href="#接下来我们用javac命令或者ide工具将该java源文件编译成java字节码文件。" class="headerlink" title="接下来我们用javac命令或者ide工具将该java源文件编译成java字节码文件。"></a>接下来我们用javac命令或者ide工具将该java源文件编译成java字节码文件。</h2><p><img src="http://upload-images.jianshu.io/upload_images/1986868-0993d73277575f75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上图是编译好的字节码文件，我们可以看到一堆16进制的字节。如果你使用IDE去打开，也许看到的是已经被反编译的我们所熟悉的java代码，而这才是纯正的字节码，这也是我们今天需要讲的内容重点。</p>
+<p>也许你会对这样一堆字节码感到头疼，不过没关系，我们慢慢试着你看懂它，或许有不一样的收获。在开始之前我们先来看一张图<br><img src="http://upload-images.jianshu.io/upload_images/1986868-5b44e95ff7e30847.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><a href="http://www.jianshu.com/p/252f381a6bc4" target="_blank" rel="external">Source</a></p>
+<p>这张图是一张java字节码的总览图，我们也就是按照上面的顺序来对字节码进行解读的。一共含有10部分，包含魔数，版本号，常量池等等，接下来我们按照顺序一步一步解读。</p>
+<h3 id="3-1-魔数"><a href="#3-1-魔数" class="headerlink" title="3.1 魔数"></a>3.1 魔数</h3><p>从上面的总览图中我们知道前4个字节表示的是魔数，对应我们Demo的是 0XCAFE BABE。什么是魔数？魔数是用来区分文件类型的一种标志，一般都是用文件的前几个字节来表示。比如0XCAFE BABE表示的是class文件，那么有人会问，文件类型可以通过文件名后缀来判断啊？是的，但是文件名是可以修改的（包括后缀），那么为了保证文件的安全性，讲文件类型写在文件内部来保证不被篡改。<br>从java的字节码文件类型我们看到，CAFE BABE翻译过来是咖啡宝贝之意，然后再看看java图标。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-bc3cf7c4693669fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>CAFE BABE = 咖啡。</p>
+<h3 id="3-2-版本号"><a href="#3-2-版本号" class="headerlink" title="3.2 版本号"></a>3.2 版本号</h3><p>我们识别了文件类型之后，接下来要知道版本号。版本号含主版本号和次版本号，都是各占2个字节。在此Demo种为0X0000 0033。其中前面的0000是次版本号，后面的0033是主版本号。通过进制转换得到的是次版本号为0，主版本号为51。<br>从oracle官方网站我们能够知道，51对应的正式jdk1.7，而其次版本为0，所以该文件的版本为1.7.0。如果需要验证，可以在用java –version命令输出版本号，或者修改编译目标版本–target重新编译，查看编译后的字节码文件版本号是否做了相应的修改。</p>
+<p>至此，我们共了解了前8字节的含义，下面讲讲常量池相关内容。</p>
+<h3 id="3-3-常量池"><a href="#3-3-常量池" class="headerlink" title="3.3 常量池"></a>3.3 常量池</h3><p>紧接着主版本号之后的就是常量池入口。常量池是Class文件中的资源仓库，在接下来的内容中我们会发现很多地方会涉及，如Class Name，Interfaces等。常量池中主要存储2大类常量：字面量和符号引用。字面量如文本字符串，java中声明为final的常量值等等，而符号引用如类和接口的全局限定名，字段的名称和描述符，方法的名称和描述符。</p>
+<p>为什么需要类和接口的全局限定名呢？系统引用类或者接口的时候不是通过内存地址进行操作吗？这里大家仔细想想，java虚拟机在没有将类加载到内存的时候根本都没有分配内存地址，也就不存在对内存的操作，所以java虚拟机首先需要将类加载到虚拟机中，那么这个过程设计对类的定位（需要加载A包下的B类，不能加载到别的包下面的别的类中），所以需要通过全局限定名来判别唯一性。这就是为什么叫做全局，限定的意思，也就是唯一性。</p>
+<p>在进行具体常量池分析之前，我们先来了解一下常量池的项目类型表：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-831993b2dc19dd90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上面的表中描述了11中数据类型的结构，其实在jdk1.7之后又增加了3种（CONSTANT_MethodHandle_info,CONSTANT_MethodType_info以及CONSTANT_InvokeDynamic_info)。这样算起来一共是14种。接下来我们按照Demo的字节码进行逐一翻译。</p>
+<p>0x0015：由于常量池的数量不固定（n+2），所以需要在常量池的入口处放置一项u2类型的数据代表常量池数量。因此该16进制是21，表示有20项常量，索引范围为1~20。明明是21，为何是20呢？因为Class文件格式规定，设计者就讲第0项保留出来了，以备后患。从这里我们知道接下来我们需要翻译出20项常量。<br>Constant #1 （一共有20个常量，这是第一个，以此类推…）<br>0x0a-：从常量类型表中我们发现，第一个数据均是u1类型的tag，16进制的0a是十进制的10，对应表中的MethodRef_info。<br>0x-00 04-：Class_info索引项#4<br>0x-00 11-：NameAndType索引项#17<br>Constant #2<br>0x-09: FieldRef_info<br>0x0003 :Class_info索引项#3<br>0x0012：NameAndType索引项#18<br>Constant #3<br>0x07-: Class_info<br>0x-00 13-: 全局限定名常量索引为#19<br>Constant #4<br>0x-07 :Class_info<br>0x0014:全局限定名常量索引为#20<br>Constant #5<br>0x01:Utf-8_info<br>0x-00 01-:字符串长度为1（选择接下来的一个字节长度转义）<br>0x-61:”a”(十六进制转ASCII字符)<br>Constant #6<br>0x01:Utf-8_info<br>0x-00 01：字符串长度为1<br>0x-49:”I”<br>Constant #7<br>0x01:Utf-8_info<br>0x-00 06:字符串长度为6<br>0x-3c 696e 6974 3e-:”<init>“<br>Constant #8<br>0x01 :UTF-8_info<br>0x0003:字符串长度为3<br>0x2829 56:”()V”<br>Constant #9<br>0x-01:Utf-8_info<br>0x0004：字符串长度为4<br>0x436f 6465:”Code”<br>Constant #10<br>0x01:Utf-8_info<br>0x00 0f:字符串长度为15<br>0x4c 696e 654e 756d 6265 7254 6162 6c65:”LineNumberTable”<br>Constant #11<br>ox01: Utf-8_info<br>0x00 12字符串长度为18<br>0x-4c 6f63 616c 5661 7269 6162 6c65 5461 626c 65:”LocalVariableTable”<br>Constant #12<br>0x01:Utf-8_info<br>0x0004 字符串长度为4<br>0x7468 6973 :”this”<br>Constant #13<br>0x01:Utf-8_info<br>0x0f:字符串长度为15<br>0x4c 636f 6d2f 6465 6d6f 2f44 656d 6f3b:”Lcom/demo/Demo;”<br>Constant #14<br>0x01:Utf-8_info<br>0x00 0a:字符串长度为10<br>ox74 6573 744d 6574 686f 64:”testMethod”<br>Constant #15<br>0x01:Utf-8_info<br>0x000a:字符串长度为10<br>0x536f 7572 6365 4669 6c65 :”SourceFile”<br>Constant #16<br>0x01:Utf-8_info<br>0x0009:字符串长度为9<br>0x-44 656d 6f2e 6a61 7661 :”Demo.java”<br>Constant #17<br>0x0c :NameAndType_info<br>0x0007:字段或者名字名称常量项索引#7<br>0x0008:字段或者方法描述符常量索引#8<br>Constant #18<br>0x0c:NameAndType_info<br>0x0005:字段或者名字名称常量项索引#5<br>0x0006:字段或者方法描述符常量索引#6<br>Constant #19<br>0x01:Utf-8_info<br>0x00 0d:字符串长度为13<br>0x63 6f6d 2f64 656d 6f2f 4465 6d6f:”com/demo/Demo”<br>Constant #20<br>0x01:Utf-8_info<br>0x00 10 :字符串长度为16<br>0x6a 6176 612f 6c61 6e67 2f4f 626a 6563 74 :”java/lang/Object”<br>到这里为止我们解析了所有的常量。接下来是解析访问标志位。</init></p>
+<h3 id="3-4-Access-Flag-访问标志"><a href="#3-4-Access-Flag-访问标志" class="headerlink" title="3.4 Access_Flag 访问标志"></a>3.4 Access_Flag 访问标志</h3><p>访问标志信息包括该Class文件是类还是接口，是否被定义成public，是否是abstract，如果是类，是否被声明成final。通过上面的源代码，我们知道该文件是类并且是public。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-392acfe5fe81eb7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>0x 00 21：是0x0020和0x0001的并集。其中0x0020这个标志值涉及到了字节码指令，后期会有专题对字节码指令进行讲解。期待中……</p>
+<h3 id="3-5-类索引"><a href="#3-5-类索引" class="headerlink" title="3.5 类索引"></a>3.5 类索引</h3><p>类索引用于确定类的全限定名<br>0x00 03 表示引用第3个常量，同时第3个常量引用第19个常量，查找得”com/demo/Demo”。#3.#19</p>
+<h3 id="3-6父类索引"><a href="#3-6父类索引" class="headerlink" title="3.6父类索引"></a>3.6父类索引</h3><p>0x00 04 同理：#4.#20(java/lang/Object)</p>
+<h3 id="3-7-接口索引"><a href="#3-7-接口索引" class="headerlink" title="3.7 接口索引"></a>3.7 接口索引</h3><p>通过java_byte.jpeg图我们知道，这个接口有2+n个字节，前两个字节表示的是接口数量，后面跟着就是接口的表。我们这个类没有任何接口，所以应该是0000。果不其然，查找字节码文件得到的就是0000。</p>
+<h3 id="3-8-字段表集合"><a href="#3-8-字段表集合" class="headerlink" title="3.8 字段表集合"></a>3.8 字段表集合</h3><p>字段表用于描述类和接口中声明的变量。这里的字段包含了类级别变量以及实例变量，但是不包括方法内部声明的局部变量。<br>同样，接下来就是2+n个字段属性。我们只有一个属性a，按道理应该是0001。查找文件果不其然是0001。<br>那么接下来我们要针对这样的字段进行解析。附上字段表结构图<br><img src="http://upload-images.jianshu.io/upload_images/1986868-7c0ed3c898858129.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>0x00 02 ：访问标志为private（自行搜索字段访问标志）<br>0x00 05 : 字段名称索引为#5，对应的是”a”<br>0x 00 06 :描述符索引为#6，对应的是”I”<br>0x 00 00 :属性表数量为0，因此没有属性表。<br>tips:一些不太重要的表（字段，方法访问标志表）可以自行搜索，这里就不贴出来了，防止篇幅过大。</p>
+<h3 id="3-9-方法"><a href="#3-9-方法" class="headerlink" title="3.9 方法"></a>3.9 方法</h3><p>我们只有一个方法testMethod，按照道理应该前2个字节是0001。通过查找发现是0x00 02。这是什么原因，这代表着有2个方法呢？且继续看……</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-44b812e1036aaef0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上图是一张方法表结构图，按照这个图我们分析下面的字节码：</p>
+<h4 id="第1个方法："><a href="#第1个方法：" class="headerlink" title="第1个方法："></a>第1个方法：</h4><p>0x00 01：访问标志 ACC_PUBLIC，表明该方法是public。（可自行搜索方法访问标志表）<br>0x00 07：方法名索引为#7，对应的是”<init>“<br>0x00 08：方法描述符索引为#8，对应的是”()V”<br>0x00 01：属性表数量为1(一个属性表)<br>那么这里涉及到了属性表。什么是属性表呢？可以这么理解，它是为了描述一些专有信息的，上面的方法带有一张属性表。所有属性表的结构如下图：<br>一个u2的属性名称索引，一个u2的属性长度加上属性长度的info。<br>虚拟机规范预定义的属性有很多，比如Code，LineNumberTable，LocalVariableTable，SourceFile等等，这个网上可以搜索到。</init></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-596dd13ddcaad809.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>按照上面的表结构解析得到下面信息：<br>0x0009:名称索引为#9(“Code”)。<br>0x000 00038：属性长度为56字节。<br>那么接下来解析一个Code属性表，按照下图解析</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-d2e8cabf296300fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>前面6个字节（名称索引2字节+属性长度4字节）已经解析过了，所以接下来就是解析剩下的56-6=50字节即可。<br>0x00 02 ：max_stack=2<br>0x00 01 : max_locals=1<br>0x00 0000 0a : code_length=10<br>0x2a b700 012a 04b5 0002 b1 : 这是code代码，可以通过虚拟机字节码指令进行查找。<br>2a=aload_0(将第一个引用变量推送到栈顶)<br>b7=invokespecial(调用父类构造方法)<br>00=什么都不做<br>01 =将null推送到栈顶<br>2a=同上<br>04=iconst_1 将int型1推送到栈顶<br>b5=putfield 为指定的类的实例变量赋值<br>00= 同上<br>02=iconst_m1 将int型-1推送栈顶<br>b1=return 从当前方法返回void<br>整理，去除无动作指令得到下面<br>0 : aload_0<br>1 : invokespecial<br>4 : aload_0<br>5 : iconst_1<br>6 : putfield<br>9 : return<br>关于虚拟机字节码指令这块内容，后期会继续深入下去…… 目前只需要了解即可。接下来顺着Code属性表继续解析下去:<br>0x00 00 : exception_table_length=0<br>0x00 02 : attributes_count=2(Code属性表内部还含有2个属性表)<br>0x00 0a: 第一个属性表是”LineNumberTable”</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-34a97d658e59f0b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>0x00 0000 0a : “属性长度为10”<br>0x00 02 ：line_number_table_length=2<br>line_number_table是一个数量为line_number_table_length，类型为line_number_info的集合，line_number_info表包括了start_pc和line_number两个u2类型的数据项，前者是字节码行号，后者是Java源码行号<br>0x00 00 : start_pc =0<br>0x00 03 : end_pc =3<br>0x00 04 : start_pc=4<br>0x00 04 : end_pc=4</p>
+<p>0x00 0b 第二个属性表是：”LocalVariableTable”</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-a93b62e38cdf0a4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-b30b18f2a001dc13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>0x00 0000 0c：属性长度为12<br>0x00 01 : local_variable_table_length=1<br>然后按照local_variable_info表结构进行解析：<br>0x00 00 : start_pc=0<br>0x00 0a：length=10<br>0x000c : name_index=”this”<br>0x000d : descriptor_index #13 (“Lcom/demo/Demo”)<br>0000 index=0<br>//——-到这里第一个方法就解析完成了——-//<br>Method（<init>)–1个属性Code表-2个属性表（LineNumberTable ，LocalVariableTable）接下来解析第二个方法</init></p>
+<h4 id="第2个方法："><a href="#第2个方法：" class="headerlink" title="第2个方法："></a>第2个方法：</h4><p>0x00 04：”protected”<br>0x00 0e: #14（”testMethod”）<br>0x00 08 : “()V”<br>0x0001 ： 属性数量=1<br>0x0009 ：”Code”<br>0x0000 002b 属性长度为43<br>解析一个Code表<br>0000 :max_stack =0<br>0001 : max_local =1<br>0000 0001 : code_length =1<br>0xb1 : return(该方法返回void)<br>0x0000 异常表长度=0<br>0x0002 属性表长度为2<br>//第一个属性表<br>0x000a : #10，LineNumberTable<br>0x0000 0006 : 属性长度为6<br>0x0001 : line_number_length = 1<br>0x0000 : start_pc =0<br>0x0008 : end_pc =8<br>//第二个属性表<br>0x000b : #11 ，LocalVariableTable<br>0x0000 000c : 属性长度为12<br>0x0001 : local_variable_table_length =1<br>0x0000 :start_pc = 0<br>0x0001: length = 1<br>0x000c : name_index =#12 “this”<br>0x000d : 描述索引#13 “Lcom/demo/Demo;”<br>0000 index=0</p>
+<p>//到这里为止，方法解析都完成了，回过头看看顶部解析顺序图，我们接下来就要解析Attributes了。</p>
+<h3 id="3-10-Attribute"><a href="#3-10-Attribute" class="headerlink" title="3.10 Attribute"></a>3.10 Attribute</h3><p>0x0001 ：同样的，表示有1个Attributes了。<br>0x000f : #15(“SourceFile”)<br>0x0000 0002 attribute_length=2<br>0x0010 : sourcefile_index = #16(“Demo.java”)<br>SourceFile属性用来记录生成该Class文件的源码文件名称。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-7924c9639c2bf501.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="4-另话"><a href="#4-另话" class="headerlink" title="4 另话"></a>4 另话</h2><p>其实，我们写了这么多确实很麻烦，不过这种过程自己体验一遍的所获所得还是不同的。现在，使用java自带的反编译器来解析字节码文件。<br>javap -verbose Demo //不用带后缀.class</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1986868-8b34fdb9961be90e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5 总结"></a>5 总结</h2><p>到此为止，讲解完成了class文件的解析，这样以后我们也能看懂字节码文件了。了解class文件的结构对后面进一步了解虚拟机执行引擎非常重要，所以这是基础并重要的一步。</p>
+<h2 id="6-工具"><a href="#6-工具" class="headerlink" title="6 工具"></a>6 工具</h2><p><a href="https://github.com/zxh0/classpy" target="_blank" rel="external">https://github.com/zxh0/classpy</a> 这是一款分析字节码文件的工具，挺好用。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1986868-5b44e95ff7e30847.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a href=&quot;http://www.jianshu.com/p/252f381a6bc4&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Java号称是一门“一次编译到处运行”的语言，但是我们对这句话的理解深度又有多少呢？从我们写的java文件到通过编译器编译成java字节码文件（也就是.class文件），这个过程是java编译过程；而我们的java虚拟机执行的就是字节码文件。不论该字节码文件来自何方，由哪种编译器编译，甚至是手写字节码文件，只要符合java虚拟机的规范，那么它就能够执行该字节码文件。那么本文主要讲讲java字节码文件相关知识。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://aisee.me/categories/Java/"/>
+    
+    
+      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
+    
+      <category term="Byte Code" scheme="http://aisee.me/tags/Byte-Code/"/>
+    
+  </entry>
   
   <entry>
     <title>Classic Books of Computer&#39;s Basic Concept</title>
@@ -5640,6 +5871,80 @@ limitations under the License.
   </entry>
   
   <entry>
+    <title>Compile Process of Android Application</title>
+    <link href="http://aisee.me/2017/04/03/Program/Android/Design/compile-process-of-apk/"/>
+    <id>http://aisee.me/2017/04/03/Program/Android/Design/compile-process-of-apk/</id>
+    <published>2017-04-03T03:44:06.000Z</published>
+    <updated>2017-04-03T04:52:52.001Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/android_build_detail.png" alt=""></p>
+<blockquote>
+<p>编译–&gt;DEX–&gt;打包–&gt;签名和对齐</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Package-Process"><a href="#Package-Process" class="headerlink" title="Package Process"></a>Package Process</h2><p><img src="http://upload-images.jianshu.io/upload_images/2839011-28f3fb0ca3af7d9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上面这张图对上面的步骤以及每步用到的工具进行了细分，概括如下：</p>
+<p>Java编译器对工程本身的java代码进行编译，这些java代码有三个来源：app的源代码，由资源文件生成的R文件(aapt工具)，以及有aidl文件生成的java接口文件(aidl工具)。产出为.class文件。</p>
+<p>.class文件和依赖的三方库文件通过dex工具生成Delvik虚拟机可执行的.dex文件，可能有一个或多个，包含了所有的class信息，包括项目自身的class和依赖的class。产出为.dex文件。</p>
+<p>apkbuilder工具将.dex文件和编译后的资源文件生成未经签名对齐的apk文件。这里编译后的资源文件包括两部分，一是由aapt编译产生的编译后的资源文件，二是依赖的三方库里的资源文件。产出为未经签名的.apk文件。</p>
+<p>分别由Jarsigner和zipalign对apk文件进行签名和对齐，生成最终的apk文件。</p>
+<p>可以将整个打包过程概括为以下几步：</p>
+<ol>
+<li>通过aapt打包res资源文件，生成R.java、resources.arsc和res文件（二进制 &amp; 非二进制如res/raw和pic保持原样）</li>
+<li>处理.aidl文件，生成对应的Java接口文件</li>
+<li>通过Java Compiler编译R.java、Java接口文件、Java源文件，生成.class文件</li>
+<li>通过dex命令，将.class文件和第三方库中的.class文件处理生成classes.dex</li>
+<li>通过apkbuilder工具，将aapt生成的resources.arsc和res文件、assets文件和classes.dex一起打包生成apk</li>
+<li>通过Jarsigner工具，对上面的apk进行debug或release签名<br>通过zipalign工具，将签名后的apk进行对齐处理。</li>
+</ol>
+<p>关于zipalign工具，根据名字就知道是个zip文件对齐的工具。使得apk中的资源文件偏离文件起始位置4个字节，从而可以通过mmap()直接访问，从而减少RAM占用。</p>
+<p>下图是谷歌官网给出的一个典型的apk构建的过程，比较概括。主要包括两个过程，首先是编译过程，编译的内容包括本工程的文件以及依赖的各种库文件，编译的输出包括dex文件和编译后的资源文件。然后是打包过程。配合Keystore对第一步的输出进行签名对齐，生成最终的apk文件。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2839011-58310b412bae9a01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="APK-Content"><a href="#APK-Content" class="headerlink" title="APK Content"></a>APK Content</h2><p>apk包内容包括：</p>
+<ol>
+<li>classes.dex…</li>
+<li>resources.arsc</li>
+<li>assets</li>
+<li>res</li>
+<li>AndroidManifest.xml</li>
+<li>META-INF<br>7.<br>其中：<br>res中图片和raw文件下内容保持原样，res中其他xml文件内容均转化为二进制形式；assets文件内容保持原样<br>res中的文件会被映射到R.java文件中，访问的时候直接使用资源ID即R.id.filename；assets文件夹下的文件不会被映射到R.java中，访问的时候需要<strong>AssetManager</strong>类</li>
+</ol>
+<h2 id="Gradle-Process"><a href="#Gradle-Process" class="headerlink" title="Gradle Process"></a>Gradle Process</h2><p>Android工程通过gradle文件管理各项配置，gradle文件利用DSL（Domain Specific Language）语言描述配置，并使用Groovy语言处理编译逻辑。一个典型的Android工程结构如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2839011-0ba953a3e93d0d19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://img.blog.csdn.net/20151027092414376" alt=""></p>
+<p>在这里gradle文件分布在几个不同的层级，Project层级以及Module层级。</p>
+<ol>
+<li>Project层级的settings.gradle描述的是该Project包含哪些Module<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">include &apos;:presentation&apos;, &apos;:qamodel&apos;, &apos;:chatcommonmodule&apos;, &apos;:qa&apos;, &apos;:unlimit&apos;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Project层级的build.gradle描述的是作用于所有Module的配置，包括gradle版本等。</p>
+<ol>
+<li>Module层级的build.gradle。每个Module下都有一个作用于该Module的build.gradle文件，描述了该Module相关的配置。这些配置主要包括：BuildTypes，ProductFlavors，Dependency，SigningSettings等。</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><img src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/0bd162d9f2d3572c49ef6f258313632762d0c33e.jpg" alt=""><br>[1]<a href="http://blog.csdn.net/yanbober/article/details/49408489" target="_blank" rel="external">Android应用开发编译框架流程与IDE及Gradle概要</a><br>[2]<a href="https://yuedu.baidu.com/ebook/14a722970740be1e640e9a3e?pn=1&amp;isFromWenku=1" target="_blank" rel="external">Android Gradle权威指南</a><br>[3]<a href="http://www.jianshu.com/p/9df3c3b6067a" target="_blank" rel="external">Gradle 完整指南（Android）</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/android_build_detail.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;编译–&amp;gt;DEX–&amp;gt;打包–&amp;gt;签名和对齐&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://aisee.me/categories/Android/"/>
+    
+    
+      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
+    
+      <category term="Compile" scheme="http://aisee.me/tags/Compile/"/>
+    
+      <category term="Gradle" scheme="http://aisee.me/tags/Gradle/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Improve Code Inspection with Annotations</title>
     <link href="http://aisee.me/2017/04/03/Program/Java/improve-code-inspection-with-annotations/"/>
     <id>http://aisee.me/2017/04/03/Program/Java/improve-code-inspection-with-annotations/</id>
@@ -5721,80 +6026,6 @@ limitations under the License.
       <category term="Annotation" scheme="http://aisee.me/tags/Annotation/"/>
     
       <category term="Java" scheme="http://aisee.me/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Compile Process of Android Application</title>
-    <link href="http://aisee.me/2017/04/03/Program/Android/Design/compile-process-of-apk/"/>
-    <id>http://aisee.me/2017/04/03/Program/Android/Design/compile-process-of-apk/</id>
-    <published>2017-04-03T03:44:06.000Z</published>
-    <updated>2017-04-03T04:52:52.001Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ong8f1obl.bkt.clouddn.com/android_build_detail.png" alt=""></p>
-<blockquote>
-<p>编译–&gt;DEX–&gt;打包–&gt;签名和对齐</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Package-Process"><a href="#Package-Process" class="headerlink" title="Package Process"></a>Package Process</h2><p><img src="http://upload-images.jianshu.io/upload_images/2839011-28f3fb0ca3af7d9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>上面这张图对上面的步骤以及每步用到的工具进行了细分，概括如下：</p>
-<p>Java编译器对工程本身的java代码进行编译，这些java代码有三个来源：app的源代码，由资源文件生成的R文件(aapt工具)，以及有aidl文件生成的java接口文件(aidl工具)。产出为.class文件。</p>
-<p>.class文件和依赖的三方库文件通过dex工具生成Delvik虚拟机可执行的.dex文件，可能有一个或多个，包含了所有的class信息，包括项目自身的class和依赖的class。产出为.dex文件。</p>
-<p>apkbuilder工具将.dex文件和编译后的资源文件生成未经签名对齐的apk文件。这里编译后的资源文件包括两部分，一是由aapt编译产生的编译后的资源文件，二是依赖的三方库里的资源文件。产出为未经签名的.apk文件。</p>
-<p>分别由Jarsigner和zipalign对apk文件进行签名和对齐，生成最终的apk文件。</p>
-<p>可以将整个打包过程概括为以下几步：</p>
-<ol>
-<li>通过aapt打包res资源文件，生成R.java、resources.arsc和res文件（二进制 &amp; 非二进制如res/raw和pic保持原样）</li>
-<li>处理.aidl文件，生成对应的Java接口文件</li>
-<li>通过Java Compiler编译R.java、Java接口文件、Java源文件，生成.class文件</li>
-<li>通过dex命令，将.class文件和第三方库中的.class文件处理生成classes.dex</li>
-<li>通过apkbuilder工具，将aapt生成的resources.arsc和res文件、assets文件和classes.dex一起打包生成apk</li>
-<li>通过Jarsigner工具，对上面的apk进行debug或release签名<br>通过zipalign工具，将签名后的apk进行对齐处理。</li>
-</ol>
-<p>关于zipalign工具，根据名字就知道是个zip文件对齐的工具。使得apk中的资源文件偏离文件起始位置4个字节，从而可以通过mmap()直接访问，从而减少RAM占用。</p>
-<p>下图是谷歌官网给出的一个典型的apk构建的过程，比较概括。主要包括两个过程，首先是编译过程，编译的内容包括本工程的文件以及依赖的各种库文件，编译的输出包括dex文件和编译后的资源文件。然后是打包过程。配合Keystore对第一步的输出进行签名对齐，生成最终的apk文件。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2839011-58310b412bae9a01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h2 id="APK-Content"><a href="#APK-Content" class="headerlink" title="APK Content"></a>APK Content</h2><p>apk包内容包括：</p>
-<ol>
-<li>classes.dex…</li>
-<li>resources.arsc</li>
-<li>assets</li>
-<li>res</li>
-<li>AndroidManifest.xml</li>
-<li>META-INF<br>7.<br>其中：<br>res中图片和raw文件下内容保持原样，res中其他xml文件内容均转化为二进制形式；assets文件内容保持原样<br>res中的文件会被映射到R.java文件中，访问的时候直接使用资源ID即R.id.filename；assets文件夹下的文件不会被映射到R.java中，访问的时候需要<strong>AssetManager</strong>类</li>
-</ol>
-<h2 id="Gradle-Process"><a href="#Gradle-Process" class="headerlink" title="Gradle Process"></a>Gradle Process</h2><p>Android工程通过gradle文件管理各项配置，gradle文件利用DSL（Domain Specific Language）语言描述配置，并使用Groovy语言处理编译逻辑。一个典型的Android工程结构如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2839011-0ba953a3e93d0d19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><img src="http://img.blog.csdn.net/20151027092414376" alt=""></p>
-<p>在这里gradle文件分布在几个不同的层级，Project层级以及Module层级。</p>
-<ol>
-<li>Project层级的settings.gradle描述的是该Project包含哪些Module<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">include &apos;:presentation&apos;, &apos;:qamodel&apos;, &apos;:chatcommonmodule&apos;, &apos;:qa&apos;, &apos;:unlimit&apos;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>Project层级的build.gradle描述的是作用于所有Module的配置，包括gradle版本等。</p>
-<ol>
-<li>Module层级的build.gradle。每个Module下都有一个作用于该Module的build.gradle文件，描述了该Module相关的配置。这些配置主要包括：BuildTypes，ProductFlavors，Dependency，SigningSettings等。</li>
-</ol>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><img src="https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/doc/pic/item/0bd162d9f2d3572c49ef6f258313632762d0c33e.jpg" alt=""><br>[1]<a href="http://blog.csdn.net/yanbober/article/details/49408489" target="_blank" rel="external">Android应用开发编译框架流程与IDE及Gradle概要</a><br>[2]<a href="https://yuedu.baidu.com/ebook/14a722970740be1e640e9a3e?pn=1&amp;isFromWenku=1" target="_blank" rel="external">Android Gradle权威指南</a><br>[3]<a href="http://www.jianshu.com/p/9df3c3b6067a" target="_blank" rel="external">Gradle 完整指南（Android）</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ong8f1obl.bkt.clouddn.com/android_build_detail.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;编译–&amp;gt;DEX–&amp;gt;打包–&amp;gt;签名和对齐&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://aisee.me/categories/Android/"/>
-    
-    
-      <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
-    
-      <category term="Compile" scheme="http://aisee.me/tags/Compile/"/>
-    
-      <category term="Gradle" scheme="http://aisee.me/tags/Gradle/"/>
     
   </entry>
   
@@ -6673,41 +6904,6 @@ limitations under the License.
   </entry>
   
   <entry>
-    <title>App Architecture of Best Practice</title>
-    <link href="http://aisee.me/2017/03/31/Program/Android/Design/ui-app/"/>
-    <id>http://aisee.me/2017/03/31/Program/Android/Design/ui-app/</id>
-    <published>2017-03-30T23:35:06.000Z</published>
-    <updated>2017-04-03T16:52:48.870Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/androidstudio.jpg" alt=""><br>More Little, More Fast,<br>More Safe, More Flexible<br>More Smart, More Power,</p>
-<a id="more"></a>
-<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><h2 id="Third-Library"><a href="#Third-Library" class="headerlink" title="Third Library"></a>Third Library</h2><h2 id="Static-Code-Inspect-Tool"><a href="#Static-Code-Inspect-Tool" class="headerlink" title="Static Code Inspect Tool"></a>Static Code Inspect Tool</h2><p>###</p>
-<p>###</p>
-<p>###</p>
-<h2 id="Dynamic-Running-Checker"><a href="#Dynamic-Running-Checker" class="headerlink" title="Dynamic Running Checker"></a>Dynamic Running Checker</h2><p>###</p>
-<p>###</p>
-<p>###</p>
-<h2 id="Confige-Tool"><a href="#Confige-Tool" class="headerlink" title="Confige Tool"></a>Confige Tool</h2><h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><h3 id="QiNiu"><a href="#QiNiu" class="headerlink" title="QiNiu"></a>QiNiu</h3><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://blog.csdn.net/sbsujjbcy/article/details/50707696" target="_blank" rel="external">MVP模式在Android开发中的最佳实践</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/androidstudio.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;More Little, More Fast,&lt;br&gt;More Safe, More Flexible&lt;br&gt;More Smart, More Power,&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://aisee.me/categories/Android/"/>
-    
-    
-      <category term="Best Practice" scheme="http://aisee.me/tags/Best-Practice/"/>
-    
-      <category term="UI" scheme="http://aisee.me/tags/UI/"/>
-    
-      <category term="Architecture" scheme="http://aisee.me/tags/Architecture/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Concept of Reflection in Java</title>
     <link href="http://aisee.me/2017/03/31/Program/Java/what-is-reflection-in-java/"/>
     <id>http://aisee.me/2017/03/31/Program/Java/what-is-reflection-in-java/</id>
@@ -6798,6 +6994,41 @@ limitations under the License.
       <category term="Basic Concept" scheme="http://aisee.me/tags/Basic-Concept/"/>
     
       <category term="Reflection" scheme="http://aisee.me/tags/Reflection/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>App Architecture of Best Practice</title>
+    <link href="http://aisee.me/2017/03/31/Program/Android/Design/ui-app/"/>
+    <id>http://aisee.me/2017/03/31/Program/Android/Design/ui-app/</id>
+    <published>2017-03-30T23:35:06.000Z</published>
+    <updated>2017-04-03T16:52:48.870Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://om8nmvpn9.bkt.clouddn.com/androidstudio.jpg" alt=""><br>More Little, More Fast,<br>More Safe, More Flexible<br>More Smart, More Power,</p>
+<a id="more"></a>
+<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><h2 id="Third-Library"><a href="#Third-Library" class="headerlink" title="Third Library"></a>Third Library</h2><h2 id="Static-Code-Inspect-Tool"><a href="#Static-Code-Inspect-Tool" class="headerlink" title="Static Code Inspect Tool"></a>Static Code Inspect Tool</h2><p>###</p>
+<p>###</p>
+<p>###</p>
+<h2 id="Dynamic-Running-Checker"><a href="#Dynamic-Running-Checker" class="headerlink" title="Dynamic Running Checker"></a>Dynamic Running Checker</h2><p>###</p>
+<p>###</p>
+<p>###</p>
+<h2 id="Confige-Tool"><a href="#Confige-Tool" class="headerlink" title="Confige Tool"></a>Confige Tool</h2><h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><h3 id="QiNiu"><a href="#QiNiu" class="headerlink" title="QiNiu"></a>QiNiu</h3><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://blog.csdn.net/sbsujjbcy/article/details/50707696" target="_blank" rel="external">MVP模式在Android开发中的最佳实践</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://om8nmvpn9.bkt.clouddn.com/androidstudio.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;More Little, More Fast,&lt;br&gt;More Safe, More Flexible&lt;br&gt;More Smart, More Power,&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://aisee.me/categories/Android/"/>
+    
+    
+      <category term="Best Practice" scheme="http://aisee.me/tags/Best-Practice/"/>
+    
+      <category term="UI" scheme="http://aisee.me/tags/UI/"/>
+    
+      <category term="Architecture" scheme="http://aisee.me/tags/Architecture/"/>
     
   </entry>
   
@@ -13313,6 +13544,53 @@ limitations under the License.
   </entry>
   
   <entry>
+    <title>Why I Insist on Using English</title>
+    <link href="http://aisee.me/2017/03/29/English/why-i-insist-on-using-english/"/>
+    <id>http://aisee.me/2017/03/29/English/why-i-insist-on-using-english/</id>
+    <published>2017-03-29T01:19:06.000Z</published>
+    <updated>2017-04-03T15:34:12.945Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://okkntqe2h.bkt.clouddn.com/Learn-English.jpg" alt=""></p>
+<blockquote>
+<p>Using  is the only and the best way of learning English.<br>Program skills depend  on English.<br>You can appreciate and taste more precious beauty things , such as great mind, good books, fabulous music, touching movies…</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Sentence-5"><a href="#Sentence-5" class="headerlink" title="Sentence[5]"></a>Sentence<sup>[5]<sup></sup></sup></h2><p>He who knows others is learned, and he who knows himself is wise.</p>
+<p>To conquer yourself is more powerful than to defeat other people.</p>
+<p>Study serve the practical purpose.</p>
+<p>Knowledge is action, action is knowledge.</p>
+<p>Don’t forget why start off, otherwise it is difficult to achieve the ultimate goal.</p>
+<p>Many people start a career with a dream, then get busy forgetting it.</p>
+<p>Without purpose, the days would have ended, as such days always end, in disintegration.</p>
+<p>If you set your goals ridiculously high and it’s a failure, you will fail above everyone else’s success.</p>
+<p><strong>Our plans miscarry because they have no aim. If one does not know to which port one is sailing, no wind is favorable.</strong></p>
+<h2 id="Article-4"><a href="#Article-4" class="headerlink" title="Article[4]"></a>Article<sup>[4]<sup></sup></sup></h2><h3 id="Youth"><a href="#Youth" class="headerlink" title="Youth"></a>Youth</h3><p>Youth is not a time of life; it is a state of mind; it is not a matter of rosy cheeks, red lips and supple knees; it is a matter of the will, a quality of the imagination, a vigor of the emotions; it is the freshness of the deep springs of life.</p>
+<p>Youth means a temperamental predominance of courage over timidity, of the appetite for adventure over the love of ease. This often exists in a man of 60 more than a boy of 20. Nobody grows old merely by a number of years. We grow old by deserting our ideals.</p>
+<p><strong>Years may wrinkle the skin, but to give up enthusiasm wrinkles the soul. Worry, fear, self-distrust bows the heart and turns the spirit back to dust.</strong></p>
+<p>Whether 60 or 16, there is in every human being’s heart the lure of wonders, the unfailing child appetite for what’s next and the joy of the game of living. In the center of your heart and my heart, there is a wireless station; so long as it receives messages of beauty, hope, cheer, courage and power from man and from the infinite, so long as you are young.</p>
+<p>When your aerials are down, and your spirit is covered with snows of cynicism and the ice of pessimism, then you’ve grown old, even at 20; but as long as your aerials are up, to catch waves of optimism, there’s hope you may die young at 80.</p>
+<h2 id="Music-8"><a href="#Music-8" class="headerlink" title="Music[8]"></a>Music<sup>[8]<sup></sup></sup></h2><p>Santana——Smooth</p>
+<h2 id="Movie-9"><a href="#Movie-9" class="headerlink" title="Movie[9]"></a>Movie<sup>[9]<sup></sup></sup></h2><p>Billy Lynn’s Long Halftime Walk</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="/2017/01/20/MyView/English/how-to-use-english/">How to Use English</a><br>[2]<a href="/2017/01/13/MyView/English/english-is-a-friend-for-everybody/">English is a Friend for Everyone</a><br>[3]<a href="/2017/02/22/MyView/English/my-translations/">Quotes by Famous People</a><br>[4]<a href="/2017/02/21/MyView/English/beautiful-article-of-english/">Beautiful Articles of English</a><br>[5]<a href="/2016/12/31/MyView/English/view-of-english/">Beauty of English</a><br>[6]<a href="/2017/03/26/MyView/English/computer-english-words/">Professional Words of Computer</a><br>[7]<a href="/2017/02/22/MyView/English/love-words/">Love English Words</a><br>[8]<a href="/2017/03/27/MyView/Music/santana-smooth/">Santana——Smooth</a><br>[9]<a href="/2017/03/08/MyView/Movie/billy-lynn&#39;s-long-halftime-walk/">Billy Lynn’s Long Halftime Walk</a><br>[10]<a href="https://movie.douban.com/top250" target="_blank" rel="external">Douban Movie Top250</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://okkntqe2h.bkt.clouddn.com/Learn-English.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Using  is the only and the best way of learning English.&lt;br&gt;Program skills depend  on English.&lt;br&gt;You can appreciate and taste more precious beauty things , such as great mind, good books, fabulous music, touching movies…&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="English" scheme="http://aisee.me/categories/English/"/>
+    
+    
+      <category term="Share" scheme="http://aisee.me/tags/Share/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Why I Insist on Writing Blog</title>
     <link href="http://aisee.me/2017/03/29/MyView/Original/Why/why-i-write-blog/"/>
     <id>http://aisee.me/2017/03/29/MyView/Original/Why/why-i-write-blog/</id>
@@ -13445,254 +13723,6 @@ limitations under the License.
     
     
       <category term="Share" scheme="http://aisee.me/tags/Share/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Why I Insist on Using English</title>
-    <link href="http://aisee.me/2017/03/29/English/why-i-insist-on-using-english/"/>
-    <id>http://aisee.me/2017/03/29/English/why-i-insist-on-using-english/</id>
-    <published>2017-03-29T01:19:06.000Z</published>
-    <updated>2017-04-03T15:34:12.945Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://okkntqe2h.bkt.clouddn.com/Learn-English.jpg" alt=""></p>
-<blockquote>
-<p>Using  is the only and the best way of learning English.<br>Program skills depend  on English.<br>You can appreciate and taste more precious beauty things , such as great mind, good books, fabulous music, touching movies…</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Sentence-5"><a href="#Sentence-5" class="headerlink" title="Sentence[5]"></a>Sentence<sup>[5]<sup></sup></sup></h2><p>He who knows others is learned, and he who knows himself is wise.</p>
-<p>To conquer yourself is more powerful than to defeat other people.</p>
-<p>Study serve the practical purpose.</p>
-<p>Knowledge is action, action is knowledge.</p>
-<p>Don’t forget why start off, otherwise it is difficult to achieve the ultimate goal.</p>
-<p>Many people start a career with a dream, then get busy forgetting it.</p>
-<p>Without purpose, the days would have ended, as such days always end, in disintegration.</p>
-<p>If you set your goals ridiculously high and it’s a failure, you will fail above everyone else’s success.</p>
-<p><strong>Our plans miscarry because they have no aim. If one does not know to which port one is sailing, no wind is favorable.</strong></p>
-<h2 id="Article-4"><a href="#Article-4" class="headerlink" title="Article[4]"></a>Article<sup>[4]<sup></sup></sup></h2><h3 id="Youth"><a href="#Youth" class="headerlink" title="Youth"></a>Youth</h3><p>Youth is not a time of life; it is a state of mind; it is not a matter of rosy cheeks, red lips and supple knees; it is a matter of the will, a quality of the imagination, a vigor of the emotions; it is the freshness of the deep springs of life.</p>
-<p>Youth means a temperamental predominance of courage over timidity, of the appetite for adventure over the love of ease. This often exists in a man of 60 more than a boy of 20. Nobody grows old merely by a number of years. We grow old by deserting our ideals.</p>
-<p><strong>Years may wrinkle the skin, but to give up enthusiasm wrinkles the soul. Worry, fear, self-distrust bows the heart and turns the spirit back to dust.</strong></p>
-<p>Whether 60 or 16, there is in every human being’s heart the lure of wonders, the unfailing child appetite for what’s next and the joy of the game of living. In the center of your heart and my heart, there is a wireless station; so long as it receives messages of beauty, hope, cheer, courage and power from man and from the infinite, so long as you are young.</p>
-<p>When your aerials are down, and your spirit is covered with snows of cynicism and the ice of pessimism, then you’ve grown old, even at 20; but as long as your aerials are up, to catch waves of optimism, there’s hope you may die young at 80.</p>
-<h2 id="Music-8"><a href="#Music-8" class="headerlink" title="Music[8]"></a>Music<sup>[8]<sup></sup></sup></h2><p>Santana——Smooth</p>
-<h2 id="Movie-9"><a href="#Movie-9" class="headerlink" title="Movie[9]"></a>Movie<sup>[9]<sup></sup></sup></h2><p>Billy Lynn’s Long Halftime Walk</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="/2017/01/20/MyView/English/how-to-use-english/">How to Use English</a><br>[2]<a href="/2017/01/13/MyView/English/english-is-a-friend-for-everybody/">English is a Friend for Everyone</a><br>[3]<a href="/2017/02/22/MyView/English/my-translations/">Quotes by Famous People</a><br>[4]<a href="/2017/02/21/MyView/English/beautiful-article-of-english/">Beautiful Articles of English</a><br>[5]<a href="/2016/12/31/MyView/English/view-of-english/">Beauty of English</a><br>[6]<a href="/2017/03/26/MyView/English/computer-english-words/">Professional Words of Computer</a><br>[7]<a href="/2017/02/22/MyView/English/love-words/">Love English Words</a><br>[8]<a href="/2017/03/27/MyView/Music/santana-smooth/">Santana——Smooth</a><br>[9]<a href="/2017/03/08/MyView/Movie/billy-lynn&#39;s-long-halftime-walk/">Billy Lynn’s Long Halftime Walk</a><br>[10]<a href="https://movie.douban.com/top250" target="_blank" rel="external">Douban Movie Top250</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://okkntqe2h.bkt.clouddn.com/Learn-English.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Using  is the only and the best way of learning English.&lt;br&gt;Program skills depend  on English.&lt;br&gt;You can appreciate and taste more precious beauty things , such as great mind, good books, fabulous music, touching movies…&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="English" scheme="http://aisee.me/categories/English/"/>
-    
-    
-      <category term="Share" scheme="http://aisee.me/tags/Share/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Jiang Tao——Only 2% Persons Can be Winner of AI</title>
-    <link href="http://aisee.me/2017/03/29/AI/Business/Jiang-tao--only-2%25-persons-can-be-winner-of-AI/"/>
-    <id>http://aisee.me/2017/03/29/AI/Business/Jiang-tao--only-2%-persons-can-be-winner-of-AI/</id>
-    <published>2017-03-28T23:54:06.000Z</published>
-    <updated>2017-03-29T01:13:16.967Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.blog.csdn.net/20170328163055792" alt=""></p>
-<p>现在去xxx创业大街向天上扔一沓美金，砸到10个路人，有9个都自称投资人，其中8个投人工智能。</p>
-<p>满嘴的Artificial Intelligence、摩尔定律、大数据、新算法、认知技术、计算机视觉、机器学习、自然语言处理、机器人技术、语音识别……要是不懂点Deep Learning基本原理，没看过雷·库兹韦尔的《奇点临近》都不好意思和别人打招呼。</p>
-<p>事实真的是这样吗？23年后人工智能会统治地球吗？说实话，这些暂时和你没有太大关系，你只需要知道，</p>
-<blockquote>
-<p>人工智能的第一波红利已来临！</p>
-</blockquote>
-<a id="more"></a>
-<p>在2016 Techcrunch论坛上，李开复曾经说过：“当人工智能识别人脸，超过人的时候，保安的工作至少一部分就没有了；当人工智能能够听懂语音的时候，客服和打电话卖东西人的工作就没有了；当人工智能能够更聪明的炒股的时候，很多人的工作就没有了。”</p>
-<p>今年是人工智能发展的第61个年头，所有的投资机构都在谈论和布局该领域，但人工智能将在哪些产业爆发？传统企业又该如何挖掘第一桶金？要知道，<strong>每个风口都只有2%的人能够成为赢家。</strong></p>
-<p>黑马学院特邀CSDN&amp;极客帮基金创始人蒋涛（黑马连营第5期连长），今晚9点-10点，将在103个黑马社群同步直播，讲讲人工智能的第一波红利！</p>
-<h2 id="WHY-人工智能为什么会火？"><a href="#WHY-人工智能为什么会火？" class="headerlink" title="WHY 人工智能为什么会火？"></a>WHY 人工智能为什么会火？</h2><p>谈到科技革命，时下最火的莫过于人工智能。</p>
-<p>我自己做技术社区，做了十几年，看到过一波一波的技术浪潮过来。当年移动互联网大潮过来的时候，我们原来在PC端做的事情，都可以用移动互联网的理念把它重新做一遍。简单来说，<strong>现在的人工智能就相当于原来移动互联网的概念，原来移动端做过的事情，现在又可以结合人工智能的方式再做一遍，而且会比之前更具颠覆性的效果。</strong> 毫不夸张地说，我认为人工智能所带给我们的冲击，将会像工业革命一样。</p>
-<p>今年是「人工智能」诞生的61周年（注：1956年夏“人工智能之父”麦卡锡首次提出这个概念），同时也是它的第三次浪潮。这次浪潮和以往的前两次都不一样，这次有了实质性的突破。以前，相当于你想到对面去，但是面前有一堵墙；现在这堵墙被凿开了，之所以这么讲，是因为我有以下三点的观察思考：</p>
-<p><strong>第一点：人工智能虽然还处于技术创新期，但到人工智能的普及期，我认为也就需要十到二十年的时间。</strong> 现在相当于移动时代的2005年，虽然第一部3G手机2007年才出现，但2005年我们已经很清楚2G是要到3G的。虽然<strong>人工智能还没有找到突破口，不知道会怎么商业化</strong>，但是大方向是有的。所以，现在只要你在这个领域冲到第一名，就会持续得到投资。</p>
-<p>第二点：人工智能的基础已经充实，它是一个逻辑上的发展，这个发展可以分为三个阶段。</p>
-<p>1）<strong>云计算</strong>，把信息基础云化，云计算基础设施的完善使得人工智能响应速度更快。</p>
-<p>2）<strong>大数据</strong>，计算的过程中累积了数据，数据的极大丰富，使得基于大数据做出行为分析及短期预判成为可能，各个行业的信息化也为此奠定了良好的基础。</p>
-<p>3）<strong>判断决策</strong>，对大数据的判断从而产生了更好的决策，决策实际上就是人工智能的进展。</p>
-<p>现在我们的生活中就有很多计算机技术在做决定，坐车是滴滴在帮你调度；去餐馆是大众点评用算法把离你最近、人气最高的餐馆选出来等等，所以你的生活已经和人工智能相关了。</p>
-<p>第三点：人工智能之所以取得重大的突破，除了前两个阶段的铺垫外，深度学习的发展也贡献了非常重要的力量。</p>
-<h2 id="未来是“AIR”的世界"><a href="#未来是“AIR”的世界" class="headerlink" title="未来是“AIR”的世界"></a>未来是“AIR”的世界</h2><blockquote>
-<p>未来你看到的是物理世界和虚拟世界的叠加，这就是VR和AR，也就是R时代；I时代是物联网时代；A时代也就是人工智能时代。</p>
-</blockquote>
-<p>其实你看到的世界很可能不是真的。为什么这么说？因为这是从视神经系统处理出来的。现在我们可以用计算机处理掉，叠加到视网膜上。比如：我不用递名片，只要念头一转，你的名片就应该自动出来了。那怎么能做到这样呢？就是把所有的信息都连接到网络上，这样物理世界和虚拟世界才能叠加在一起。人之所以和其他生物不一样是因为人会做思考、决策，比动物要高一个级别，具有抽象的能力，这是未来20年的大趋势。</p>
-<p>AI技术体现在图像识别的突破上，更重要的可能是智能语言的突破，他能理解你讲的话，写出来的文字，甚至能理解照片，当做到这些的时候，行业就会产生变革。</p>
-<blockquote>
-<p>各个行业基本可分为4个阶段：数字化、数据化、自动化和智能化。越到后面它的武器越强。原来是长枪、大矛，练的是武功，后面就变成机关枪了，扫射的时候你会发现不一样。</p>
-</blockquote>
-<p>今年我们做了AI100，也叫人工智能100年。今年是人工智能的第61年，可能再过20年到40年，这个世界90%的人就不用工作了。在未来，我们要培养200万名数据分析师，因为决策和运营都是用数据驱动的。同时我们也会与投资相结合，帮助中国30万家企业走向智能化阶段。</p>
-<h2 id="Where-第一波红利的三个产业"><a href="#Where-第一波红利的三个产业" class="headerlink" title="Where 第一波红利的三个产业"></a>Where 第一波红利的三个产业</h2><p>人工智能究竟会改变哪些领域？如何改变呢？</p>
-<h3 id="自动驾驶"><a href="#自动驾驶" class="headerlink" title="自动驾驶"></a>自动驾驶</h3><p>任何领域有非常大的数据量，人工智能都可以用上。全世界和运输价值相关的公司，都已经相信无人驾驶的发展是必然的。所以在无人驾驶、电动车的框架之下，未来的司机基本上会被无人驾驶取代。</p>
-<p>单车智能与智慧交通是无人驾驶技术发展的两个阶段。其中，单车智能是无人驾驶技术的基础，是实现无人驾驶终极形态的根本路径；车联网与智能交通则是推进无人驾驶技术发展的强力催化剂，将助力无人驾驶技术的普及。无人驾驶技术的成熟将最终构建城市智能驾驶生态圈，为未来出行提供新的解决方案。</p>
-<h3 id="客服行业"><a href="#客服行业" class="headerlink" title="客服行业"></a>客服行业</h3><p>做金融服务的宜信，有1万多个客服，携程大概有7、8千个客服，每天负责就接各种投诉电话，每次都是被用户狂骂、抱怨，未来将有更多工业机器人替代这些低效率的人力。 人工智能客服系统主要是整合邮件、电话、微博、微信、网页、API接口、移动SDK等渠道在内的服务渠道，并统一自动分配工单，同时留存用户信息便于下次咨询时识别。</p>
-<p>基本能做到：<br>1）24小时机器人客服在线，随时响应客户的相关资讯和需求；<br>2）建立客服机器人的内容库，用深度学习的方式自动回复重复问题；<br>3）接入人工时机器人给予部分回复建议，加快反馈速度；<br>4）接入内部办公系统，推动多部门协作反馈以及用户精准营销；<br>5）后台实时数据统计汇总，管理用户评价，进行数据挖掘和数据分析；</p>
-<h3 id="医疗领域"><a href="#医疗领域" class="headerlink" title="医疗领域"></a>医疗领域</h3><p>医疗人员医院里有大量的临床病历数据，而且不断的产出数据。医疗方面的人工智能主要分为两部分：一是图像识别，应用于感知环节，其主要目的是将影像这类非结构化数据进行分析，获取一些有意义的信息；二是深度学习，应用于学习和分析环节，是AI应用的最核心环节，通过大量的影像数据和诊断数据，不断对神经元网络进行深度学习训练，促使其掌握“诊断”的能力。不管是什么病，图像只是其中一个参数，而治疗疾病则需要多个参数。此外，80%的数据属于非结构化数据，亦即报告+影像。未来，人工智能的使用将大大提高治疗效率。</p>
-<h2 id="How-传统企业如何获得红利？"><a href="#How-传统企业如何获得红利？" class="headerlink" title="How 传统企业如何获得红利？"></a>How 传统企业如何获得红利？</h2><p>简单来说，现在的人工智能就相当于原来移动互联网的概念，原来移动端做过的事情，现在又可以结合人工智能的方式再做一遍，而且会比之前更具颠覆性的效果。毫不夸张地说，我认为人工智能所带给我们的冲击，将会像工业革命一样。</p>
-<h3 id="传统制造业智能化设想"><a href="#传统制造业智能化设想" class="headerlink" title="传统制造业智能化设想"></a>传统制造业智能化设想</h3><p>传统企业的未来有两个方向：<br>第一，你有没有用户的服务和连接。<br>第二，在这个基础上，有没有做智能化决策和分析。<br>后来就是本身在生产线上的提升，生产线也面临着一个问题，你的控制有没有数据化。</p>
-<p>在一些制造业工厂，升级之后有没有更好的成本上的控制。极客帮有个合作的LP，专门给小米做代工，他就给我看传统的生产线，就是一条生产线，都是自动化的设备。所以它能够做到手环40元钱，还有利润挣。就卖40元钱还能挣钱，而且挣得还不少。总的来说，我们看到的一个方向的趋势。</p>
-<p><strong>对制造业来说，意义最大的是把它的制造过程，原来的控制系统做成一定的数据化，再看看能不能做规划。那些大规模生产的时代已经结束，一定要往前端走，差异化可能在产品设计上、包装上、服务上，从大生产时代到个性化时代，未来到一个智能化时代。</strong></p>
-<p>“创业者埋头苦干的同时也要抬头看天。欢迎加入我的黑马连营战队，和我一起探寻人工智能趋势背后的行业商机！”</p>
-<p>尽管人类是科技的创造者，却无法掌控其发展。我们所能做的就是掌握科技的发展趋势。人工智能浪潮来临，它将如何颠覆我们的工作和生活呢？</p>
-<p>近日，黑马营7期营员、黑马连营第5期连长蒋涛与我们分享了他的看法。他认为，未来是AIR的世界，各个行业将会进入数字化、数据化、自动化和智能化4个阶段。</p>
-<p>嘉宾介绍：<br>蒋涛：CSDN创始人，极客帮基金创始合伙人；黑马营7期营员，黑马连营第5期连长；有24年软件开发经验，其创立的CSDN是全球最大的开发者社区；同时具备投资人身份，先后投资了聚合数据、IT桔子等90余家高科技创业公司。<br>行业：人工智能<br>关键词：趋势洞察家、技术达人、极客范儿</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="http://geek.csdn.net/news/detail/189314" target="_blank" rel="external">人工智能风口只有2%的人能够成为赢家！——CSDN蒋涛</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20170328163055792&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;现在去xxx创业大街向天上扔一沓美金，砸到10个路人，有9个都自称投资人，其中8个投人工智能。&lt;/p&gt;
-&lt;p&gt;满嘴的Artificial Intelligence、摩尔定律、大数据、新算法、认知技术、计算机视觉、机器学习、自然语言处理、机器人技术、语音识别……要是不懂点Deep Learning基本原理，没看过雷·库兹韦尔的《奇点临近》都不好意思和别人打招呼。&lt;/p&gt;
-&lt;p&gt;事实真的是这样吗？23年后人工智能会统治地球吗？说实话，这些暂时和你没有太大关系，你只需要知道，&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;人工智能的第一波红利已来临！&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="AI" scheme="http://aisee.me/categories/AI/"/>
-    
-    
-      <category term="Jiang Tao" scheme="http://aisee.me/tags/Jiang-Tao/"/>
-    
-      <category term="Winner" scheme="http://aisee.me/tags/Winner/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Yann LeCun——Prediction Learning is the Future of AI</title>
-    <link href="http://aisee.me/2017/03/29/AI/Business/yann-leCun-predict-learning-is-the-future-of-AI/"/>
-    <id>http://aisee.me/2017/03/29/AI/Business/yann-leCun-predict-learning-is-the-future-of-AI/</id>
-    <published>2017-03-28T23:36:06.000Z</published>
-    <updated>2017-03-29T01:13:18.861Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://img.blog.csdn.net/20170323205555509" alt=""></p>
-<p>在一票难求的Yann LeCun清华演讲当天上午，LeCun本人现身中国科学院自动化研究所，参与了一个“限制级”的高端私享会，CSDN记者整理了以下三条重要摘要。</p>
-<ol>
-<li>我对什么感兴趣</li>
-<li>我怎样看Human-like learning</li>
-<li>请把自己当做一名科学家</li>
-</ol>
-<a id="more"></a>
-<h2 id="我对什么感兴趣"><a href="#我对什么感兴趣" class="headerlink" title="我对什么感兴趣"></a>我对什么感兴趣</h2><blockquote>
-<p>非监督学习以及预测学习</p>
-</blockquote>
-<p>迄今为止，在机器学习以及深度学习领域，我们已经取得了一些成功，这些成功都依赖于监督学习。监督学习有它本身的局限性，因为需要很多数据，并且这些数据需要经过人工标注，数据的背后需要很多的知识作为支撑。所以问题就转化成了我们如何让机器像动物和人类一样能够从现实世界自动学习，这样一来我们就需要搞清楚动物和人类学习背后的原理。</p>
-<p>有些人认为，人类的学习方式是增强学习。而我个人认为，人类的学习方式是<strong>非监督学习，且是以预测为驱动的。</strong> 所以我们的大脑其实是一个预测引擎，从一定程度上说，能够预测是机器通往智能道路上的一道关卡。如果我们知道如何用深度学习或者其他的算法使得机器能够通过预测来解决问题的话，那么我们在制造更智能的机器的路上就取得了一个非常大的进步。</p>
-<p>以科学家的视角来看，我对智能的本质，不论是人类智能还是人工智能都很感兴趣。从实用的角度来说，这也并不冲突，在很多的人工智能应用中，机器需要对这个世界有广泛的知识储备，甚至机器需要能够理解他们自己。举例来说，如果你想要开发一个对话系统或者虚拟助手，这种很有趣且很实用的系统。这种时候，机器就需要如前面所说的，对世界有的广泛的知识储备。据我所知，这种量级的知识储备不能够通过监督学习或者增强学习来达到。这也是我对非监督学习以及预测学习感兴趣的原因。</p>
-<h2 id="我怎样看Human-like-learning"><a href="#我怎样看Human-like-learning" class="headerlink" title="我怎样看Human-like learning"></a>我怎样看Human-like learning</h2><blockquote>
-<p>如果你说你现在就能做出这样的机器…<br>Come on！别骗自己了</p>
-</blockquote>
-<p>因为现在我们还不知道如何让机器像人类一样思考，所以当我们讨论Human-like machine的时候，我们是在讨论一个还不存在的东西。所以就出现了正反两派。但是在我看来，那些现在就声称他们能够或者已经做出Human-like learning的人是夸大其词了。但Human-like learning确实是一个重要的研究方向。</p>
-<p>要达到Human-like learning，或许需要监督、非监督以及增强学习的结合。拿预测做例子，比如说我放一个苹果在桌子上，然后我离开了，苹果可能会呆在桌子上也可能会滚下来，除非我们有一个预测模型，否则到底会发生什么是很难预测的。对于我们人类来说，如果我们知道这个桌子承不住这个苹果的话，苹果就会掉下来。所以说我们到底要如何教会机器理解这个世界，不仅要考虑到这个世界很大，还要考虑到这个世界充满了巧合和外力作用。</p>
-<p>我们用力推一个东西它会动，推另一个东西它可能不会动。所以说对事物的区分和预测是我们人类对世界认知的一个体现。问题在于，这种预测不是任务导向型的（Task oriented ），而是任务独立型的（Task independent），所以有很多时候机器学到的事情可能对我们没有用，这就是为什么我们需要监督学习和增强学习来让机器学习对我们有用的事情。</p>
-<p>现在经典的人工智能系统都是监督学习与增强学习的结合，这是很多研究人员、很多后起之秀正在从事的领域，是现在很多AI系统的一个共性。相信在座的很多人都从事过人工智能在感知层面的工作，我们从现实世界中提取信号以供机器学习，这是人工智能的第一步，还有第二步就是让机器能够对现实世界中将要发生的事情进行预测，以及对事物将会保留在何种状态进行预测。</p>
-<p>所以近期大家越来越强调AI系统的整体性，即perception、prediction、reasoning、planning以及底层的监督、非监督、强化学习算法。AI一直以来在游戏方面表现得非常活跃，现在AI也能参与到一些实时的策略类游戏中了，例如星球大战这类游戏。这是对AI系统的一个很好的测试，因为接下来这些系统将会被用到现实世界中，这是一个非常令人激动的研究方向。</p>
-<h2 id="请把自己当做一名科学家"><a href="#请把自己当做一名科学家" class="headerlink" title="请把自己当做一名科学家"></a>请把自己当做一名科学家</h2><blockquote>
-<p>首批造飞机的工程师一定懂仿生学</p>
-</blockquote>
-<p>对于深度学习的研究者来说，你们很幸运处于最好的时代。我相信，几年之后，人工智能将会对交通、医疗、生物、科学等诸多领域产生革命性的改变，而你们将要参与其中。</p>
-<p>当代科学有三大未解问题：宇宙由什么组成、生命的本质是什么、人脑是如何工作的。我们正在从事的，正是这个探寻本质的过程。人工智能表面看起来是计算机科学相关的问题，但其实它关系到更多更广泛的科学研究。就像多年以前工程师们试图造飞机时一样，在一切都还未知的情况下，工程师需要考虑很多与工程制造看似不相关的问题，例如生物学的理论等。</p>
-<p>我们虽说是计算机科学研究人员，但由于人工智能涉及到的范围之广，研究者对其他相关领域的涉猎也非常重要。</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]<a href="http://geek.csdn.net/news/detail/188777" target="_blank" rel="external">CNN之父Yann LeCun：预测学习才是AI的未来</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20170323205555509&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在一票难求的Yann LeCun清华演讲当天上午，LeCun本人现身中国科学院自动化研究所，参与了一个“限制级”的高端私享会，CSDN记者整理了以下三条重要摘要。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;我对什么感兴趣&lt;/li&gt;
-&lt;li&gt;我怎样看Human-like learning&lt;/li&gt;
-&lt;li&gt;请把自己当做一名科学家&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="AI" scheme="http://aisee.me/categories/AI/"/>
-    
-    
-      <category term="Yann LeCun" scheme="http://aisee.me/tags/Yann-LeCun/"/>
-    
-      <category term="Prediction Learning" scheme="http://aisee.me/tags/Prediction-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The Legend of 1900</title>
-    <link href="http://aisee.me/2017/03/28/MyView/Movie/the-legend-of-1900/"/>
-    <id>http://aisee.me/2017/03/28/MyView/Movie/the-legend-of-1900/</id>
-    <published>2017-03-28T11:38:18.000Z</published>
-    <updated>2017-03-29T04:18:01.307Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p><strong>Make you cry，laugh  touching and thinking</strong><br>Crying for  his loneliness and ending of  the story.<br>Touching by the wonderful melody.<br>Laughing for those humor lines.<br>Deep thinking: In the big city, What’s your piano ? Where is your Virginia ?</p>
-</blockquote>
-<p><img src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p511146957.webp" alt=""></p>
-<a id="more"></a>
-<p>导演: 朱塞佩·托纳多雷<br>编剧: 亚利桑德罗·巴里克 / 朱塞佩·托纳多雷<br>主演: 蒂姆·罗斯 / 普路特·泰勒·文斯 / 比尔·努恩 / 梅兰尼·蒂埃里 / 阿尔贝托·巴斯克斯<br>类型: 剧情 / 音乐<br>制片国家/地区: 意大利<br>语言: 英语 / 法语<br>上映日期: 1998-10-28(意大利)<br>片长: 165分钟 / 120分钟(法国版) / 169分钟(加长版)<br>又名: 声光伴我飞(港) / 一九零零的传奇 / 1900海上钢琴师 / 传奇1900 / The Legend of 1900<br>IMDb链接: <a href="http://www.imdb.com/title/tt0120731" target="_blank" rel="external">tt0120731</a></p>
-<p>本片讲述了一个钢琴天才传奇的一生。</p>
-<p>　　1900年，Virginian号豪华邮轮上，一个孤儿被遗弃在头等舱，由船上的水手抚养长大，取名1900（蒂姆•罗斯 饰）。1900慢慢长大，显示出了无师自通的非凡钢琴天赋，在船上的乐队表演钢琴，每个听过他演奏的人，都被深深打动。爵士 乐鼻祖杰尼听说了1900的高超技艺，专门上船和他比赛，最后自叹弗如，黯然离去。<br>　　可惜，这一切的事情都发生在海上，1900从来不愿踏上陆地，直到有一天，他爱上了一个女孩，情愫在琴键上流淌。他会不会为了爱情，踏上陆地开始新的生活，用他的琴声惊艳世界？他将怎样谱写自己非凡的人生。 ©豆瓣</p>
-<h2 id="大人者，不失其赤子之心者也"><a href="#大人者，不失其赤子之心者也" class="headerlink" title="大人者，不失其赤子之心者也"></a><a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">大人者，不失其赤子之心者也</a></h2><p>市侩们总是抱着捧杀的态度来看待天才的，这也无足多怪。重要的是，天才如何看待自己的选择。</p>
-<p>许多人把实现自我价值同“功成名就”和“飞黄腾达”联系在一起，其中不乏某些天才。他们为此奋斗一生，也许终能得偿所愿。然而，功成名就之后呢？罗马帝国的战胜者凯旋时，一个奴隶会在他耳边轻轻私语：“一切荣华富贵，都是过眼烟云！”这道出了所有成功者风光无限的背后那不为人知的空虚——曾经追求的，固然已经得到，现在拥有的，也将归于破灭。其中的幸运者，还能像张翰那样“人生贵得适意尔，何能羁宦数千里以要名爵!”全身而退；不幸者，恐怕只能哀叹“吾欲与若复牵黄犬俱出上蔡东门逐狡兔，岂可得乎！”人生的荣辱，不过是一个围城。城里的人想冲出去，城外的人想冲进来。待到一切荣光都已失去，他们还会为当初的选择而感到骄傲，抑或后悔吗？</p>
-<blockquote>
-<p>“你知道琴上88个键一个不多一个也不少，琴键是有限的，但你是无限的，在这些键上所能创造出来的音乐，那才是无限的，这个我喜欢，也是我愿意做的，但是在舷梯上，摆在我面前的琴键有成千上万，永远也数不完的琴键”，“而在这个无限大的键盘上，你根本就无法去演奏”，“天呐，你没有看见那些街道吗？有上千条！你怎么去选择那一个？”。窝囊废似的一番话，彻底关死了1900通往成功与显赫的道路。似乎很难想象这样一个才华横溢的人会选择一条破船作为归宿，甚至宁愿最终被几吨炸药所终结。其实，1900是幸运的，他不入围城，自觉放弃未来的诱惑与烦嚣，换来对已经拥有的执着与坚守。也就无怨无悔，虽死何憾？老子云：知其雄 ，守其雌 ，为天下溪。为天下溪 常德不离 复归於婴儿。想必直到生命终结的那一刻，1900依然可以骄傲地宣称：“大人者，不失其赤子之心者也。”</p>
-</blockquote>
-<h2 id="俗人理解不了的幸福"><a href="#俗人理解不了的幸福" class="headerlink" title="俗人理解不了的幸福"></a><a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">俗人理解不了的幸福</a></h2><p>大概只有小号手是愿意聆听1900的内心而非琴声的人，他不理解他，但是他尊重他。他用尊重成全了1900完整的独立。我看到有人说如果他是那胖子他就会把1900敲昏然后拖下船。我想这样的想法也就注定他成不了那个胖子，成不了1900唯一的真正的朋友。</p>
-<p>如果我们较真一点，假设小号手真的把1900弄下船了，故事将怎样延伸？我们都知道，落魄的小号手没有能力去为朋友找一艘新的船，找88个琴键和尽头。1900将无可避免被磨去棱角和平庸，落入红尘变成一个凡人。</p>
-<p>活着，还是活得安心。这也是个问题。凡人的选择是无论如何先活下去再说，”活着”这件事情本身比什么都重要。而天才则把心灵的舒适看得更重，生死则次之。所以凡人可以忍辱，天才却情愿玉碎。每一种人都获得了他最看重的东西，说起来谁也不比谁亏。</p>
-<p>差异导致孤独。葆存了差异性的ET在承受异样目光的同时也承受着巨大的孤独，远超出凡人的孤独。凡人们如我们虽然也还都残留一些差异，但大致面貌八九不离十。我们失恋了后觉得痛苦比谁的都大，我们拥抱心爱的人自认比谁都幸福。但一个残酷的事实是：每个人的痛苦和幸福都没什么区别。我们在不断重复，千篇一律。</p>
-<p>我们丢了个性却换来了共鸣。我们借助艺术寻找通感，在人性中相交叉的部分，抹着眼泪互相慰藉，或者说，互相平衡（原来有人比我还惨啊，这下心里舒坦多了）。而被称为天才的人站在人群之外，忧郁地注视这群有些像他又不是他的物种。用他们ET的本能将那些交叉部分，提炼、放大、直抵内心。那些永远无法交叉的部分，则作为孤独的源头，令他们永远无法融入人群。他们只有躲在自己的轮船里，躲在自己的内心世界里，孤独地活着，然后死去。</p>
-<h2 id="我们无处安放的孤独"><a href="#我们无处安放的孤独" class="headerlink" title="我们无处安放的孤独"></a><a href="https://movie.douban.com/review/1316127/" target="_blank" rel="external">我们无处安放的孤独</a></h2><p>我一直觉得1900的一生是存在主义思想的体现，他藐视规则，藐视这个社会认可的规则，他害怕上岸其实是拒绝上岸，藐视上岸。他重自身的存在大于外界对自身的认可，他可以轻易打败爵士乐的开山祖师并对他表示鄙夷，他可以靠他的才华赚取无数的名利但是他拒绝音乐与自身的分离，他可以用音乐去探究所有人的心灵，可以在音乐里去旅行，可以寻觅到自己的爱情，但是他没有常人那样去要去追，他轻轻地将这些丢进了大海，他将迈向陆地的脚收回。</p>
-<p>在存在主义者看来，人生活在一个与自己对立的、失望的世界之中，人在世界上的地位是不确定的。绝对自由的人也是烦恼和无所依靠的孤独者。人虽然有选择的自由，但他面对的未来的生活却是混沌而没有目标的。他只是盲目地走向未来，他只知道人生的真实的终结就是死亡。死亡作为人生的最后归宿，对于个人的存在具有非常重要的意义。 所以存在主义者都是悲观者，在他们眼里，人生是一场悲剧。</p>
-<blockquote>
-<p>“城市那么大，看不到尽头，我停下来不是因为所见是因为所不见，是因为看不见的东西。连绵不绝的城市什么都有，就是没有尽头，我需要看见世界的尽头。上了岸，何去何从？爱一个女人，住一间屋，买一块地，望一个景，走一条死路，太多的选择我无所适从。漫漫无尽，思前想后你不怕精神崩溃？那样的日子怎样过？我无法遗弃这艘船，宁可遗弃自己的生命。”</p>
-</blockquote>
-<p>后来我才知道生活的大多数时候其实是孤独的，是我们心里无处安放的孤独，不被这个世界所认可的孤独。1900是孤独的，所以他选择一辈子不上岸，和那座海上浮城共生共死，而我们呢？我们没有一座属于自己的城，让我们来安放我们的孤独，让我们来逃避自己不喜欢的一切，所以我们比1900更孤独更可怜。</p>
-<h2 id="微尘世界，我们都已是最好的钢琴手。"><a href="#微尘世界，我们都已是最好的钢琴手。" class="headerlink" title="微尘世界，我们都已是最好的钢琴手。"></a><a href="https://movie.douban.com/review/1971957/" target="_blank" rel="external">微尘世界，我们都已是最好的钢琴手。</a></h2><p>1900代表着一种理想，代表着这个尘世中的多数人，注定不会付诸行动，却会始终心怀向往的理想。矗立在那里，自由，决绝，而悲伤。</p>
-<p>我们是生活在“外面的世界”里的人。这个世界的意义在于“传承”。就像一个游戏，每个人都是其中的玩家，然而获得的任务，却是如何使这个游戏永远存在。赡养父母，繁衍后代，诸多必须背负的责任令前行显得缓慢而艰难。然而我们的人生对于整个游戏而言，存在的时间或许只有一秒，或者更短。也唯有越短暂，这个游戏的运行时间才会越长，才有可能，“永不结束”。<br>这样一想会不会又心有不甘呢？辛苦奋斗的一生，其实不过一粒微尘，轻得仿佛随时都会消失。<br>然而在闭上眼的那一瞬还会不会含笑着想起，自己的孩子在不久前，正带领他们的孩子在绿草地上放起风筝；会不会含笑着想起，自己曾拥有良人在侧，从此不再无枝可依；会不会含笑着想起更久远的从前，父母曾令你无忧无虑，而那些萌生的小情绪，或许唯有感慨地大笑出声，无奈地摇摇头，道一句，那时真小。<br>会不会想起那些温暖的片段，想起自己曾经的付出与所得，带着回望的沧桑，感怀，和崭新的希望。<br>　　　　<br>我们为什么不会像1900一样，选择在漫天火光中永沉海底。这样壮烈，却获得永生的自由？</p>
-<blockquote>
-<p>因为，因为我们一直生活在这个“外面的世界”，清楚地看见它的混乱，却因为某一瞬间体验到的那些温情，那些无以伦比的美好，而心甘情愿地忍受着它所给予的伤害，努力弹奏出最华美的人生乐章。</p>
-</blockquote>
-<p>我们或许从来都不是天才，但是我们至少能做到勤恳、踏实。我们从坚硬和纯白开始，学会圆滑，学会世故，但内心深处，终究会一直记得，这一生所做的种种妥协，不过是为了在这个微尘世界，在这架上帝给予的钢琴上，创作出独属于自己的旋律与琴音。</p>
-<h2 id="我们都是宅男"><a href="#我们都是宅男" class="headerlink" title="我们都是宅男"></a><a href="https://movie.douban.com/review/1238757/" target="_blank" rel="external">我们都是宅男</a></h2><p>我们或许没有《海上钢琴师》中的1900看的更加清楚，他一生生活在邮轮上，他不愿离开一个让他感到安定自由、无忧无虑的空间，他永远没有踏上陆地，开启他的“远大前程”，在我们看来，他是自闭的，但是，他也是最清醒的，在最后无比绚烂的死亡中，他走的孤独而坦然。</p>
-<p>和1900对无限的恐惧相反，现代人正是在追逐着无限，我们贪大，贪全，贪广，房子要住大的，哪怕被每月的房贷压的生活质量下降；交际圈要交广些，哪怕每天疲于奔命于并不让自己愉快的应酬；旅游要走遍世界，哪怕其实只是疲惫的赶着在一个又一个景点的人群中拍照；炒股也有“不涨到翻倍不痛快”，哪怕每天被指数折磨的大喜大悲。还是看看这个“宅男”1900，反观自己，其实我们都是宅男，我们都是在自己营造的世界里生活，我们总有个无形或有形的圈子，但是似乎“开疆扩土”是人的本能，我们总是希望这个世界更大些，更广些。其实，并不是因为你走遍了这个城市的大街小巷，你的世界便扩展到了整个城市，哪怕真的这样，你也只是有了个城市这样一个更大的宅子。所以，1900不贪求太多，他一生都在一艘船上生活，这是有限的；但是他一生都有音乐相伴快乐的生活，这是无限的，快乐而自在的生活才是无限的。正如我们拼命拓展的交际网永远是有限的，但是和其中几个真正的知己在一起的快乐才是无限的。</p>
-<p>1900在邮轮上有自己的快乐，也伴随着一些悲伤，但是，快乐从来不是仅仅以空间的广度来评判的，就如你有一笔钱，可以买大房子简装修，也可以买小房子按照自己的意愿精装修（当然，精装修的意义不是买一堆豪华家俱的堆砌）。1900选择在一个相对狭小的世界里精心构筑他的世界，安逸而愉快。而在我们看来，这样的小小的快乐永远是“有病”的，就如我们如果看到一个人沉溺于数学而废寝忘食，会认为他是一个科学怪人，为他随时可能的英年早逝而悲哀；如果看到一个人长期执着的在农村搞什么社会试验而履受挫折，会认为他是一个理想主义者，为他干些“不实际”的事情而悲哀。诸如此类的事情还有很多，我们总是很自恋，常常看到他人沉浸于一些比较“独特”的事物而不问世事而感到“悲哀”，而对他们表示不解和“同情”，特别当这些人甚至为之折寿或是如1900那样“找死”后，更是如此。其实，生活方式本来没有定义，其实想想，1900在一艘船上就活的那么滋润，一些人一天到晚在屋子里闷头看武侠小说、漫画书就那么快活，我们这些号称精神健康，性格乐观的人却常常无名的不停唠叨“真郁闷”，这时的我们是不是会突然感到一丝沮丧，而对宅男们有些羡慕，同时意识到，其实我们都不过是在自己的世界里有喜有乐的宅男。</p>
-<h2 id="漂流在大海上的音乐浮城"><a href="#漂流在大海上的音乐浮城" class="headerlink" title="漂流在大海上的音乐浮城"></a><a href="https://movie.douban.com/review/1000830/" target="_blank" rel="external">漂流在大海上的音乐浮城</a></h2><p>对于1900而言，音乐，是用来娱乐自己的——他永远为了自己而弹奏着，永远不让自己的音乐和自己分离。</p>
-<p>1900的存在很特别么？未必，他的生命因为没有踏足过真实世界而显得尤为纯净和清澈，甚至纯净和清澈得不能够生活在这个真实的现实世界里。最适宜他生活的地方，是Virginian，一个漂浮在海上的乌托邦，一个能够让1900这样纯粹且单纯的音乐圣徒栖息的地方。他不能，也不应该走进我们的世界，我们的世界对于1900而言，太肮脏，太复杂了。</p>
-<p>究竟是1900把自己禁锢在狭小的空间里了，还是我们让陆地桎梏了我们自身？城市里有着成千的街道，我们迷失于其中，看不到天的尽头，而大海以其广博的胸襟，容忍并珍藏了1900这个特异的存在，也甚至是因为大海的广博，1900看到了世界的尽头。</p>
-<blockquote>
-<p>当影片行进到最后，Max问及1900为何不愿意离开Virginian的那一瞬间，我们就不难理解1900的答案了——琴键太大，音乐无从而生；城市太大，我们无从而生……</p>
-</blockquote>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]<a href="https://movie.douban.com/subject/1292001/" target="_blank" rel="external">海上钢琴师 La leggenda del pianista sull’oceano (1998)</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Make you cry，laugh  touching and thinking&lt;/strong&gt;&lt;br&gt;Crying for  his loneliness and ending of  the story.&lt;br&gt;Touching by the wonderful melody.&lt;br&gt;Laughing for those humor lines.&lt;br&gt;Deep thinking: In the big city, What’s your piano ? Where is your Virginia ?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p511146957.webp&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Personal" scheme="http://aisee.me/categories/Personal/"/>
-    
-    
-      <category term="English" scheme="http://aisee.me/tags/English/"/>
-    
-      <category term="Movie" scheme="http://aisee.me/tags/Movie/"/>
     
   </entry>
   
