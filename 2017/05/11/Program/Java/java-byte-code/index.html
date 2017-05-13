@@ -113,7 +113,7 @@ Java号称是一门“一次编译到处运行”的语言，但是我们对这�
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986868-b30b18f2a001dc13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986868-7924c9639c2bf501.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1986868-8b34fdb9961be90e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-05-10T23:52:19.616Z">
+<meta property="og:updated_time" content="2017-05-13T13:23:25.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Byte Code">
 <meta name="twitter:description" content="Source
@@ -498,6 +498,114 @@ Java号称是一门“一次编译到处运行”的语言，但是我们对这�
 <p><img src="http://upload-images.jianshu.io/upload_images/1986868-8b34fdb9961be90e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5 总结"></a>5 总结</h2><p>到此为止，讲解完成了class文件的解析，这样以后我们也能看懂字节码文件了。了解class文件的结构对后面进一步了解虚拟机执行引擎非常重要，所以这是基础并重要的一步。</p>
 <h2 id="6-工具"><a href="#6-工具" class="headerlink" title="6 工具"></a>6 工具</h2><p><a href="https://github.com/zxh0/classpy" target="_blank" rel="external">https://github.com/zxh0/classpy</a> 这是一款分析字节码文件的工具，挺好用。</p>
+<h1 id="Java类文件结构解析"><a href="#Java类文件结构解析" class="headerlink" title="Java类文件结构解析"></a><a href="https://tb-yangshu.github.io/2017/05/11/java_class_file_structure_analysis/" target="_blank" rel="external">Java类文件结构解析</a></h1><p>Class文件组成内容</p>
+<p>class文件是一组以8位字节为基础的二进制流，其与Java虚拟机指令集和符号表以及若干其他辅助信息相对应。</p>
+<p>该设计有如下优点：</p>
+<p>平台无关性，class文件可以运行在任意平台，无需考虑各个平台机器指令集不同的问题<br>语言无关性，不论何种语言，只要生成的class文件格式符合JVM虚拟机规范即可<br>注：如果遇到8位字节以上空间的数据，则会按照高位在前的方式分割成若干个8位字节进行存储（Big-Endian，具体是指最高位字节在地址最低位、最低位字节在地址最高位的顺序来存储数据，它是SPARC、PowerPC等处理器的默认多字节顺序，而x86等处理器则是使用了相反的 Little-Endian 顺序来存储数据）</p>
+<p>Class文件数据结构</p>
+<p>class文件采用了类似C语言结构体)的形式来存储数据，主要有以下几个特点：</p>
+<p>由无符号数和表两种数据结构组成<br>集合，用来描述同一类型但数量不定的多个数据，格式为 容量计数器 + 数据集合<br>没有任何分割符号（每个字节代表的含义，长度，先后顺序都不允许改变）<br>无符号数</p>
+<p>定义：class文件基本的数据类型，用来描述数字、索引引用、数量值或者按照UTF-8编码构成字符串值。</p>
+<p>表现形式：以u1、u2、u4、u8来分别代表1个字节、2个字节、4个字节、8个字节的无符号数。</p>
+<p>表</p>
+<p>组成：由无符号数或者其他表作为数据项构成的复合数据类型</p>
+<p>特征：以_info 结尾</p>
+<p>功能：用于描述有层次关系复合结构的数据</p>
+<p>整个class文件本质上就是一张表</p>
+<p>Class文件数据项</p>
+<p>按照class文件中字节码的顺序来介绍数据项。</p>
+<p>魔数</p>
+<p>class文件的头4个字节。</p>
+<p>功能：验证该文件是否能够被虚拟机接受</p>
+<p>扩展名可以被修改</p>
+<p>主次版本号</p>
+<p>魔数后4个字节，第5个和第6个字节是次版本号（Minor Version），第7个和第8个字节是主版本号（Major Version）。</p>
+<p>Java版本号从45开始，每个大版本发布版本号 +1</p>
+<p>虚拟机拒绝超过其版本号的Class文件</p>
+<p>常量池</p>
+<p>可以说常量池是class文件的资源仓库，主要存放两大类常量，字面量和符号引用。</p>
+<p>结构：容量计数器（u2类型） + 常量</p>
+<p>容量计数从1开始，目的是满足某些常量池的索引值的数据在特定情况下需要表达“不引用任何一个常量池”的含义。</p>
+<p>字面量（Literal）: 类似Java中的常量，如文本字符串，声明为final的常量值等。</p>
+<p>符号引用（Symbolic References）：包括类和接口的全限定名（Full Qualified Name）,字段的名称和描述符（Descriptor），方法的名称和描述符这三类常量。</p>
+<p>常量池中的表</p>
+<p>每一项常量都是一个表。到JDK1.7为止，共有14种常量表类型，表结构见文章末尾（常量池中的14种常量项的结构总表）。</p>
+<p>所有常量表开始第一位为u1类型的标志位，标识常量类型。</p>
+<p>以下是常量池的项目类型表</p>
+<p>类型    标志    描述<br>CONSTANT_Utf8_info    1    UTF-8编码的字符串<br>CONSTANT_Integer_info    3    整形字面量<br>CONSTANT_Float_info    4    浮点型字面量<br>CONSTANT_Long_info    5    长整形字面量<br>CONSTANT_Double_info    6    双精度浮点型字面量<br>CONSTANT_Class_info    7    类或接口的符号引用<br>CONSTANT_String_info    8    字符串类型字面量<br>CONSTANT_Fieldref_info    9    字段的符号引用<br>CONSTANT_Methodref_info    10    类中方法的符号引用<br>CONSTANT_InterfaceMethodref_info    11    接口中方法的符号引用<br>CONSTANT_NameAndType_info    12    字段或方法的部分符号引用<br>CONSTANT_MethodHandle_info    15    表示方法句柄<br>CONSTANT_MethodType_info    16    表示方法类型<br>CONSTANT_InvokeDynamic_info    18    表示一个动态方法调用点<br>每一种常量类型有着自己的结构，下面以CONSTANT_Class_info类型为例，它的结构如下表：</p>
+<p>类型    名称    数量<br>u1    tag    1<br>u2    name_index    1<br>上表中的tag用来区分常量类型，name_index是一个索引值，它指向常量池中一个CONSTANT_Utf8_info类型常量，代表了这个类（或者接口）的权限定名。</p>
+<p>访问标志</p>
+<p>常量池之后两个字节标识类的访问标志，用于识别一些类或者接口层次的访问信息。</p>
+<p>具体标志位及标志含义见下表</p>
+<p>标志名称    标志值    含义<br>ACC_PUBLIC    0x0001    是否为public类型<br>ACC_FINAL    0x0010    是否被声明为final，只有类可设置<br>ACC_SUPER    0x0020    是否允许使用invokespecial字节码指令的新语言，invokespecial指令的语意在JDK1.0.2发生过改变，为了区别这条指令使用哪种语意，JDK1.0.2之后编译出来的类的这个标志都必须为真<br>ACC_INTERFACE    0x0200    标识这是一个接口<br>ACC_ABSTRACT    0x0400    是否为abstract类型，对于接口或者抽象类来说，此标志值为真，其他类值为假<br>ACC_SYNTHETIC    0x1000    标识这个类并非由用户代码产生的<br>ACC_ANNOTATION    0x2000    标识这是一个注解<br>ACC_ENUM    0x4000    标识这是一个枚举<br>类索引、父类索引、接口索引</p>
+<p>类索引、父类索引</p>
+<p>类索引、父类索引都是一个u2类型的数据。它们会对应到常量池中的类描述符常量，通过常量中的索引值就可以找到类的全限定名字符串。</p>
+<p>接口索引</p>
+<p>接口索引集合是一组u2类型的数据的集合。第一项u2类型的数据为接口计数器，表示接口索引表的容量，如果该类没有实现任何接口，该计算器值为0。</p>
+<p>Class文件中由这三项数据来确定类的继承关系。</p>
+<p>字段表集合</p>
+<p>字段表用于描述接口或者类中声明的变量，包括类级变量以及实例级变量，但不包括在方法内部声明的局部变量。</p>
+<p>字段表使用标志位表示修饰符，引用常量池中的常量描述字段名及字段数据类型。</p>
+<p>字段表集合中不会列出从超类或者父接口中继承而来的字段，但可能列出原本Java代码之中不存在的字段，譬如，在内部类中为了保持对外部类的访问性，会自动添加指向外部类实例的字段。</p>
+<p>Java语言中字段是无法重载的，必须使用不同的名称，但是对于字节码来说，字段可以重名，只要字段的描述符不一致</p>
+<p>字段结构表</p>
+<p>类型    名称    数量<br>u2    access_flags    1<br>u2    name_index    1<br>u2    descriptor_index    1<br>u2    attributes_count    1<br>attribute_info    attributes    attributes_count<br>access_flags表示字段修饰符，与类的access_flags类似，并且都是一个u2的数据类型。</p>
+<p>标志位及含义见下表</p>
+<p>标志名称    标志值    含义<br>ACC_PUBLIC    0x0001    字段是否public<br>ACC_PRIVATE    0x0002    字段是否private<br>ACC_PROTECTED    0x0004    字段是否protected<br>ACC_STATIC    0x0008    字段是否static<br>ACC_FINAL    0x0010    字段是否final<br>ACC_VOLATILE    0x0040    字段是否volatile<br>ACC_TRANSIENT    0x0080    字段是否transient<br>ACC_SYNTHETIC    0x1000    字段是否由编译器自动产生的<br>ACC_ENUM    0x4000    字段是否enum<br>name_index和descriptor_index都是对常量池的引用。</p>
+<p>name_index代表字段的简单名称。</p>
+<p>descriptor_index代表字段和方法的描述符。</p>
+<p>全限定名</p>
+<p>将类全名中的“.”替换成“/”，并在最后添加一个“;”,表示全限定名结束</p>
+<p>简单名称</p>
+<p>没有类型和参数的方法或者字段名称</p>
+<p>描述符</p>
+<p>描述字段的数据类型、方法的参数列表（包括数量、类型以及顺序）和返回值</p>
+<p>描述符规则</p>
+<p>基本数据类型（byte、char、double、float、int、long、short、boolean）以及void都用一个大写字符来表示</p>
+<p>对象类型用字符L加对象的全限定名来表示</p>
+<p>数组类型，每一纬度使用一个前置的“[”字符来描述，如定义为”java.lang.String[][]”，将被表示为”[[Ljava/lang/String”，一个整形数组”int[]”将被表示为”[I”</p>
+<p>描述方法时，参数列表在前，返回值在后，且参数列表需要按顺序放在一组小括号之内</p>
+<p>​</p>
+<p>方法表集合</p>
+<p>Class文件存储格式中对方法的描述与对字段的描述几乎采用了完全一致的方式，只是在访问标志和属性表集合的可选项中有所区别。</p>
+<p>方法结构见下表</p>
+<p>类型    名称    数量<br>u2    access_flags    1<br>u2    name_index    1<br>u2    descriptor_index    1<br>u2    attributes_count    1<br>attribute_info    attributes    attributes_count<br>方法表的访问标志中没有ACC_VOLATILE 和 ACC_TRANSIENT 标志，增加了 ACC_SYNCHRONIZED、ACC_NATIVE、ACC_STRICTFP、ACC_ABSTRACT 标志。</p>
+<p>方法访问标志</p>
+<p>标志名称    标志值    含义<br>ACC_PUBLIC    0x0001    方法是否为public<br>ACC_PRIVATE    0x0002    方法是否为private<br>ACC_PROTECTED    0x0004    方法是否为protected<br>ACC_STATIC    0x0008    方法是否为static<br>ACC_FINAL    0x0010    方法是否为final<br>ACC_SYNCHRONIZED    0x0020    方法是否为synchronized<br>ACC_BRIDGE    0x0040    方法是否由编译器产生的桥接方法<br>ACC_VARARGS    0x0080    方法是否接受不定参数<br>ACC_NATIVE    0x0100    方法是否为native<br>ACC_ABSTRACT    0x0400    方法是否为abstract<br>ACC_STRICTFP    0x0800    方法是否为strictfp<br>ACC_SYNTHETIC    0x1000    方法是否是由编译器自动产生的<br>如果父类方法在子类中没有被重写，方法表集合中就不会出现来自父类的方法信息，但有可能出现由编译器自动添加的方法，如类构造器<clinit>方法和实例构造器<init>方法</init></clinit></p>
+<p>属性表集合</p>
+<p>Class文件、字段表、方法表都可以有自己的属性表集合，用于描述某些场景的专有信息。属性表集合的限制更宽松一些，不要求各个属性表具有严格顺序，并且只要不与已有属性名重复即可。</p>
+<p>Code属性</p>
+<p>用来存储Java程序方法体中的代码经过编译处理后生成的字节码指令。每个指令是一个u1类型的单字节，共可以表达256条指令。</p>
+<p>类型    名称    数量    含义<br>u2    attribute_name_index    1    指向常量池中一个CONSTANT_Utf8_info类型的常量，来表示属性名称<br>u4    attribute_length    1    属性值长度<br>u2    max_stack    1    表示操作栈深度的最大值<br>u2    max_locals    1    表示局部变量表所需的存储空间<br>u4    code_length    1    表示代码字节码长度<br>u1    code    code_length    用来存储字节码指令的一系列字节流<br>u2    exception_table_length    1    异常表长度<br>exception_info    exception_table    exception_table_length    Java代码的一部分，用来实现Java异常及finally处理机制（而不是简单的跳转命令）<br>u2    attributes_count    1    Code属性总数<br>attribute_info    attributes    attributes_count    Code属性<br>code_length类型为u4，理论上最大可以达到2^32-1，但虚拟机规定一个方法不能超过65535条字节码指令，否则Javac编译器会拒绝编译。</p>
+<p>Slot是虚拟机为局部变量分配内存所只用的最小单位，Javac编译器会根据变量的作用域来分配Slot给各个变量使用。</p>
+<p>Exception属性</p>
+<p>用于列举方法中可能抛出的受查异常（throws 关键字后面列举的异常）。</p>
+<p>LineNumberTable属性</p>
+<p>用于描述Java源代码行号与字节码行号之间的对应关系。</p>
+<p>可以在Javac中分别使用-g:none或-g:lines选项来取消或要求生成这项信息，如果选择不生成，在程序运行抛出异常时，堆栈中将不会显示出错的行号，在调试程序时也无法按照源码行设置断点</p>
+<p>LocalVariableTable属性</p>
+<p>用于描述栈帧中局部变量表中的变量与Java源码中定义的变量之间的关系。</p>
+<p>可以在Javac中分别使用-g:none或-g:vars选项来取消或要求生成这项信息,如果没有生成该属性，对程序运行没有影响，只是对代码编写带来较大不便，而且在调试期间无法根据参数名称从上下文中获得参数值</p>
+<p>SourceFile属性</p>
+<p>该属性是一个定长属性，用于记录生成这个Class文件的源码文件名称。</p>
+<p>类型    名称    数量<br>u2    attribute_name_index    1<br>u4    attribute_length    1<br>u2    sourcefile_index    1<br>可以使用Javac的-g:none或-g:source选项来关闭或要求生成这项信息，如果不生成这项属性，当抛出异常时堆栈中将不会显示出错误代码所属的文件名</p>
+<p>ConstantValue属性</p>
+<p>该属性为一个定长属性，用来通知虚拟机自动为静态变量赋值。</p>
+<p>InnnerClass属性</p>
+<p>用于记录内部类与宿主类之间的关联。</p>
+<p>Deprecated及Synthetic属性</p>
+<p>两者为标志类型的布尔属性，只存在是和否的区别，没有值的概念。</p>
+<p>Deprecated属性表示某个类、字段或方法不在被推荐使用</p>
+<p>Synthetic属性代表此字段或者方法并不是由Java源码直接产生的，而是由编译器自行添加的，比如Bridge Method</p>
+<p>StackMapTable属性</p>
+<p>Code属性中最多只能有一个StackMapTable属性，否则将抛出ClassFormatError异常</p>
+<p>Signature属性</p>
+<p>该属性是在JDK1.5发布后添加到Class文件规范的一个可选定长属性，可以出现在类、属性表和方法表的属性表中。</p>
+<p>BootstrapMethods属性</p>
+<p>该属性是在JDK1.7发布后增加到Class文件规范之中的一个复杂的变长属性，用于保存invokedynamic指令引用的引导方法限定符。</p>
+<p>常量池中的14种常量项的结构总表</p>
+<p>常量    项目    类型    描述<br>CONSTANT_Utf8_info    tag    u1    值为1<br>length    u2    UTF-8编码字符串占用的字节数<br>bytes    u1    长度为length的UTF-8编码的字符串<br>CONSTANT_Integer_info    tag    u1    值为3<br>bytes    u4    按照高位在前存储的int值<br>CONSTANT_Float_info    tag    u1    值为4<br>bytes    u4    按照高位在前存储的float值<br>CONSTANT_Long_info    tag    u1    值为5<br>bytes    u8    按照高位在前存储的long值<br>CONSTANT_Double_info    tag    u1    值为6<br>bytes    u8    按照高位在前存储的double值<br>CONSTANT_Class_info    tag    u1    值为7<br>index    u2    指向全限定名常量项的索引<br>CONSTANT_String_info    tag    u1    值为8<br>index    u2    指向字符串字面量的索引<br>CONSTANT_Fieldref_info    tag    u1    值为9<br>index    u2    指向声明字段的类或者接口描述符CONSTANT_Class_info的索引项<br>index    u2    指向字段描述符CONSTANT_NameAndType的索引项<br>CONSTANT_Methodref_info    tag    u1    值为10<br>index    u2    指向声明方法的类描述符CONSTANT_Class_info的索引项<br>index    u2    指向名称及类型描述符CONSTANT_NameAndType的索引项<br>CONSTANT_Interface_Methodref_info    tag    u1    值为11<br>index    u2    指向声明方法的接口描述符CONSTANT_Class_info的索引项<br>index    u2    指向名称及类描述符CONSTANT_NameAndType的索引项<br>CONSTANT_NameAndType_info    tag    u1    值为12<br>index    u2    指向该字段或方法名称常量的索引<br>index    u2    指向该字段或方法描述符常量项的索引<br>CONSTANT_MethodHandle_info    tag    u1    值为15<br>reference_kind    u1    值必须在1-9之间（包括1和9），它决定了方法句柄的类型。方法句柄类型的值表示方法句柄的字节码行为<br>reference_index    u2    值必须是对常量池的有效索引<br>CONSTANT_MethodType_info    tag    u1    值为16<br>descriptor_index    u2    值必须是对常量池的有效索引，常量池在该索引处的项必须是CONSTANT_Utf8_info结构，表示方法的描述符<br>CONSTANT_InvokeDynamic_info    tag    u1    值为18<br>bootstrap_method_attr_index    u2    值必须是对当前Class文件中引导方法表的bootstrap_methods[]数组的有效索引<br>name_and_type_index    u2    值必须是对当前常量池的有效索引，常量池在该索引出的项必须是CONSTANT_NameAndType_info结构，表示方法名和方法描述符<br>虚拟机规范预定义的属性</p>
+<p>属性名称    使用位置    含义<br>Code    方法表    Java代码编译成的字节码指令<br>ConstantValue    字段表    final关键字定义的常量值<br>Deprecated    类、方法表、字段表    被声明为deprecated的方法和字段<br>Exceptions    方法表    方法抛出的异常<br>EnclosingMethod    类文件    仅当一个类为局部类或者匿名类时才能拥有这个属性，这个属性用于标识这个类所在的外围方法<br>InnerClasses    类文件    内部类列表<br>LineNumberTable    Code属性    Java源码的行号与字节码指令的对应关系<br>LocalVariableTable    Code属性    方法的局部变量描述<br>StackMapTable    Code属性    JDK1.6中新增的属性，供新的类型检查验证器（Type Checker）检查和处理目标方法的局部变量和操作数栈所需要的类型是否匹配<br>Signature    类、方法表、字段表    JDK1.5中新增的属性，这个属性用于支持泛型情况下的方法签名，在Java语言中，任何类、接口，初始化方法或成员的泛型签名如果包含了类型变量（Type Variables）或参数化类型（Parameterized Type），则Signature 属性会为它记录泛型签名信息。由于Java的泛型采用擦除法实现，在为了避免类型信息被擦除后导致签名混乱，需要这个属性记录泛型中的相关信息<br>SourceFile    类文件    记录源文件名称<br>SourceDebugExtension    类文件    JDK1.6中新增的属性，SourceDebugExtension属性用于存储额外的调试信息。譬如在进行JSP文件调试时，无法通过Java堆栈来定位到JSP文件的行号，JSR-45规范为这些非Java语言编写，却需要编译成字节码并运行在Java虚拟机中的程序提供了一个进行调试的标准机制，使用SourceDebugExtension属性就可以用于存储这个标准所新加入的调试信息<br>Synthetic    类、方法表、字段表    标识方法或字段为编译器自动生成的<br>LocalvariableTypeTable    类    JDK1.5中新增的属性，它使用特征签名代替描述符，是为了引入泛型语法之后能描述泛型参数化类型而添加<br>RuntimeVisibleAnnotations    类、方法表、字段表    JDK1.5中新增的属性，为动态注解提供支持。RuntimeVisibleAnnotations属性用于指明哪些注解是运行时（实际上运行时就是进行反射调用）可见的<br>RuntimeInvisibleAnnotations    类、方法表、字段表    JDK1.5中新增的属性，作用与RuntimeVisibleAnnotations属性作用刚好相反，用于指明那些注解是运行时不可见的<br>RuntimeVisibeParameterAnnotations    方法表    JDK1.5中新增的属性，作用与RuntimeVisibleAnnotations属性类似，只不过作用对象为方法参数<br>RuntimeInvisibeParameterAnnotations    方法表    JDK1.5中新增的属性，作用与RuntimeInvisibleAnnotations属性类似，只不过作用对象为方法参数<br>AnnotationDefault    方法表    JDK1.5中新增的属性，用于记录注解类元素的默认值<br>BootstrapMethods    类文件    JDK1.7中新增的属性，用于保存invokedynamic指令引用的引导方法限定符</p>
 
       
     </div>
@@ -668,7 +776,7 @@ Java号称是一门“一次编译到处运行”的语言，但是我们对这�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">305</span>
+                <span class="site-state-item-count">307</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -809,7 +917,7 @@ Java号称是一门“一次编译到处运行”的语言，但是我们对这�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-首先我们来写一个java源文件"><span class="nav-number">1.</span> <span class="nav-text">1 首先我们来写一个java源文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接下来我们用javac命令或者ide工具将该java源文件编译成java字节码文件。"><span class="nav-number">2.</span> <span class="nav-text">接下来我们用javac命令或者ide工具将该java源文件编译成java字节码文件。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-魔数"><span class="nav-number">2.1.</span> <span class="nav-text">3.1 魔数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-版本号"><span class="nav-number">2.2.</span> <span class="nav-text">3.2 版本号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-常量池"><span class="nav-number">2.3.</span> <span class="nav-text">3.3 常量池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-Access-Flag-访问标志"><span class="nav-number">2.4.</span> <span class="nav-text">3.4 Access_Flag 访问标志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-类索引"><span class="nav-number">2.5.</span> <span class="nav-text">3.5 类索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6父类索引"><span class="nav-number">2.6.</span> <span class="nav-text">3.6父类索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-接口索引"><span class="nav-number">2.7.</span> <span class="nav-text">3.7 接口索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-字段表集合"><span class="nav-number">2.8.</span> <span class="nav-text">3.8 字段表集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-9-方法"><span class="nav-number">2.9.</span> <span class="nav-text">3.9 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第1个方法："><span class="nav-number">2.9.1.</span> <span class="nav-text">第1个方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第2个方法："><span class="nav-number">2.9.2.</span> <span class="nav-text">第2个方法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-10-Attribute"><span class="nav-number">2.10.</span> <span class="nav-text">3.10 Attribute</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-另话"><span class="nav-number">3.</span> <span class="nav-text">4 另话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-总结"><span class="nav-number">4.</span> <span class="nav-text">5 总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-工具"><span class="nav-number">5.</span> <span class="nav-text">6 工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-首先我们来写一个java源文件"><span class="nav-number">1.</span> <span class="nav-text">1 首先我们来写一个java源文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接下来我们用javac命令或者ide工具将该java源文件编译成java字节码文件。"><span class="nav-number">2.</span> <span class="nav-text">接下来我们用javac命令或者ide工具将该java源文件编译成java字节码文件。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-魔数"><span class="nav-number">2.1.</span> <span class="nav-text">3.1 魔数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-版本号"><span class="nav-number">2.2.</span> <span class="nav-text">3.2 版本号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-常量池"><span class="nav-number">2.3.</span> <span class="nav-text">3.3 常量池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-Access-Flag-访问标志"><span class="nav-number">2.4.</span> <span class="nav-text">3.4 Access_Flag 访问标志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-类索引"><span class="nav-number">2.5.</span> <span class="nav-text">3.5 类索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6父类索引"><span class="nav-number">2.6.</span> <span class="nav-text">3.6父类索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-接口索引"><span class="nav-number">2.7.</span> <span class="nav-text">3.7 接口索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-8-字段表集合"><span class="nav-number">2.8.</span> <span class="nav-text">3.8 字段表集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-9-方法"><span class="nav-number">2.9.</span> <span class="nav-text">3.9 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第1个方法："><span class="nav-number">2.9.1.</span> <span class="nav-text">第1个方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第2个方法："><span class="nav-number">2.9.2.</span> <span class="nav-text">第2个方法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-10-Attribute"><span class="nav-number">2.10.</span> <span class="nav-text">3.10 Attribute</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-另话"><span class="nav-number">3.</span> <span class="nav-text">4 另话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-总结"><span class="nav-number">4.</span> <span class="nav-text">5 总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-工具"><span class="nav-number">5.</span> <span class="nav-text">6 工具</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java类文件结构解析"><span class="nav-number"></span> <span class="nav-text">Java类文件结构解析</span></a></div>
             
 
           </div>

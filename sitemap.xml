@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://aisee.me/2017/05/13/Meta%20Skill/meta-skill-core/</loc>
+    
+    <lastmod>2017-05-13T15:23:56.215Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/05/07/Program/Tools/Computer/next-generation-of-os/</loc>
+    
+    <lastmod>2017-05-13T13:47:17.942Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/05/11/Program/Java/java-byte-code/</loc>
+    
+    <lastmod>2017-05-13T13:23:25.082Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/05/13/MyView/Share/technology-entrepreneurship-summary/</loc>
+    
+    <lastmod>2017-05-13T00:41:49.033Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/05/12/MyView/Movie/12-angry-men/</loc>
+    
+    <lastmod>2017-05-12T14:39:21.102Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-retrieve/</loc>
+    
+    <lastmod>2017-05-12T14:39:15.045Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://aisee.me/2017/05/11/Program/Java/java-jvm/</loc>
     
     <lastmod>2017-05-11T00:09:07.710Z</lastmod>
@@ -12,13 +54,6 @@
     <loc>http://aisee.me/2017/05/11/Program/Java/java-class-loader/</loc>
     
     <lastmod>2017-05-11T00:01:45.389Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://aisee.me/2017/05/11/Program/Java/java-byte-code/</loc>
-    
-    <lastmod>2017-05-10T23:52:19.616Z</lastmod>
     
   </url>
   
@@ -40,13 +75,6 @@
     <loc>http://aisee.me/2017/05/09/Program/Tools/Computer/basic-serials-of-computer/</loc>
     
     <lastmod>2017-05-09T14:28:13.663Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://aisee.me/2017/05/07/Program/Tools/Computer/next-generation-of-os/</loc>
-    
-    <lastmod>2017-05-07T12:19:55.176Z</lastmod>
     
   </url>
   
@@ -89,13 +117,6 @@
     <loc>http://aisee.me/2017/05/03/AI/Business/use-ai/</loc>
     
     <lastmod>2017-05-03T06:11:11.996Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://aisee.me/2017/05/02/Meta%20Skill/meta-skill-core/</loc>
-    
-    <lastmod>2017-05-03T05:54:23.364Z</lastmod>
     
   </url>
   
@@ -341,13 +362,6 @@
     <loc>http://aisee.me/2017/04/11/Program/Android/MyApp/search-my-blog/</loc>
     
     <lastmod>2017-04-10T22:57:47.916Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-retrieve/</loc>
-    
-    <lastmod>2017-04-10T22:18:13.246Z</lastmod>
     
   </url>
   
@@ -1759,7 +1773,7 @@
   </url>
   
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
@@ -1773,7 +1787,7 @@
   </url>
   
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     

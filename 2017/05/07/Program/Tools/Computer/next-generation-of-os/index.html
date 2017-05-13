@@ -103,7 +103,7 @@ Source
 <meta property="og:image" content="http://img.blog.csdn.net/20170504112655524">
 <meta property="og:image" content="http://img.blog.csdn.net/20170504112626933">
 <meta property="og:image" content="http://img.blog.csdn.net/20170504112607836">
-<meta property="og:updated_time" content="2017-05-07T12:19:55.176Z">
+<meta property="og:updated_time" content="2017-05-13T13:47:17.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="What's the Next Generation of OS">
 <meta name="twitter:description" content="（移动互联网架构和下一代网络生态圈，资料来源《弘则研究：人工智能下的物联网生态圈 从移动互联网到物联网》）
@@ -484,6 +484,23 @@ Source
 <p>IoTPaaS平台Xively分析曾预估，截至2020年，全球将有400-800亿设备接入IoT，其中政府设备至少占77亿，总金额约21亿美元，预计投资回报为47亿美元，人均拥有的IoT设备将有10台。Gartner的市场调研报告认为，全球每秒接入IoT的设备将达63台，也就是每天550万台，预计2015-2020年间IoT市场规模将达千亿量级。</p>
 <p>IoT产业目前处在发展初期，碎片化特点必将导致IoT时代对软件的多样性需求。一种操作系统和开发工具很难支持IoT系统中的所有设备，短时间内，IoT操作系统很难形成像智能手机中Android和iOS两家独占市场的局面。以安全性和集成化为代表的IoT新需要给传统嵌入式软件带来挑战，也给以互联网企业为代表的产业新人带来机遇。</p>
 <p>本文作者：吴俊宇，已获授权，版权归原作者所有，未经作者同意，请勿转载。<br>责编：屠敏，关注物联网、移动开发领域，寻求报道或投稿请发邮件tumin@csdn.net，或微信tm_forever_miss。</p>
+<h1 id="如何看待-Google-最新的系统-Fuchsia？"><a href="#如何看待-Google-最新的系统-Fuchsia？" class="headerlink" title="如何看待 Google 最新的系统 Fuchsia？"></a><a href="https://juejin.im/post/591517ed2f301e006b8d8e6b?utm_source=gold_browser_extension" target="_blank" rel="external">如何看待 Google 最新的系统 Fuchsia？</a></h1><p>想必大家都知道了，前几天 Google 曝光了新 OS Fuchsia 的部分信息与 UI，已经很多人在后台给我留言，让我说说看法，那么趁我还没去美国，就给大家写篇文章普及下，顺便说下我个人对 Fuchsia 系统的期待与看法。</p>
+<p>Google 在开发一个全新的系统其实一直都不是秘密了，只不过 Google 一直没有透露出更多的消息，只透露说 Fuchsia 是完全区别于 Android 和 Chrome OS 的全新系统，我们都知道，开发一款操作系统可不是那么容易的事，虽然这对 Google 来说不是啥难事，但是毕竟费时费力，而且还很可能最后徒劳无功，然而 Google 还是这么做了，我们不妨先大胆猜测下为什么 Google 要做这么一件有魄力的事呢？</p>
+<p>Google 一直有个软肋，就是在 PC 市场的表现，虽然移动时代让人们可以随时随地上网，但是手机毕竟取代不了电脑，而 Google 也意识到 PC 市场的重要性，所以也推出了 Chrome OS 上网本，但是结果已经很明确，表现不如预期，很少有人会买账，毫无疑问，PC 市场几乎被微软和苹果牢牢把控，但是我相信 Google 肯定不会这么轻易放弃的。</p>
+<p>再看表现抢眼的 Android 领域，毫无疑问，Android 至今在移动操作系统的市场份额占据绝对领先地位，但是 Android 仍然存在不少问题，碎片化问题严重，在平板以及大屏幕设备上表现糟糕，以及被很多用户诟病的卡顿与体验问题，虽然卡顿的本质原因是很多无良应用的后台互相唤醒，无节制的权限、内存使用等，但是这也反应了 Android 的底层架构设计是有瑕疵的，这些众所周知的问题 Google 不可能不知道，但是不是 Google 不想解决，而是解决起来很困难。</p>
+<p>而似乎现在看起来 Google 推出的 Fuchsia 系统就承载了以上使命，但是 Google 是不是这样想的，我们不得而知，我们先来看下这次 Google 曝光的 Fuchsia 的一些信息吧：</p>
+<p><strong>没有基于 Linux 内核，而是基于一种叫 Magenta 的内核，是一种轻量级的内核，适用于嵌入式系统</strong>；</p>
+<p>UI 层使用 <strong>Flutter 框架</strong>，这是 Google 内部的一种用 Dart 语言实现的移动应用框架，并且支持 Android、iOS，可以写 native app；</p>
+<p>这两个信息足以让我们有更多的想象力，首先 Fuchsia 抛弃了 Linux 内核再次说明了 Google 的魄力，要知道 Android、Chrome OS 都是基于 Linux 内核的，但是你们知道  <strong>Linux 内核有哪些问题么？</strong></p>
+<p>首先不得不承认基于 Linux 内核的一些操作系统如 Ubuntu、Debian、CentOS 等都是比较优秀的 Linux 发行版本，但是这些系统多用于 <strong>服务器</strong> 上，而 Linux 在桌面系统，尤其在 User Interface 上表现不是那么惊艳。</p>
+<p>其次，<strong>Linux 内核是基于 GPL 协议的</strong>，GPL 协议意味着对源码的任何修改与引用都必须开源，Android 底层采用的 Linux 内核，所以 Android 是开源的，而硬件厂商给 Android 开发的驱动是不可能开源的，当初 Google 为了解决这个问题，找到了一个解决办法，<strong>底层对 Linux 内核做了修改，但是把驱动程序放在了 Linux 内核上层跑，而且特意搞了一个隔离层叫 HAL，即 Hardware Abstraction Layer，硬件抽象层，所以，Android 系统架构中的 HAL 层本质是为了规避 GPL 协议而生的，这事在当时还蛮有争议的，但是不得不说，Google 的这种思路彻底解决了问题，既保护了「不想开源」的硬件厂商的利益，又解决了「软硬件兼容」，既利用出色而现成的 Linux Kernel 又防止了被 Linux Kernel 传染上 GPL 的后遗症。</strong></p>
+<p>那么这次 Fuchsia 系统彻底抛弃了 Linux Kernel 这个决定，不得不联想到之前 Linux Kernel 的劣势以及潜在的一些风险，不过能真正的完全抛弃当前市场上很出色而成熟的 Linux Kernel 是非常有魄力的决定，不过魄力也是建立在实力的基础之上，可能这个决定 Google 也想了很久。</p>
+<p>但是你们以为这就够了么？</p>
+<p>Fuchsia 系统采用了 Magenta 内核，这种内核多用在嵌入式系统上，而且支持高性能的图形渲染，Hack News 上有人分析该特性非常适应于 VR/AR 领域，我们都知道 Google 在去年的 IO 大会上就推出了 Daydream VR 平台，以及 Project Tango AR 平台，已经确定发力于 VR/AR 领域，就在昨天，Google 还收购了虚拟现实游戏公司 Owlchemy Labs，这些动作与隐藏的特性很可能说明 Fuchsia 会应用在更广的领域，这么一看 <strong>Fuchsia 会是未来移动端、PC、AR/VR、物联网等全平台统一、通用的操作系统，Google 的野心有点大哦，未来有更大的想象力了，很可能这是一款面向未来的操作系统。</strong></p>
+<p>很多 Android 开发者们肯定关心 Fuchsia 会放弃 Android 平台，对 Android 开发产生一些打击，其实真的想多了，要知道 Android 现在市场的份额以及对 Google 的地位是非常大的（说个题外话，这次 Googe IO 的一些会场，Android 相关的会场都非常火爆，很多会场的座位都提前预定完了），Google 现在很多东西都要依赖 Android 平台来进行推进，这么大一块蛋糕，Google 怎么可能轻易就放弃呢，何况 Fuchsia 系统的两位贡献者 Travis Geiselbrecht 和 Brian Swetland 是 Android 系统的主力开发者，退一万步，Google 即使真的要完全抛弃 Android，也会有一个切实可行的逐步过渡方案的。</p>
+<p>不过，Google 的野心是蛮大的，这让我们对这个系统有更多的期待，但是这是一个长远的计划，不确定性因素也非常大，能不能被开发者与用户接受还不知道呢，而且按照 Google 的惯例，说不定哪个时候就放弃了，可能一飞冲天，也很可能默默无闻直至消亡。</p>
+<p>最后，就我个人来说是蛮希望这个系统，就如它的中文名字「紫红」一样，可以大红大紫，毕竟看起来，也许这真的就是未来的操作系统。</p>
+<p>本文原创发布于微信公众号 AndroidDeveloper，欢迎关注获取更多原创分享。</p>
 
       
     </div>
@@ -654,7 +671,7 @@ Source
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">305</span>
+                <span class="site-state-item-count">307</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -795,7 +812,7 @@ Source
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#手机为基础的IoT布局已经失效"><span class="nav-number">1.</span> <span class="nav-text">手机为基础的IoT布局已经失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IoT操作系统不是趋势而是现实"><span class="nav-number">2.</span> <span class="nav-text">IoT操作系统不是趋势而是现实</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下代操作系统将是人工智能与IoT应用的统一"><span class="nav-number">3.</span> <span class="nav-text">下代操作系统将是人工智能与IoT应用的统一</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#手机为基础的IoT布局已经失效"><span class="nav-number">1.</span> <span class="nav-text">手机为基础的IoT布局已经失效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IoT操作系统不是趋势而是现实"><span class="nav-number">2.</span> <span class="nav-text">IoT操作系统不是趋势而是现实</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下代操作系统将是人工智能与IoT应用的统一"><span class="nav-number">3.</span> <span class="nav-text">下代操作系统将是人工智能与IoT应用的统一</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何看待-Google-最新的系统-Fuchsia？"><span class="nav-number"></span> <span class="nav-text">如何看待 Google 最新的系统 Fuchsia？</span></a></div>
             
 
           </div>

@@ -4,6 +4,136 @@
 
     
   <url>
+    <loc>http://aisee.me/2017/05/13/Meta%20Skill/meta-skill-core/</loc>
+    <lastmod>2017-05-13T15:23:56.215Z</lastmod>
+    <data>
+        <display>
+        <title>Meta Skill——Core</title>
+        <pubTime>2017-05-13T14:47:06.000Z</pubTime>
+        
+        <tag>Meta Skill</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/05/07/Program/Tools/Computer/next-generation-of-os/</loc>
+    <lastmod>2017-05-13T13:47:17.942Z</lastmod>
+    <data>
+        <display>
+        <title>What's the Next Generation of OS</title>
+        <pubTime>2017-05-07T12:12:06.000Z</pubTime>
+        
+        <tag>OS</tag>
+         
+        <tag>IoT</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/05/11/Program/Java/java-byte-code/</loc>
+    <lastmod>2017-05-13T13:23:25.082Z</lastmod>
+    <data>
+        <display>
+        <title>Java Byte Code</title>
+        <pubTime>2017-05-10T23:01:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Byte Code</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://aisee.me/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/05/13/MyView/Share/technology-entrepreneurship-summary/</loc>
+    <lastmod>2017-05-13T00:41:49.033Z</lastmod>
+    <data>
+        <display>
+        <title>Technology Entrepreneurship Summary</title>
+        <pubTime>2017-05-13T00:37:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/05/12/MyView/Movie/12-angry-men/</loc>
+    <lastmod>2017-05-12T14:39:21.102Z</lastmod>
+    <data>
+        <display>
+        <title>12 Angry Men</title>
+        <pubTime>2017-05-12T11:55:06.000Z</pubTime>
+        
+        <tag>English</tag>
+         
+        <tag>Movie</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-retrieve/</loc>
+    <lastmod>2017-05-12T14:39:15.045Z</lastmod>
+    <data>
+        <display>
+        <title>Meta Skill——Retrieve</title>
+        <pubTime>2017-04-05T12:55:06.000Z</pubTime>
+        
+        <tag>Meta Skill</tag>
+         
+        <tag>Google</tag>
+         
+        <tag>English</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://aisee.me/2017/05/11/Program/Java/java-jvm/</loc>
     <lastmod>2017-05-11T00:09:07.710Z</lastmod>
     <data>
@@ -36,28 +166,6 @@
         <tag>Basic Concept</tag>
          
         <tag>Class Loader</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java" url="http://aisee.me/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/05/11/Program/Java/java-byte-code/</loc>
-    <lastmod>2017-05-10T23:52:19.616Z</lastmod>
-    <data>
-        <display>
-        <title>Java Byte Code</title>
-        <pubTime>2017-05-10T23:01:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Byte Code</tag>
          
          
            
@@ -120,28 +228,6 @@
         <tag>Basic Concept</tag>
          
         <tag>Computer</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/05/07/Program/Tools/Computer/next-generation-of-os/</loc>
-    <lastmod>2017-05-07T12:19:55.176Z</lastmod>
-    <data>
-        <display>
-        <title>What's the Next Generation of OS</title>
-        <pubTime>2017-05-07T12:12:06.000Z</pubTime>
-        
-        <tag>OS</tag>
-         
-        <tag>IoT</tag>
          
          
            
@@ -273,26 +359,6 @@
            
              
               <breadCrumb title="AI" url="http://aisee.me/categories/AI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/05/02/Meta%20Skill/meta-skill-core/</loc>
-    <lastmod>2017-05-03T05:54:23.364Z</lastmod>
-    <data>
-        <display>
-        <title>Meta Skill——Core</title>
-        <pubTime>2017-05-02T14:47:06.000Z</pubTime>
-        
-        <tag>Meta Skill</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
           
         </display>
     </data>
@@ -1063,30 +1129,6 @@
            
              
               <breadCrumb title="Android" url="http://aisee.me/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/04/05/Meta%20Skill/meta-skill-retrieve/</loc>
-    <lastmod>2017-04-10T22:18:13.246Z</lastmod>
-    <data>
-        <display>
-        <title>Meta Skill——Retrieve</title>
-        <pubTime>2017-04-05T12:55:06.000Z</pubTime>
-        
-        <tag>Meta Skill</tag>
-         
-        <tag>Google</tag>
-         
-        <tag>English</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
           
         </display>
     </data>
@@ -5523,18 +5565,18 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Base of Multimedia——Video</title>
-        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
+        <title>File System of Linux</title>
+        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Multimedia</tag>
+        <tag>Linux</tag>
          
-        <tag>Video</tag>
+        <tag>File System</tag>
          
          
            
@@ -5571,18 +5613,18 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>File System of Linux</title>
-        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
+        <title>Base of Multimedia——Video</title>
+        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Linux</tag>
+        <tag>Multimedia</tag>
          
-        <tag>File System</tag>
+        <tag>Video</tag>
          
          
            
