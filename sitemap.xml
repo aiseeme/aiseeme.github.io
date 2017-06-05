@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://aisee.me/2017/06/05/MyView/Journey/view-of-journey/</loc>
+    
+    <lastmod>2017-06-05T12:30:23.583Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/06/05/MyView/Journey/views-of-beauty/</loc>
+    
+    <lastmod>2017-06-05T12:29:39.440Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/06/05/English/love-sentences/</loc>
+    
+    <lastmod>2017-06-05T10:59:36.108Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/06/05/MyView/Movie/the-great-wall./</loc>
+    
+    <lastmod>2017-06-05T10:47:16.760Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://aisee.me/2017/05/15/MyView/Movie/xXx-Return-of-Xander-Cage/</loc>
     
     <lastmod>2017-05-15T14:49:15.447Z</lastmod>
@@ -275,13 +303,6 @@
   </url>
   
   <url>
-    <loc>http://aisee.me/2017/02/22/English/love-sentences/</loc>
-    
-    <lastmod>2017-04-19T05:34:58.162Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://aisee.me/2017/04/16/Program/Android/MyApp/what-a-beautiful-day/</loc>
     
     <lastmod>2017-04-16T14:58:03.053Z</lastmod>
@@ -411,13 +432,6 @@
     <loc>http://aisee.me/2017/04/09/MyView/to-be-the-master-of-yourself/</loc>
     
     <lastmod>2017-04-09T11:47:43.960Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://aisee.me/2017/01/01/MyView/Journey/view-of-journey/</loc>
-    
-    <lastmod>2017-04-09T11:29:11.607Z</lastmod>
     
   </url>
   
@@ -1759,13 +1773,6 @@
   </url>
   
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
-    
-    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
     
     <lastmod>2017-03-27T08:55:53.034Z</lastmod>
@@ -1773,9 +1780,9 @@
   </url>
   
   <url>
-    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
     
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
     
   </url>
   
@@ -1787,14 +1794,21 @@
   </url>
   
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     

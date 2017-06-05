@@ -4,6 +4,88 @@
 
     
   <url>
+    <loc>http://aisee.me/2017/06/05/MyView/Journey/view-of-journey/</loc>
+    <lastmod>2017-06-05T12:30:23.583Z</lastmod>
+    <data>
+        <display>
+        <title>Beautiful Views</title>
+        <pubTime>2017-06-05T12:28:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/06/05/MyView/Journey/views-of-beauty/</loc>
+    <lastmod>2017-06-05T12:29:39.440Z</lastmod>
+    <data>
+        <display>
+        <title>Beautiful Models</title>
+        <pubTime>2017-06-05T11:28:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/06/05/English/love-sentences/</loc>
+    <lastmod>2017-06-05T10:59:36.108Z</lastmod>
+    <data>
+        <display>
+        <title>Love English Sentences</title>
+        <pubTime>2017-06-05T10:59:05.000Z</pubTime>
+        
+        <tag>Sentence</tag>
+         
+         
+           
+             
+              <breadCrumb title="English" url="http://aisee.me/categories/English/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/06/05/MyView/Movie/the-great-wall./</loc>
+    <lastmod>2017-06-05T10:47:16.760Z</lastmod>
+    <data>
+        <display>
+        <title>The Great Wall</title>
+        <pubTime>2017-06-05T10:42:06.000Z</pubTime>
+        
+        <tag>English</tag>
+         
+        <tag>Movie</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://aisee.me/2017/05/15/MyView/Movie/xXx-Return-of-Xander-Cage/</loc>
     <lastmod>2017-05-15T14:49:15.447Z</lastmod>
     <data>
@@ -844,26 +926,6 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/22/English/love-sentences/</loc>
-    <lastmod>2017-04-19T05:34:58.162Z</lastmod>
-    <data>
-        <display>
-        <title>Love English Sentences</title>
-        <pubTime>2017-02-22T00:13:05.000Z</pubTime>
-        
-        <tag>Sentence</tag>
-         
-         
-           
-             
-              <breadCrumb title="English" url="http://aisee.me/categories/English/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://aisee.me/2017/04/16/Program/Android/MyApp/what-a-beautiful-day/</loc>
     <lastmod>2017-04-16T14:58:03.053Z</lastmod>
     <data>
@@ -1274,26 +1336,6 @@
         <display>
         <title>Become Your Master of Life</title>
         <pubTime>2017-04-09T11:26:06.000Z</pubTime>
-        
-        <tag>Share</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/01/01/MyView/Journey/view-of-journey/</loc>
-    <lastmod>2017-04-09T11:29:11.607Z</lastmod>
-    <data>
-        <display>
-        <title>Beautiful Views</title>
-        <pubTime>2017-01-01T12:28:06.000Z</pubTime>
         
         <tag>Share</tag>
          
@@ -5519,6 +5561,30 @@
 
     
   <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
+    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
+    <data>
+        <display>
+        <title>Base of Multimedia——Picture</title>
+        <pubTime>2017-02-27T03:04:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Picture</tag>
+         
+        <tag>Multimedia</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
     <lastmod>2017-03-27T08:55:53.034Z</lastmod>
     <data>
@@ -5541,18 +5607,42 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
-    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Base of Multimedia——Picture</title>
-        <pubTime>2017-02-27T03:04:06.000Z</pubTime>
+        <title>Base of Multimedia——Color</title>
+        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Picture</tag>
+        <tag>Multimedia</tag>
+         
+        <tag>Color</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>Base of Multimedia——Video</title>
+        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
          
         <tag>Multimedia</tag>
+         
+        <tag>Video</tag>
          
          
            
@@ -5587,30 +5677,6 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>Base of Multimedia——Color</title>
-        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Multimedia</tag>
-         
-        <tag>Color</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -5623,30 +5689,6 @@
         <tag>Linux</tag>
          
         <tag>File System</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>Base of Multimedia——Video</title>
-        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Multimedia</tag>
-         
-        <tag>Video</tag>
          
          
            
