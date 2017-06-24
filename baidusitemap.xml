@@ -5,21 +5,20 @@
     
   <url>
     <loc>http://aisee.me/2017/06/23/Program/Android/android-design-pattern/</loc>
-    <lastmod>2017-06-23T12:15:08.583Z</lastmod>
+    <lastmod>2017-06-24T04:12:32.577Z</lastmod>
     <data>
         <display>
         <title>Android 源码设计模式解析与实战</title>
         <pubTime>2017-06-23T12:11:06.000Z</pubTime>
         
-        <tag>Basic Concept</tag>
+        <tag>Android</tag>
+         
+        <tag>Design Pattern</tag>
          
          
            
              
-              <breadCrumb title="Android" url="http://aisee.me/categories/Android/"/>
-          
-             
-              <breadCrumb title="Design Pattern" url="http://aisee.me/categories/Android/Design-Pattern/"/>
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
           
         </display>
     </data>
@@ -28,7 +27,7 @@
     
   <url>
     <loc>http://aisee.me/2017/06/23/Program/Java/Code-The%20Hidden%20Language%20of%20Computer%20Hardware%20and%20Software/</loc>
-    <lastmod>2017-06-23T11:40:57.396Z</lastmod>
+    <lastmod>2017-06-24T04:12:30.182Z</lastmod>
     <data>
         <display>
         <title>Code-The Hidden Language of Computer Hardware and Software</title>
@@ -39,10 +38,7 @@
          
            
              
-              <breadCrumb title="Computer" url="http://aisee.me/categories/Computer/"/>
-          
-             
-              <breadCrumb title="Programming" url="http://aisee.me/categories/Computer/Programming/"/>
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
           
         </display>
     </data>
