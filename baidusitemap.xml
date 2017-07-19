@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/07/06/English/love-sentences/</loc>
-    <lastmod>2017-07-06T14:30:53.938Z</lastmod>
+    <loc>http://aisee.me/2017/07/19/English/love-sentences/</loc>
+    <lastmod>2017-07-19T11:43:49.425Z</lastmod>
     <data>
         <display>
         <title>Love English Sentences</title>
-        <pubTime>2017-07-06T14:30:05.000Z</pubTime>
+        <pubTime>2017-07-19T14:30:05.000Z</pubTime>
         
         <tag>Sentence</tag>
          
@@ -17,6 +17,88 @@
            
              
               <breadCrumb title="English" url="http://aisee.me/categories/English/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/07/19/MyView/Music/Wiz%20Khalifa%20-%20See%20You%20Again/</loc>
+    <lastmod>2017-07-19T11:40:16.567Z</lastmod>
+    <data>
+        <display>
+        <title>Wiz Khalifa - See You Again</title>
+        <pubTime>2017-07-19T11:42:06.000Z</pubTime>
+        
+        <tag>English</tag>
+         
+        <tag>Music</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/07/19/MyView/Share/knowledge%20cannot%20cure%20bad%20taste/</loc>
+    <lastmod>2017-07-19T11:21:32.894Z</lastmod>
+    <data>
+        <display>
+        <title>Knowledge can't cure bad taste</title>
+        <pubTime>2017-07-19T11:20:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/07/19/MyView/Movie/Munna%20Bhai%20M.B.B.S/</loc>
+    <lastmod>2017-07-19T10:35:52.027Z</lastmod>
+    <data>
+        <display>
+        <title>Munna Bhai M.B.B.S(2003)</title>
+        <pubTime>2017-07-19T10:10:06.000Z</pubTime>
+        
+        <tag>Movie</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/07/19/AI/Business/intelligent%20era/</loc>
+    <lastmod>2017-07-19T10:35:30.926Z</lastmod>
+    <data>
+        <display>
+        <title>智能时代</title>
+        <pubTime>2017-07-19T10:35:06.000Z</pubTime>
+        
+        <tag>Big Data</tag>
+         
+         
+           
+             
+              <breadCrumb title="AI" url="http://aisee.me/categories/AI/"/>
           
         </display>
     </data>
@@ -5706,6 +5788,30 @@
 
     
   <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
+    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
+    <data>
+        <display>
+        <title>Base of Multimedia——Picture</title>
+        <pubTime>2017-02-27T03:04:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Picture</tag>
+         
+        <tag>Multimedia</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
     <lastmod>2017-03-27T08:55:53.034Z</lastmod>
     <data>
@@ -5728,18 +5834,18 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
-    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Base of Multimedia——Picture</title>
-        <pubTime>2017-02-27T03:04:06.000Z</pubTime>
+        <title>Base of Multimedia——Video</title>
+        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Picture</tag>
-         
         <tag>Multimedia</tag>
+         
+        <tag>Video</tag>
          
          
            
@@ -5810,30 +5916,6 @@
         <tag>Linux</tag>
          
         <tag>File System</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>Base of Multimedia——Video</title>
-        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Multimedia</tag>
-         
-        <tag>Video</tag>
          
          
            
