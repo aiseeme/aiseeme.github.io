@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>http://aisee.me/2017/07/24/MyView/Music/Skyfall/</loc>
+    <lastmod>2017-07-24T11:01:06.391Z</lastmod>
+    <data>
+        <display>
+        <title>Skyfall</title>
+        <pubTime>2017-07-24T10:41:06.000Z</pubTime>
+        
+        <tag>Music</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/07/24/MyView/Health/body%20building/</loc>
+    <lastmod>2017-07-24T10:32:59.233Z</lastmod>
+    <data>
+        <display>
+        <title>Body Building</title>
+        <pubTime>2017-07-24T09:14:06.000Z</pubTime>
+        
+        <tag>Health</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/07/24/MyView/Share/speech%20of%20Sir%20Ka-shing%20Li%20and%20moyan/</loc>
+    <lastmod>2017-07-24T10:19:07.821Z</lastmod>
+    <data>
+        <display>
+        <title>The philosophy of life</title>
+        <pubTime>2017-07-24T10:12:06.000Z</pubTime>
+        
+        <tag>Reading</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://aisee.me/2017/07/19/English/love-sentences/</loc>
     <lastmod>2017-07-24T09:51:21.597Z</lastmod>
     <data>
@@ -32,26 +92,6 @@
         <pubTime>2017-07-24T09:42:06.000Z</pubTime>
         
         <tag>Reading</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://aisee.me/2017/07/24/MyView/Health/body%20building/</loc>
-    <lastmod>2017-07-24T09:35:37.247Z</lastmod>
-    <data>
-        <display>
-        <title>Body Building</title>
-        <pubTime>2017-07-24T09:14:06.000Z</pubTime>
-        
-        <tag>Health</tag>
          
          
            
@@ -5828,28 +5868,6 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
-    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
-    <data>
-        <display>
-        <title>Anatomy of GPU</title>
-        <pubTime>2017-02-27T00:58:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>GPU</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
     <lastmod>2017-03-27T08:55:53.034Z</lastmod>
     <data>
@@ -5862,6 +5880,28 @@
         <tag>Picture</tag>
          
         <tag>Multimedia</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
+    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
+    <data>
+        <display>
+        <title>Anatomy of GPU</title>
+        <pubTime>2017-02-27T00:58:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>GPU</tag>
          
          
            
@@ -5920,30 +5960,6 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>File System of Linux</title>
-        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Linux</tag>
-         
-        <tag>File System</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -5956,6 +5972,30 @@
         <tag>Multimedia</tag>
          
         <tag>Video</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>File System of Linux</title>
+        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Linux</tag>
+         
+        <tag>File System</tag>
          
          
            
