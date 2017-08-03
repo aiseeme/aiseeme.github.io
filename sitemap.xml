@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://aisee.me/2017/08/04/MyView/Movie/my%20brilliant%20brain/</loc>
+    
+    <lastmod>2017-08-03T23:49:58.424Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://aisee.me/2017/07/30/MyView/Book/I%20understand%20your%20anxiety%20of%20knowledge/</loc>
     
     <lastmod>2017-07-30T12:28:38.390Z</lastmod>
@@ -1934,6 +1941,13 @@
   </url>
   
   <url>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
@@ -1949,13 +1963,6 @@
   
   <url>
     <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
-    
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
