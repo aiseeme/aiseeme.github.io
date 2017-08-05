@@ -4,6 +4,106 @@
 
     
   <url>
+    <loc>http://aisee.me/2017/08/05/MyView/Movie/fast%20and%20furious/</loc>
+    <lastmod>2017-08-05T09:59:35.891Z</lastmod>
+    <data>
+        <display>
+        <title>The Fate of the Furious</title>
+        <pubTime>2017-08-05T09:30:18.000Z</pubTime>
+        
+        <tag>Movie</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/08/05/AI/Basic%20Concept/a%20brief%20of%20neural%20network/</loc>
+    <lastmod>2017-08-05T08:47:12.888Z</lastmod>
+    <data>
+        <display>
+        <title>A Brief Introduction of Neural Network</title>
+        <pubTime>2017-08-05T08:37:06.000Z</pubTime>
+        
+        <tag>Neural Network</tag>
+         
+         
+           
+             
+              <breadCrumb title="AI" url="http://aisee.me/categories/AI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/08/05/Program/Tools/Computer/IaaS%EF%BC%8CPaaS%EF%BC%8CSaaS/</loc>
+    <lastmod>2017-08-05T08:33:51.201Z</lastmod>
+    <data>
+        <display>
+        <title>The difference between IaaS，PaaS and SaaS</title>
+        <pubTime>2017-08-05T08:28:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/08/05/MyView/Share/the%20survivor%20in%20the%20future%20world/</loc>
+    <lastmod>2017-08-05T08:23:54.292Z</lastmod>
+    <data>
+        <display>
+        <title>The Survivor in the future world</title>
+        <pubTime>2017-08-05T06:36:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/08/05/MyView/Share/The%20Fringe%20Benefits%20of%20Failure,%20and%20the%20Importance%20of%20Imagination/</loc>
+    <lastmod>2017-08-05T06:24:29.573Z</lastmod>
+    <data>
+        <display>
+        <title>The Fringe Benefits of Failure, and the Importance of Imagination</title>
+        <pubTime>2017-08-05T05:56:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://aisee.me/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://aisee.me/2017/08/04/MyView/Movie/my%20brilliant%20brain/</loc>
     <lastmod>2017-08-03T23:49:58.424Z</lastmod>
     <data>
@@ -6036,30 +6136,6 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>Base of Multimedia——Color</title>
-        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Multimedia</tag>
-         
-        <tag>Color</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -6077,6 +6153,28 @@
            
              
               <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>AI vs Machine Learning</title>
+        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="AI" url="http://aisee.me/categories/AI/"/>
           
         </display>
     </data>
@@ -6108,21 +6206,23 @@
 
     
   <url>
-    <loc>http://aisee.me/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    <loc>http://aisee.me/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>AI vs Machine Learning</title>
-        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
+        <title>Base of Multimedia——Color</title>
+        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Machine Learning</tag>
+        <tag>Multimedia</tag>
+         
+        <tag>Color</tag>
          
          
            
              
-              <breadCrumb title="AI" url="http://aisee.me/categories/AI/"/>
+              <breadCrumb title="Program" url="http://aisee.me/categories/Program/"/>
           
         </display>
     </data>
