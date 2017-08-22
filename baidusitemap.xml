@@ -4,8 +4,68 @@
 
     
   <url>
+    <loc>http://deepcreator.com/2017/08/22/Meta%20Skill/Beyond%20Feelings%E2%80%94%E2%80%94A%20Guide%20to%20Critical%20Thinking/</loc>
+    <lastmod>2017-08-22T03:46:12.753Z</lastmod>
+    <data>
+        <display>
+        <title>Beyond Feelings——A Guide to Critical Thinking</title>
+        <pubTime>2017-08-22T03:33:18.000Z</pubTime>
+        
+        <tag>Original</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/08/22/Meta%20Skill/Books%20of%20Albert%20Ellis/</loc>
+    <lastmod>2017-08-22T03:29:54.835Z</lastmod>
+    <data>
+        <display>
+        <title>Books of Albert Ellis</title>
+        <pubTime>2017-08-22T02:31:18.000Z</pubTime>
+        
+        <tag>Original</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/08/18/Meta%20Skill/what%20controls%20you/</loc>
+    <lastmod>2017-08-22T03:22:23.779Z</lastmod>
+    <data>
+        <display>
+        <title>What Controls You</title>
+        <pubTime>2017-08-18T09:21:14.000Z</pubTime>
+        
+        <tag>Original</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://deepcreator.com/2017/08/20/MyView/Share/iGet/gudian-super-individual/</loc>
-    <lastmod>2017-08-21T09:54:46.193Z</lastmod>
+    <lastmod>2017-08-22T02:29:42.867Z</lastmod>
     <data>
         <display>
         <title>To Be a Super Individual</title>
@@ -31,7 +91,7 @@
     
   <url>
     <loc>http://deepcreator.com/2017/08/21/Meta%20Skill/Original%20Thinking/</loc>
-    <lastmod>2017-08-21T09:17:26.298Z</lastmod>
+    <lastmod>2017-08-22T02:21:10.119Z</lastmod>
     <data>
         <display>
         <title>Original Thinking</title>
@@ -182,26 +242,6 @@
         <display>
         <title>The Missing Piece</title>
         <pubTime>2017-08-21T01:57:10.000Z</pubTime>
-        
-        <tag>Original</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2017/08/18/Meta%20Skill/what%20controls%20you/</loc>
-    <lastmod>2017-08-20T23:24:46.267Z</lastmod>
-    <data>
-        <display>
-        <title>What Controls You</title>
-        <pubTime>2017-08-18T09:21:14.000Z</pubTime>
         
         <tag>Original</tag>
          
@@ -6540,6 +6580,30 @@
 
     
   <url>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
+    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
+    <data>
+        <display>
+        <title>Base of Multimedia——Picture</title>
+        <pubTime>2017-02-27T03:04:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Picture</tag>
+         
+        <tag>Multimedia</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://deepcreator.com/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
     <lastmod>2017-03-27T08:55:53.034Z</lastmod>
     <data>
@@ -6562,18 +6626,42 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
-    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Base of Multimedia——Picture</title>
-        <pubTime>2017-02-27T03:04:06.000Z</pubTime>
+        <title>Base of Multimedia——Color</title>
+        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Picture</tag>
-         
         <tag>Multimedia</tag>
+         
+        <tag>Color</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://deepcreator.com/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>File System of Linux</title>
+        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Linux</tag>
+         
+        <tag>File System</tag>
          
          
            
@@ -6608,30 +6696,6 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>File System of Linux</title>
-        <pubTime>2017-02-27T01:14:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Linux</tag>
-         
-        <tag>File System</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://deepcreator.com/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -6644,30 +6708,6 @@
         <tag>Multimedia</tag>
          
         <tag>Video</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://deepcreator.com/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>Base of Multimedia——Color</title>
-        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Multimedia</tag>
-         
-        <tag>Color</tag>
          
          
            
