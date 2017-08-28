@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://deepcreator.com/2017/08/28/MyView/Music/Here%20i%20am/</loc>
+    
+    <lastmod>2017-08-28T14:21:03.683Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://deepcreator.com/2017/08/23/MyView/Music/How%20to%20appreciate%20a%20Song/</loc>
     
-    <lastmod>2017-08-27T13:55:16.728Z</lastmod>
+    <lastmod>2017-08-28T14:15:12.574Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/08/28/MyView/Music/Everything%20i%20do%20i%20do%20it%20for%20you/</loc>
+    
+    <lastmod>2017-08-28T14:15:00.987Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/08/23/Meta%20Skill/Goal/</loc>
+    
+    <lastmod>2017-08-28T13:45:36.826Z</lastmod>
     
   </url>
   
@@ -68,13 +89,6 @@
     <loc>http://deepcreator.com/2017/08/27/MyView/Health/Sleep/</loc>
     
     <lastmod>2017-08-27T11:56:03.416Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/08/23/Meta%20Skill/Goal/</loc>
-    
-    <lastmod>2017-08-27T06:36:31.747Z</lastmod>
     
   </url>
   
@@ -2361,13 +2375,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
-    
-    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
     
     <lastmod>2017-03-27T08:55:53.034Z</lastmod>
@@ -2375,7 +2382,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
+    
+    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
@@ -2389,14 +2403,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    <loc>http://deepcreator.com/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
