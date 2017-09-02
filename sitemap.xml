@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://deepcreator.com/2017/09/02/MyView/Music/Beautiful%20day/</loc>
+    
+    <lastmod>2017-09-02T12:14:38.350Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/09/02/MyView/Music/Bye%20bye%20bye/</loc>
+    
+    <lastmod>2017-09-02T12:06:20.235Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/08/23/Meta%20Skill/Goal/</loc>
+    
+    <lastmod>2017-09-02T11:14:25.593Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/09/02/MyView/Health/body%20building/</loc>
+    
+    <lastmod>2017-09-02T10:56:26.432Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/08/20/Alisa/My%20Education%20of%20Alisa/</loc>
+    
+    <lastmod>2017-09-02T10:33:59.577Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/08/20/Alisa/Surprise%20moments%20from%20Alisa/</loc>
+    
+    <lastmod>2017-09-02T10:31:34.437Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://deepcreator.com/2017/09/02/AI/Business/wujun-intelligence%20times/</loc>
     
     <lastmod>2017-09-02T07:56:36.510Z</lastmod>
@@ -23,13 +65,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/07/24/MyView/Health/body%20building/</loc>
-    
-    <lastmod>2017-09-02T00:15:47.058Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/09/01/MyView/Share/iGet/gudian-transition/</loc>
     
     <lastmod>2017-09-02T00:12:54.331Z</lastmod>
@@ -40,13 +75,6 @@
     <loc>http://deepcreator.com/2017/09/02/MyView/Share/iGet/ZhengWei-how%20to%20make%20your%20voice%20to%20be%20charmful/</loc>
     
     <lastmod>2017-09-01T23:43:35.190Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/08/23/Meta%20Skill/Goal/</loc>
-    
-    <lastmod>2017-09-01T23:41:50.330Z</lastmod>
     
   </url>
   
@@ -152,13 +180,6 @@
     <loc>http://deepcreator.com/2017/08/18/Meta%20Skill/How%20to%20improve%20daily/</loc>
     
     <lastmod>2017-09-01T06:25:43.537Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/08/20/Alisa/Surprise%20moments%20from%20Alisa/</loc>
-    
-    <lastmod>2017-09-01T06:23:48.919Z</lastmod>
     
   </url>
   
@@ -397,13 +418,6 @@
     <loc>http://deepcreator.com/2017/08/25/MyView/Book/Influence/</loc>
     
     <lastmod>2017-08-25T01:52:19.873Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/08/20/Alisa/My%20Education%20of%20Alisa/</loc>
-    
-    <lastmod>2017-08-25T01:49:18.679Z</lastmod>
     
   </url>
   
@@ -2515,13 +2529,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
-    
-    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-anatomy-of-GPU/</loc>
     
     <lastmod>2017-03-27T08:55:53.034Z</lastmod>
@@ -2529,14 +2536,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-picture/</loc>
     
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <lastmod>2017-03-27T08:55:53.034Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
@@ -2550,7 +2557,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
