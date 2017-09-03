@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://deepcreator.com/2017/09/03/Career/Be%20yourself/</loc>
+    <lastmod>2017-09-03T13:14:37.411Z</lastmod>
+    <data>
+        <display>
+        <title>Be yourself</title>
+        <pubTime>2017-09-03T11:51:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://deepcreator.com/2017/09/03/Meta%20Skill/Usual%20mind/</loc>
-    <lastmod>2017-09-03T09:44:22.603Z</lastmod>
+    <lastmod>2017-09-03T13:14:27.883Z</lastmod>
     <data>
         <display>
         <title>Usual Mind</title>
@@ -17,6 +37,66 @@
            
              
               <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/08/18/Meta%20Skill/How%20to%20live%20a%20good%20life/</loc>
+    <lastmod>2017-09-03T13:06:55.933Z</lastmod>
+    <data>
+        <display>
+        <title>How to Live a Good Life</title>
+        <pubTime>2017-08-18T08:21:10.000Z</pubTime>
+        
+        <tag>Original</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/09/03/MyView/Movie/Watch%20movies%20for%20the%20sake%20of%20struggle/</loc>
+    <lastmod>2017-09-03T12:55:38.553Z</lastmod>
+    <data>
+        <display>
+        <title>Watch movies for the sake of struggle</title>
+        <pubTime>2017-09-03T11:22:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/02/22/English/my-translations/</loc>
+    <lastmod>2017-09-03T11:30:10.784Z</lastmod>
+    <data>
+        <display>
+        <title>Quotes by Famous People</title>
+        <pubTime>2017-02-22T00:31:05.000Z</pubTime>
+        
+        <tag>Quote</tag>
+         
+         
+           
+             
+              <breadCrumb title="English" url="http://deepcreator.com/categories/English/"/>
           
         </display>
     </data>
@@ -112,26 +192,6 @@
         <pubTime>2017-09-03T00:54:05.000Z</pubTime>
         
         <tag>Sentence</tag>
-         
-         
-           
-             
-              <breadCrumb title="English" url="http://deepcreator.com/categories/English/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2017/02/22/English/my-translations/</loc>
-    <lastmod>2017-09-03T00:51:37.572Z</lastmod>
-    <data>
-        <display>
-        <title>Quotes by Famous People</title>
-        <pubTime>2017-02-22T00:31:05.000Z</pubTime>
-        
-        <tag>Quote</tag>
          
          
            
@@ -1252,26 +1312,6 @@
         <tag>Share</tag>
          
         <tag>iGet</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2017/08/18/Meta%20Skill/How%20to%20live%20a%20good%20life/</loc>
-    <lastmod>2017-08-26T08:21:25.377Z</lastmod>
-    <data>
-        <display>
-        <title>How to Live a Good Life</title>
-        <pubTime>2017-08-18T08:21:10.000Z</pubTime>
-        
-        <tag>Original</tag>
          
          
            
@@ -7902,18 +7942,18 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Base of Multimedia——Color</title>
-        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
+        <title>Base of Multimedia——Video</title>
+        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
         <tag>Multimedia</tag>
          
-        <tag>Color</tag>
+        <tag>Video</tag>
          
          
            
@@ -7948,18 +7988,18 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Base of Multimedia——Video</title>
-        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
+        <title>Base of Multimedia——Color</title>
+        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
         <tag>Multimedia</tag>
          
-        <tag>Video</tag>
+        <tag>Color</tag>
          
          
            
