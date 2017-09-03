@@ -5,11 +5,71 @@
     
   <url>
     <loc>http://deepcreator.com/2017/09/03/Meta%20Skill/Usual%20mind/</loc>
-    <lastmod>2017-09-03T06:15:32.618Z</lastmod>
+    <lastmod>2017-09-03T09:44:22.603Z</lastmod>
     <data>
         <display>
         <title>Usual Mind</title>
         <pubTime>2017-09-03T05:21:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/09/03/MyView/Book/Common%20Sense/</loc>
+    <lastmod>2017-09-03T09:44:18.969Z</lastmod>
+    <data>
+        <display>
+        <title>Common Sense</title>
+        <pubTime>2017-09-03T09:06:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/08/23/MyView/Book/How%20to%20read%20a%20book/</loc>
+    <lastmod>2017-09-03T09:25:05.158Z</lastmod>
+    <data>
+        <display>
+        <title>How to read a book</title>
+        <pubTime>2017-08-23T10:14:14.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/09/03/Career/Management/</loc>
+    <lastmod>2017-09-03T09:22:02.095Z</lastmod>
+    <data>
+        <display>
+        <title>Management Knowledges and Skills</title>
+        <pubTime>2017-09-03T09:13:06.000Z</pubTime>
         
         <tag>Share</tag>
          
@@ -1392,26 +1452,6 @@
         <display>
         <title>Delicious Food</title>
         <pubTime>2017-08-23T12:32:06.000Z</pubTime>
-        
-        <tag>Share</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2017/08/23/MyView/Book/How%20to%20read%20a%20book/</loc>
-    <lastmod>2017-08-23T10:40:48.635Z</lastmod>
-    <data>
-        <display>
-        <title>How to read a book</title>
-        <pubTime>2017-08-23T10:14:14.000Z</pubTime>
         
         <tag>Share</tag>
          
@@ -7838,28 +7878,6 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>AI vs Machine Learning</title>
-        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Machine Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="AI" url="http://deepcreator.com/categories/AI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://deepcreator.com/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -7884,30 +7902,6 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>Base of Multimedia——Video</title>
-        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Multimedia</tag>
-         
-        <tag>Video</tag>
-         
-         
-           
-             
-              <breadCrumb title="Program" url="http://deepcreator.com/categories/Program/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -7920,6 +7914,52 @@
         <tag>Multimedia</tag>
          
         <tag>Color</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://deepcreator.com/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>AI vs Machine Learning</title>
+        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Machine Learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="AI" url="http://deepcreator.com/categories/AI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>Base of Multimedia——Video</title>
+        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Multimedia</tag>
+         
+        <tag>Video</tag>
          
          
            
