@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://deepcreator.com/2017/09/03/Meta%20Skill/Usual%20mind/</loc>
+    <lastmod>2017-09-03T06:15:32.618Z</lastmod>
+    <data>
+        <display>
+        <title>Usual Mind</title>
+        <pubTime>2017-09-03T05:21:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/09/03/MyView/Movie/Design%20Of%20Death/</loc>
+    <lastmod>2017-09-03T05:08:28.578Z</lastmod>
+    <data>
+        <display>
+        <title>Design Of Death</title>
+        <pubTime>2017-09-03T04:27:06.000Z</pubTime>
+        
+        <tag>Movie</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://deepcreator.com/2017/09/03/English/love-sentences/</loc>
     <lastmod>2017-09-03T00:54:08.590Z</lastmod>
     <data>
@@ -7798,23 +7838,21 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
+    <loc>http://deepcreator.com/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Base of Multimedia——Video</title>
-        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
+        <title>AI vs Machine Learning</title>
+        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Multimedia</tag>
-         
-        <tag>Video</tag>
+        <tag>Machine Learning</tag>
          
          
            
              
-              <breadCrumb title="Program" url="http://deepcreator.com/categories/Program/"/>
+              <breadCrumb title="AI" url="http://deepcreator.com/categories/AI/"/>
           
         </display>
     </data>
@@ -7846,21 +7884,23 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>AI vs Machine Learning</title>
-        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
+        <title>Base of Multimedia——Video</title>
+        <pubTime>2017-02-27T03:19:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Machine Learning</tag>
+        <tag>Multimedia</tag>
+         
+        <tag>Video</tag>
          
          
            
              
-              <breadCrumb title="AI" url="http://deepcreator.com/categories/AI/"/>
+              <breadCrumb title="Program" url="http://deepcreator.com/categories/Program/"/>
           
         </display>
     </data>
