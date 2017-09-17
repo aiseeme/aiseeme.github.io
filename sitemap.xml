@@ -2,37 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://deepcreator.com/2017/09/17/Music/Bose%20QuietComfort%2035/</loc>
+    <loc>http://deepcreator.com/2017/09/16/Music/Bose%20QuietComfort%2035/</loc>
     
-    <lastmod>2017-09-16T15:14:01.811Z</lastmod>
+    <lastmod>2017-09-17T02:07:02.768Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/09/17/Journey/ShenZhen's%20Mountain/</loc>
+    
+    <lastmod>2017-09-17T02:06:07.211Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://deepcreator.com/2017/02/22/English/my-translations/</loc>
     
-    <lastmod>2017-09-16T01:35:52.674Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/12/31/Critical%20Thinking/</loc>
-    
-    <lastmod>2017-09-16T01:33:24.743Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/12/31/Be%20yourself/</loc>
-    
-    <lastmod>2017-09-16T00:41:49.878Z</lastmod>
+    <lastmod>2017-09-17T01:43:45.693Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://deepcreator.com/2017/09/13/Health/Tough%20Workout/</loc>
     
-    <lastmod>2017-09-16T00:38:27.492Z</lastmod>
+    <lastmod>2017-09-17T01:22:26.025Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/09/07/Meta%20Skill/Goal/</loc>
+    
+    <lastmod>2017-09-17T01:17:23.583Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/12/31/Be%20yourself/</loc>
+    
+    <lastmod>2017-09-17T01:17:10.349Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/12/31/Critical%20Thinking/</loc>
+    
+    <lastmod>2017-09-17T00:42:36.717Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/09/13/Journey/Views%20of%20Shenzhen%20and%20HongKong/</loc>
+    
+    <lastmod>2017-09-16T15:29:23.868Z</lastmod>
     
   </url>
   
@@ -128,13 +149,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/09/07/Meta%20Skill/Goal/</loc>
-    
-    <lastmod>2017-09-15T05:15:14.267Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/08/20/Alisa/My%20Education%20of%20Alisa/</loc>
     
     <lastmod>2017-09-15T02:27:53.563Z</lastmod>
@@ -170,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/09/13/Journey/Views%20of%20Shenzhen%20and%20HongKong/</loc>
+    <loc>http://deepcreator.com/2017/08/23/Journey/Delicious%20Food/</loc>
     
     <lastmod>2017-09-15T00:57:35.798Z</lastmod>
     
@@ -178,13 +192,6 @@
   
   <url>
     <loc>http://deepcreator.com/2017/01/02/Journey/pictures-of-year-wikipedia/</loc>
-    
-    <lastmod>2017-09-15T00:57:35.798Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/08/23/Journey/Delicious%20Food/</loc>
     
     <lastmod>2017-09-15T00:57:35.798Z</lastmod>
     
@@ -212,14 +219,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/01/05/IPR/my-article-for-newspaper/</loc>
+    <loc>http://deepcreator.com/2017/03/25/IPR/api-patent-query/</loc>
     
     <lastmod>2017-09-15T00:56:26.310Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/03/25/IPR/api-patent-query/</loc>
+    <loc>http://deepcreator.com/2017/01/05/IPR/my-article-for-newspaper/</loc>
     
     <lastmod>2017-09-15T00:56:26.310Z</lastmod>
     
@@ -240,14 +247,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/04/30/AI/TensorFlow/tutorial-build-your-first-tensorflow-android-app/</loc>
+    <loc>http://deepcreator.com/2017/05/03/AI/TensorFlow/tensorflow-android/</loc>
     
     <lastmod>2017-09-15T00:51:58.102Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/05/03/AI/TensorFlow/tensorflow-android/</loc>
+    <loc>http://deepcreator.com/2017/04/30/AI/TensorFlow/tutorial-build-your-first-tensorflow-android-app/</loc>
     
     <lastmod>2017-09-15T00:51:58.102Z</lastmod>
     
@@ -275,14 +282,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/17/AI/TensorFlow/tensorflow-android-camera-demo/</loc>
+    <loc>http://deepcreator.com/2017/02/13/AI/TensorFlow/simple-understanding-of-tensorflow/</loc>
     
     <lastmod>2017-09-15T00:51:57.994Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/13/AI/TensorFlow/simple-understanding-of-tensorflow/</loc>
+    <loc>http://deepcreator.com/2017/02/17/AI/TensorFlow/tensorflow-android-camera-demo/</loc>
     
     <lastmod>2017-09-15T00:51:57.994Z</lastmod>
     
@@ -324,13 +331,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/18/AI/TensorFlow/changes-by-google-tensorflow/</loc>
-    
-    <lastmod>2017-09-15T00:51:57.802Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/02/17/AI/TensorFlow/applications-of-tensorflow/</loc>
     
     <lastmod>2017-09-15T00:51:57.802Z</lastmod>
@@ -339,6 +339,13 @@
   
   <url>
     <loc>http://deepcreator.com/2017/04/30/AI/TensorFlow/android-tensorFlow-machine-learning-example/</loc>
+    
+    <lastmod>2017-09-15T00:51:57.802Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/02/18/AI/TensorFlow/changes-by-google-tensorflow/</loc>
     
     <lastmod>2017-09-15T00:51:57.802Z</lastmod>
     
@@ -499,13 +506,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/08/05/Movie/fast%20and%20furious/</loc>
-    
-    <lastmod>2017-09-14T14:43:25.795Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/03/08/Movie/billy-lynn's-long-halftime-walk/</loc>
     
     <lastmod>2017-09-14T14:43:25.795Z</lastmod>
@@ -513,14 +513,21 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/08/30/Movie/Gravity/</loc>
+    <loc>http://deepcreator.com/2017/08/05/Movie/fast%20and%20furious/</loc>
+    
+    <lastmod>2017-09-14T14:43:25.795Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/03/19/Movie/hacksaw-ridge/</loc>
     
     <lastmod>2017-09-14T14:43:25.794Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/03/19/Movie/hacksaw-ridge/</loc>
+    <loc>http://deepcreator.com/2017/08/30/Movie/Gravity/</loc>
     
     <lastmod>2017-09-14T14:43:25.794Z</lastmod>
     
@@ -828,14 +835,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/08/14/Music/The%20Sound%20of%20Silence/</loc>
+    <loc>http://deepcreator.com/2017/09/01/Music/Trouble%20is%20a%20friend/</loc>
     
     <lastmod>2017-09-14T14:43:24.514Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/09/01/Music/Trouble%20is%20a%20friend/</loc>
+    <loc>http://deepcreator.com/2017/08/14/Music/The%20Sound%20of%20Silence/</loc>
     
     <lastmod>2017-09-14T14:43:24.514Z</lastmod>
     
@@ -863,13 +870,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/09/01/Music/We%20will%20rock%20you/</loc>
-    
-    <lastmod>2017-09-14T14:43:24.413Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/09/09/Music/ZhengJun/</loc>
     
     <lastmod>2017-09-14T14:43:24.413Z</lastmod>
@@ -878,6 +878,13 @@
   
   <url>
     <loc>http://deepcreator.com/2017/09/07/Music/WangFei/</loc>
+    
+    <lastmod>2017-09-14T14:43:24.413Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/09/01/Music/We%20will%20rock%20you/</loc>
     
     <lastmod>2017-09-14T14:43:24.413Z</lastmod>
     
@@ -2795,20 +2802,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
-    
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
-    
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-video/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
@@ -2816,7 +2809,21 @@
   </url>
   
   <url>
+    <loc>http://deepcreator.com/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
+    
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://deepcreator.com/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
+    
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
