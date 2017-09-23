@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://deepcreator.com/2017/03/03/Program/Android/tips-of-androidstudio/</loc>
+    <lastmod>2017-09-23T07:44:09.442Z</lastmod>
+    <data>
+        <display>
+        <title>Tips of  Android Studio</title>
+        <pubTime>2017-03-03T00:31:06.000Z</pubTime>
+        
+        <tag>Android Studio</tag>
+         
+        <tag>Tip</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://deepcreator.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://deepcreator.com/2017/12/31/Daily%20Deliberate%20Practice/</loc>
     <lastmod>2017-09-23T07:24:58.762Z</lastmod>
     <data>
@@ -1310,19 +1332,19 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/09/09/Book/A%20Brief%20History%20of%20tomorrow/</loc>
+    <loc>http://deepcreator.com/2017/08/30/Book/How%20to%20ask%20a%20question/</loc>
     <lastmod>2017-09-20T12:21:59.684Z</lastmod>
     <data>
         <display>
-        <title>A Brief History of Tomorrow</title>
-        <pubTime>2017-09-09T05:52:06.000Z</pubTime>
+        <title>How to ask a question</title>
+        <pubTime>2017-08-30T12:42:18.000Z</pubTime>
         
         <tag>Share</tag>
          
          
            
              
-              <breadCrumb title="Book" url="http://deepcreator.com/categories/Book/"/>
+              <breadCrumb title="Classic" url="http://deepcreator.com/categories/Classic/"/>
           
         </display>
     </data>
@@ -1350,19 +1372,19 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/08/30/Book/How%20to%20ask%20a%20question/</loc>
+    <loc>http://deepcreator.com/2017/09/07/Book/Animal%20Farm/</loc>
     <lastmod>2017-09-20T12:21:59.684Z</lastmod>
     <data>
         <display>
-        <title>How to ask a question</title>
-        <pubTime>2017-08-30T12:42:18.000Z</pubTime>
+        <title>Animal Farm</title>
+        <pubTime>2017-09-07T07:08:06.000Z</pubTime>
         
         <tag>Share</tag>
          
          
            
              
-              <breadCrumb title="Classic" url="http://deepcreator.com/categories/Classic/"/>
+              <breadCrumb title="Book" url="http://deepcreator.com/categories/Book/"/>
           
         </display>
     </data>
@@ -1370,12 +1392,12 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/09/07/Book/Animal%20Farm/</loc>
+    <loc>http://deepcreator.com/2017/09/09/Book/A%20Brief%20History%20of%20tomorrow/</loc>
     <lastmod>2017-09-20T12:21:59.684Z</lastmod>
     <data>
         <display>
-        <title>Animal Farm</title>
-        <pubTime>2017-09-07T07:08:06.000Z</pubTime>
+        <title>A Brief History of Tomorrow</title>
+        <pubTime>2017-09-09T05:52:06.000Z</pubTime>
         
         <tag>Share</tag>
          
@@ -1822,14 +1844,16 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/01/04/IPR/my-patent-list/</loc>
+    <loc>http://deepcreator.com/2017/01/05/IPR/my-article-for-newspaper/</loc>
     <lastmod>2017-09-15T00:56:26.310Z</lastmod>
     <data>
         <display>
-        <title>Patent List of IPCreator</title>
-        <pubTime>2017-01-04T12:53:06.000Z</pubTime>
+        <title>My article of Patent Portfolio</title>
+        <pubTime>2017-01-05T09:22:06.000Z</pubTime>
         
         <tag>Patent</tag>
+         
+        <tag>Portfolio</tag>
          
          
            
@@ -1842,16 +1866,14 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/01/05/IPR/my-article-for-newspaper/</loc>
+    <loc>http://deepcreator.com/2017/01/04/IPR/my-patent-list/</loc>
     <lastmod>2017-09-15T00:56:26.310Z</lastmod>
     <data>
         <display>
-        <title>My article of Patent Portfolio</title>
-        <pubTime>2017-01-05T09:22:06.000Z</pubTime>
+        <title>Patent List of IPCreator</title>
+        <pubTime>2017-01-04T12:53:06.000Z</pubTime>
         
         <tag>Patent</tag>
-         
-        <tag>Portfolio</tag>
          
          
            
@@ -2180,16 +2202,14 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/18/AI/TensorFlow/changes-by-google-tensorflow/</loc>
+    <loc>http://deepcreator.com/2017/02/17/AI/TensorFlow/applications-of-tensorflow/</loc>
     <lastmod>2017-09-15T00:51:57.802Z</lastmod>
     <data>
         <display>
-        <title>Tensorflow Mean the Big Reform of Hardware</title>
-        <pubTime>2017-02-18T01:02:06.000Z</pubTime>
+        <title>Applications of TensorFlow</title>
+        <pubTime>2017-02-17T02:06:06.000Z</pubTime>
         
         <tag>Tensorflow</tag>
-         
-        <tag>Hardward</tag>
          
          
            
@@ -2202,14 +2222,16 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/17/AI/TensorFlow/applications-of-tensorflow/</loc>
+    <loc>http://deepcreator.com/2017/02/18/AI/TensorFlow/changes-by-google-tensorflow/</loc>
     <lastmod>2017-09-15T00:51:57.802Z</lastmod>
     <data>
         <display>
-        <title>Applications of TensorFlow</title>
-        <pubTime>2017-02-17T02:06:06.000Z</pubTime>
+        <title>Tensorflow Mean the Big Reform of Hardware</title>
+        <pubTime>2017-02-18T01:02:06.000Z</pubTime>
         
         <tag>Tensorflow</tag>
+         
+        <tag>Hardward</tag>
          
          
            
@@ -2326,6 +2348,30 @@
 
     
   <url>
+    <loc>http://deepcreator.com/2017/01/10/Share/GuDian/live-your-life/</loc>
+    <lastmod>2017-09-14T15:16:37.598Z</lastmod>
+    <data>
+        <display>
+        <title>Live your Life</title>
+        <pubTime>2017-01-10T15:25:06.000Z</pubTime>
+        
+        <tag>Share</tag>
+         
+        <tag>Management</tag>
+         
+        <tag>Life</tag>
+         
+         
+           
+             
+              <breadCrumb title="Classic" url="http://deepcreator.com/categories/Classic/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://deepcreator.com/2017/01/02/Share/LiXiaoLai/lixiaolai-lead-to-freedom-of-wealth/</loc>
     <lastmod>2017-09-14T15:16:37.598Z</lastmod>
     <data>
@@ -2340,30 +2386,6 @@
         <tag>Wealth</tag>
          
         <tag>Li Xiaolai</tag>
-         
-         
-           
-             
-              <breadCrumb title="Classic" url="http://deepcreator.com/categories/Classic/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2017/01/10/Share/GuDian/live-your-life/</loc>
-    <lastmod>2017-09-14T15:16:37.598Z</lastmod>
-    <data>
-        <display>
-        <title>Live your Life</title>
-        <pubTime>2017-01-10T15:25:06.000Z</pubTime>
-        
-        <tag>Share</tag>
-         
-        <tag>Management</tag>
-         
-        <tag>Life</tag>
          
          
            
@@ -2654,13 +2676,15 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/08/05/Movie/fast%20and%20furious/</loc>
+    <loc>http://deepcreator.com/2017/03/08/Movie/billy-lynn's-long-halftime-walk/</loc>
     <lastmod>2017-09-14T14:43:25.795Z</lastmod>
     <data>
         <display>
-        <title>The Fate of the Furious</title>
-        <pubTime>2017-08-05T09:30:18.000Z</pubTime>
+        <title>Billy Lynn's Long Halftime Walk</title>
+        <pubTime>2017-03-08T15:30:06.000Z</pubTime>
         
+        <tag>English</tag>
+         
         <tag>Movie</tag>
          
          
@@ -2674,15 +2698,13 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/03/08/Movie/billy-lynn's-long-halftime-walk/</loc>
+    <loc>http://deepcreator.com/2017/08/05/Movie/fast%20and%20furious/</loc>
     <lastmod>2017-09-14T14:43:25.795Z</lastmod>
     <data>
         <display>
-        <title>Billy Lynn's Long Halftime Walk</title>
-        <pubTime>2017-03-08T15:30:06.000Z</pubTime>
+        <title>The Fate of the Furious</title>
+        <pubTime>2017-08-05T09:30:18.000Z</pubTime>
         
-        <tag>English</tag>
-         
         <tag>Movie</tag>
          
          
@@ -3176,13 +3198,15 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/09/09/Music/Beyond/</loc>
+    <loc>http://deepcreator.com/2017/09/01/Music/Better%20man/</loc>
     <lastmod>2017-09-14T14:43:25.088Z</lastmod>
     <data>
         <display>
-        <title>Beyond</title>
-        <pubTime>2017-09-09T05:26:06.000Z</pubTime>
+        <title>Better man</title>
+        <pubTime>2017-09-01T13:07:06.000Z</pubTime>
         
+        <tag>English</tag>
+         
         <tag>Music</tag>
          
          
@@ -3196,15 +3220,13 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/09/01/Music/Better%20man/</loc>
+    <loc>http://deepcreator.com/2017/09/09/Music/Beyond/</loc>
     <lastmod>2017-09-14T14:43:25.088Z</lastmod>
     <data>
         <display>
-        <title>Better man</title>
-        <pubTime>2017-09-01T13:07:06.000Z</pubTime>
+        <title>Beyond</title>
+        <pubTime>2017-09-09T05:26:06.000Z</pubTime>
         
-        <tag>English</tag>
-         
         <tag>Music</tag>
          
          
@@ -3590,13 +3612,15 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/09/09/Music/XuWei/</loc>
+    <loc>http://deepcreator.com/2017/09/01/Music/Trouble%20is%20a%20friend/</loc>
     <lastmod>2017-09-14T14:43:24.514Z</lastmod>
     <data>
         <display>
-        <title>XuWei</title>
-        <pubTime>2017-09-09T04:18:06.000Z</pubTime>
+        <title>Trouble is a friend</title>
+        <pubTime>2017-09-01T05:38:06.000Z</pubTime>
         
+        <tag>English</tag>
+         
         <tag>Music</tag>
          
          
@@ -3630,15 +3654,13 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/09/01/Music/Trouble%20is%20a%20friend/</loc>
+    <loc>http://deepcreator.com/2017/09/09/Music/XuWei/</loc>
     <lastmod>2017-09-14T14:43:24.514Z</lastmod>
     <data>
         <display>
-        <title>Trouble is a friend</title>
-        <pubTime>2017-09-01T05:38:06.000Z</pubTime>
+        <title>XuWei</title>
+        <pubTime>2017-09-09T04:18:06.000Z</pubTime>
         
-        <tag>English</tag>
-         
         <tag>Music</tag>
          
          
@@ -3661,6 +3683,26 @@
         
         <tag>English</tag>
          
+        <tag>Music</tag>
+         
+         
+           
+             
+              <breadCrumb title="Music" url="http://deepcreator.com/categories/Music/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/09/09/Music/ZhengJun/</loc>
+    <lastmod>2017-09-14T14:43:24.413Z</lastmod>
+    <data>
+        <display>
+        <title>Zhen Jun</title>
+        <pubTime>2017-09-09T04:10:06.000Z</pubTime>
+        
         <tag>Music</tag>
          
          
@@ -3724,26 +3766,6 @@
         <pubTime>2017-09-07T04:36:06.000Z</pubTime>
         
         <tag>Share</tag>
-         
-         
-           
-             
-              <breadCrumb title="Music" url="http://deepcreator.com/categories/Music/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2017/09/09/Music/ZhengJun/</loc>
-    <lastmod>2017-09-14T14:43:24.413Z</lastmod>
-    <data>
-        <display>
-        <title>Zhen Jun</title>
-        <pubTime>2017-09-09T04:10:06.000Z</pubTime>
-        
-        <tag>Music</tag>
          
          
            
@@ -5376,28 +5398,6 @@
            
              
               <breadCrumb title="Personal" url="http://deepcreator.com/categories/Personal/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2017/03/03/Program/Android/tips-of-androidstudio/</loc>
-    <lastmod>2017-04-11T12:29:52.440Z</lastmod>
-    <data>
-        <display>
-        <title>Tips of  Android Studio</title>
-        <pubTime>2017-03-03T00:31:06.000Z</pubTime>
-        
-        <tag>Android Studio</tag>
-         
-        <tag>Tip</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://deepcreator.com/categories/Android/"/>
           
         </display>
     </data>
@@ -8988,28 +8988,6 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    <data>
-        <display>
-        <title>AI vs Machine Learning</title>
-        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
-        
-        <tag>Basic Concept</tag>
-         
-        <tag>Machine Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="AI" url="http://deepcreator.com/categories/AI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://deepcreator.com/2017/02/27/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
@@ -9022,6 +9000,30 @@
         <tag>Linux</tag>
          
         <tag>File System</tag>
+         
+         
+           
+             
+              <breadCrumb title="Program" url="http://deepcreator.com/categories/Program/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    <data>
+        <display>
+        <title>Base of Multimedia——Color</title>
+        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
+        
+        <tag>Basic Concept</tag>
+         
+        <tag>Multimedia</tag>
+         
+        <tag>Color</tag>
          
          
            
@@ -9058,23 +9060,21 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/27/Program/Tools/Computer/the-essence-of-color/</loc>
+    <loc>http://deepcreator.com/2017/02/15/AI/TensorFlow/ai-vs-machine-learning/</loc>
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     <data>
         <display>
-        <title>Base of Multimedia——Color</title>
-        <pubTime>2017-02-27T02:58:06.000Z</pubTime>
+        <title>AI vs Machine Learning</title>
+        <pubTime>2017-02-15T14:49:06.000Z</pubTime>
         
         <tag>Basic Concept</tag>
          
-        <tag>Multimedia</tag>
-         
-        <tag>Color</tag>
+        <tag>Machine Learning</tag>
          
          
            
              
-              <breadCrumb title="Program" url="http://deepcreator.com/categories/Program/"/>
+              <breadCrumb title="AI" url="http://deepcreator.com/categories/AI/"/>
           
         </display>
     </data>
