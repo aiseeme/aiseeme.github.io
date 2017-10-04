@@ -10,18 +10,23 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="">
+<meta name="theme-color" content="#222">
 
 
 
 
 
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
 
 
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
 
 
 
@@ -44,38 +49,27 @@
 
 
 
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
 
 
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -85,11 +79,6 @@
 
 
   <link rel="alternate" href="/atom.xml" title="For life" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/img/icon.png?v=5.1.2" />
 
 
 
@@ -114,12 +103,13 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
-      userId: 'undefined',
+      userId: '0',
       author: 'Author'
     },
     algolia: {
@@ -160,11 +150,6 @@
 
 
 
-
-
-
-
-
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -174,12 +159,19 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta custom-logo">
+    
+      <div class="site-meta-headline">
+        <a>
+          <img class="custom-logo-image" src="/img/icon.png"
+               alt="For life"/>
+        </a>
+      </div>
     
 
     <div class="custom-logo-site-title">
@@ -221,7 +213,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -231,7 +223,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -241,7 +233,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -251,7 +243,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -265,7 +257,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
-            Help
+            help
           </a>
         </li>
       
@@ -338,7 +330,7 @@
       
       
       
-      <div class="post-body">
+      <div class="post-body han-init-context">
         
         
           <div class="tag-cloud">
@@ -346,7 +338,7 @@
                 352 tags in total
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/5G/" style="font-size: 12px; color: #ccc">5G</a> <a href="/tags/ADB/" style="font-size: 12px; color: #ccc">ADB</a> <a href="/tags/AI/" style="font-size: 13.29px; color: #bfbfbf">AI</a> <a href="/tags/APK/" style="font-size: 12px; color: #ccc">APK</a> <a href="/tags/ASCII/" style="font-size: 12px; color: #ccc">ASCII</a> <a href="/tags/Algorithm/" style="font-size: 15.86px; color: #a4a4a4">Algorithm</a> <a href="/tags/Andrew-Ng/" style="font-size: 13.29px; color: #bfbfbf">Andrew Ng</a> <a href="/tags/Android/" style="font-size: 24.86px; color: #464646">Android</a> <a href="/tags/Android-Studio/" style="font-size: 13.29px; color: #bfbfbf">Android Studio</a> <a href="/tags/Animation/" style="font-size: 12px; color: #ccc">Animation</a> <a href="/tags/Annotation/" style="font-size: 13.29px; color: #bfbfbf">Annotation</a> <a href="/tags/Application/" style="font-size: 27.43px; color: #2c2c2c">Application</a> <a href="/tags/Appreciation/" style="font-size: 12px; color: #ccc">Appreciation</a> <a href="/tags/Architecture/" style="font-size: 13.29px; color: #bfbfbf">Architecture</a> <a href="/tags/Art/" style="font-size: 13.29px; color: #bfbfbf">Art</a> <a href="/tags/Article/" style="font-size: 13.29px; color: #bfbfbf">Article</a> <a href="/tags/Asking/" style="font-size: 12px; color: #ccc">Asking</a> <a href="/tags/Atom/" style="font-size: 12px; color: #ccc">Atom</a> <a href="/tags/Attention/" style="font-size: 12px; color: #ccc">Attention</a> <a href="/tags/Awesome-Resources/" style="font-size: 12px; color: #ccc">Awesome Resources</a> <a href="/tags/BLAS/" style="font-size: 12px; color: #ccc">BLAS</a> <a href="/tags/BMI/" style="font-size: 12px; color: #ccc">BMI</a> <a href="/tags/Bag/" style="font-size: 12px; color: #ccc">Bag</a> <a href="/tags/BaiduYun/" style="font-size: 12px; color: #ccc">BaiduYun</a> <a href="/tags/Balance/" style="font-size: 12px; color: #ccc">Balance</a> <a href="/tags/Bandari/" style="font-size: 12px; color: #ccc">Bandari</a> <a href="/tags/Basic-Concept/" style="font-size: 30px; color: #111">Basic Concept</a> <a href="/tags/Bayes-theorem/" style="font-size: 12px; color: #ccc">Bayes' theorem</a> <a href="/tags/Beauty/" style="font-size: 12px; color: #ccc">Beauty</a> <a href="/tags/Best-Practice/" style="font-size: 15.86px; color: #a4a4a4">Best Practice</a> <a href="/tags/Big-Bang/" style="font-size: 12px; color: #ccc">Big Bang</a> <a href="/tags/Big-Data/" style="font-size: 13.29px; color: #bfbfbf">Big Data</a> <a href="/tags/Big-Trend/" style="font-size: 12px; color: #ccc">Big Trend</a> <a href="/tags/Bitmap/" style="font-size: 12px; color: #ccc">Bitmap</a> <a href="/tags/Block-Canary/" style="font-size: 12px; color: #ccc">Block Canary</a> <a href="/tags/Book/" style="font-size: 14.57px; color: #b1b1b1">Book</a> <a href="/tags/Borderline/" style="font-size: 12px; color: #ccc">Borderline</a> <a href="/tags/Bose/" style="font-size: 12px; color: #ccc">Bose</a> <a href="/tags/Brain/" style="font-size: 12px; color: #ccc">Brain</a> <a href="/tags/Bugs/" style="font-size: 13.29px; color: #bfbfbf">Bugs</a> <a href="/tags/Business/" style="font-size: 14.57px; color: #b1b1b1">Business</a> <a href="/tags/Business-Inside/" style="font-size: 12px; color: #ccc">Business Inside</a> <a href="/tags/Butter-Knife/" style="font-size: 12px; color: #ccc">Butter Knife</a> <a href="/tags/Byte-Code/" style="font-size: 13.29px; color: #bfbfbf">Byte Code</a> <a href="/tags/C/" style="font-size: 12px; color: #ccc">C</a> <a href="/tags/C/" style="font-size: 13.29px; color: #bfbfbf">C++</a> <a href="/tags/CNTK/" style="font-size: 13.29px; color: #bfbfbf">CNTK</a> <a href="/tags/CPU/" style="font-size: 13.29px; color: #bfbfbf">CPU</a> <a href="/tags/CSDN/" style="font-size: 12px; color: #ccc">CSDN</a> <a href="/tags/Caffe/" style="font-size: 12px; color: #ccc">Caffe</a> <a href="/tags/Camera/" style="font-size: 12px; color: #ccc">Camera</a> <a href="/tags/Career/" style="font-size: 13.29px; color: #bfbfbf">Career</a> <a href="/tags/Change/" style="font-size: 12px; color: #ccc">Change</a> <a href="/tags/Character/" style="font-size: 12px; color: #ccc">Character</a> <a href="/tags/Charset/" style="font-size: 13.29px; color: #bfbfbf">Charset</a> <a href="/tags/Cheat-Sheet/" style="font-size: 12px; color: #ccc">Cheat Sheet</a> <a href="/tags/Checkstyle/" style="font-size: 12px; color: #ccc">Checkstyle</a> <a href="/tags/China/" style="font-size: 13.29px; color: #bfbfbf">China</a> <a href="/tags/Chip/" style="font-size: 13.29px; color: #bfbfbf">Chip</a> <a href="/tags/Chrome/" style="font-size: 12px; color: #ccc">Chrome</a> <a href="/tags/Class-Loader/" style="font-size: 13.29px; color: #bfbfbf">Class Loader</a> <a href="/tags/Classic-Music/" style="font-size: 12px; color: #ccc">Classic Music</a> <a href="/tags/Clean-Code/" style="font-size: 12px; color: #ccc">Clean Code</a> <a href="/tags/Cloth/" style="font-size: 13.29px; color: #bfbfbf">Cloth</a> <a href="/tags/Clustering/" style="font-size: 12px; color: #ccc">Clustering</a> <a href="/tags/Codota/" style="font-size: 12px; color: #ccc">Codota</a> <a href="/tags/Color/" style="font-size: 12px; color: #ccc">Color</a> <a href="/tags/Command/" style="font-size: 12px; color: #ccc">Command</a> <a href="/tags/Communication/" style="font-size: 12px; color: #ccc">Communication</a> <a href="/tags/Compile/" style="font-size: 12px; color: #ccc">Compile</a> <a href="/tags/Compiler/" style="font-size: 12px; color: #ccc">Compiler</a> <a href="/tags/Computation-Graph/" style="font-size: 12px; color: #ccc">Computation Graph</a> <a href="/tags/Computer/" style="font-size: 12px; color: #ccc">Computer</a> <a href="/tags/Computer-Science/" style="font-size: 12px; color: #ccc">Computer Science</a> <a href="/tags/Computer-Skill/" style="font-size: 12px; color: #ccc">Computer Skill</a> <a href="/tags/Concept/" style="font-size: 13.29px; color: #bfbfbf">Concept</a> <a href="/tags/Confidence/" style="font-size: 12px; color: #ccc">Confidence</a> <a href="/tags/Contradiction/" style="font-size: 12px; color: #ccc">Contradiction</a> <a href="/tags/Cool-Weather/" style="font-size: 12px; color: #ccc">Cool Weather</a> <a href="/tags/Countly/" style="font-size: 12px; color: #ccc">Countly</a> <a href="/tags/Courage/" style="font-size: 13.29px; color: #bfbfbf">Courage</a> <a href="/tags/Crash/" style="font-size: 13.29px; color: #bfbfbf">Crash</a> <a href="/tags/Crawler/" style="font-size: 12px; color: #ccc">Crawler</a> <a href="/tags/Credit/" style="font-size: 12px; color: #ccc">Credit</a> <a href="/tags/Culture/" style="font-size: 12px; color: #ccc">Culture</a> <a href="/tags/Cup/" style="font-size: 12px; color: #ccc">Cup</a> <a href="/tags/Data-Mining/" style="font-size: 12px; color: #ccc">Data Mining</a> <a href="/tags/Data-Novo/" style="font-size: 12px; color: #ccc">Data Novo</a> <a href="/tags/Debug/" style="font-size: 13.29px; color: #bfbfbf">Debug</a> <a href="/tags/Decision-Trees-Rules/" style="font-size: 12px; color: #ccc">Decision Trees/Rules</a> <a href="/tags/Deep-Learning/" style="font-size: 23.57px; color: #545454">Deep Learning</a> <a href="/tags/DeepMind-Lab/" style="font-size: 12px; color: #ccc">DeepMind Lab</a> <a href="/tags/Deliberate-Practice/" style="font-size: 13.29px; color: #bfbfbf">Deliberate Practice</a> <a href="/tags/Design-Pattern/" style="font-size: 15.86px; color: #a4a4a4">Design Pattern</a> <a href="/tags/Destiny/" style="font-size: 12px; color: #ccc">Destiny</a> <a href="/tags/Domain-Name/" style="font-size: 12px; color: #ccc">Domain Name</a> <a href="/tags/DroidRunner/" style="font-size: 12px; color: #ccc">DroidRunner</a> <a href="/tags/Dynamic-Load/" style="font-size: 12px; color: #ccc">Dynamic Load</a> <a href="/tags/Earphone/" style="font-size: 12px; color: #ccc">Earphone</a> <a href="/tags/Easy-Permissions/" style="font-size: 12px; color: #ccc">Easy Permissions</a> <a href="/tags/Education/" style="font-size: 14.57px; color: #b1b1b1">Education</a> <a href="/tags/Emotion/" style="font-size: 12px; color: #ccc">Emotion</a> <a href="/tags/Emulator/" style="font-size: 12px; color: #ccc">Emulator</a> <a href="/tags/Engineer/" style="font-size: 12px; color: #ccc">Engineer</a> <a href="/tags/English/" style="font-size: 28.71px; color: #1e1e1e">English</a> <a href="/tags/Event-Bus/" style="font-size: 12px; color: #ccc">Event Bus</a> <a href="/tags/Expert/" style="font-size: 12px; color: #ccc">Expert</a> <a href="/tags/FFM/" style="font-size: 12px; color: #ccc">FFM</a> <a href="/tags/Facebook/" style="font-size: 12px; color: #ccc">Facebook</a> <a href="/tags/Fast-Android-Networking/" style="font-size: 13.29px; color: #bfbfbf">Fast Android Networking</a> <a href="/tags/FastText/" style="font-size: 12px; color: #ccc">FastText</a> <a href="/tags/Fear/" style="font-size: 12px; color: #ccc">Fear</a> <a href="/tags/Feature/" style="font-size: 12px; color: #ccc">Feature</a> <a href="/tags/File-Directory/" style="font-size: 12px; color: #ccc">File Directory</a> <a href="/tags/File-System/" style="font-size: 13.29px; color: #bfbfbf">File System</a> <a href="/tags/Financing/" style="font-size: 12px; color: #ccc">Financing</a> <a href="/tags/Find-Bugs/" style="font-size: 12px; color: #ccc">Find Bugs</a> <a href="/tags/Findbugs/" style="font-size: 12px; color: #ccc">Findbugs</a> <a href="/tags/Floating-point/" style="font-size: 12px; color: #ccc">Floating point</a> <a href="/tags/Focus/" style="font-size: 12px; color: #ccc">Focus</a> <a href="/tags/Framework/" style="font-size: 14.57px; color: #b1b1b1">Framework</a> <a href="/tags/Freedom/" style="font-size: 12px; color: #ccc">Freedom</a> <a href="/tags/Front-Guard/" style="font-size: 12px; color: #ccc">Front Guard</a> <a href="/tags/Fu-Sheng/" style="font-size: 13.29px; color: #bfbfbf">Fu Sheng</a> <a href="/tags/GBK/" style="font-size: 12px; color: #ccc">GBK</a> <a href="/tags/GPU/" style="font-size: 13.29px; color: #bfbfbf">GPU</a> <a href="/tags/GSON/" style="font-size: 12px; color: #ccc">GSON</a> <a href="/tags/Garbage-Collector/" style="font-size: 12px; color: #ccc">Garbage Collector</a> <a href="/tags/Generic/" style="font-size: 12px; color: #ccc">Generic</a> <a href="/tags/Gesture-Detector/" style="font-size: 12px; color: #ccc">Gesture Detector</a> <a href="/tags/Git/" style="font-size: 13.29px; color: #bfbfbf">Git</a> <a href="/tags/GitHub/" style="font-size: 13.29px; color: #bfbfbf">GitHub</a> <a href="/tags/Google/" style="font-size: 19.71px; color: #7c7c7c">Google</a> <a href="/tags/Gradle/" style="font-size: 14.57px; color: #b1b1b1">Gradle</a> <a href="/tags/Grammar/" style="font-size: 12px; color: #ccc">Grammar</a> <a href="/tags/Grit/" style="font-size: 12px; color: #ccc">Grit</a> <a href="/tags/Grow-Up/" style="font-size: 14.57px; color: #b1b1b1">Grow Up</a> <a href="/tags/Growing-Up/" style="font-size: 14.57px; color: #b1b1b1">Growing Up</a> <a href="/tags/Gu-Dian/" style="font-size: 12px; color: #ccc">Gu Dian</a> <a href="/tags/Habit/" style="font-size: 12px; color: #ccc">Habit</a> <a href="/tags/Hacker/" style="font-size: 14.57px; color: #b1b1b1">Hacker</a> <a href="/tags/Hardward/" style="font-size: 12px; color: #ccc">Hardward</a> <a href="/tags/Hardware-Accelerate/" style="font-size: 12px; color: #ccc">Hardware Accelerate</a> <a href="/tags/Health/" style="font-size: 24.86px; color: #464646">Health</a> <a href="/tags/Hexo/" style="font-size: 12px; color: #ccc">Hexo</a> <a href="/tags/History/" style="font-size: 15.86px; color: #a4a4a4">History</a> <a href="/tags/Home/" style="font-size: 12px; color: #ccc">Home</a> <a href="/tags/Hot-Update/" style="font-size: 12px; color: #ccc">Hot Update</a> <a href="/tags/House/" style="font-size: 12px; color: #ccc">House</a> <a href="/tags/Humanity/" style="font-size: 12px; color: #ccc">Humanity</a> <a href="/tags/IC/" style="font-size: 12px; color: #ccc">IC</a> <a href="/tags/IKEA/" style="font-size: 12px; color: #ccc">IKEA</a> <a href="/tags/IO/" style="font-size: 13.29px; color: #bfbfbf">IO</a> <a href="/tags/IPCreator/" style="font-size: 12px; color: #ccc">IPCreator</a> <a href="/tags/IPR/" style="font-size: 12px; color: #ccc">IPR</a> <a href="/tags/Independence/" style="font-size: 12px; color: #ccc">Independence</a> <a href="/tags/Innovation/" style="font-size: 15.86px; color: #a4a4a4">Innovation</a> <a href="/tags/Innovation-Thinking/" style="font-size: 12px; color: #ccc">Innovation Thinking</a> <a href="/tags/Insurance/" style="font-size: 12px; color: #ccc">Insurance</a> <a href="/tags/Intelligence/" style="font-size: 12px; color: #ccc">Intelligence</a> <a href="/tags/Internet/" style="font-size: 12px; color: #ccc">Internet</a> <a href="/tags/Introspection/" style="font-size: 12px; color: #ccc">Introspection</a> <a href="/tags/Investment/" style="font-size: 17.14px; color: #979797">Investment</a> <a href="/tags/IoT/" style="font-size: 12px; color: #ccc">IoT</a> <a href="/tags/JSON/" style="font-size: 12px; color: #ccc">JSON</a> <a href="/tags/JVM/" style="font-size: 13.29px; color: #bfbfbf">JVM</a> <a href="/tags/Jake-Wharton/" style="font-size: 13.29px; color: #bfbfbf">Jake Wharton</a> <a href="/tags/Java/" style="font-size: 22.29px; color: #616161">Java</a> <a href="/tags/Java-Snippet/" style="font-size: 12px; color: #ccc">Java Snippet</a> <a href="/tags/Java-Virtual-Machine/" style="font-size: 12px; color: #ccc">Java Virtual Machine</a> <a href="/tags/JavaScript/" style="font-size: 13.29px; color: #bfbfbf">JavaScript</a> <a href="/tags/Jiang-Tao/" style="font-size: 12px; color: #ccc">Jiang Tao</a> <a href="/tags/K-means/" style="font-size: 12px; color: #ccc">K-means</a> <a href="/tags/K-nearest-neighbors/" style="font-size: 12px; color: #ccc">K-nearest neighbors</a> <a href="/tags/Kaifu-Lee/" style="font-size: 12px; color: #ccc">Kaifu Lee</a> <a href="/tags/Knowledge-Framework/" style="font-size: 12px; color: #ccc">Knowledge Framework</a> <a href="/tags/Law/" style="font-size: 12px; color: #ccc">Law</a> <a href="/tags/Leak-Canary/" style="font-size: 12px; color: #ccc">Leak Canary</a> <a href="/tags/Less-Code/" style="font-size: 12px; color: #ccc">Less Code</a> <a href="/tags/Li-Xiang/" style="font-size: 12px; color: #ccc">Li Xiang</a> <a href="/tags/Li-Xiaolai/" style="font-size: 13.29px; color: #bfbfbf">Li Xiaolai</a> <a href="/tags/Life/" style="font-size: 14.57px; color: #b1b1b1">Life</a> <a href="/tags/Lint/" style="font-size: 12px; color: #ccc">Lint</a> <a href="/tags/Linux/" style="font-size: 21px; color: #6f6f6f">Linux</a> <a href="/tags/Liu-Weipeng/" style="font-size: 12px; color: #ccc">Liu Weipeng</a> <a href="/tags/Liu-Xuefeng/" style="font-size: 12px; color: #ccc">Liu Xuefeng</a> <a href="/tags/Log/" style="font-size: 12px; color: #ccc">Log</a> <a href="/tags/Logic-Thinking/" style="font-size: 14.57px; color: #b1b1b1">Logic Thinking</a> <a href="/tags/Love/" style="font-size: 12px; color: #ccc">Love</a> <a href="/tags/Luo-Shengyang/" style="font-size: 12px; color: #ccc">Luo Shengyang</a> <a href="/tags/Luo-Zhenyu/" style="font-size: 12px; color: #ccc">Luo Zhenyu</a> <a href="/tags/Lyric/" style="font-size: 12px; color: #ccc">Lyric</a> <a href="/tags/MVP/" style="font-size: 12px; color: #ccc">MVP</a> <a href="/tags/MXNet/" style="font-size: 13.29px; color: #bfbfbf">MXNet</a> <a href="/tags/Machine-Learning/" style="font-size: 26.14px; color: #393939">Machine Learning</a> <a href="/tags/Management/" style="font-size: 15.86px; color: #a4a4a4">Management</a> <a href="/tags/Master/" style="font-size: 12px; color: #ccc">Master</a> <a href="/tags/Matrix/" style="font-size: 12px; color: #ccc">Matrix</a> <a href="/tags/Meituan/" style="font-size: 18.43px; color: #898989">Meituan</a> <a href="/tags/Memory/" style="font-size: 13.29px; color: #bfbfbf">Memory</a>
+              <a href="/tags/5G/" style="font-size: 12px; color: #ccc">5G</a> <a href="/tags/ADB/" style="font-size: 12px; color: #ccc">ADB</a> <a href="/tags/AI/" style="font-size: 13px; color: #c2c2c2">AI</a> <a href="/tags/APK/" style="font-size: 12px; color: #ccc">APK</a> <a href="/tags/ASCII/" style="font-size: 12px; color: #ccc">ASCII</a> <a href="/tags/Algorithm/" style="font-size: 15px; color: #adadad">Algorithm</a> <a href="/tags/Andrew-Ng/" style="font-size: 13px; color: #c2c2c2">Andrew Ng</a> <a href="/tags/Android/" style="font-size: 22px; color: #646464">Android</a> <a href="/tags/Android-Studio/" style="font-size: 13px; color: #c2c2c2">Android Studio</a> <a href="/tags/Animation/" style="font-size: 12px; color: #ccc">Animation</a> <a href="/tags/Annotation/" style="font-size: 13px; color: #c2c2c2">Annotation</a> <a href="/tags/Application/" style="font-size: 26px; color: #3b3b3b">Application</a> <a href="/tags/Appreciation/" style="font-size: 12px; color: #ccc">Appreciation</a> <a href="/tags/Architecture/" style="font-size: 13px; color: #c2c2c2">Architecture</a> <a href="/tags/Art/" style="font-size: 13px; color: #c2c2c2">Art</a> <a href="/tags/Article/" style="font-size: 13px; color: #c2c2c2">Article</a> <a href="/tags/Asking/" style="font-size: 12px; color: #ccc">Asking</a> <a href="/tags/Atom/" style="font-size: 12px; color: #ccc">Atom</a> <a href="/tags/Attention/" style="font-size: 12px; color: #ccc">Attention</a> <a href="/tags/Awesome-Resources/" style="font-size: 12px; color: #ccc">Awesome Resources</a> <a href="/tags/BLAS/" style="font-size: 12px; color: #ccc">BLAS</a> <a href="/tags/BMI/" style="font-size: 12px; color: #ccc">BMI</a> <a href="/tags/Bag/" style="font-size: 12px; color: #ccc">Bag</a> <a href="/tags/BaiduYun/" style="font-size: 12px; color: #ccc">BaiduYun</a> <a href="/tags/Balance/" style="font-size: 12px; color: #ccc">Balance</a> <a href="/tags/Bandari/" style="font-size: 12px; color: #ccc">Bandari</a> <a href="/tags/Basic-Concept/" style="font-size: 29px; color: #1b1b1b">Basic Concept</a> <a href="/tags/Bayes-theorem/" style="font-size: 12px; color: #ccc">Bayes' theorem</a> <a href="/tags/Beauty/" style="font-size: 12px; color: #ccc">Beauty</a> <a href="/tags/Best-Practice/" style="font-size: 15px; color: #adadad">Best Practice</a> <a href="/tags/Big-Bang/" style="font-size: 12px; color: #ccc">Big Bang</a> <a href="/tags/Big-Data/" style="font-size: 13px; color: #c2c2c2">Big Data</a> <a href="/tags/Big-Trend/" style="font-size: 12px; color: #ccc">Big Trend</a> <a href="/tags/Bitmap/" style="font-size: 12px; color: #ccc">Bitmap</a> <a href="/tags/Block-Canary/" style="font-size: 12px; color: #ccc">Block Canary</a> <a href="/tags/Book/" style="font-size: 14px; color: #b7b7b7">Book</a> <a href="/tags/Borderline/" style="font-size: 12px; color: #ccc">Borderline</a> <a href="/tags/Bose/" style="font-size: 12px; color: #ccc">Bose</a> <a href="/tags/Brain/" style="font-size: 12px; color: #ccc">Brain</a> <a href="/tags/Bugs/" style="font-size: 13px; color: #c2c2c2">Bugs</a> <a href="/tags/Business/" style="font-size: 14px; color: #b7b7b7">Business</a> <a href="/tags/Business-Inside/" style="font-size: 12px; color: #ccc">Business Inside</a> <a href="/tags/Butter-Knife/" style="font-size: 12px; color: #ccc">Butter Knife</a> <a href="/tags/Byte-Code/" style="font-size: 13px; color: #c2c2c2">Byte Code</a> <a href="/tags/C/" style="font-size: 12px; color: #ccc">C</a> <a href="/tags/C/" style="font-size: 13px; color: #c2c2c2">C++</a> <a href="/tags/CNTK/" style="font-size: 13px; color: #c2c2c2">CNTK</a> <a href="/tags/CPU/" style="font-size: 13px; color: #c2c2c2">CPU</a> <a href="/tags/CSDN/" style="font-size: 12px; color: #ccc">CSDN</a> <a href="/tags/Caffe/" style="font-size: 12px; color: #ccc">Caffe</a> <a href="/tags/Camera/" style="font-size: 12px; color: #ccc">Camera</a> <a href="/tags/Career/" style="font-size: 13px; color: #c2c2c2">Career</a> <a href="/tags/Change/" style="font-size: 12px; color: #ccc">Change</a> <a href="/tags/Character/" style="font-size: 12px; color: #ccc">Character</a> <a href="/tags/Charset/" style="font-size: 13px; color: #c2c2c2">Charset</a> <a href="/tags/Cheat-Sheet/" style="font-size: 12px; color: #ccc">Cheat Sheet</a> <a href="/tags/Checkstyle/" style="font-size: 12px; color: #ccc">Checkstyle</a> <a href="/tags/China/" style="font-size: 13px; color: #c2c2c2">China</a> <a href="/tags/Chip/" style="font-size: 13px; color: #c2c2c2">Chip</a> <a href="/tags/Chrome/" style="font-size: 12px; color: #ccc">Chrome</a> <a href="/tags/Class-Loader/" style="font-size: 13px; color: #c2c2c2">Class Loader</a> <a href="/tags/Classic-Music/" style="font-size: 12px; color: #ccc">Classic Music</a> <a href="/tags/Clean-Code/" style="font-size: 12px; color: #ccc">Clean Code</a> <a href="/tags/Cloth/" style="font-size: 13px; color: #c2c2c2">Cloth</a> <a href="/tags/Clustering/" style="font-size: 12px; color: #ccc">Clustering</a> <a href="/tags/Codota/" style="font-size: 12px; color: #ccc">Codota</a> <a href="/tags/Color/" style="font-size: 12px; color: #ccc">Color</a> <a href="/tags/Command/" style="font-size: 12px; color: #ccc">Command</a> <a href="/tags/Communication/" style="font-size: 12px; color: #ccc">Communication</a> <a href="/tags/Compile/" style="font-size: 12px; color: #ccc">Compile</a> <a href="/tags/Compiler/" style="font-size: 12px; color: #ccc">Compiler</a> <a href="/tags/Computation-Graph/" style="font-size: 12px; color: #ccc">Computation Graph</a> <a href="/tags/Computer/" style="font-size: 12px; color: #ccc">Computer</a> <a href="/tags/Computer-Science/" style="font-size: 12px; color: #ccc">Computer Science</a> <a href="/tags/Computer-Skill/" style="font-size: 12px; color: #ccc">Computer Skill</a> <a href="/tags/Concept/" style="font-size: 13px; color: #c2c2c2">Concept</a> <a href="/tags/Confidence/" style="font-size: 12px; color: #ccc">Confidence</a> <a href="/tags/Contradiction/" style="font-size: 12px; color: #ccc">Contradiction</a> <a href="/tags/Cool-Weather/" style="font-size: 12px; color: #ccc">Cool Weather</a> <a href="/tags/Countly/" style="font-size: 12px; color: #ccc">Countly</a> <a href="/tags/Courage/" style="font-size: 13px; color: #c2c2c2">Courage</a> <a href="/tags/Crash/" style="font-size: 13px; color: #c2c2c2">Crash</a> <a href="/tags/Crawler/" style="font-size: 12px; color: #ccc">Crawler</a> <a href="/tags/Credit/" style="font-size: 12px; color: #ccc">Credit</a> <a href="/tags/Culture/" style="font-size: 12px; color: #ccc">Culture</a> <a href="/tags/Cup/" style="font-size: 12px; color: #ccc">Cup</a> <a href="/tags/Data-Mining/" style="font-size: 12px; color: #ccc">Data Mining</a> <a href="/tags/Data-Novo/" style="font-size: 12px; color: #ccc">Data Novo</a> <a href="/tags/Debug/" style="font-size: 13px; color: #c2c2c2">Debug</a> <a href="/tags/Decision-Trees-Rules/" style="font-size: 12px; color: #ccc">Decision Trees/Rules</a> <a href="/tags/Deep-Learning/" style="font-size: 21px; color: #6f6f6f">Deep Learning</a> <a href="/tags/DeepMind-Lab/" style="font-size: 12px; color: #ccc">DeepMind Lab</a> <a href="/tags/Deliberate-Practice/" style="font-size: 13px; color: #c2c2c2">Deliberate Practice</a> <a href="/tags/Design-Pattern/" style="font-size: 15px; color: #adadad">Design Pattern</a> <a href="/tags/Destiny/" style="font-size: 12px; color: #ccc">Destiny</a> <a href="/tags/Domain-Name/" style="font-size: 12px; color: #ccc">Domain Name</a> <a href="/tags/DroidRunner/" style="font-size: 12px; color: #ccc">DroidRunner</a> <a href="/tags/Dynamic-Load/" style="font-size: 12px; color: #ccc">Dynamic Load</a> <a href="/tags/Earphone/" style="font-size: 12px; color: #ccc">Earphone</a> <a href="/tags/Easy-Permissions/" style="font-size: 12px; color: #ccc">Easy Permissions</a> <a href="/tags/Education/" style="font-size: 14px; color: #b7b7b7">Education</a> <a href="/tags/Emotion/" style="font-size: 12px; color: #ccc">Emotion</a> <a href="/tags/Emulator/" style="font-size: 12px; color: #ccc">Emulator</a> <a href="/tags/Engineer/" style="font-size: 12px; color: #ccc">Engineer</a> <a href="/tags/English/" style="font-size: 28px; color: #262626">English</a> <a href="/tags/Event-Bus/" style="font-size: 12px; color: #ccc">Event Bus</a> <a href="/tags/Expert/" style="font-size: 12px; color: #ccc">Expert</a> <a href="/tags/FFM/" style="font-size: 12px; color: #ccc">FFM</a> <a href="/tags/Facebook/" style="font-size: 12px; color: #ccc">Facebook</a> <a href="/tags/Fast-Android-Networking/" style="font-size: 13px; color: #c2c2c2">Fast Android Networking</a> <a href="/tags/FastText/" style="font-size: 12px; color: #ccc">FastText</a> <a href="/tags/Fear/" style="font-size: 12px; color: #ccc">Fear</a> <a href="/tags/Feature/" style="font-size: 12px; color: #ccc">Feature</a> <a href="/tags/File-Directory/" style="font-size: 12px; color: #ccc">File Directory</a> <a href="/tags/File-System/" style="font-size: 13px; color: #c2c2c2">File System</a> <a href="/tags/Financing/" style="font-size: 12px; color: #ccc">Financing</a> <a href="/tags/Find-Bugs/" style="font-size: 12px; color: #ccc">Find Bugs</a> <a href="/tags/Findbugs/" style="font-size: 12px; color: #ccc">Findbugs</a> <a href="/tags/Floating-point/" style="font-size: 12px; color: #ccc">Floating point</a> <a href="/tags/Focus/" style="font-size: 12px; color: #ccc">Focus</a> <a href="/tags/Framework/" style="font-size: 14px; color: #b7b7b7">Framework</a> <a href="/tags/Freedom/" style="font-size: 12px; color: #ccc">Freedom</a> <a href="/tags/Front-Guard/" style="font-size: 12px; color: #ccc">Front Guard</a> <a href="/tags/Fu-Sheng/" style="font-size: 13px; color: #c2c2c2">Fu Sheng</a> <a href="/tags/GBK/" style="font-size: 12px; color: #ccc">GBK</a> <a href="/tags/GPU/" style="font-size: 13px; color: #c2c2c2">GPU</a> <a href="/tags/GSON/" style="font-size: 12px; color: #ccc">GSON</a> <a href="/tags/Garbage-Collector/" style="font-size: 12px; color: #ccc">Garbage Collector</a> <a href="/tags/Generic/" style="font-size: 12px; color: #ccc">Generic</a> <a href="/tags/Gesture-Detector/" style="font-size: 12px; color: #ccc">Gesture Detector</a> <a href="/tags/Git/" style="font-size: 13px; color: #c2c2c2">Git</a> <a href="/tags/GitHub/" style="font-size: 13px; color: #c2c2c2">GitHub</a> <a href="/tags/Google/" style="font-size: 18px; color: #8e8e8e">Google</a> <a href="/tags/Gradle/" style="font-size: 14px; color: #b7b7b7">Gradle</a> <a href="/tags/Grammar/" style="font-size: 12px; color: #ccc">Grammar</a> <a href="/tags/Grit/" style="font-size: 12px; color: #ccc">Grit</a> <a href="/tags/Grow-Up/" style="font-size: 14px; color: #b7b7b7">Grow Up</a> <a href="/tags/Growing-Up/" style="font-size: 14px; color: #b7b7b7">Growing Up</a> <a href="/tags/Gu-Dian/" style="font-size: 12px; color: #ccc">Gu Dian</a> <a href="/tags/Habit/" style="font-size: 12px; color: #ccc">Habit</a> <a href="/tags/Hacker/" style="font-size: 14px; color: #b7b7b7">Hacker</a> <a href="/tags/Hardward/" style="font-size: 12px; color: #ccc">Hardward</a> <a href="/tags/Hardware-Accelerate/" style="font-size: 12px; color: #ccc">Hardware Accelerate</a> <a href="/tags/Health/" style="font-size: 22px; color: #646464">Health</a> <a href="/tags/Hexo/" style="font-size: 12px; color: #ccc">Hexo</a> <a href="/tags/History/" style="font-size: 15px; color: #adadad">History</a> <a href="/tags/Home/" style="font-size: 12px; color: #ccc">Home</a> <a href="/tags/Hot-Update/" style="font-size: 12px; color: #ccc">Hot Update</a> <a href="/tags/House/" style="font-size: 12px; color: #ccc">House</a> <a href="/tags/Humanity/" style="font-size: 12px; color: #ccc">Humanity</a> <a href="/tags/IC/" style="font-size: 12px; color: #ccc">IC</a> <a href="/tags/IKEA/" style="font-size: 12px; color: #ccc">IKEA</a> <a href="/tags/IO/" style="font-size: 13px; color: #c2c2c2">IO</a> <a href="/tags/IPCreator/" style="font-size: 12px; color: #ccc">IPCreator</a> <a href="/tags/IPR/" style="font-size: 12px; color: #ccc">IPR</a> <a href="/tags/Independence/" style="font-size: 12px; color: #ccc">Independence</a> <a href="/tags/Innovation/" style="font-size: 15px; color: #adadad">Innovation</a> <a href="/tags/Innovation-Thinking/" style="font-size: 12px; color: #ccc">Innovation Thinking</a> <a href="/tags/Insurance/" style="font-size: 12px; color: #ccc">Insurance</a> <a href="/tags/Intelligence/" style="font-size: 12px; color: #ccc">Intelligence</a> <a href="/tags/Internet/" style="font-size: 12px; color: #ccc">Internet</a> <a href="/tags/Introspection/" style="font-size: 12px; color: #ccc">Introspection</a> <a href="/tags/Investment/" style="font-size: 16px; color: #a2a2a2">Investment</a> <a href="/tags/IoT/" style="font-size: 12px; color: #ccc">IoT</a> <a href="/tags/JSON/" style="font-size: 12px; color: #ccc">JSON</a> <a href="/tags/JVM/" style="font-size: 13px; color: #c2c2c2">JVM</a> <a href="/tags/Jake-Wharton/" style="font-size: 13px; color: #c2c2c2">Jake Wharton</a> <a href="/tags/Java/" style="font-size: 20px; color: #797979">Java</a> <a href="/tags/Java-Snippet/" style="font-size: 12px; color: #ccc">Java Snippet</a> <a href="/tags/Java-Virtual-Machine/" style="font-size: 12px; color: #ccc">Java Virtual Machine</a> <a href="/tags/JavaScript/" style="font-size: 13px; color: #c2c2c2">JavaScript</a> <a href="/tags/Jiang-Tao/" style="font-size: 12px; color: #ccc">Jiang Tao</a> <a href="/tags/K-means/" style="font-size: 12px; color: #ccc">K-means</a> <a href="/tags/K-nearest-neighbors/" style="font-size: 12px; color: #ccc">K-nearest neighbors</a> <a href="/tags/Kaifu-Lee/" style="font-size: 12px; color: #ccc">Kaifu Lee</a> <a href="/tags/Knowledge-Framework/" style="font-size: 12px; color: #ccc">Knowledge Framework</a> <a href="/tags/Law/" style="font-size: 12px; color: #ccc">Law</a> <a href="/tags/Leak-Canary/" style="font-size: 12px; color: #ccc">Leak Canary</a> <a href="/tags/Less-Code/" style="font-size: 12px; color: #ccc">Less Code</a> <a href="/tags/Li-Xiang/" style="font-size: 12px; color: #ccc">Li Xiang</a> <a href="/tags/Li-Xiaolai/" style="font-size: 13px; color: #c2c2c2">Li Xiaolai</a> <a href="/tags/Life/" style="font-size: 14px; color: #b7b7b7">Life</a> <a href="/tags/Lint/" style="font-size: 12px; color: #ccc">Lint</a> <a href="/tags/Linux/" style="font-size: 19px; color: #838383">Linux</a> <a href="/tags/Liu-Weipeng/" style="font-size: 12px; color: #ccc">Liu Weipeng</a> <a href="/tags/Liu-Xuefeng/" style="font-size: 12px; color: #ccc">Liu Xuefeng</a> <a href="/tags/Log/" style="font-size: 12px; color: #ccc">Log</a> <a href="/tags/Logic-Thinking/" style="font-size: 14px; color: #b7b7b7">Logic Thinking</a> <a href="/tags/Love/" style="font-size: 12px; color: #ccc">Love</a> <a href="/tags/Luo-Shengyang/" style="font-size: 12px; color: #ccc">Luo Shengyang</a> <a href="/tags/Luo-Zhenyu/" style="font-size: 12px; color: #ccc">Luo Zhenyu</a> <a href="/tags/Lyric/" style="font-size: 12px; color: #ccc">Lyric</a> <a href="/tags/MVP/" style="font-size: 12px; color: #ccc">MVP</a> <a href="/tags/MXNet/" style="font-size: 13px; color: #c2c2c2">MXNet</a> <a href="/tags/Machine-Learning/" style="font-size: 23px; color: #5a5a5a">Machine Learning</a> <a href="/tags/Management/" style="font-size: 15px; color: #adadad">Management</a> <a href="/tags/Master/" style="font-size: 12px; color: #ccc">Master</a> <a href="/tags/Matrix/" style="font-size: 12px; color: #ccc">Matrix</a> <a href="/tags/Meituan/" style="font-size: 17px; color: #989898">Meituan</a> <a href="/tags/Memory/" style="font-size: 13px; color: #c2c2c2">Memory</a> <a href="/tags/Memory-Leak/" style="font-size: 12px; color: #ccc">Memory Leak</a> <a href="/tags/Meta-Skill/" style="font-size: 24px; color: #4f4f4f">Meta Skill</a> <a href="/tags/Milestone/" style="font-size: 12px; color: #ccc">Milestone</a> <a href="/tags/Monitor/" style="font-size: 12px; color: #ccc">Monitor</a> <a href="/tags/Motto/" style="font-size: 12px; color: #ccc">Motto</a> <a href="/tags/Movie/" style="font-size: 25px; color: #454545">Movie</a> <a href="/tags/Movies/" style="font-size: 12px; color: #ccc">Movies</a> <a href="/tags/Multimedia/" style="font-size: 15px; color: #adadad">Multimedia</a> <a href="/tags/Multiprocess/" style="font-size: 12px; color: #ccc">Multiprocess</a> <a href="/tags/Multithread/" style="font-size: 13px; color: #c2c2c2">Multithread</a> <a href="/tags/Music/" style="font-size: 27px; color: #303030">Music</a> <a href="/tags/Music-Player/" style="font-size: 12px; color: #ccc">Music Player</a> <a href="/tags/MySQL/" style="font-size: 12px; color: #ccc">MySQL</a> <a href="/tags/Negotiation/" style="font-size: 12px; color: #ccc">Negotiation</a> <a href="/tags/Nervous/" style="font-size: 12px; color: #ccc">Nervous</a> <a href="/tags/Network/" style="font-size: 13px; color: #c2c2c2">Network</a> <a href="/tags/Neural-Network/" style="font-size: 14px; color: #b7b7b7">Neural Network</a> <a href="/tags/Next/" style="font-size: 12px; color: #ccc">Next</a> <a href="/tags/Notebook/" style="font-size: 12px; color: #ccc">Notebook</a> <a href="/tags/OS/" style="font-size: 12px; color: #ccc">OS</a> <a href="/tags/OkHttp/" style="font-size: 12px; color: #ccc">OkHttp</a> <a href="/tags/Okio/" style="font-size: 12px; color: #ccc">Okio</a> <a href="/tags/Online/" style="font-size: 12px; color: #ccc">Online</a> <a href="/tags/Open-Source/" style="font-size: 20px; color: #797979">Open Source</a> <a href="/tags/Opportunity/" style="font-size: 12px; color: #ccc">Opportunity</a> <a href="/tags/Optimization/" style="font-size: 12px; color: #ccc">Optimization</a> <a href="/tags/Original/" style="font-size: 22px; color: #646464">Original</a> <a href="/tags/PCA/" style="font-size: 12px; color: #ccc">PCA</a> <a href="/tags/PMD/" style="font-size: 12px; color: #ccc">PMD</a> <a href="/tags/Patent/" style="font-size: 15px; color: #adadad">Patent</a> <a href="/tags/Patience/" style="font-size: 12px; color: #ccc">Patience</a> <a href="/tags/Pattern/" style="font-size: 12px; color: #ccc">Pattern</a> <a href="/tags/Performance/" style="font-size: 12px; color: #ccc">Performance</a> <a href="/tags/Permission/" style="font-size: 12px; color: #ccc">Permission</a> <a href="/tags/Permissions-Dispatcher/" style="font-size: 12px; color: #ccc">Permissions Dispatcher</a> <a href="/tags/Philosophy/" style="font-size: 13px; color: #c2c2c2">Philosophy</a> <a href="/tags/Picture/" style="font-size: 14px; color: #b7b7b7">Picture</a> <a href="/tags/Pitfall/" style="font-size: 12px; color: #ccc">Pitfall</a> <a href="/tags/Poor/" style="font-size: 12px; color: #ccc">Poor</a> <a href="/tags/Portfolio/" style="font-size: 12px; color: #ccc">Portfolio</a> <a href="/tags/Prediction-Learning/" style="font-size: 12px; color: #ccc">Prediction Learning</a> <a href="/tags/Prejudice/" style="font-size: 12px; color: #ccc">Prejudice</a> <a href="/tags/Principle/" style="font-size: 12px; color: #ccc">Principle</a> <a href="/tags/Probability/" style="font-size: 12px; color: #ccc">Probability</a> <a href="/tags/Profession/" style="font-size: 12px; color: #ccc">Profession</a> <a href="/tags/Program/" style="font-size: 12px; color: #ccc">Program</a> <a href="/tags/Pronunciation/" style="font-size: 12px; color: #ccc">Pronunciation</a> <a href="/tags/Psychology/" style="font-size: 13px; color: #c2c2c2">Psychology</a> <a href="/tags/PyTorch/" style="font-size: 12px; color: #ccc">PyTorch</a> <a href="/tags/Python/" style="font-size: 16px; color: #a2a2a2">Python</a> <a href="/tags/Quote/" style="font-size: 12px; color: #ccc">Quote</a> <a href="/tags/RAISR/" style="font-size: 12px; color: #ccc">RAISR</a> <a href="/tags/Random-Forests/" style="font-size: 12px; color: #ccc">Random Forests</a> <a href="/tags/Reactive/" style="font-size: 12px; color: #ccc">Reactive</a> <a href="/tags/Reading/" style="font-size: 17px; color: #989898">Reading</a> <a href="/tags/Real-Estate/" style="font-size: 17px; color: #989898">Real Estate</a> <a href="/tags/Recommendation-System/" style="font-size: 12px; color: #ccc">Recommendation System</a> <a href="/tags/Reflection/" style="font-size: 13px; color: #c2c2c2">Reflection</a> <a href="/tags/Regression/" style="font-size: 12px; color: #ccc">Regression</a> <a href="/tags/Regular-Expression/" style="font-size: 14px; color: #b7b7b7">Regular Expression</a> <a href="/tags/Resource/" style="font-size: 14px; color: #b7b7b7">Resource</a> <a href="/tags/Responsibility/" style="font-size: 12px; color: #ccc">Responsibility</a> <a href="/tags/Rich/" style="font-size: 12px; color: #ccc">Rich</a> <a href="/tags/Robust/" style="font-size: 12px; color: #ccc">Robust</a> <a href="/tags/RxAndroid/" style="font-size: 13px; color: #c2c2c2">RxAndroid</a> <a href="/tags/RxJava/" style="font-size: 14px; color: #b7b7b7">RxJava</a> <a href="/tags/SEMILAR/" style="font-size: 12px; color: #ccc">SEMILAR</a> <a href="/tags/Scarcity/" style="font-size: 12px; color: #ccc">Scarcity</a> <a href="/tags/Scikit/" style="font-size: 12px; color: #ccc">Scikit</a> <a href="/tags/Security/" style="font-size: 12px; color: #ccc">Security</a> <a href="/tags/Semantic-Similarity/" style="font-size: 12px; color: #ccc">Semantic Similarity</a> <a href="/tags/Sentence/" style="font-size: 13px; color: #c2c2c2">Sentence</a> <a href="/tags/Serialization/" style="font-size: 12px; color: #ccc">Serialization</a> <a href="/tags/Server/" style="font-size: 12px; color: #ccc">Server</a> <a href="/tags/Share/" style="font-size: 30px; color: #111">Share</a> <a href="/tags/Shell/" style="font-size: 12px; color: #ccc">Shell</a> <a href="/tags/Shopping/" style="font-size: 12px; color: #ccc">Shopping</a> <a href="/tags/Signature/" style="font-size: 12px; color: #ccc">Signature</a> <a href="/tags/Silicon-Valley/" style="font-size: 12px; color: #ccc">Silicon Valley</a> <a href="/tags/Singleton/" style="font-size: 12px; color: #ccc">Singleton</a> <a href="/tags/Skill-Graph/" style="font-size: 12px; color: #ccc">Skill Graph</a> <a href="/tags/Smart-AI/" style="font-size: 12px; color: #ccc">Smart AI</a> <a href="/tags/Smart-Phone/" style="font-size: 12px; color: #ccc">Smart Phone</a> <a href="/tags/Smart-UI/" style="font-size: 12px; color: #ccc">Smart UI</a> <a href="/tags/SmartAI/" style="font-size: 12px; color: #ccc">SmartAI</a> <a href="/tags/SmartUI/" style="font-size: 12px; color: #ccc">SmartUI</a> <a href="/tags/Smartphone/" style="font-size: 12px; color: #ccc">Smartphone</a> <a href="/tags/Software/" style="font-size: 12px; color: #ccc">Software</a> <a href="/tags/Sound/" style="font-size: 12px; color: #ccc">Sound</a> <a href="/tags/Startup/" style="font-size: 15px; color: #adadad">Startup</a> <a href="/tags/Statistics/" style="font-size: 12px; color: #ccc">Statistics</a> <a href="/tags/Stetho/" style="font-size: 12px; color: #ccc">Stetho</a> <a href="/tags/Stock/" style="font-size: 13px; color: #c2c2c2">Stock</a> <a href="/tags/Story/" style="font-size: 12px; color: #ccc">Story</a> <a href="/tags/Strategy/" style="font-size: 12px; color: #ccc">Strategy</a> <a href="/tags/Success/" style="font-size: 12px; color: #ccc">Success</a> <a href="/tags/Super-Individual/" style="font-size: 12px; color: #ccc">Super Individual</a> <a href="/tags/Support-Library/" style="font-size: 12px; color: #ccc">Support Library</a> <a href="/tags/SystemML/" style="font-size: 12px; color: #ccc">SystemML</a> <a href="/tags/Tensor/" style="font-size: 12px; color: #ccc">Tensor</a>
             </div>
           </div>
         
@@ -387,156 +379,145 @@
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/img/icon.png"
-               alt="IPCreator" />
-          <p class="site-author-name" itemprop="name">IPCreator</p>
-           
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/icon.png"
+                alt="IPCreator" />
+            
+              <p class="site-author-name" itemprop="name">IPCreator</p>
               <p class="site-description motion-element" itemprop="description">For life, growing up is the only password.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">547</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">352</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/aiseeme" target="_blank" title="github">
+                    
+                      <i class="fa fa-fw fa-globe"></i>github</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/zhuxuanlvzxl/home?wvr=5&lf=reg" target="_blank" title="weibo">
+                    
+                      <i class="fa fa-fw fa-globe"></i>weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.163.com/zhuxuanlv@126/" target="_blank" title="blog">
+                    
+                      <i class="fa fa-fw fa-globe"></i>blog</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://book.douban.com/subject/25870384/" title="probabilities of life" target="_blank">probabilities of life</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://book.douban.com/subject/27078435/" title="transition" target="_blank">transition</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://gelonghui.com/p/101767.html" title="golden era of AI" target="_blank">golden era of AI</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://h5.sao.cn/product/detail?alias=onhnfsdtybxb" title="leading to freedom of wealth" target="_blank">leading to freedom of wealth</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhibimo.com/read/xiaolai/ba-shi-jian-dang-zuo-peng-you/index.html" title="take time as a friend" target="_blank">take time as a friend</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhibimo.com/read/xiaolai/reborn-every-7-years/" title="reborn every 7 years" target="_blank">reborn every 7 years</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://lixiaolai.com/2016/06/12/makecs-preface/" title="everyone can be engineer" target="_blank">everyone can be engineer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhibimo.com/read/xiaolai/everyone-can-use-english/" title="everyone can use english" target="_blank">everyone can use english</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
         </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">547</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">22</span>
-                <span class="site-state-item-name">categories</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">352</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/aiseeme" target="_blank" title="github">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                    
-                      github
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/zhuxuanlvzxl/home?wvr=5&lf=reg" target="_blank" title="weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                    
-                      weibo
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://blog.163.com/zhuxuanlv@126/" target="_blank" title="blog">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                    
-                      blog
-                    
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-          <div class="cc-license motion-element" itemprop="license">
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
-              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
-            </a>
-          </div>
-        
-
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://book.douban.com/subject/25870384/" title="probabilities of life" target="_blank">probabilities of life</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://book.douban.com/subject/27078435/" title="transition" target="_blank">transition</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://gelonghui.com/p/101767.html" title="golden era of AI" target="_blank">golden era of AI</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://h5.sao.cn/product/detail?alias=onhnfsdtybxb" title="leading to freedom of wealth" target="_blank">leading to freedom of wealth</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://zhibimo.com/read/xiaolai/ba-shi-jian-dang-zuo-peng-you/index.html" title="take time as a friend" target="_blank">take time as a friend</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://zhibimo.com/read/xiaolai/reborn-every-7-years/" title="reborn every 7 years" target="_blank">reborn every 7 years</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://lixiaolai.com/2016/06/12/makecs-preface/" title="everyone can be engineer" target="_blank">everyone can be engineer</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://zhibimo.com/read/xiaolai/everyone-can-use-english/" title="everyone can use english" target="_blank">everyone can use english</a>
-                </li>
-              
-            </ul>
-          </div>
-        
-
-        
-
-
       </section>
 
       
@@ -553,30 +534,36 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">IPCreator</span>
+
+  
 </div>
 
 
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
 
 
         
+
+
+
+
+
+
 
         
       </div>
@@ -642,25 +629,25 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
 
 
 
   
-  
-
-  
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
-
-  
-
-  
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
 
 
 
@@ -693,6 +680,8 @@
 		</script>
 
 	
+
+
 
 
 
@@ -1136,21 +1125,6 @@
 
 
   
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
 
   
 
