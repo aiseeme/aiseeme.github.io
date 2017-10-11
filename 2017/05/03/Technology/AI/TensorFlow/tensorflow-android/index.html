@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,Machine Learning,TensorFlow," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="For life" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Source
+就像上图所描述的那样，机器学习实际上只包括了三个主要构成部分：
+
+首先，你需要通过建模来确定一个公式，这个公式就是「机器」。
+
+其次，确定「w」和「b」这两个变量「参数」。
+
+通过系统或软件的设定不断重复测试并调整「参数」直到达到一个稳定的值。
+
+
+在公式的确定中，整个学习的过程是渐进的，一旦这种重复的运算达到了一个稳定的取值，机器学习的错误概率就会大大减少。
+简单来说，就是用一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TensorFlow, Next Android?">
+<meta property="og:url" content="http://deepcreator.com/2017/05/03/Technology/AI/TensorFlow/tensorflow-android/index.html">
+<meta property="og:site_name" content="For life">
+<meta property="og:description" content="Source
+就像上图所描述的那样，机器学习实际上只包括了三个主要构成部分：
+
+首先，你需要通过建模来确定一个公式，这个公式就是「机器」。
+
+其次，确定「w」和「b」这两个变量「参数」。
+
+通过系统或软件的设定不断重复测试并调整「参数」直到达到一个稳定的值。
+
+
+在公式的确定中，整个学习的过程是渐进的，一旦这种重复的运算达到了一个稳定的取值，机器学习的错误概率就会大大减少。
+简单来说，就是用一个">
+<meta property="og:image" content="http://7mnpep.com2.z0.glb.qiniucdn.com/uploads/image/file/25/0e/250e707a638b56899b3d42faad02181f.png?imageView2/2/w/930/interlace/1/q/88/ignore-error/1/">
+<meta property="og:image" content="http://7mnpep.com2.z0.glb.qiniucdn.com/uploads/image/file/ec/90/ec90c0f8957b86bda5d8ef9528804fdf.png?imageView2/2/w/930/interlace/1/q/88/ignore-error/1/">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram1_TrainingPipeline_FINAL.png">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram1_Serving_FINAL.png">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram2_Final.png">
+<meta property="og:image" content="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram2_Final.png">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/63918611gy1feqvu2gi3dj21jk111top.jpg">
+<meta property="og:updated_time" content="2017-09-15T00:51:58.102Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TensorFlow, Next Android?">
+<meta name="twitter:description" content="Source
+就像上图所描述的那样，机器学习实际上只包括了三个主要构成部分：
+
+首先，你需要通过建模来确定一个公式，这个公式就是「机器」。
+
+其次，确定「w」和「b」这两个变量「参数」。
+
+通过系统或软件的设定不断重复测试并调整「参数」直到达到一个稳定的值。
+
+
+在公式的确定中，整个学习的过程是渐进的，一旦这种重复的运算达到了一个稳定的取值，机器学习的错误概率就会大大减少。
+简单来说，就是用一个">
+<meta name="twitter:image" content="http://7mnpep.com2.z0.glb.qiniucdn.com/uploads/image/file/25/0e/250e707a638b56899b3d42faad02181f.png?imageView2/2/w/930/interlace/1/q/88/ignore-error/1/">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://deepcreator.com/2017/05/03/Technology/AI/TensorFlow/tensorflow-android/"/>
+
+
+
+
+
+  <title>TensorFlow, Next Android? | For life</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5aaaaf5c9bcea80a5c7d7a057b2d36b3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+      <div class="site-meta-headline">
+        <a>
+          <img class="custom-logo-image" src="/img/icon.png"
+               alt="For life"/>
+        </a>
+      </div>
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">For life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Growing up is the only password.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-help">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            help
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/05/03/Technology/AI/TensorFlow/tensorflow-android/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IPCreator">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/icon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="For life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TensorFlow, Next Android?</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-03T19:46:06+08:00">
+                2017-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TensorFlow/" itemprop="url" rel="index">
+                    <span itemprop="name">TensorFlow</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/03/Technology/AI/TensorFlow/tensorflow-android/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/05/03/Technology/AI/TensorFlow/tensorflow-android/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/05/03/Technology/AI/TensorFlow/tensorflow-android/" class="leancloud_visitors" data-flag-title="TensorFlow, Next Android?">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7mnpep.com2.z0.glb.qiniucdn.com/uploads/image/file/25/0e/250e707a638b56899b3d42faad02181f.png?imageView2/2/w/930/interlace/1/q/88/ignore-error/1/" alt=""></p>
+<p><a href="http://www.geekpark.net/topics/213892" target="_blank" rel="external">Source</a></p>
+<p>就像上图所描述的那样，机器学习实际上只包括了三个主要构成部分：</p>
+<ol>
+<li><p>首先，你需要通过建模来确定一个公式，这个公式就是「机器」。</p>
+</li>
+<li><p>其次，确定「w」和「b」这两个变量「参数」。</p>
+</li>
+<li><p>通过系统或软件的设定不断重复测试并调整「参数」直到达到一个稳定的值。</p>
+</li>
+</ol>
+<p>在公式的确定中，整个学习的过程是渐进的，一旦这种重复的运算达到了一个稳定的取值，机器学习的错误概率就会大大减少。</p>
+<p>简单来说，就是用一个公式来描述输入、输出和参数，从而提高机器对特定事物的认知。</p>
+   <a id="more"></a>
+<h2 id="Google开源TensorFlow背后：会成为人工智能领域的Android-吗？"><a href="#Google开源TensorFlow背后：会成为人工智能领域的Android-吗？" class="headerlink" title="Google开源TensorFlow背后：会成为人工智能领域的Android 吗？"></a><a href="http://www.geekpark.net/topics/213892" target="_blank" rel="external">Google开源TensorFlow背后：会成为人工智能领域的Android 吗？</a></h2><p> <img src="http://7mnpep.com2.z0.glb.qiniucdn.com/uploads/image/file/ec/90/ec90c0f8957b86bda5d8ef9528804fdf.png?imageView2/2/w/930/interlace/1/q/88/ignore-error/1/" alt=""></p>
+<p> 在具体的实践中，Gmail 已经能够辨别 99.9% 的垃圾邮件，并能将语音识别为文字；Google Photo 的图片识别错误率也从 23% 降到了 13%，用户不需要再照片上标注「大海」的名字即可自动归类；而在 Google 的现金流业务广告系统中，机器学习的应用也将大大提高广告投放的投资回报率。</p>
+<p>这一切看似复杂的过程都源自于一个简单公式的重复测试，正如 Greg Corrado 所言，「我们不会给机器一个规则，而是让它不断地去自己去学习和纠正。」</p>
+<p>人类通过几个简单的例子就能进行学习，但机器却需要大量的测试。即便依靠一个简单的公式就能实现准确的预测，但整个参数和过程的确立却要经历无数的重复试验。</p>
+<blockquote>
+<p>「机器学习并不是魔术，它只是个工具而已。」</p>
+</blockquote>
+<p>未来，机器学习还面临着在移动设备上实现的瓶颈。由于大量的计算需要在云端完成，因此所有的结果的实现需要一个庞大网络的支撑，而目前的移动设备和网络还不足以达到这一要求。</p>
+<p>「你的手机现在只是接受了数千台计算机为你计算处理的数据，未来我们会把网络做小，让机器学习的结果更具适用性。」Schimidt 毫不回避这一困境所在。</p>
+<p>因此，TensorFlow 的开源变得理所当然，能否超越 Android 称为又一个全新的生态也变得没那么重要。比起建立一套固定的规则，「机器学习」和「人工智能」更需要的是一套技术标准。</p>
+<h2 id="利用-TensorFlow-Serving-系统在生产环境中运行模型"><a href="#利用-TensorFlow-Serving-系统在生产环境中运行模型" class="headerlink" title="利用 TensorFlow Serving 系统在生产环境中运行模型"></a><a href="http://wiki.jikexueyuan.com/project/geekdigest/TensorFlow-Serving.html" target="_blank" rel="external">利用 TensorFlow Serving 系统在生产环境中运行模型</a></h2><p>机器学习技术支撑着许多 Google 产品的功能，比如：Google 应用中的语音识别，收件箱的智能回复，以及 Google 照片搜索，等等。尽管软件行业几十年中积累起的无数经验促成了很多用于构建并支持产品的最佳实践，但基于机器学习的服务却还是带来了一些新颖而有趣的挑战。如今，专为解决这些挑战的系统终于出现了，这就是 TensorFlow Serving。TensorFlow Serving 是一种用于机器学习模型的高性能开源服务系统，专为生产环境而设计，并针对 TensorFlow 进行了优化处理。</p>
+<p>TensorFlow Serving 系统非常适用于大规模运行能够基于真实情况的数据并会发生动态改变的多重模型。它能够实现：</p>
+<p>模型生命周期管理。<br>使用多重算法进行试验。<br>GPU 资源的有效使用。<br>TensorFlow Serving 能够简化并加速从模型到生产的过程。它能实现在服务器架构和 API 保持不变的情况下，安全地部署新模型并运行试验。除了原生集成 TensorFlow，还可以扩展服务其他类型的模型。下图显示了简化的监督学习过程，向 learner 输入训练数据，然后输出模型：</p>
+<p><img src="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram1_TrainingPipeline_FINAL.png" alt=""></p>
+<p>一旦经过验证后，新模型版本定型，就可以部署到服务系统，如下图所示：</p>
+<p><img src="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram1_Serving_FINAL.png" alt=""></p>
+<p>TensorFlow Serving 使用（之前训练的）模型来实施推理——基于客户端呈现数据的预测。因为客户端通常会使用远程过程调用（RPC）接口来与服务系统通信，TensorFlow Serving 提供了一种基于 gRPC 的参考型前端实现，这是一种 Google 开发的高性能开源 RPC 架构。当新数据可用或改进模型时，加载并迭代模型是很常见的。事实上，在谷歌，许多管线经常运行，一旦当新数据可用时，就会产生新版本的模型。</p>
+<p><img src="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram2_Final.png" alt=""></p>
+<p><img src="http://wiki.jikexueyuan.com/project/geekdigest/images/Tensor_Flow_Diagram2_Final.png" alt=""></p>
+<p>TensorFlow Serving 由 C++ 编写而成，支持 Linux。TensorFlow Serving 引入的开销是非常小的。我们在一个有着 16个 vCPU 的英特尔至强 E5 2.6 GHz 的机器上进行了测试，执行每核每秒约 100,000 次查询，不包括 gRPC 和 TensorFlow 推理处理时间。我们非常激动地向大家分享这个遵守 Apache 2.0 开源协议的 TensorFlow 重要组件。非常希望大家能在 Stack Overflow 和 GitHub 上提问或请求开发一些功能。上手很简单，只需复制 github.com/tensorflow/serving 中的代码，然后签出教程即可。随着我们对 TensorFlow 的继续开发，你一定会了解到更多有关内容，因为这大概是世界上最好用的机器学习工具包了。如果希望及时了解最新进展，请关注 @googleresearch 或 +ResearchatGoogle，以及 2016 年 3 月，Jeff Dean 将在 GCP Next 2016 上的主题演讲。</p>
+<h2 id="人工智能：TensorFlow-带你进入深度学习的世界"><a href="#人工智能：TensorFlow-带你进入深度学习的世界" class="headerlink" title="人工智能：TensorFlow 带你进入深度学习的世界"></a><a href="http://www.weiot.net/plugin.php?id=wq_wechatcollecting&amp;mod=view&amp;articleid=68655" target="_blank" rel="external">人工智能：TensorFlow 带你进入深度学习的世界</a></h2><p>自 TensorFlow 于 2015 年底正式开源，距今已有一年多，不久前，TensorFlow 正式版也发布了。这期间 TensorFlow 不断给人以惊喜，推出了分布式版本，服务框架 TensorFlow Serving，可视化工具 TensorFlow，上层封装 TF.Learn，其他语言（Go、Java、Rust、Haskell）的绑定、Windows 的支持、JIT 编译器 XLA、动态计算图框架 Fold，以及数不胜数的经典模型在 TensorFlow 上的实现（Inception Net、SyntaxNet 等）。在这一年多时间，TensorFlow 已从初入深度学习框架大战的新星，成为了几近垄断的行业事实标准。</p>
+<p>目前看来，对于人工智能这个领域依然有不少怀疑的声音，但不可否认的是，人工智能仍然是未来的发展趋势。因此，在高手问答第 142 期里，我们策划了 “TensorFlow 实战” 的主题，并邀请了 @黄文坚 @唐源Terry 作为高手嘉宾。</p>
+<p>本文整理了本期高手问答中一些与 TensorFlow 相关的精彩问答。</p>
+<h3 id="一、TensorFlow-之入门篇"><a href="#一、TensorFlow-之入门篇" class="headerlink" title="一、TensorFlow 之入门篇"></a>一、TensorFlow 之入门篇</h3><p>1.没接触过，刚了解了一下，这个东西就是把某种东西用数据描述出来，然后用一些样本告诉机器它是什么，或者要对他进行什么操作，训练后，机器就能告诉我们输入的数据是什么，或者自动的进行操作吗？比如输入一堆图片告诉他哪个是猫，以后它就能自动识别猫了；给汽车装上各种传感器采集数据，人开着车操作，一段时间后，它就知道什么情况要怎么操作了，就会自动驾驶了？不知理解得对不对，希望指正。</p>
+<p>对的，你说的是其中一类运用，属于机器学习的概念，但可以做到的还远远不止这些，可以多多关注这个领域。深度学习是机器学习的一个分支。TensorFlow 是主要用来进行深度学习应用的框架。</p>
+<ol>
+<li>我是 TensorFlow 爱好者，现在正在学习， 国内的这方面的资料不多， 感谢你们提供的资料。我想问一下，学习 TensorFlow 有什么学习曲线，有没有什么实战的案例？另外在集群模式支持的是不是友好，和 Spark 集成是不是友好？或者有没有这方面的规划。</li>
+</ol>
+<p>书中有特别多的实战例子，欢迎购买！至于对 Spark 集群的友好，你可以了解一下雅虎最近新开源的 TensorFlowOnSpark。</p>
+<ol>
+<li>看了这个题目的一些提问，发现这个 TensorFlow 技术，学习曲线还是很陡峭，研究的人还是少数，有什么方法可以把学习曲线降低，更容易入门吗？还有学习这个技术，有什么必要的学科基础要求吗？</li>
+</ol>
+<p>可以先通过 keras 上手，这是一个支持 TensorFlow 的上层封装。在学习 TensorFlow 之前，需要有基础的 Python 编程能力，以及对深度学习有一定了解。不过我现在在和 RStudio 合作把这个也能放在 R 里面跑，可以关注一下我的 GitHub：<a href="https://github.com/terrytangyuan。" target="_blank" rel="external">https://github.com/terrytangyuan。</a></p>
+<ol>
+<li>好期待 TensorFlow 这本书，对于新手看着书入门会有难度吗？要先掌握什么基础知识呢？</li>
+</ol>
+<p>可以先看看 TensorFlow 中文官方站点的文档。本书对新手难度不高。需要一些基础的 Python 运用能力，还有一些机器学习基础。书中对深度学习有较多的讲解，所以对深度学习的知识要求不高。</p>
+<ol>
+<li>作为一名成长在 Spring 技术栈下的码农，转投 TensorFlow 的话，这本书适合我们入门么？也想请您在机器学习方向上提供一些指导意见，谢谢。</li>
+</ol>
+<p>完全可以的，可以学习一下基础的 Python 语法，学习机器学习，深度学习，尝试做一做相关的小应用，也可以看看雅虎最近出的 TensorFlowOnSpark，或从 sklearn+numpy+pandas 开始。</p>
+<ol>
+<li>请问如果要学习 TensorFlow，数学应该掌握到什么程度，高数，线代，积分都学过还需要再学哪些内容？</li>
+</ol>
+<p>如果只是要掌握这门工具，不需要学习太多理论的东西，比如说你如果想利用这门工具来做一些机器学习的运用，我现在做的 tf.contrib.learn 模块，类似 scikit-learn，降低了很多学习的门槛，希望能够帮助到大家。如果想深入做研究的话，你说的这些都是必须要掌握的基础，可以在这基础上多关注一下相关的研究，建立好自己的感兴趣方向。</p>
+<ol>
+<li>学习 TensorFlow 需要哪些技术栈，了解 TensorFlow 需要阅读源码吗？</li>
+</ol>
+<p>如果只是想调用高阶的一些模块做一些应用，基本的 Python 就够了，如果想在某一块做提升的话，能自己学习读代码是再好不过的了，我一开始参与开源软件的时候也是只懂一些基础，可以积极参与开发和讨论，从这个过程中可以学到很多。如果想掌握底层的一些细节，就需要学好 C 语言之类的了。</p>
+<p>最底层还有 cuda 的代码。这个要看自己的需求，是想了解到什么程度，如果只是用来做应用，想要很快出结果，直接看 api 就好。如果想对性能进行优化，可能需要阅读源码。</p>
+<ol>
+<li>与 TensorFlow 类似的项目有哪些？TensorFlow 的优点和缺点是？</li>
+</ol>
+<p>还有 Caffe、CNTK、MXNet 等，在《TensorFlow实战》书中第二章详尽地讲解了 TensorFlow 与其他学习框架的对比。</p>
+<ol>
+<li>TensorFlow 只能部署在 Linux 机器上？</li>
+</ol>
+<p>Mac, Windows, Mobile, Rasberry Pi 都是可以的</p>
+<h3 id="二、TensorFlow-之性能篇"><a href="#二、TensorFlow-之性能篇" class="headerlink" title="二、TensorFlow 之性能篇"></a>二、TensorFlow 之性能篇</h3><p>1.TensoFlow 的优点我知道，架构好、跨平台、接口丰富、易部署，而且是大公司的产品。问题就是 TensoFlow 的性能到底如何，我看过网上几个评测，是不是像以前别人测试中的那样慢的离谱，不管 CPU 还是 GPU 跟 Torch 比都慢不少，评比原文，更有测试评论说 TensoFlow 比 convnetjs 慢 100 倍，原文地址。</p>
+<p>我简单了解深度学习的算法有很多，效率也不同，我希望知道的是，在同算法的情况下，TensoFlow 到底比其它框架慢多少？毕竟性能也是一个很关键的因素。</p>
+<p>这些评测是很旧的了，新版的 TensorFlow 没有这个问题。TensorFlow 目前可能在全连接的 MLP 上稍微慢一点，但是后续 XLA 会解决这个问题。但是其他比如 CNN、RNN 等，因为大家主要都使用 cuDNN，差异不大，性能基本上非常接近的。性能你可以放心，Google 内部全部使用这个框架，如果真有性能慢的话，这么多人使用着早就解决了。</p>
+<ol>
+<li>机器学习中一般分有监督学习和无监督学习，无监督学习下，用 TensorFlow 来对某个数据集进行学习，那么它识别出来的特征是什么？还有 TensorFlow1.0 中加入了 XLA，我理解为能把代码翻译成特定的 GPU 或 x86-64 的运行代码，是不是只有在做代数运算时才会用上 XLA？TensorFlow 不是已经在底层用cuda 的 cuDNN 库加速了吗，为什么还要用 XLA？</li>
+</ol>
+<p>关于无监督学习，书中有讲解。无监督学习在深度学习中一般是自编码器等，提取到的是抽象的高阶特征，去除了噪声。XLA 会对几个层叠的操作进行 JIT 编译。cuda 是一门语言，cuDNN 是深度学习的库，使用 cuda 加速也要看是怎么使用它加速，是一层计算执行一次，还是把几层的计算合并在一起执行，XLA 做的就是这个，将一些简单的操作编译合并成一个操作。此前 TensorFlow 训 练 MLP 等网络较慢，使用 XLA 后有。</p>
+<ol>
+<li>请问使用 TensorFlowOnSpark 之后，除了免去数据在 HDFS 和 TensorFlow 移动之外，是否能对性能有较好的提升呢？如果不用 TensorFlowOnSpark，TensorFlow 目前自己的分布式性能是否已经成熟了呢？</li>
+</ol>
+<p>目前 TensorFlow 的分布式算是比较成熟的，但可能还不是最快的。TensorFlowonSpark 应该不能提升分布式的性能，毕竟还经过了一层 Spark 的通信机制处理。</p>
+<ol>
+<li>应该选择 TensorFlow 还是 Theano？有使用两个库的用户比较一下这两者。比如从编译速度，运行速度，易用性等角度进行比较。</li>
+</ol>
+<h3 id="三、TensorFlow-之适用场景"><a href="#三、TensorFlow-之适用场景" class="headerlink" title="三、TensorFlow 之适用场景"></a>三、TensorFlow 之适用场景</h3><ol>
+<li>请问 TensorFlow 在自然语言处理上有没有优势？</li>
+</ol>
+<p>自然语言主要使用 RNN、LSTM、GRU 等，目前新推出的 TensorFLow Fold 支持 Dynamics Batching，计算效率大幅度提升，非常适合做自然语言处理。</p>
+<ol>
+<li>TensorFlow 在实际生产环境中，有什么特别适合的场景呢？</li>
+</ol>
+<p>TensorFlow 部署非常方便，可用在 Android、iOS 等客户端，进行图像识别、人脸识别等任务。常见的 CTR 预估，推荐等任务，也可以轻松地部署到服务器 CPU 上。</p>
+<ol>
+<li>TensorFlow 有在生产企业中应用的案例吗？</li>
+</ol>
+<p>在 Google 用的特别多，所有会用到深度学习的场景，都可以使用 TensorFlow，比如搜索、邮件、语音助手、机器翻译、图片标注等等。</p>
+<ol>
+<li>TensorFlow 在大数据行业的应用和运用怎么样？TensorFlow 的源码使用了哪些设计模式？</li>
+</ol>
+<p>应用非常广的，谷歌已经在很多项目上用了 TensorFlow，比如说 Youtube watch next，还有很多研究型的项目，谷歌 DeepMind 以后所有的研究都会使用这个框架。如果对某段代码好奇，可以去参考参考源代码学习学习，很多的设计都是经过内部各种项目和用户的千锤百炼。</p>
+<p>Google 内部非常多 team 在使用 TensorFlow，比如搜索、邮件、语音、机器翻译等等。数据越大，深度学习效果越好，而支持分布式的 TensorFlow 就能发挥越大的作用。</p>
+<ol>
+<li>最近在学习 TensorFlow，发现其分布式有 in-graph 和 between-gragh 两种架构模式，请问这两种架构的区别是什么？或者是不是应用场景不同？</li>
+</ol>
+<p>其实一个 in-graph 就是模型并行，将模型中不同节点分布式地运行；between-graph 就是数据并行，同时训练多个 batch 的数据。要针对神经网络结构来设计，模型并行实现难度较大，而且需要网络中天然存在很多可以并行的节点。因此一般用数据并行的比较多。</p>
+<ol>
+<li>TensorFlow实现估值网络 ，作用和意义在哪里？ 有没有其他的方法实现估值网络？</li>
+</ol>
+<p>估值网络是深度强化学习中的一个模型，可以用来解决常见的强化学习问题，比如下棋，自动玩游戏，机器控制等等。</p>
+<ol>
+<li>想请问下 TF 有类似 Spark Streaming 的模块吗？TF 在后端存储上和 cassandra 或者 hdfs 的集成上有没有啥需要注意的地方？Spark 在集群上依赖 Master，然后分发到 Worker 上，这样的架构感觉不太稳定，不知道 TF 在分布式是什么架构有没有什么特点？</li>
+</ol>
+<p>目前没有类似 Streaming 的东西，Spark 主要用来做数据处理。TensorFlow 则更多是对处理后的数据进行训练和学习。</p>
+<ol>
+<li>TensorFlow 对初学者是否太难了？TensorFlow 貌似都是研发要用的，对服务器运维会有哪些改变？</li>
+</ol>
+<p>TensorFlow 针对实际生产也是非常好的。应该是所有框架中最适合实际生产环境的，因为有 Google 强大的工程团队的支持，所以 TensorFlow 拥有产品级的代码，稳健的质量，还有适合部署的 TensorFlow Serving。</p>
+<ol>
+<li>TensorFlow 从个体学习研究到实际生产环境应用，有哪些注意事项？</li>
+</ol>
+<p>个人研究的时候没有太多限制，实际上线生成可以使用 TensorFlow Serving，部署效率比较高。</p>
+<ol>
+<li>TF 的耗能是否可以使其独立工作在离线环境的嵌入式小板上，真正达到可独立的智能机器人。</li>
+</ol>
+<p>可以的，使用 TensorFlow 的嵌入式设备很多。但做机器人涉及到很多步骤，核心部分都设计了机器学习，图像处理之类的，TensorFlow 可以用来搭建那些。</p>
+<ol>
+<li>互联网应用如何结合 TensorFlow，能简单介绍一下吗？</li>
+</ol>
+<p>互联网应用很多都是推荐系统，比如说 Youtube watch next 的推荐系统就是用到了 TensorFlow，现在在 tf.contrib.learn 里面有专门的 Estimator 来做 Wide and Deep Learning（可以查看官网上的例子，我们的书中也有更深一些的讲解），大家也都可以用的。</p>
+<ol>
+<li>不知道有没有针对传统零售行业的实际案例，比如销售预测的案例。</li>
+</ol>
+<p>用深度学习可以做销售预测模型，只要它可以转为一个分类预测的问题。</p>
+<ol>
+<li>使用 TensorFlow 的产品有哪些？有比较有代表性的吗？</li>
+</ol>
+<p>可以看看我之前的评论，Youtube watch next 就是其中一个例子，还有很火的 AlphaGo。</p>
+<h3 id="四、TensorFlow-之实战篇"><a href="#四、TensorFlow-之实战篇" class="headerlink" title="四、TensorFlow 之实战篇"></a>四、TensorFlow 之实战篇</h3><p>1.现在在用 TensorFlow 实现图像分类的例子，参考的是 CIFAR-10，输入图片会被随机裁剪为 24x24 的大小，而且训练效率较慢（用了近 20 小时，已使用了 GPU），是否有其他方法来提高效率？TensorFlow 有分布式的处理方法吗，若采用分布式，是否要手动将每一台机器上的训练结果进行合并？若提高裁剪的大小，是否能提高准确率？另外，网上有评论说 TensorFlow 的 C/C++ 接口没有 Caffe 友好，这个您怎么看？</p>
+<p>提高裁剪的大小，会降低样本量，准确率不一定提高。训练 20 多小时是用了多少 epoch？可以通过 tensorboard 观看准确率变化，不一定要训练特别多 epoch。TensorFlow 有分布式的训练，不需要手动，有比较好用的接口，在《TensorFlow实战》中有详细的例子如何使用分布式版本。TF 的 C/C++ 接口很完善，有没有 caffe 友好这个见仁见智。</p>
+<ol>
+<li>想问一下 TensorFlow 和 Spark 结合的框架，例如 TensorFlow on Spark，目前是否已经成熟可用？另外，TensorFlow 新版本增加了对 Java API 的支持，如果不使用 Python 语言，所有功能都直接使用 Java 语言进行相关开发是否已经可行？</li>
+</ol>
+<p>Java API 目前还不太成熟，很多还有待实现，TensorFlowOnSpark 也挺有意思的，可以在现有的 Spark/Hadoop 分布式集群的基础上部署 TensorFlow 的程序，这样可以避免数据在已有 Spark/Hadoop 集群和深度学习集群间移动，HDFS 里面的数据能够更好的输入进 TensorFlow 的程序当中。至于成熟不成熟我就不清楚了，毕竟自己还没有试过，不过稍微看了看雅虎自己有使用。</p>
+<ol>
+<li>对其他的一些机器学习的库接触过一些，要出一个好的效果，对算法选取和参数设置及调节这些方面，希望能给些建议。算法比较多，该如何从分析维度去选取合适的算法？</li>
+</ol>
+<p>我觉得最好的方法就是参加数据科学竞赛，比如说 Kaggle，通过融入在大家的讨论当中，实际操作和锻炼，你可以很快的理解各种参数的意义和一些比较好的参数范围。</p>
+<p>对于一般的数值、种类等特征的数据集，XGboost 和 Lightgbm 都有很好的效果。如果你的数据量很大，或者是图片、视频、语音、语言、时间序列，那么使用深度学习将能获得很好的效果。</p>
+<ol>
+<li>打算做个文章分析类的东东，比如，分析一篇新闻的要素(时间、地点、人物)，用 TensorFlow 应该怎么着手？</li>
+</ol>
+<p>这个问题应该先看看 NLP（自然语言处理）相关的内容，TensorFlow 是实现你算法的工具。但是前提是你得知道应该使用什么算法。</p>
+<ol>
+<li><p>TensorFlow 对于分布式 GPU 支持吗？如何选择 TensorFlow 和 XGboost？<br>TensorFlow 支持分布式 GPU，用于深度学习。XGBoost 主要是做 gradient boosting 这一块，最近也有人贡献了代码使它能够的 GPU 上跑，可以做一做实验比较一下。毕竟 XGboost 是经过 kaggle 用户的千锤百炼，很多都已经能够满足他们的需求了。</p>
+</li>
+<li><p>现在学习 TensorFlow 有没有合适的数据可以使用的？</p>
+</li>
+</ol>
+<p>TensorFlow 中自带了 MNIST 和 CIFAR 数据的下载程序，其他常用的，比如 ImageNet, Gigaword 等数据集需要自己下载。</p>
+<ol>
+<li>BNN分类器训练出的曲线是高次多项式吗？</li>
+</ol>
+<p>你说的 BNN 是指？如果神经网络中没有激活函数，那输出的结果只是输入的线性变换。但是加入了激活函数后，就不是高次多项式了。</p>
+<h3 id="五、其他相关的问题"><a href="#五、其他相关的问题" class="headerlink" title="五、其他相关的问题"></a>五、其他相关的问题</h3><p>1.TensorFlow 的发展趋势是怎么样的？</p>
+<p>会集成越来越多的 contrib 模块，添加很多方便的上层接口，支持更多的语言绑定。同时新推出的 XLA（JIT编译器），Fold（Dynamics Batching）都是未来的大方向。</p>
+<ol>
+<li>个人开发者做 TensorFlow 应用和开发有前途吗？还是说数据和资料都在大公司，没有合适的、相当数量的数据喂养是无法训练好模型的？</li>
+</ol>
+<p>不仅仅限制在深度学习领域，现在 TensorFlow 也提供很多机器学习的 Estimators，我贡献的大部分都在这一块，可以了解一下 tf.contrib.learn 这个模块，书中有很多机器学习的例子。</p>
+<p>另外就是具体要看你做什么任务，当然数据是需要的，但是 <strong>现在也有很多公开的数据。大公司的数据虽多，但是质量也并不是非常高。</strong></p>
+<p>有关 TensorFlow 的相关问答内容至此结束。欢迎大家在开源中国的技术问答区上面踊跃提问和回答。</p>
+<p>最后，安利一下两位老师的著作 €€€€ 《TensorFlow实战》。 本书结合了大量代码实例，深入浅出地介绍了如何使用 TensorFlow、深度剖析如何用 TensorFlow 实现主流神经网络、详述 TensorBoard、多 GPU 并行、分布式并行等组件的使用方法。</p>
+<h2 id="谷歌人工智能背后的大脑"><a href="#谷歌人工智能背后的大脑" class="headerlink" title="谷歌人工智能背后的大脑"></a><a href="http://blog.jobbole.com/110925/" target="_blank" rel="external">谷歌人工智能背后的大脑</a></h2><p>【伯乐在线导读】：1996 年 Jeff Dean 在华盛顿大学获得计算机科学博士学位，三年后便加入了谷歌。谷歌在 1998 年成立，他是公司早期员工之一。Jeff Dean 在谷歌公司的成长过程中扮演了重要角色，设计并实现了支撑谷歌大部分产品的分布式计算基础架构。2016 年 8 月 Forbes 的 Peter High 对 Jeff Dean 做了一次采访，伯乐在线编译如下。</p>
+<p>谷歌 CEO Sundar Pichai 曾说谷歌将主要成为一家人工智能公司，作为系统和基础架构小组的资深前辈，Dean 和他的团队对于实现这个计划来说至关重要。这次的采访所涵盖的内容比较广泛，Dean 描述了他在谷歌扮演的多样角色，公司的 AI 愿景以及他对于谷歌即使已成为科技巨头但仍保持着创业精神的看法，同时还包括其他各种各样的话题。</p>
+<p><img src="http://wx2.sinaimg.cn/mw690/63918611gy1feqvu2gi3dj21jk111top.jpg" alt=""></p>
+<p>Peter High：你好，Jeff Dean，你参与了谷歌大部分的历史，在 1999 年就加入了公司。请简单描述下这十几年来你在公司的角色是如何演变的。</p>
+<p>Jeff Dean：我刚加入时公司真的很小，我们一起挤在帕罗奥图市大学路的一间小办公室里。我做的第一件最主要的事情就是创建我们第一个广告系统。之后，我花费了4到5年的时间在用于每一次查询的抓取、索引和搜索系统。之后，我主要与同事 Sanjay Ghemawat 等人创建用于存储和处理大规模数据设置的软件基础架构，还做一些像搜索指数或者处理卫星图像这样的事情。最近，我致力于机器学习系统。</p>
+<p>High：你在公司的权限有多大，你要做的工作范围有多广？我猜想你没有“普通的一天”。你如何与公司内部或者外部的人员互动？在当前的工作上，你如何把时间分配在这些不同的事情呢？</p>
+<p>Dean： 真不是典型的工作日 。在最初的 14 到15 年，我没有接受任何管理性的职位，这给了我更多自由时间去集中精力写代码。在最近几年，我接受了一些机器学习方面的管理职位，这对我来说很有趣，也是新的学习经历。因为在公司历史上我从事过多种工作，我会保持跟进这些不同的项目，我收到很多邮件。我花费相当一部分时间去处理邮件，通过浏览邮件来跟进项目的最新进展。在任何特定的时间，我手上都有几个技术性项目，我努力分配出时间在这些项目上面，同时还穿插着各种会议和设计审查各种事情。</p>
+<p>High：尽管谷歌已经取得了巨大的发展，它仍然是保持创新的典范。它保持着壮志雄心和开拓创新，仿佛它只是一个很小的组织一般。但是它已有了资源——不管是人才上还是资金上——俨然已是科技界的庞然大物。这个组织是如何对抗停滞和官僚主义，从而保持不拘于自身规模的更强的灵活性呢？</p>
+<p>Dean： 自从我加入公司以来，我们基本就经历了公司的不断成长。在早期，我们新招聘的员工每年都会增长一倍。按新员工占总员工的百分比算，我们后来降低了这个比例，但是在绝对数量上，我们基本仍保持一个大的增长，现在大约每年招聘 10% 到 20% 的新员工。公司规模每扩大一倍，我们就被迫使去重新思考公司已经完成的这些事情。哪些过去适用于 X 倍规模，但却不再适用于 2X 倍规模，我们必须去努力使我们的模式、工程、组织结构、团队动力等适应新的规模。</p>
+<p>我认为有助于我们成长的一个举动是，把与谷歌其他业务在一定程度相分离的部分独立出来，成立不同的部门。创建为偏远地区覆盖网络的高海拔气球，与服务搜索查询有相对适度的互动。大体上把各种不同的活跃的项目独立开来，我们能获取更好的规模和效率，这些项目是我们的核心业务，但是彼此不需要太多的沟通交流。</p>
+<p>High：我理解 Google/Alphabet 各部门的分离，是出于想要维持一定的灵活性，和划分开不同的活动的逻辑。这个评价是否公允？</p>
+<p>Dean： 是的。我认为这使得 Alphabet 下面一些其他实体可以更独立地操作。关于规模的成倍增长，有一个有趣的转变是：以前我们每个人都是在同一个大楼，现在每个人都不在同一个大楼。</p>
+<p>另一个转变，以前员工只在山景城，后来在瑞士苏黎世、纽约、日本东京和西雅图都设有办事处。我们一度有 5 个办事处，都相当大而完善。然后在短短几年内，我们的办事处从 5 个扩张到 35 个，因为我们觉得在世界各地设有许多办事处很好，在哪里可以找到有才华的人才，就在他们身边设立一个办事处。这促使我们不得不重新思考，如何去组织我们工程师的诸多成果。如果你有一个小的办公室，他们可能不应该做一百件事；他们应该做少数几件事，并专心把他们做好。一些小办公室采取的模式是看山景城的人在做什么，他们看到他们在做一百件事，所以他们认为他们也应该做一百件事。我们慢慢摸索到有一种更好的方式来充分发挥这些散布在各地的工程办事处的人的能力。</p>
+<p>High：谷歌 CEO Sundar Pichai 曾说，从长远来看，设备装置将会消失，计算将从移动设备优先向人工智能优先进化。你如何看待谷歌对于人工智能优先的愿景？</p>
+<p>Dean：我认为我们已经从桌面计算进入到了移动计算，这时候每个人都有一个计算设备随身随时携带。随着设备不断地缩小，语音识别和其他可用的 UI 变得实际可用，这将改变我们与计算设备交流的方式。他们将会退居到幕后或者只是周边，允许我们与他们对话就像我们与其他可信赖的伙伴对话一样。他们将会帮助我们获取我们需要的信息和完成各种任务。我认为这是推动机器学习的一个主要目标：在提供咨询方面让计算机提供其他人类伙伴能够提供的智慧，期待必要的时候有更多的信息和更多这类的事情。我认为在下个 5 到 10 年，将会是一个激动人心的时期。</p>
+<p>High：随着各种进步和各种关于 AI 的目标的实现，看起来很多人不再谈论那些已经实现的真正的 AI。那就是，AI 在被谈论时似乎总是带有未来色彩。你怎么定义 AI 的边界？</p>
+<p>Dean：我认为真正的通用人工智能将是一个系统，能够执行人类水平的推理，理解和完成复杂的任务。我们显然还没有达到这个水平，但你说得很对，确实有了很多进展。5 年前，给计算机一张图片，它还不能生成一个人类水平的句子来描述这个图片。现在，计算机生成的句子会说，“这张图片描述的是一个男人拿着网球拍在网球场上。”同时，一个人可能会说，“这是一张网球运动员发球的图片。”人的描述更为微妙，但事实上，现在计算机能够生成看起来几乎是人类写的标题，这是一个相当大的进步。这只是过去的 5~6 年间已实现的众多更具智慧的机器学习模型中的其中一个成就。随着他们应用更大的数据和计算，结果会更好。</p>
+<p>High：你认为我们距离通用人工智能还有多远？</p>
+<p>Dean：不同的问法有不同的回答，这个问题有点广泛。我只敢给出一个宽泛的猜测。大约就是 15 到 50 年，也有可能比 15 年更早。</p>
+<p>High：正如你所提到的，语言是关键，许多谷歌的人工智能都围绕着语言、阅读和理解网页上的一切或从事智能对话和理解背景。你能谈谈能使得机器更好的解释事物的路径吗？你预见的事情，以及你从事的事情正朝什么方向进展，如果还没完全达到全面的通用人工智能的话？</p>
+<p>Dean：我认为有趣的事之一是信息检索领域，这基本上就是谷歌早期做的工作。传统上，它并不试图真正理解用户在查询时需要什么。它更多的是关于查找包含或者接近这个单词的文档。有趣的是，在过去的四五年，我们已经开始发展出这样一种技术，可以更好地理解“car”这个单词的本质。知道 “car” 和 “cars”、 “automobile”、“passenger car”、“pickup truck” 在某种意义上都是相关联的，能够以更顺畅的方式匹配出文章，在许多语言理解任务上可以得出更好的结果。</p>
+<p>我们能理解的不仅仅是单词，我们的理解还能达到这个水平，即理解在阐释上不同但意思相同的两个句子。这开始促使我们的语言理解达到这样一个层次：以更机器学习的方式理解更长得多的序列文本。</p>
+<p>接下来几年我们有个目标，希望能够采集数以百计数以千计的文件，然后对这些文件内容展开一个对话。也许系统会自动总结这些文件，提问或者回答关于文件内容的问题。我认为这种水平的理解，是我们将真正去实现的高水平的语言理解。</p>
+<p>High：似乎你和你们团队的成果已经开始应用在谷歌的各种产品当中：谷歌助手，谷歌新的对话虚拟助手；与 Amazon Echo 相竞争的 Google Home；以及为谷歌服务提供对话界面的信息 APP——Allo。你怎么看待谷歌最近的产品和服务？</p>
+<p>Dean： 我目前领导的研究小组被称为谷歌大脑（Google Brain）。我们专注于建立大规模计算系统来实现机器学习，和做前沿的机器学习研究。只有机器学习技能或只有大规模计算技能的人才，往往不能完全发挥他们的才能，而同时拥有这两种不同技能的人才在一起工作，合作解决问题，通常会产生出意义重大的进步。我想这就是我们团队在这两个领域，在关于我们在这些难题上投入达到世界先进水平的计算力，以及我们怎样训练大有力的模型在我们关心的问题上都取得很大成功的原因之一。</p>
+<p>通过理解我们的一些研究成果什么时候可以用于提升谷歌现有产品上，我们以往在长期研究上是相当机会主义的。我们与产品团队一起合作说，“嘿，我们认为这个机器学习研究将会非常有用。”有时这是需要放手去做的事情。其他时候我们小组和产品团队深度合作，让研究结果变成真实产品。</p>
+<p>我们小组的研究人员曾发明了一种叫“从序列到序列学习（sequence-to-sequence learning）”的模型。这其中的理念是，你使用一个输入序列来预测某些输出结果序列。听起来有点抽象，但可以映射到许多你想要解决的真正问题。他们发表的研究论文最初是在语言翻译的背景下。输入序列可以是一个句子中的英文单词，一次一个。该模型被训练去输出对应的法国单词来创建一个法语句子，意思与输入的英语句子相同。这不同于其他机器翻译系统，别的机器翻译系统往往是问题的代码和子件——也许使用了机器学习或统计模型，然后将它拼接在一起。相比与那个方法，这个系统是一个完全的机器学习，端到端系统，在这个系统中你用语言不同但表达的意思相同的成对的句子作为数据来训练，然后系统就能学会将一种语言翻译另一种语言。</p>
+<p>在其他语境中，这种通用模型非常有用。Gmail 团队采用了它，把它作为我们称之为“智能回复”特征的基础，其中输入序列是一封刚收到的邮件，而通过序列是根据刚收到邮件的语境而做出的对回复内容的预测。例如，你也许会收到一封这样的邮件，“嘿，我们想邀请你参加感恩节晚宴。如果能来请回复。”回复通常来说可能是这样。“是的，我们很想去。我们要带些什么？”或者“不好意思，我们去不了，”或者与此语境下相关的类似的回复。它是同一个基本模型，只是用了不同的数据集来训练。</p>
+<p>High：潜在的研究应用以及 Google Brain 做出的突破，如何部署在谷歌传统的产品服务中？</p>
+<p>Dean： 我们已经开始将这个流程变得规范一点。五年前，当我们最初创建机器学习研究团队去研究海量计算和深度神经网络如何解决问题时，公司里还没有太多人使用这些方法。我们找到了一些感觉领域，在这些领域我们感觉他们是有效地，包括语音识别系统，所以我们与语音识别团队密切协作，将深度神经网络配置为语音识别系统的一部分，并且在识别准确率上取得了实质性进展。然后我们和各种计算机视觉相关团队合作，比如图片搜索和街景服务团队，从而训练模型在给定的各种图片的原始像素下做有趣的事情，比如从图片中提取文本或者理解图片内容是什么（美洲豹、垃圾车等等）。</p>
+<p>有趣的是，随着时间的推移，更多的团队开始采用这些方法，因为他们总会听说另一个团队正在尝试新的东西并取得了好成果。我们会帮助这样这些团队建立联系，或者提供一些关于在特定问题情境中如何使用这些方法的基本建议。我们后来把这个流程做得更规范了一些，所以现在我们有一个专门的团队做外展服务。这是为正在产品中尝试使用这些机器学习模型的团队建立联系的第一点。他们会描述他们的问题，然后外展服务团队会告诉他们：噢，听起来很像另外 XX 团队的问题，这个解决方案很有效果，试试并记得给我们反馈。使用这些方法的团队在数量上有非常大的增长，在 2011 年、2012 年只有几个团队，现在已经发展到 200 多个，并且可能已有几千人在使用我们团队创建的软件训练这种模型。</p>
+<p>High：你同时也是 Google 开源机器学习库 TensorFlow 的主要创始人。 和其他几个大公司一样，谷歌专注于开发开源 AI 技术。您对使用开源人工智能技术的理论基础及优势有什么看法？</p>
+<p>Dean： 现在有许多表达不同机器学习算法的不同框架，并且都还是开源项目 。有更多选择，我认为挺好的，但如果我们可以开发出能获得机器学习社区支持，大家一起来改进的东西，这样也很好。这些框架都在尝试着相似的工作，所以如果我们能将它们放在一起形成一个库供大家采用和使用，这样是很好的。这样做，可以更为简单地表达机器学习想法。传统方式是把探索出来的想法写成论文，做一些实验，而且他们通常不会公开代码，不允许其他人再做这些实验。作为一个研究者，你正在看某人的论文，并尝试将你自己的技术与其对比。通常，因为论文中没有代码，你只能猜测那些代码会是什么。作者并不是有意省去了大量细节。论文作者也许会使用「我们使用了低的学习率」一样的描述，然而你关心的是他们使用了 .0001 的学习率，在一万步后降低到 .0005。建立一个人们可以用代码表达机器学习理念，并把这些研究模型和想法以可执行的方式发布出来的软件架构，使得机器学习理念可以在社区中快速传播。</p>
+<p>对于我们自己而言，它也方便了我们与谷歌外部人员的合作。通常我们暑期会招聘实习生，过去他们大部分已经完成了实习期的项目，但是他们仍在写这方面的论文。然后他们离开了谷歌，再也接触不到谷歌的电脑，所以他们很难继续完成论文最后的工作，运行更多的实验。现在他们使用开源或者 TensorFlow 就可以很快做到，甚至可以找到平台上的人来帮忙。我们正在教谷歌的工程师学习通用机器学习，并把 TensorFlow 作为基本的教学工具。</p>
+<p>High：谷歌的优势之一是它拥有大量 AI 和机器学习领域的人才。谷歌研究主管Peter Norvig 估测，全球超过 5% 的机器学习顶尖专家都在谷歌工作。谷歌如何做到对这些天才有这么大的吸引力？鉴于这涉及到多个不同的学科的交叉——计算机科学、工程、神经科学、生物学、数学，你怎么把这些人才安排到最适合他们的位置？</p>
+<p>Dean： 因为我们涉足的领域很多，所以我们需要拥有多种专业知识的人。我发现，当你把具有不同专业知识的人聚在一起去解决问题时，你会发现最终得到结果比那些只具备一种专业知识的一大群人一起做出来的要好。总的来说，你最终做的事情，没有人可以单独做出来。我们的机器学习团队是一个很好的例子。我们有像我一样在建设大规模计算系统方面有很多经验的人，然后我们也有世界级的机器学习研究人员。把这些类型的人结合起来是一个非常强大的团队。机器学习正在接触很多不同的领域。我们正在做的工作涉及医疗、机器人和计算机科学里的一大堆领域，这非常的好。我们团队有数位神经科学专家。</p>
+<p>很快我们将开始一个有趣的实验，它被称为“谷歌大脑培训项目”。这些人在我们的团队工作一年基本上是学习怎么去做机器学习研究。我们有大量的申请者，但是最后这个项目只会留下 28 个人。他们来自不同的背景，处于职业生涯的不同阶段。有的刚刚完成本科学业，有些已经读完博士，有的刚读完博士后，有些已经在不同的领域有过工作经历。他们有不同的学科背景，包括计算机科学、统计学、数学、生物学、物理学，从解决问题的角度来说，我认为这是一个极好的结合。</p>
+<p>High：我很好奇，有很多不以技术为中心的传统公司也会使用人工智能和机器学习，你会在多大程度这些传统公司交流与合作？你如何看待采用创新曲线（市场采用新型或创新产品的速度）？显然这涉及了不同公司甚至是不同行业，但也有一些领先的传统行业开始利用人工智能，包括医疗、金融服务公司、有大量非结构化数据需要处理的公司。你是否曾经有机会与传统行业的公司互动或者谈论他们在更加传统的环境中走向人工智能的过程？</p>
+<p>Dean：其他行业的大部分公司在把机器学习应用到业务方面，可能不如谷歌或者其他高科技公司那样深远。我认为随着时间推移，最终大部分公司都会越来越多地应用机器学习，因为机器学习会给他们的业务带来很大的能量和转型。在与一些大的医疗组织建立合作关系上，我们有过多次讨论，看看机器学习可以为这个领域解决什么样的问题。我们最近开发了一个机器学习云产品，可以让人们在谷歌云基础设施上运行机器学习算法。有很多公司对于他们怎么在起业务背景下使用这个产品感兴趣。</p>
+<p>我认为要实现这个转变的途径之一，要经历几个层次。在这些层次中你能使用 AI 技术和机器学习方法来解决问题。在一些领域，了解图像中有什么东西，对很多行业来说是普遍有用的。谷歌和其他公司正在提供使用简便的接口，你不需要知道什么机器学习的知识就可以使用这个接口。你可以只给出一个图像，然后说“跟我说说这个图像”，软件工程即使没有机器学习方面的技能就可以使用，他们得到的信息会像是“照片上是一个体育场，人们在那里打棒球，而且图像中还有一堆文字，文字内容是……”即使没有应用机器学习，这也是非常有用的。</p>
+<p>然后将已开发好的模型用公司的数据再次训练得到一个定制的方案，而不需要做核心机器学习研究去开发一个全新模型。有一个好例子，我们已经应用序列到序列的成果，解决了谷歌六七个不同的难题。另一个好例子，有一个模型可以采集图像然后找出图像中有趣的部分。这个通用模型的一个使用案例是，检测街景图片中的文本信息。你想要能去读取所有的文本，但是首先，你必须能够在店面、路标等上面找到它。这个通用模型同样适用于在医疗设置中，当你诊断糖尿病患者视网膜病变时，你给出一张视网膜的扫描图片，你想要找到这个图片中的病变的指标。这是相同的模型结构，只是换了不同的数据。在这里不是找出街景图片的文本，而是指出视网膜扫描图像中的病变部位。我相信这个通用方法可以很好地解决各类型的难题。</p>
+<p>High：2016 年 3 月，你在韩国现场目睹了 AlphaGo 的首场胜利。亲眼见证这个成果的感受如何？鉴于人工智能已经更广泛地影响到了我们的日常生活，你如何看待这种世界博览会般的展示，以及人工智能对激发人类想象力和好奇心的广泛影响?</p>
+<p>Dean：我在现场观看了首场比赛，赛程的一半时间我都留在韩国。那种激动的心情真的难以言说。有 3 亿中国人现场观看了首场比赛直播，他们用了 8 个电视频道，每场都有不同的评论员报道这个比赛。韩国也处于同样的兴奋状态。真是很精彩。</p>
+<p>我认为这种高调的事件，展示了与人工智能相关的各种难题取得了重大意义的进步。我需要指出的是，AlphaGo的大部分工作都是我们伦敦的 DeepMind 团队完成。在项目开始的阶段我们与他们有过一些合作，他们还使用了我们的机器学习软件来训练一些 AlphaGo 模型。他们还使用了张量处理单元（Tensor Processing Unit）——这是一种谷歌设计的定制机器学习硬件芯片，在某种意义上来说这是 AlphaGo 的比赛中的额外的“秘密武器”。人们注意到计算机现在拥有了四五前不曾有的能力，这使我们感到兴奋。在全球范围内，计算机科学系机器学习课程的招生量已经猛增。我认为这个意义重大。受益的不仅仅是计算机科学，还包括公司和业界。有越多聪明的人思考这类问题，我们的社会就会更进步。</p>
+<p>High：许多科技界的知名人士比如埃隆·马斯克、比尔·盖茨 和 斯蒂芬·霍金都对人工智能的安全问题发出过警告。你怎么看到这方面的风险？当你对人工智能的思考不断进步成熟时，你如何把这方面的风险也考虑进去？</p>
+<p>Dean：我觉得我并不太赞同你提到的那些人所担忧的末日场景。我觉得那不够贴近现实。我确实认为 AI 会带来社会变革，首先最大的问题就是自动化比较难进行，我们有大量的劳动力会参与到其中。有些事情会被自动化代替，尽管不是完全代替。电脑会以多种方式给予我们帮助，比如阅读医学图像数据，这是一个狭窄但是高技能的领域。我认为电脑不久之后就会相当擅长这方面的工作，更别提自动驾驶了。我不确定政府都在认真思考这些技术的一些影响，以及这对社会总的来说意味着什么。我认为这才是急切需要担忧的。确保决策者仔细考虑这些类型的问题，将是一个非常重要的一步。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://gmlove.github.io/2017/03/01/recognize-house-number/" target="_blank" rel="external">识别门牌号的移动应用</a><br><a href="http://gmlove.github.io/2017/01/16/dl-workshop-massive-network-tips/" target="_blank" rel="external">大规模Tensorflow网络的一些技巧</a><br><a href="http://blog.csdn.net/dongchangzhang/article/details/53524985" target="_blank" rel="external"> 在Android上使用Tensorflow</a><br><a href="http://blog.csdn.net/dongchangzhang/article/details/60886015" target="_blank" rel="external"> 在移动平台上使用tensorflow图片分类 （android and ios）</a><br><a href="http://blog.csdn.net/dongchangzhang/article/details/53524985" target="_blank" rel="external">在Android上使用Tensorflow</a><br><a href="http://hp.stuhome.net/index.php/2017/02/17/tensorflow-on-android/" target="_blank" rel="external">在Android端使用TensorFlow</a><br><a href="http://hp.stuhome.net/" target="_blank" rel="external">新手向的TensorFlow学习之路2（Learning paths 2）</a><br><a href="http://hp.stuhome.net/index.php/2017/02/16/retrain-google-inception-model/" target="_blank" rel="external">利用TF重训练Google Inception模型</a><br><a href="http://tflearn.org/" target="_blank" rel="external">TFLearn: Deep learning library featuring a higher-level API for TensorFlow.</a><br><a href="http://colah.github.io/" target="_blank" rel="external">Neural Networks (General)</a><br><a href="https://deeplearning4j.org/" target="_blank" rel="external">Deep Learning for Java</a><br><a href="http://lib.csdn.net/article/aiframework/60538?knId=1756" target="_blank" rel="external">将 TensorFlow 移植到 Android手机，实现物体识别、行人检测和图像风格迁移详细教程</a><br><a href="http://lib.csdn.net/article/aiframework/61087" target="_blank" rel="external">02：一文全解：利用谷歌深度学习框架Tensorflow识别手写数字图片（初学者篇）</a><br><a href="http://blog.jobbole.com/105602/" target="_blank" rel="external">TensorFlow深度学习，一篇文章就够了</a><br><a href="http://blog.jobbole.com/110558/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="external">TensorFlow 资源大全中文版</a><br><a href="http://blog.jobbole.com/108469/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="external">GitHub 上 57 款最流行的开源深度学习项目</a><br><a href="http://blog.jobbole.com/110557/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="external">人人都可以做深度学习应用：入门篇</a><br><a href="http://blog.jobbole.com/110144/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="external">9 个超酷的深度学习案例</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/TensorFlow/" rel="tag"># TensorFlow</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/03/Technology/AI/Business/ai-on-law/" rel="next" title="人工智能如何变革法律？">
+                <i class="fa fa-chevron-left"></i> 人工智能如何变革法律？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/07/Technology/Program/Tools/Computer/next-generation-of-os/" rel="prev" title="What's the Next Generation of OS">
+                What's the Next Generation of OS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="hypercomments_widget"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/icon.png"
+                alt="IPCreator" />
+            
+              <p class="site-author-name" itemprop="name">IPCreator</p>
+              <p class="site-description motion-element" itemprop="description">For life, growing up is the only password.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">603</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">457</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/aiseeme" target="_blank" title="github">
+                    
+                      <i class="fa fa-fw fa-globe"></i>github</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/zhuxuanlvzxl/home?wvr=5&lf=reg" target="_blank" title="weibo">
+                    
+                      <i class="fa fa-fw fa-globe"></i>weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.163.com/zhuxuanlv@126/" target="_blank" title="blog">
+                    
+                      <i class="fa fa-fw fa-globe"></i>blog</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://book.douban.com/subject/25870384/" title="probabilities of life" target="_blank">probabilities of life</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://book.douban.com/subject/27078435/" title="transition" target="_blank">transition</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://gelonghui.com/p/101767.html" title="golden era of AI" target="_blank">golden era of AI</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://h5.sao.cn/product/detail?alias=onhnfsdtybxb" title="leading to freedom of wealth" target="_blank">leading to freedom of wealth</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhibimo.com/read/xiaolai/ba-shi-jian-dang-zuo-peng-you/index.html" title="take time as a friend" target="_blank">take time as a friend</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhibimo.com/read/xiaolai/reborn-every-7-years/" title="reborn every 7 years" target="_blank">reborn every 7 years</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://lixiaolai.com/2016/06/12/makecs-preface/" title="everyone can be engineer" target="_blank">everyone can be engineer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhibimo.com/read/xiaolai/everyone-can-use-english/" title="everyone can use english" target="_blank">everyone can use english</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Google开源TensorFlow背后：会成为人工智能领域的Android-吗？"><span class="nav-number">1.</span> <span class="nav-text">Google开源TensorFlow背后：会成为人工智能领域的Android 吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-TensorFlow-Serving-系统在生产环境中运行模型"><span class="nav-number">2.</span> <span class="nav-text">利用 TensorFlow Serving 系统在生产环境中运行模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人工智能：TensorFlow-带你进入深度学习的世界"><span class="nav-number">3.</span> <span class="nav-text">人工智能：TensorFlow 带你进入深度学习的世界</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、TensorFlow-之入门篇"><span class="nav-number">3.1.</span> <span class="nav-text">一、TensorFlow 之入门篇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、TensorFlow-之性能篇"><span class="nav-number">3.2.</span> <span class="nav-text">二、TensorFlow 之性能篇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、TensorFlow-之适用场景"><span class="nav-number">3.3.</span> <span class="nav-text">三、TensorFlow 之适用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、TensorFlow-之实战篇"><span class="nav-number">3.4.</span> <span class="nav-text">四、TensorFlow 之实战篇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、其他相关的问题"><span class="nav-number">3.5.</span> <span class="nav-text">五、其他相关的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#谷歌人工智能背后的大脑"><span class="nav-number">4.</span> <span class="nav-text">谷歌人工智能背后的大脑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IPCreator</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 96030, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 96030, xid: "2017/05/03/Technology/AI/TensorFlow/tensorflow-android/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/96030/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("TfzAWJSzk2L4jpj4gHaNsMbp-gzGzoHsz", "PXNkGhS05PxL7rV3N8gDlAQe");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
