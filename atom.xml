@@ -2239,13 +2239,45 @@
   </entry>
   
   <entry>
+    <title>Dispute</title>
+    <link href="http://deepcreator.com/2017/10/25/Concept/Dispute/"/>
+    <id>http://deepcreator.com/2017/10/25/Concept/Dispute/</id>
+    <published>2017-10-25T02:49:06.000Z</published>
+    <updated>2017-10-25T03:23:39.136Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/argue.jpg?imageMogr2/thumbnail/!75p" alt="argue.jpg"></p>
+<blockquote>
+<p>名为争是非，而实则争胜负。</p>
+</blockquote>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/argue.jpg?imageMogr2/thumbnail/!75p&quot; alt=&quot;argue.jpg&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;名为争是非，而实则争胜负。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Concept" scheme="http://deepcreator.com/categories/Concept/"/>
+    
+    
+      <category term="Dispute" scheme="http://deepcreator.com/tags/Dispute/"/>
+    
+      <category term="Argue" scheme="http://deepcreator.com/tags/Argue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Life</title>
     <link href="http://deepcreator.com/2017/10/24/Book/Life/"/>
     <id>http://deepcreator.com/2017/10/24/Book/Life/</id>
     <published>2017-10-24T14:50:06.000Z</published>
-    <updated>2017-10-24T14:55:31.716Z</updated>
+    <updated>2017-10-25T01:17:29.136Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://img1.doubanio.com/lpic/s27252587.jpg" alt=""></p>
+    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/s27252587.jpg?imageMogr2/thumbnail/!75p" alt=""></p>
 <blockquote>
 <p>人生的道路虽然漫长，但紧要处常常只有几步，特别是当人年轻的时候。</p>
 </blockquote>
@@ -2256,7 +2288,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://img1.doubanio.com/lpic/s27252587.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/s27252587.jpg?imageMogr2/thumbnail/!75p&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;人生的道路虽然漫长，但紧要处常常只有几步，特别是当人年轻的时候。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -3135,6 +3167,76 @@
   </entry>
   
   <entry>
+    <title>Block Chain</title>
+    <link href="http://deepcreator.com/2017/10/21/Technology/BlockChain/Block%20Chain/"/>
+    <id>http://deepcreator.com/2017/10/21/Technology/BlockChain/Block Chain/</id>
+    <published>2017-10-20T23:42:06.000Z</published>
+    <updated>2017-10-21T14:02:44.100Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/blockchain.jpg?imageMogr2/thumbnail/!75p" alt="blockchain.jpg"></p>
+<blockquote>
+<p>本质上，区块链是一个人人拥有至少一部分的分布式的公开的数据库，任何一个新的数据记录，只能在多数数据库持有者（维护者）的多数同意之后才能被加入到数据库中。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="使用-Go-语言打造区块链（一）"><a href="#使用-Go-语言打造区块链（一）" class="headerlink" title="使用 Go 语言打造区块链（一）"></a><a href="http://lixiaolai.com/2017/09/28/building-blockchain-in-go-part-1/" target="_blank" rel="external">使用 Go 语言打造区块链（一）</a></h2><p>作者：Ivan Kuznetsov<br>中文翻译：李笑来<br>原文链接：<a href="https://jeiwan.cc/posts/building-blockchain-in-go-part-1/" target="_blank" rel="external">https://jeiwan.cc/posts/building-blockchain-in-go-part-1/</a></p>
+<p>第一部分：基础原型</p>
+<p>简介</p>
+<p>区块链是二十一世纪最具革命性的技术之一，它正在不断成熟，它的诸多潜力正在逐步实现中。<strong>本质上来看，区块链只不过是一个分布式的数据库</strong>。之所以区块链独特，是因为它并不是一个私有数据库，而是一个<strong>公开</strong>的数据库，即，每一个使用它的人拥有这个数据库的全部或者至少一部分。<strong>任何一个新的数据记录，只能在多数数据库持有者（维护者）的多数同意之后被加入数据库</strong>。正因如此，区块链使得加密货币以及智能合约成为可能。</p>
+<p>在这个系列文章中，我们将打造一个简化版本的加密货币，它将基于一个简化版本的区块链实现。</p>
+<p>区块（Block）</p>
+<p>让我们先从区块开始。在区块链里，价值信息存储在区块之中。比如，<strong>比特币的区块存储交易记录，而交易记录是任何加密货币的核心</strong>。除此之外，区块里还包含有技术信息，比如它的版本号，当前的时间戳，以及上一个区块的哈希（Hash）。</p>
+<p>在这篇文章中，我们所实现的并不是像比特币那样完整的区块链，而是一个简化版本的区块链，它只含有最基本的核心信息。差不多是这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">type Block struct &#123;</div><div class="line">  Timestamp   int64</div><div class="line">  Data      []byte</div><div class="line">  PrevBlockHash []byte</div><div class="line">  Hash      []byte</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在这里，Timestamp是当前的时间戳（即，区块被创建的时间），Data是区块中包含的价值信息，PrevBlockHash 存储的是上一个区块的哈希，而Hash 保存的是当前区块的哈希。在比特币的标配中，Timestamp、PrevBlockHash、Hash是区块的头部数据（Block headers），构成一个单独的数据结构；而交易记录（Transactions，在我们这个版本中就是 Data），是另外一个单独的数据结构。而我们在这里为了简化，把数据结构混在了一起。</p>
+<p>那我们如何计算哈希呢？计算哈希的方式是区块链的重要特征之一，也正是这个特性使得区块链如此<strong>安全</strong>。关键在于，计算哈希是一个计算起来很困难的工作，它需要时间，哪怕是在很快的计算机上（这就是为什么人们要买比 CPU 计算能力更强悍 GPU 甚至专门的 ASIC 芯片做矿机的 原因）。这是故意如此设计的，这么做的结果是，往区块链（数据库）里添加新的区块（数据）有一定的困难，以此保证一旦新的数据被加入，往后很难篡改。以后的文章里会进一步讨论并实现这个机制。</p>
+<p>现在呢，我们只需要把区块里的各个字段关联起来，并在此基础上计算出一个 SHA-256 哈希。让我们调用一下 SetHash这个方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">func (b *Block) SetHash() &#123;</div><div class="line">  timestamp := []byte(strconv.FormatInt(b.Timestamp, 10))</div><div class="line">  headers := bytes.Join([][]byte&#123;b.PrevBlockHash, b.Data, timestamp&#125;, []byte&#123;&#125;)</div><div class="line">  hash := sha256.Sum256(headers)</div><div class="line">  b.Hash = hash[:]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接下来，依据 Golang 的常用方式，我们将实现一个函数，以便更简单地创建区块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">func NewBlock(data string, prevBlockHash []byte) *Block &#123;</div><div class="line">  block := &amp;Block&#123;time.Now().Unix(), []byte(data), prevBlockHash, []byte&#123;&#125;&#125;</div><div class="line">  block.SetHash()</div><div class="line">  return block</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>就这么简单。</p>
+<p>区块链（Blockchain）</p>
+<p>现在，让我们来实现区块链。本质上来看，区块链只不过是一个特定结构的数据库，它是一个<strong>有序的，反向链接的列表（back-linked list）</strong>。这就意味着说，<strong>区块是按照插入的顺序排列的</strong>，每个区块都链接到上一个区块。这样的结构，使得使用者可以很快地在区块链中获得最新的区块，也可以很有效率地通过区块的哈希获得某个区块。</p>
+<p>在 Golang 中，这种结构可以用数组（Array）与数图（Map） 实现：<strong>数组用来维护有序哈希</strong>（在 Go 语言中，数组是有序的）；<strong>数图（Map） 用来维护 hash → block 对</strong>。不过，在我们的区块链原型中，我们只需要数组就可以了，因为我们暂时不需要通过哈希获取区块。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">type Blockchain struct &#123;</div><div class="line">  blocks []*Block</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这就是我们的第一个区块链！我从来没想到竟然会这么简单！</p>
+<p>现在，我们要想办法往区块链里添加区块了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">func (bc *Blockchain) AddBlock(data string) &#123;</div><div class="line">  prevBlock := bc.blocks[len(bc.blocks)-1]</div><div class="line">  newBlock := NewBlock(data, prevBlock.Hash)</div><div class="line">  bc.blocks = append(bc.blocks, newBlock)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这就完事儿了？或者……？</p>
+<p>为了添加新的区块，我们需要一个已经存在的区块，可现在我们的区块链里面没有任何区块！于是，在任何区块链中，应该至少有一个区块，这第一个区块，被称为“创始块”（Genesis Block）。来，让我们实现一个方法去创建这个“创始块”：</p>
+<figure class="highlight plain"><figcaption><span>NewGenesisBlock() *Block &#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  return NewBlock(&quot;Genesis Block&quot;, []byte&#123;&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在我们就可以创建一个函数，用来创建一个已含有“创始块”的区块链了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">func NewBlockchain() *Blockchain &#123;</div><div class="line">  return &amp;Blockchain&#123;[]*Block&#123;NewGenesisBlock()&#125;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>让我们来看看这区块链是否能用？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">func main() &#123;</div><div class="line">  bc := NewBlockchain()</div><div class="line">  bc.AddBlock(&quot;Send 1 BTC to Ivan&quot;)</div><div class="line">  bc.AddBlock(&quot;Send 2 more BTC to Ivan&quot;)</div><div class="line">  for _, block := range bc.blocks &#123;</div><div class="line">    fmt.Printf(&quot;Prev. hash: %x\n&quot;, block.PrevBlockHash)</div><div class="line">    fmt.Printf(&quot;Data: %s\n&quot;, block.Data)</div><div class="line">    fmt.Printf(&quot;Hash: %x\n&quot;, block.Hash)</div><div class="line">    fmt.Println()</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>输出结果是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Prev. hash:</div><div class="line">Data: Genesis Block</div><div class="line">Hash: aff955a50dc6cd2abfe81b8849eab15f99ed1dc333d38487024223b5fe0f1168</div><div class="line">Prev. hash: aff955a50dc6cd2abfe81b8849eab15f99ed1dc333d38487024223b5fe0f1168</div><div class="line">Data: Send 1 BTC to Ivan</div><div class="line">Hash: d75ce22a840abb9b4e8fc3b60767c4ba3f46a0432d3ea15b71aef9fde6a314e1</div><div class="line">Prev. hash: d75ce22a840abb9b4e8fc3b60767c4ba3f46a0432d3ea15b71aef9fde6a314e1</div><div class="line">Data: Send 2 more BTC to Ivan</div><div class="line">Hash: 561237522bb7fcfbccbc6fe0e98bbbde7427ffe01c6fb223f7562288ca2295d1</div></pre></td></tr></table></figure>
+<p>（竟然）完工！</p>
+<p>结论</p>
+<p>我们创建了一个极简的区块链原型：它只不过是一个由区块构成的数组，每个区快链接指向上一个区块。当然，真正的区块链远比这个复杂的多。在我们的区块链里，添加一个新区块非常快，非常容易；但是在真正的区块链中添加一个新的区块需要更多的工作：在获得添加区块的允许之前要做很繁重的计算才行（这个过程被称为“工作证明机制”，即，“Proof-of-Work”，POW）。并且，区块链是一个没有主权的分布式的数据库。因此，任何一个新的区块在被加入之前，必须经过网络中其它参与者的确认与允许（这个机制被称为“共识机制”，“Consensus”）…… 还有，我们的区块链里，还没有任何交易记录呢！</p>
+<p>未来的文章里，我们将进一步实现这些特性。</p>
+<p>链接：</p>
+<p>Full source codes: <a href="https://github.com/Jeiwan/blockchain_go/tree/part_1" target="_blank" rel="external">https://github.com/Jeiwan/blockchain_go/tree/part_1</a><br>Block hashing algorithm: <a href="https://en.bitcoin.it/wiki/Block_hashing_algorithm" target="_blank" rel="external">https://en.bitcoin.it/wiki/Block_hashing_algorithm</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/blockchain.jpg?imageMogr2/thumbnail/!75p&quot; alt=&quot;blockchain.jpg&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本质上，区块链是一个人人拥有至少一部分的分布式的公开的数据库，任何一个新的数据记录，只能在多数数据库持有者（维护者）的多数同意之后才能被加入到数据库中。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Block Chain" scheme="http://deepcreator.com/categories/Block-Chain/"/>
+    
+    
+      <category term="Block" scheme="http://deepcreator.com/tags/Block/"/>
+    
+      <category term="Chain" scheme="http://deepcreator.com/tags/Chain/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Bit Coin</title>
     <link href="http://deepcreator.com/2017/10/21/Technology/BlockChain/BitCoin/"/>
     <id>http://deepcreator.com/2017/10/21/Technology/BlockChain/BitCoin/</id>
@@ -3232,76 +3334,6 @@
       <category term="Bit" scheme="http://deepcreator.com/tags/Bit/"/>
     
       <category term="Coin" scheme="http://deepcreator.com/tags/Coin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Block Chain</title>
-    <link href="http://deepcreator.com/2017/10/21/Technology/BlockChain/Block%20Chain/"/>
-    <id>http://deepcreator.com/2017/10/21/Technology/BlockChain/Block Chain/</id>
-    <published>2017-10-20T23:42:06.000Z</published>
-    <updated>2017-10-21T14:02:44.100Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/blockchain.jpg?imageMogr2/thumbnail/!75p" alt="blockchain.jpg"></p>
-<blockquote>
-<p>本质上，区块链是一个人人拥有至少一部分的分布式的公开的数据库，任何一个新的数据记录，只能在多数数据库持有者（维护者）的多数同意之后才能被加入到数据库中。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="使用-Go-语言打造区块链（一）"><a href="#使用-Go-语言打造区块链（一）" class="headerlink" title="使用 Go 语言打造区块链（一）"></a><a href="http://lixiaolai.com/2017/09/28/building-blockchain-in-go-part-1/" target="_blank" rel="external">使用 Go 语言打造区块链（一）</a></h2><p>作者：Ivan Kuznetsov<br>中文翻译：李笑来<br>原文链接：<a href="https://jeiwan.cc/posts/building-blockchain-in-go-part-1/" target="_blank" rel="external">https://jeiwan.cc/posts/building-blockchain-in-go-part-1/</a></p>
-<p>第一部分：基础原型</p>
-<p>简介</p>
-<p>区块链是二十一世纪最具革命性的技术之一，它正在不断成熟，它的诸多潜力正在逐步实现中。<strong>本质上来看，区块链只不过是一个分布式的数据库</strong>。之所以区块链独特，是因为它并不是一个私有数据库，而是一个<strong>公开</strong>的数据库，即，每一个使用它的人拥有这个数据库的全部或者至少一部分。<strong>任何一个新的数据记录，只能在多数数据库持有者（维护者）的多数同意之后被加入数据库</strong>。正因如此，区块链使得加密货币以及智能合约成为可能。</p>
-<p>在这个系列文章中，我们将打造一个简化版本的加密货币，它将基于一个简化版本的区块链实现。</p>
-<p>区块（Block）</p>
-<p>让我们先从区块开始。在区块链里，价值信息存储在区块之中。比如，<strong>比特币的区块存储交易记录，而交易记录是任何加密货币的核心</strong>。除此之外，区块里还包含有技术信息，比如它的版本号，当前的时间戳，以及上一个区块的哈希（Hash）。</p>
-<p>在这篇文章中，我们所实现的并不是像比特币那样完整的区块链，而是一个简化版本的区块链，它只含有最基本的核心信息。差不多是这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">type Block struct &#123;</div><div class="line">  Timestamp   int64</div><div class="line">  Data      []byte</div><div class="line">  PrevBlockHash []byte</div><div class="line">  Hash      []byte</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在这里，Timestamp是当前的时间戳（即，区块被创建的时间），Data是区块中包含的价值信息，PrevBlockHash 存储的是上一个区块的哈希，而Hash 保存的是当前区块的哈希。在比特币的标配中，Timestamp、PrevBlockHash、Hash是区块的头部数据（Block headers），构成一个单独的数据结构；而交易记录（Transactions，在我们这个版本中就是 Data），是另外一个单独的数据结构。而我们在这里为了简化，把数据结构混在了一起。</p>
-<p>那我们如何计算哈希呢？计算哈希的方式是区块链的重要特征之一，也正是这个特性使得区块链如此<strong>安全</strong>。关键在于，计算哈希是一个计算起来很困难的工作，它需要时间，哪怕是在很快的计算机上（这就是为什么人们要买比 CPU 计算能力更强悍 GPU 甚至专门的 ASIC 芯片做矿机的 原因）。这是故意如此设计的，这么做的结果是，往区块链（数据库）里添加新的区块（数据）有一定的困难，以此保证一旦新的数据被加入，往后很难篡改。以后的文章里会进一步讨论并实现这个机制。</p>
-<p>现在呢，我们只需要把区块里的各个字段关联起来，并在此基础上计算出一个 SHA-256 哈希。让我们调用一下 SetHash这个方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">func (b *Block) SetHash() &#123;</div><div class="line">  timestamp := []byte(strconv.FormatInt(b.Timestamp, 10))</div><div class="line">  headers := bytes.Join([][]byte&#123;b.PrevBlockHash, b.Data, timestamp&#125;, []byte&#123;&#125;)</div><div class="line">  hash := sha256.Sum256(headers)</div><div class="line">  b.Hash = hash[:]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>接下来，依据 Golang 的常用方式，我们将实现一个函数，以便更简单地创建区块：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">func NewBlock(data string, prevBlockHash []byte) *Block &#123;</div><div class="line">  block := &amp;Block&#123;time.Now().Unix(), []byte(data), prevBlockHash, []byte&#123;&#125;&#125;</div><div class="line">  block.SetHash()</div><div class="line">  return block</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>就这么简单。</p>
-<p>区块链（Blockchain）</p>
-<p>现在，让我们来实现区块链。本质上来看，区块链只不过是一个特定结构的数据库，它是一个<strong>有序的，反向链接的列表（back-linked list）</strong>。这就意味着说，<strong>区块是按照插入的顺序排列的</strong>，每个区块都链接到上一个区块。这样的结构，使得使用者可以很快地在区块链中获得最新的区块，也可以很有效率地通过区块的哈希获得某个区块。</p>
-<p>在 Golang 中，这种结构可以用数组（Array）与数图（Map） 实现：<strong>数组用来维护有序哈希</strong>（在 Go 语言中，数组是有序的）；<strong>数图（Map） 用来维护 hash → block 对</strong>。不过，在我们的区块链原型中，我们只需要数组就可以了，因为我们暂时不需要通过哈希获取区块。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">type Blockchain struct &#123;</div><div class="line">  blocks []*Block</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这就是我们的第一个区块链！我从来没想到竟然会这么简单！</p>
-<p>现在，我们要想办法往区块链里添加区块了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">func (bc *Blockchain) AddBlock(data string) &#123;</div><div class="line">  prevBlock := bc.blocks[len(bc.blocks)-1]</div><div class="line">  newBlock := NewBlock(data, prevBlock.Hash)</div><div class="line">  bc.blocks = append(bc.blocks, newBlock)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这就完事儿了？或者……？</p>
-<p>为了添加新的区块，我们需要一个已经存在的区块，可现在我们的区块链里面没有任何区块！于是，在任何区块链中，应该至少有一个区块，这第一个区块，被称为“创始块”（Genesis Block）。来，让我们实现一个方法去创建这个“创始块”：</p>
-<figure class="highlight plain"><figcaption><span>NewGenesisBlock() *Block &#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  return NewBlock(&quot;Genesis Block&quot;, []byte&#123;&#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>现在我们就可以创建一个函数，用来创建一个已含有“创始块”的区块链了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">func NewBlockchain() *Blockchain &#123;</div><div class="line">  return &amp;Blockchain&#123;[]*Block&#123;NewGenesisBlock()&#125;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>让我们来看看这区块链是否能用？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">func main() &#123;</div><div class="line">  bc := NewBlockchain()</div><div class="line">  bc.AddBlock(&quot;Send 1 BTC to Ivan&quot;)</div><div class="line">  bc.AddBlock(&quot;Send 2 more BTC to Ivan&quot;)</div><div class="line">  for _, block := range bc.blocks &#123;</div><div class="line">    fmt.Printf(&quot;Prev. hash: %x\n&quot;, block.PrevBlockHash)</div><div class="line">    fmt.Printf(&quot;Data: %s\n&quot;, block.Data)</div><div class="line">    fmt.Printf(&quot;Hash: %x\n&quot;, block.Hash)</div><div class="line">    fmt.Println()</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>输出结果是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Prev. hash:</div><div class="line">Data: Genesis Block</div><div class="line">Hash: aff955a50dc6cd2abfe81b8849eab15f99ed1dc333d38487024223b5fe0f1168</div><div class="line">Prev. hash: aff955a50dc6cd2abfe81b8849eab15f99ed1dc333d38487024223b5fe0f1168</div><div class="line">Data: Send 1 BTC to Ivan</div><div class="line">Hash: d75ce22a840abb9b4e8fc3b60767c4ba3f46a0432d3ea15b71aef9fde6a314e1</div><div class="line">Prev. hash: d75ce22a840abb9b4e8fc3b60767c4ba3f46a0432d3ea15b71aef9fde6a314e1</div><div class="line">Data: Send 2 more BTC to Ivan</div><div class="line">Hash: 561237522bb7fcfbccbc6fe0e98bbbde7427ffe01c6fb223f7562288ca2295d1</div></pre></td></tr></table></figure>
-<p>（竟然）完工！</p>
-<p>结论</p>
-<p>我们创建了一个极简的区块链原型：它只不过是一个由区块构成的数组，每个区快链接指向上一个区块。当然，真正的区块链远比这个复杂的多。在我们的区块链里，添加一个新区块非常快，非常容易；但是在真正的区块链中添加一个新的区块需要更多的工作：在获得添加区块的允许之前要做很繁重的计算才行（这个过程被称为“工作证明机制”，即，“Proof-of-Work”，POW）。并且，区块链是一个没有主权的分布式的数据库。因此，任何一个新的区块在被加入之前，必须经过网络中其它参与者的确认与允许（这个机制被称为“共识机制”，“Consensus”）…… 还有，我们的区块链里，还没有任何交易记录呢！</p>
-<p>未来的文章里，我们将进一步实现这些特性。</p>
-<p>链接：</p>
-<p>Full source codes: <a href="https://github.com/Jeiwan/blockchain_go/tree/part_1" target="_blank" rel="external">https://github.com/Jeiwan/blockchain_go/tree/part_1</a><br>Block hashing algorithm: <a href="https://en.bitcoin.it/wiki/Block_hashing_algorithm" target="_blank" rel="external">https://en.bitcoin.it/wiki/Block_hashing_algorithm</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/blockchain.jpg?imageMogr2/thumbnail/!75p&quot; alt=&quot;blockchain.jpg&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本质上，区块链是一个人人拥有至少一部分的分布式的公开的数据库，任何一个新的数据记录，只能在多数数据库持有者（维护者）的多数同意之后才能被加入到数据库中。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Block Chain" scheme="http://deepcreator.com/categories/Block-Chain/"/>
-    
-    
-      <category term="Block" scheme="http://deepcreator.com/tags/Block/"/>
-    
-      <category term="Chain" scheme="http://deepcreator.com/tags/Chain/"/>
     
   </entry>
   
@@ -5217,13 +5249,14 @@
     <link href="http://deepcreator.com/2017/10/17/Concept/Logic/"/>
     <id>http://deepcreator.com/2017/10/17/Concept/Logic/</id>
     <published>2017-10-17T05:56:06.000Z</published>
-    <updated>2017-10-17T07:20:19.594Z</updated>
+    <updated>2017-10-25T03:23:39.045Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/maxresdefault.jpg?imageMogr2/thumbnail/!75p" alt=""></p>
 <blockquote>
 <p><a href="https://baike.baidu.com/item/%E9%80%BB%E8%BE%91/543" target="_blank" rel="external">是思维的规律和规则，是对思维过程的抽象。</a></p>
 </blockquote>
 <a id="more"></a>
+<p>数学、逻辑和自然语言推理，都是推理工具，都能使论证过程和结论具有普遍性。</p>
 <h2 id="逻辑"><a href="#逻辑" class="headerlink" title="逻辑"></a><a href="https://zh.wikipedia.org/wiki/%E9%80%BB%E8%BE%91" target="_blank" rel="external">逻辑</a></h2><p>逻辑（英语：logic）的字根源起于希腊语逻各斯（希腊语：λόγος），最初的意思有词语、思想、概念、论点、推理之意。后译为（法语：logique），最后发展为英文中的逻辑（英语：logic）。</p>
 <p>逻辑本身是指是推论和证明的思想过程，而逻辑学是研究“有效推论和证明的原则与标准”的一门学科。作为一个形式科学，逻辑透过对推论的形式系统与自然语言中的论证等来研究并分类命题与论证的结构。</p>
 <p>逻辑的范围是非常广阔的，从对谬论与悖论的研究之类的核心议题，到利用机率来推论及包含因果论的论证等专业的推理分析。逻辑在今日亦常被使用在论辩理论之中。</p>
@@ -5952,13 +5985,14 @@
     <link href="http://deepcreator.com/2017/10/15/Concept/Respect/"/>
     <id>http://deepcreator.com/2017/10/15/Concept/Respect/</id>
     <published>2017-10-15T11:47:59.000Z</published>
-    <updated>2017-10-15T11:58:31.029Z</updated>
+    <updated>2017-10-25T02:43:03.992Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/Respect-is-Earned-97.jpg?imageMogr2/thumbnail/!75p" alt="Respect-is-Earned-97.jpg"></p>
 <blockquote>
 <p>愛人者，人恆愛之；敬人者，人恆敬之——孟子</p>
 </blockquote>
 <a id="more"></a>
+<p>尊敬：某个人具有某种优秀的品质，因而别人主动对他产生的一种尊崇敬重好感。尊重是一种对称关系。我们为什么要尊敬一个人呢？是因为他有某种优秀的品质。</p>
 <p><a href="https://www.cmoney.tw/notes/note-detail.aspx?nid=71848" target="_blank" rel="external">尊重，能反映一個人的「修養」，更能區分 一個人的「層次」！</a></p>
 <p><img src="https://fsv.cmoney.tw/cmstatic/notes/capture/585817/20170329100818929.jpg" alt=""></p>
 <p>尊重是一種<a href="http://deepcreator.com/2017/10/11/Concept/Equality/">平等</a>，<br>不仰望、不俯瞰、不卑不亢。<br>層次越高的人，<br>越懂得尊重別人，<br>他們更懂得尊重中平等、<br>價值、<a href="http://deepcreator.com/2017/10/15/Concept/Personality/">人格</a>和修養的含義；</p>
@@ -6400,6 +6434,105 @@
   </entry>
   
   <entry>
+    <title>Science</title>
+    <link href="http://deepcreator.com/2017/10/15/Concept/Science/"/>
+    <id>http://deepcreator.com/2017/10/15/Concept/Science/</id>
+    <published>2017-10-15T07:57:06.000Z</published>
+    <updated>2017-10-16T10:20:39.416Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/Science.png?imageMogr2/thumbnail/!75p" alt="Science.png"></p>
+<blockquote>
+<p>科学的本质是证伪。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="科学的本质是证伪"><a href="#科学的本质是证伪" class="headerlink" title="科学的本质是证伪"></a><a href="http://www.luojiji.com/thread-3125-1-201.html" target="_blank" rel="external">科学的本质是证伪</a></h2><p>最近在一次聊天的时候，紫金山天文台的李程远跟我们谈起一个有趣的话题，那就是科学的本质是什么？他说早在上个世纪，波普尔就下了明确的定义——<strong>科学的本质，是可以被证伪。</strong></p>
+<p>它的意思是，当你提出一个科学理论时，你就必须同时告诉大家，该怎么证明你的理论是错的。如果理论经得住考验，它就幸存，否则，它就要被抛弃。</p>
+<p>比如大科学家牛顿，发现了万有引力理论，咱们中学都学过，引力的大小和质量成正比，和距离的平方成反比嘛，但你发现没有，中间没有时间的概念，那么问题来了，引力传播需要时间吗？牛顿认为，引力传播不需要时间，不管多远都可以瞬间到达，但他也说，在这点上也许还有更深的假设是我不知道的。三百年之后，<strong>爱因斯坦发现了相对论，证明了引力的传播速度是光速，光速也是需要时间的，牛顿的理论只是在低速时有效，这一下拓展了科学的边界。</strong></p>
+<p>那爱因斯坦就是对的吗？爱因斯坦说了，相对论本身不完美，它在处理某些极端情况时会出现错误。现在科学家已经发现，在面对黑洞内部和宇宙大爆炸等极端情况的时候，相对论也会失效，说明有更新的理论可以革新物理学。</p>
+<p>你看，<strong>科学的态度是：我可能错，你可能对，通过努力，我们可以更接近于真理。</strong></p>
+<p>本文源自：猜想与反驳</p>
+<h2 id="《科学究竟是什么》-汪花生解读"><a href="#《科学究竟是什么》-汪花生解读" class="headerlink" title="《科学究竟是什么》| 汪花生解读"></a><a href="">《科学究竟是什么》| 汪花生解读</a></h2><p>关于作者<br>A.F.查尔默斯，英国著名学者，畅销书作家，同时也是一位科学家。他本科、硕士、博士学的都是物理，还在弗林德斯大学哲学系做了很多年的访问学者。现在是悉尼大学科学史和科学哲学部的副教授。</p>
+<p>关于本书<br>本书是科学哲学领域的必读书之一。查尔默斯在书中介绍了归纳主义科学观、否证主义科学观、结构主义科学观、贝叶斯主义科学观等多种科学思想，试图通过对不同科学思想的梳理，来考察科学的本质究竟是什么，科学到底有哪些特别之处。</p>
+<p>核心内容<br>不同的科学思想中对科学的定义不同，对科学本质的描述也各有侧重。在归纳主义科学观看来，<strong>科学是对事实进行归纳推理之后所得到的理论</strong>；在否证主义者看来，可以被检验的理论才能被叫做科学；在结构主义科学观看来，<strong>一门科学是遵循同一范式的多个理论的集合</strong>；在贝叶斯主义科学观看来，科学理论的对错未必是绝对的，而是一个<a href="">概率</a>问题。</p>
+<p><img src="http://opb37u589.bkt.clouddn.com/d8ff2d59c61ccd796e11a65c58e67874.jpg?imageMogr2/thumbnail/!75p" alt=""></p>
+<p>一、<a href="http://deepcreator.com/2017/10/16/Concept/Induction/">归纳</a>主义科学观</p>
+<p>归纳主义科学观认为，科学就是对事实进行归纳总结之后，所得到的理论。<br>这种观点也被称为“常识科学观”，有力地推动了现代科学的发展。</p>
+<ol>
+<li>科学是以<a href="http://deepcreator.com/2017/10/15/Concept/Fact/">事实</a>为基础的<br>我们应当先观察事实，接受事实，再去建立一套符合这些事实的理论。</li>
+</ol>
+<p>【案例】<br><strong>伽利略</strong>通过<strong>比萨斜塔</strong>实验，证明了不同重量的物体具有同样的下落速度，推翻了亚里士多德的断言。这一案例被许多人视为现代科学的开端。</p>
+<ol>
+<li>通过观察和归纳总结，未必可以获得正确的结论</li>
+</ol>
+<p>人类的观察受到多重因素影响，有可能出错。归纳推理这一方法本身在逻辑上也是不严谨的。</p>
+<p>【案例】<br>伽利略曾提出过一种测量恒星直径的方法，这个方法在数学算法上是完全正确的，但由于人类观察的局限性，采用这种方法只会得出错误的结论。</p>
+<p>二、否证主义科学观</p>
+<p>在否证主义科学观看来，科学是可以被检验的，并且有可能被证明是错的。如果一个理论无法被检验，或者无论怎么说都有道理，那就是伪科学。</p>
+<ol>
+<li>科学是可以被检验的</li>
+</ol>
+<p>“可证否性”是科学必备的条件，一套不能被检验的理论是没有价值的。</p>
+<p>【案例】<br>在星座学中，无论一个人的运气好不好，它都有一套解释。但这种解释太过宽泛，无法被检验，因此星座学就是<strong>伪科学</strong>。</p>
+<ol>
+<li>被证否的理论也未必就是错的</li>
+</ol>
+<p>所有的理论在诞生之初都是不够完善的。由于人类认识的局限性，有些理论即使被证否，也未必就是错的。</p>
+<p>【案例】</p>
+<p>哥白尼所提出的关于地球公转和自转的理论，在几百年间一直被质疑，质疑者还提出了许多无法反驳的证据。但事后证明，这些否证只是人类认识不足的产物而已。</p>
+<p>三、结构主义科学观</p>
+<p>在结构主义科学观看来，科学是许多理论在一起所组成的一套理论结构。一套科学理论应当有一个核心的、被广为接受的“范式”。</p>
+<ol>
+<li>一套理论是不是科学，就看它有没有核心“范式”</li>
+</ol>
+<p>有核心范式的理论，就可以进行常态科学的研究，可以发展。没有核心范式的理论就不是科学。</p>
+<p>【案例】</p>
+<p>现代化学的核心范式是<strong>元素论</strong>，所有的研究都在这一范式下进行。而星座学等理论就没有一套被广泛接受的范式，因此是伪科学。</p>
+<ol>
+<li>过于注重核心范式会阻碍科学的进步发展</li>
+</ol>
+<p>不同的科学范式所面对的问题，对事实的判断，都完全不同。在这种情况下，就算出现了一个新的范式，科学家也很难接受。</p>
+<p>四、<a href="http://deepcreator.com/2017/03/21/Technology/Program/Math/bayes-rule/">贝叶斯</a>主义科学观</p>
+<p>贝叶斯主义科学观认为，一套科学理论的对错并不是绝对的，而是一个概率问题。</p>
+<ol>
+<li>可以利用算法来计算理论成立的<a href="http://deepcreator.com/2017/09/29/Concept/Probability/">概率</a></li>
+</ol>
+<p>一套科学理论的对错是一个概率问题，我们可以根据新证据对理论的支持程度，来调整这个概率。</p>
+<p>【案例】</p>
+<p>在赛马比赛中，我们会根据一匹马的过往战绩等来判断它赢得比赛的概率。但如果我们发现这匹马受伤了或生病了，就会调整它获胜的概率。贝叶斯主义科学观对科学理论成立概率的计算，就跟这个过程类似。</p>
+<ol>
+<li>贝叶斯理论受到主观判断的影响，无法做到客观精确</li>
+</ol>
+<p>在贝叶斯理论的算法中，我们必须要先给一个理论赋予一个概率，再来进行计算。而这个主观赋予的概率，会影响到最终结果。</p>
+<p>金句</p>
+<ol>
+<li><p>我们通过观察所得到的事实，并不一定都是可靠的。如果根据这些事实来进行推理，就得不出正确的理论。</p>
+</li>
+<li><p><strong>一套什么都能解释的理论，就是什么也解释不了</strong>。一套不能被检验的理论，就没有价值。一套不可能出错的理论，就是伪科学。</p>
+</li>
+<li><p>所有成熟的科学，都要有一个处于核心地位的<strong>基础理论</strong>，要有一个被广泛接受的<strong>范式</strong>。</p>
+</li>
+<li><p>一套科学理论的对错未必是绝对的，也有可能是一个概率问题。</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/Science.png?imageMogr2/thumbnail/!75p&quot; alt=&quot;Science.png&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;科学的本质是证伪。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Concept" scheme="http://deepcreator.com/categories/Concept/"/>
+    
+    
+      <category term="Science" scheme="http://deepcreator.com/tags/Science/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Feeling</title>
     <link href="http://deepcreator.com/2017/10/15/Concept/Feeling/"/>
     <id>http://deepcreator.com/2017/10/15/Concept/Feeling/</id>
@@ -6562,105 +6695,6 @@
       <category term="Fact" scheme="http://deepcreator.com/tags/Fact/"/>
     
       <category term="Evidence" scheme="http://deepcreator.com/tags/Evidence/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Science</title>
-    <link href="http://deepcreator.com/2017/10/15/Concept/Science/"/>
-    <id>http://deepcreator.com/2017/10/15/Concept/Science/</id>
-    <published>2017-10-15T07:57:06.000Z</published>
-    <updated>2017-10-16T10:20:39.416Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/Science.png?imageMogr2/thumbnail/!75p" alt="Science.png"></p>
-<blockquote>
-<p>科学的本质是证伪。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="科学的本质是证伪"><a href="#科学的本质是证伪" class="headerlink" title="科学的本质是证伪"></a><a href="http://www.luojiji.com/thread-3125-1-201.html" target="_blank" rel="external">科学的本质是证伪</a></h2><p>最近在一次聊天的时候，紫金山天文台的李程远跟我们谈起一个有趣的话题，那就是科学的本质是什么？他说早在上个世纪，波普尔就下了明确的定义——<strong>科学的本质，是可以被证伪。</strong></p>
-<p>它的意思是，当你提出一个科学理论时，你就必须同时告诉大家，该怎么证明你的理论是错的。如果理论经得住考验，它就幸存，否则，它就要被抛弃。</p>
-<p>比如大科学家牛顿，发现了万有引力理论，咱们中学都学过，引力的大小和质量成正比，和距离的平方成反比嘛，但你发现没有，中间没有时间的概念，那么问题来了，引力传播需要时间吗？牛顿认为，引力传播不需要时间，不管多远都可以瞬间到达，但他也说，在这点上也许还有更深的假设是我不知道的。三百年之后，<strong>爱因斯坦发现了相对论，证明了引力的传播速度是光速，光速也是需要时间的，牛顿的理论只是在低速时有效，这一下拓展了科学的边界。</strong></p>
-<p>那爱因斯坦就是对的吗？爱因斯坦说了，相对论本身不完美，它在处理某些极端情况时会出现错误。现在科学家已经发现，在面对黑洞内部和宇宙大爆炸等极端情况的时候，相对论也会失效，说明有更新的理论可以革新物理学。</p>
-<p>你看，<strong>科学的态度是：我可能错，你可能对，通过努力，我们可以更接近于真理。</strong></p>
-<p>本文源自：猜想与反驳</p>
-<h2 id="《科学究竟是什么》-汪花生解读"><a href="#《科学究竟是什么》-汪花生解读" class="headerlink" title="《科学究竟是什么》| 汪花生解读"></a><a href="">《科学究竟是什么》| 汪花生解读</a></h2><p>关于作者<br>A.F.查尔默斯，英国著名学者，畅销书作家，同时也是一位科学家。他本科、硕士、博士学的都是物理，还在弗林德斯大学哲学系做了很多年的访问学者。现在是悉尼大学科学史和科学哲学部的副教授。</p>
-<p>关于本书<br>本书是科学哲学领域的必读书之一。查尔默斯在书中介绍了归纳主义科学观、否证主义科学观、结构主义科学观、贝叶斯主义科学观等多种科学思想，试图通过对不同科学思想的梳理，来考察科学的本质究竟是什么，科学到底有哪些特别之处。</p>
-<p>核心内容<br>不同的科学思想中对科学的定义不同，对科学本质的描述也各有侧重。在归纳主义科学观看来，<strong>科学是对事实进行归纳推理之后所得到的理论</strong>；在否证主义者看来，可以被检验的理论才能被叫做科学；在结构主义科学观看来，<strong>一门科学是遵循同一范式的多个理论的集合</strong>；在贝叶斯主义科学观看来，科学理论的对错未必是绝对的，而是一个<a href="">概率</a>问题。</p>
-<p><img src="http://opb37u589.bkt.clouddn.com/d8ff2d59c61ccd796e11a65c58e67874.jpg?imageMogr2/thumbnail/!75p" alt=""></p>
-<p>一、<a href="http://deepcreator.com/2017/10/16/Concept/Induction/">归纳</a>主义科学观</p>
-<p>归纳主义科学观认为，科学就是对事实进行归纳总结之后，所得到的理论。<br>这种观点也被称为“常识科学观”，有力地推动了现代科学的发展。</p>
-<ol>
-<li>科学是以<a href="http://deepcreator.com/2017/10/15/Concept/Fact/">事实</a>为基础的<br>我们应当先观察事实，接受事实，再去建立一套符合这些事实的理论。</li>
-</ol>
-<p>【案例】<br><strong>伽利略</strong>通过<strong>比萨斜塔</strong>实验，证明了不同重量的物体具有同样的下落速度，推翻了亚里士多德的断言。这一案例被许多人视为现代科学的开端。</p>
-<ol>
-<li>通过观察和归纳总结，未必可以获得正确的结论</li>
-</ol>
-<p>人类的观察受到多重因素影响，有可能出错。归纳推理这一方法本身在逻辑上也是不严谨的。</p>
-<p>【案例】<br>伽利略曾提出过一种测量恒星直径的方法，这个方法在数学算法上是完全正确的，但由于人类观察的局限性，采用这种方法只会得出错误的结论。</p>
-<p>二、否证主义科学观</p>
-<p>在否证主义科学观看来，科学是可以被检验的，并且有可能被证明是错的。如果一个理论无法被检验，或者无论怎么说都有道理，那就是伪科学。</p>
-<ol>
-<li>科学是可以被检验的</li>
-</ol>
-<p>“可证否性”是科学必备的条件，一套不能被检验的理论是没有价值的。</p>
-<p>【案例】<br>在星座学中，无论一个人的运气好不好，它都有一套解释。但这种解释太过宽泛，无法被检验，因此星座学就是<strong>伪科学</strong>。</p>
-<ol>
-<li>被证否的理论也未必就是错的</li>
-</ol>
-<p>所有的理论在诞生之初都是不够完善的。由于人类认识的局限性，有些理论即使被证否，也未必就是错的。</p>
-<p>【案例】</p>
-<p>哥白尼所提出的关于地球公转和自转的理论，在几百年间一直被质疑，质疑者还提出了许多无法反驳的证据。但事后证明，这些否证只是人类认识不足的产物而已。</p>
-<p>三、结构主义科学观</p>
-<p>在结构主义科学观看来，科学是许多理论在一起所组成的一套理论结构。一套科学理论应当有一个核心的、被广为接受的“范式”。</p>
-<ol>
-<li>一套理论是不是科学，就看它有没有核心“范式”</li>
-</ol>
-<p>有核心范式的理论，就可以进行常态科学的研究，可以发展。没有核心范式的理论就不是科学。</p>
-<p>【案例】</p>
-<p>现代化学的核心范式是<strong>元素论</strong>，所有的研究都在这一范式下进行。而星座学等理论就没有一套被广泛接受的范式，因此是伪科学。</p>
-<ol>
-<li>过于注重核心范式会阻碍科学的进步发展</li>
-</ol>
-<p>不同的科学范式所面对的问题，对事实的判断，都完全不同。在这种情况下，就算出现了一个新的范式，科学家也很难接受。</p>
-<p>四、<a href="http://deepcreator.com/2017/03/21/Technology/Program/Math/bayes-rule/">贝叶斯</a>主义科学观</p>
-<p>贝叶斯主义科学观认为，一套科学理论的对错并不是绝对的，而是一个概率问题。</p>
-<ol>
-<li>可以利用算法来计算理论成立的<a href="http://deepcreator.com/2017/09/29/Concept/Probability/">概率</a></li>
-</ol>
-<p>一套科学理论的对错是一个概率问题，我们可以根据新证据对理论的支持程度，来调整这个概率。</p>
-<p>【案例】</p>
-<p>在赛马比赛中，我们会根据一匹马的过往战绩等来判断它赢得比赛的概率。但如果我们发现这匹马受伤了或生病了，就会调整它获胜的概率。贝叶斯主义科学观对科学理论成立概率的计算，就跟这个过程类似。</p>
-<ol>
-<li>贝叶斯理论受到主观判断的影响，无法做到客观精确</li>
-</ol>
-<p>在贝叶斯理论的算法中，我们必须要先给一个理论赋予一个概率，再来进行计算。而这个主观赋予的概率，会影响到最终结果。</p>
-<p>金句</p>
-<ol>
-<li><p>我们通过观察所得到的事实，并不一定都是可靠的。如果根据这些事实来进行推理，就得不出正确的理论。</p>
-</li>
-<li><p><strong>一套什么都能解释的理论，就是什么也解释不了</strong>。一套不能被检验的理论，就没有价值。一套不可能出错的理论，就是伪科学。</p>
-</li>
-<li><p>所有成熟的科学，都要有一个处于核心地位的<strong>基础理论</strong>，要有一个被广泛接受的<strong>范式</strong>。</p>
-</li>
-<li><p>一套科学理论的对错未必是绝对的，也有可能是一个概率问题。</p>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/Science.png?imageMogr2/thumbnail/!75p&quot; alt=&quot;Science.png&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;科学的本质是证伪。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Concept" scheme="http://deepcreator.com/categories/Concept/"/>
-    
-    
-      <category term="Science" scheme="http://deepcreator.com/tags/Science/"/>
     
   </entry>
   
@@ -6872,6 +6906,86 @@
   </entry>
   
   <entry>
+    <title>Dignity</title>
+    <link href="http://deepcreator.com/2017/10/15/Concept/Dignity/"/>
+    <id>http://deepcreator.com/2017/10/15/Concept/Dignity/</id>
+    <published>2017-10-15T06:35:06.000Z</published>
+    <updated>2017-10-15T07:42:41.843Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/Dignity.jpg?imageMogr2/thumbnail/!75p" alt="Dignity.jpg"></p>
+<blockquote>
+<p><a href="https://baike.baidu.com/item/%E5%B0%8A%E4%B8%A5/3240" target="_blank" rel="external">尊严就是权利和人格被尊重。</a></p>
+</blockquote>
+<a id="more"></a>
+<p>亚里士多德： 一个人的尊严并非在获得荣誉时，而在于本身真正值得这荣誉。</p>
+<p>卢梭：每一个正直的人都应该维护自己的尊严。</p>
+<p>罗素：自尊，迄今为止一直是少数人所必备的一种德性。凡是在权力不平等的地方，它都不可能在服从于其他人统治的那些人的身上找到。</p>
+<p>苏霍姆林斯基：没有自我尊重，就没有道德的纯洁性和丰富的个性精神。对自身的尊重、荣誉感、自豪感、自尊心―――这是一块磨练细腻的感情的砺石。</p>
+<p>屠格涅夫：自尊自爱，作为一种力求完善的动力，却是一切伟大事业的渊源。</p>
+<p>伊·谢·科恩：高度的自尊心不是骄傲、自大或缺乏自我批评精神的同义词。自尊心强的人不是认为自己比别人优越，而只是对自己有信心，相信自己能够克服自己的缺点。</p>
+<p>陈家琪：尊严是文明，但又像一层贴在脸上的东西一样容易脱落。</p>
+<p>王小波：尊严就是你走在任何地方，都被当作一个人物而不是一个东西来看待。</p>
+<p>尊严是对人的身份、地位等的认同，是人人共有的平等的权利，应该受到尊重；<br>自尊就是尊自，即尊重自己。现代作为名词，比如“自尊受到伤害”，其实就是尊严受到侵犯。</p>
+<h2 id="孙立平：再穷的人也要有保底的尊严！"><a href="#孙立平：再穷的人也要有保底的尊严！" class="headerlink" title="孙立平：再穷的人也要有保底的尊严！"></a><a href="http://pit.ifeng.com/a/20170402/50880781_0.shtml" target="_blank" rel="external">孙立平：再穷的人也要有保底的尊严！</a></h2><p>2017年04月02日 14:31:38</p>
+<p>来源：凤凰国际智库 </p>
+<p>穷人被强制接受羞辱的社会</p>
+<p>我一个做企业的朋友，有次去南方某个城市出差，当地的老板请他到洗脚城洗脚，令他目瞪口呆的是，服务的盲妹竟然用舌头舔脚。“张老板把另一只脚抬起，在哪个小姑娘的脸上随意的蹭来蹭去！一看就知道小姑娘很不舒服，但还是用力的吮吸着他的脚趾。把脚趾全部舔完以后，从胸前掏出一个水袋喝了几口，然后用牙齿轻轻地在脚后跟上轻咬按摩”。</p>
+<p>这样的羞辱已经到了变态的程度，但更让人深思的是背后冷酷的逻辑：没有这样的服务形式，这些双目失明的女孩就可能连生活都维持不了。</p>
+<p>学者徐贲曾经推荐过马格利特的代表作（Avishai Margalit）《体面社会》（The Decent Society）一书时，用了这样一个说法，“体面社会与不羞辱”。<strong>马格利特把“羞辱”定义为“任何一种行为或条件，它使一个人有恰当的理由觉得自己的自尊心受到了伤害。”</strong></p>
+<p>然而，马格利特忘记说明了，一个羞辱的社会，实际上也是一个强制使被羞辱者接受羞辱，并对不接受羞辱者有能力进行惩罚的社会。</p>
+<p>南方这个洗脚城的例子，也许是极端的、变态的。但在现实生活中，有些羞辱，并不那么极端，而是无意识的、弥散性的，这些羞辱就散布在每个人的日常生活中，这种日常性羞辱已经演变成为一种社会仪式。</p>
+<blockquote>
+<p>势利是一种时代病症</p>
+</blockquote>
+<p>早些年上海公安发布过一则漫画式的公告《露宿街头勿同情》。两个时髦青年开车经过城郊，看到路边的无家可归者，女的说，“外地人蛮可怜！”。男的说，“你不能同情他们，他们露宿街头，影响我们城市的文明形象。”</p>
+<p>漫画下面的提示是：在车站码头、高架桥下或偏僻路段，露宿着一些拖儿带女的外地来沪人员。他们衣衫褴褛、脏乱不堪、好逸恶劳，靠拾荒、乞讨混日子，严重影响了大城市的文明形象和城市社会治安。</p>
+<p>公告最后提醒市民，对此类人千万莫同情，不要给予施舍。</p>
+<p>在这里，公权力的嫌贫爱富表露得淋漓尽致，这就是我说的日常性羞辱。</p>
+<p>日常性的羞辱往往与嫌贫爱富、势利、歧视等联系在一起，也就是说，往往与社会不公平联系在一起。最值得引起人们警觉的是，嫌贫爱富、势利、歧视等这样的一些字眼儿，又不时与公权力相联系。</p>
+<p>某种程度上，势利正在成为我们社会的一种病症，但更可怕的是，这种势利在很多时候并不仅仅是一种市井文化。</p>
+<p>我的意思是，作为普通市民，你当然可以选择自己的价值观，你可以远离底层人，你也可以势利，可以嫌贫爱富，可以看不起农村人，可以疏远穷亲戚，这都没有问题，但是，公权力和公共机构，在做出任何选择之前，一定要警惕。</p>
+<p>为什么？因为政府所要提供的是公共服务，而这种公共服务是以每个公民都是平等的主体为基础的。对强者和富人的特殊照顾甚至提供特权，同时必然意味着对其他人的歧视与羞辱。</p>
+<p>大学为企业造势，政府为企业护航，官员见到富人笑脸相迎，甚至不惜改变基本的社会规则——有个县级城市，政府明文规定，对投资超过多少的企业家交通违规从轻处罚。媒体也对社会中的富人充满溢美之词等等，但在另外一面，则是对一般民众以及弱势者的冷漠甚至不屑。</p>
+<blockquote>
+<p>穷人要有保底的尊严</p>
+</blockquote>
+<p>在一个贫富分化已经是一个既成的事实，当穷人与富人的分野已经是一种无法否认的存在的时候，穷人的尊严问题就不可避免地提出来了。</p>
+<p>穷人的尊严首先是一个现实的而不是一个理论性的问题。穷人也应当有尊严，社会应当维护穷人的尊严，在道理上，这似乎都是毋庸置疑的道理。</p>
+<p>但现在真正的问题是，这些毋庸置疑的道理，在现实中却在不断遭遇问题。这就是穷人尊严问题的现实性。</p>
+<p>一位自称也是出身穷人的博客作者写了这样一段话：“我穷，但我也是有尊严的!”这种曾经的自励，现在已经褪色成了一种自慰，一种自嘲，甚至是一种自欺、自悲。</p>
+<p>在市场经济飞速发展，人们生活观念不断飞跃的现代社会，“生活不相信眼泪”已全然不是台词，“穷人的尊严”已经大面积贬值，甚至根本没有价值。一个在社会贫困底层心力交瘁挣扎不休的穷人，倘若站出来要高呼“尊严”，是断断不能赢得半点敬重的。</p>
+<p>要得到些许怜悯还需躬着背做出一付乞讨相，否则只能引得旁人一片嗤笑冷眼，或是一付逗猴般的神情唾骂一声：“神经病!”这段话可以说概括出了穷人尊严问题在现实中的真实遭遇。</p>
+<p>穷人尊严的脆弱，无疑来自社会为其留下的能够维护尊严的空间的狭小，甚至是有意无意的羞辱。</p>
+<p>评论家何三畏先生提出一个观点，穷人需要一个保底的尊严。他之所以提出这个问题，就是有感于来自社会的这种羞辱。最典型的例子，商场里许多老人，仅仅为了买几个便宜的鸡蛋就挤得一塌糊涂，尊严尽失。</p>
+<p>从根本上改变对穷人的看法</p>
+<p>羞辱存在与否，从根本上取决于一个社会对穷人的看法。如果不能从根本上改变对穷人的看法，至少无意识的羞辱是无法避免的。</p>
+<p>就此而言，获得2006年诺贝尔和平奖的孟加拉的穆罕穆德.尤努斯给我们提供了思考的机会。</p>
+<blockquote>
+<p>尤努斯是因小额信贷而获奖的，但它的真正的成功，是对穷人的尊严已经这种尊严的力量的发现。尤努斯认为，贫困是由社会制度造成的，只要给穷人机会，他们就可以致富。</p>
+</blockquote>
+<p>他甚至认为，任何人都具备企业家精神，甚至是一个乞丐，他也具有企业家的潜力。但问题是，他们往往得不到制度性的支持。许多金融机构是为有钱人服务的，他们不会把钱借给那些没有担保、不具备任何还款能力的穷人。这就造成穷人越来越穷，富人越来越富。</p>
+<blockquote>
+<p>尤努斯所致力的小额贷款，本质上是一种对穷人的制度性支持。而这种制度性支持又是与穷人的尊严联系在一起的。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/Dignity.jpg?imageMogr2/thumbnail/!75p&quot; alt=&quot;Dignity.jpg&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://baike.baidu.com/item/%E5%B0%8A%E4%B8%A5/3240&quot;&gt;尊严就是权利和人格被尊重。&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Concept" scheme="http://deepcreator.com/categories/Concept/"/>
+    
+    
+      <category term="Dignity" scheme="http://deepcreator.com/tags/Dignity/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Senior School</title>
     <link href="http://deepcreator.com/2017/10/15/Alisa/Senior%20School/"/>
     <id>http://deepcreator.com/2017/10/15/Alisa/Senior School/</id>
@@ -7011,86 +7125,6 @@
       <category term="Senior" scheme="http://deepcreator.com/tags/Senior/"/>
     
       <category term="School" scheme="http://deepcreator.com/tags/School/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Dignity</title>
-    <link href="http://deepcreator.com/2017/10/15/Concept/Dignity/"/>
-    <id>http://deepcreator.com/2017/10/15/Concept/Dignity/</id>
-    <published>2017-10-15T06:35:06.000Z</published>
-    <updated>2017-10-15T07:42:41.843Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/Dignity.jpg?imageMogr2/thumbnail/!75p" alt="Dignity.jpg"></p>
-<blockquote>
-<p><a href="https://baike.baidu.com/item/%E5%B0%8A%E4%B8%A5/3240" target="_blank" rel="external">尊严就是权利和人格被尊重。</a></p>
-</blockquote>
-<a id="more"></a>
-<p>亚里士多德： 一个人的尊严并非在获得荣誉时，而在于本身真正值得这荣誉。</p>
-<p>卢梭：每一个正直的人都应该维护自己的尊严。</p>
-<p>罗素：自尊，迄今为止一直是少数人所必备的一种德性。凡是在权力不平等的地方，它都不可能在服从于其他人统治的那些人的身上找到。</p>
-<p>苏霍姆林斯基：没有自我尊重，就没有道德的纯洁性和丰富的个性精神。对自身的尊重、荣誉感、自豪感、自尊心―――这是一块磨练细腻的感情的砺石。</p>
-<p>屠格涅夫：自尊自爱，作为一种力求完善的动力，却是一切伟大事业的渊源。</p>
-<p>伊·谢·科恩：高度的自尊心不是骄傲、自大或缺乏自我批评精神的同义词。自尊心强的人不是认为自己比别人优越，而只是对自己有信心，相信自己能够克服自己的缺点。</p>
-<p>陈家琪：尊严是文明，但又像一层贴在脸上的东西一样容易脱落。</p>
-<p>王小波：尊严就是你走在任何地方，都被当作一个人物而不是一个东西来看待。</p>
-<p>尊严是对人的身份、地位等的认同，是人人共有的平等的权利，应该受到尊重；<br>自尊就是尊自，即尊重自己。现代作为名词，比如“自尊受到伤害”，其实就是尊严受到侵犯。</p>
-<h2 id="孙立平：再穷的人也要有保底的尊严！"><a href="#孙立平：再穷的人也要有保底的尊严！" class="headerlink" title="孙立平：再穷的人也要有保底的尊严！"></a><a href="http://pit.ifeng.com/a/20170402/50880781_0.shtml" target="_blank" rel="external">孙立平：再穷的人也要有保底的尊严！</a></h2><p>2017年04月02日 14:31:38</p>
-<p>来源：凤凰国际智库 </p>
-<p>穷人被强制接受羞辱的社会</p>
-<p>我一个做企业的朋友，有次去南方某个城市出差，当地的老板请他到洗脚城洗脚，令他目瞪口呆的是，服务的盲妹竟然用舌头舔脚。“张老板把另一只脚抬起，在哪个小姑娘的脸上随意的蹭来蹭去！一看就知道小姑娘很不舒服，但还是用力的吮吸着他的脚趾。把脚趾全部舔完以后，从胸前掏出一个水袋喝了几口，然后用牙齿轻轻地在脚后跟上轻咬按摩”。</p>
-<p>这样的羞辱已经到了变态的程度，但更让人深思的是背后冷酷的逻辑：没有这样的服务形式，这些双目失明的女孩就可能连生活都维持不了。</p>
-<p>学者徐贲曾经推荐过马格利特的代表作（Avishai Margalit）《体面社会》（The Decent Society）一书时，用了这样一个说法，“体面社会与不羞辱”。<strong>马格利特把“羞辱”定义为“任何一种行为或条件，它使一个人有恰当的理由觉得自己的自尊心受到了伤害。”</strong></p>
-<p>然而，马格利特忘记说明了，一个羞辱的社会，实际上也是一个强制使被羞辱者接受羞辱，并对不接受羞辱者有能力进行惩罚的社会。</p>
-<p>南方这个洗脚城的例子，也许是极端的、变态的。但在现实生活中，有些羞辱，并不那么极端，而是无意识的、弥散性的，这些羞辱就散布在每个人的日常生活中，这种日常性羞辱已经演变成为一种社会仪式。</p>
-<blockquote>
-<p>势利是一种时代病症</p>
-</blockquote>
-<p>早些年上海公安发布过一则漫画式的公告《露宿街头勿同情》。两个时髦青年开车经过城郊，看到路边的无家可归者，女的说，“外地人蛮可怜！”。男的说，“你不能同情他们，他们露宿街头，影响我们城市的文明形象。”</p>
-<p>漫画下面的提示是：在车站码头、高架桥下或偏僻路段，露宿着一些拖儿带女的外地来沪人员。他们衣衫褴褛、脏乱不堪、好逸恶劳，靠拾荒、乞讨混日子，严重影响了大城市的文明形象和城市社会治安。</p>
-<p>公告最后提醒市民，对此类人千万莫同情，不要给予施舍。</p>
-<p>在这里，公权力的嫌贫爱富表露得淋漓尽致，这就是我说的日常性羞辱。</p>
-<p>日常性的羞辱往往与嫌贫爱富、势利、歧视等联系在一起，也就是说，往往与社会不公平联系在一起。最值得引起人们警觉的是，嫌贫爱富、势利、歧视等这样的一些字眼儿，又不时与公权力相联系。</p>
-<p>某种程度上，势利正在成为我们社会的一种病症，但更可怕的是，这种势利在很多时候并不仅仅是一种市井文化。</p>
-<p>我的意思是，作为普通市民，你当然可以选择自己的价值观，你可以远离底层人，你也可以势利，可以嫌贫爱富，可以看不起农村人，可以疏远穷亲戚，这都没有问题，但是，公权力和公共机构，在做出任何选择之前，一定要警惕。</p>
-<p>为什么？因为政府所要提供的是公共服务，而这种公共服务是以每个公民都是平等的主体为基础的。对强者和富人的特殊照顾甚至提供特权，同时必然意味着对其他人的歧视与羞辱。</p>
-<p>大学为企业造势，政府为企业护航，官员见到富人笑脸相迎，甚至不惜改变基本的社会规则——有个县级城市，政府明文规定，对投资超过多少的企业家交通违规从轻处罚。媒体也对社会中的富人充满溢美之词等等，但在另外一面，则是对一般民众以及弱势者的冷漠甚至不屑。</p>
-<blockquote>
-<p>穷人要有保底的尊严</p>
-</blockquote>
-<p>在一个贫富分化已经是一个既成的事实，当穷人与富人的分野已经是一种无法否认的存在的时候，穷人的尊严问题就不可避免地提出来了。</p>
-<p>穷人的尊严首先是一个现实的而不是一个理论性的问题。穷人也应当有尊严，社会应当维护穷人的尊严，在道理上，这似乎都是毋庸置疑的道理。</p>
-<p>但现在真正的问题是，这些毋庸置疑的道理，在现实中却在不断遭遇问题。这就是穷人尊严问题的现实性。</p>
-<p>一位自称也是出身穷人的博客作者写了这样一段话：“我穷，但我也是有尊严的!”这种曾经的自励，现在已经褪色成了一种自慰，一种自嘲，甚至是一种自欺、自悲。</p>
-<p>在市场经济飞速发展，人们生活观念不断飞跃的现代社会，“生活不相信眼泪”已全然不是台词，“穷人的尊严”已经大面积贬值，甚至根本没有价值。一个在社会贫困底层心力交瘁挣扎不休的穷人，倘若站出来要高呼“尊严”，是断断不能赢得半点敬重的。</p>
-<p>要得到些许怜悯还需躬着背做出一付乞讨相，否则只能引得旁人一片嗤笑冷眼，或是一付逗猴般的神情唾骂一声：“神经病!”这段话可以说概括出了穷人尊严问题在现实中的真实遭遇。</p>
-<p>穷人尊严的脆弱，无疑来自社会为其留下的能够维护尊严的空间的狭小，甚至是有意无意的羞辱。</p>
-<p>评论家何三畏先生提出一个观点，穷人需要一个保底的尊严。他之所以提出这个问题，就是有感于来自社会的这种羞辱。最典型的例子，商场里许多老人，仅仅为了买几个便宜的鸡蛋就挤得一塌糊涂，尊严尽失。</p>
-<p>从根本上改变对穷人的看法</p>
-<p>羞辱存在与否，从根本上取决于一个社会对穷人的看法。如果不能从根本上改变对穷人的看法，至少无意识的羞辱是无法避免的。</p>
-<p>就此而言，获得2006年诺贝尔和平奖的孟加拉的穆罕穆德.尤努斯给我们提供了思考的机会。</p>
-<blockquote>
-<p>尤努斯是因小额信贷而获奖的，但它的真正的成功，是对穷人的尊严已经这种尊严的力量的发现。尤努斯认为，贫困是由社会制度造成的，只要给穷人机会，他们就可以致富。</p>
-</blockquote>
-<p>他甚至认为，任何人都具备企业家精神，甚至是一个乞丐，他也具有企业家的潜力。但问题是，他们往往得不到制度性的支持。许多金融机构是为有钱人服务的，他们不会把钱借给那些没有担保、不具备任何还款能力的穷人。这就造成穷人越来越穷，富人越来越富。</p>
-<blockquote>
-<p>尤努斯所致力的小额贷款，本质上是一种对穷人的制度性支持。而这种制度性支持又是与穷人的尊严联系在一起的。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/Dignity.jpg?imageMogr2/thumbnail/!75p&quot; alt=&quot;Dignity.jpg&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://baike.baidu.com/item/%E5%B0%8A%E4%B8%A5/3240&quot;&gt;尊严就是权利和人格被尊重。&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Concept" scheme="http://deepcreator.com/categories/Concept/"/>
-    
-    
-      <category term="Dignity" scheme="http://deepcreator.com/tags/Dignity/"/>
     
   </entry>
   
@@ -7268,44 +7302,6 @@
   </entry>
   
   <entry>
-    <title>Temperature</title>
-    <link href="http://deepcreator.com/2017/10/15/Concept/Temperature/"/>
-    <id>http://deepcreator.com/2017/10/15/Concept/Temperature/</id>
-    <published>2017-10-15T00:34:06.000Z</published>
-    <updated>2017-10-15T01:53:56.142Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/Check-Maintain-Worm-Bin-Temperature.jpg?imageMogr2/thumbnail/!75p" alt=""></p>
-<blockquote>
-<p>所谓温度，就是一个人活着的自我的状态。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="毕业季4-人生热度：用自己热爱的方式过一生-51-4"><a href="#毕业季4-人生热度：用自己热爱的方式过一生-51-4" class="headerlink" title="毕业季4 | 人生热度：用自己热爱的方式过一生 51-4"></a><a href="">毕业季4 | 人生热度：用自己热爱的方式过一生 51-4</a></h2><p>今天是我们毕业季推荐书单的第四天，今天我要推荐的书与“温度”有关，如果你觉得自己的人生不够精彩和热烈的话，推荐你看看以下5本书。</p>
-<p>推荐：《牧羊少年奇幻之旅》保罗·柯艾略<br>这是一本关于不甘平庸和梦想的小书。牧羊少年圣地亚哥梦见金字塔附近有一个宝藏，他放弃牧羊生活，启程追寻。从墨西哥横跨红海到非洲，在神秘的炼金术士指导下，最后来到金字塔边，却发现……不剧透了，自己去看看吧。<br>看完我的描述，你可能觉得这个故事很平庸，不明白我为什么要推荐。<br>其实，这是一本从头到尾都让你想起自己人生的寓言书——在故事背后，你能看到对我们生活的隐喻。<br>这本书是成人世界的《小王子》，是一本让你重新相信梦想的书——这本书3小时就能看完，但我每年都会重新看一遍。</p>
-<p>推荐：《苏东坡传》林语堂<br>《苏东坡传》《张居正传》《朱元璋传》《李鸿章传》并称为20世纪中文四大传记，但是我最喜欢的还是《苏东坡传》。林语堂是“苏粉”——苏东坡的粉丝。在他笔下，苏东坡是这样的：<br>“苏东坡是一个秉性难改的乐天派，是悲天悯人的道德家，是散文作家，是新派的画家，是伟大的书法家，是酿酒的实验者，是工程师，是假道学的反对派，是瑜伽术的修炼者，是佛教徒，是士大夫，是皇帝的秘书，是饮酒成性者，是心肠慈悲的法官，是政治上的坚持己见者，是月下的漫步者，是诗人，是生性诙谐爱开玩笑的人。但是这还不足以道出苏东坡的全部……”<br>我猜，林语堂应该是喝完酒，在微醺的状态下写完这本给偶像的书的，他笔下的苏东坡元气淋漓，有血有肉，是我读过最好的作家传记——最后，你可能很难想象，这么好的文字，竟然是林语堂用英语写的，英文名字叫做 The Gay Genius （放浪的天才）。<br>顺便推荐林语堂的另一本书《生活的艺术》。</p>
-<p>推荐：《少有人走的路》 M·斯科特·派克<br>这本书开头的一句话就让我觉得很酷：人生苦难重重。<br>也许是因为作者本身是一名军医，看多了战争上的生死，所以他的文字特别直接。<br>他说，人生就是一个闯关游戏。面对问题，解决问题。通关后的短暂空隙，享受片刻的宁静。<br>人生这么苦，如何才能勇敢面对呢？<br>两个字：自律。<br>你需要做到这四个方面：推迟满足感、承担责任、尊重事实、保持平衡。<br>那如何让自己能够持续自律？<br>一个字：爱。<br>最后他解释了什么是爱：爱，是为了促进自我和他人心智成熟而具有的一种自我完善的意愿。<br>连起来就是：人生苦难重重，凭借自律与爱，心智成熟地过一生。<br>人最大的问题就是与自己赛跑的心理问题，而心智不成熟又是最大的问题。数不清的成年人一遇到难题就双手一摊——“这不是我的问题。” 他们其实是不敢于面对自己的问题。<br>作者说，人可以拒绝任何东西，但绝对不可以拒绝成熟。</p>
-<p>推荐： 《亲爱的安德烈》龙应台<br>安德烈是龙应台与她德国丈夫的儿子。在安德烈十四岁的时候，龙应台离开欧洲，返回台湾，就任台北市首任文化局长。等她卸任回到儿子身边，安德烈已是一米八多高的十八岁的小伙子，安德烈坐在桌子另一边，有一点“冷”地看着妈妈。<br>他们是两代人，年龄相差三十年，中间横着东西文化。龙应台一定要重新认识成熟的安德烈。母子俩用了三年时间互相通信。龙应台认识了“人生里第一个十八岁的人”，安德烈也第一次认识了自己的母亲。<br>之所以推荐这本书，是因为处理好和父母的关系，是大部分成年人未完成事件中最重要的一件。尤其对于大学毕业后就远离家乡，每年回家也是吃吃喝喝，很少有机会和父母深度沟通的人，其实父母从未真正认识过18岁以后的你，而你也从未真实地知道，你18岁后父母的生活。<br>读读这本书吧。</p>
-<p>推荐：《真实的幸福》《活出最乐观的自己》《认识自己，接纳自己》——马丁·塞利格曼“积极心理学三部曲”<br>心理学从建立以来，就担负着3大使命——发掘和培养天才、让人幸福以及治疗疾病。直到上个世纪，心理学界才发现，他们大部分的研究都集中在了第三个部分——治疗心理疾病。而和大部分人最相关的“让人幸福”却很少提及。这也是积极心理学学科的开端。<br>所以，我推荐《真实的幸福》《活出最乐观的自己》《认识自己，接纳自己》，这套书很详细地诠释了整个积极心理学的研究成果和观点。作者是美国心理学协会会长、积极心理学之父马丁·塞利格曼。<br>如果只看一本，那就从《认识自己，接纳自己》读起吧。<br>有人说：“上帝，请赐予我平静，去接受我无法改变的。赐予我勇气，去改变我能改变的，以及赐予我智慧，分辨这两者的区别。”这本书讲的，就是区分两者的智慧。</p>
-<p>推荐：《2012，买张船票去南极》刘润<br>《2012，买张船票去南极》，是刘润在微软干了12年以后，利用假期去南极的记录。刘润老师不仅仅可以把前人的思考架成你的阶梯——他也是一个温度满满的人！<br>为什么温度这么重要？因为这一辈子陪伴你最久的，是你自己。不管你是希望改变世界，还是爱自己的家人，这一切都需要通过“你”来实现。所以学会如何和自己相处，是这个世界上最重要的事情。<br>成功的方式只有一种，就是用自己热爱的方式过一生。<br>推荐电影</p>
-<p>推荐电影：《碧海蓝天》<br>男主角杰克在希腊海边长大，虽然爸爸死于潜水事故，但是他依然热爱深海。童年玩伴恩佐也非常擅长潜水。两人长大以后，各自成为潜水领域的顶尖高手。一次世界自由潜水比赛，让两人重新聚在一起。这场比赛成了两个童年玩伴之间的游戏——不在乎彼此输赢，只在乎对深蓝海底的热爱。<br>我的一个潜水爱好的哥们对我说——你一定要看完这个片子再去潜水——每次你都需要下很大的决心才能浮出水面。导演是吕克·贝松，他认为这是他最得意的片子。因为那个时候他还没有去好莱坞，电影很单纯，就是单纯在做梦。<br>喜欢类似电影的人，也许也会喜欢《极盗者》或者《攀登梅鲁峰》，一起推荐给你。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/Check-Maintain-Worm-Bin-Temperature.jpg?imageMogr2/thumbnail/!75p&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;所谓温度，就是一个人活着的自我的状态。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Concept" scheme="http://deepcreator.com/categories/Concept/"/>
-    
-    
-      <category term="Temperature" scheme="http://deepcreator.com/tags/Temperature/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Height</title>
     <link href="http://deepcreator.com/2017/10/15/Concept/Height/"/>
     <id>http://deepcreator.com/2017/10/15/Concept/Height/</id>
@@ -7362,6 +7358,44 @@
     
     
       <category term="Height" scheme="http://deepcreator.com/tags/Height/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Temperature</title>
+    <link href="http://deepcreator.com/2017/10/15/Concept/Temperature/"/>
+    <id>http://deepcreator.com/2017/10/15/Concept/Temperature/</id>
+    <published>2017-10-15T00:34:06.000Z</published>
+    <updated>2017-10-15T01:53:56.142Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/Check-Maintain-Worm-Bin-Temperature.jpg?imageMogr2/thumbnail/!75p" alt=""></p>
+<blockquote>
+<p>所谓温度，就是一个人活着的自我的状态。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="毕业季4-人生热度：用自己热爱的方式过一生-51-4"><a href="#毕业季4-人生热度：用自己热爱的方式过一生-51-4" class="headerlink" title="毕业季4 | 人生热度：用自己热爱的方式过一生 51-4"></a><a href="">毕业季4 | 人生热度：用自己热爱的方式过一生 51-4</a></h2><p>今天是我们毕业季推荐书单的第四天，今天我要推荐的书与“温度”有关，如果你觉得自己的人生不够精彩和热烈的话，推荐你看看以下5本书。</p>
+<p>推荐：《牧羊少年奇幻之旅》保罗·柯艾略<br>这是一本关于不甘平庸和梦想的小书。牧羊少年圣地亚哥梦见金字塔附近有一个宝藏，他放弃牧羊生活，启程追寻。从墨西哥横跨红海到非洲，在神秘的炼金术士指导下，最后来到金字塔边，却发现……不剧透了，自己去看看吧。<br>看完我的描述，你可能觉得这个故事很平庸，不明白我为什么要推荐。<br>其实，这是一本从头到尾都让你想起自己人生的寓言书——在故事背后，你能看到对我们生活的隐喻。<br>这本书是成人世界的《小王子》，是一本让你重新相信梦想的书——这本书3小时就能看完，但我每年都会重新看一遍。</p>
+<p>推荐：《苏东坡传》林语堂<br>《苏东坡传》《张居正传》《朱元璋传》《李鸿章传》并称为20世纪中文四大传记，但是我最喜欢的还是《苏东坡传》。林语堂是“苏粉”——苏东坡的粉丝。在他笔下，苏东坡是这样的：<br>“苏东坡是一个秉性难改的乐天派，是悲天悯人的道德家，是散文作家，是新派的画家，是伟大的书法家，是酿酒的实验者，是工程师，是假道学的反对派，是瑜伽术的修炼者，是佛教徒，是士大夫，是皇帝的秘书，是饮酒成性者，是心肠慈悲的法官，是政治上的坚持己见者，是月下的漫步者，是诗人，是生性诙谐爱开玩笑的人。但是这还不足以道出苏东坡的全部……”<br>我猜，林语堂应该是喝完酒，在微醺的状态下写完这本给偶像的书的，他笔下的苏东坡元气淋漓，有血有肉，是我读过最好的作家传记——最后，你可能很难想象，这么好的文字，竟然是林语堂用英语写的，英文名字叫做 The Gay Genius （放浪的天才）。<br>顺便推荐林语堂的另一本书《生活的艺术》。</p>
+<p>推荐：《少有人走的路》 M·斯科特·派克<br>这本书开头的一句话就让我觉得很酷：人生苦难重重。<br>也许是因为作者本身是一名军医，看多了战争上的生死，所以他的文字特别直接。<br>他说，人生就是一个闯关游戏。面对问题，解决问题。通关后的短暂空隙，享受片刻的宁静。<br>人生这么苦，如何才能勇敢面对呢？<br>两个字：自律。<br>你需要做到这四个方面：推迟满足感、承担责任、尊重事实、保持平衡。<br>那如何让自己能够持续自律？<br>一个字：爱。<br>最后他解释了什么是爱：爱，是为了促进自我和他人心智成熟而具有的一种自我完善的意愿。<br>连起来就是：人生苦难重重，凭借自律与爱，心智成熟地过一生。<br>人最大的问题就是与自己赛跑的心理问题，而心智不成熟又是最大的问题。数不清的成年人一遇到难题就双手一摊——“这不是我的问题。” 他们其实是不敢于面对自己的问题。<br>作者说，人可以拒绝任何东西，但绝对不可以拒绝成熟。</p>
+<p>推荐： 《亲爱的安德烈》龙应台<br>安德烈是龙应台与她德国丈夫的儿子。在安德烈十四岁的时候，龙应台离开欧洲，返回台湾，就任台北市首任文化局长。等她卸任回到儿子身边，安德烈已是一米八多高的十八岁的小伙子，安德烈坐在桌子另一边，有一点“冷”地看着妈妈。<br>他们是两代人，年龄相差三十年，中间横着东西文化。龙应台一定要重新认识成熟的安德烈。母子俩用了三年时间互相通信。龙应台认识了“人生里第一个十八岁的人”，安德烈也第一次认识了自己的母亲。<br>之所以推荐这本书，是因为处理好和父母的关系，是大部分成年人未完成事件中最重要的一件。尤其对于大学毕业后就远离家乡，每年回家也是吃吃喝喝，很少有机会和父母深度沟通的人，其实父母从未真正认识过18岁以后的你，而你也从未真实地知道，你18岁后父母的生活。<br>读读这本书吧。</p>
+<p>推荐：《真实的幸福》《活出最乐观的自己》《认识自己，接纳自己》——马丁·塞利格曼“积极心理学三部曲”<br>心理学从建立以来，就担负着3大使命——发掘和培养天才、让人幸福以及治疗疾病。直到上个世纪，心理学界才发现，他们大部分的研究都集中在了第三个部分——治疗心理疾病。而和大部分人最相关的“让人幸福”却很少提及。这也是积极心理学学科的开端。<br>所以，我推荐《真实的幸福》《活出最乐观的自己》《认识自己，接纳自己》，这套书很详细地诠释了整个积极心理学的研究成果和观点。作者是美国心理学协会会长、积极心理学之父马丁·塞利格曼。<br>如果只看一本，那就从《认识自己，接纳自己》读起吧。<br>有人说：“上帝，请赐予我平静，去接受我无法改变的。赐予我勇气，去改变我能改变的，以及赐予我智慧，分辨这两者的区别。”这本书讲的，就是区分两者的智慧。</p>
+<p>推荐：《2012，买张船票去南极》刘润<br>《2012，买张船票去南极》，是刘润在微软干了12年以后，利用假期去南极的记录。刘润老师不仅仅可以把前人的思考架成你的阶梯——他也是一个温度满满的人！<br>为什么温度这么重要？因为这一辈子陪伴你最久的，是你自己。不管你是希望改变世界，还是爱自己的家人，这一切都需要通过“你”来实现。所以学会如何和自己相处，是这个世界上最重要的事情。<br>成功的方式只有一种，就是用自己热爱的方式过一生。<br>推荐电影</p>
+<p>推荐电影：《碧海蓝天》<br>男主角杰克在希腊海边长大，虽然爸爸死于潜水事故，但是他依然热爱深海。童年玩伴恩佐也非常擅长潜水。两人长大以后，各自成为潜水领域的顶尖高手。一次世界自由潜水比赛，让两人重新聚在一起。这场比赛成了两个童年玩伴之间的游戏——不在乎彼此输赢，只在乎对深蓝海底的热爱。<br>我的一个潜水爱好的哥们对我说——你一定要看完这个片子再去潜水——每次你都需要下很大的决心才能浮出水面。导演是吕克·贝松，他认为这是他最得意的片子。因为那个时候他还没有去好莱坞，电影很单纯，就是单纯在做梦。<br>喜欢类似电影的人，也许也会喜欢《极盗者》或者《攀登梅鲁峰》，一起推荐给你。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/Check-Maintain-Worm-Bin-Temperature.jpg?imageMogr2/thumbnail/!75p&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;所谓温度，就是一个人活着的自我的状态。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Concept" scheme="http://deepcreator.com/categories/Concept/"/>
+    
+    
+      <category term="Temperature" scheme="http://deepcreator.com/tags/Temperature/"/>
     
   </entry>
   
@@ -8158,108 +8192,6 @@
     
     
       <category term="Artisan" scheme="http://deepcreator.com/tags/Artisan/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Share</title>
-    <link href="http://deepcreator.com/2017/10/14/Economics/Share/"/>
-    <id>http://deepcreator.com/2017/10/14/Economics/Share/</id>
-    <published>2017-10-14T12:44:08.000Z</published>
-    <updated>2017-10-14T12:56:06.116Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/submit-ad.png?imageMogr2/thumbnail/!75p" alt=""></p>
-<blockquote>
-<p>流动和共享是未来的造富机。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="在分享时代，如何挣到钱"><a href="#在分享时代，如何挣到钱" class="headerlink" title="在分享时代，如何挣到钱"></a><a href="http://www.luojiji.com/thread-3007-1-1.html" target="_blank" rel="external">在分享时代，如何挣到钱</a></h2><p><img src="http://www.luojiji.com/data/attachment/forum/201512/29/162512gttw31d0tzfvrwfz.jpg" alt=""></p>
-<p>2015-12-06罗振宇</p>
-<p>本文是罗胖关于凯文·凯利新作《必然》的第八篇读书笔记。</p>
-<p>2015年，“共享”这个概念在中国太火了。</p>
-<p>把车拿出来共享，这叫滴滴。把房子拿出来共享，这叫“挨饿逼嗯逼”（Airbnb）。</p>
-<p>你的就是我的——这个概念我们中国人接受起来，毫无违和感。</p>
-<p>不过，“共享”这个词，在资本主义老巢的美国人那里，还是要问一下“姓资姓社”的。</p>
-<p>当年比尔·盖茨就曾经嘲笑那些搞自由软件的人是“共产主义者”。</p>
-<p>呃…在比尔·盖茨看来，这算骂街。</p>
-<p>其实早在1989年，我国就翻译出版了一本书，叫《计算机与社会主义》，作者是英国人斯蒂芬·伯丁顿，就已经把电脑时代和社会主义的概念打通过一回。</p>
-<p>现在凯文·凯利又来了，要跟资本主义抬抬杠。</p>
-<p>资本主义那种唯利是图、见钱必赚、产权清晰的时代过去了？</p>
-<p>一、这个社会主义没那么“可怕”</p>
-<p>这种新的社会主义，不同于以往任何一场运动。它并非阶级斗争，也不是反美主义。恰恰相反，数字社会主义可能正是美国的最新创新。 </p>
-<p>数字社会主义运行在没有边界的互联网上，催生了贯穿全球一体化经济的无形服务—— </p>
-<p>· 我们聚集在集体空间，而非集体农场里；<br>· 我们通过桌面工厂而非国有工厂与虚拟的合作社连接；<br>· 我们共享脚本和应用程序接口而非锄头与铁铲；<br>· 我们没有高大上的政治局，却有未曾谋面的社群领袖；<br>· 我们没有举国体制，但却有大众协同机制；<br>· 我们不实行免费的政府配给和补贴，却提供免费的商品、软件和服务。</p>
-<p>当众多拥有生产工具的人都朝着一个共同的目标努力，共享他们的产品，不计较劳务报酬，乐于让他人免费享用其成果时，这就是社会主义。</p>
-<p>一些未来学家将这种新型社会主义命名为“共享经济”（Sharing Economy），因为在这一层面最基本的通行规则就是共享。 </p>
-<p>但是用社会主义这个词来指代正在发生的事情也有其不恰当的一面：它并非一种强调意识形态的“主义”，也不会要求人们对其具备坚定的信念。它更像是一种态度、一类技术、一些工具，可以推进协作、共享、聚合、协调、灵活机构以及其他各种各样新兴的社会合作形式。 </p>
-<p>它是前沿，也是创新的沃土。 </p>
-<p>科技发展使变革的发生越来越快，每时每刻不再是起点或终点，而是一个状态向另一个状态“形成”的过程。所以，预测趋势比预测结果更有意义。<br>——小一辈无产阶级拼命家李爽</p>
-<p>二、这个社会主义也分“初级高级”</p>
-<p>随着人们协同程度的增加，它分为4个层次——</p>
-<p>1.分享</p>
-<p>在线公众有着令人难以置信的共享意愿。</p>
-<p>在社交网站上贴出的个人照片，数量每天都有18亿之多；优酷以分享的方式，提供了数十亿个视频；同人小说网站上有数百万粉丝创作的故事。 </p>
-<p>分享是数字社会主义中最温和的表现形式，但这样一个动词却是所有高级水平的群体活动的基础。它也是整个网络世界的基本构成成分。 </p>
-<p>2.合作</p>
-<p>当个体们为实现一个更大目标而共同工作时，群体层面的结果就会涌现出来。</p>
-<p>在Flickr等网站上，任何人都可以使用他人上传的照片，就像是公社的成员可以使用公社所有的手推车一样。我不用再拍一张埃菲尔铁塔的照片，因为网络“公社”可以提供一张比我自己拍得更好的。这也意味着，当我要做展示、报告、海报、网站时，我可以做得更好，因为我不是一个人在工作。 </p>
-<p>有意思的是，这一方式已经超出了社会主义者许诺的“各尽所能，按需分配”，因为它做到了“增益付出，超需回报”。 </p>
-<p>整体优于部分之和——传统社会主义试图通过国家政权来实现这一目标。</p>
-<p>现在，数字共享则超脱了政府，在国际范围内发挥作用。 </p>
-<p>3.协作 </p>
-<p>有组织的协作所能取得的成果要超出临时的合作。 </p>
-<p>开源软件，让成千上万个成员协同工作，从而产出高质量的产品。一位热心参与者可能要花几个月来为项目的子程序写代码，而项目的全面应用则是几年之后。以自由市场观点看，这种劳动报酬比是十分不正常的，即工作者做了巨量的、有很高市场价值的工作，却不获得任何报酬。这种协作方式是资本主义所不能理解的。 </p>
-<p>尽管没有金钱回报，但创造这些产品的大众生产者获得了信誉、地位、声望、享受、满足和体验。 </p>
-<p>4.集体主义</p>
-<p>大多数人都被灌输了这样一种观点——个人权力的扩张必然会削弱国家权力，反之亦然。 </p>
-<p>然而，技术共享不是零和博弈。它是一个新的、能同时提升个人和群体价值的操作系统。它同时最大化个体自主性和群体协同力量。因此，数字共享可以视为第三条道路。 </p>
-<p>专家们曾经认为很多话题是当代人绝不会共享的：我们的财务状况，我们的身体问题，我们的性生活，我们内心最强烈的恐惧；但事实证明，只要借助恰当的技术、在恰当的条件下、辅以恰当的收益，我们就会共享一切。 </p>
-<p>三、这个社会主义也讲“民主集中制” </p>
-<p>仅仅讲什么“自下而上”、“去中心化”是不够的。</p>
-<p>为了达成最好结果，我们还需要些自上而下的智慧。 </p>
-<p>编辑存在的必要性不会消失。业余作者们创作的作品可能并不有趣，或者良莠不齐。编辑就是管理员，他们是介于创作者和受众之间的专业人士，对蕴含着大众创造力的浑金璞玉加以雕琢。 </p>
-<p>今天，我们可以有无数种方式将大量的失控元素与少量的自上而下的控制相混合，这是最激动人心的前沿。在此之前，技术主要是用于自上而下的控制；现在它可以兼容控制与混乱了。 </p>
-<p>在互联网出现之前，我们无法实时地协调上百万人，也无法召集成百上千的人员为一个项目一起协作一周。现在我们可以了，并且可以快速地探索将控制与大众相结合的所有排列组合。 </p>
-<p>维基百科每年都会改进流程，加入更多的层级。有争议的文章可以由高级编辑“冷冻”起来，不再能被随意的个人修改，只能由指定的编辑修订。将会有越来越多的规则说明，还会有越来越多的格式要求，并且需要越来越多的审批。但同时，这些文章整体的质量也提高了。每一步改变，都是借由少量自上而下的智慧，来校正大规模自下而上的系统所表现出来的愚笨。 </p>
-<p>罗胖插嘴——</p>
-<p>UGC，也就是“用户产生内容”，在过去的十年里其实被中国人玩坏了。</p>
-<p>有的中国创业者想的压根不是什么“共享经济”。<br>他们想的是：我搭平台，你来干活，我去上市发财，你图个乐子就完了呗？</p>
-<p>一百单八将从瓶子里放出来，只是个开始，也只是洪太尉的胡闹。<br>一百单八将汇聚水泊梁山，创出了价值的增量，那才是高潮。<br>一百单八将被朝廷招安，重新嵌入到社会结构中成为正向力量，那才叫闭环。</p>
-<p>社会发展到什么时候，“控制”和“混乱”都是一对互为表里的概念。<br>“糟糕混乱”可以革了“糟糕控制”的命。<br>“高级控制”也可以治“高级混乱”的病。</p>
-<p>四、这个社会主义也能“让你挣钱”。 </p>
-<p>凯文·凯利的本章金句是——</p>
-<p>“创作者呢？在共享经济下谁支付他们报酬？答案令人惊奇：另一种新的共享技术。” </p>
-<p>举个例子：众筹。</p>
-<p>别以为光是信息、能力可以分享。<br>钱一样可以分享。<br>大众共享最具潜力的未来还是在以粉丝为基础的股权众筹领域。<br>理想状态下公司应从自己的消费者那里融资。 </p>
-<p>现在，每年只有寥寥几家资金充足的公司才有机会IPO上市。而对于有风险的创业公司、单打独斗的创作者、疯狂的艺术家，或者是在车库创业的小伙子而言，他们负担不起这样繁重的文案工作和层层的金融官僚审批程序。如果存在一个开放的P2P机制，使得任何一家公司都可以在监管下将其所有权股份向公众发行，那将给商业带来革命性的改变。 </p>
-<p>想想证监会、发审委，衙门口，门难进、脸难看。再想想众筹股权的未来。</p>
-<p>想想就过瘾。</p>
-<blockquote>
-<p>流动和共享是未来的造富机。P2P让资金流动起来，滴滴让车辆流动共享起来，Airbnb让房间流动共享起来，你想要什么，成功使之流动共享就会发财。比如你喜欢钻石，帮有钻石的人出售、交换、出租钻石，那你就发财了，把钻石可以换成其他你使用或拥有的东西，这就是流动和共享。<br>——公众号富日记furiji</p>
-</blockquote>
-<p>五、这个社会主义也催生“高级资本家”  </p>
-<p>我们只是刚刚开始。 </p>
-<p>一定有上百万种不同的方式来借助大众支持一个创意，或者借助大众组织它，或者借助大众实现它。 </p>
-<p>也一定会有上百万种新的方式让我们以不曾料到的方式来共享不曾料到的事物。 </p>
-<p>未来30年中的最大财富和最有意思的文化创新都会出现在这一领域。 </p>
-<p>到2050年，最大、发展最迅速、盈利最多的企业将是掌握了当下还不可见、尚未被重视的共享要素的企业。任何可以被共享的事物——思想、情绪、金钱、健康、时间，都将在适当的条件和适当的回报下被共享。 </p>
-<p>而在此时此刻，将从未被共享过的东西进行共享，或者以一种新的方式来共享，是事物增值的最可靠的方式。 </p>
-<p>罗胖再插嘴——<br>如无意外，思想和知识的共享，将是中国下一个创业风口。<br>不管你信不信。反正我们已经上路。<br>走，天竺。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://opb37u589.bkt.clouddn.com/submit-ad.png?imageMogr2/thumbnail/!75p&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;流动和共享是未来的造富机。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Economics" scheme="http://deepcreator.com/categories/Economics/"/>
-    
-    
-      <category term="Share" scheme="http://deepcreator.com/tags/Share/"/>
     
   </entry>
   
