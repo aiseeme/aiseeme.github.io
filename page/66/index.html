@@ -328,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/19/Technology/AI/TensorFlow/core-components-from-deep-learning-framework/">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/26/Technology/AI/Meituan/ffm-learning-in-meituan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IPCreator">
@@ -347,7 +347,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/02/19/Technology/AI/TensorFlow/core-components-from-deep-learning-framework/" itemprop="url">Five Core Components of Deep Learning Framework</a></h1>
+                <a class="post-title-link" href="/2017/02/26/Technology/AI/Meituan/ffm-learning-in-meituan/" itemprop="url">Deep FFM Theory and Practice in Meituan</a></h1>
         
 
         <div class="post-meta">
@@ -359,8 +359,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T23:57:20+08:00">
-                2017-02-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-26T22:20:06+08:00">
+                2017-02-26
               </time>
             
 
@@ -401,8 +401,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/19/Technology/AI/TensorFlow/core-components-from-deep-learning-framework/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/19/Technology/AI/TensorFlow/core-components-from-deep-learning-framework/" itemprop="commentsCount"></span>
+                <a href="/2017/02/26/Technology/AI/Meituan/ffm-learning-in-meituan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/26/Technology/AI/Meituan/ffm-learning-in-meituan/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -411,7 +411,7 @@
 
           
           
-             <span id="/2017/02/19/Technology/AI/TensorFlow/core-components-from-deep-learning-framework/" class="leancloud_visitors" data-flag-title="Five Core Components of Deep Learning Framework">
+             <span id="/2017/02/26/Technology/AI/Meituan/ffm-learning-in-meituan/" class="leancloud_visitors" data-flag-title="Deep FFM Theory and Practice in Meituan">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -443,18 +443,14 @@
 
       
         
-          <p><a href="http://www.leiphone.com/news/201701/DZeAwe2qgx8JhbU8.html">本文作者：恒亮</a></p>
-<p>许多初学者觉得深度学习框架抽象，虽然调用了几个函数/方法，计算了几个数学难题，但始终不能理解这些框架的全貌。<br>为了更好地认识深度学习框架，也为了给一些想要自己亲手搭建深度学习框架的朋友提供一些基础性的指导，日前来自苏黎世联邦理工学院计算机科学系的硕士研究生Gokula Krishnan Santhanam在博客上撰文，概括了大部分深度学习框架都会包含的五大核心组件，为我们详细剖析了深度学习框架一般性的内部组织结构。以下由雷锋网(公众号：雷锋网)编译。</p>
-<p>Gokula Krishnan Santhanam认为，大部分深度学习框架都包含以下五个核心组件：<br>&gt;</p>
-<ol>
-<li>张量（Tensor）</li>
-<li>基于张量的各种操作</li>
-<li>计算图（Computation Graph）</li>
-<li>自动微分（Automatic Differentiation）工具</li>
-<li><p>BLAS、cuBLAS、cuDNN等拓展包</p>
+          <h2 id="深入FFM原理与实践"><a href="#深入FFM原理与实践" class="headerlink" title="深入FFM原理与实践"></a>深入FFM原理与实践</h2><p><a href="http://tech.meituan.com/deep-understanding-of-ffm-principles-and-practices.html">del2z, 大龙</a></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>FM和FFM模型是最近几年提出的模型，凭借其在数据量比较大并且特征稀疏的情况下，仍然能够得到优秀的性能和效果的特性，屡次在各大公司举办的CTR预估比赛中获得不错的战绩。美团点评技术团队在搭建DSP的过程中，探索并使用了FM和FFM模型进行CTR和CVR预估，并且取得了不错的效果。本文旨在把我们对FM和FFM原理的探索和应用的经验介绍给有兴趣的读者。</p>
+<p>在计算广告领域，点击率CTR（click-through rate）和转化率CVR（conversion rate）是衡量广告流量的两个关键指标。准确的估计CTR、CVR对于提高流量的价值，增加广告收入有重要的指导作用。预估CTR/CVR，业界常用的方法有人工特征工程 + LR(Logistic Regression)、GBDT(Gradient Boosting Decision Tree) + LR[1][2][3]、FM（Factorization Machine）[2][7]和FFM（Field-aware Factorization Machine）[9]模型。在这些模型中，FM和FFM近年来表现突出，分别在由Criteo和Avazu举办的CTR预测竞赛中夺得冠军[4][5]。</p>
+<p>考虑到FFM模型在CTR预估比赛中的不俗战绩，美团点评技术团队在搭建DSP（Demand Side Platform）[6]平台时，在站内CTR/CVR的预估上使用了该模型，取得了不错的效果。本文是基于对FFM模型的深度调研和使用经验，从原理、实现和应用几个方面对FFM进行探讨，希望能够从原理上解释FFM模型在点击率预估上取得优秀效果的原因。因为FFM是在FM的基础上改进得来的，所以我们首先引入FM模型，本文章节组织方式如下：</p>
+<p>首先介绍FM的原理。<br>其次介绍FFM对FM的改进。<br>然后介绍FFM的实现细节。<br>最后介绍模型在DSP场景的应用。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/Technology/AI/TensorFlow/core-components-from-deep-learning-framework/#more" rel="contents">
+            <a class="btn" href="/2017/02/26/Technology/AI/Meituan/ffm-learning-in-meituan/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -505,7 +501,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/19/Technology/AI/TensorFlow/right-way-of-master-machine-learning/">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/26/Technology/AI/Meituan/online-learning-in-meituan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IPCreator">
@@ -524,7 +520,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/02/19/Technology/AI/TensorFlow/right-way-of-master-machine-learning/" itemprop="url">Right Way of Learning Machine Learning</a></h1>
+                <a class="post-title-link" href="/2017/02/26/Technology/AI/Meituan/online-learning-in-meituan/" itemprop="url">Online Learning Algorithm Theory and Practice</a></h1>
         
 
         <div class="post-meta">
@@ -536,8 +532,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T23:57:06+08:00">
-                2017-02-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-26T22:13:06+08:00">
+                2017-02-26
               </time>
             
 
@@ -578,8 +574,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/19/Technology/AI/TensorFlow/right-way-of-master-machine-learning/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/19/Technology/AI/TensorFlow/right-way-of-master-machine-learning/" itemprop="commentsCount"></span>
+                <a href="/2017/02/26/Technology/AI/Meituan/online-learning-in-meituan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/26/Technology/AI/Meituan/online-learning-in-meituan/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -588,7 +584,7 @@
 
           
           
-             <span id="/2017/02/19/Technology/AI/TensorFlow/right-way-of-master-machine-learning/" class="leancloud_visitors" data-flag-title="Right Way of Learning Machine Learning">
+             <span id="/2017/02/26/Technology/AI/Meituan/online-learning-in-meituan/" class="leancloud_visitors" data-flag-title="Online Learning Algorithm Theory and Practice">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -620,15 +616,11 @@
 
       
         
-          <p>作者：<a href="http://www.leiphone.com/news/201701/mY1HbudReeTtJHw4.html">雷锋网 亚峰</a></p>
-<p>导语：现在的 AI 科学家大部分是在科研环境中培养出来的，不但欠缺工程化、产品化的经验，而且对于错综复杂的商业环境也并不熟悉。</p>
-<p>雷锋网按：“算法”这两字在人工智能圈已然成为“高大上”的代名词，由于不少在校生和职场新人对它的过度迷恋，多名 AI 资深人士均对这一现象表示担忧。李开复曾这样说到：</p>
-<p>现在的 AI 科学家大部分是在科研环境中培养出来的，不但欠缺工程化、产品化的经验，而且对于错综复杂的商业环境也并不熟悉，更缺乏解决实际问题所必须的数据资源。<br>随着开源框架层出不穷，人工智能产品化和商业化进程不断加速，使得算法的门槛逐渐降低，但对工程的要求不断在提高。这种情况下，实际应用和工程能力基础扎实的技术人才变得异常抢手。</p>
-<p>其实 AI 新人们在进入职场后也愈发意识到这个问题，那他们该如何提升自己的实战能力？</p>
-<p>雷锋网特邀王刚为大家讲述机器学习的实战与应用，王刚根据工程、产品、业务等多个维度帮大家梳理如何系统地去学习机器学习。</p>
+          <p><a href="http://tech.meituan.com/online-learning.html">孔东营</a></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><img src="http://tech.meituan.com/img/online-learning/online-learning-flow.png" alt=""><br>Online Learning是工业界比较常用的机器学习算法，在很多场景下都能有很好的效果。本文主要介绍Online Learning的基本原理和两种常用的Online Learning算法：FTRL（Follow The Regularized Leader）[1]和BPR（Bayesian Probit Regression）[2]，以及Online Learning在美团移动端推荐重排序的应用。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/Technology/AI/TensorFlow/right-way-of-master-machine-learning/#more" rel="contents">
+            <a class="btn" href="/2017/02/26/Technology/AI/Meituan/online-learning-in-meituan/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -679,7 +671,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/19/Technology/AI/TensorFlow/20-open-source-projects-of-machine-learning/">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/26/Technology/AI/Meituan/framework-of-get-features-in-meituan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IPCreator">
@@ -698,7 +690,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/02/19/Technology/AI/TensorFlow/20-open-source-projects-of-machine-learning/" itemprop="url">20 Open Source Projects of the 2016（Python）</a></h1>
+                <a class="post-title-link" href="/2017/02/26/Technology/AI/Meituan/framework-of-get-features-in-meituan/" itemprop="url">Framework of Getting Features in Meituan</a></h1>
         
 
         <div class="post-meta">
@@ -710,8 +702,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T23:57:06+08:00">
-                2017-02-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-26T22:04:06+08:00">
+                2017-02-26
               </time>
             
 
@@ -752,8 +744,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/19/Technology/AI/TensorFlow/20-open-source-projects-of-machine-learning/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/19/Technology/AI/TensorFlow/20-open-source-projects-of-machine-learning/" itemprop="commentsCount"></span>
+                <a href="/2017/02/26/Technology/AI/Meituan/framework-of-get-features-in-meituan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/26/Technology/AI/Meituan/framework-of-get-features-in-meituan/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -762,7 +754,7 @@
 
           
           
-             <span id="/2017/02/19/Technology/AI/TensorFlow/20-open-source-projects-of-machine-learning/" class="leancloud_visitors" data-flag-title="20 Open Source Projects of the 2016（Python）">
+             <span id="/2017/02/26/Technology/AI/Meituan/framework-of-get-features-in-meituan/" class="leancloud_visitors" data-flag-title="Framework of Getting Features in Meituan">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -794,16 +786,11 @@
 
       
         
-          <blockquote>
-<p>去年 KDnuggets 评选了前 20 大机器学习开源项目​（Python版），今年进行重新评选后，出现了一些新的面孔，有13个新开源项目入选了这个名单。</p>
-</blockquote>
-<p>作者：<a href="http://www.leiphone.com/news/201612/PEyfFyUxtTVLHKx6.html">雷锋网 小东</a></p>
-<p>如今，开源已经成为创新与技术发展的核心。在本文中，雷锋网(公众号：雷锋网)将介绍 2016 Python 前20大机器学习开源项目。</p>
-<p>去年 KDnuggets 评选了前 20 大机器学习开源项目（Python版），今年的评选结果与去年相比，名单中出现了一些新的面孔，有13个新开源项目入围了这个名单。作者 Prasad Pore 将具体介绍这些开源项目，雷锋网编译，未经许可不得转载。</p>
-<p><img src="http://static.leiphone.com/uploads/new/article/740_740/201612/584fb955274ac.png?imageMogr2/format/jpg/quality/90" alt=""></p>
+          <h2 id="外卖排序系统特征生产框架"><a href="#外卖排序系统特征生产框架" class="headerlink" title="外卖排序系统特征生产框架"></a>外卖排序系统特征生产框架</h2><p><a href="http://tech.meituan.com/feature_pipeline.html">海文</a></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><img src="http://tech.meituan.com/img/feature_pipeline/001.png" alt=""><br>外卖的排序策略是由机器学习模型驱动的，模型迭代效率制约着策略优化效果。如上图所示，在排序系统里，特征是最为基础的部分：有了特征之后，我们离线训练出模型，然后将特征和模型一起推送给线上排序服务使用。特征生产Pipeline对于策略迭代的效率起着至关重要的作用。经过实践中的积累和提炼，我们整理出一套通用的特征生产框架，大大节省开发量，提高策略迭代效率。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/Technology/AI/TensorFlow/20-open-source-projects-of-machine-learning/#more" rel="contents">
+            <a class="btn" href="/2017/02/26/Technology/AI/Meituan/framework-of-get-features-in-meituan/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -854,7 +841,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/19/Technology/AI/TensorFlow/28-open-source-projects-of-machine-learning/">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/26/Technology/AI/Meituan/deep-learning-in-meituan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IPCreator">
@@ -873,7 +860,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/02/19/Technology/AI/TensorFlow/28-open-source-projects-of-machine-learning/" itemprop="url">28 Open Source Projects of Machine Learning in GitHub</a></h1>
+                <a class="post-title-link" href="/2017/02/26/Technology/AI/Meituan/deep-learning-in-meituan/" itemprop="url">Deep Learning in Meituan</a></h1>
         
 
         <div class="post-meta">
@@ -885,8 +872,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T23:57:05+08:00">
-                2017-02-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-26T21:56:06+08:00">
+                2017-02-26
               </time>
             
 
@@ -927,8 +914,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/19/Technology/AI/TensorFlow/28-open-source-projects-of-machine-learning/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/19/Technology/AI/TensorFlow/28-open-source-projects-of-machine-learning/" itemprop="commentsCount"></span>
+                <a href="/2017/02/26/Technology/AI/Meituan/deep-learning-in-meituan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/26/Technology/AI/Meituan/deep-learning-in-meituan/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -937,7 +924,7 @@
 
           
           
-             <span id="/2017/02/19/Technology/AI/TensorFlow/28-open-source-projects-of-machine-learning/" class="leancloud_visitors" data-flag-title="28 Open Source Projects of Machine Learning in GitHub">
+             <span id="/2017/02/26/Technology/AI/Meituan/deep-learning-in-meituan/" class="leancloud_visitors" data-flag-title="Deep Learning in Meituan">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -969,12 +956,12 @@
 
       
         
-          <p>作者：<a href="https://yq.aliyun.com/articles/30794?spm=5176.100239.blogcont30796.7.1WRiYX">云栖社区 readygo </a></p>
-<p>现在机器学习逐渐成为行业热门，经过二十几年的发展，机器学习得到了十分广泛的应用，如：数据挖掘、计算机视觉、自然语言处理、生物特征识别、搜索引擎、医学诊断、DNA序列测序、战略游戏和机器人等方面。 云栖社区特意翻译整理了目前GitHub上最受欢迎的28款开源的机器学习项目，以供开参考使用。</p>
-<p><img src="https://oss.aliyuncs.com/yqfiles/f7ee0537b3263e5874f6d0533a46422c61508308.png" alt=""></p>
+          <h2 id="深度学习在美团点评的应用"><a href="#深度学习在美团点评的应用" class="headerlink" title="深度学习在美团点评的应用"></a>深度学习在美团点评的应用</h2><p><a href="http://tech.meituan.com/deeplearning_application.html">文竹 李彪 晓明</a></p>
+<p>   <img src="http://tech.meituan.com/img/deeplearning_application/clicknet_framework.png" alt=""></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近年来，深度学习在语音、图像、自然语言处理等领域取得非常突出的成果，成了最引人注目的技术热点之一。美团点评这两年在深度学习方面也进行了一些探索，其中在自然语言处理领域，我们将深度学习技术应用于文本分析、语义匹配、搜索引擎的排序模型等；在计算机视觉领域，我们将其应用于文字识别、目标检测、图像分类、图像质量排序等。下面我们就以语义匹配、图像质量排序及文字识别这三个应用场景为例，来详细介绍美团点评在深度学习技术及应用方面的经验和方法论。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/Technology/AI/TensorFlow/28-open-source-projects-of-machine-learning/#more" rel="contents">
+            <a class="btn" href="/2017/02/26/Technology/AI/Meituan/deep-learning-in-meituan/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1025,7 +1012,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/19/Technology/AI/TensorFlow/white-paper-of-google-machine-learning/">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/26/Technology/Program/Android/dynamic-load-android-dex-from-meituan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IPCreator">
@@ -1044,7 +1031,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/02/19/Technology/AI/TensorFlow/white-paper-of-google-machine-learning/" itemprop="url">White Paper of Machine Learning of Google</a></h1>
+                <a class="post-title-link" href="/2017/02/26/Technology/Program/Android/dynamic-load-android-dex-from-meituan/" itemprop="url">Dynamic Load Android DEX  by Meituan</a></h1>
         
 
         <div class="post-meta">
@@ -1056,8 +1043,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T23:57:00+08:00">
-                2017-02-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-26T21:31:05+08:00">
+                2017-02-26
               </time>
             
 
@@ -1079,8 +1066,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AI/" itemprop="url" rel="index">
-                    <span itemprop="name">AI</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -1098,8 +1085,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/19/Technology/AI/TensorFlow/white-paper-of-google-machine-learning/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/19/Technology/AI/TensorFlow/white-paper-of-google-machine-learning/" itemprop="commentsCount"></span>
+                <a href="/2017/02/26/Technology/Program/Android/dynamic-load-android-dex-from-meituan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/26/Technology/Program/Android/dynamic-load-android-dex-from-meituan/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -1108,7 +1095,7 @@
 
           
           
-             <span id="/2017/02/19/Technology/AI/TensorFlow/white-paper-of-google-machine-learning/" class="leancloud_visitors" data-flag-title="White Paper of Machine Learning of Google">
+             <span id="/2017/02/26/Technology/Program/Android/dynamic-load-android-dex-from-meituan/" class="leancloud_visitors" data-flag-title="Dynamic Load Android DEX  by Meituan">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1140,16 +1127,16 @@
 
       
         
-          <blockquote>
-<p>开发者的最佳机器学习实践指南</p>
-</blockquote>
-<p>作者：<a href="http://www.leiphone.com/news/201701/FmC6Z2X6UeCvgGEV.html">雷锋网</a></p>
-<p>谷歌白皮书原文地址：<a href="http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf">http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf</a></p>
-<p>编者按：此白皮书为谷歌总结的机器学习（ML）最优实践方法，浓缩了其多年技术积累与经验，尤其是 Youtube、Google Play 和 Google+ 等平台背后的 ML 算法开发、维护经历。谷歌于白皮书中总结了四十三条 ML 黄金法则，旨在帮助已经掌握了基础知识的开发者少走弯路。鉴于其珍贵程度与技术性，雷锋网逐条做了严格尊重原文的翻译。若你已学习过机器学习课程，抑或有开发 ML 模型的经验，那么应当具备足够的背景知识理解这篇文章。</p>
-<p><img src="http://static.leiphone.com/uploads/new/article/740_740/201701/58878244a09a3.jpg?imageMogr2/format/jpg/quality/90" alt=""></p>
+          <p><a href="http://tech.meituan.com/mt-android-auto-split-dex.html">美团Android DEX自动拆包及动态加载简介</a><br>jianshuai xiaoyang ·2015-06-15 10:00</p>
+<p>概述</p>
+<p>作为一个android开发者，在开发应用时，随着业务规模发展到一定程度，不断地加入新功能、添加新的类库，代码在急剧的膨胀，相应的apk包的大小也急剧增加， 那么终有一天，你会不幸遇到这个错误：</p>
+<p>生成的apk在android 2.3或之前的机器上无法安装，提示INSTALL_FAILED_DEXOPT<br>方法数量过多，编译时出错，提示：<br> Conversion to Dalvik format failed:Unable to execute dex: method ID not in [0, 0xffff]: 65536</p>
+<p>而问题产生的具体原因如下：</p>
+<p>无法安装（Android 2.3 INSTALL_FAILED_DEXOPT）问题，是由dexopt的LinearAlloc限制引起的，在Android版本不同分别经历了4M/5M/8M/16M限制，目前主流4.2.x系统上可能都已到16M， 在Gingerbread或者以下系统LinearAllocHdr分配空间只有5M大小的， 高于Gingerbread的系统提升到了8M。Dalvik linearAlloc是一个固定大小的缓冲区。在应用的安装过程中，系统会运行一个名为dexopt的程序为该应用在当前机型中运行做准备。dexopt使用LinearAlloc来存储应用的方法信息。Android 2.2和2.3的缓冲区只有5MB，Android 4.x提高到了8MB或16MB。当方法数量过多导致超出缓冲区大小时，会造成dexopt崩溃。</p>
+<p>超过最大方法数限制的问题，是由于DEX文件格式限制，一个DEX文件中method个数采用使用原生类型short来索引文件中的方法，也就是4个字节共计最多表达65536个method，field/class的个数也均有此限制。对于DEX文件，则是将工程所需全部class文件合并且压缩到一个DEX文件期间，也就是Android打包的DEX过程中， 单个DEX文件可被引用的方法总数（自己开发的代码以及所引用的Android框架、类库的代码）被限制为65536；</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/Technology/AI/TensorFlow/white-paper-of-google-machine-learning/#more" rel="contents">
+            <a class="btn" href="/2017/02/26/Technology/Program/Android/dynamic-load-android-dex-from-meituan/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1200,7 +1187,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/19/Technology/AI/TensorFlow/awesome-machine-learning/">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/26/Technology/Program/Tools/Data Base/the-essence-of-mysql-index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IPCreator">
@@ -1219,7 +1206,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/02/19/Technology/AI/TensorFlow/awesome-machine-learning/" itemprop="url">Awesome Machine Learning</a></h1>
+                <a class="post-title-link" href="/2017/02/26/Technology/Program/Tools/Data Base/the-essence-of-mysql-index/" itemprop="url">MySQL Index principle and optimization</a></h1>
         
 
         <div class="post-meta">
@@ -1231,526 +1218,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T23:56:06+08:00">
-                2017-02-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AI/" itemprop="url" rel="index">
-                    <span itemprop="name">AI</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/19/Technology/AI/TensorFlow/awesome-machine-learning/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/19/Technology/AI/TensorFlow/awesome-machine-learning/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-             <span id="/2017/02/19/Technology/AI/TensorFlow/awesome-machine-learning/" class="leancloud_visitors" data-flag-title="Awesome Machine Learning">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>作者：<a href="https://github.com/josephmisiti/awesome-machine-learning">Joseph Misiti/josephmisiti</a></p>
-<p>A curated list of awesome machine learning frameworks, libraries and software (by language). Inspired by awesome-php.</p>
-
-<p>If you want to contribute to this list (please do), send me a pull request or contact me <a href="https://twitter.com/josephmisiti">@josephmisiti</a><br>Also, a listed repository should be deprecated if:</p>
-
-<ul><br><li>Repository’s owner explicitly say that “this library is not maintained”.</li><br><li>Not committed for long time (2~3 years).</li><br></ul>
-
-<p>For a list of free machine learning books available for download, go <a href="https://github.com/josephmisiti/awesome-machine-learning/blob/master/books.md">here</a>.</p>
-
-<p>For a list of free-to-attend meetups and local events, go <a href="https://github.com/josephmisiti/awesome-machine-learning/blob/master/meetups.md">here</a>.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/Technology/AI/TensorFlow/awesome-machine-learning/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/19/Technology/AI/TensorFlow/awesome-deep-learning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="IPCreator">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/headonhill.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="For life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/19/Technology/AI/TensorFlow/awesome-deep-learning/" itemprop="url">Awesome Deep Learning</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T23:56:00+08:00">
-                2017-02-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AI/" itemprop="url" rel="index">
-                    <span itemprop="name">AI</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/19/Technology/AI/TensorFlow/awesome-deep-learning/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/19/Technology/AI/TensorFlow/awesome-deep-learning/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-             <span id="/2017/02/19/Technology/AI/TensorFlow/awesome-deep-learning/" class="leancloud_visitors" data-flag-title="Awesome Deep Learning">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>作者：<a href="https://github.com/josephmisiti/awesome-deep-learning">Joseph Misiti/josephmisiti</a></p>
-<html lang="en" class=" is-u2f-enabled"><br><br>A curated list of awesome Deep Learning tutorials, projects and communities.<br><br>  <div id="readme" class="readme blob instapaper_body"><br>    <article class="markdown-body entry-content" itemprop="text"><h3><a id="user-content-free-online-books" class="anchor" href="#free-online-books" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Free Online Books</h3><br><br><ol><br><li> <a href="http://www.iro.umontreal.ca/%7Ebengioy/dlbook/">Deep Learning</a> by Yoshua Bengio, Ian Goodfellow and Aaron Courville  (01/01/2015)</li><br><li> <a href="http://neuralnetworksanddeeplearning.com/">Neural Networks and Deep Learning</a> by  Michael Nielsen (Dec 2014)</li><br><li> <a href="http://research.microsoft.com/pubs/209355/DeepLearning-NowPublishing-Vol7-SIG-039.pdf">Deep Learning</a> by Microsoft Research (2013) </li><br><li> <a href="http://deeplearning.net/tutorial/deeplearning.pdf">Deep Learning Tutorial</a> by LISA lab, University of Montreal (Jan 6 2015)</li><br></ol><br><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/Technology/AI/TensorFlow/awesome-deep-learning/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/19/Technology/AI/TensorFlow/25-open-source-projects-of-machine-learning-java/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="IPCreator">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/headonhill.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="For life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/19/Technology/AI/TensorFlow/25-open-source-projects-of-machine-learning-java/" itemprop="url">25 Tools and Libs Machine Learning Basing on Java</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T23:50:06+08:00">
-                2017-02-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AI/" itemprop="url" rel="index">
-                    <span itemprop="name">AI</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/19/Technology/AI/TensorFlow/25-open-source-projects-of-machine-learning-java/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/19/Technology/AI/TensorFlow/25-open-source-projects-of-machine-learning-java/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-             <span id="/2017/02/19/Technology/AI/TensorFlow/25-open-source-projects-of-machine-learning-java/" class="leancloud_visitors" data-flag-title="25 Tools and Libs Machine Learning Basing on Java">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>转自：<a href="http://blog.csdn.net/xiexingshishu/article/details/50405531">CSDN</a></p>
-<p>本列表总结了25个Java机器学习工具&amp;库</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/Technology/AI/TensorFlow/25-open-source-projects-of-machine-learning-java/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/19/Technology/Program/Tools/Python/learn-journey-of-python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="IPCreator">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/headonhill.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="For life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/19/Technology/Program/Tools/Python/learn-journey-of-python/" itemprop="url">Tutorials of Python</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T14:14:06+08:00">
-                2017-02-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-26T21:27:05+08:00">
+                2017-02-26
               </time>
             
 
@@ -1791,8 +1260,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/19/Technology/Program/Tools/Python/learn-journey-of-python/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/19/Technology/Program/Tools/Python/learn-journey-of-python/" itemprop="commentsCount"></span>
+                <a href="/2017/02/26/Technology/Program/Tools/Data Base/the-essence-of-mysql-index/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/26/Technology/Program/Tools/Data Base/the-essence-of-mysql-index/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -1801,7 +1270,7 @@
 
           
           
-             <span id="/2017/02/19/Technology/Program/Tools/Python/learn-journey-of-python/" class="leancloud_visitors" data-flag-title="Tutorials of Python">
+             <span id="/2017/02/26/Technology/Program/Tools/Data Base/the-essence-of-mysql-index/" class="leancloud_visitors" data-flag-title="MySQL Index principle and optimization">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1833,27 +1302,12 @@
 
       
         
-          <p><img src="https://www.python.org/static/img/python-logo@2x.png" alt=""></p>
-<p>作者：<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000">廖雪峰</a></p>
-<p>这是小白的Python新手教程，具有如下特点：</p>
-<p><strong>中文，免费，零起点，完整示例，基于最新的Python 3版本。</strong></p>
-<p>Python是一种计算机程序设计语言。你可能已经听说过很多种流行的编程语言，比如非常难学的C语言，非常流行的Java语言，适合初学者的Basic语言，适合网页编程的JavaScript语言等等。</p>
-<p>那Python是一种什么语言？</p>
-<p>首先，我们普及一下编程语言的基础知识。用任何编程语言来开发程序，都是为了让计算机干活，比如下载一个MP3，编写一个文档等等，而计算机干活的CPU只认识机器指令，所以，尽管不同的编程语言差异极大，最后都得“翻译”成CPU可以执行的机器指令。而不同的编程语言，干同一个活，编写的代码量，差距也很大。</p>
-<p>比如，完成同一个任务，C语言要写1000行代码，Java只需要写100行，而Python可能只要20行。</p>
-<p>所以Python是一种相当高级的语言。</p>
-<p>你也许会问，代码少还不好？代码少的代价是运行速度慢，C程序运行1秒钟，Java程序可能需要2秒，而Python程序可能就需要10秒。</p>
-<p>那是不是越低级的程序越难学，越高级的程序越简单？表面上来说，是的，但是，在非常高的抽象计算中，高级的Python程序设计也是非常难学的，所以，高级程序语言不等于简单。</p>
-<p>但是，对于初学者和完成普通任务，Python语言是非常简单易用的。连Google都在大规模使用Python，你就不用担心学了会没用。</p>
-<p>用Python可以做什么？可以做日常任务，比如自动备份你的MP3；可以做网站，很多著名的网站包括YouTube就是Python写的；可以做网络游戏的后台，很多在线游戏的后台都是Python开发的。总之就是能干很多很多事啦。</p>
-<p>Python当然也有不能干的事情，比如写操作系统，这个只能用C语言写；写手机应用，只能用Swift/Objective-C（针对iPhone）和Java（针对Android）；写3D游戏，最好用C或C++。</p>
-<p>如果你是小白用户，满足以下条件：</p>
-<p>会使用电脑，但从来没写过程序；<br>还记得初中数学学的方程式和一点点代数知识；<br>想从编程小白变成专业的软件架构师；<br>每天能抽出半个小时学习。<br>不要再犹豫了，这个教程就是为你准备的！</p>
-<p>准备好了吗？</p>
-<p><img src="http://www.liaoxuefeng.com/files/attachments/00138676512923004999ceca5614eb2afc5c0efdd2e4640000/0" alt=""></p>
+          <p><a href="http://tech.meituan.com/mysql-index.html">NeverMore</a></p>
+<p>MySQL凭借着出色的性能、低廉的成本、丰富的资源，已经成为绝大多数互联网公司的首选关系型数据库。虽然性能出色，但所谓“好马配好鞍”，如何能够更好的使用它，已经成为开发工程师的必修课，我们经常会从职位描述上看到诸如“精通MySQL”、“SQL语句优化”、“了解数据库原理”等要求。我们知道一般的应用系统，读写比例在10:1左右，而且插入操作和一般的更新操作很少出现性能问题，遇到最多的，也是最容易出问题的，还是一些复杂的查询操作，所以查询语句的优化显然是重中之重。</p>
+<p>本人从13年7月份起，一直在美团核心业务系统部做慢查询的优化工作，共计十余个系统，累计解决和积累了上百个慢查询案例。随着业务的复杂性提升，遇到的问题千奇百怪，五花八门，匪夷所思。本文旨在以开发工程师的角度来解释数据库索引的原理和如何优化慢查询。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/Technology/Program/Tools/Python/learn-journey-of-python/#more" rel="contents">
+            <a class="btn" href="/2017/02/26/Technology/Program/Tools/Data Base/the-essence-of-mysql-index/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1904,7 +1358,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/19/Technology/Program/Tools/Git/learn-journey-of-git/">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/26/Technology/Program/Android/history-of-v4-and-v7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="IPCreator">
@@ -1923,7 +1377,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/02/19/Technology/Program/Tools/Git/learn-journey-of-git/" itemprop="url">Tutorials of Git</a></h1>
+                <a class="post-title-link" href="/2017/02/26/Technology/Program/Android/history-of-v4-and-v7/" itemprop="url">History of Android Support Library</a></h1>
         
 
         <div class="post-meta">
@@ -1935,8 +1389,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-19T14:09:06+08:00">
-                2017-02-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-26T18:16:06+08:00">
+                2017-02-26
               </time>
             
 
@@ -1958,8 +1412,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tools/" itemprop="url" rel="index">
-                    <span itemprop="name">Tools</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -1977,8 +1431,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/19/Technology/Program/Tools/Git/learn-journey-of-git/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/19/Technology/Program/Tools/Git/learn-journey-of-git/" itemprop="commentsCount"></span>
+                <a href="/2017/02/26/Technology/Program/Android/history-of-v4-and-v7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/26/Technology/Program/Android/history-of-v4-and-v7/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -1987,7 +1441,7 @@
 
           
           
-             <span id="/2017/02/19/Technology/Program/Tools/Git/learn-journey-of-git/" class="leancloud_visitors" data-flag-title="Tutorials of Git">
+             <span id="/2017/02/26/Technology/Program/Android/history-of-v4-and-v7/" class="leancloud_visitors" data-flag-title="History of Android Support Library">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2019,19 +1473,534 @@
 
       
         
-          <p><img src="http://okkntqe2h.bkt.clouddn.com/git-workflow-release-cycle-2feature.png" alt=""></p>
-<p>作者：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰</a></p>
-<p>史上最浅显易懂的Git教程！</p>
-<p>为什么要编写这个教程？因为我在学习Git的过程中，买过书，也在网上Google了一堆Git相关的文章和教程，但令人失望的是，这些教程不是难得令人发指，就是简单得一笔带过，或者，只支离破碎地介绍Git的某几个命令，还有直接从Git手册粘贴帮助文档的，总之，初学者很难找到一个由浅入深，学完后能立刻上手的Git教程。</p>
-<p>既然号称史上最浅显易懂的Git教程，那这个教程有什么让你怦然心动的特点呢？</p>
-<p>首先，本教程绝对面向初学者，没有接触过版本控制概念的读者也可以轻松入门，不必担心起步难度；</p>
-<p>其次，本教程实用性超强，边学边练，一点也不觉得枯燥。而且，你所学的Git命令是“充分且必要”的，掌握了这些东西，你就可以通过Git轻松地完成你的工作。</p>
-<p>文字+图片还看不明白？有视频！！！</p>
-<p>本教程只会让你成为Git用户，不会让你成为Git专家。很多Git命令只有那些专家才明白（事实上我也不明白，因为我不是Git专家），但我保证这些命令可能你一辈子都不会用到。既然Git是一个工具，就没必要把时间浪费在那些“高级”但几乎永远不会用到的命令上。一旦你真的非用不可了，到时候再自行Google或者请教专家也未迟。</p>
-<p>如果你是一个开发人员，想用上这个世界上目前最先进的分布式版本控制系统，那么，赶快开始学习吧！</p>
+          <p>原文作者：<a href="http://www.jianshu.com/p/f5f9a4fd22e8">都有米</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1621638-64e0312fb3d79864.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在之前的开发经历中经常需要导入一些如v4、v7、v13等Android官方的支持包，遇到这些情况时都是网上搜索一下，按照前人给的示例添加依赖。这么稀里糊涂的使用后代码正常运行了，但心中不免会有一些疑问，如，Android官方为什么要提供支持包，都提供哪些支持包，这些支持包又提供了什么特性，开发者又应该如何选择使用这些支持包？</p>
+<p>为了解开这些疑问，周末在家仔细阅读了官方的开发者指导文档的相关内容。这篇文章就是读后整理的读书笔记。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/19/Technology/Program/Tools/Git/learn-journey-of-git/#more" rel="contents">
+            <a class="btn" href="/2017/02/26/Technology/Program/Android/history-of-v4-and-v7/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/26/Technology/Program/Android/hot-update-of-android/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IPCreator">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/headonhill.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="For life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/26/Technology/Program/Android/hot-update-of-android/" itemprop="url">Robust——Hot Update Way of Android APK</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-26T09:04:05+08:00">
+                2017-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/26/Technology/Program/Android/hot-update-of-android/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/26/Technology/Program/Android/hot-update-of-android/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/02/26/Technology/Program/Android/hot-update-of-android/" class="leancloud_visitors" data-flag-title="Robust——Hot Update Way of Android APK">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>原文作者：<a href="http://tech.meituan.com/android_robust.html">吴坤 张梦 定旭 晓阳</a></p>
+<p>美团•大众点评是中国最大的O2O交易平台，目前已拥有近6亿用户，合作各类商户达432万，订单峰值突破1150万单。美团App是平台主要的入口之一，O2O交易场景的复杂性决定了App稳定性要达到近乎苛刻的要求。用户到店消费买优惠券时死活下不了单，定外卖一个明显可用的红包怎么点也选不中，上了一个新活动用户一点就Crash……过去发生过的这些画面太美不敢想象。客户端相对Web版最大的短板就是有发版的概念，对线上事故很难有即时生效的解决方式，每次发版都如临深渊如履薄冰，毕竟就算再完善的开发测试流程也无法保证不会将Bug带到线上。</p>
+<p>从去年开始，Android平台出现了一些优秀的热更新方案，主要可以分为两类：一类是基于multidex的热更新框架，包括Nuwa、Tinker等；另一类就是native hook方案，如阿里开源的Andfix和Dexposed。这样客户端也有了实时修复线上问题的可能。但经过调研之后，我们发现上述方案或多或少都有一些问题，基于native hook的方案：需要针对dalvik虚拟机和art虚拟机做适配，需要考虑指令集的兼容问题，需要native代码支持，兼容性上会有一定的影响；基于Multidex的方案，需要反射更改DexElements，改变Dex的加载顺序，这使得patch需要在下次启动时才能生效，实时性就受到了影响，同时这种方案在android N [speed-profile]编译模式下可能会有问题，可以参考Android N混合编译与对热补丁影响解析。考虑到美团Android用户机型分布的碎片化，很难有一个方案能覆盖所有机型。</p>
+<p>去年底的Android Dev Summit上，Google高调发布了Android Studio 2.0，其中最重要的新特性Instant Run，实现了对代码修改的实时生效（热插拔）。我们在了解Instant Run原理之后，实现了一个兼容性更强的热更新方案，这就是产品化的hotpatch框架－－Robust。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/26/Technology/Program/Android/hot-update-of-android/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/25/Technology/Program/Android/GestureDetector/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IPCreator">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/headonhill.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="For life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/25/Technology/Program/Android/GestureDetector/" itemprop="url">Gesture Detector</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-25T16:11:06+08:00">
+                2017-02-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/25/Technology/Program/Android/GestureDetector/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/25/Technology/Program/Android/GestureDetector/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/02/25/Technology/Program/Android/GestureDetector/" class="leancloud_visitors" data-flag-title="Gesture Detector">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="GestureDetector"><a href="#GestureDetector" class="headerlink" title="GestureDetector"></a><a href="https://developer.android.com/reference/android/view/GestureDetector.html" target="_blank" rel="external">GestureDetector</a></h2><p><img src="http://okkntqe2h.bkt.clouddn.com/GestureDetector.png" alt=""></p>
+<p>public class GestureDetector<br>extends Object</p>
+<p>java.lang.Object<br>   ↳    android.view.GestureDetector</p>
+<p>Detects various gestures and events using the supplied MotionEvents. The <a href="https://developer.android.com/reference/android/view/GestureDetector.OnGestureListener.html" target="_blank" rel="external">GestureDetector.OnGestureListener</a> callback will notify users when <strong>a particular motion event</strong> has occurred. This class should only be used with <a href="https://developer.android.com/reference/android/view/MotionEvent.html" target="_blank" rel="external">MotionEvents</a> reported via touch (don’t use for trackball events).</p>
+<p>To use this class:</p>
+<ul>
+<li>Create an instance of the GestureDetector for your View</li>
+<li>In the onTouchEvent(MotionEvent) method ensure you call onTouchEvent(MotionEvent). The methods defined in your callback will be executed when the events occur.</li>
+<li>If listening for onContextClick(MotionEvent) you must call onGenericMotionEvent(MotionEvent) in onGenericMotionEvent(MotionEvent).</li>
+</ul>
+<p>参考文章：<br><a href="http://blog.csdn.net/ztp800201/article/details/7410503" target="_blank" rel="external">Android - GestureDetector 实现界面左右滑动效果的优化</a><br><a href="http://blog.csdn.net/hzh_csdn/article/details/52317566" target="_blank" rel="external">Android GestureDetector简单手势检测（左右滑动、上下滑动）</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/02/22/English/my-translations/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IPCreator">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/headonhill.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="For life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/22/English/my-translations/" itemprop="url">Quotes by Famous People</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-22T08:31:05+08:00">
+                2017-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/English/" itemprop="url" rel="index">
+                    <span itemprop="name">English</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/22/English/my-translations/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/22/English/my-translations/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/02/22/English/my-translations/" class="leancloud_visitors" data-flag-title="Quotes by Famous People">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>from <a href="http://www.azquotes.com">az quotes</a></p>
+<p><img src="http://www.azquotes.com/picture-quotes/quote-a-person-who-never-made-a-mistake-never-tried-anything-new-albert-einstein-8-72-86.jpg" alt=""></p>
+<blockquote>
+<p>A person who never made a mistake never tried anything new.<br>——Albert Einstein</p>
+</blockquote>
+<p>从不犯错的人也从不尝试新事物。<br>——艾尔伯特 爱因斯坦</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/22/English/my-translations/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2073,7 +2042,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/65/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/65/">65</a><span class="page-number current">66</span><a class="page-number" href="/page/67/">67</a><span class="space">&hellip;</span><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/67/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/65/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/65/">65</a><span class="page-number current">66</span><a class="page-number" href="/page/67/">67</a><span class="space">&hellip;</span><a class="page-number" href="/page/75/">75</a><a class="extend next" rel="next" href="/page/67/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2123,7 +2092,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">730</span>
+                  <span class="site-state-item-count">750</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2145,7 +2114,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">617</span>
+                  <span class="site-state-item-count">642</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
