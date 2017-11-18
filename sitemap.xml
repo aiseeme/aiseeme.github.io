@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://deepcreator.com/2019/12/31/MVP/2018/</loc>
+    
+    <lastmod>2017-11-18T14:48:08.568Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2018/12/26/MVP/Product/HWPM/</loc>
+    
+    <lastmod>2017-11-18T14:45:39.146Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/09/29/MVP/MTF/Communication/</loc>
+    
+    <lastmod>2017-11-18T14:45:02.267Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/10/13/Journey/Why%20Love%20HongKong/</loc>
+    
+    <lastmod>2017-11-18T14:42:29.580Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/09/25/Journey/Delicious%20Foods/</loc>
+    
+    <lastmod>2017-11-18T14:30:49.026Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://deepcreator.com/2018/12/30/MVP/ABCDE/Be%20Yourself/</loc>
     
     <lastmod>2017-11-18T00:58:38.416Z</lastmod>
@@ -37,13 +72,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2018/12/26/MVP/Product/HWPM/</loc>
-    
-    <lastmod>2017-11-18T00:52:45.354Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2018/12/25/MVP/Minimum%20Viable%20Product/</loc>
     
     <lastmod>2017-11-18T00:51:33.199Z</lastmod>
@@ -68,13 +96,6 @@
     <loc>http://deepcreator.com/2017/11/18/Movie/Three%20Great%20Decisive%20War/</loc>
     
     <lastmod>2017-11-18T00:34:36.435Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2019/12/31/MVP/2018/</loc>
-    
-    <lastmod>2017-11-18T00:33:27.271Z</lastmod>
     
   </url>
   
@@ -817,13 +838,6 @@
     <loc>http://deepcreator.com/2017/01/05/IPR/Article%20of%20Patent%20Portfolio/</loc>
     
     <lastmod>2017-11-16T13:37:14.629Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/09/25/Journey/Delicious%20Foods/</loc>
-    
-    <lastmod>2017-11-16T13:37:14.626Z</lastmod>
     
   </url>
   
@@ -1724,13 +1738,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/09/29/Concept/C/Communication/</loc>
-    
-    <lastmod>2017-11-13T13:19:47.916Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/09/07/Health/Pressure/</loc>
     
     <lastmod>2017-11-13T13:00:33.637Z</lastmod>
@@ -2403,13 +2410,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/10/13/Journey/Why%20Love%20HongKong/</loc>
-    
-    <lastmod>2017-11-10T06:54:16.649Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/11/10/Concept/E/Efficiency/</loc>
     
     <lastmod>2017-11-10T06:22:26.749Z</lastmod>
@@ -2508,13 +2508,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Cerebral%20Limbic%20System/</loc>
-    
-    <lastmod>2017-11-10T03:47:14.269Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/11/10/Health/Brain/Brainstem/</loc>
     
     <lastmod>2017-11-10T03:47:14.269Z</lastmod>
@@ -2522,9 +2515,9 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Thalami/</loc>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Cerebral%20Limbic%20System/</loc>
     
-    <lastmod>2017-11-10T03:47:13.914Z</lastmod>
+    <lastmod>2017-11-10T03:47:14.269Z</lastmod>
     
   </url>
   
@@ -2536,14 +2529,21 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Anterior%20Cingulate%20Cortex/</loc>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Thalami/</loc>
+    
+    <lastmod>2017-11-10T03:47:13.914Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/The%20Prefrontal%20Cortex/</loc>
     
     <lastmod>2017-11-10T03:47:13.913Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/The%20Prefrontal%20Cortex/</loc>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Anterior%20Cingulate%20Cortex/</loc>
     
     <lastmod>2017-11-10T03:47:13.913Z</lastmod>
     
