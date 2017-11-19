@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,Studio," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="For life" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一套全新的应用分析工具，用于快速诊断性能问题；支持 Kotlin 编程语言；一组全新的工具和向导，用于加快您在最新的 Android Oreo API 上进行开发的速度。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Studio 3.0">
+<meta property="og:url" content="http://deepcreator.com/2017/11/19/Technology/Program/Android/Android Studio 3.0/index.html">
+<meta property="og:site_name" content="For life">
+<meta property="og:description" content="一套全新的应用分析工具，用于快速诊断性能问题；支持 Kotlin 编程语言；一组全新的工具和向导，用于加快您在最新的 Android Oreo API 上进行开发的速度。">
+<meta property="og:image" content="https://bp.googleblog.cn/-DAAJWGccTCQ/We_MGiMuSFI/AAAAAAAAEtk/5_COppUTDusIIx725jENI3fd9rqlRl0gQCLcBGAs/s1600/image8.png">
+<meta property="og:image" content="https://bp.googleblog.cn/-ezg28xkLIKw/We_NGmvtLqI/AAAAAAAAEts/B5GMGAi639gLNAv9AHMh6yAjtd3ETDVBACLcBGAs/s1600/image1.png">
+<meta property="og:image" content="https://bp.googleblog.cn/-8UIAKpGRG-M/We_OiL3ry_I/AAAAAAAAEt4/_5rhIttX47QS0bptRPo9DU7X9Ak2ycG_QCLcBGAs/s1600/image4.png">
+<meta property="og:image" content="https://bp.googleblog.cn/-H5uYgwbhIRw/We_UsZFBx8I/AAAAAAAAEuI/lhVHeO4bU5QEzge2T9yaPQuc7UInPRnogCLcBGAs/s1600/image9.png">
+<meta property="og:image" content="https://bp.googleblog.cn/-mORkxmNXgJc/We_VOWmeGYI/AAAAAAAAEuQ/LLWPUICDIKgHFLRVDIYDFV9r1mk9bYUlwCLcBGAs/s1600/image6.png">
+<meta property="og:image" content="https://bp.googleblog.cn/-bK0QeifFdfs/We_V8zjOtDI/AAAAAAAAEuc/QGusE3IQcdQeQf7l0Qzq6WyXIGBRKeWigCLcBGAs/s1600/image2.png">
+<meta property="og:image" content="https://bp.googleblog.cn/-btyJv3ipa5o/We_WRgdwxAI/AAAAAAAAEug/_-fbm6vmk_cEOL4IZYpgoXYlfNvuS0lvwCLcBGAs/s1600/image7.png">
+<meta property="og:image" content="https://bp.googleblog.cn/-GiKRADK4aAQ/We_Wdc6GjTI/AAAAAAAAEuo/zLzrnL2WH70EMNzscaB95H3obVsUUJB8wCLcBGAs/s1600/image3.png">
+<meta property="og:image" content="https://bp.googleblog.cn/-dOzg6FLRIP0/We_WsU_av9I/AAAAAAAAEus/sK0AMLwvAqk8sQ8Gqe5kfIhfnnvyAOUpgCLcBGAs/s1600/image5.png">
+<meta property="og:updated_time" content="2017-11-19T13:04:32.067Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android Studio 3.0">
+<meta name="twitter:description" content="一套全新的应用分析工具，用于快速诊断性能问题；支持 Kotlin 编程语言；一组全新的工具和向导，用于加快您在最新的 Android Oreo API 上进行开发的速度。">
+<meta name="twitter:image" content="https://bp.googleblog.cn/-DAAJWGccTCQ/We_MGiMuSFI/AAAAAAAAEtk/5_COppUTDusIIx725jENI3fd9rqlRl0gQCLcBGAs/s1600/image8.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://deepcreator.com/2017/11/19/Technology/Program/Android/Android Studio 3.0/"/>
+
+
+
+
+
+  <title>Android Studio 3.0 | For life</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5aaaaf5c9bcea80a5c7d7a057b2d36b3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+      <div class="site-meta-headline">
+        <a>
+          <img class="custom-logo-image" src="/img/headonhill.jpg"
+               alt="For life"/>
+        </a>
+      </div>
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">For life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Growing up is the only password.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-help">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            help
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2017/11/19/Technology/Program/Android/Android Studio 3.0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IPCreator">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/headonhill.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="For life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android Studio 3.0</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-19T20:55:06+08:00">
+                2017-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/19/Technology/Program/Android/Android Studio 3.0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/11/19/Technology/Program/Android/Android Studio 3.0/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/11/19/Technology/Program/Android/Android Studio 3.0/" class="leancloud_visitors" data-flag-title="Android Studio 3.0">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://bp.googleblog.cn/-DAAJWGccTCQ/We_MGiMuSFI/AAAAAAAAEtk/5_COppUTDusIIx725jENI3fd9rqlRl0gQCLcBGAs/s1600/image8.png" alt=""></p>
+<p>一套全新的应用分析工具，用于快速诊断性能问题；支持 Kotlin 编程语言；一组全新的工具和向导，用于加快您在最新的 Android Oreo API 上进行开发的速度。</p>
+<a id="more"></a>
+<h2 id="Android-Studio-3-0"><a href="#Android-Studio-3-0" class="headerlink" title="Android Studio 3.0"></a><a href="https://developers.googleblog.cn/2017/11/android-studio-30.html" target="_blank" rel="external">Android Studio 3.0</a></h2><p>2017年11月15日星期三<br>﻿ 发布人：Android 产品经理 Jamal Eason</p>
+<p>Android Studio 3.0 已经开放下载。Android Studio 3.0 在 Google I/O 2017 上公布，它是之前版本的一次较大更新，旨在加快您在 Android 上开发应用的速度。</p>
+<p>此版本的 Android Studio 包含许多更新，但有三个主要功能您不应错过，其中包括：一套全新的应用分析工具，用于快速诊断性能问题；支持 Kotlin 编程语言；一组全新的工具和向导，用于加快您在最新的 Android Oreo API 上进行开发的速度。</p>
+<p>我们还改进了 Android Studio 在多个方面的稳定性和性能。感谢您在 Android Studio 3.0 的预览版期间提供反馈！如果希望获得高稳定性、想要针对 Android Oreo 构建优质的应用、想要使用 Kotlin 语言开发，或者使用最新的 Android 应用性能工具，那么您应立即下载 Android Studio 3.0。<br>下面是 Android Studio 3.0 中的新功能列表，这些新功能按照主要开发流编排。</p>
+<p>开发</p>
+<p><strong>Kotlin 编程语言</strong> - 正如我们在 Google I/O 2017 上公布的一样，Android 开发现在已正式支持 Kotlin 编程语言。Kotlin 是一种富于表现力且简洁的语言，可与现有 Android 语言和运行时互操作。也就是说，您可以根据自己的需要在应用中使用任意数量的语言。Kotlin 是一种可投入生产的语言，目前，Google Play 上许多热门的 Android 应用都在使用这种语言。</p>
+<p>此版本的 Android Studio 是第一个将 Kotlin 语言支持集成到 IDE 中的捆绑包里程碑。您最喜欢的许多功能（例如代码自动完成和语法突出显示）都可以在此版本上平稳运行，我们也会在后期版本中继续改进剩余的编辑器功能。您可以选择使用 Code → Convert Java File to Kotlin File 中提供的内置转换工具将 Kotlin 添加到您的项目，也可以使用 New Project 向导创建启用 Kotlin 的项目。详细了解 Android Studio 中的 Kotlin 语言支持。</p>
+<p><img src="https://bp.googleblog.cn/-ezg28xkLIKw/We_NGmvtLqI/AAAAAAAAEts/B5GMGAi639gLNAv9AHMh6yAjtd3ETDVBACLcBGAs/s1600/image1.png" alt=""><br>Android Studio 中的 Kotlin 语言转换</p>
+<p>Java 8 语言功能 - 在 Android Studio 3.0 中，我们继续完善了对 Java 8 语言功能的支持。迁移到基于 javac 的工具链后，在您的项目中使用 Java 8 语言功能变得更加简单。要更新您的项目以支持全新的 Java 8 语言工具链，只需在 Project Structure 对话框中将您的 源代码 和 目标代码 兼容性级别更新至 1.8。了解详情。</p>
+<p>布局编辑器 - 我们更新了布局编辑器中的组件树，提供更好用的拖拽式视图插入功能以及全新的错误面板。了解详情。</p>
+<p>自适应图标向导 - 全新的向导可创建一组启动图标资源并可预览自适应图标在不同启动器屏幕图标蒙版上的外观。此版本新增了对 VectorDrawable 层的支持。了解详情。</p>
+<p>XML 字体和可下载字体 - 如果您将自己的 Android 应用针对 Android Oreo（API 级别 26 及更高版本），那么使用 Android Studio 3.0，您现在可以通过 XML 添加自定义字体和可下载字体。</p>
+<p>Android Things 支持 - Android Studio 3.0 在 New Project 向导和 New Module 向导中添加了一组新模板，方便您针对 Android Things 平台开发。了解详情。</p>
+<p>IntelliJ 平台更新：Android Studio 3.0 包含 IntelliJ 2017.1 版本，其包含 Java 8 语言重构、参数提示、语义突出显示、可拖拽的断点、增强的版本控制搜索等功能。了解详情。</p>
+<p>构建</p>
+<p>免安装应用支持 - 利用此版本的 Android Studio，您可以在项目中添加免安装应用功能。免安装应用已于今年早些时候支持完整开发，它是一种轻巧的 Android 应用，用户无需安装即可直接运行这种应用。了解详情。</p>
+<p>构建速度提升 - 为了进一步加快 Gradle 在具有许多模块的更大型项目中的速度，我们对 Android Gradle 插件的 API 做出了一项罕见的颠覆性改动， 希望提升可伸缩性和缩短构建时间。这一改动是我们将版本号从 Android Studio 2.4 跳至 3.0 的原因之一。如果您依赖于之前版本的 Gradle 插件所提供的 API，您应验证与新插件的兼容性并迁移到新的 API。要进行测试，请在您的 build.gradle 文件中更新插件版本。了解详情。</p>
+<p>Google 的 Maven 代码库 - 为了实现更小更快的更新，Android Studio 3.0 默认利用 Google 的 Maven 代码库而不是 Android SDK 管理器来查找 Android 支持库、Google Play 服务和 Firebase Maven 依赖项的更新。如果结合使用最新的命令行 SDK 管理器工具和 Gradle，持续集成构建应迁移至 Google 的 Maven 代码库，方便未来的 Maven 代码库更新。了解详情。</p>
+<p>测试和调试</p>
+<p>Google Play 系统映像 - 我们还更新了 Android Oreo 的模拟器系统映像，现在已在其中添加 Google Play 商店。捆绑 Google Play 商店让您能够使用 Google Play 端到端地测试应用，同时也方便您在 Android Virtual Device (AVD) 中使 Google Play 服务保持最新状态。就像实际设备上的 Google Play 服务更新一样，您也可以在 AVD 上启用同样的更新。</p>
+<p><img src="https://bp.googleblog.cn/-8UIAKpGRG-M/We_OiL3ry_I/AAAAAAAAEt4/_5rhIttX47QS0bptRPo9DU7X9Ak2ycG_QCLcBGAs/s1600/image4.png" alt=""><br>Android Emulator 中的 Google Play 商店</p>
+<p>为确保应用安全性以及与实际设备一致的体验，包含 Google Play 商店的模拟器系统映像已使用发布密钥签名。这意味着您将无法获得高级权限。如果您要求使用高级权限 (root) 来帮助您排查应用问题，您可以使用不包含 Google 应用或服务的 Android 开放源代码项目 (AOSP) 模拟器系统映像。了解详情。<br>Android Emulator 中的 OpenGL ES 3.0 支持 - 最新版的 Android Emulator 针对 Android Oreo 系统映像引入了 OpenGL ES 3.0 支持，针对旧版模拟器系统映像，则大幅增强了 OpenGL ES 2.0 的图形性能。了解详情。</p>
+<p>Android Emulator 中的应用错误报告程序 - 为帮助记录应用中的错误，我们新增了一种通过 Android Emulator 生成错误报告的更简便方法，该报告程序提供所有必要的配置设置以及捕获重现步骤的空间。了解详情。</p>
+<p>Android 中的代理支持 - 如果您需要使用代理访问互联网，我们新增了一个界面，可用于管理模拟器使用的 HTTP 代理设置。了解详情。</p>
+<p>Android Emulator Quick Boot (Canary) - 我们听到的最常见抱怨之一是模拟器的启动时间过长。为了解决这一问题，我们非常高兴地宣布推出一项名为 Quick Boot 的新功能预览，它可以显著缩短模拟器的启动时间。启用此功能后，在您第一次启动 AVD 时将发生冷启动（就像接通设备电源），但是，所有后续启动的速度都会非常快，系统将恢复到您关闭模拟器时的状态（类似于唤醒设备）。如果您想要试用此功能，请确保您已加入 Canary 更新版本渠道，随后，您会在 SDK 管理器中发现版本为 v26.2.0 的 Android Emulator。了解详情。</p>
+<p><img src="https://bp.googleblog.cn/-H5uYgwbhIRw/We_UsZFBx8I/AAAAAAAAEuI/lhVHeO4bU5QEzge2T9yaPQuc7UInPRnogCLcBGAs/s1600/image9.png" alt=""><br>APK 调试 - Android Studio 3.0 允许您调试任意 APK。对于在其他 IDE 中编写 Android C++ 代码而想在 Android Studio 环境中调试和分析 APK 的开发者而言，此功能尤为有用。只要您有可调试版本的 APK，您就可以使用新的 APK 调试功能来静态分析、动态分析和调试 APK。而且，如果您可以访问 APK 的源代码，您可以将此源代码链接到 APK 调试流，以提高调试流程的保真度。只需在 Android Studio 欢迎屏幕中选择 Profile or debug APK，或者选择 File → Profile or debug APK，即可使用此功能。了解详情。</p>
+<p><img src="https://bp.googleblog.cn/-mORkxmNXgJc/We_VOWmeGYI/AAAAAAAAEuQ/LLWPUICDIKgHFLRVDIYDFV9r1mk9bYUlwCLcBGAs/s1600/image6.png" alt=""><br>APK 调试<br>布局检查器 - 在这个版本中，我们为布局检查器添加了其他几项增强功能，其中包括更好地将属性分组到常用分类中，以及视图树和 Properties 面板中的搜索功能等。了解详情。</p>
+<p>设备文件浏览器 - 利用 Android Studio 3.0 中全新的设备文件浏览器，您可以查看 Android 设备或模拟器的文件和目录结构。现在，您在测试应用时，可以直接在 Android Studio 中快速预览和修改应用数据文件。了解详情。<br>Android Test Orchestrator 支持 - 结合使用 AndroidJUnitRunner 1.0 或更高版本时，Android Gradle 插件 3.0 支持使用 Android Test Orchestrator。Android Test Orchestrator 让您可以在它的仪器内运行每一项应用测试。了解详情。</p>
+<p>优化<br>Android 分析器 - Android Studio 3.0 包含一套全新的工具，可以帮助调试应用的性能问题。我们对之前的 Android Monitor 工具集进行彻底重写，代之以 Android 分析器。您将应用部署到正在运行的设备或模拟器后，点击 Android Profiler 标签，即可在实时、统一的视图中访问应用的 CPU、内存和网络活动。每个性能事件映射到界面事件时间线中，该时间线突出显示触摸事件、按键和活动变更，以便您更清楚地了解特定事件发生的时间和原因。点击每个时间线可深入了解应用的性能情况。了解详情。<br><img src="https://bp.googleblog.cn/-bK0QeifFdfs/We_V8zjOtDI/AAAAAAAAEuc/QGusE3IQcdQeQf7l0Qzq6WyXIGBRKeWigCLcBGAs/s1600/image2.png" alt=""><br>Android 分析器 - 时间线组合视图<br><img src="https://bp.googleblog.cn/-btyJv3ipa5o/We_WRgdwxAI/AAAAAAAAEug/_-fbm6vmk_cEOL4IZYpgoXYlfNvuS0lvwCLcBGAs/s1600/image7.png" alt=""><br>CPU 分析器<br><img src="https://bp.googleblog.cn/-GiKRADK4aAQ/We_Wdc6GjTI/AAAAAAAAEuo/zLzrnL2WH70EMNzscaB95H3obVsUUJB8wCLcBGAs/s1600/image3.png" alt=""><br>内存分析器<br><img src="https://bp.googleblog.cn/-dOzg6FLRIP0/We_WsU_av9I/AAAAAAAAEus/sK0AMLwvAqk8sQ8Gqe5kfIhfnnvyAOUpgCLcBGAs/s1600/image5.png" alt=""><br>网络分析器<br>APK 分析器改进 - 我们还对 APK 分析器新增了一些额外的增强功能，以帮助您进一步优化 APK 的大小。了解详情。</p>
+<p>简要回顾一下，Android Studio 3.0 包含以下主要的新功能：<br>开发<br>Kotlin 语言<br>Java 8 语言<br>布局编辑器改进<br>自适应图标向导<br>XML 字体和可下载字体<br>Android Things<br>Intellij 平台更新 2017.1</p>
+<p>构建<br>免安装应用支持<br>构建速度的提升<br>Google 的 Maven 代码库变更</p>
+<p>优化<br>CPU 分析器<br>内存分析器<br>网络分析器<br>APK 分析器改进<br>有关更多详细信息，请查看版本说明。</p>
+<p>测试和调试<br>Emulator Google Play 系统映像<br>Emulator OpenGL ES 3.0 支持<br>Emulator 代理支持<br>应用错误报告程序<br>Android Wear 旋转输入<br>Android Emulator Quick Boot (Canary)</p>
+<p>APK 调试<br>布局检查器<br>设备文件浏览器</p>
+<p>开始使用<br>下载</p>
+<p>如果您使用的是之前版本的 Android Studio，您可以立即升级到 Android Studio 3.0，也可以从官方 Android Studio Preview 的下载页面下载更新。如本博文所述，为了支持此 IDE 中的一些新功能，我们对 Gradle Plugin API 做出了一些颠覆性的改动。因此，您也应在当前项目中将 Android Gradle 插件版本更新至 3.0.0，并测试和验证您的应用项目设置。<br>我们感谢您提供有关您喜欢的特性、存在的问题或希望看到的功能的任何反馈意见。如果您发现错误或问题，欢迎随时向我们提交问题。在我们的 Google+ 信息页或 Twitter 上与我们（Android Studio 开发团队）联系</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/Studio/" rel="tag"># Studio</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/19/Technology/AI/TensorFlow/Tensorflow Lite/" rel="next" title="Tensorflow Lite">
+                <i class="fa fa-chevron-left"></i> Tensorflow Lite
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/19/Technology/Program/Android/Android 8.1 Developer Preview/" rel="prev" title="Android 8.1 Developer Preview">
+                Android 8.1 Developer Preview <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="hypercomments_widget"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/headonhill.jpg"
+                alt="IPCreator" />
+            
+              <p class="site-author-name" itemprop="name">IPCreator</p>
+              <p class="site-description motion-element" itemprop="description">For life, growing up is the only password.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">885</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1010</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/aiseeme" target="_blank" title="github">
+                    
+                      <i class="fa fa-fw fa-globe"></i>github</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/zhuxuanlvzxl/home?wvr=5&lf=reg" target="_blank" title="weibo">
+                    
+                      <i class="fa fa-fw fa-globe"></i>weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.163.com/zhuxuanlv@126/" target="_blank" title="blog">
+                    
+                      <i class="fa fa-fw fa-globe"></i>blog</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://book.douban.com/subject/25870384/" title="probabilities of life" target="_blank">probabilities of life</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://book.douban.com/subject/27078435/" title="transition" target="_blank">transition</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://gelonghui.com/p/101767.html" title="golden era of AI" target="_blank">golden era of AI</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://h5.sao.cn/product/detail?alias=onhnfsdtybxb" title="leading to freedom of wealth" target="_blank">leading to freedom of wealth</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhibimo.com/read/xiaolai/ba-shi-jian-dang-zuo-peng-you/index.html" title="take time as a friend" target="_blank">take time as a friend</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhibimo.com/read/xiaolai/reborn-every-7-years/" title="reborn every 7 years" target="_blank">reborn every 7 years</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://lixiaolai.com/2016/06/12/makecs-preface/" title="everyone can be engineer" target="_blank">everyone can be engineer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhibimo.com/read/xiaolai/everyone-can-use-english/" title="everyone can use english" target="_blank">everyone can use english</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Studio-3-0"><span class="nav-number">1.</span> <span class="nav-text">Android Studio 3.0</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IPCreator</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 96030, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 96030, xid: "2017/11/19/Technology/Program/Android/Android Studio 3.0/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/96030/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("TfzAWJSzk2L4jpj4gHaNsMbp-gzGzoHsz", "PXNkGhS05PxL7rV3N8gDlAQe");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
