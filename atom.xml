@@ -4615,6 +4615,96 @@
   </entry>
   
   <entry>
+    <title>Tensorflow Lite</title>
+    <link href="http://deepcreator.com/2017/11/19/Technology/AI/TensorFlow/Tensorflow%20Lite/"/>
+    <id>http://deepcreator.com/2017/11/19/Technology/AI/TensorFlow/Tensorflow Lite/</id>
+    <published>2017-11-19T07:11:00.000Z</published>
+    <updated>2017-11-19T07:11:58.839Z</updated>
+    
+    <content type="html"><![CDATA[<p> <img src="http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/11/tensorflow.jpg" alt=""></p>
+<blockquote>
+<p><a href="http://www.ifanr.com/940863" target="_blank" rel="external">11 月 15 日，Google 发布机器学习框架的移动设备版本，TensorFlow Lite 预览版，这意味着，将人工智能放进我们的手机这个趋势，又往前了一步。</a></p>
+</blockquote>
+ <a id="more"></a>
+<h2 id="Google-这次用来重返中国的人工智能-TensorFlow，究竟是什么？"><a href="#Google-这次用来重返中国的人工智能-TensorFlow，究竟是什么？" class="headerlink" title="Google 这次用来重返中国的人工智能 TensorFlow，究竟是什么？"></a><a href="http://www.ifanr.com/940863" target="_blank" rel="external">Google 这次用来重返中国的人工智能 TensorFlow，究竟是什么？</a></h2><p>11 月 15 日，Google 发布机器学习框架的移动设备版本，TensorFlow Lite 预览版，这意味着，将人工智能放进我们的手机这个趋势，又往前了一步。</p>
+<p> Google 在今年 5 月的 Google I/O 上，就已经对外公布了 TensorFlow Lite 这个工具。目前，TensorFlow Lite 支持不少针对移动端训练和优化好的模型，包括视觉模型、图片识别模型和设备对话模型等。Android 和 iOS 平台的开发者都可以使用。</p>
+<p> 然而说到 TensorFlow，除了与人工智能有关，最近它还与「Google 重返中国」这个互联网幻觉扯上了关系。</p>
+<p> 上月彭博社报道，Google 这次想要在中国推广自家的开源人工智能框架 TensorFlow，通过减低开发者开发和使用人工智能的难度，重回中国市场。</p>
+<p> 也许非开发人员对 TensorFlow 并不熟悉，但你应该听说过 DeepMind 这个名字，这个团队开发出了今年打败柯洁的 AlphaGo，以及自学 3 天在围棋界找不到对手的 AlphaGo Zero。</p>
+<p> <img src="http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/05/WechatIMG49-2-1024x683-1.jpeg" alt=""></p>
+<p> 而 DeepMind 早在 2016 年 5 月宣布，更换他们使用的开源机器学习平台，从 Torch 转用 TensorFlow。可以说，那两只 AlphaGo 和 AlphaGo Zero，以及更多 Google 发布的人工智能，最后都是在 TensorFlow 上「养成」的。</p>
+<p>TensorFlow 是一个用于机器智能的开源软件库，可以支持深度学习的各种算法。它最初是由杰夫 · 迪恩 (Jeff Dean)领头的 Google Brain 团队，基于 Google 第一代深度学习系统 DistBelief 改进而得。</p>
+<p>Google 于 2015 年底公布并宣布开源人工智能系统 TensorFlow。即使在国内无法正常使用 Google 的大量服务，但中国是 TensorFlow 在亚洲用户增长最快的国家之一。今年 4 月，TensorFlow 的负责人 Rajat Monga 向媒体表示，TensorFlow 在中国地区的下载已经超过 14 万。</p>
+<p>在 TensorFlow 中文社区的首页，有一句话：</p>
+<blockquote>
+<p>TensorFlow 是一个用于人工智能的开源神器。</p>
+</blockquote>
+<p>在 GitHub 上，TensorFlow 从去年开始就成为了广受欢迎的机器学习开源项目。GitHub 发布的 2017 年度开发者报告显示，TensorFlow 是被 fork 最多的项目，其中有 7300 人为 TensorFlow 做出了贡献。</p>
+<p><img src="http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/11/tf1.jpg" alt=""><br>（TensorFlow 是被 fork 最多的项目）</p>
+<p><img src="http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/11/tf2.jpg" alt=""><br>（参与 TensorFlow 的开发者人数位列第五）</p>
+<p>TensorFlow 在中国</p>
+<p>10 月以来，国内多地陆续举行 Google 开发者社区开发者节（GDG DevFest），这是一个 Google 发起并由全球各地 GDG 组织的活动。</p>
+<p>今年的活动，无论是长三角地区的上海主会场，还是珠三角地区的广州主会场，人工智能都是主角。在上海的活动，还专门为开发者举行了 TensorFlow 工作坊，名字为“TensorFlow 从入门到不放弃”。（扶额）</p>
+<p>爱范儿（微信：ifanr）参加了 Google 广州社区开发者节，其中在 Google 工作多年并曾在 Google Brain 工作的开发者廖宝华，向在场几百位开发者，分享了非机器学习专业人士、初学者如何更加高效地利用 TensorFlow 来进行开发。</p>
+<p><img src="http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/11/d3hfZm10PWpwZWc.jpeg" alt=""></p>
+<p>廖宝华说，TensorFlow 可以让开发者、企业站在巨人的肩膀上，高效地搭建起自己的模型。他举了一个例子，将搭建机器学习模型，比作盖房子。</p>
+<blockquote>
+<p>我们不希望开发者像盖房子那样，一块一块砖头地来，而是可以将几个已经弄好的模块组合起来。</p>
+</blockquote>
+<p>现场有开发人员表示，他们也正在使用 TensorFlow 的接口（API）来训练模型，其中不乏电商、直播、无人机等各个行业的开发者。</p>
+<p>GDG 广州的组织者 Nicky 告诉爱范儿（微信：ifanr），TensorFlow 框架的开源，大大降低了开发者使用机器学习的门槛，封装了大量的 API，让开发者不需要关注复杂的训练模型。不论是工程师还是学生，都可以根据官方文档来接入使用 TensorFlow。国内也推出了 TensorFlow 中文社区，提供了详细的文档介绍，方便开发者查阅和学习。同时针对自然语言机器学习这块，推荐大家关注官方推出的 DialogFlow 服务，3 分钟则可完成一个 chatbot.</p>
+<p><img src="http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/11/tf3.jpg" alt=""></p>
+<p>（截图来自 TensorFlow 官网）</p>
+<p>别以为 TensorFlow 离我们太远，国内已经有不少大型电商在使用的客服就是基于 TensorFlow 开发的。在 TensorFlow 的官网上，我们可以看到，国内的<strong>小米、中兴、京东</strong>等企业，也在使用 TensorFlow。</p>
+<p>而 Google Brain 发布的可以帮你画画的人工智能「Quick, Draw! 」、「AutoDraw」，也是基于 TensorFlow 开发的。</p>
+<p><img src="http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/06/4-12-2017-18-31-32.gif" alt=""></p>
+<p>（用 AutoDraw 画猫）</p>
+<p>搜索微信公众号爱范儿（微信号：ifanr），后台回复「AutoDraw」，尝试用人工智能画画。<br>用了 TensorFlow 还需要厉害的硬件</p>
+<p>虽然 TensorFlow 是广为流行的一个深度学习框架，但是也有不少国内的开发者认为，如果需要选择一个人工智能框架，用自己的数据来训练深度学习模型， TensorFlow 不一定会是他们的首选。</p>
+<p>除了大量 Google 的产品和服务在国内无法正常使用以外，还有就是这种人工智能、深度学习的开源数据库有不少替代，比如 Caffe、Keras 等。</p>
+<p><img src="http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/06/sundar-pichai.jpg" alt=""></p>
+<p>虽然中国拥有世界上数量最多的 Android 系统用户， 但能够正常使用的 Google 产品和服务并不算多。而 Google 掌门人桑达尔 · 皮查伊（Sundar Pichai）在今年接受采访有说到：</p>
+<blockquote>
+<p>I’m committed to engaging more in China.<br>我正在更加积极地参与到中国事务中来。</p>
+</blockquote>
+<p>话虽如此，但 Google 重返中国，应该依然是个幻觉。因为 TensorFlow 对普通开发者而言，并非是不可或缺的。而对于中高级企业的用户，尤其是互联网企业，大多数在早几年就开始立项研究开发人工智能了，其他的企业的话，也会优先使用百度、阿里云这些国内的服务。</p>
+<p>11 月 15 日，科技部公布了首批国家人工智能开放创新平台名单：</p>
+<blockquote>
+<p>依托百度公司建设自动驾驶国家人工智能开放创新平台，依托阿里云公司建设城市大脑国家人工智能开放创新平台，依托腾讯公司建设医疗影像国家人工智能开放创新平台，依托科大讯飞公司建设智能语音国家人工智能开放创新平台。</p>
+</blockquote>
+<p>不过用上了 TensorFlow，也需要使用足够厉害的硬件才行。Google 推出的 TPU（Tensor Processing Units）就是专为 TensorFlow 而研发的硬件加速器。目前第二代的 TPU（又称为 Cloud TPU），已经具有训练机器学习模型，及处理推理任务两种能力。</p>
+<p>然而也有人认为，虽然互联网巨头为营造生态而发不芯片已经不罕见，但 Google 推出 TPU 并不是为了要与英伟达、NVIDIA、寒武纪这些厂商进行竞争，而是为了凸显 TensorFlow 的强大。</p>
+<p><img src="http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/11/tfpu.jpg" alt=""></p>
+<p>（TPU 芯片组）</p>
+<p><strong>10 月，Google 公布 Pixel2 手机这部手机拥有一颗图像处理协处理器，即 ImageProcessing Unit （IPU）。这颗 IPU 主要用于加速机器视觉和机器学习领域的运算，而它支持加速的编程语言，当然也包括 TensorFlow。</strong></p>
+<p><img src="http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/10/4-2.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt; &lt;img src=&quot;http://ifanr-cdn.b0.upaiyun.com/wp-content/uploads/2017/11/tensorflow.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.ifanr.com/940863&quot;&gt;11 月 15 日，Google 发布机器学习框架的移动设备版本，TensorFlow Lite 预览版，这意味着，将人工智能放进我们的手机这个趋势，又往前了一步。&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="http://deepcreator.com/categories/AI/"/>
+    
+    
+      <category term="Google" scheme="http://deepcreator.com/tags/Google/"/>
+    
+      <category term="Tensorflow" scheme="http://deepcreator.com/tags/Tensorflow/"/>
+    
+      <category term="Lite" scheme="http://deepcreator.com/tags/Lite/"/>
+    
+      <category term="Mobile" scheme="http://deepcreator.com/tags/Mobile/"/>
+    
+      <category term="Device" scheme="http://deepcreator.com/tags/Device/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Korean War</title>
     <link href="http://deepcreator.com/2017/11/19/Movie/Korean%20War/"/>
     <id>http://deepcreator.com/2017/11/19/Movie/Korean War/</id>
@@ -10879,74 +10969,6 @@
     
     
       <category term="Promise" scheme="http://deepcreator.com/tags/Promise/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Apology</title>
-    <link href="http://deepcreator.com/2017/11/10/Concept/A/Apology/"/>
-    <id>http://deepcreator.com/2017/11/10/Concept/A/Apology/</id>
-    <published>2017-11-10T02:16:06.000Z</published>
-    <updated>2017-11-13T05:58:10.627Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://img3.doubanio.com/lpic/s2699461.jpg" alt=""></p>
-<blockquote>
-<p>真诚地付诸行动。</p>
-</blockquote>
-<a id="more"></a>
-<p><a href="https://www.douban.com/people/shockmu/" target="_blank" rel="external">“饶恕是件大事情，被冒犯的人可能要为此付出昂贵的代价。当他们原谅你时，必须放弃自己对公正的渴求。他们必须放下受到的伤害，放下心中的愤怒，放下尴尬和屈辱感，放下被排斥的感觉和遭到背叛的感觉。有时，他们还必须承受由你错误行为造成的不良后果。他们必须忍受这一切不良后果，还要为了原谅你而独自舔伤。”</a></p>
-<p><img src="http://opb37u589.bkt.clouddn.com/im-sorry-quote-apology-2-picture-quote-1.jpg?imageMogr2/thumbnail/!75p" alt="im-sorry-quote-apology-2-picture-quote-1.jpg"></p>
-<h2 id="道歉的五种语言"><a href="#道歉的五种语言" class="headerlink" title="道歉的五种语言"></a><a href="https://book.douban.com/subject/2252638/" target="_blank" rel="external">道歉的五种语言</a></h2><p>《道歉的五种语言》的作家盖瑞-查普曼与著名心理咨询师詹妮弗‘托马斯通过多年的咨询和研究发现，每个人都有自己习惯的道歉语言，而且有效的道歉语言分五种。如果不了解这一点，往往一方在真诚地道歉，另一方却不以为然，所以难以达成宽恕与和解。缺乏真诚而又有效的道歉，可能是造成当下婚姻破裂的一个极为普遍的原因。本书以鲜活的案例、真实的故事，详细阐释了道歉的五种语言，以及学习掌握道歉的艺术给婚姻、家庭、恋爱、亲子教育及各种人际关系所带来的卓有成效的影响和变化。</p>
-<blockquote>
-<p>表达歉意，<br>承认错误，<br>弥补过失，<br>真诚悔改，<br>请求饶恕。</p>
-</blockquote>
-<p>对不起，我错了，我怎么做可以弥补你？我以后不会再犯了，请你原谅我。</p>
-<h3 id="学会道歉也很重要"><a href="#学会道歉也很重要" class="headerlink" title="学会道歉也很重要"></a><a href="https://book.douban.com/review/8667562/" target="_blank" rel="external">学会道歉也很重要</a></h3><p>版权归作者所有，任何形式转载请联系作者。<br>作者：唐某人（来自豆瓣）<br>来源：<a href="https://book.douban.com/review/8667562/" target="_blank" rel="external">https://book.douban.com/review/8667562/</a></p>
-<p>《道歉的五种语言》是 盖瑞·查普曼 博士继《爱的五种语言》之后的作品，与人合作的，里面有大量案例，给出了许多操作方法，阅读起来很轻松，对改善亲密关系有不少的帮助。</p>
-<p>道歉是基于爱</p>
-<p>道歉，首先是基于爱的，没有良好的改善意愿是不会道歉的，但总有人因为性格因素，特别是成长期没有受到相关教育，不会表达歉意的人很多，也因此带来很多社交、亲密关系建设方面的问题。所以本书给了五种道歉的语言，并提供了大量操作案例，具有很强的可实施性（虽然东西方文化不同，但表达爱与关怀都是一样的）。</p>
-<p>爱的五种语言</p>
-<p>首先要表达歉意，也就是对不起。只有先表面态度，才可能进行更深一步沟通。</p>
-<p>其次是要承认错误，也就是我错了。敢于把自己不对的地方找出来，并真挚的道歉。这样才不会陷入形式，让人觉得不真诚。</p>
-<p>第三是希望弥补，也就是我做什么可以弥补？这里可以参考《爱的五种语言》，有的人可能喜欢用精心时刻来弥补，有的人喜欢实际行动，而有的人可能需要甜言蜜语……总之，根据实际情况选择对方最喜欢的爱的语言弥补就好了。</p>
-<p>第四种是永不再犯，也就是这种事情再也不会发生了。如果只是口头上表达歉意，而实际上不做改善，那不就是狼来了吗？这样的道歉也就失去意义了。</p>
-<p>第五种就是恳请对方的原谅，也就是请你原谅我。是表达完歉意后，请求对方给予原谅，而不是单方面的意识，自己原谅了自己。</p>
-<p><img src="https://img3.doubanio.com/view/thing_review/l/public/p795326.jpg" alt=""><br>道歉的五种语言</p>
-<p>总结起来就是：对不起，我错了，我怎么做可以弥补你？我以后不会再犯了，请你原谅我。</p>
-<p>以上五种语言可能有时候需要一种，有时候可能需要两种，甚至更多种，用的越多效果越好。</p>
-<p>使用对象</p>
-<p>道歉是基于爱的，所以很自然就是要由内而外，要对家人、朋友、同事进行。</p>
-<p>但很重要的是，要教会小朋友道歉。很多人不会道歉，是因为成长期原生家庭就是这样，父母不会道歉，也没有被教导向别人表达歉意，因此很容易造成人际关系紧张。这点是本书最让我感到受教益的地方。</p>
-<p>而教导小朋友最重要的是敢于承担责任，比如夏天小朋友从外面回来，纱门没关好，进来了流浪猫，妈妈问起来，小朋友信口说它自己进来的，从烟囱里进来的。过去常常会觉得小朋友想象力真丰富，但在这里，作者特别提醒，这其实是小朋友在推卸责任，只有坚持让他认识到是自己的责任，并承认错误，学会道歉，以后才会学会和别人相处。</p>
-<p>另外还需要注意的是，道歉对促进人际关系很重要，但也不能动不动就道歉。有些人在成长过程中对自己低价值评判，一旦出现障碍就主动道歉，其实也是很不健康的。</p>
-<p>最后一点也很重要：</p>
-<blockquote>
-<p>学会向自己道歉。我们一生总会对一些人和事怀有歉意，内心耿耿于怀，让自己停留在那里，也要适时地向自己道歉，肯求谅解，这样才能让自己立足当下，走向未来。</p>
-</blockquote>
-<p><a href="https://book.douban.com/annotation/32058189/" target="_blank" rel="external">第八章：道歉是一种选择： 人们有意识的选择不道歉，这是何等的悲哀。</a></p>
-<p>人们为什么不道歉： 1不值得为之努力： 2是对方的错：第二个原因是 人们都觉得自己的行为是正确的，做错的是对方，明明做错了，却还要证明自己的行为是正确的，这是自欺欺人，生活在虚幻的世界中，认为自己从来没做错任何事情。所有的人都会说一些 刻薄，挑剔，不温存的话，很伤人，极具破坏性，拒绝承认道歉的必要性，一辈子生活在破裂的关系中。 通常人们的良心倾向于把过错转嫁到他人身上，实际上，他们良心是迟钝的良心，看不到错误原本存在于自己身上。</p>
-<p>较低的自我价值感：迟钝的良心与较低的自我价值感相伴而生，父母教导 道歉是弱者的表现，这样的父母自我价值感地，努力成为一个有价值的人，道歉是弱者的表现，不会去做这样没价值的事情，出现问题 把责任怪罪到孩子头上，孩子也逐渐形成了较低的自我价值感，传递给自己的下一代。低自我价值感，习惯将责任转嫁他人，极度厌恶道歉的人 要去做心理咨询，改变根深蒂固的思想，行为和情感模式。不要套在恶性循环中不能认清现实。</p>
-<p>如果我过度道歉怎么办：为什么过度道歉？ 人们过度道歉的原因不尽相同，有些人因为对别人痛苦的言行感到内疚而道歉。 我认为是我的错：另一些人倾向于过度道歉是因为自我价值感较低，总觉得所有事情都是他们的错。 我想让事情过去： 过度道歉的第三类人特别不喜欢冲突，总想尽快平息争端，使一切恢复正常，不是自己错，还是愿意承担责任，用道歉息事宁人，不喜欢长时间讨论问题引起情感不适。</p>
-<p>引起憎恨的和解：上面这些人以及无数类似的人为了和解不惜 一切代价，宁愿息事宁人承认自己错了，也要停止争论或者冲突，觉得情感上的平静要比事情正确性更重要。看似可贵的优点，事实上是愤恨在心里酝酿。</p>
-<h2 id="一分钟道歉"><a href="#一分钟道歉" class="headerlink" title="一分钟道歉"></a><a href="https://book.douban.com/subject/1340486/" target="_blank" rel="external">一分钟道歉</a></h2><p><img src="https://img1.doubanio.com/lpic/s8823058.jpg" alt=""></p>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>1 前言<br>2 旅程<br>3 公司总裁<br>4 一分钟经理人<br>5 一分钟道歉<br>6 一分钟道歉始于<strong>退让</strong><br>7 退让：小结<br>8 一分钟道歉止于<strong>真诚</strong><br>9 真诚：小结<br>10 与结果无关<br>11 在家里和在工作中的道歉</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://img3.doubanio.com/lpic/s2699461.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;真诚地付诸行动。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Concept" scheme="http://deepcreator.com/categories/Concept/"/>
-    
-    
-      <category term="Apology" scheme="http://deepcreator.com/tags/Apology/"/>
-    
-      <category term="Gratitude" scheme="http://deepcreator.com/tags/Gratitude/"/>
     
   </entry>
   
