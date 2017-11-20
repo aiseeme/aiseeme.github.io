@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://deepcreator.com/"/>
-  <updated>2017-11-18T14:48:08.568Z</updated>
+  <updated>2017-11-20T01:19:18.334Z</updated>
   <id>http://deepcreator.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://deepcreator.com/2019/12/31/MVP/2018/"/>
     <id>http://deepcreator.com/2019/12/31/MVP/2018/</id>
     <published>2019-12-31T15:59:18.000Z</published>
-    <updated>2017-11-18T14:48:08.568Z</updated>
+    <updated>2017-11-20T01:19:18.334Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/2018luckydog.jpg?imageMogr2/thumbnail/!75p" alt="2018luckydog.jpg"></p>
 <blockquote>
@@ -58,7 +58,7 @@
 </li>
 <li><p>Step by step, layer by layer transition<br>——Patience , Grit</p>
 </li>
-<li><p>Slow is Fast, Less is More.<br>——smaller quantity, better quality</p>
+<li><p>Slow is Fast, Less is More.<br>——Smaller Quantity, Better Quality</p>
 </li>
 <li><p>Keep it Super Simple<br> —— Abandon, Choice, Appreciation</p>
 </li>
@@ -70,7 +70,7 @@
 </li>
 <li><p>No pain, No gain.</p>
 </li>
-<li><p>Do not do to others what you would not have them do to you.</p>
+<li><p>Do not do to Others What you would not have them do to you.</p>
 </li>
 </ol>
 <h2 id="Style-of-IPCreator’s-Choice"><a href="#Style-of-IPCreator’s-Choice" class="headerlink" title="Style of IPCreator’s Choice"></a>Style of IPCreator’s Choice</h2><ol>
@@ -92,7 +92,7 @@
 <li>Wisedom——Experience(Reading, Travel, Movie, Music), Concept, Connection, Deliberate Practice, Grit</li>
 <li>Appreciation——Beauty, Quality</li>
 <li>Communication——Belief, Confidence, Emotion, Goal, Humanity, Empathy</li>
-<li>Family——Gymboree, Wife, Sistem, Mother</li>
+<li>Family——Gymboree, Wife, Sister, Mother</li>
 <li>Investment——Economics, Trend, Company, Stock</li>
 <li>Technology——UiLite, AI,Computer Science, Network, Program</li>
 <li>IPR——MySIPO</li>
@@ -4680,11 +4680,22 @@
     <link href="http://deepcreator.com/2017/11/19/Technology/Program/Android/Android%20Studio%203.0/"/>
     <id>http://deepcreator.com/2017/11/19/Technology/Program/Android/Android Studio 3.0/</id>
     <published>2017-11-19T12:55:06.000Z</published>
-    <updated>2017-11-19T13:04:32.067Z</updated>
+    <updated>2017-11-20T04:15:53.664Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://bp.googleblog.cn/-DAAJWGccTCQ/We_MGiMuSFI/AAAAAAAAEtk/5_COppUTDusIIx725jENI3fd9rqlRl0gQCLcBGAs/s1600/image8.png" alt=""></p>
 <p>一套全新的应用分析工具，用于快速诊断性能问题；支持 Kotlin 编程语言；一组全新的工具和向导，用于加快您在最新的 Android Oreo API 上进行开发的速度。</p>
 <a id="more"></a>
+<h2 id="Practice"><a href="#Practice" class="headerlink" title="Practice"></a>Practice</h2><p>【17.11.20日】升级到3.0</p>
+<p><img src="http://opb37u589.bkt.clouddn.com/androidstudio3.0.JPG?imageMogr2/thumbnail/!75p" alt="androidstudio3.0.JPG"></p>
+<p>分析日志，找出关键字</p>
+<ol>
+<li>Google</li>
+<li>StackOverflow</li>
+<li>CSDN</li>
+</ol>
+<p>Q: Error:null value in entry: incrementalFolder=null<br>A: <a href="https://stackoverflow.com/questions/41197045/errornull-value-in-entry-incrementalfolder-null" target="_blank" rel="external">removing the .gradle directory in the root project directory will fix the problem.</a></p>
+<p>buildToolsVersion<br>Gradle——目录，版本号<br>Genymotion——Virtual Box，先卸载，再安装</p>
+<p><a href="http://blog.csdn.net/fesdgasdgasdg/article/details/53907065" target="_blank" rel="external">genymotion模拟器无法联网问题100%解决</a></p>
 <h2 id="Android-Studio-3-0"><a href="#Android-Studio-3-0" class="headerlink" title="Android Studio 3.0"></a><a href="https://developers.googleblog.cn/2017/11/android-studio-30.html" target="_blank" rel="external">Android Studio 3.0</a></h2><p>2017年11月15日星期三<br>﻿ 发布人：Android 产品经理 Jamal Eason</p>
 <p>Android Studio 3.0 已经开放下载。Android Studio 3.0 在 Google I/O 2017 上公布，它是之前版本的一次较大更新，旨在加快您在 Android 上开发应用的速度。</p>
 <p>此版本的 Android Studio 包含许多更新，但有三个主要功能您不应错过，其中包括：一套全新的应用分析工具，用于快速诊断性能问题；支持 Kotlin 编程语言；一组全新的工具和向导，用于加快您在最新的 Android Oreo API 上进行开发的速度。</p>
@@ -8245,13 +8256,16 @@
     <link href="http://deepcreator.com/2017/11/12/Concept/P/Problem/"/>
     <id>http://deepcreator.com/2017/11/12/Concept/P/Problem/</id>
     <published>2017-11-12T11:48:06.000Z</published>
-    <updated>2017-11-16T14:08:47.386Z</updated>
+    <updated>2017-11-20T01:29:51.790Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://opb37u589.bkt.clouddn.com/234921099c4d0aa3d7895b4d80fe34d1.jpg?imageMogr2/thumbnail/!75p" alt=""></p>
 <blockquote>
 <p>问题就是<a href="">机会</a>。</p>
 </blockquote>
 <a id="more"></a>
+<blockquote>
+<p>【17.11.20】IPCreator：锁头与钥匙<br>问题就是锁头，解决问题的方法就是钥匙，眼睛不能只盯着锁头看，一方面可能会加重顾虑及减少信心，另一方面也无利于事情的解决。钥匙一定在别处，转移注意力，调动自己的理性思维，认清问题的本质，立足现实，充分利用手头上能够利用的资源和力量，多为成功找方法，付出行动并坚持下去，最后问题一般都能得到解决。</p>
+</blockquote>
 <h2 id="你能从这期课听到什么"><a href="#你能从这期课听到什么" class="headerlink" title="你能从这期课听到什么"></a><a href="">你能从这期课听到什么</a></h2><p><img src="http://opb37u589.bkt.clouddn.com/3683ed1925fe2b0c8b7d3b0e0507125d.jpg?imageMogr2/thumbnail/!75p" alt=""></p>
 <p>我是曲凯，毕业于美国杜克大学，做过管理咨询，在BAT做过产品，也做过风险投资。现在，则是自己在创业。</p>
 <p>经过了这么多年的工作，我发现自己所做的所有工作、职业，最终都可以落脚到一个点上，就是解决问题。做产品是为了解决用户的某个问题，做战略是为了解决公司的某个问题，做投资可能是为了解决社会的某个问题，创业则是整合所有的资源和人才来解决一个超级复杂的大问题。</p>
