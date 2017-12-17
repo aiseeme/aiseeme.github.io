@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://deepcreator.com/2017/12/16/Journey/No.%20Eight%20Storehouse/</loc>
+    <loc>http://deepcreator.com/2017/11/16/IPR/Patent/</loc>
     
-    <lastmod>2017-12-16T13:31:38.778Z</lastmod>
+    <lastmod>2017-12-17T10:20:54.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/12/17/People/Zheng-Fei%20Ren/</loc>
+    
+    <lastmod>2017-12-17T09:53:01.140Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/11/13/Concept/L/Leadership/</loc>
+    
+    <lastmod>2017-12-17T09:53:01.140Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://deepcreator.com/2017/12/16/Concept/N/Negotiation/</loc>
     
-    <lastmod>2017-12-16T13:25:15.888Z</lastmod>
+    <lastmod>2017-12-17T01:45:01.546Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/12/16/Journey/No.%20Eight%20Storehouse/</loc>
+    
+    <lastmod>2017-12-16T13:31:38.778Z</lastmod>
     
   </url>
   
@@ -47,13 +68,6 @@
     <loc>http://deepcreator.com/2017/12/10/YOTA/YOTA's%20Growing%20Up/</loc>
     
     <lastmod>2017-12-10T02:03:22.416Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/11/13/Concept/L/Leadership/</loc>
-    
-    <lastmod>2017-12-10T01:48:44.925Z</lastmod>
     
   </url>
   
@@ -394,13 +408,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/10/06/Concept/T/Trap/</loc>
-    
-    <lastmod>2017-11-24T12:05:01.652Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/10/12/Concept/S/Simple/</loc>
     
     <lastmod>2017-11-24T12:05:01.652Z</lastmod>
@@ -409,6 +416,13 @@
   
   <url>
     <loc>http://deepcreator.com/2017/09/29/Concept/W/Writing/</loc>
+    
+    <lastmod>2017-11-24T12:05:01.652Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/10/06/Concept/T/Trap/</loc>
     
     <lastmod>2017-11-24T12:05:01.652Z</lastmod>
     
@@ -1094,14 +1108,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/09/25/Concept/A/Abandon/</loc>
+    <loc>http://deepcreator.com/2017/10/01/Concept/B/Balance%20of%20Contradiction/</loc>
     
     <lastmod>2017-11-16T15:01:31.397Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/10/01/Concept/B/Balance%20of%20Contradiction/</loc>
+    <loc>http://deepcreator.com/2017/09/25/Concept/A/Abandon/</loc>
     
     <lastmod>2017-11-16T15:01:31.397Z</lastmod>
     
@@ -1699,13 +1713,6 @@
     <loc>http://deepcreator.com/2017/11/16/Concept/J/Judgement/</loc>
     
     <lastmod>2017-11-16T06:34:00.464Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/11/16/IPR/Patent/</loc>
-    
-    <lastmod>2017-11-16T06:21:23.995Z</lastmod>
     
   </url>
   
@@ -2893,14 +2900,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Cerebral%20Limbic%20System/</loc>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Epencephalon/</loc>
     
     <lastmod>2017-11-10T03:47:14.269Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Epencephalon/</loc>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Cerebral%20Limbic%20System/</loc>
     
     <lastmod>2017-11-10T03:47:14.269Z</lastmod>
     
@@ -2914,13 +2921,6 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Thalami/</loc>
-    
-    <lastmod>2017-11-10T03:47:13.914Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://deepcreator.com/2017/11/10/Health/Brain/Insula/</loc>
     
     <lastmod>2017-11-10T03:47:13.914Z</lastmod>
@@ -2928,14 +2928,21 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Anterior%20Cingulate%20Cortex/</loc>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Thalami/</loc>
+    
+    <lastmod>2017-11-10T03:47:13.914Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/The%20Prefrontal%20Cortex/</loc>
     
     <lastmod>2017-11-10T03:47:13.913Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/The%20Prefrontal%20Cortex/</loc>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Anterior%20Cingulate%20Cortex/</loc>
     
     <lastmod>2017-11-10T03:47:13.913Z</lastmod>
     
@@ -3180,14 +3187,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/11/07/People/Chuan-Zhi%20Liu/</loc>
+    <loc>http://deepcreator.com/2017/11/07/People/Rui-Min%20Zhang/</loc>
     
     <lastmod>2017-11-08T14:13:45.682Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/11/07/People/Rui-Min%20Zhang/</loc>
+    <loc>http://deepcreator.com/2017/11/07/People/Chuan-Zhi%20Liu/</loc>
     
     <lastmod>2017-11-08T14:13:45.682Z</lastmod>
     
@@ -4566,14 +4573,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/05/03/Technology/AI/TensorFlow/tensorflow-android/</loc>
+    <loc>http://deepcreator.com/2017/04/30/Technology/AI/TensorFlow/tutorial-build-your-first-tensorflow-android-app/</loc>
     
     <lastmod>2017-09-15T00:51:58.102Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/04/30/Technology/AI/TensorFlow/tutorial-build-your-first-tensorflow-android-app/</loc>
+    <loc>http://deepcreator.com/2017/05/03/Technology/AI/TensorFlow/tensorflow-android/</loc>
     
     <lastmod>2017-09-15T00:51:58.102Z</lastmod>
     
@@ -4685,14 +4692,14 @@
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/03/19/Movie/Hacksaw%20Ridge/</loc>
+    <loc>http://deepcreator.com/2017/08/30/Movie/Gravity/</loc>
     
     <lastmod>2017-09-14T14:43:25.794Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://deepcreator.com/2017/08/30/Movie/Gravity/</loc>
+    <loc>http://deepcreator.com/2017/03/19/Movie/Hacksaw%20Ridge/</loc>
     
     <lastmod>2017-09-14T14:43:25.794Z</lastmod>
     
@@ -4909,6 +4916,13 @@
   </url>
   
   <url>
+    <loc>http://deepcreator.com/2017/09/07/Music/WangFei/</loc>
+    
+    <lastmod>2017-09-14T14:43:24.413Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://deepcreator.com/2017/09/01/Music/We%20will%20rock%20you/</loc>
     
     <lastmod>2017-09-14T14:43:24.413Z</lastmod>
@@ -4924,13 +4938,6 @@
   
   <url>
     <loc>http://deepcreator.com/2017/09/07/Music/WangFeng/</loc>
-    
-    <lastmod>2017-09-14T14:43:24.413Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/09/07/Music/WangFei/</loc>
     
     <lastmod>2017-09-14T14:43:24.413Z</lastmod>
     
@@ -6008,6 +6015,13 @@
   </url>
   
   <url>
+    <loc>http://deepcreator.com/2017/02/27/Technology/Program/Computer/the-essence-of-video/</loc>
+    
+    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://deepcreator.com/2017/02/15/Technology/AI/TensorFlow/ai-vs-machine-learning/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
@@ -6023,13 +6037,6 @@
   
   <url>
     <loc>http://deepcreator.com/2017/02/27/Technology/Program/Tools/Linux/the-anatomy-of-file-system/</loc>
-    
-    <lastmod>2017-03-27T08:55:53.032Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://deepcreator.com/2017/02/27/Technology/Program/Computer/the-essence-of-video/</loc>
     
     <lastmod>2017-03-27T08:55:53.032Z</lastmod>
     
