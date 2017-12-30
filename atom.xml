@@ -212,8 +212,6 @@
       <category term="MVP" scheme="http://deepcreator.com/categories/MVP/"/>
     
     
-      <category term="MVP" scheme="http://deepcreator.com/tags/MVP/"/>
-    
       <category term="Lucky" scheme="http://deepcreator.com/tags/Lucky/"/>
     
       <category term="2018" scheme="http://deepcreator.com/tags/2018/"/>
@@ -223,6 +221,8 @@
       <category term="HWPM" scheme="http://deepcreator.com/tags/HWPM/"/>
     
       <category term="ABCDE" scheme="http://deepcreator.com/tags/ABCDE/"/>
+    
+      <category term="MVP" scheme="http://deepcreator.com/tags/MVP/"/>
     
   </entry>
   
@@ -696,11 +696,11 @@
       <category term="ABCDE" scheme="http://deepcreator.com/categories/ABCDE/"/>
     
     
-      <category term="Attention" scheme="http://deepcreator.com/tags/Attention/"/>
+      <category term="Time" scheme="http://deepcreator.com/tags/Time/"/>
     
       <category term="Wealth" scheme="http://deepcreator.com/tags/Wealth/"/>
     
-      <category term="Time" scheme="http://deepcreator.com/tags/Time/"/>
+      <category term="Attention" scheme="http://deepcreator.com/tags/Attention/"/>
     
   </entry>
   
@@ -3034,13 +3034,13 @@
       <category term="MVP" scheme="http://deepcreator.com/categories/MVP/"/>
     
     
+      <category term="Meaning" scheme="http://deepcreator.com/tags/Meaning/"/>
+    
       <category term="Profession" scheme="http://deepcreator.com/tags/Profession/"/>
     
       <category term="Health" scheme="http://deepcreator.com/tags/Health/"/>
     
       <category term="Wisdom" scheme="http://deepcreator.com/tags/Wisdom/"/>
-    
-      <category term="Meaning" scheme="http://deepcreator.com/tags/Meaning/"/>
     
   </entry>
   
@@ -3200,11 +3200,11 @@
       <category term="MVP" scheme="http://deepcreator.com/categories/MVP/"/>
     
     
+      <category term="Product" scheme="http://deepcreator.com/tags/Product/"/>
+    
       <category term="Minimum" scheme="http://deepcreator.com/tags/Minimum/"/>
     
       <category term="Viable" scheme="http://deepcreator.com/tags/Viable/"/>
-    
-      <category term="Product" scheme="http://deepcreator.com/tags/Product/"/>
     
   </entry>
   
@@ -5276,11 +5276,11 @@
       <category term="YOTA" scheme="http://deepcreator.com/categories/YOTA/"/>
     
     
-      <category term="Growing Up" scheme="http://deepcreator.com/tags/Growing-Up/"/>
-    
       <category term="Poly" scheme="http://deepcreator.com/tags/Poly/"/>
     
       <category term="YOTA" scheme="http://deepcreator.com/tags/YOTA/"/>
+    
+      <category term="Growing Up" scheme="http://deepcreator.com/tags/Growing-Up/"/>
     
   </entry>
   
@@ -5417,11 +5417,11 @@
       <category term="IPR" scheme="http://deepcreator.com/categories/IPR/"/>
     
     
+      <category term="Benefit" scheme="http://deepcreator.com/tags/Benefit/"/>
+    
       <category term="Patent" scheme="http://deepcreator.com/tags/Patent/"/>
     
       <category term="Individual" scheme="http://deepcreator.com/tags/Individual/"/>
-    
-      <category term="Benefit" scheme="http://deepcreator.com/tags/Benefit/"/>
     
       <category term="Businesse" scheme="http://deepcreator.com/tags/Businesse/"/>
     
@@ -5517,9 +5517,9 @@
       <category term="Journey" scheme="http://deepcreator.com/categories/Journey/"/>
     
     
-      <category term="Sport" scheme="http://deepcreator.com/tags/Sport/"/>
-    
       <category term="Brand" scheme="http://deepcreator.com/tags/Brand/"/>
+    
+      <category term="Sport" scheme="http://deepcreator.com/tags/Sport/"/>
     
       <category term="NewBalance" scheme="http://deepcreator.com/tags/NewBalance/"/>
     
@@ -6284,9 +6284,9 @@
     
       <category term="Management" scheme="http://deepcreator.com/tags/Management/"/>
     
-      <category term="Communication" scheme="http://deepcreator.com/tags/Communication/"/>
-    
       <category term="Meeting" scheme="http://deepcreator.com/tags/Meeting/"/>
+    
+      <category term="Communication" scheme="http://deepcreator.com/tags/Communication/"/>
     
   </entry>
   
@@ -7087,9 +7087,9 @@
     
       <category term="People" scheme="http://deepcreator.com/tags/People/"/>
     
-      <category term="Connection" scheme="http://deepcreator.com/tags/Connection/"/>
-    
       <category term="Company" scheme="http://deepcreator.com/tags/Company/"/>
+    
+      <category term="Connection" scheme="http://deepcreator.com/tags/Connection/"/>
     
   </entry>
   
@@ -8752,9 +8752,9 @@
     
       <category term="English" scheme="http://deepcreator.com/tags/English/"/>
     
-      <category term="Concept" scheme="http://deepcreator.com/tags/Concept/"/>
-    
       <category term="Joke" scheme="http://deepcreator.com/tags/Joke/"/>
+    
+      <category term="Concept" scheme="http://deepcreator.com/tags/Concept/"/>
     
   </entry>
   
@@ -9255,9 +9255,9 @@
       <category term="Economics" scheme="http://deepcreator.com/categories/Economics/"/>
     
     
-      <category term="Lenovo" scheme="http://deepcreator.com/tags/Lenovo/"/>
-    
       <category term="Company" scheme="http://deepcreator.com/tags/Company/"/>
+    
+      <category term="Lenovo" scheme="http://deepcreator.com/tags/Lenovo/"/>
     
   </entry>
   
@@ -9558,9 +9558,9 @@
       <category term="Economics" scheme="http://deepcreator.com/categories/Economics/"/>
     
     
-      <category term="Facebook" scheme="http://deepcreator.com/tags/Facebook/"/>
-    
       <category term="Company" scheme="http://deepcreator.com/tags/Company/"/>
+    
+      <category term="Facebook" scheme="http://deepcreator.com/tags/Facebook/"/>
     
   </entry>
   
@@ -9593,9 +9593,9 @@
       <category term="Economics" scheme="http://deepcreator.com/categories/Economics/"/>
     
     
-      <category term="Amazon" scheme="http://deepcreator.com/tags/Amazon/"/>
-    
       <category term="Company" scheme="http://deepcreator.com/tags/Company/"/>
+    
+      <category term="Amazon" scheme="http://deepcreator.com/tags/Amazon/"/>
     
   </entry>
   
@@ -10547,9 +10547,9 @@
       <category term="IPR" scheme="http://deepcreator.com/categories/IPR/"/>
     
     
-      <category term="Concept" scheme="http://deepcreator.com/tags/Concept/"/>
-    
       <category term="Law" scheme="http://deepcreator.com/tags/Law/"/>
+    
+      <category term="Concept" scheme="http://deepcreator.com/tags/Concept/"/>
     
   </entry>
   
@@ -10891,9 +10891,9 @@
       <category term="Economics" scheme="http://deepcreator.com/categories/Economics/"/>
     
     
-      <category term="Google" scheme="http://deepcreator.com/tags/Google/"/>
-    
       <category term="Company" scheme="http://deepcreator.com/tags/Company/"/>
+    
+      <category term="Google" scheme="http://deepcreator.com/tags/Google/"/>
     
   </entry>
   
