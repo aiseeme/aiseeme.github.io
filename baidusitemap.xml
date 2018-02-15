@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://deepcreator.com/2017/10/17/MVP/Product/UiLite/</loc>
+    <lastmod>2018-02-15T04:52:56.852Z</lastmod>
+    <data>
+        <display>
+        <title>UiLite</title>
+        <pubTime>2017-10-17T05:56:06.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>AI</tag>
+         
+        <tag>UiLite</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="MVP" url="http://deepcreator.com/categories/MVP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://deepcreator.com/2017/10/04/Concept/O/Opportunity/</loc>
     <lastmod>2018-02-15T03:52:53.708Z</lastmod>
     <data>
@@ -3870,6 +3896,26 @@
 
     
   <url>
+    <loc>http://deepcreator.com/2017/10/05/Concept/P/Perfection/</loc>
+    <lastmod>2017-11-24T12:05:01.655Z</lastmod>
+    <data>
+        <display>
+        <title>Perfection</title>
+        <pubTime>2017-10-05T01:57:06.000Z</pubTime>
+        
+        <tag>Perfection</tag>
+         
+         
+           
+             
+              <breadCrumb title="Concept" url="http://deepcreator.com/categories/Concept/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://deepcreator.com/2017/10/02/Concept/C/Change/</loc>
     <lastmod>2017-11-24T12:05:01.655Z</lastmod>
     <data>
@@ -3900,26 +3946,6 @@
         <tag>Reality</tag>
          
         <tag>Real</tag>
-         
-         
-           
-             
-              <breadCrumb title="Concept" url="http://deepcreator.com/categories/Concept/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2017/10/05/Concept/P/Perfection/</loc>
-    <lastmod>2017-11-24T12:05:01.655Z</lastmod>
-    <data>
-        <display>
-        <title>Perfection</title>
-        <pubTime>2017-10-05T01:57:06.000Z</pubTime>
-        
-        <tag>Perfection</tag>
          
          
            
@@ -10326,30 +10352,6 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Cerebral%20Limbic%20System/</loc>
-    <lastmod>2017-11-10T03:47:14.269Z</lastmod>
-    <data>
-        <display>
-        <title>Cerebral Limbic System</title>
-        <pubTime>2017-11-10T03:19:06.000Z</pubTime>
-        
-        <tag>System</tag>
-         
-        <tag>Cerebral</tag>
-         
-        <tag>Limbic</tag>
-         
-         
-           
-             
-              <breadCrumb title="Health" url="http://deepcreator.com/categories/Health/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://deepcreator.com/2017/11/10/Health/Brain/Brainstem/</loc>
     <lastmod>2017-11-10T03:47:14.269Z</lastmod>
     <data>
@@ -10370,14 +10372,18 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Thalami/</loc>
-    <lastmod>2017-11-10T03:47:13.914Z</lastmod>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Cerebral%20Limbic%20System/</loc>
+    <lastmod>2017-11-10T03:47:14.269Z</lastmod>
     <data>
         <display>
-        <title>Thalami</title>
-        <pubTime>2017-11-10T02:54:06.000Z</pubTime>
+        <title>Cerebral Limbic System</title>
+        <pubTime>2017-11-10T03:19:06.000Z</pubTime>
         
-        <tag>Thalami</tag>
+        <tag>System</tag>
+         
+        <tag>Cerebral</tag>
+         
+        <tag>Limbic</tag>
          
          
            
@@ -10410,18 +10416,14 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Anterior%20Cingulate%20Cortex/</loc>
-    <lastmod>2017-11-10T03:47:13.913Z</lastmod>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Thalami/</loc>
+    <lastmod>2017-11-10T03:47:13.914Z</lastmod>
     <data>
         <display>
-        <title>Anterior Cingulate Cortex</title>
-        <pubTime>2017-11-10T02:46:06.000Z</pubTime>
+        <title>Thalami</title>
+        <pubTime>2017-11-10T02:54:06.000Z</pubTime>
         
-        <tag>Anterior</tag>
-         
-        <tag>Cingulate</tag>
-         
-        <tag>Cortex</tag>
+        <tag>Thalami</tag>
          
          
            
@@ -10444,6 +10446,30 @@
         <tag>Cortex</tag>
          
         <tag>Prefrontal</tag>
+         
+         
+           
+             
+              <breadCrumb title="Health" url="http://deepcreator.com/categories/Health/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2017/11/10/Health/Brain/Anterior%20Cingulate%20Cortex/</loc>
+    <lastmod>2017-11-10T03:47:13.913Z</lastmod>
+    <data>
+        <display>
+        <title>Anterior Cingulate Cortex</title>
+        <pubTime>2017-11-10T02:46:06.000Z</pubTime>
+        
+        <tag>Anterior</tag>
+         
+        <tag>Cingulate</tag>
+         
+        <tag>Cortex</tag>
          
          
            
@@ -13126,32 +13152,6 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/10/17/MVP/Product/UiLite/</loc>
-    <lastmod>2017-10-17T12:15:21.513Z</lastmod>
-    <data>
-        <display>
-        <title>UiLite</title>
-        <pubTime>2017-10-17T05:56:06.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>AI</tag>
-         
-        <tag>UiLite</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="MVP" url="http://deepcreator.com/categories/MVP/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://deepcreator.com/2017/10/17/Concept/F/Fallacy/</loc>
     <lastmod>2017-10-17T07:25:00.597Z</lastmod>
     <data>
@@ -14360,14 +14360,14 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/10/01/Journey/Timberland/</loc>
+    <loc>http://deepcreator.com/2017/10/01/Journey/Water%20Cup/</loc>
     <lastmod>2017-10-11T05:01:27.441Z</lastmod>
     <data>
         <display>
-        <title>Timberland</title>
-        <pubTime>2017-09-30T23:47:06.000Z</pubTime>
+        <title>Water Cup</title>
+        <pubTime>2017-10-01T00:01:06.000Z</pubTime>
         
-        <tag>Cloth</tag>
+        <tag>Cup</tag>
          
          
            
@@ -14380,14 +14380,14 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/10/01/Journey/Water%20Cup/</loc>
+    <loc>http://deepcreator.com/2017/10/01/Journey/Timberland/</loc>
     <lastmod>2017-10-11T05:01:27.441Z</lastmod>
     <data>
         <display>
-        <title>Water Cup</title>
-        <pubTime>2017-10-01T00:01:06.000Z</pubTime>
+        <title>Timberland</title>
+        <pubTime>2017-09-30T23:47:06.000Z</pubTime>
         
-        <tag>Cup</tag>
+        <tag>Cloth</tag>
          
          
            
@@ -15018,17 +15018,13 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/17/Technology/AI/TensorFlow/tensorflow-android-camera-demo/</loc>
+    <loc>http://deepcreator.com/2017/02/13/Technology/AI/TensorFlow/simple-understanding-of-tensorflow/</loc>
     <lastmod>2017-09-15T00:51:57.994Z</lastmod>
     <data>
         <display>
-        <title>TensorFlow Android Camera Demo</title>
-        <pubTime>2017-02-17T02:26:06.000Z</pubTime>
+        <title>Basic Usage of Tensorflow</title>
+        <pubTime>2017-02-13T01:10:06.000Z</pubTime>
         
-        <tag>Android</tag>
-         
-        <tag>Camera</tag>
-         
         <tag>Tensorflow</tag>
          
          
@@ -15042,13 +15038,17 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/13/Technology/AI/TensorFlow/simple-understanding-of-tensorflow/</loc>
+    <loc>http://deepcreator.com/2017/02/17/Technology/AI/TensorFlow/tensorflow-android-camera-demo/</loc>
     <lastmod>2017-09-15T00:51:57.994Z</lastmod>
     <data>
         <display>
-        <title>Basic Usage of Tensorflow</title>
-        <pubTime>2017-02-13T01:10:06.000Z</pubTime>
+        <title>TensorFlow Android Camera Demo</title>
+        <pubTime>2017-02-17T02:26:06.000Z</pubTime>
         
+        <tag>Android</tag>
+         
+        <tag>Camera</tag>
+         
         <tag>Tensorflow</tag>
          
          
@@ -15166,16 +15166,14 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/18/Technology/AI/TensorFlow/changes-by-google-tensorflow/</loc>
+    <loc>http://deepcreator.com/2017/02/17/Technology/AI/TensorFlow/applications-of-tensorflow/</loc>
     <lastmod>2017-09-15T00:51:57.802Z</lastmod>
     <data>
         <display>
-        <title>Tensorflow Mean the Big Reform of Hardware</title>
-        <pubTime>2017-02-18T01:02:06.000Z</pubTime>
+        <title>Applications of TensorFlow</title>
+        <pubTime>2017-02-17T02:06:06.000Z</pubTime>
         
         <tag>Tensorflow</tag>
-         
-        <tag>Hardward</tag>
          
          
            
@@ -15188,14 +15186,16 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/02/17/Technology/AI/TensorFlow/applications-of-tensorflow/</loc>
+    <loc>http://deepcreator.com/2017/02/18/Technology/AI/TensorFlow/changes-by-google-tensorflow/</loc>
     <lastmod>2017-09-15T00:51:57.802Z</lastmod>
     <data>
         <display>
-        <title>Applications of TensorFlow</title>
-        <pubTime>2017-02-17T02:06:06.000Z</pubTime>
+        <title>Tensorflow Mean the Big Reform of Hardware</title>
+        <pubTime>2017-02-18T01:02:06.000Z</pubTime>
         
         <tag>Tensorflow</tag>
+         
+        <tag>Hardward</tag>
          
          
            
@@ -15270,12 +15270,12 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/03/19/Movie/Hacksaw%20Ridge/</loc>
+    <loc>http://deepcreator.com/2017/08/30/Movie/Gravity/</loc>
     <lastmod>2017-09-14T14:43:25.794Z</lastmod>
     <data>
         <display>
-        <title>Hacksaw Ridge</title>
-        <pubTime>2017-03-19T10:30:18.000Z</pubTime>
+        <title>Gravity</title>
+        <pubTime>2017-08-30T11:08:06.000Z</pubTime>
         
         <tag>English</tag>
          
@@ -15292,12 +15292,12 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/08/30/Movie/Gravity/</loc>
+    <loc>http://deepcreator.com/2017/03/19/Movie/Hacksaw%20Ridge/</loc>
     <lastmod>2017-09-14T14:43:25.794Z</lastmod>
     <data>
         <display>
-        <title>Gravity</title>
-        <pubTime>2017-08-30T11:08:06.000Z</pubTime>
+        <title>Hacksaw Ridge</title>
+        <pubTime>2017-03-19T10:30:18.000Z</pubTime>
         
         <tag>English</tag>
          
@@ -15564,12 +15564,12 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/08/30/Music/God%20is%20a%20girl/</loc>
+    <loc>http://deepcreator.com/2017/09/02/Music/Bye%20bye%20bye/</loc>
     <lastmod>2017-09-14T14:43:25.019Z</lastmod>
     <data>
         <display>
-        <title>God is girl</title>
-        <pubTime>2017-08-30T11:51:06.000Z</pubTime>
+        <title>Bye bye bye</title>
+        <pubTime>2017-09-02T11:15:06.000Z</pubTime>
         
         <tag>English</tag>
          
@@ -15586,12 +15586,12 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/09/02/Music/Bye%20bye%20bye/</loc>
+    <loc>http://deepcreator.com/2017/08/30/Music/God%20is%20a%20girl/</loc>
     <lastmod>2017-09-14T14:43:25.019Z</lastmod>
     <data>
         <display>
-        <title>Bye bye bye</title>
-        <pubTime>2017-09-02T11:15:06.000Z</pubTime>
+        <title>God is girl</title>
+        <pubTime>2017-08-30T11:51:06.000Z</pubTime>
         
         <tag>English</tag>
          
@@ -15894,6 +15894,26 @@
 
     
   <url>
+    <loc>http://deepcreator.com/2017/08/14/Music/The%20Sound%20of%20Silence/</loc>
+    <lastmod>2017-09-14T14:43:24.514Z</lastmod>
+    <data>
+        <display>
+        <title>The Sound of Silence</title>
+        <pubTime>2017-08-14T12:10:05.000Z</pubTime>
+        
+        <tag>Music</tag>
+         
+         
+           
+             
+              <breadCrumb title="Music" url="http://deepcreator.com/categories/Music/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://deepcreator.com/2017/09/01/Music/Trouble%20is%20a%20friend/</loc>
     <lastmod>2017-09-14T14:43:24.514Z</lastmod>
     <data>
@@ -15916,34 +15936,14 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/08/14/Music/The%20Sound%20of%20Silence/</loc>
-    <lastmod>2017-09-14T14:43:24.514Z</lastmod>
-    <data>
-        <display>
-        <title>The Sound of Silence</title>
-        <pubTime>2017-08-14T12:10:05.000Z</pubTime>
-        
-        <tag>Music</tag>
-         
-         
-           
-             
-              <breadCrumb title="Music" url="http://deepcreator.com/categories/Music/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2017/09/09/Music/ZhengJun/</loc>
+    <loc>http://deepcreator.com/2017/09/07/Music/WangFeng/</loc>
     <lastmod>2017-09-14T14:43:24.413Z</lastmod>
     <data>
         <display>
-        <title>Zhen Jun</title>
-        <pubTime>2017-09-09T04:10:06.000Z</pubTime>
+        <title>Wang Feng</title>
+        <pubTime>2017-09-07T04:35:06.000Z</pubTime>
         
-        <tag>Music</tag>
+        <tag>Share</tag>
          
          
            
@@ -15976,15 +15976,13 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/09/01/Music/We%20will%20rock%20you/</loc>
+    <loc>http://deepcreator.com/2017/09/09/Music/ZhengJun/</loc>
     <lastmod>2017-09-14T14:43:24.413Z</lastmod>
     <data>
         <display>
-        <title>We will rock you</title>
-        <pubTime>2017-09-01T13:12:06.000Z</pubTime>
+        <title>Zhen Jun</title>
+        <pubTime>2017-09-09T04:10:06.000Z</pubTime>
         
-        <tag>English</tag>
-         
         <tag>Music</tag>
          
          
@@ -15998,14 +15996,16 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2017/09/07/Music/WangFeng/</loc>
+    <loc>http://deepcreator.com/2017/09/01/Music/We%20will%20rock%20you/</loc>
     <lastmod>2017-09-14T14:43:24.413Z</lastmod>
     <data>
         <display>
-        <title>Wang Feng</title>
-        <pubTime>2017-09-07T04:35:06.000Z</pubTime>
+        <title>We will rock you</title>
+        <pubTime>2017-09-01T13:12:06.000Z</pubTime>
         
-        <tag>Share</tag>
+        <tag>English</tag>
+         
+        <tag>Music</tag>
          
          
            
