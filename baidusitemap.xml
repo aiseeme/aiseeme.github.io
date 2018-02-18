@@ -4,19 +4,43 @@
 
     
   <url>
-    <loc>http://deepcreator.com/2018/02/21/Concept/R/Relationship/</loc>
-    <lastmod>2018-02-18T11:55:58.759Z</lastmod>
+    <loc>http://deepcreator.com/2018/12/21/MVP/2018/Photography%20from%20IPCreator/</loc>
+    <lastmod>2018-02-18T16:09:25.125Z</lastmod>
     <data>
         <display>
-        <title>Relationship</title>
-        <pubTime>2018-02-21T09:47:06.000Z</pubTime>
+        <title>Photography from IPCreator</title>
+        <pubTime>2018-12-21T08:55:06.000Z</pubTime>
         
-        <tag>Relationship</tag>
+        <tag>IPCreator</tag>
+         
+        <tag>Photography</tag>
          
          
            
              
-              <breadCrumb title="Concept" url="http://deepcreator.com/categories/Concept/"/>
+              <breadCrumb title="2018" url="http://deepcreator.com/categories/2018/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2018/12/22/MVP/2018/Dog%20Year/</loc>
+    <lastmod>2018-02-18T15:10:55.503Z</lastmod>
+    <data>
+        <display>
+        <title>Dog Year</title>
+        <pubTime>2018-12-22T10:46:06.000Z</pubTime>
+        
+        <tag>Dog</tag>
+         
+        <tag>Year</tag>
+         
+         
+           
+             
+              <breadCrumb title="2018" url="http://deepcreator.com/categories/2018/"/>
           
         </display>
     </data>
@@ -25,7 +49,7 @@
     
   <url>
     <loc>http://deepcreator.com/2018/12/20/Technology/AI/Tensorflow%20and%20Android/</loc>
-    <lastmod>2018-02-18T11:54:03.737Z</lastmod>
+    <lastmod>2018-02-18T13:00:23.202Z</lastmod>
     <data>
         <display>
         <title>Tensorflow and Android</title>
@@ -41,6 +65,26 @@
            
              
               <breadCrumb title="AI" url="http://deepcreator.com/categories/AI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://deepcreator.com/2018/02/21/Concept/R/Relationship/</loc>
+    <lastmod>2018-02-18T11:55:58.759Z</lastmod>
+    <data>
+        <display>
+        <title>Relationship</title>
+        <pubTime>2018-02-21T09:47:06.000Z</pubTime>
+        
+        <tag>Relationship</tag>
+         
+         
+           
+             
+              <breadCrumb title="Concept" url="http://deepcreator.com/categories/Concept/"/>
           
         </display>
     </data>
@@ -65,28 +109,6 @@
            
              
               <breadCrumb title="Journey" url="http://deepcreator.com/categories/Journey/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2018/12/21/MVP/2018/Photography%20from%20IPCreator/</loc>
-    <lastmod>2018-02-18T10:22:02.871Z</lastmod>
-    <data>
-        <display>
-        <title>Photography from IPCreator</title>
-        <pubTime>2018-12-21T08:55:06.000Z</pubTime>
-        
-        <tag>IPCreator</tag>
-         
-        <tag>Photography</tag>
-         
-         
-           
-             
-              <breadCrumb title="2018" url="http://deepcreator.com/categories/2018/"/>
           
         </display>
     </data>
@@ -237,28 +259,6 @@
            
              
               <breadCrumb title="Concept" url="http://deepcreator.com/categories/Concept/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://deepcreator.com/2018/12/22/MVP/2018/Dog%20Year/</loc>
-    <lastmod>2018-02-18T08:12:27.151Z</lastmod>
-    <data>
-        <display>
-        <title>Dog Year</title>
-        <pubTime>2018-12-22T10:46:06.000Z</pubTime>
-        
-        <tag>Dog</tag>
-         
-        <tag>Year</tag>
-         
-         
-           
-             
-              <breadCrumb title="2018" url="http://deepcreator.com/categories/2018/"/>
           
         </display>
     </data>
