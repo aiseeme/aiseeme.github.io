@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Tensorflow," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="For life" type="application/atom+xml" />
+
+
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic Concepts of Tensorflow">
+<meta property="og:url" content="http://deepcreator.com/2018/03/16/Technology/AI/TensorFlow/basic concepts of tensorflow/index.html">
+<meta property="og:site_name" content="For life">
+<meta property="og:image" content="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/10.png">
+<meta property="og:image" content="http://p53s4d2qk.bkt.clouddn.com/s29475322.jpg?imageMogr2/thumbnail/!75p">
+<meta property="og:image" content="http://p53s4d2qk.bkt.clouddn.com/s29683030.jpg?imageMogr2/thumbnail/!75p">
+<meta property="og:updated_time" content="2018-03-16T02:03:10.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Basic Concepts of Tensorflow">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://deepcreator.com/2018/03/16/Technology/AI/TensorFlow/basic concepts of tensorflow/"/>
+
+
+
+
+
+  <title>Basic Concepts of Tensorflow | For life</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5aaaaf5c9bcea80a5c7d7a057b2d36b3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+      <div class="site-meta-headline">
+        <a>
+          <img class="custom-logo-image" src="/img/headonhill.jpg"
+               alt="For life"/>
+        </a>
+      </div>
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">For life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Keep Growing Up is the only Password.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-help">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            help
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://deepcreator.com/2018/03/16/Technology/AI/TensorFlow/basic concepts of tensorflow/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="IPCreator">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/headonhill.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="For life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Basic Concepts of Tensorflow</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-16T09:26:06+08:00">
+                2018-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AI/" itemprop="url" rel="index">
+                    <span itemprop="name">AI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/16/Technology/AI/TensorFlow/basic concepts of tensorflow/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/03/16/Technology/AI/TensorFlow/basic concepts of tensorflow/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2018/03/16/Technology/AI/TensorFlow/basic concepts of tensorflow/" class="leancloud_visitors" data-flag-title="Basic Concepts of Tensorflow">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+</blockquote>
+<a id="more"></a>
+<h1 id="tensorflow架构"><a href="#tensorflow架构" class="headerlink" title="tensorflow架构"></a><a href="http://blog.csdn.net/stdcoutzyx/article/details/51645396" target="_blank" rel="external">tensorflow架构</a></h1><h2 id="Basic-Concepts"><a href="#Basic-Concepts" class="headerlink" title="Basic Concepts"></a>Basic Concepts</h2><p>本片博文是参考文献[1]的阅读笔记，特此声明</p>
+<p>TensorFlow，以下简称TF，是Google去年发布的机器学习平台，发布以后由于其速度快，扩展性好，推广速度还是蛮快的。江湖上流传着Google的大战略，Android占领了移动端，TF占领神经网络提供AI服务，未来的趋势恰好是语音图像以及AI的时代，而Google IO上发布的Gbot似乎正是这一交叉领域的初步尝试。</p>
+<p>TF的特点之一就是可以支持很多种设备，大到GPU、CPU，小到手机平板，五花八门的设备都可以跑起来TF。不得不说这一点很有前瞻性，可以预见的是，mobile-end的用户将会享受到越来越多的AI服务。说个极端，说不定以后某天，单机版的AlphaGo会出现也是可以的。</p>
+<p>话不多说，开始正文。</p>
+<p>Basic Concepts</p>
+<h3 id="张量-Tensor"><a href="#张量-Tensor" class="headerlink" title="张量(Tensor)"></a>张量(Tensor)</h3><p>名字就是TensorFlow，直观来看，就是张量的流动。张量(tensor)，即任意维度的数据，一维、二维、三维、四维等数据统称为张量。而<strong>张量的流动则是指保持计算节点不变，让数据进行流动</strong>。这样的设计是针对连接式的机器学习算法，比如逻辑斯底回归，神经网络等。连接式的机器学习算法可以把算法表达成一张图，<strong>张量从图中从前到后走一遍就完成了前向运算；而残差从后往前走一遍，就完成了后向传播。</strong></p>
+<h3 id="算子-operation"><a href="#算子-operation" class="headerlink" title="算子(operation)"></a>算子(operation)</h3><p>在TF的实现中，机器学习算法被表达成图，图中的节点是算子(operation)，节点会有0到多个输出，下图是TF实现的一些算子。</p>
+<p><img src="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/1.png" alt=""></p>
+<p>每个算子都会有属性，所有的属性都在建立图的时候被确定下来，比如，最常用的属性是为了支持多态，比如加法算子既能支持float32，又能支持int32计算。</p>
+<h3 id="核-kernel"><a href="#核-kernel" class="headerlink" title="核(kernel)"></a>核(kernel)</h3><p>TF中还有一个概念是kernel，<strong>kernel是operation在某种设备上的具体实现</strong>。TF的库通过注册机制来定义op和kernel，所以可以通过链接一个其他的库来进行kernel和op的扩展。</p>
+<h3 id="边-edge"><a href="#边-edge" class="headerlink" title="边(edge)"></a>边(edge)</h3><p>TF的图中的边分为两种：</p>
+<p>正常边，正常边上可以流动数据，即正常边就是tensor<br>特殊边，又称作控制依赖，(control dependencies) </p>
+<p>没有数据从特殊边上流动，但是特殊边却可以控制节点之间的依赖关系，在特殊边的起始节点完成运算之前，特殊边的结束节点不会被执行。</p>
+<p>也不仅仅非得有依赖关系才可以用特殊边，还可以有其他用法，比如为了控制内存的时候，可以让两个实际上并没有前后依赖关系的运算分开执行。</p>
+<p>特殊边可以在client端被直接使用</p>
+<h3 id="会话-Session"><a href="#会话-Session" class="headerlink" title="会话(Session)"></a>会话(Session)</h3><p>客户端使用会话来和TF系统交互，一般的模式是，建立会话，此时会生成一张空图；在会话中添加节点和边，形成一张图，然后执行。</p>
+<p>下图有一个TF的会话样例和所对应的图示。</p>
+<p><img src="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/2.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/3.png" alt=""></p>
+<h3 id="变量-Variables"><a href="#变量-Variables" class="headerlink" title="变量(Variables)"></a>变量(Variables)</h3><p>机器学习算法都会有参数，而参数的状态是需要保存的。而参数是在图中有其固定的位置的，不能像普通数据那样正常流动。因而，TF中将Variables实现为一个特殊的算子，该算子会返回它所保存的可变tensor的句柄。</p>
+<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><p>首先是实现中的几个部分：</p>
+<p>TF中最重要的Tensor被支持的非常全面，8bit到64bit， signed和unsigned，IEEE float/double，complex number等等。使用引用计数来保存tensor，当计数到0时，tensor被回收。</p>
+<p>客户端，用户会使用；与master和一些worker process交流</p>
+<p>master，用来与客户端交互，同时调度任务；</p>
+<p>worker process，工作节点，每个worker process可以访问一到多个device。</p>
+<p>device，TF的计算核心，通过将device的类型、job名称、在worker process中的索引将device命名。可以通过注册机制来添加新的device实现，每个device实现需要负责内存分配和管理调度TF系统所下达的核运算需求。</p>
+<p>TF的实现分为了单机实现和分布式实现，在分布式实现中，需要实现的是对client，master，worker process不在同一台机器上时的支持。此时，关于这些进程的调度，使用的是原始论文中参考文献51的调度方式。关于分布式和单机的不同如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/4.png" alt=""></p>
+<h3 id="Single-Device-Execution"><a href="#Single-Device-Execution" class="headerlink" title="Single-Device Execution"></a>Single-Device Execution</h3><p>构建好图后，使用拓扑算法来决定执行哪一个节点，即对每个节点使用一个计数，值表示所依赖的未完成的节点数目，当一个节点的运算完成时，将依赖该节点的所有节点的计数减一。如果节点的计数为0，将其放入准备队列待执行</p>
+<h3 id="Multi-Device-Execution"><a href="#Multi-Device-Execution" class="headerlink" title="Multi-Device Execution"></a>Multi-Device Execution</h3><p>当系统到了分布式情况下时，事情就变得复杂了很多，还好前述调度用了现有的框架。那么对于TF来说，剩下的事情就是：</p>
+<p>决定运算在哪个设备上运行<br>管理设备之间的数据传递</p>
+<h3 id="决定设备"><a href="#决定设备" class="headerlink" title="决定设备"></a>决定设备</h3><p>使用一个cost model算法来进行预估时间，计算后使用贪心算法来分配设备。在决定设备的时候，也可以预先设置一些约束，比如，某个op只能在GPU上执行等。</p>
+<p>预估时间有两种方法：</p>
+<p>使用启发式的算法，通过把输入和输出的类型以及tensor的大小输入进去，得到时间的预估<br>使用模拟的方法，对图的计算进行一个模拟，得到各个计算在其可用的设备上的时间。<br>寻找合适设备是TF系统区分与之前很多系统的地方，之前的系统比如Parameter Server，是参数分离出来，运算在一起，同时使用数据切分来达到分布式。而<strong>TF是把每个op都映射到某个机器上，意味着每个op可能在不同的机器上</strong>，这是对系统的进一步剖离，因而可以达到更高的可扩展性。</p>
+<h3 id="跨设备通信"><a href="#跨设备通信" class="headerlink" title="跨设备通信"></a>跨设备通信</h3><p>当两个需要通信的op在不同的机器上时，就需要跨设备通信，当它们需要通信时，TF会在它们之间的联系中添加Send和Recv节点，通过Send和Recv之间进行通信来达到op之间通信的效果。如下所示：</p>
+<p><img src="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/5.png" alt=""></p>
+<p>为了优化网络通信，TF会将相同的数据传送合并，如a-&gt;b和a-&gt;c的传送合并，这一点可以通过Send和Recv很方便的实现。而通过实现Send和Recv，将master节点的通信调度任务解放出来，master就只需要向图中的各个节点发出运行命令就够了，增加了系统的可扩展性。</p>
+<p>Send和Recv通过TCP或RDMA来传输数据</p>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>在分布式系统中，常见的错误来自于两个方面：</p>
+<p>Send/Recv的网络传输<br>master和worker process之间的心跳同步</p>
+<p>当错误发生的时候，TF会将整个图的计算停止，并从上一次保存的状态重新执行。为了保存状态，每个Variable的节点都去连接一个Save的节点。这些save节点会每隔一段时间或每隔几次迭代运行一次。</p>
+<p>自从TF将op剖离之后，所有的策略都依赖于节点来实现，Variable利用节点实现，状态保存也用节点实现。感觉还是很不一样的。<br>一个节点出了错误，要停掉整个图的计算，我觉得这样的恢复模式会不会代价太大？</p>
+<h2 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h2><h3 id="Gradient-Computation-梯度计算"><a href="#Gradient-Computation-梯度计算" class="headerlink" title="Gradient Computation(梯度计算)"></a>Gradient Computation(梯度计算)</h3><p>连接式的机器学习算法往往需要使用梯度下降法来求取参数，TF通过扩展图的方式实现了自动求导，TF做法如下：</p>
+<p>对于每张计算图，得到从输入I到输出C的路径，并从C到I回溯，回溯过程中对于路径上的每个节点A，添加另一个节点来计算A’来计算偏导，在计算偏导的过程中，A’不仅仅将上一层传下来的反向导数作为输入，还可能将A的输入和输出也作为其输入。</p>
+<p><img src="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/6.png" alt=""></p>
+<p>在执行前向计算的时候，启发式的优化算法通过观察图中的节点的计算顺序，来决定哪种操作放在哪个节点上，从而帮助用户来内存重用；当启发式的算法无效的时候，用户还可以通过添加控制依赖来自行实现内存上的优化。</p>
+<p>而当反向传播加入的时候，事情变得有点复杂，在正向计算中较前位置的计算数据在反向传播的后期会被经常用到。这就需要把这些数据存在内存中，从而整个图的内存都将被占用，使得本来就少的GPU内存更加的捉襟见肘。</p>
+<p>有三种方法来对其进行优化：</p>
+<p>更加复杂的启发式算法来决定图的计算顺序<br>重新计算这些向量而不是保存下来<br>将长期在GPU内存中的tensor转移到CPU内存中</p>
+<h3 id="Partial-Execution-局部执行"><a href="#Partial-Execution-局部执行" class="headerlink" title="Partial Execution(局部执行)"></a>Partial Execution(局部执行)</h3><p>TF支持部分执行，对于多输出的TF图，可能用户只想获取一个输出，此时可以指定需要的输入(feed)和输出(fetch)值。然后TF会自动计算该输出的依赖，然后只计算必要的部分。</p>
+<p><img src="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/7.png" alt=""></p>
+<p>如上图所示，指定b为输入，f为输出，那么此时d、e是不会被计算的。</p>
+<h3 id="Control-Flow-控制流"><a href="#Control-Flow-控制流" class="headerlink" title="Control Flow(控制流)"></a>Control Flow(控制流)</h3><p>虽然TF的图已经有了很强的表达能力，但还不够，还需要控制流的表达，比如已经实现的Switch、Merge、Enter、Leave和NextIteration等一系列控制算子。</p>
+<p>TF使用和MIT Token-Tagged machine相似的表示系统，将循环的每次迭代标记为一个tag，迭代的执行状态标记为一个frame，但迭代所需的数据准备好的时候，就可以开始计算，从而多个迭代可以同时执行。</p>
+<p>对于分布式系统来说，控制循环的状态是一个大问题。而TF使用图重写的方式来实现它，在图切分的时候，添加一个小的状态机来监控迭代的开始和结束，</p>
+<p>而对于有梯度计算的图来说，在有控制流的情况下，需要记录各种状态，比如对于if算子，需要记录哪个分支被运行了；而对于循环，需要记录循环了几次。TF仍然使用图重写来实现记录状态的功能，细节不赘述了。</p>
+<h3 id="Input-Operations-输入操作"><a href="#Input-Operations-输入操作" class="headerlink" title="Input Operations(输入操作)"></a>Input Operations(输入操作)</h3><p>为Input也构建了一个Node，来管理数据从硬盘到内存的过程。往往需要提前将数据读入进来以减少内存瓶颈。</p>
+<h3 id="Queues-队列"><a href="#Queues-队列" class="headerlink" title="Queues(队列)"></a>Queues(队列)</h3><p>TF实现了一个队列来支持异步操作，EnQueue可以阻塞直到队列中的空间足够；DeQueue也可以阻塞直到队列中一系列的要求得到满足。</p>
+<p>队列有两个典型应用：</p>
+<p>读入数据，数据在队列中，这样可以达到数据处理和数据载入的并行<br>梯度的累加，让梯度存储在队列中，直到队列中的梯度积累到一定的数值，这样可以达到多个mini-batch组成一个大的batch<br>句子的聚合，对LSTM中的输入句子按长度来进行聚合，统一计算以提高效率。<br>除了FIFO队列外，TF还实现了一个shuffle队列。</p>
+<h3 id="Containers-容器"><a href="#Containers-容器" class="headerlink" title="Containers(容器)"></a>Containers(容器)</h3><p>普通的Cotainer可以长期的存储可变状态，但Container不止于此，用Container，甚至不同的会话中的图之间也可以通过Container来共享状态。</p>
+<h3 id="Optimizaiton"><a href="#Optimizaiton" class="headerlink" title="Optimizaiton"></a>Optimizaiton</h3><p>TF给了用户以极其易用的接口，这就需要底层来自动的做很多优化。</p>
+<h3 id="Common-Subexpression-Elimination"><a href="#Common-Subexpression-Elimination" class="headerlink" title="Common Subexpression Elimination"></a>Common Subexpression Elimination</h3><p>用户给出的图定义中可能会存在重复的计算操作，TF使用Click（原始论文参考文献12）中的算法来进行图的重复表达式的删减</p>
+<h3 id="Controlling-Data-Combination-and-Memory-Usage"><a href="#Controlling-Data-Combination-and-Memory-Usage" class="headerlink" title="Controlling Data Combination and Memory Usage"></a>Controlling Data Combination and Memory Usage</h3><p>对于复杂的网络模型，GPU是必须的；而对于GPU来说，它的内存是不足的，因而要用良好的管理来提高GPU内存的使用效率。</p>
+<p>在这一点上，TF主要关注数据的网络传输，这主要集中在Recv节点何时去远程读取数据，TF会自动分析图上的关键路径，通过设置依赖的方式来使得非关键路径上的数据传输如何不影响关键路径。</p>
+<h3 id="Asynchronous-Kernels"><a href="#Asynchronous-Kernels" class="headerlink" title="Asynchronous Kernels"></a>Asynchronous Kernels</h3><p>异步核在执行后立即返回，同时会执行一个回调函数。这样，可以防止等待计算完成的同时眼看着没有做的IO任务也不做。即异步核也可以提升并行能力。异步核的典型样例就是Recv节点和Enqueue和Dequeue操作。</p>
+<h3 id="Optimized-Libraries-for-Kernel-Implementations"><a href="#Optimized-Libraries-for-Kernel-Implementations" class="headerlink" title="Optimized Libraries for Kernel Implementations"></a>Optimized Libraries for Kernel Implementations</h3><p>对于已经存在的线性代数库自然是要利用的，但TF团队对一些库还扩展了其对任意维度的tensor的支持。</p>
+<p>常见的线性计算库包括：</p>
+<p>BLAS、cuBLAS，在很多设备上都优化了矩阵乘法<br>cuda-convnet、CuDNN，在GPU上优化</p>
+<h3 id="Lossy-Compression"><a href="#Lossy-Compression" class="headerlink" title="Lossy Compression"></a>Lossy Compression</h3><p>在数据传输过程中，为了加快传输效率，往往需要对精度进行压缩。在TF中，传输之前将32bit的float转变为16float，在传输完之后再转回来，转回来时用0补齐。</p>
+<h3 id="Common-Programming-Idioms"><a href="#Common-Programming-Idioms" class="headerlink" title="Common Programming Idioms"></a>Common Programming Idioms</h3><p>上面讲的都是一些系统级别的优化，还有一些机器学习算法所用到的技巧。这里假定用户都用SGD来求解机器学习算法。</p>
+<h3 id="Data-Parallel-Training"><a href="#Data-Parallel-Training" class="headerlink" title="Data Parallel Training"></a>Data Parallel Training</h3><p>通过数据并行的方式来提升SGD的效率，比如，假如每次SGD的mini-batch是1000个样本，那么，切成10份，每份100个，然后将模型复制10份，每份都将梯度传到参数服务器上。</p>
+<p>数据切分也分为同步和异步两种方式，同步的切分是等待每个独立的model传上来的梯度都到齐后再进行更新，这样和一个大的batch没有区别。异步的切分则是不用等待，每个独立的模型的参数更新直接更新。</p>
+<p>如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/8.png" alt=""></p>
+<h3 id="Model-Parallel-Training"><a href="#Model-Parallel-Training" class="headerlink" title="Model Parallel Training"></a>Model Parallel Training</h3><p>还可以对模型进行切分，让模型的不同部分执行在不同的设备上，这样可以一个迭代的样本可以在不同的设备上同时执行。如下图所示的LSTM模型：</p>
+<p><img src="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/9.png" alt=""></p>
+<h3 id="Concurrent-Steps-for-Model-Computation-PipeLine"><a href="#Concurrent-Steps-for-Model-Computation-PipeLine" class="headerlink" title="Concurrent Steps for Model Computation PipeLine"></a>Concurrent Steps for Model Computation PipeLine</h3><p>为了充分利用同一台设备的计算能力，TF会尽量让相邻的计算在同一台设备上，这样可以节省网络开销，比如对于模型并行来说，如果放在同一个设备上，如下图所示：</p>
+<p><img src="https://raw.githubusercontent.com/stdcoutzyx/Blogs/master/blogs2016/imgs_tensorflow/10.png" alt=""></p>
+<p>我个人觉得这是TF区分与Parameter Server的一个大区别，对于TF来说，计算节点是分离的，参数也是分离的，因而其PS也是分离的。每个设备上可能分配了计算节点，然后其对应的ps也在该设备上。因而，传统的PS中，计算和参数是分开的，但计算和参数他们分别是在一起的；而TF中，计算本身是分离的，参数也是分离的，而计算和参数是在一起的。</p>
+<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><p>TF出现之前，已经有很多的类似的平台了。</p>
+<p>Theano<br>Torch<br>Caffe<br>Chainer<br>Computational Network</p>
+<p>可以这么说，TF从他们每一个中都吸取了一些feature和设计思想。根据进化论的观点，我不能说TF要优于他们，而要说，TF更能适应当前的需求。在之前写Parameter Server的时候我就隐隐的感觉到，一种设计的产生是和它的需求紧紧相关的，TF的设计可能会有很多人想到，但TF却只能由google设计和实现，因为需求。而TF的产生也是google大一统移动和PC和Server的战略需求。</p>
+<p>TF的易用性、跨平台能力是其功能亮点，而其可扩展性和高效性则是其根基。不知TF一出，下一代的平台会是什么样子？ 还是说平台的演化是否到此就像android和iOS那样已经比较成熟了？</p>
+<p>而我更感兴趣的其实是，对于这样一个大的平台，大哥是怎么调试的呢？ 恐怕这是程序员的能力所在。扯远了。</p>
+<p>TF与其他平台的区别于联系：</p>
+<p>支持符号推导，如Theano和Chainer<br>使用C++写内核，从而跨平台部署很方便，如Caffe，<br>支持跨设备计算，让用户高层表达模型，如Adam和Distbelief，但比Adam和DistBelief优越的是，更有弹性，支持更多的模型。<br>相对于Adam、DistBelief和Parameter Server，TF把参数节点化，更新操作也是图中的一个节点。而Adam等三个会有一个独立的Parameter Server。<br>Halide拥有和TF相似的中间表达但却有更高级的语义表示，在并行方面优化的更多，但却是单机的，TF有意向向此方向发展，将Halide的东西添加到TF中来。<br>其他还有很多像TF那样支持数据流图的分布式平台，比如：</p>
+<p>Dryad、Flume、CIEL（数据流调度算法从此借鉴而来）<br>Naind（分布式架构非常像）<br>Spark、Naind（在内存足够的情况下，TF和他们一样运行的很好）<br>Dandelion（跨设备）<br>TF的迭代是混合的方法：多个数据流但却一次执行，同时共享状态。多个数据流通过变量来共享，或使用图中的同步机制，比如队列。TF还支持图内的迭代，这是CIEL和Naiad的混合，简单来说，像CIEL一样每个节点只有当准备好之后才会启动；但为了效率整张图则表示为一个静态的循环的图，像Naiad一样。<br>TF内的迭代似乎是很重要的一个点，但论文中含糊不清，想必机器学习算法中的控制流都是很纠结的。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1]. Abadi M, Agarwal A, Barham P, et al. Tensorflow: Large-scale machine learning on heterogeneous distributed systems[J]. arXiv preprint arXiv:1603.04467, 2016.</p>
+<h1 id="TensorFlow技术解析与实战"><a href="#TensorFlow技术解析与实战" class="headerlink" title="TensorFlow技术解析与实战"></a><a href="https://book.douban.com/subject/27055214/" target="_blank" rel="external">TensorFlow技术解析与实战</a></h1><p><img src="http://p53s4d2qk.bkt.clouddn.com/s29475322.jpg?imageMogr2/thumbnail/!75p" alt="s29475322.jpg"></p>
+<p>作者: 李嘉璇<br>出版社: 人民邮电出版社<br>出版年: 2017-6-1<br>页数: 316<br>定价: 79.00元<br>装帧: 平装<br>ISBN: 9787115456137</p>
+<h2 id="内容简介"><a href="#内容简介" class="headerlink" title="内容简介"></a>内容简介</h2><p>TensorFlow 是谷歌公司开发的深度学习框架，也是目前深度学习的主流框架之一。本书从深度学习的基础讲起，深入TensorFlow框架原理、模型构建、源代码分析和网络实现等各个方面。全书分为基础篇、实战篇和提高篇三部分。基础篇讲解人工智能的入门知识，深度学习的方法，TensorFlow的基础原理、系统架构、设计理念、编程模型、常用API、批标准化、模型的存储与加载、队列与线程，实现一个自定义操作，并进行TensorFlow源代码解析，介绍卷积神经网络（CNN）和循环神经网络（RNN）的演化发展及其TensorFlow实现、TensorFlow的高级框架等知识；实战篇讲解如何用TensorFlow写一个神经网络程序并介绍TensorFlow实现各种网络（CNN、RNN和自编码网络等）并对MNIST数据集进行训练，讲解TensorFlow在人脸识别、自然语言处理、图像和语音的结合、生成式对抗网络等方面的应用；提高篇讲解TensorFlow的分布式原理、架构、模式、API，还会介绍TensorFlow XLA、TensorFlow Debugger、TensorFlow和Kubernetes结合、TensorFlowOnSpark、TensorFlow移动端应用，以及TensorFlow Serving、TensorFlow Fold和TensorFlow计算加速等其他特性。最后，附录中列出一些可供参考的公开数据集，并结合作者的项目经验介绍项目管理的一些建议。</p>
+<h2 id="作者简介"><a href="#作者简介" class="headerlink" title="作者简介"></a>作者简介</h2><p>李嘉璇，创建TensorFlow交流社区，活跃于国内各大技术社区，知乎编程问题回答者。致力于人工智能的研究，对深度学习框架的架构、源码分析及在不同领域的应用有浓厚兴趣。有过上百篇论文阅读和深度学习经验，处理图像、社交文本数据情感分析、数据挖掘经验，参与过基于深度学习的自动驾驶二维感知系统Hackathon竞赛，曾任职百度研发工程师。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>第一篇　基础篇<br>第1章　人工智能概述 2<br>1.1　什么是人工智能 2<br>1.2　什么是深度学习 5<br>1.3　深度学习的入门方法 7<br>1.4　什么是TensorFlow 11<br>1.5　为什么要学TensorFlow 12<br>1.5.1　TensorFlow的特性 14<br>1.5.2　使用TensorFlow的公司 15<br>1.5.3　TensorFlow的发展 16<br>1.6　机器学习的相关赛事 16<br>1.6.1　ImageNet的ILSVRC 17<br>1.6.2　Kaggle 18<br>1.6.3　天池大数据竞赛 19<br>1.7　国内的人工智能公司 20<br>1.8　小结 22<br>第2章　TensorFlow环境的准备 23<br>2.1　下载TensorFlow 1.1.0 23<br>2.2　基于pip的安装 23<br>2.2.1　Mac OS环境准备 24<br>2.2.2　Ubuntu/Linux环境准备 25<br>2.2.3　Windows环境准备 25<br>2.3　基于Java的安装 28<br>2.4　从源代码安装 29<br>2.5　依赖的其他模块 30<br>2.5.1　numpy 30<br>2.5.2　matplotlib 31<br>2.5.3　jupyter 31<br>2.5.4　scikit-image 32<br>2.5.5　librosa 32<br>2.5.6　nltk 32<br>2.5.7　keras 33<br>2.5.8　tflearn 33<br>2.6　小结 33<br>第3章　可视化TensorFlow 34<br>3.1　PlayGround 34<br>3.1.1　数据 35<br>3.1.2　特征 36<br>3.1.3　隐藏层 36<br>3.1.4　输出 37<br>3.2　TensorBoard 39<br>3.2.1　SCALARS面板 40<br>3.2.2　IMAGES面板 41<br>3.2.3　AUDIO面板 42<br>3.2.4　GRAPHS面板 42<br>3.2.5　DISTRIBUTIONS面板 43<br>3.2.6　HISTOGRAMS面板 43<br>3.2.7　EMBEDDINGS面板 44<br>3.3　可视化的例子 44<br>3.3.1　降维分析 44<br>3.3.2　嵌入投影仪 48<br>3.4　小结 51<br>第4章　TensorFlow基础知识 52<br>4.1　系统架构 52<br>4.2　设计理念 53<br>4.3　编程模型 54<br>4.3.1　边 56<br>4.3.2　节点 57<br>4.3.3　其他概念 57<br>4.4　常用API 60<br>4.4.1　图、操作和张量 60<br>4.4.2　可视化 61<br>4.5　变量作用域 62<br>4.5.1　variable_scope示例 62<br>4.5.2　name_scope示例 64<br>4.6　批标准化 64<br>4.6.1　方法 65<br>4.6.2　优点 65<br>4.6.3　示例 65<br>4.7　神经元函数及优化方法 66<br>4.7.1　激活函数 66<br>4.7.2　卷积函数 69<br>4.7.3　池化函数 72<br>4.7.4　分类函数 73<br>4.7.5　优化方法 74<br>4.8　模型的存储与加载 79<br>4.8.1　模型的存储与加载 79<br>4.8.2　图的存储与加载 82<br>4.9　队列和线程 82<br>4.9.1　队列 82<br>4.9.2　队列管理器 85<br>4.9.3　线程和协调器 86<br>4.10　加载数据 87<br>4.10.1　预加载数据 87<br>4.10.2　填充数据 87<br>4.10.3　从文件读取数据 88<br>4.11　实现一个自定义操作 92<br>4.11.1　步骤 92<br>4.11.2　最佳实践 93<br>4.12　小结 101<br>第5章　TensorFlow源代码解析 102<br>5.1　TensorFlow的目录结构 102<br>5.1.1　contirb 103<br>5.1.2　core 104<br>5.1.3　examples 105<br>5.1.4　g3doc 105<br>5.1.5　python 105<br>5.1.6　tensorboard 105<br>5.2　TensorFlow源代码的学习方法 106<br>5.3　小结 108<br>第6章　神经网络的发展及其TensorFlow实现 109<br>6.1　卷积神经网络 109<br>6.2　卷积神经网络发展 110<br>6.2.1　网络加深 111<br>6.2.2　增强卷积层的功能 115<br>6.2.3　从分类任务到检测任务 120<br>6.2.4　增加新的功能模块 121<br>6.3　MNIST的AlexNet实现 121<br>6.3.1　加载数据 121<br>6.3.2　构建网络模型 122<br>6.3.3　训练模型和评估模型 124<br>6.4　循环神经网络 125<br>6.5　循环神经网络发展 126<br>6.5.1　增强隐藏层的功能 127<br>6.5.2　双向化及加深网络 129<br>6.6　TensorFlow Model Zoo 131<br>6.7　其他研究进展 131<br>6.7.1　强化学习 132<br>6.7.2　深度森林 132<br>6.7.3　深度学习与艺术 132<br>6.8　小结 133<br>第7章　TensorFlow的高级框架 134<br>7.1　TFLearn 134<br>7.1.1　加载数据 134<br>7.1.2　构建网络模型 135<br>7.1.3　训练模型 135<br>7.2　Keras 135<br>7.2.1　Keras的优点 136<br>7.2.2　Keras的模型 136<br>7.2.3　Keras的使用 137<br>7.3　小结 141<br>第二篇　实战篇<br>第8章　第一个TensorFlow程序 144<br>8.1　TensorFlow的运行方式 144<br>8.1.1　生成及加载数据 144<br>8.1.2　构建网络模型 145<br>8.1.3　训练模型 145<br>8.2　超参数的设定 146<br>8.3　小结 147<br>第9章　TensorFlow在MNIST中的应用 148<br>9.1　MNIST数据集简介 148<br>9.1.1　训练集的标记文件 148<br>9.1.2　训练集的图片文件 149<br>9.1.3　测试集的标记文件 149<br>9.1.4　测试集的图片文件 150<br>9.2　MNIST的分类问题 150<br>9.2.1　加载数据 150<br>9.2.2　构建回归模型 151<br>9.2.3　训练模型 151<br>9.2.4　评估模型 152<br>9.3　训练过程的可视化 152<br>9.4　MNIST的卷积神经网络 156<br>9.4.1　加载数据 157<br>9.4.2　构建模型 157<br>9.4.3　训练模型和评估模型 159<br>9.5　MNIST的循环神经网络 161<br>9.5.1　加载数据 161<br>9.5.2　构建模型 161<br>9.5.3 训练数据及评估模型 163<br>9.6　MNIST的无监督学习 164<br>9.6.1　自编码网络 164<br>9.6.2　TensorFlow的自编码网络实现 165<br>9.7　小结 169<br>第10章　人脸识别 170<br>10.1　人脸识别简介 170<br>10.2　人脸识别的技术流程 171<br>10.2.1　人脸图像采集及检测 171<br>10.2.2　人脸图像预处理 171<br>10.2.3　人脸图像特征提取 171<br>10.2.4　人脸图像匹配与识别 172<br>10.3　人脸识别的分类 172<br>10.3.1　人脸检测 172<br>10.3.2　人脸关键点检测 173<br>10.3.3　人脸验证 174<br>10.3.4　人脸属性检测 174<br>10.4　人脸检测 175<br>10.4.1　LFW数据集 175<br>10.4.2　数据预处理 175<br>10.4.3　进行检测 176<br>10.5　性别和年龄识别 178<br>10.5.1　数据预处理 179<br>10.5.2　构建模型 181<br>10.5.3　训练模型 182<br>10.5.4　验证模型 184<br>10.6　小结 185<br>第11章　自然语言处理 186<br>11.1　模型的选择 186<br>11.2　英文数字语音识别 187<br>11.2.1　定义输入数据并预处理数据 188<br>11.2.2　定义网络模型 188<br>11.2.3　训练模型 188<br>11.2.4　预测模型 189<br>11.3　智能聊天机器人 189<br>11.3.1　原理 190<br>11.3.2　最佳实践 191<br>11.4　小结 200<br>第12章　图像与语音的结合 201<br>12.1　看图说话模型 201<br>12.1.1　原理 202<br>12.1.2　最佳实践 203<br>12.2　小结 205<br>第13章　生成式对抗网络 206<br>13.1　生成式对抗网络的原理 206<br>13.2　生成式对抗网络的应用 207<br>13.3　生成式对抗网络的实现 208<br>13.4　生成式对抗网络的改进 214<br>13.5　小结 214<br>第三篇　提高篇<br>第14章　分布式TensorFlow 216<br>14.1　分布式原理 216<br>14.1.1　单机多卡和分布式 216<br>14.1.2　分布式部署方式 217<br>14.2　分布式架构 218<br>14.2.1　客户端、主节点和工作节点的关系 218<br>14.2.2　客户端、主节点和工作节点的交互过程 220<br>14.3　分布式模式 221<br>14.3.1　数据并行 221<br>14.3.2　同步更新和异步更新 222<br>14.3.3　模型并行 224<br>14.4　分布式API 225<br>14.5　分布式训练代码框架 226<br>14.6　分布式最佳实践 227<br>14.7　小结 235<br>第15章　TensorFlow线性代数编译框架XLA 236<br>15.1　XLA的优势 236<br>15.2　XLA的工作原理 237<br>15.3　JIT编译方式 238<br>15.3.1　打开JIT编译 238<br>15.3.2　将操作符放在XLA设备上 238<br>15.4　JIT编译在MNIST上的实现 239<br>15.5　小结 240<br>第16章　TensorFlow Debugger 241<br>16.1　Debugger的使用示例 241<br>16.2　远程调试方法 245<br>16.3　小结 245<br>第17章　TensorFlow和Kubernetes结合 246<br>17.1　为什么需要Kubernetes 246<br>17.2　分布式TensorFlow在Kubernetes中的运行 247<br>17.2.1　部署及运行 247<br>17.2.2　其他应用 253<br>17.3　小结 254<br>第18章　TensorFlowOnSpark 255<br>18.1　TensorFlowOnSpark的架构 255<br>18.2　TensorFlowOnSpark在MNIST上的实践 257<br>18.3　小结 261<br>第19章　TensorFlow移动端应用 262<br>19.1　移动端应用原理 262<br>19.1.1　量化 263<br>19.1.2　优化矩阵乘法运算 266<br>19.2　iOS系统实践 266<br>19.2.1　环境准备 266<br>19.2.2　编译演示程序并运行 267<br>19.2.3　自定义模型的编译及运行 269<br>19.3　Android系统实践 273<br>19.3.1　环境准备 274<br>19.3.2　编译演示程序并运行 275<br>19.3.3　自定义模型的编译及运行 277<br>19.4　树莓派实践 278<br>19.5　小结 278<br>第20章　TensorFlow的其他特性 279<br>20.1　TensorFlow Serving 279<br>20.2　TensorFlow Flod 280<br>20.3　TensorFlow计算加速 281<br>20.3.1　CPU加速 281<br>20.3.2　TPU加速和FPGA加速 282<br>20.4　小结 283<br>第21章　机器学习的评测体系 284<br>21.1　人脸识别的性能指标 284<br>21.2　聊天机器人的性能指标 284<br>21.3　机器翻译的评价方法 286<br>21.3.1　BLEU 286<br>21.3.2　METEOR 287<br>21.4　常用的通用评价指标 287<br>21.4.1　ROC和AUC 288<br>21.4.2　AP和mAP 288<br>21.5　小结 288<br>附录A　公开数据集 289<br>附录B　项目管理经验小谈 292</p>
+<h1 id="TensorFlow：实战Google深度学习框架（第2版）"><a href="#TensorFlow：实战Google深度学习框架（第2版）" class="headerlink" title="TensorFlow：实战Google深度学习框架（第2版）"></a><a href="https://book.douban.com/subject/30137062/" target="_blank" rel="external">TensorFlow：实战Google深度学习框架（第2版）</a></h1><p><img src="http://p53s4d2qk.bkt.clouddn.com/s29683030.jpg?imageMogr2/thumbnail/!75p" alt="s29683030.jpg"></p>
+<p>作者: 顾思宇 / 梁博文 / 郑泽宇<br>出版社: 电子工业出版社<br>出版年: 2018-2-1<br>页数: 364<br>定价: 89<br>装帧: 平装<br>丛书: 博文视点AI系列<br>ISBN: 9787121330667</p>
+<h2 id="内容简介-1"><a href="#内容简介-1" class="headerlink" title="内容简介"></a>内容简介</h2><p>TensorFlow是谷歌2015年开源的主流深度学习框架，目前已得到广泛应用。《TensorFlow：实战Google深度学习框架（第2版）》为TensorFlow入门参考书，旨在帮助读者以快速、有效的方式上手TensorFlow和深度学习。书中省略了烦琐的数学模型推导，从实际应用问题出发，通过具体的TensorFlow示例介绍如何使用深度学习解决实际问题。书中包含深度学习的入门知识和大量实践经验，是走进这个前沿、热门的人工智能领域的优选参考书。</p>
+<p>第2版将书中所有示例代码从TensorFlow 0.9.0升级到了TensorFlow 1.4.0。在升级API的同时，第2版也补充了更多只有TensorFlow 1.4.0才支持的功能。另外，第2版还新增两章分别介绍TensorFlow高层封装和深度学习在自然语言领域应用的内容。</p>
+<p>《TensorFlow：实战Google深度学习框架（第2版）》适用于想要使用深度学习或TensorFlow的数据科学家、工程师，希望了解深度学习的大数据平台工程师，对人工智能、深度学习感兴趣的计算机相关从业人员及在校学生等。</p>
+<h2 id="作者简介-1"><a href="#作者简介-1" class="headerlink" title="作者简介"></a>作者简介</h2><p>郑泽宇，2011年获北京大学计算机学士学位，2013年获卡内基梅隆大学计算机硕士学位，前谷歌高级工程师，现为才云科技(Caicloud.io)联合创始人、首席大数据科学家。针对分布式TensorFlow上手难、管理难、监控难、上线难等问题，带领团队成功开发国内成熟的分布式TensorFlow深度学习平台，在机器学习、人工智能领域有着丰富的经验。</p>
+<p>梁博文，谷歌工程师。2011年获北京大学计算机学士学位，2013年获哥伦比亚大学计算机硕士学位，同年加入谷歌翻译组，参与并领导了多个项目，负责了3个语言的翻译模型的研发工作，在自然语言处理方面有丰富经验，在统计翻译模型、神经网络翻译模型、语料数据清洗等方面均有深入研究。</p>
+<h2 id="目录-1"><a href="#目录-1" class="headerlink" title="目录"></a>目录</h2><p>第1章 深度学习简介<br>1.1 人工智能、机器学习与深度学习<br>1.2 深度学习的发展历程<br>1.3 深度学习的应用<br>1.3.1 计算机视觉<br>1.3.2 语音识别<br>1.3.3 自然语言处理<br>1.3.4 人机博弈<br>1.4 深度学习工具介绍和对比<br>小结<br>第2章 TensorFlow环境搭建<br>2.1 TensorFlow的主要依赖包<br>2.1.1 Protocol Buffer<br>2.1.2 Bazel<br>2.2 TensorFlow安装<br>2.2.1 使用Docker安装<br>2.2.2 使用pip安装<br>2.2.3 从源代码编译安装<br>2.3 TensorFlow测试样例<br>小结<br>第3章 TensorFlow入门<br>3.1 TensorFlow计算模型——计算图<br>3.1.1 计算图的概念<br>3.1.2 计算图的使用<br>3.2 TensorFlow数据模型——张量<br>3.2.1 张量的概念<br>3.2.2 张量的使用<br>3.3 TensorFlow运行模型——会话<br>3.4 TensorFlow实现神经网络<br>3.4.1 TensorFlow游乐场及神经网络简介<br>3.4.2 前向传播算法简介<br>3.4.3 神经网络参数与TensorFlow变量<br>3.4.4 通过TensorFlow训练神经网络模型<br>3.4.5 完整神经网络样例程序<br>小结<br>第4章 深层神经网络<br>4.1 深度学习与深层神经网络<br>4.1.1 线性模型的局限性<br>4.1.2 激活函数实现去线性化<br>4.1.3 多层网络解决异或运算<br>4.2 损失函数定义<br>4.2.1 经典损失函数<br>4.2.2 自定义损失函数<br>4.3 神经网络优化算法<br>4.4 神经网络进一步优化<br>4.4.1 学习率的设置<br>4.4.2 过拟合问题<br>4.4.3 滑动平均模型<br>小结<br>第5章 MNIST数字识别问题<br>5.1 MNIST数据处理<br>5.2 神经网络模型训练及不同模型结果对比<br>5.2.1 TensorFlow训练神经网络<br>5.2.2 使用验证数据集判断模型效果<br>5.2.3 不同模型效果比较<br>5.3 变量管理<br>5.4 TensorFlow模型持久化<br>5.4.1 持久化代码实现<br>5.4.2 持久化原理及数据格式<br>5.5 TensorFlow最佳实践样例程序<br>小结<br>第6章 图像识别与卷积神经网络<br>6.1 图像识别问题简介及经典数据集<br>6.2 卷积神经网络简介<br>6.3 卷积神经网络常用结构<br>6.3.1 卷积层<br>6.3.2 池化层<br>6.4 经典卷积网络模型<br>6.4.1 LeNet-5模型<br>6.4.2 Inception-v3模型<br>6.5 卷积神经网络迁移学习<br>6.5.1 迁移学习介绍<br>6.5.2 TensorFlow实现迁移学习<br>小结<br>第7章 图像数据处理<br>7.1 TFRecord输入数据格式<br>7.1.1 TFRecord格式介绍<br>7.1.2 TFRecord样例程序<br>7.2 图像数据处理<br>7.2.1 TensorFlow图像处理函数<br>7.2.2 图像预处理完整样例<br>7.3 多线程输入数据处理框架<br>7.3.1 队列与多线程<br>7.3.2 输入文件队列<br>7.3.3 组合训练数据（batching）<br>7.3.4 输入数据处理框架<br>7.4 数据集（Dataset）<br>7.4.1 数据集的基本使用方法<br>7.4.2 数据集的高层操作<br>小结<br>第8章 循环神经网络<br>8.1 循环神经网络简介<br>8.2 长短时记忆网络（LSTM）结构<br>8.3 循环神经网络的变种<br>8.3.1 双向循环神经网络和深层循环神经网络<br>8.3.2 循环神经网络的dropout<br>8.4 循环神经网络样例应用<br>小结<br>第9章 自然语言处理<br>9.1 语言模型的背景知识<br>9.1.1 语言模型简介<br>9.1.2 语言模型的评价方法<br>9.2 神经语言模型<br>9.2.1 PTB数据集的预处理<br>9.2.2 PTB数据的batching方法<br>9.2.3 基于循环神经网络的神经语言模型<br>9.3 神经网络机器翻译<br>9.3.1 机器翻译背景与Seq2Seq模型介绍<br>9.3.2 机器翻译文本数据的预处理<br>9.3.3 Seq2Seq模型的代码实现<br>9.3.4 注意力机制<br>小结<br>第10章 TensorFlow高层封装<br>10.1 TensorFlow高层封装总览<br>10.2 Keras介绍<br>10.2.1 Keras基本用法<br>10.2.2 Keras高级用法<br>10.3 Estimator介绍<br>10.3.1 Estimator基本用法<br>10.3.2 Estimator自定义模型<br>10.3.3 使用数据集（Dataset）作为Estimator输入<br>小结<br>第11章 TensorBoard可视化<br>11.1 TensorBoard简介<br>11.2 TensorFlow计算图可视化<br>11.2.1 命名空间与TensorBoard图上节点<br>11.2.2 节点信息<br>11.3 监控指标可视化<br>11.4 高维向量可视化<br>小结<br>第12章 TensorFlow计算加速<br>12.1 TensorFlow使用GPU<br>12.2 深度学习训练并行模式<br>12.3 多GPU并行<br>12.4 分布式TensorFlow<br>12.4.1 分布式TensorFlow原理<br>12.4.2 分布式TensorFlow模型训练<br>小结</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Tensorflow/" rel="tag"># Tensorflow</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/05/Technology/Car Industry/BYD/" rel="next" title="BYD">
+                <i class="fa fa-chevron-left"></i> BYD
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/16/Technology/AI/Basic Concept/derivative/" rel="prev" title="Derivative">
+                Derivative <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="hypercomments_widget"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/headonhill.jpg"
+                alt="IPCreator" />
+            
+              <p class="site-author-name" itemprop="name">IPCreator</p>
+              <p class="site-description motion-element" itemprop="description">For life, Keep Growing Up is the only Password.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">953</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1093</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/aiseeme" target="_blank" title="github">
+                    
+                      <i class="fa fa-fw fa-globe"></i>github</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/zhuxuanlvzxl/home?wvr=5&lf=reg" target="_blank" title="weibo">
+                    
+                      <i class="fa fa-fw fa-globe"></i>weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.163.com/zhuxuanlv@126/" target="_blank" title="blog">
+                    
+                      <i class="fa fa-fw fa-globe"></i>blog</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://book.douban.com/subject/27078435/" title="transition" target="_blank">transition</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://h5.sao.cn/product/detail?alias=onhnfsdtybxb" title="leading to freedom of wealth" target="_blank">leading to freedom of wealth</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhibimo.com/read/xiaolai/ba-shi-jian-dang-zuo-peng-you/index.html" title="take time as a friend" target="_blank">take time as a friend</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhibimo.com/read/xiaolai/reborn-every-7-years/" title="reborn every 7 years" target="_blank">reborn every 7 years</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tensorflow架构"><span class="nav-number">1.</span> <span class="nav-text">tensorflow架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Concepts"><span class="nav-number">1.1.</span> <span class="nav-text">Basic Concepts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#张量-Tensor"><span class="nav-number">1.1.1.</span> <span class="nav-text">张量(Tensor)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算子-operation"><span class="nav-number">1.1.2.</span> <span class="nav-text">算子(operation)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核-kernel"><span class="nav-number">1.1.3.</span> <span class="nav-text">核(kernel)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边-edge"><span class="nav-number">1.1.4.</span> <span class="nav-text">边(edge)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话-Session"><span class="nav-number">1.1.5.</span> <span class="nav-text">会话(Session)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量-Variables"><span class="nav-number">1.1.6.</span> <span class="nav-text">变量(Variables)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementation"><span class="nav-number">1.1.7.</span> <span class="nav-text">Implementation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Single-Device-Execution"><span class="nav-number">1.1.8.</span> <span class="nav-text">Single-Device Execution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-Device-Execution"><span class="nav-number">1.1.9.</span> <span class="nav-text">Multi-Device Execution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决定设备"><span class="nav-number">1.1.10.</span> <span class="nav-text">决定设备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨设备通信"><span class="nav-number">1.1.11.</span> <span class="nav-text">跨设备通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错误处理"><span class="nav-number">1.1.12.</span> <span class="nav-text">错误处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extensions"><span class="nav-number">1.2.</span> <span class="nav-text">Extensions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradient-Computation-梯度计算"><span class="nav-number">1.2.1.</span> <span class="nav-text">Gradient Computation(梯度计算)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Partial-Execution-局部执行"><span class="nav-number">1.2.2.</span> <span class="nav-text">Partial Execution(局部执行)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Control-Flow-控制流"><span class="nav-number">1.2.3.</span> <span class="nav-text">Control Flow(控制流)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-Operations-输入操作"><span class="nav-number">1.2.4.</span> <span class="nav-text">Input Operations(输入操作)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Queues-队列"><span class="nav-number">1.2.5.</span> <span class="nav-text">Queues(队列)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Containers-容器"><span class="nav-number">1.2.6.</span> <span class="nav-text">Containers(容器)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optimizaiton"><span class="nav-number">1.2.7.</span> <span class="nav-text">Optimizaiton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Subexpression-Elimination"><span class="nav-number">1.2.8.</span> <span class="nav-text">Common Subexpression Elimination</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Controlling-Data-Combination-and-Memory-Usage"><span class="nav-number">1.2.9.</span> <span class="nav-text">Controlling Data Combination and Memory Usage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Asynchronous-Kernels"><span class="nav-number">1.2.10.</span> <span class="nav-text">Asynchronous Kernels</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optimized-Libraries-for-Kernel-Implementations"><span class="nav-number">1.2.11.</span> <span class="nav-text">Optimized Libraries for Kernel Implementations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lossy-Compression"><span class="nav-number">1.2.12.</span> <span class="nav-text">Lossy Compression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Programming-Idioms"><span class="nav-number">1.2.13.</span> <span class="nav-text">Common Programming Idioms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Parallel-Training"><span class="nav-number">1.2.14.</span> <span class="nav-text">Data Parallel Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Parallel-Training"><span class="nav-number">1.2.15.</span> <span class="nav-text">Model Parallel Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Concurrent-Steps-for-Model-Computation-PipeLine"><span class="nav-number">1.2.16.</span> <span class="nav-text">Concurrent Steps for Model Computation PipeLine</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow技术解析与实战"><span class="nav-number">2.</span> <span class="nav-text">TensorFlow技术解析与实战</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内容简介"><span class="nav-number">2.1.</span> <span class="nav-text">内容简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作者简介"><span class="nav-number">2.2.</span> <span class="nav-text">作者简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">2.3.</span> <span class="nav-text">目录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorFlow：实战Google深度学习框架（第2版）"><span class="nav-number">3.</span> <span class="nav-text">TensorFlow：实战Google深度学习框架（第2版）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内容简介-1"><span class="nav-number">3.1.</span> <span class="nav-text">内容简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作者简介-1"><span class="nav-number">3.2.</span> <span class="nav-text">作者简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录-1"><span class="nav-number">3.3.</span> <span class="nav-text">目录</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IPCreator</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 96030, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 96030, xid: "2018/03/16/Technology/AI/TensorFlow/basic concepts of tensorflow/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/96030/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("TfzAWJSzk2L4jpj4gHaNsMbp-gzGzoHsz", "PXNkGhS05PxL7rV3N8gDlAQe");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
