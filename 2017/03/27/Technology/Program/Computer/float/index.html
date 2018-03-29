@@ -85,12 +85,12 @@
 
 
 
-<meta name="description" content="浮点数在计算机科学中，浮点（英语：floating point，缩写为FP）是一种对于实数的近似值数值表现法，由一个有效数字（即尾数）加上幂数来表示，通常是乘以某个基数的整数次指数得到。以这种表示法表示的数值，称为浮点数（floating-point number）。利用浮点进行运算，称为浮点计算，这种运算通常伴随着因为无法精确表示而进行的近似或舍入。">
+<meta name="description" content="十进制的5.0，写成二进制是101.0，相当于1.01×2^2。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Floating Point">
 <meta property="og:url" content="http://deepcreator.com/2017/03/27/Technology/Program/Computer/float/index.html">
 <meta property="og:site_name" content="For life">
-<meta property="og:description" content="浮点数在计算机科学中，浮点（英语：floating point，缩写为FP）是一种对于实数的近似值数值表现法，由一个有效数字（即尾数）加上幂数来表示，通常是乘以某个基数的整数次指数得到。以这种表示法表示的数值，称为浮点数（floating-point number）。利用浮点进行运算，称为浮点计算，这种运算通常伴随着因为无法精确表示而进行的近似或舍入。">
+<meta property="og:description" content="十进制的5.0，写成二进制是101.0，相当于1.01×2^2。">
 <meta property="og:image" content="http://ong8f1obl.bkt.clouddn.com/Float_mantissa_exponent.png">
 <meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/3cc0c417147d35e6a577cbf56c88600d17b5b9d1">
 <meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/801cf7477f2d78a751e2f9469059824a28cc9265">
@@ -126,10 +126,10 @@
 <meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image002%5B3%5D_thumb_1.gif">
 <meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image001_2.gif">
 <meta property="og:image" content="http://images.cnblogs.com/cnblogs_com/jillzhang/WindowsLiveWriter/float_A919/clip_image001_7.gif">
-<meta property="og:updated_time" content="2017-04-09T01:24:38.552Z">
+<meta property="og:updated_time" content="2018-03-29T09:14:49.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Floating Point">
-<meta name="twitter:description" content="浮点数在计算机科学中，浮点（英语：floating point，缩写为FP）是一种对于实数的近似值数值表现法，由一个有效数字（即尾数）加上幂数来表示，通常是乘以某个基数的整数次指数得到。以这种表示法表示的数值，称为浮点数（floating-point number）。利用浮点进行运算，称为浮点计算，这种运算通常伴随着因为无法精确表示而进行的近似或舍入。">
+<meta name="twitter:description" content="十进制的5.0，写成二进制是101.0，相当于1.01×2^2。">
 <meta name="twitter:image" content="http://ong8f1obl.bkt.clouddn.com/Float_mantissa_exponent.png">
 
 
@@ -477,8 +477,72 @@
 
       
         <p><img src="http://ong8f1obl.bkt.clouddn.com/Float_mantissa_exponent.png" alt=""></p>
-<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>在计算机科学中，浮点（英语：floating point，缩写为FP）是一种对于实数的近似值数值表现法，由一个有效数字（即尾数）加上幂数来表示，通常是乘以某个基数的整数次指数得到。以这种表示法表示的数值，称为浮点数（floating-point number）。利用浮点进行运算，称为浮点计算，这种运算通常伴随着因为无法精确表示而进行的近似或舍入。</p>
+<blockquote>
+<p>十进制的5.0，写成二进制是101.0，相当于1.01×2^2。</p>
+</blockquote>
 <a id="more"></a>
+<h2 id="浮点数的二进制表示"><a href="#浮点数的二进制表示" class="headerlink" title="浮点数的二进制表示"></a><a href="http://www.ruanyifeng.com/blog/2010/06/ieee_floating-point_representation.html" target="_blank" rel="external">浮点数的二进制表示</a></h2><p>作者： 阮一峰<br>日期： 2010年6月 6日</p>
+<p>1.</p>
+<p>前几天，我在读一本C语言教材，有一道例题：</p>
+<p>　　#include <stdio.h></stdio.h></p>
+<p>　　void main(void){</p>
+<p>　　　　int num=9; /<em> num是整型变量，设为9 </em>/</p>
+<p>　　　　float<em> pFloat=&num; /</em> pFloat表示num的内存地址，但是设为浮点数 */</p>
+<p>　　　　printf(“num的值为：%d\n”,num); /<em> 显示num的整型值 </em>/</p>
+<p>　　　　printf(“<em>pFloat的值为：%f\n”,</em>pFloat); /<em> 显示num的浮点值 </em>/</p>
+<p>　　　　<em>pFloat=9.0; /</em> 将num的值改为浮点数 */</p>
+<p>　　　　printf(“num的值为：%d\n”,num); /<em> 显示num的整型值 </em>/</p>
+<p>　　　　printf(“<em>pFloat的值为：%f\n”,</em>pFloat); /<em> 显示num的浮点值 </em>/</p>
+<p>　　}</p>
+<p>运行结果如下：</p>
+<p>　　num的值为：9<br>　　<em>pFloat的值为：0.000000<br>　　num的值为：1091567616
+　　</em>pFloat的值为：9.000000</p>
+<p>我很惊讶，num和*pFloat在内存中明明是同一个数，为什么浮点数和整数的解读结果会差别这么大？</p>
+<p>要理解这个结果，一定要搞懂浮点数在计算机内部的表示方法。我读了一些资料，下面就是我的笔记。</p>
+<p>2.</p>
+<p>在讨论浮点数之前，先看一下整数在计算机内部是怎样表示的。</p>
+<p>　　int num=9;</p>
+<p>上面这条命令，声明了一个整数变量，类型为int，值为9（二进制写法为1001）。普通的32位计算机，用4个字节表示int变量，所以9就被保存为00000000 00000000 00000000 00001001，写成16进制就是0x00000009。</p>
+<p>那么，我们的问题就简化成：为什么0x00000009还原成浮点数，就成了0.000000？</p>
+<p>3.</p>
+<p>根据国际标准IEEE 754，任意一个二进制浮点数V可以表示成下面的形式：</p>
+<p>　　</p>
+<p>　　（1）(-1)^s表示符号位，当s=0，V为正数；当s=1，V为负数。</p>
+<p>　　（2）M表示有效数字，大于等于1，小于2。</p>
+<p>　　（3）2^E表示指数位。</p>
+<blockquote>
+<p>举例来说，十进制的5.0，写成二进制是101.0，相当于1.01×2^2。那么，按照上面V的格式，可以得出s=0，M=1.01，E=2。</p>
+</blockquote>
+<p>十进制的-5.0，写成二进制是-101.0，相当于-1.01×2^2。那么，s=1，M=1.01，E=2。</p>
+<p>IEEE 754规定，对于32位的浮点数，最高的1位是符号位s，接着的8位是指数E，剩下的23位为有效数字M。</p>
+<p>对于64位的浮点数，最高的1位是符号位S，接着的11位是指数E，剩下的52位为有效数字M。</p>
+<p>5.</p>
+<p>IEEE 754对有效数字M和指数E，还有一些特别规定。</p>
+<blockquote>
+<p>前面说过，1≤M&lt;2，也就是说，M可以写成1.xxxxxx的形式，其中xxxxxx表示小数部分。IEEE 754规定，在计算机内部保存M时，默认这个数的第一位总是1，因此可以被舍去，只保存后面的xxxxxx部分。比如保存1.01的时候，只保存01，等到读取的时候，再把第一位的1加上去。这样做的目的，是节省1位有效数字。以32位浮点数为例，留给M只有23位，将第一位的1舍去以后，等于可以保存24位有效数字。</p>
+</blockquote>
+<p>至于指数E，情况就比较复杂。</p>
+<p>首先，E为一个无符号整数（unsigned int）。这意味着，如果E为8位，它的取值范围为0~255；如果E为11位，它的取值范围为0~2047。但是，我们知道，科学计数法中的E是可以出现负数的，所以IEEE 754规定，<strong>E的真实值必须再减去一个中间数</strong>，对于8位的E，这个中间数是127；对于11位的E，这个中间数是1023。</p>
+<p>比如，2^10的E是10，所以保存成32位浮点数时，必须保存成10+127=137，即10001001。</p>
+<p>然后，指数E还可以再分成三种情况：</p>
+<p>（1）E不全为0或不全为1。这时，浮点数就采用上面的规则表示，即指数E的计算值减去127（或1023），得到真实值，再将有效数字M前加上第一位的1。</p>
+<p>（2）E全为0。这时，浮点数的指数E等于1-127（或者1-1023），有效数字M不再加上第一位的1，而是还原为0.xxxxxx的小数。这样做是为了表示±0，以及接近于0的很小的数字。</p>
+<p>（3）E全为1。这时，如果有效数字M全为0，表示±无穷大（正负取决于符号位s）；如果有效数字M不全为0，表示这个数不是一个数（NaN）。</p>
+<p>6.</p>
+<p>好了，关于浮点数的表示规则，就说到这里。</p>
+<p>下面，让我们回到一开始的问题：为什么0x00000009还原成浮点数，就成了0.000000？</p>
+<p>首先，将0x00000009拆分，得到第一位符号位s=0，后面8位的指数E=00000000，最后23位的有效数字M=000 0000 0000 0000 0000 1001。</p>
+<p>由于指数E全为0，所以符合上一节的第二种情况。因此，浮点数V就写成：</p>
+<p>　　V=(-1)^0×0.00000000000000000001001×2^(-126)=1.001×2^(-146)</p>
+<p>显然，V是一个很小的接近于0的正数，所以用十进制小数表示就是0.000000。</p>
+<p>7.</p>
+<p>再看例题的第二部分。</p>
+<p>请问浮点数9.0，如何用二进制表示？还原成十进制又是多少？</p>
+<p>首先，浮点数9.0等于二进制的1001.0，即1.001×2^3。</p>
+<p>那么，第一位的符号位s=0，有效数字M等于001后面再加20个0，凑满23位，指数E等于3+127=130，即10000010。</p>
+<p>所以，写成二进制形式，应该是s+E+M，即0 10000010 001 0000 0000 0000 0000 0000。这个32位的二进制数，还原成十进制，正是1091567616。</p>
+<p>（完）</p>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>在计算机科学中，浮点（英语：floating point，缩写为FP）是一种对于实数的近似值数值表现法，由一个有效数字（即尾数）加上幂数来表示，通常是乘以某个基数的整数次指数得到。以这种表示法表示的数值，称为浮点数（floating-point number）。利用浮点进行运算，称为浮点计算，这种运算通常伴随着因为无法精确表示而进行的近似或舍入。</p>
 <p>这种表示方法类似于基数为10的科学记数法，在计算机上，通常使用2为基数的幂数来表示。一个浮点数a由两个数m和e来表示：a = m × b^e。在任意一个这样的系统中，我们选择一个基数b（记数系统的基）和精度p（即使用多少位来存储）。m（即尾数）是形如±d.ddd…ddd的p位数（每一位是一个介于0到b-1之间的整数，包括0和b-1）。如果m的第一位是非0整数，m称作正规化的。有一些描述使用一个单独的符号位（s 代表+或者-）来表示正负，这样m必须是正的。e是指数。</p>
 <p>这种表示法的设计，来自于对于值的表现范围，与精密度之间的取舍：可以在某个固定长度的存储空间内表示出某个实数的近似值。例如，一个指数范围为±4的4位十进制浮点数可以用来表示43210，4.321或0.0004321，但是没有足够的精度来表示432.123和43212.3（必须近似为432.1和43210）。当然，实际使用的位数通常远大于4。<br>此外，浮点数表示法通常还包括一些特别的数值：+∞和−∞（正负无穷大）以及NaN（’Not a Number’）。无穷大用于数太大而无法表示的时候，NaN则指示非法操作或者无法定义的结果。<br>其中，无穷大，可表示为inf，在内存中的值是阶码为全1，尾数全0。而NaN在内存中的值则是阶码全1，尾数不全0。</p>
 <h3 id="计算机的浮点数"><a href="#计算机的浮点数" class="headerlink" title="计算机的浮点数"></a>计算机的浮点数</h3><p>浮点指的是带有小数的数值，浮点运算即是小数的四则运算，常用来测量电脑运算速度。大部分计算机采用二进制（b=2）的表示方法。位（bit）是衡量浮点数所需存储空间的单位，通常为32位或64位，分别被叫作单精度和双精度。有一些计算机提供更大的浮点数，例如英特尔公司的浮点运算单元Intel8087协处理器（以及其被集成进x86处理器中的后代产品）提供80位长的浮点数，用于存储浮点运算的中间结果。还有一些系统提供128位的浮点数（通常用软件实现）。</p>
@@ -577,8 +641,8 @@ Console.WriteLine(d.ToString(&quot;0.0000000000000&quot;));
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/27/Technology/AI/Business/concept-of-ai/" rel="next" title="Concept of AI">
-                <i class="fa fa-chevron-left"></i> Concept of AI
+              <a href="/2017/03/27/Technology/AI/Business/concept-of-machine-learning/" rel="next" title="Machine Learning">
+                <i class="fa fa-chevron-left"></i> Machine Learning
               </a>
             
           </div>
@@ -587,8 +651,8 @@ Console.WriteLine(d.ToString(&quot;0.0000000000000&quot;));
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/27/Technology/AI/Business/concept-of-machine-learning/" rel="prev" title="Machine Learning">
-                Machine Learning <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/27/Technology/AI/Basic Concept/history-of-ai-in-china/" rel="prev" title="Forty Years History of AI in China">
+                Forty Years History of AI in China <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -681,7 +745,7 @@ Console.WriteLine(d.ToString(&quot;0.0000000000000&quot;));
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">969</span>
+                  <span class="site-state-item-count">982</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -703,7 +767,7 @@ Console.WriteLine(d.ToString(&quot;0.0000000000000&quot;));
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1118</span>
+                  <span class="site-state-item-count">1128</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -797,7 +861,7 @@ Console.WriteLine(d.ToString(&quot;0.0000000000000&quot;));
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点数"><span class="nav-number">1.</span> <span class="nav-text">浮点数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机的浮点数"><span class="nav-number">1.1.</span> <span class="nav-text">计算机的浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数的标准"><span class="nav-number">1.2.</span> <span class="nav-text">浮点数的标准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例"><span class="nav-number">1.3.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准确性"><span class="nav-number">1.4.</span> <span class="nav-text">准确性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单精度浮点数"><span class="nav-number">2.</span> <span class="nav-text">单精度浮点数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双精度浮点数"><span class="nav-number">3.</span> <span class="nav-text">双精度浮点数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">3.1.</span> <span class="nav-text">格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号"><span class="nav-number">3.2.</span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数"><span class="nav-number">3.3.</span> <span class="nav-text">指数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尾数"><span class="nav-number">3.4.</span> <span class="nav-text">尾数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">3.5.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">3.6.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机基础——信息的表示与存储"><span class="nav-number">4.</span> <span class="nav-text">计算机基础——信息的表示与存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点数在计算机中存储方式"><span class="nav-number">5.</span> <span class="nav-text">浮点数在计算机中存储方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C语言中float-double类型-在内存中的结构-存储方式"><span class="nav-number">6.</span> <span class="nav-text">C语言中float,double类型,在内存中的结构(存储方式)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点数的二进制表示"><span class="nav-number">1.</span> <span class="nav-text">浮点数的二进制表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点数"><span class="nav-number">2.</span> <span class="nav-text">浮点数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机的浮点数"><span class="nav-number">2.1.</span> <span class="nav-text">计算机的浮点数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数的标准"><span class="nav-number">2.2.</span> <span class="nav-text">浮点数的标准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例"><span class="nav-number">2.3.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准确性"><span class="nav-number">2.4.</span> <span class="nav-text">准确性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单精度浮点数"><span class="nav-number">3.</span> <span class="nav-text">单精度浮点数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双精度浮点数"><span class="nav-number">4.</span> <span class="nav-text">双精度浮点数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">4.1.</span> <span class="nav-text">格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号"><span class="nav-number">4.2.</span> <span class="nav-text">符号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数"><span class="nav-number">4.3.</span> <span class="nav-text">指数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尾数"><span class="nav-number">4.4.</span> <span class="nav-text">尾数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">4.5.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">4.6.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机基础——信息的表示与存储"><span class="nav-number">5.</span> <span class="nav-text">计算机基础——信息的表示与存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点数在计算机中存储方式"><span class="nav-number">6.</span> <span class="nav-text">浮点数在计算机中存储方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C语言中float-double类型-在内存中的结构-存储方式"><span class="nav-number">7.</span> <span class="nav-text">C语言中float,double类型,在内存中的结构(存储方式)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>

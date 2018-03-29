@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://img1.doubanio.com/lpic/s26816729.jpg">
 <meta property="og:image" content="https://img3.doubanio.com/view/page_note/large/public/p32636027-1.jpg">
 <meta property="og:image" content="https://img3.doubanio.com/view/page_note/large/public/p27895096-2.jpg">
-<meta property="og:updated_time" content="2018-02-18T08:43:05.548Z">
+<meta property="og:updated_time" content="2018-03-29T08:37:10.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Simple">
 <meta name="twitter:description" content="真正的高手善于化繁为简，直击要害——大道至简。">
@@ -456,6 +456,36 @@
 <a id="more"></a>
 <p><img src="http://opb37u589.bkt.clouddn.com/simple.jpg?imageMogr2/thumbnail/!75p" alt="simple.jpg"></p>
 <p>最简单的事情往往最难做到。因为它太简单了，以至于很多人干脆没想到。</p>
+<h2 id="关于Unix哲学"><a href="#关于Unix哲学" class="headerlink" title="关于Unix哲学"></a><a href="http://www.ruanyifeng.com/blog/2009/06/unix_philosophy.html" target="_blank" rel="external">关于Unix哲学</a></h2><p>作者： 阮一峰<br>日期： 2009年6月18日</p>
+<p>先讲两个很老的小故事。</p>
+<p>第一个故事。</p>
+<p>有一家日本最大的化妆品公司，收到了用户的投诉。用户抱怨买来的肥皂盒是空的。这家公司为了防止再发生这样的事故，很辛苦地发明了一台X光检查器，能够透视每一个出货的肥皂盒。</p>
+<p>同样的事故，发生在一家小公司。他们的解决方法是买一台强力的工业电扇，对着肥皂盒猛吹，被吹走的就是空肥皂盒。</p>
+<p>第二个故事。</p>
+<p>美国太空总署（NASA）发现在太空失重状态下，航天员无法用墨水笔写字。于是，他们花了大量经费，研发出了一种可以在失重状态下写字的太空笔。猜猜看，俄国人是怎么解决的？（答案在本文结尾处。）</p>
+<p>=====================</p>
+<p>这几天，我在看Unix，发现很多人在谈”Unix哲学”，也就是开发Unix系统的指导思想。</p>
+<p>Wikipedia上列出了好几个版本，不同的人有不同的总结。发明管道命令的Doug McIlroy总结了三条，而Eric S. Raymond则在The Art of Unix Programming一书中，一口气总结了17条（英文版，中文版）。</p>
+<p>但是我发现，所有人都同意，”简单原则”—-尽量用简单的方法解决问题—-是”Unix哲学”的根本原则。这也就是著名的KISS（<strong>keep it simple, stupid</strong>），意思是”保持简单和笨拙”。</p>
+<p>下面就是我对”简单原则”的笔记。如果你想最简单地完成一项编程任务，我认为可以从四个方面入手：</p>
+<ol>
+<li><strong>清晰原则</strong>。</li>
+</ol>
+<p>代码要写得尽量清晰，避免晦涩难懂。清晰的代码不容易崩溃，而且容易理解和维护。重视注释。不为了性能的一丁点提升，而大幅增加技术的复杂性，因为复杂的技术会使得日后的阅读和维护更加艰难。</p>
+<ol>
+<li><strong>模块原则</strong>。</li>
+</ol>
+<p>每个程序只做一件事，不要试图在单个程序中完成多个任务。在程序的内部，面向用户的界面（前端）应该与运算机制（后端）分离，因为前端的变化往往快于后端。</p>
+<ol>
+<li><strong>组合原则</strong>。</li>
+</ol>
+<p>不同的程序之间通过接口相连。接口之间用文本格式进行通信，因为文本格式是最容易处理、最通用的格式。这就意味着尽量不要使用二进制数据进行通信，不要把二进制内容作为输出和输入。</p>
+<ol>
+<li>优化原则。</li>
+</ol>
+<p>在功能实现之前，不要考虑对它优化。<strong>最重要的是让一切先能够运行，其次才是效率</strong>。”先求运行，再求正确，最后求快。”（Make it run, then make it right, then make it fast.）90%的功能现在能实现，比100%的功能永远实现不了强。先做出原型，然后找出哪些功能不必实现，那些不用写的代码显然无需优化。目前，最强大的优化工具恐怕是Delete键。</p>
+<p>==================</p>
+<p>答案是，俄国人用铅笔。</p>
 <h2 id="大道至简"><a href="#大道至简" class="headerlink" title="大道至简 "></a><a href="https://baike.baidu.com/item/%E5%A4%A7%E9%81%93%E8%87%B3%E7%AE%80/2901553" target="_blank" rel="external">大道至简 </a></h2><p><img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=ad2732097a899e51788e3d127a9cbe0e/902397dda144ad34c15f6673d1a20cf430ad8566.jpg" alt=""></p>
 <p><img src="http://cdn.iciba.com/news/word/big_20171119b.jpg" alt=""><br>In this life I wait for you, not because of, not so.<br><a href="http://news.iciba.com/views/dailysentence/daily.html#!/detail/title/2017-11-19" target="_blank" rel="external">这辈子我等你，没有因为，没有所以。《三行情书》</a></p>
 <h2 id="新书：职场必需的极简思考"><a href="#新书：职场必需的极简思考" class="headerlink" title="新书：职场必需的极简思考"></a><a href="http://www.luojiji.com/thread-11225-1-1.html" target="_blank" rel="external">新书：职场必需的极简思考</a></h2><p>在职场上，正确沟通的重要性远远超出我们的想象。很多职场人士把大量时间花在收集数据、制作图表和反复修改PPT上，但最后仍然没能成功。新书《极简思考》（《The Elegant Pitch》）提出了解决思路：<strong>你越擅长简化信息，就越有可能得到支持</strong>。自媒体人战隼为本书中文版作序，并在微信公众号上介绍了这本书。</p>
@@ -746,7 +776,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">969</span>
+                  <span class="site-state-item-count">982</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -768,7 +798,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1118</span>
+                  <span class="site-state-item-count">1128</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -862,7 +892,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#大道至简"><span class="nav-number">1.</span> <span class="nav-text">大道至简 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新书：职场必需的极简思考"><span class="nav-number">2.</span> <span class="nav-text">新书：职场必需的极简思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#罗胖精选｜敢不敢做个复杂的人"><span class="nav-number">3.</span> <span class="nav-text">罗胖精选｜敢不敢做个复杂的人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#疯狂的简洁"><span class="nav-number">4.</span> <span class="nav-text">疯狂的简洁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">4.1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简洁的优势"><span class="nav-number">4.2.</span> <span class="nav-text">简洁的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多的诱惑"><span class="nav-number">4.3.</span> <span class="nav-text">多的诱惑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#难以掌握，更难以被超越"><span class="nav-number">4.4.</span> <span class="nav-text">难以掌握，更难以被超越</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法：应对复杂世界的简单原则"><span class="nav-number">5.</span> <span class="nav-text">方法：应对复杂世界的简单原则</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于Unix哲学"><span class="nav-number">1.</span> <span class="nav-text">关于Unix哲学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大道至简"><span class="nav-number">2.</span> <span class="nav-text">大道至简 </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新书：职场必需的极简思考"><span class="nav-number">3.</span> <span class="nav-text">新书：职场必需的极简思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#罗胖精选｜敢不敢做个复杂的人"><span class="nav-number">4.</span> <span class="nav-text">罗胖精选｜敢不敢做个复杂的人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#疯狂的简洁"><span class="nav-number">5.</span> <span class="nav-text">疯狂的简洁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">5.1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简洁的优势"><span class="nav-number">5.2.</span> <span class="nav-text">简洁的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多的诱惑"><span class="nav-number">5.3.</span> <span class="nav-text">多的诱惑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#难以掌握，更难以被超越"><span class="nav-number">5.4.</span> <span class="nav-text">难以掌握，更难以被超越</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法：应对复杂世界的简单原则"><span class="nav-number">6.</span> <span class="nav-text">方法：应对复杂世界的简单原则</span></a></li></ol></div>
             
 
           </div>
