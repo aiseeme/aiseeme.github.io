@@ -92,6 +92,7 @@
 <meta property="og:site_name" content="For life">
 <meta property="og:description" content="计算机——会计算的机器设备。">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201103/bg2011031216.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016080502.jpg">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201103/bg2011031201.png">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201103/bg2011031202.png">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201103/bg2011031203.png">
@@ -107,7 +108,16 @@
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201103/bg2011031213.jpg">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201103/bg2011031215.jpg">
 <meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201103/bg2011031216.jpg">
-<meta property="og:updated_time" content="2018-03-29T09:38:41.377Z">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201302/bg2013021501.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201302/bg2013021502.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201302/bg2013021503.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201302/bg2013021504.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/201302/bg2013021505.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015092804.png">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015092802-1.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015092801-1.jpg">
+<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015092803.png">
+<meta property="og:updated_time" content="2018-03-30T10:19:36.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Computer">
 <meta name="twitter:description" content="计算机——会计算的机器设备。">
@@ -462,6 +472,10 @@
 <p>计算机——会计算的机器设备。</p>
 </blockquote>
 <a id="more"></a>
+<h2 id="布尔代数入门"><a href="#布尔代数入门" class="headerlink" title="布尔代数入门"></a><a href="http://www.ruanyifeng.com/blog/2016/08/boolean-algebra.html" target="_blank" rel="external">布尔代数入门</a></h2><p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016080502.jpg" alt=""><br>19世纪早期，英国数学家乔治·布尔（George Boole，1815－1864）突发奇想：人的思想能不能用数学表达？</p>
+<p>两千年来，哲学书都是用文字写的。比如，最著名的三段论：</p>
+<p>所有人都是要死的，<br>苏格拉底是人，<br>所以，苏格拉底是要死的。</p>
+<p>乔治·布尔认为，这种推理可以用数学表达，也就是说，哲学书完全可以用数学写。这就是<strong>数理逻辑</strong>的起源。</p>
 <h2 id="四位计算机的原理及其实现"><a href="#四位计算机的原理及其实现" class="headerlink" title="四位计算机的原理及其实现"></a><a href="http://www.ruanyifeng.com/blog/2011/03/4-bit_computer.html" target="_blank" rel="external">四位计算机的原理及其实现</a></h2><p>作者： 阮一峰<br>日期： 2011年3月12日</p>
 <p>你是否想过，计算机为什么会加减乘除？或者更直接一点，计算机的原理到底是什么？</p>
 <p>Waitingforfriday有一篇详细的教程，讲解了如何自己动手，制作一台四位计算机。从中可以看到，二进制、数理逻辑、电子学怎样融合在一起，构成了现代计算机的基础。</p>
@@ -522,6 +536,98 @@
 <p>完成上面的四位加法，需要用到88个晶体管。虽然当代处理器包含的晶体管数以亿计，但是本质上都是上面这样简单电路的累加。</p>
 </blockquote>
 <p>（完）</p>
+<h2 id="计算机是如何启动的？"><a href="#计算机是如何启动的？" class="headerlink" title="计算机是如何启动的？"></a><a href="http://www.ruanyifeng.com/blog/2013/02/booting.html" target="_blank" rel="external">计算机是如何启动的？</a></h2><p>作者： 阮一峰<br>日期： 2013年2月16日</p>
+<p>从打开电源到开始操作，计算机的启动是一个非常复杂的过程。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201302/bg2013021501.jpg" alt=""></p>
+<p>我一直搞不清楚，这个过程到底是怎么回事，只看见屏幕快速滚动各种提示…… 这几天，我查了一些资料，试图搞懂它。下面就是我整理的笔记。</p>
+<p>零、boot的含义</p>
+<p>先问一个问题，”启动”用英语怎么说？</p>
+<p>回答是boot。可是，boot原来的意思是靴子，”启动”与靴子有什么关系呢？ 原来，这里的<strong>boot是bootstrap（鞋带）</strong>的缩写，它来自一句谚语：</p>
+<p>　　“pull oneself up by one’s bootstraps”</p>
+<p>字面意思是”拽着鞋带把自己拉起来”，这当然是不可能的事情。最早的时候，工程师们用它来比喻，<strong>计算机启动是一个很矛盾的过程：必须先运行程序，然后计算机才能启动，但是计算机不启动就无法运行程序！</strong></p>
+<p>早期真的是这样，必须想尽各种办法，把一小段程序装进内存，然后计算机才能正常运行。所以，<strong>工程师们把这个过程叫做”拉鞋带”，久而久之就简称为boot了。</strong></p>
+<p>计算机的整个启动过程分成四个阶段。</p>
+<p>一、第一阶段：BIOS</p>
+<p>上个世纪70年代初，”只读内存”（read-only memory，缩写为ROM）发明，开机程序被刷入ROM芯片，计算机通电后，第一件事就是读取它。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201302/bg2013021502.jpg" alt=""></p>
+<p>这块芯片里的程序叫做”基本輸出輸入系統”（Basic Input/Output System），简称为BIOS。</p>
+<p>1.1 硬件自检</p>
+<p>BIOS程序首先检查，计算机硬件能否满足运行的基本条件，这叫做”硬件自检”（Power-On Self-Test），缩写为POST。</p>
+<p>如果硬件出现问题，主板会发出不同含义的蜂鸣，启动中止。如果没有问题，屏幕就会显示出CPU、内存、硬盘等信息。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201302/bg2013021503.png" alt=""></p>
+<p>1.2 启动顺序</p>
+<p>硬件自检完成后，BIOS把控制权转交给下一阶段的启动程序。</p>
+<p>这时，BIOS需要知道，”下一阶段的启动程序”具体存放在哪一个设备。也就是说，BIOS需要有一个外部储存设备的排序，排在前面的设备就是优先转交控制权的设备。这种排序叫做”启动顺序”（Boot Sequence）。</p>
+<p>打开BIOS的操作界面，里面有一项就是”设定启动顺序”。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201302/bg2013021504.jpg" alt=""></p>
+<p>二、第二阶段：主引导记录</p>
+<p>BIOS按照”启动顺序”，把控制权转交给排在第一位的储存设备。</p>
+<p>这时，计算机读取该设备的第一个扇区，也就是读取最前面的512个字节。<strong>如果这512个字节的最后两个字节是0x55和0xAA，表明这个设备可以用于启动</strong>；如果不是，表明设备不能用于启动，控制权于是被转交给”启动顺序”中的下一个设备。</p>
+<p>这最前面的512个字节，就叫做<strong>“主引导记录”（Master boot record，缩写为MBR）</strong>。</p>
+<p>2.1 主引导记录的结构</p>
+<p>“主引导记录”只有512个字节，放不了太多东西。它的主要作用是，<strong>告诉计算机到硬盘的哪一个位置去找操作系统。</strong></p>
+<p>主引导记录由三个部分组成：</p>
+<p>　　（1） 第1-446字节：调用操作系统的机器码。</p>
+<p>　　（2） 第447-510字节：分区表（Partition table）。</p>
+<p>　　（3） 第511-512字节：主引导记录签名（0x55和0xAA）。</p>
+<p>其中，第二部分”分区表”的作用，是将硬盘分成若干个区。</p>
+<p>2.2 分区表</p>
+<p>硬盘分区有很多好处。<strong>考虑到每个区可以安装不同的操作系统</strong>，”主引导记录”因此必须知道将控制权转交给哪个区。</p>
+<p>分区表的长度只有64个字节，里面又分成四项，每项16个字节。所以，一个硬盘最多只能分四个一级分区，又叫做”主分区”。</p>
+<p>每个主分区的16个字节，由6个部分组成：</p>
+<p>　　（1） 第1个字节：<strong>如果为0x80，就表示该主分区是激活分区</strong>，控制权要转交给这个分区。四个主分区里面只能有一个是激活的。</p>
+<p>　　（2） 第2-4个字节：主分区第一个扇区的物理位置（柱面、磁头、扇区号等等）。</p>
+<p>　　（3） 第5个字节：主分区类型。</p>
+<p>　　（4） 第6-8个字节：主分区最后一个扇区的物理位置。</p>
+<p>　　（5） 第9-12字节：该主分区第一个扇区的逻辑地址。</p>
+<p>　　（6） 第13-16字节：主分区的扇区总数。</p>
+<p>最后的四个字节（”主分区的扇区总数”），决定了这个主分区的长度。也就是说，一个主分区的扇区总数最多不超过2的32次方。</p>
+<p>如果每个扇区为512个字节，就意味着单个分区最大不超过2TB。再考虑到扇区的逻辑地址也是32位，所以单个硬盘可利用的空间最大也不超过2TB。<strong>如果想使用更大的硬盘，只有2个方法：一是提高每个扇区的字节数，二是增加扇区总数。</strong></p>
+<p>三、第三阶段：硬盘启动</p>
+<p>这时，计算机的控制权就要转交给硬盘的某个分区了，这里又分成三种情况。</p>
+<p>3.1 情况A：卷引导记录</p>
+<p>上一节提到，四个主分区里面，只有一个是激活的。<strong>计算机会读取激活分区的第一个扇区，叫做”卷引导记录”（Volume boot record，缩写为VBR）。</strong></p>
+<p>“卷引导记录”的主要作用是，告诉计算机，操作系统在这个分区里的位置。然后，计算机就会加载操作系统了。</p>
+<p>3.2 情况B：扩展分区和逻辑分区</p>
+<p>随着硬盘越来越大，四个主分区已经不够了，需要更多的分区。但是，分区表只有四项，因此规定有且仅有一个区可以被定义成”扩展分区”（Extended partition）。</p>
+<p>所谓”扩展分区”，就是指这个区里面又分成多个区。这种分区里面的分区，就叫做”逻辑分区”（logical partition）。</p>
+<p>计算机先读取扩展分区的第一个扇区，叫做”扩展引导记录”（Extended boot record，缩写为EBR）。它里面也包含一张64字节的分区表，但是最多只有两项（也就是两个逻辑分区）。</p>
+<p>计算机接着读取第二个逻辑分区的第一个扇区，再从里面的分区表中找到第三个逻辑分区的位置，以此类推，直到某个逻辑分区的分区表只包含它自身为止（即只有一个分区项）。因此，扩展分区可以包含无数个逻辑分区。</p>
+<p>但是，似乎很少通过这种方式启动操作系统。如果操作系统确实安装在扩展分区，一般采用下一种方式启动。</p>
+<p>3.3 情况C：启动管理器</p>
+<p>在这种情况下，计算机读取”主引导记录”前面446字节的机器码之后，不再把控制权转交给某一个分区，而是运行事先安装的”启动管理器”（boot loader），由用户选择启动哪一个操作系统。</p>
+<p>Linux环境中，目前最流行的启动管理器是Grub。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/201302/bg2013021505.png" alt=""></p>
+<p>四、第四阶段：操作系统</p>
+<p>控制权转交给操作系统后，操作系统的内核首先被载入内存。</p>
+<blockquote>
+<p>以Linux系统为例，先载入/boot目录下面的kernel。内核加载成功后，第一个运行的程序是/sbin/init。它根据配置文件（Debian系统是/etc/initab）产生init进程。这是Linux启动后的第一个进程，pid进程编号为1，其他进程都是它的后代。</p>
+</blockquote>
+<p>然后，init线程加载系统的各个模块，比如窗口程序和网络程序，直至执行/bin/login程序，跳出登录界面，等待用户输入用户名和密码。</p>
+<p>至此，全部启动过程完成。</p>
+<p>（完）</p>
+<h2 id="为什么主引导记录的内存地址是0x7C00？"><a href="#为什么主引导记录的内存地址是0x7C00？" class="headerlink" title="为什么主引导记录的内存地址是0x7C00？"></a><a href="http://www.ruanyifeng.com/blog/2015/09/0x7c00.html" target="_blank" rel="external">为什么主引导记录的内存地址是0x7C00？</a></h2><p>为什么主引导记录的内存地址是0x7C00？</p>
+<p>作者： 阮一峰<br>日期： 2015年9月28日</p>
+<p>《计算机原理》课本说，启动时，主引导记录会存入内存地址0x7C00。</p>
+<p>这个奇怪的地址，是怎么来的，课本就不解释了。我一直有疑问，为什么不存入内存的头部、尾部、或者其他位置，而偏偏存入这个比 32KB 小1024字节的地方？</p>
+<p>昨天，我读到一篇文章，终于解开了这个谜。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015092804.png" alt=""></p>
+<p>首先，如果你不知道，主引导记录（Master boot record，缩写为MBR）是什么，可以先读《计算机是如何启动的？》。</p>
+<p>简单说，计算机启动是这样一个过程。</p>
+<p>通电<br>读取ROM里面的BIOS，用来检查硬件<br>硬件检查通过<br>BIOS根据指定的顺序，检查引导设备的第一个扇区（即主引导记录），加载在内存地址 0x7C00<br>主引导记录把操作权交给操作系统<br>所以，主引导记录就是引导”操作系统”进入内存的一段小程序，大小不超过1个扇区（512字节）。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015092802-1.jpg" alt=""></p>
+<blockquote>
+<p>0x7C00这个地址来自Intel的第一代个人电脑芯片8088，以后的CPU为了保持兼容，一直使用这个地址。</p>
+</blockquote>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015092801-1.jpg" alt=""></p>
+<p>1981年8月，IBM公司最早的个人电脑IBM PC 5150上市，就用了这个芯片。</p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015092803.png" alt=""></p>
+<p>当时，搭配的操作系统是86-DOS。这个操作系统需要的内存最少是32KB。我们知道，内存地址从0x0000开始编号，32KB的内存就是0x0000～0x7FFF。</p>
+<p>8088芯片本身需要占用0x0000～0x03FF，用来保存各种中断处理程序的储存位置。（主引导记录本身就是中断信号INT 19h的处理程序。）所以，内存只剩下0x0400～0x7FFF可以使用。</p>
+<p>为了把尽量多的连续内存留给操作系统，主引导记录就被放到了内存地址的尾部。由于一个扇区是512字节，主引导记录本身也会产生数据，需要另外留出512字节保存。所以，它的预留位置就变成了：</p>
+<p>  0x7FFF - 512 - 512 + 1 = 0x7C00<br>0x7C00就是这样来的。</p>
+<p>计算机启动后，32KB内存的使用情况如下。</p>
+<p>+——————— 0x0<br>| Interrupts vectors<br>+——————— 0x400<br>| BIOS data area<br>+——————— 0x5??<br>| OS load area<br>+——————— 0x7C00<br>| Boot sector<br>+——————— 0x7E00<br>| Boot data/stack<br>+——————— 0x7FFF<br>| (not used)<br>+——————— (…)<br>（完）</p>
 
       
     </div>
@@ -656,7 +762,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">987</span>
+                  <span class="site-state-item-count">993</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -678,7 +784,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1132</span>
+                  <span class="site-state-item-count">1136</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -772,7 +878,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#四位计算机的原理及其实现"><span class="nav-number">1.</span> <span class="nav-text">四位计算机的原理及其实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔代数入门"><span class="nav-number">1.</span> <span class="nav-text">布尔代数入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四位计算机的原理及其实现"><span class="nav-number">2.</span> <span class="nav-text">四位计算机的原理及其实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机是如何启动的？"><span class="nav-number">3.</span> <span class="nav-text">计算机是如何启动的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么主引导记录的内存地址是0x7C00？"><span class="nav-number">4.</span> <span class="nav-text">为什么主引导记录的内存地址是0x7C00？</span></a></li></ol></div>
             
 
           </div>
